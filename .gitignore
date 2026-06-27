@@ -1,0 +1,12 @@
+# Local admin tools (not for public repository)
+local-admin-generator.html
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db

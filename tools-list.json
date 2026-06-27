@@ -1,0 +1,14 @@
+[
+  {
+    "category": "Content & Writing",
+    "icon": "&#128218;",
+    "title": "Offline Article Rewriter",
+    "desc": "Rewrite articles and blog posts locally without any server. Two core modes: synonym replacement and sentence restructuring. Completely offline, your text never leaves your device.",
+    "features": [
+      "Smart synonym replacement engine",
+      "Sentence structure reordering"
+    ],
+    "detailUrl": "tools/article-rewrite/index.html",
+    "zipUrl": "assets/zip-packages/writing/article-rewrite.zip"
+  }
+]
