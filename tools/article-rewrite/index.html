@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline Article Rewriter - YuanqiZhiKe Toolkit</title>
+    <meta name="description" content="Free offline article rewriter tool. Rewrite content locally in your browser with synonym replacement and sentence restructuring. No internet required.">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="../../index.html" class="brand">
+                <span class="brand-icon">&#9670;</span>
+                <span class="brand-name">YuanqiZhiKe Toolkit</span>
+            </a>
+            <nav class="main-nav">
+                <a href="../../index.html">Home</a>
+                <a href="../../tools.html">Tools</a>
+                <a href="../../customize.html">Custom Dev</a>
+            </nav>
+            <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
+        </div>
+    </header>
+
+    <!-- Tool Hero -->
+    <section class="tool-hero">
+        <div class="container">
+            <h1>Offline Article Rewriter</h1>
+            <p>Rewrite articles and blog posts locally without sending your text to any server. Two powerful rewriting modes, zero data leakage.</p>
+        </div>
+    </section>
+
+    <!-- Tool Content -->
+    <main class="page-content">
+        <div class="container">
+            <div class="tool-info-grid">
+                <div class="tool-main">
+                    <h2>About This Tool</h2>
+                    <p>The Offline Article Rewriter is a completely self-contained frontend tool designed for content creators, students, and marketers who need to paraphrase text without compromising privacy. Unlike online rewriting services, this tool runs entirely in your browser -- your text is never uploaded to any server.</p>
+
+                    <h2>Target Users</h2>
+                    <ul>
+                        <li>Bloggers and content writers looking to create unique variations of existing content</li>
+                        <li>Students and researchers who need to paraphrase academic texts</li>
+                        <li>Marketers creating multiple versions of promotional copy</li>
+                        <li>Anyone concerned about privacy who wants to rewrite text without sending it to third-party servers</li>
+                    </ul>
+
+                    <h2>Core Features</h2>
+
+                    <h3>1. Smart Synonym Replacement</h3>
+                    <p>Automatically replaces words with contextually appropriate synonyms. The built-in dictionary covers common English vocabulary with intelligent word substitution. You can adjust the replacement intensity from conservative (minor changes) to aggressive (heavy rewriting).</p>
+
+                    <h3>2. Sentence Structure Reordering</h3>
+                    <p>Rearranges sentence structures while preserving meaning. This feature modifies clause order, converts active/passive voice, and splits or combines sentences to produce naturally flowing rewritten content.</p>
+
+                    <h2>How to Use</h2>
+                    <ol>
+                        <li>Download the ZIP package using the button on the right sidebar</li>
+                        <li>Extract the ZIP file to any folder on your computer</li>
+                        <li>Open the extracted <code>index.html</code> file in your web browser</li>
+                        <li>Paste your text, select a rewriting mode, and click "Rewrite"</li>
+                        <li>Copy the rewritten result or save it as a text file</li>
+                    </ol>
+
+                    <h2>Tech Stack</h2>
+                    <p>Built with vanilla HTML5, CSS3, and JavaScript (ES6+). No external dependencies, no frameworks, no build tools. Just pure, readable source code that you can study and modify.</p>
+                </div>
+
+                <aside class="tool-sidebar">
+                    <h3>Download Tool</h3>
+                    <div class="download-info">
+                        <p><strong>File:</strong> article-rewrite.zip</p>
+                        <p><strong>Version:</strong> 1.0.0</p>
+                        <p><strong>Last Updated:</strong> January 2026</p>
+                        <p><strong>Size:</strong> Approximately 50 KB</p>
+                    </div>
+
+                    <h3>Installation Steps</h3>
+                    <ol class="step-list">
+                        <li>Click "Download" below and accept the license agreement</li>
+                        <li>Unzip the downloaded file to any folder</li>
+                        <li>Open <code>index.html</code> in your browser</li>
+                        <li>Start rewriting articles offline</li>
+                    </ol>
+
+                    <button class="btn btn-primary btn-download" data-download="../article-rewrite.zip" style="width: 100%; margin-top: 20px;">Download ZIP</button>
+
+                    <p style="margin-top: 16px; font-size: 0.85rem; color: var(--text-light);">
+                        By downloading, you agree to our <a href="../../license.html" target="_blank">Source License Agreement</a>.
+                    </p>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- License Modal -->
+    <div class="modal-overlay" id="licenseModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Source Code License Agreement</h3>
+                <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Please read and accept the following terms before downloading:</p>
+                <div class="terms-box">
+                    <h4>YuanqiZhiKe Toolkit - Source Code License Terms</h4>
+                    <p><strong>Effective Date:</strong> January 1, 2026</p>
+                    <ul>
+                        <li>This source code is provided for <strong>personal learning purposes only</strong>. Commercial use is strictly prohibited without prior written consent from YuanqiZhiKe.</li>
+                        <li>You are <strong>forbidden</strong> from repackaging, reselling, or building any profit-generating website based on this source code.</li>
+                        <li>All risks arising from local modification and operation of this software are borne by the user themselves. YuanqiZhiKe provides <strong>no technical after-sales support</strong>.</li>
+                        <li>This software is provided "as is" without any warranties, express or implied.</li>
+                        <li>YuanqiZhiKe retains all intellectual property rights to the original source code.</li>
+                    </ul>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="licenseAgree">
+                    <label for="licenseAgree">I have read and agree to the above Source License Terms</label>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn btn-secondary" id="cancelDownload">Cancel</button>
+                    <button class="btn btn-primary btn-disabled" id="confirmDownload">Confirm & Download</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="../../privacy.html">Privacy Policy</a>
+                <a href="../../cookie.html">Cookie Notice</a>
+                <a href="../../license.html">Source License</a>
+                <a href="../../customize.html">Custom Dev Service</a>
+            </div>
+            <p class="copyright">&copy; 2026 YuanqiZhiKe. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        // Track this tool page view
+        trackPageView('article-rewrite');
+    </script>
+</body>
+</html>

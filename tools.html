@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Tools - YuanqiZhiKe Toolkit</title>
+    <meta name="description" content="Browse all free offline frontend tools by YuanqiZhiKe. Filter by category and download source code packages.">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="brand">
+                <span class="brand-icon">&#9670;</span>
+                <span class="brand-name">YuanqiZhiKe Toolkit</span>
+            </a>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <div class="nav-dropdown">
+                    <a href="tools.html" class="active">Tools &#9652;</a>
+                    <div class="dropdown-menu">
+                        <a href="tools.html#category-content">Content & Writing</a>
+                        <a href="tools.html#category-design">Design & Media</a>
+                        <a href="tools.html#category-dev">Developer Tools</a>
+                        <a href="tools.html#category-business">Business & Productivity</a>
+                        <a href="tools.html#category-education">Education & Research</a>
+                    </div>
+                </div>
+                <a href="customize.html">Custom Dev</a>
+            </nav>
+            <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
+        </div>
+    </header>
+
+    <!-- Tools Hero -->
+    <section class="tool-hero">
+        <div class="container">
+            <h1>All Tools</h1>
+            <p>Browse our growing collection of free offline frontend tools. Click on any tool to view details and download the source code.</p>
+        </div>
+    </section>
+
+    <!-- Tools Catalog -->
+    <main class="page-content">
+        <div class="container">
+            <!-- Category: Content & Writing -->
+            <div id="category-content" class="tool-category">
+                <h2 class="category-title">Content & Writing</h2>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-icon">&#128221;</div>
+                        <h3>Offline Article Rewriter</h3>
+                        <p class="tool-desc">Rewrite articles and blog posts locally without any server. Two core modes: synonym replacement and sentence restructuring. Completely offline, your text never leaves your device.</p>
+                        <ul class="tool-features">
+                            <li>Smart synonym replacement engine</li>
+                            <li>Sentence structure reordering</li>
+                        </ul>
+                        <div class="tool-actions">
+                            <a href="tools/article-rewrite/index.html" class="btn btn-secondary">View Details</a>
+                            <button class="btn btn-primary btn-download" data-download="tools/article-rewrite/article-rewrite.zip">Download ZIP</button>
+                        </div>
+                    </div>
+                    <!-- More tools in this category will be added here -->
+                </div>
+            </div>
+
+            <!-- Category: Design & Media -->
+            <div id="category-design" class="tool-category">
+                <h2 class="category-title">Design & Media</h2>
+                <div class="tools-grid">
+                    <div class="tool-card coming-soon">
+                        <div class="tool-icon">&#127912;</div>
+                        <h3>Coming Soon</h3>
+                        <p class="tool-desc">We are actively developing image processing tools, color palette generators, SVG manipulation utilities, and more.</p>
+                        <div class="tool-actions">
+                            <span class="btn btn-secondary" style="opacity: 0.6; cursor: default;">Stay Tuned</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category: Developer Tools -->
+            <div id="category-dev" class="tool-category">
+                <h2 class="category-title">Developer Tools</h2>
+                <div class="tools-grid">
+                    <div class="tool-card coming-soon">
+                        <div class="tool-icon">&#128187;</div>
+                        <h3>Coming Soon</h3>
+                        <p class="tool-desc">Code formatters, JSON validators, hash generators, base64 encoders, and other developer utilities are on the way.</p>
+                        <div class="tool-actions">
+                            <span class="btn btn-secondary" style="opacity: 0.6; cursor: default;">Stay Tuned</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category: Business & Productivity -->
+            <div id="category-business" class="tool-category">
+                <h2 class="category-title">Business & Productivity</h2>
+                <div class="tools-grid">
+                    <div class="tool-card coming-soon">
+                        <div class="tool-icon">&#128176;</div>
+                        <h3>Coming Soon</h3>
+                        <p class="tool-desc">PDF converters, invoice generators, spreadsheet tools, and business productivity utilities are in development.</p>
+                        <div class="tool-actions">
+                            <span class="btn btn-secondary" style="opacity: 0.6; cursor: default;">Stay Tuned</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category: Education & Research -->
+            <div id="category-education" class="tool-category">
+                <h2 class="category-title">Education & Research</h2>
+                <div class="tools-grid">
+                    <div class="tool-card coming-soon">
+                        <div class="tool-icon">&#127891;</div>
+                        <h3>Coming Soon</h3>
+                        <p class="tool-desc">Citation generators, flashcard makers, plagiarism checkers, and academic study aids are coming soon.</p>
+                        <div class="tool-actions">
+                            <span class="btn btn-secondary" style="opacity: 0.6; cursor: default;">Stay Tuned</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- License Modal -->
+    <div class="modal-overlay" id="licenseModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Source Code License Agreement</h3>
+                <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Please read and accept the following terms before downloading:</p>
+                <div class="terms-box">
+                    <h4>YuanqiZhiKe Toolkit - Source Code License Terms</h4>
+                    <p><strong>Effective Date:</strong> January 1, 2026</p>
+                    <ul>
+                        <li>This source code is provided for <strong>personal learning purposes only</strong>. Commercial use is strictly prohibited without prior written consent from YuanqiZhiKe.</li>
+                        <li>You are <strong>forbidden</strong> from repackaging, reselling, or building any profit-generating website based on this source code.</li>
+                        <li>All risks arising from local modification and operation of this software are borne by the user themselves. YuanqiZhiKe provides <strong>no technical after-sales support</strong>.</li>
+                        <li>This software is provided "as is" without any warranties, express or implied.</li>
+                        <li>YuanqiZhiKe retains all intellectual property rights to the original source code.</li>
+                    </ul>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="licenseAgree">
+                    <label for="licenseAgree">I have read and agree to the above Source License Terms</label>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn btn-secondary" id="cancelDownload">Cancel</button>
+                    <button class="btn btn-primary btn-disabled" id="confirmDownload">Confirm & Download</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="cookie.html">Cookie Notice</a>
+                <a href="license.html">Source License</a>
+                <a href="customize.html">Custom Dev Service</a>
+            </div>
+            <p class="copyright">&copy; 2026 YuanqiZhiKe. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        trackPageView('tools-catalog');
+    </script>
+</body>
+</html>

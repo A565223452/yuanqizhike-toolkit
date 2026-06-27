@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Development Services - YuanqiZhiKe Toolkit</title>
+    <meta name="description" content="Professional custom frontend tool and SaaS development services by YuanqiZhiKe.">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="brand">
+                <span class="brand-icon">&#9670;</span>
+                <span class="brand-name">YuanqiZhiKe Toolkit</span>
+            </a>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="index.html#tools-section">Tools</a>
+                <a href="customize.html">Custom Dev</a>
+                <a href="license.html">License</a>
+            </nav>
+            <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="container">
+            <h1>Custom Development Services</h1>
+            <p>Need a tailored solution? Our team specializes in building high-quality frontend tools, web applications, and SaaS products for businesses worldwide.</p>
+
+            <h2>Our Services</h2>
+            <div class="service-cards">
+                <div class="service-card">
+                    <h3>Frontend Tools</h3>
+                    <p>Custom text processors, converters, generators, and productivity tools built with modern HTML/CSS/JavaScript. Fully offline-capable and browser-based.</p>
+                </div>
+                <div class="service-card">
+                    <h3>SaaS Applications</h3>
+                    <p>Full-stack web application development with responsive design, user authentication, payment integration, and cloud deployment.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Landing Pages</h3>
+                    <p>High-converting, beautifully designed landing pages optimized for speed, SEO, and mobile experience.</p>
+                </div>
+                <div class="service-card">
+                    <h3>API Integration</h3>
+                    <p>Connect your tools to third-party services including payment gateways, AI APIs, databases, and cloud storage solutions.</p>
+                </div>
+            </div>
+
+            <h2>Why Choose Us</h2>
+            <ul>
+                <li><strong>Clean Code:</strong> Well-structured, maintainable, and documented codebase</li>
+                <li><strong>Responsive Design:</strong> Perfect experience across desktop, tablet, and mobile</li>
+                <li><strong>Fast Delivery:</strong> Agile development process with regular progress updates</li>
+                <li><strong>Post-Delivery Support:</strong> 30-day free bug-fixing period after project handover</li>
+            </ul>
+
+            <h2>Get in Touch</h2>
+            <p>Describe your project requirements and we will get back to you within 24 hours with a detailed proposal and quote.</p>
+
+            <div class="contact-form">
+                <form id="contactForm" onsubmit="handleContactSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="projectType">Project Type</label>
+                        <select id="projectType" name="projectType">
+                            <option value="">Select a category</option>
+                            <option value="frontend-tool">Frontend Tool</option>
+                            <option value="saas-app">SaaS Application</option>
+                            <option value="landing-page">Landing Page</option>
+                            <option value="api-integration">API Integration</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Project Description *</label>
+                        <textarea id="message" name="message" required placeholder="Tell us about your project requirements, timeline, and budget..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Inquiry</button>
+                </form>
+            </div>
+
+            <p style="text-align: center; margin-top: 24px;">Or email us directly at <a href="mailto:hello@yuanqizhike.com">hello@yuanqizhike.com</a></p>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="cookie.html">Cookie Notice</a>
+                <a href="license.html">Source License</a>
+                <a href="customize.html">Custom Dev Service</a>
+            </div>
+            <p class="copyright">&copy; 2026 YuanqiZhiKe. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            alert('Thank you for your inquiry! We will review your requirements and respond within 24 hours.');
+            document.getElementById('contactForm').reset();
+        }
+    </script>
+</body>
+</html>
