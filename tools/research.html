@@ -168,8 +168,16 @@
                 downloadHtml = '<button class="btn btn-primary btn-download" data-download="' + escapeHtml(tool.zipUrl) + '">Download ZIP</button>';
             }
 
+            // Determine if icon is an SVG path (starts with 'assets/' or ends with '.svg')
+            var iconHtml = '';
+            if (tool.icon && (tool.icon.indexOf('assets/') === 0 || tool.icon.indexOf('.svg') === tool.icon.length - 4)) {
+                iconHtml = '<img src="' + escapeHtml(tool.icon) + '" alt="' + escapeHtml(tool.title) + '" onerror="this.parentElement.innerHTML=\'&#128187;\'>';
+            } else {
+                iconHtml = tool.icon || '&#128187;';
+            }
+
             card.innerHTML =
-                '<div class="tool-icon">' + (tool.icon || '&#128187;') + '</div>' +
+                '<div class="tool-icon">' + iconHtml + '</div>' +
                 '<h3>' + escapeHtml(tool.title) + '</h3>' +
                 '<p class="tool-desc">' + escapeHtml(tool.desc) + '</p>' +
                 featuresHtml +

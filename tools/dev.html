@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Developer Tools - YuanqiZhiKe Toolkit</title>
     <meta name="description" content="Practical front-end development tools including time zone conversion, JSON formatting, CSS generator, and more. All offline and single-file.">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
@@ -168,8 +169,16 @@
                 downloadHtml = '<button class="btn btn-primary btn-download" data-download="' + escapeHtml(tool.zipUrl) + '">Download ZIP</button>';
             }
 
+            // Determine if icon is an SVG path (starts with 'assets/' or ends with '.svg')
+            var iconHtml = '';
+            if (tool.icon && (tool.icon.indexOf('assets/') === 0 || tool.icon.indexOf('.svg') === tool.icon.length - 4)) {
+                iconHtml = '<img src="' + escapeHtml(tool.icon) + '" alt="' + escapeHtml(tool.title) + '" onerror="this.parentElement.innerHTML=\'&#128187;\'>';
+            } else {
+                iconHtml = tool.icon || '&#128187;';
+            }
+
             card.innerHTML =
-                '<div class="tool-icon">' + (tool.icon || '&#128187;') + '</div>' +
+                '<div class="tool-icon">' + iconHtml + '</div>' +
                 '<h3>' + escapeHtml(tool.title) + '</h3>' +
                 '<p class="tool-desc">' + escapeHtml(tool.desc) + '</p>' +
                 featuresHtml +

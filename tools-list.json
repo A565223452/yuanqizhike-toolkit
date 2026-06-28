@@ -1,15 +1,21 @@
 [
   {
     "category": "Content & Writing",
-    "icon": "&#128221;",
+    "icon": "assets/icons/content-4.svg",
     "title": "Offline Article Rewriter",
     "desc": "Rewrite articles and check content similarity. Built-in synonym dictionary with 100+ word entries. All processing runs locally in your browser.",
+    "features": [
+      "Content Rewriting",
+      "Similarity Checker",
+      "Synonym Dictionary",
+      "One-Click Copy"
+    ],
     "detailUrl": "tools/article-rewrite/index.html",
     "zipUrl": "assets/zip-packages/writing/article-rewrite.zip"
   },
   {
     "category": "Developer Tools",
-    "icon": "assets/icons/business-2.svg",
+    "icon": "assets/icons/dev-1.svg",
     "title": "Timezone Converter",
     "desc": "Convert time between different time zones worldwide",
     "features": ["Time Zone Conversion", "World Clock", "Time Difference Calculator"],
@@ -17,125 +23,139 @@
     "zipUrl": "assets/zip-packages/dev/timezone-converter.zip"
   },
   {
-  "category": "Developer Tools",
-  "icon": "assets/icons/dev-1.svg",
-  "title": "JSON Formatter / Validator",
-  "desc": "Format, validate, and beautify JSON data instantly in your browser. Features tree view, import/export, and one-click copy.",
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-1.svg",
+    "title": "JSON Formatter / Validator",
+    "desc": "Format, validate, and beautify JSON data instantly in your browser. Features tree view, import/export, and one-click copy.",
+    "features": [
+      "Format JSON",
+      "Minify JSON",
+      "Tree View",
+      "Import File",
+      "Export File",
+      "Copy Node"
+    ],
+    "detailUrl": "tools/json-formatter/index.html",
+    "zipUrl": "assets/zip-packages/dev/json-formatter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-1.svg",
+    "title": "CSS Gradient Generator",
+    "desc": "Create beautiful linear, radial, and conic CSS gradients visually. Features multi-color stops, 12 presets, and one-click copy.",
+    "features": [
+      "Linear Gradient",
+      "Radial Gradient",
+      "Conic Gradient",
+      "Multi-Color Stops",
+      "12 Presets",
+      "Copy CSS Code"
+    ],
+    "detailUrl": "tools/css-gradient-generator/index.html",
+    "zipUrl": "assets/zip-packages/dev/css-gradient-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-1.svg",
+    "title": "Online Regex Tester",
+    "desc": "Test and validate regular expressions instantly. Features 6 quick templates (Email, URL, Phone, IP, Numbers, HTML Tags) and match statistics.",
+    "features": [
+      "Real-time Matching",
+      "Quick Templates",
+      "Match Statistics",
+      "Highlighted Matches",
+      "Error Handling"
+    ],
+    "detailUrl": "tools/regex-tester/index.html",
+    "zipUrl": "assets/zip-packages/dev/regex-tester.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-1.svg",
+    "title": "Color Code Converter",
+    "desc": "Convert between HEX, RGB, and HSL color formats. Features palette generation, WCAG contrast checker, and CSS variable export.",
+    "features": [
+      "HEX to RGB",
+      "RGB to HSL",
+      "Palette Generator",
+      "WCAG Contrast Checker",
+      "Export CSS Variables"
+    ],
+    "detailUrl": "tools/color-converter/index.html",
+    "zipUrl": "assets/zip-packages/dev/color-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-1.svg",
+    "title": "Base64 / URL Encoder & Decoder",
+    "desc": "Encode and decode text using Base64 or URL encoding. Features JWT parser, batch processing, and hash generator (MD5, SHA-1, SHA-256, SHA-512).",
+    "features": [
+      "Base64 Encode",
+      "Base64 Decode",
+      "URL Encode",
+      "URL Decode",
+      "JWT Parser",
+      "Batch Processing",
+      "Hash Generator"
+    ],
+    "detailUrl": "tools/base64-url-tool/index.html",
+    "zipUrl": "assets/zip-packages/dev/base64-url-tool.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "assets/icons/design-2.svg",
+    "title": "Batch Image Resizer & Format Converter",
+    "desc": "Resize and convert multiple images at once. Features preset sizes, format conversion, and quality control.",
+    "features": [
+      "Batch Processing",
+      "9 Preset Sizes",
+      "JPG/PNG/WebP/BMP",
+      "Quality Control"
+    ],
+    "detailUrl": "tools/image-converter/index.html",
+    "zipUrl": "assets/zip-packages/design/image-converter.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-1.svg",
+    "title": "CSV Order Data Cleaner",
+    "desc": "Clean, deduplicate, and prepare CSV order data. Features multiple cleaning options and table preview.",
+    "features": [
+      "Remove Duplicates",
+      "Clean Empty Rows",
+      "Trim Spaces",
+      "Table Preview",
+      "Statistics"
+    ],
+    "detailUrl": "tools/csv-cleaner/index.html",
+    "zipUrl": "assets/zip-packages/business/csv-cleaner.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "assets/icons/education-3.svg",
+    "title": "Academic Citation Generator",
+    "desc": "Create citations in APA, MLA, Chicago, Harvard, IEEE, and AMA formats. Features 6 document types and history.",
+    "features": [
+      "6 Citation Styles",
+      "6 Document Types",
+      "Copy Citation",
+      "Save History"
+    ],
+    "detailUrl": "tools/citation-generator/index.html",
+    "zipUrl": "assets/zip-packages/education/citation-generator.zip"
+  },
+  {
+  "category": "Education & Research",
+  "icon": "assets/icons/education-3.svg",
+  "title": "Academic Citation Generator",
+  "desc": "Create citations in APA, MLA, Chicago, Harvard, IEEE, and AMA formats. Features 6 document types and history.",
   "features": [
-    "Format JSON",
-    "Minify JSON",
-    "Tree View",
-    "Import File",
-    "Export File",
-    "Copy Node"
+    "6 Citation Styles",
+    "6 Document Types",
+    "Copy Citation",
+    "Save History"
   ],
-  "detailUrl": "json-formatter/index.html",
-  "zipUrl": "assets/zip-packages/dev/json-formatter.zip"
-},
-{
-  "category": "Developer Tools",
-  "icon": "assets/icons/dev-1.svg",
-  "title": "CSS Gradient Generator",
-  "desc": "Create beautiful linear, radial, and conic CSS gradients visually. Features multi-color stops, 12 presets, and one-click copy.",
-  "features": [
-    "Linear Gradient",
-    "Radial Gradient",
-    "Conic Gradient",
-    "Multi-Color Stops",
-    "12 Presets",
-    "Copy CSS Code"
-  ],
-  "detailUrl": "css-gradient-generator/index.html",
-  "zipUrl": "assets/zip-packages/dev/css-gradient-generator.zip"
-},
-{
-  "category": "Developer Tools",
-  "icon": "assets/icons/dev-1.svg",
-  "title": "Online Regex Tester",
-  "desc": "Test and validate regular expressions instantly. Features 6 quick templates (Email, URL, Phone, IP, Numbers, HTML Tags) and match statistics.",
-  "features": [
-    "Real-time Matching",
-    "Quick Templates",
-    "Match Statistics",
-    "Highlighted Matches",
-    "Error Handling"
-  ],
-  "detailUrl": "regex-tester/index.html",
-  "zipUrl": "assets/zip-packages/dev/regex-tester.zip"
-},
-{
-  "category": "Developer Tools",
-  "icon": "assets/icons/dev-1.svg",
-  "title": "Color Code Converter",
-  "desc": "Convert between HEX, RGB, and HSL color formats. Features palette generation, WCAG contrast checker, and CSS variable export.",
-  "features": [
-    "HEX to RGB",
-    "RGB to HSL",
-    "Palette Generator",
-    "WCAG Contrast Checker",
-    "Export CSS Variables"
-  ],
-  "detailUrl": "color-converter/index.html",
-  "zipUrl": "assets/zip-packages/dev/color-converter.zip"
-},
-{
-  "category": "Developer Tools",
-  "icon": "assets/icons/dev-1.svg",
-  "title": "Base64 / URL Encoder & Decoder",
-  "desc": "Encode and decode text using Base64 or URL encoding. Features JWT parser, batch processing, and hash generator (MD5, SHA-1, SHA-256, SHA-512).",
-  "features": [
-    "Base64 Encode",
-    "Base64 Decode",
-    "URL Encode",
-    "URL Decode",
-    "JWT Parser",
-    "Batch Processing",
-    "Hash Generator"
-  ],
-  "detailUrl": "base64-url-tool/index.html",
-  "zipUrl": "assets/zip-packages/dev/base64-url-tool.zip"
-},
-{
-  "category": "Content & Writing",
-  "icon": "assets/icons/content-4.svg",
-  "title": "Article Rewriter & Similarity Checker",
-  "desc": "Rewrite articles and check content similarity. Features synonym dictionary and one-click copy.",
-  "features": [
-    "Content Rewriting",
-    "Similarity Checker",
-    "Synonym Dictionary",
-    "One-Click Copy"
-  ],
-  "detailUrl": "article-rewriter/index.html",
-  "zipUrl": "assets/zip-packages/writing/article-rewriter.zip"
-},
-{
-  "category": "Design & Media",
-  "icon": "assets/icons/design-2.svg",
-  "title": "Batch Image Resizer & Format Converter",
-  "desc": "Resize and convert multiple images at once. Features preset sizes, format conversion, and quality control.",
-  "features": [
-    "Batch Processing",
-    "9 Preset Sizes",
-    "JPG/PNG/WebP/BMP",
-    "Quality Control"
-  ],
-  "detailUrl": "image-converter/index.html",
-  "zipUrl": "assets/zip-packages/design/image-converter.zip"
-},
-{
-  "category": "Business & Productivity",
-  "icon": "assets/icons/business-1.svg",
-  "title": "CSV Order Data Cleaner",
-  "desc": "Clean, deduplicate, and prepare CSV order data. Features multiple cleaning options and table preview.",
-  "features": [
-    "Remove Duplicates",
-    "Clean Empty Rows",
-    "Trim Spaces",
-    "Table Preview",
-    "Statistics"
-  ],
-  "detailUrl": "csv-cleaner/index.html",
-  "zipUrl": "assets/zip-packages/business/csv-cleaner.zip"
+  "detailUrl": "citation-generator/index.html",
+  "zipUrl": "assets/zip-packages/education/citation-generator.zip"
 }
 ]
