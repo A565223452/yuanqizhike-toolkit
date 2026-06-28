@@ -108,36 +108,31 @@
 
     <script src="assets/js/main.js"></script>
     <script>
-        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+        document.getElementById('contactForm').addEventListener('submit', async function (e) {
             e.preventDefault();
+            const submitBtn = this.querySelector('#submitBtn');
+            const formStatus = this.querySelector('#formStatus');
             
-            const submitBtn = document.getElementById('submitBtn');
-            const formStatus = document.getElementById('formStatus');
-            const form = this;
-            
-            // 禁用按钮，防止重复提交
             submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending...';
+            submitBtn.innerText = 'Submitting...';
             formStatus.style.display = 'block';
             formStatus.style.color = '#666';
             formStatus.textContent = 'Submitting...';
-            
+
             try {
-                const formData = new FormData(form);
-                const response = await fetch('/api/send-email', {
+                const resp = await fetch('/api/send-email', {
                     method: 'POST',
-                    body: formData
+                    body: new FormData(this)
                 });
+                const resData = await resp.json();
                 
-                const result = await response.json();
-                
-                if (result.success) {
+                if (resData.code === 200) {
                     formStatus.style.color = '#28a745';
-                    formStatus.textContent = 'Thank you for your inquiry! We will review your requirements and respond within 24 hours.';
-                    form.reset();
+                    formStatus.textContent = resData.msg || 'Thank you for your inquiry! We will respond within 24 hours.';
+                    this.reset();
                 } else {
                     formStatus.style.color = '#dc3545';
-                    formStatus.textContent = 'Submission failed. Please try again later.';
+                    formStatus.textContent = resData.msg || 'Submission failed. Please try again later.';
                 }
             } catch (error) {
                 formStatus.style.color = '#dc3545';
@@ -145,7 +140,7 @@
                 console.error('Form submission error:', error);
             } finally {
                 submitBtn.disabled = false;
-                submitBtn.textContent = 'Send Inquiry';
+                submitBtn.innerText = 'Send Inquiry';
             }
         });
     </script>
