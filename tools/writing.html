@@ -161,12 +161,12 @@
 
             var viewDetailsHtml = '';
             if (tool.detailUrl) {
-                viewDetailsHtml = '<a href="' + escapeHtml(tool.detailUrl) + '" class="btn btn-secondary">View Details</a>';
+                viewDetailsHtml = '<a href="' + escapeHtml(tool.detailUrl) + '" class="btn btn-view-details">View Details</a>';
             }
 
             var downloadHtml = '';
             if (tool.zipUrl) {
-                downloadHtml = '<button class="btn btn-primary btn-download" data-download="' + escapeHtml(tool.zipUrl) + '">Download ZIP</button>';
+                downloadHtml = '<button class="btn btn-download-zip btn-download" data-download="' + escapeHtml(tool.zipUrl) + '">Download ZIP</button>';
             }
 
             // Determine if icon is an SVG path (starts with 'assets/' or ends with '.svg')
@@ -177,7 +177,7 @@
             }
             var iconHtml = '';
             if (tool.icon && (tool.icon.indexOf('assets/') === 0 || tool.icon.indexOf('.svg') === tool.icon.length - 4)) {
-                iconHtml = '<img src="' + escapeHtml(iconPath) + '" alt="' + escapeHtml(tool.title) + '" onerror="this.parentElement.innerHTML=\'&#128187;\'>';
+                iconHtml = '<img src="' + escapeHtml(iconPath) + '" alt="' + escapeHtml(tool.title) + '" onerror="this.outerHTML=\'\\uD83D\\uDCB7\'>';
             } else {
                 iconHtml = tool.icon || '&#128187;';
             }
