@@ -289,7 +289,6 @@ img {
     font-size: 0.95rem;
     margin-bottom: 16px;
     overflow: hidden;
-    text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
