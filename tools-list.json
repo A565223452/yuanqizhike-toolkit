@@ -94,5 +94,48 @@
   ],
   "detailUrl": "base64-url-tool/index.html",
   "zipUrl": "assets/zip-packages/dev/base64-url-tool.zip"
+},
+{
+  "category": "Content & Writing",
+  "icon": "assets/icons/content-4.svg",
+  "title": "Article Rewriter & Similarity Checker",
+  "desc": "Rewrite articles and check content similarity. Features synonym dictionary and one-click copy.",
+  "features": [
+    "Content Rewriting",
+    "Similarity Checker",
+    "Synonym Dictionary",
+    "One-Click Copy"
+  ],
+  "detailUrl": "article-rewriter/index.html",
+  "zipUrl": "assets/zip-packages/writing/article-rewriter.zip"
+},
+{
+  "category": "Design & Media",
+  "icon": "assets/icons/design-2.svg",
+  "title": "Batch Image Resizer & Format Converter",
+  "desc": "Resize and convert multiple images at once. Features preset sizes, format conversion, and quality control.",
+  "features": [
+    "Batch Processing",
+    "9 Preset Sizes",
+    "JPG/PNG/WebP/BMP",
+    "Quality Control"
+  ],
+  "detailUrl": "image-converter/index.html",
+  "zipUrl": "assets/zip-packages/design/image-converter.zip"
+},
+{
+  "category": "Business & Productivity",
+  "icon": "assets/icons/business-1.svg",
+  "title": "CSV Order Data Cleaner",
+  "desc": "Clean, deduplicate, and prepare CSV order data. Features multiple cleaning options and table preview.",
+  "features": [
+    "Remove Duplicates",
+    "Clean Empty Rows",
+    "Trim Spaces",
+    "Table Preview",
+    "Statistics"
+  ],
+  "detailUrl": "csv-cleaner/index.html",
+  "zipUrl": "assets/zip-packages/business/csv-cleaner.zip"
 }
 ]
