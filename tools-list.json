@@ -3,12 +3,17 @@
     "category": "Content & Writing",
     "icon": "&#128218;",
     "title": "Offline Article Rewriter",
-    "desc": "Rewrite articles and blog posts locally without any server. Two core modes: synonym replacement and sentence restructuring. Completely offline, your text never leaves your device.",
-    "features": [
-      "Smart synonym replacement engine",
-      "Sentence structure reordering"
-    ],
+    "desc": "...",
     "detailUrl": "tools/article-rewrite/index.html",
     "zipUrl": "assets/zip-packages/writing/article-rewrite.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/business-2.svg",
+    "title": "Timezone Converter",
+    "desc": "Convert time between different time zones worldwide",
+    "features": ["Time Zone Conversion", "World Clock", "Time Difference Calculator"],
+    "detailUrl": "tools/timezone-converter/index.html",
+    "zipUrl": "assets/zip-packages/dev/timezone-converter.zip"
   }
 ]
