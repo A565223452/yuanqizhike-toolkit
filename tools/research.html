@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Education & Research - YuanqiZhiKe Toolkit</title>
     <meta name="description" content="Auxiliary tools for academic sorting, data comparison and paper arrangement, suitable for students and researchers.">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
@@ -169,9 +170,14 @@
             }
 
             // Determine if icon is an SVG path (starts with 'assets/' or ends with '.svg')
+            // Adjust path for sub-pages (tools/*.html)
+            var iconPath = tool.icon;
+            if (iconPath && (iconPath.indexOf('assets/') === 0 || iconPath.indexOf('.svg') === iconPath.length - 4)) {
+                iconPath = '../' + iconPath;
+            }
             var iconHtml = '';
             if (tool.icon && (tool.icon.indexOf('assets/') === 0 || tool.icon.indexOf('.svg') === tool.icon.length - 4)) {
-                iconHtml = '<img src="' + escapeHtml(tool.icon) + '" alt="' + escapeHtml(tool.title) + '" onerror="this.parentElement.innerHTML=\'&#128187;\'>';
+                iconHtml = '<img src="' + escapeHtml(iconPath) + '" alt="' + escapeHtml(tool.title) + '" onerror="this.parentElement.innerHTML=\'&#128187;\'>';
             } else {
                 iconHtml = tool.icon || '&#128187;';
             }
