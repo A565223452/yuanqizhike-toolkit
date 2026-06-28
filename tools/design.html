@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design & Media - YuanqiZhiKe Toolkit</title>
+    <meta name="description" content="Front-end visual auxiliary design tools, gradient generation, color contrast detection and other design practical functions.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="../index.html" class="brand">
+                <span class="brand-icon">&#9670;</span>
+                <span class="brand-name">YuanqiZhiKe Toolkit</span>
+            </a>
+            <nav class="main-nav">
+                <a href="../index.html">Home</a>
+                <div class="nav-dropdown">
+                    <a href="../tools.html" class="active">Tools &#9652;</a>
+                    <div class="dropdown-menu">
+                        <a href="../tools.html">All Tools</a>
+                        <a href="dev.html">Developer Tools</a>
+                        <a href="writing.html">Content & Writing</a>
+                        <a href="design.html" class="active">Design & Media</a>
+                        <a href="business.html">Business & Productivity</a>
+                        <a href="research.html">Education & Research</a>
+                    </div>
+                </div>
+                <a href="../customize.html">Custom Dev</a>
+            </nav>
+            <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
+        </div>
+    </header>
+
+    <!-- Tools Hero -->
+    <section class="tool-hero">
+        <div class="container">
+            <h1>Design & Media</h1>
+            <p>Front-end visual auxiliary design tools, gradient generation, color contrast detection and other design practical functions.</p>
+        </div>
+    </section>
+
+    <!-- Tools Catalog -->
+    <main class="page-content">
+        <div class="container">
+            <!-- Category: Design & Media -->
+            <div id="category-design" class="tool-category">
+                <h2 class="category-title">Design & Media</h2>
+                <div class="tools-grid" data-category="Design & Media">
+                    <!-- Tools will be dynamically rendered here from tools-list.json -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- License Modal -->
+    <div class="modal-overlay" id="licenseModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Source Code License Agreement</h3>
+                <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Please read and accept the following terms before downloading:</p>
+                <div class="terms-box">
+                    <h4>YuanqiZhiKe Toolkit - Source Code License Terms</h4>
+                    <p><strong>Effective Date:</strong> January 1, 2026</p>
+                    <ul>
+                        <li>This source code is provided for <strong>personal learning purposes only</strong>. Commercial use is strictly prohibited without prior written consent from YuanqiZhiKe.</li>
+                        <li>You are <strong>forbidden</strong> from repackaging, reselling, or building any profit-generating website based on this source code.</li>
+                        <li>All risks arising from local modification and operation of this software are borne by the user themselves. YuanqiZhiKe provides <strong>no technical after-sales support</strong>.</li>
+                        <li>This software is provided "as is" without any warranties, express or implied.</li>
+                        <li>YuanqiZhiKe retains all intellectual property rights to the original source code.</li>
+                    </ul>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="licenseAgree">
+                    <label for="licenseAgree">I have read and agree to the above Source License Terms</label>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn btn-secondary" id="cancelDownload">Cancel</button>
+                    <button class="btn btn-primary btn-disabled" id="confirmDownload">Confirm & Download</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="../privacy.html">Privacy Policy</a>
+                <a href="../cookie.html">Cookie Notice</a>
+                <a href="../license.html">Source License</a>
+                <a href="../customize.html">Custom Dev Service</a>
+            </div>
+            <p class="copyright">&copy; 2026 YuanqiZhiKe. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('../tools-list.json')
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (tools) {
+                    renderTools(tools);
+                })
+                .catch(function (error) {
+                    console.error('Failed to load tools-list.json:', error);
+                });
+        });
+
+        function renderTools(tools) {
+            var container = document.getElementById('category-design');
+            if (!container) return;
+
+            var categoryName = 'Design & Media';
+            var toolsGrid = container.querySelector('.tools-grid');
+            if (!toolsGrid) return;
+
+            var categoryTools = tools.filter(function (tool) {
+                return tool.category === categoryName;
+            });
+
+            categoryTools.forEach(function (tool) {
+                var card = createToolCard(tool);
+                toolsGrid.appendChild(card);
+            });
+
+            if (categoryTools.length === 0) {
+                toolsGrid.innerHTML = '<div class="tool-card coming-soon">' +
+                    '<div class="tool-icon">&#128736;</div>' +
+                    '<h3>Coming Soon</h3>' +
+                    '<p class="tool-desc">Tools in this category are currently under development.</p>' +
+                    '<div class="tool-actions">' +
+                    '<span class="btn btn-secondary" style="opacity: 0.6; cursor: default;">Stay Tuned</span>' +
+                    '</div>' +
+                    '</div>';
+            }
+
+            initDownloadModal();
+        }
+
+        function createToolCard(tool) {
+            var card = document.createElement('div');
+            card.className = 'tool-card';
+
+            var featuresHtml = '';
+            if (tool.features && tool.features.length > 0) {
+                featuresHtml = '<ul class="tool-features">';
+                tool.features.forEach(function (feature) {
+                    featuresHtml += '<li>' + escapeHtml(feature) + '</li>';
+                });
+                featuresHtml += '</ul>';
+            }
+
+            var viewDetailsHtml = '';
+            if (tool.detailUrl) {
+                viewDetailsHtml = '<a href="' + escapeHtml(tool.detailUrl) + '" class="btn btn-secondary">View Details</a>';
+            }
+
+            var downloadHtml = '';
+            if (tool.zipUrl) {
+                downloadHtml = '<button class="btn btn-primary btn-download" data-download="' + escapeHtml(tool.zipUrl) + '">Download ZIP</button>';
+            }
+
+            card.innerHTML =
+                '<div class="tool-icon">' + (tool.icon || '&#128187;') + '</div>' +
+                '<h3>' + escapeHtml(tool.title) + '</h3>' +
+                '<p class="tool-desc">' + escapeHtml(tool.desc) + '</p>' +
+                featuresHtml +
+                '<div class="tool-actions">' +
+                viewDetailsHtml +
+                downloadHtml +
+                '</div>';
+
+            return card;
+        }
+
+        function escapeHtml(str) {
+            var div = document.createElement('div');
+            div.appendChild(document.createTextNode(str));
+            return div.innerHTML;
+        }
+    </script>
+    <script>
+        trackPageView('design-media');
+    </script>
+</body>
+</html>
