@@ -61,7 +61,7 @@
             <p>Describe your project requirements and we will get back to you within 24 hours with a detailed proposal and quote.</p>
 
             <div class="contact-form">
-                <form id="contactForm" onsubmit="handleContactSubmit(event)">
+                <form id="contactForm" action="/api/send-email" method="POST">
                     <div class="form-group">
                         <label for="name">Your Name *</label>
                         <input type="text" id="name" name="name" required placeholder="John Doe">
@@ -82,14 +82,15 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="message">Project Description *</label>
-                        <textarea id="message" name="message" required placeholder="Tell us about your project requirements, timeline, and budget..."></textarea>
+                        <label for="description">Project Description *</label>
+                        <textarea id="description" name="description" required placeholder="Tell us about your project requirements, timeline, and budget..."></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Inquiry</button>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;" id="submitBtn">Send Inquiry</button>
+                    <div id="formStatus" style="margin-top: 12px; text-align: center; display: none;"></div>
                 </form>
             </div>
 
-            <p style="text-align: center; margin-top: 24px;">Or email us directly at <a href="mailto:hello@yuanqizhike.com">hello@yuanqizhike.com</a></p>
+            <p style="text-align: center; margin-top: 24px;">Or email us directly at <a href="mailto:260330663@qq.com">260330663@qq.com</a></p>
         </div>
     </main>
 
@@ -107,11 +108,46 @@
 
     <script src="assets/js/main.js"></script>
     <script>
-        function handleContactSubmit(e) {
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
             e.preventDefault();
-            alert('Thank you for your inquiry! We will review your requirements and respond within 24 hours.');
-            document.getElementById('contactForm').reset();
-        }
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const formStatus = document.getElementById('formStatus');
+            const form = this;
+            
+            // 禁用按钮，防止重复提交
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            formStatus.style.display = 'block';
+            formStatus.style.color = '#666';
+            formStatus.textContent = 'Submitting...';
+            
+            try {
+                const formData = new FormData(form);
+                const response = await fetch('/api/send-email', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    formStatus.style.color = '#28a745';
+                    formStatus.textContent = 'Thank you for your inquiry! We will review your requirements and respond within 24 hours.';
+                    form.reset();
+                } else {
+                    formStatus.style.color = '#dc3545';
+                    formStatus.textContent = 'Submission failed. Please try again later.';
+                }
+            } catch (error) {
+                formStatus.style.color = '#dc3545';
+                formStatus.textContent = 'Submission failed. Please try again later.';
+                console.error('Form submission error:', error);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Inquiry';
+            }
+        });
     </script>
 </body>
 </html>

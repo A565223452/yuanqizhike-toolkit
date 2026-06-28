@@ -17,3 +17,6 @@ scripts/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Project backup (local use only, not for repository)
+backup/
