@@ -1,4 +1,16 @@
 export default async function onRequestPost({ request }) {
+  // 全局跨域头，解决请求拦截
+  const corsHeaders = {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type"
+  };
+
+  // 处理预检OPTIONS请求
+  if (request.method === "OPTIONS") {
+    return new Response(null, { headers: corsHeaders });
+  }
+
   try {
     // 接收前端表单提交的数据
     const formData = await request.formData();
@@ -31,17 +43,19 @@ ${projectDesc}
       })
     });
 
-    if (!mailRes.ok) throw new Error("邮件发送接口请求失败");
+    // 打印MailChannels返回错误信息
+    const mailResult = await mailRes.json();
+    if (!mailRes.ok) throw new Error(`发信接口报错：${JSON.stringify(mailResult)}`);
 
     // 提交成功反馈
     return new Response(JSON.stringify({ success: true, msg: "咨询提交成功，我们会24小时内联系你！" }), {
-      headers: { "Content-Type": "application/json" }
+      headers: { ...corsHeaders, "Content-Type": "application/json" }
     });
   } catch (error) {
-    console.error("表单提交报错：", error);
+    console.error("表单提交完整报错：", error);
     // 提交失败反馈（对应页面红色提示文字）
     return new Response(JSON.stringify({ success: false, msg: "Submission failed. Please try again later." }), {
-      headers: { "Content-Type": "application/json" }
+      headers: { ...corsHeaders, "Content-Type": "application/json" }
     });
   }
 }
