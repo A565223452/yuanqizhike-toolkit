@@ -288,11 +288,10 @@ img {
     color: var(--text-light);
     font-size: 0.95rem;
     margin-bottom: 16px;
-    flex-grow: 1;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 }
 

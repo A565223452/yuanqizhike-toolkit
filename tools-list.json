@@ -143,19 +143,5 @@
     ],
     "detailUrl": "tools/citation-generator/index.html",
     "zipUrl": "assets/zip-packages/education/citation-generator.zip"
-  },
-  {
-  "category": "Education & Research",
-  "icon": "assets/icons/education-3.svg",
-  "title": "Academic Citation Generator",
-  "desc": "Create citations in APA, MLA, Chicago, Harvard, IEEE, and AMA formats. Features 6 document types and history.",
-  "features": [
-    "6 Citation Styles",
-    "6 Document Types",
-    "Copy Citation",
-    "Save History"
-  ],
-  "detailUrl": "citation-generator/index.html",
-  "zipUrl": "assets/zip-packages/education/citation-generator.zip"
-}
+  }
 ]
