@@ -1,9 +1,9 @@
 [
   {
     "category": "Content & Writing",
-    "icon": "&#128218;",
+    "icon": "&#128221;",
     "title": "Offline Article Rewriter",
-    "desc": "...",
+    "desc": "Rewrite articles and check content similarity. Built-in synonym dictionary with 100+ word entries. All processing runs locally in your browser.",
     "detailUrl": "tools/article-rewrite/index.html",
     "zipUrl": "assets/zip-packages/writing/article-rewrite.zip"
   },

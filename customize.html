@@ -126,7 +126,7 @@
                 });
                 const resData = await resp.json();
                 
-                if (resData.code === 200) {
+                if (resData.success) {
                     formStatus.style.color = '#28a745';
                     formStatus.textContent = resData.msg || 'Thank you for your inquiry! We will respond within 24 hours.';
                     this.reset();
