@@ -15,5 +15,84 @@
     "features": ["Time Zone Conversion", "World Clock", "Time Difference Calculator"],
     "detailUrl": "tools/timezone-converter/index.html",
     "zipUrl": "assets/zip-packages/dev/timezone-converter.zip"
-  }
+  },
+  {
+  "category": "Developer Tools",
+  "icon": "assets/icons/dev-1.svg",
+  "title": "JSON Formatter / Validator",
+  "desc": "Format, validate, and beautify JSON data instantly in your browser. Features tree view, import/export, and one-click copy.",
+  "features": [
+    "Format JSON",
+    "Minify JSON",
+    "Tree View",
+    "Import File",
+    "Export File",
+    "Copy Node"
+  ],
+  "detailUrl": "json-formatter/index.html",
+  "zipUrl": "assets/zip-packages/dev/json-formatter.zip"
+},
+{
+  "category": "Developer Tools",
+  "icon": "assets/icons/dev-1.svg",
+  "title": "CSS Gradient Generator",
+  "desc": "Create beautiful linear, radial, and conic CSS gradients visually. Features multi-color stops, 12 presets, and one-click copy.",
+  "features": [
+    "Linear Gradient",
+    "Radial Gradient",
+    "Conic Gradient",
+    "Multi-Color Stops",
+    "12 Presets",
+    "Copy CSS Code"
+  ],
+  "detailUrl": "css-gradient-generator/index.html",
+  "zipUrl": "assets/zip-packages/dev/css-gradient-generator.zip"
+},
+{
+  "category": "Developer Tools",
+  "icon": "assets/icons/dev-1.svg",
+  "title": "Online Regex Tester",
+  "desc": "Test and validate regular expressions instantly. Features 6 quick templates (Email, URL, Phone, IP, Numbers, HTML Tags) and match statistics.",
+  "features": [
+    "Real-time Matching",
+    "Quick Templates",
+    "Match Statistics",
+    "Highlighted Matches",
+    "Error Handling"
+  ],
+  "detailUrl": "regex-tester/index.html",
+  "zipUrl": "assets/zip-packages/dev/regex-tester.zip"
+},
+{
+  "category": "Developer Tools",
+  "icon": "assets/icons/dev-1.svg",
+  "title": "Color Code Converter",
+  "desc": "Convert between HEX, RGB, and HSL color formats. Features palette generation, WCAG contrast checker, and CSS variable export.",
+  "features": [
+    "HEX to RGB",
+    "RGB to HSL",
+    "Palette Generator",
+    "WCAG Contrast Checker",
+    "Export CSS Variables"
+  ],
+  "detailUrl": "color-converter/index.html",
+  "zipUrl": "assets/zip-packages/dev/color-converter.zip"
+},
+{
+  "category": "Developer Tools",
+  "icon": "assets/icons/dev-1.svg",
+  "title": "Base64 / URL Encoder & Decoder",
+  "desc": "Encode and decode text using Base64 or URL encoding. Features JWT parser, batch processing, and hash generator (MD5, SHA-1, SHA-256, SHA-512).",
+  "features": [
+    "Base64 Encode",
+    "Base64 Decode",
+    "URL Encode",
+    "URL Decode",
+    "JWT Parser",
+    "Batch Processing",
+    "Hash Generator"
+  ],
+  "detailUrl": "base64-url-tool/index.html",
+  "zipUrl": "assets/zip-packages/dev/base64-url-tool.zip"
+}
 ]
