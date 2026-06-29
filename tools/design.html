@@ -176,8 +176,9 @@
                 iconPath = '../' + iconPath;
             }
             var iconHtml = '';
-            if (tool.icon && (tool.icon.indexOf('assets/') === 0 || tool.icon.indexOf('.svg') === tool.icon.length - 4)) {
-                iconHtml = '<img src="' + escapeHtml(iconPath) + '" alt="' + escapeHtml(tool.title) + '" onerror="this.outerHTML=\'\\uD83D\\uDCB7\'>';
+            var isSvgIcon = tool.icon && (tool.icon.indexOf('assets/') === 0 || tool.icon.indexOf('.svg') === tool.icon.length - 4);
+            if (isSvgIcon) {
+                iconHtml = '<img src="' + escapeHtml(iconPath) + '" alt="' + escapeHtml(tool.title) + '">';
             } else {
                 iconHtml = tool.icon || '&#128187;';
             }
@@ -191,6 +192,15 @@
                 viewDetailsHtml +
                 downloadHtml +
                 '</div>';
+
+            if (isSvgIcon) {
+                var img = card.querySelector('.tool-icon img');
+                if (img) {
+                    img.addEventListener('error', function() {
+                        this.outerHTML = '&#128183;';
+                    });
+                }
+            }
 
             return card;
         }
