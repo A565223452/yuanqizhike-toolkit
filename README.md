@@ -57,6 +57,4 @@ All source code tools are licensed under the YuanqiZhiKe Source License Agreemen
 
 ## Contact
 
-- General inquiries: hello@yuanqizhike.com
-- Licensing: license@260330663@qq.com
-- Privacy: privacy@yuanqizhike.com
+All inquiries: 260330663@qq.com
