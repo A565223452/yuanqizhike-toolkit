@@ -76,7 +76,7 @@
     "zipUrl": "/assets/zip-packages/design/image-converter.zip"
   },
   {
-    "category": "Business & Productivity",
+    "category": "SEO & Marketing",
     "icon": "assets/icons/business-34.svg",
     "title": "Amazon Keyword Miner",
     "desc": "Discover high-traffic Amazon keywords for SEO optimization. Analyze competitors and export data locally without server uploads.",
@@ -92,7 +92,7 @@
     "zipUrl": "/assets/zip-packages/business/amazon-keyword-miner.zip"
   },
   {
-    "category": "Business & Productivity",
+    "category": "Finance & Crypto",
     "icon": "assets/icons/business-1.svg",
     "title": "Budget Calculator",
     "desc": "Budget Calculator - a handy browser-based tool.",
@@ -104,7 +104,7 @@
     "zipUrl": "/assets/zip-packages/business/budget-calculator.zip"
   },
   {
-    "category": "Business & Productivity",
+    "category": "Finance & Crypto",
     "icon": "assets/icons/business-1.svg",
     "title": "Inventory Turnover Calculator",
     "desc": "Inventory Turnover Calculator - a handy browser-based tool.",
@@ -164,7 +164,7 @@
     "zipUrl": "/assets/zip-packages/business/shipping-cost-estimator.zip"
   },
   {
-    "category": "Business & Productivity",
+    "category": "SEO & Marketing",
     "icon": "assets/icons/business-3.svg",
     "title": "Amazon Title Optimizer",
     "desc": "Optimize Amazon product titles for better SEO, check character limits, and improve keyword placement for higher conversions.",
@@ -210,7 +210,7 @@
     "zipUrl": "/assets/zip-packages/business/csv-order-data-cleaner.zip"
   },
   {
-    "category": "Business & Productivity",
+    "category": "Finance & Crypto",
     "icon": "assets/icons/business-5.svg",
     "title": "Currency Converter",
     "desc": "Convert between 150+ currencies instantly with real-time exchange rates, historical data, and offline support.",
@@ -269,7 +269,7 @@
     "zipUrl": "/assets/zip-packages/business/sku-generator.zip"
   },
   {
-    "category": "Business & Productivity",
+    "category": "Finance & Crypto",
     "icon": "assets/icons/business-6.svg",
     "title": "Tariff Calculator",
     "desc": "Estimate import duties, taxes, and total landed costs for cross-border e-commerce shipments with country-specific rates.",
@@ -1409,7 +1409,7 @@
     "zipUrl": "/assets/zip-packages/business/pdf-split-merge.zip"
   },
   {
-    "category": "Business & Productivity",
+    "category": "SEO & Marketing",
     "icon": "assets/icons/business-7.svg",
     "title": "Backlink Spam Checker",
     "desc": "Analyze backlinks for spam signals and toxic links. Check domain reputation and link quality indicators to protect your SEO health.",

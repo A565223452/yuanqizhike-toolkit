@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Content & Writing - YuanqiZhiKe Toolkit</title>
-    <meta name="description" content="Offline text rewriting, article optimization tools, no network data upload, protect your content privacy.">
+    <title>SEO & Marketing - YuanqiZhiKe Toolkit</title>
+    <meta name="description" content="Free offline SEO and marketing tools. Keyword analyzers, meta tag generators, SERP previewers, and SEO optimizers that run locally.">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="stylesheet" href="../assets/css/style.css">
     <!-- Google AdSense -->
@@ -25,18 +25,14 @@
                     <div class="dropdown-menu">
                         <a href="../tools.html">All Tools</a>
                         <a href="dev.html">Developer Tools</a>
-                        <a href="writing.html" class="active">Content & Writing</a>
+                        <a href="writing.html">Content & Writing</a>
                         <a href="design.html">Design & Media</a>
                         <a href="business.html">Business & Productivity</a>
                         <a href="research.html">Education & Research</a>
-
                         <a href="health.html">Health & Fitness</a>
-
                         <a href="finance.html">Finance & Crypto</a>
-
-                        <a href="seo.html">SEO & Marketing</a>
-
-                        </div>
+                        <a href="seo.html" class="active">SEO & Marketing</a>
+                    </div>
                 </div>
                 <a href="../customize.html">Custom Dev</a>
             </nav>
@@ -47,18 +43,18 @@
     <!-- Tools Hero -->
     <section class="tool-hero">
         <div class="container">
-            <h1>Content & Writing</h1>
-            <p>Offline text rewriting, article optimization tools, no network data upload, protect your content privacy.</p>
+            <h1>SEO & Marketing</h1>
+            <p>Keyword analyzers, meta tag generators, SERP previewers, and SEO optimizers. All processing runs locally in your browser.</p>
         </div>
     </section>
 
     <!-- Tools Catalog -->
     <main class="page-content">
         <div class="container">
-            <!-- Category: Content & Writing -->
-            <div id="category-content" class="tool-category">
-                <h2 class="category-title">Content & Writing</h2>
-                <div class="tools-grid" data-category="Content & Writing">
+            <!-- Category: SEO & Marketing -->
+            <div id="category-seo" class="tool-category">
+                <h2 class="category-title">SEO & Marketing</h2>
+                <div class="tools-grid" data-category="SEO & Marketing">
                     <!-- Tools will be dynamically rendered here from tools-list.json -->
                 </div>
             </div>
@@ -126,10 +122,10 @@
         });
 
         function renderTools(tools) {
-            var container = document.getElementById('category-content');
+            var container = document.getElementById('category-seo');
             if (!container) return;
 
-            var categoryName = 'Content & Writing';
+            var categoryName = 'SEO & Marketing';
             var toolsGrid = container.querySelector('.tools-grid');
             if (!toolsGrid) return;
 
@@ -144,7 +140,7 @@
 
             if (categoryTools.length === 0) {
                 toolsGrid.innerHTML = '<div class="tool-card coming-soon">' +
-                    '<div class="tool-icon">&#128736;</div>' +
+                    '<div class="tool-icon">&#128202;</div>' +
                     '<h3>Coming Soon</h3>' +
                     '<p class="tool-desc">Tools in this category are currently under development.</p>' +
                     '<div class="tool-actions">' +
@@ -171,7 +167,7 @@
 
             var viewDetailsHtml = '';
             if (tool.detailUrl) {
-                viewDetailsHtml = '<a href="' + escapeHtml(tool.detailUrl) + '" class="btn btn-view-details">View Details</a>';
+                viewDetailsHtml = '<a href="../' + escapeHtml(tool.detailUrl) + '" class="btn btn-view-details">View Details</a>';
             }
 
             var downloadHtml = '';
@@ -179,8 +175,6 @@
                 downloadHtml = '<button class="btn btn-download-zip btn-download" data-download="' + escapeHtml(tool.zipUrl) + '">Download ZIP</button>';
             }
 
-            // Determine if icon is an SVG path (starts with 'assets/' or ends with '.svg')
-            // Adjust path for sub-pages (tools/*.html)
             var iconPath = tool.icon;
             if (iconPath && (iconPath.indexOf('assets/') === 0 || iconPath.indexOf('.svg') === iconPath.length - 4)) {
                 iconPath = '../' + iconPath;
@@ -222,7 +216,7 @@
         }
     </script>
     <script>
-        trackPageView('content-writing');
+        trackPageView('seo-marketing');
     </script>
 </body>
 </html>
