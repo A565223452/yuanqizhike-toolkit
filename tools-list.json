@@ -1885,5 +1885,315 @@
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/roman-numeral-converter.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-11.svg",
+    "title": "Auto Loan Calculator",
+    "desc": "Calculate monthly car payments, total interest, and loan costs instantly. Includes down payment, trade-in value, and sales tax for accurate auto financing estimates.",
+    "features": [
+      "Monthly payment calculation",
+      "Includes trade-in value",
+      "Sales tax computation",
+      "Detailed cost breakdown"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/finance/auto-loan-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-1.svg",
+    "title": "Compound Interest Calculator",
+    "desc": "Calculate compound interest and visualize investment growth over time. Supports regular contributions, multiple compounding frequencies, and detailed amortization tables for smarter financial planning.",
+    "features": [
+      "Calculate compound interest",
+      "Support regular contributions",
+      "Multiple compounding frequencies",
+      "Visual growth chart",
+      "Detailed yearly breakdown"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/finance/compound-interest-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-2.svg",
+    "title": "Credit Card Payoff Calculator",
+    "desc": "Compare snowball versus avalanche debt repayment strategies to minimize interest costs. Enter balances and rates to calculate payoff timelines and savings for multiple credit cards.",
+    "features": [
+      "Snowball vs avalanche comparison",
+      "Multiple card support",
+      "Interest savings analysis",
+      "Custom monthly budget input"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/finance/credit-card-payoff-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-3.svg",
+    "title": "Crypto Profit Calculator",
+    "desc": "Calculate cryptocurrency trading profits, ROI, and net gains after fees. Instantly analyze buy and sell prices for BTC, ETH, and other digital assets with detailed breakdowns.",
+    "features": [
+      "Instant profit calculation",
+      "ROI percentage display",
+      "Fee deduction support",
+      "Buy and sell analysis"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/finance/crypto-profit-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-4.svg",
+    "title": "Mortgage Calculator",
+    "desc": "Calculate monthly mortgage payments, total interest, and amortization schedules instantly. Free online tool for home loans with detailed breakdowns and responsive design.",
+    "features": [
+      "Monthly payment calculation",
+      "Amortization schedule generation",
+      "Total interest computation",
+      "Dark mode support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/finance/mortgage-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-5.svg",
+    "title": "Retirement Savings Calculator",
+    "desc": "Plan your financial future with this comprehensive retirement calculator. Estimate your nest egg, safe monthly withdrawals using the 4% rule, and adjust for inflation.",
+    "features": [
+      "Nest egg projection",
+      "4% rule withdrawal",
+      "Inflation adjustment",
+      "Monthly savings planner"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/finance/retirement-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-6.svg",
+    "title": "ROI Calculator",
+    "desc": "Calculate Return on Investment and annualized CAGR instantly. Enter initial cost and final value to determine profit, loss, and yearly growth rates for smarter financial decisions.",
+    "features": [
+      "Instant ROI calculation",
+      "CAGR computation",
+      "Profit and loss display",
+      "Supports years and months"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/finance/roi-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-7.svg",
+    "title": "US Federal Income Tax Calculator",
+    "desc": "Estimate your 2024 US federal income tax instantly. Calculate taxable income, effective rates, and marginal brackets for single, married, or head of household filers with detailed breakdowns.",
+    "features": [
+      "2024 tax bracket calculation",
+      "Effective and marginal rates",
+      "Itemized deduction support",
+      "Detailed tax breakdown table"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/finance/tax-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-2.svg",
+    "title": "BMI Calculator",
+    "desc": "Calculate your Body Mass Index instantly with our free online BMI calculator. Supports metric and imperial units to determine your weight category and healthy range.",
+    "features": [
+      "Instant BMI calculation",
+      "Metric and imperial units",
+      "Healthy weight range",
+      "Weight category indicator"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/bmi-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Body Fat Calculator",
+    "desc": "Estimate your body fat percentage using the US Navy method. Enter height, neck, waist, and hip measurements to get instant results and fitness categories.",
+    "features": [
+      "US Navy method calculation",
+      "Instant body fat percentage",
+      "Fitness level categorization",
+      "Supports male and female"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/body-fat-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-3.svg",
+    "title": "Calorie Calculator",
+    "desc": "Calculate your daily calorie needs (TDEE) and BMR using the Mifflin-St Jeor formula. Get personalized targets for weight loss, maintenance, or muscle gain based on your activity level.",
+    "features": [
+      "TDEE and BMR calculation",
+      "Mifflin-St Jeor formula",
+      "Weight loss targets",
+      "Muscle gain recommendations",
+      "Dark mode support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/calorie-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-4.svg",
+    "title": "Heart Rate Zone Calculator",
+    "desc": "Calculate 5 personalized heart rate training zones using the Karvonen formula or standard max heart rate method. Optimize your cardio workouts with precise target ranges for fat burn, endurance, and VO2 max.",
+    "features": [
+      "Karvonen formula support",
+      "5 distinct training zones",
+      "Fat burn to VO2 max",
+      "Instant bpm calculations"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/heart-rate-zone-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-5.svg",
+    "title": "Ideal Weight Calculator",
+    "desc": "Calculate your ideal body weight using four proven formulas: Devine, Robinson, Miller, and Hamwi. Get instant results in kilograms and pounds alongside a healthy BMI range for comprehensive health insights.",
+    "features": [
+      "Four scientific formulas",
+      "Kilogram and pound output",
+      "Healthy BMI range display",
+      "Dark mode support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/ideal-weight-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-6.svg",
+    "title": "Macro Calculator",
+    "desc": "Calculate your daily macronutrient needs for protein, carbs, and fat based on calorie targets. Supports balanced, low-carb, keto, and high-protein diets with instant results.",
+    "features": [
+      "Daily macro calculation",
+      "Keto and low-carb support",
+      "Multiple diet presets",
+      "Instant gram conversion"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/macro-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-7.svg",
+    "title": "Running Pace Calculator",
+    "desc": "Calculate running pace, time, or distance instantly. Supports 5K, 10K, half marathon, and marathon distances with metric and imperial unit conversions for runners.",
+    "features": [
+      "Calculate pace from time and distance",
+      "Compute total run time or distance",
+      "Supports 5K to marathon distances",
+      "Converts km and miles automatically"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/pace-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-8.svg",
+    "title": "Water Intake Calculator",
+    "desc": "Calculate your ideal daily water intake based on weight, exercise, and climate. Get personalized hydration goals in liters and cups to stay healthy and energized.",
+    "features": [
+      "Personalized hydration goals",
+      "Exercise and climate factors",
+      "Liters and cups output",
+      "Instant daily calculation"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/water-intake-calculator.zip"
+  },
+  {
+    "category": "SEO & Marketing",
+    "icon": "/assets/icons/seo-2.svg",
+    "title": "Keyword Density Checker",
+    "desc": "Analyze keyword density and frequency in your content for better SEO optimization. Identify over-optimized keywords and improve your search engine rankings.",
+    "features": [
+      "Real-time density analysis",
+      "Top keywords highlighted",
+      "SEO optimization tips",
+      "Word frequency count"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/keyword-density-checker.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-8.svg",
+    "title": "Meta Tag Generator",
+    "desc": "Meta Tag Generator - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/meta-tag-generator.zip"
+  },
+  {
+    "category": "SEO & Marketing",
+    "icon": "/assets/icons/seo-4.svg",
+    "title": "Open Graph Generator",
+    "desc": "Generate optimized Open Graph meta tags for Facebook, LinkedIn, and Twitter. Preview social share cards instantly and ensure your links look perfect on all platforms.",
+    "features": [
+      "Social media preview",
+      "Auto-generate OG tags",
+      "Multi-platform support",
+      "Image dimension tips"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/open-graph-generator.zip"
+  },
+  {
+    "category": "SEO & Marketing",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "Robots.txt Generator",
+    "desc": "Create valid robots.txt files to control search engine crawlers. Define allow and disallow rules, set crawl delays, and link your sitemap for better SEO.",
+    "features": [
+      "Custom allow and disallow rules",
+      "Set crawl delay settings",
+      "Add sitemap URL references",
+      "Instant preview and copy"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/robots-txt-generator.zip"
+  },
+  {
+    "category": "SEO & Marketing",
+    "icon": "/assets/icons/seo-3.svg",
+    "title": "Schema Markup Generator",
+    "desc": "Generate valid JSON-LD schema markup for Articles, Products, FAQs, Local Businesses, and Persons. Boost SEO with structured data and enhance Google Rich Results visibility effortlessly.",
+    "features": [
+      "JSON-LD generation",
+      "Multiple schema types",
+      "Rich results ready",
+      "Easy copy output"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/schema-markup-generator.zip"
+  },
+  {
+    "category": "SEO & Marketing",
+    "icon": "/assets/icons/seo-5.svg",
+    "title": "SERP Snippet Preview",
+    "desc": "Preview how your website appears in Google search results. Test title length, meta description truncation, and URL display for both desktop and mobile views to optimize click-through rates.",
+    "features": [
+      "Real-time SERP preview",
+      "Desktop and mobile views",
+      "Title length checker",
+      "Meta description analyzer",
+      "Visual truncation indicators",
+      "Optimization tips included"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/serp-snippet-preview.zip"
   }
 ]
