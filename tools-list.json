@@ -16,15 +16,6 @@
   {
     "category": "Developer Tools",
     "icon": "assets/icons/dev-1.svg",
-    "title": "Timezone Converter",
-    "desc": "Convert time between different time zones worldwide",
-    "features": ["Time Zone Conversion", "World Clock", "Time Difference Calculator"],
-    "detailUrl": "tools/timezone-converter/index.html",
-    "zipUrl": "assets/zip-packages/dev/timezone-converter.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-1.svg",
     "title": "JSON Formatter / Validator",
     "desc": "Format, validate, and beautify JSON data instantly in your browser. Features tree view, import/export, and one-click copy.",
     "features": [
@@ -37,37 +28,6 @@
     ],
     "detailUrl": "tools/json-formatter/index.html",
     "zipUrl": "assets/zip-packages/dev/json-formatter.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-1.svg",
-    "title": "CSS Gradient Generator",
-    "desc": "Create beautiful linear, radial, and conic CSS gradients visually. Features multi-color stops, 12 presets, and one-click copy.",
-    "features": [
-      "Linear Gradient",
-      "Radial Gradient",
-      "Conic Gradient",
-      "Multi-Color Stops",
-      "12 Presets",
-      "Copy CSS Code"
-    ],
-    "detailUrl": "tools/css-gradient-generator/index.html",
-    "zipUrl": "assets/zip-packages/dev/css-gradient-generator.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-1.svg",
-    "title": "Online Regex Tester",
-    "desc": "Test and validate regular expressions instantly. Features 6 quick templates (Email, URL, Phone, IP, Numbers, HTML Tags) and match statistics.",
-    "features": [
-      "Real-time Matching",
-      "Quick Templates",
-      "Match Statistics",
-      "Highlighted Matches",
-      "Error Handling"
-    ],
-    "detailUrl": "tools/regex-tester/index.html",
-    "zipUrl": "assets/zip-packages/dev/regex-tester.zip"
   },
   {
     "category": "Developer Tools",
@@ -117,31 +77,1718 @@
   },
   {
     "category": "Business & Productivity",
-    "icon": "assets/icons/business-1.svg",
-    "title": "CSV Order Data Cleaner",
-    "desc": "Clean, deduplicate, and prepare CSV order data. Features multiple cleaning options and table preview.",
+    "icon": "assets/icons/business-34.svg",
+    "title": "Amazon Keyword Miner",
+    "desc": "Discover high-traffic Amazon keywords for SEO optimization. Analyze competitors and export data locally without server uploads.",
     "features": [
-      "Remove Duplicates",
-      "Clean Empty Rows",
-      "Trim Spaces",
-      "Table Preview",
-      "Statistics"
+      "Mine High-Traffic Keywords",
+      "Analyze Competitor Data",
+      "Estimate Search Volume",
+      "Export Keyword Lists",
+      "Filter By Relevance",
+      "100% Private Local Processing"
     ],
-    "detailUrl": "tools/csv-cleaner/index.html",
-    "zipUrl": "assets/zip-packages/business/csv-cleaner.zip"
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/business/amazon-keyword-miner.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-1.svg",
+    "title": "Budget Calculator",
+    "desc": "Budget Calculator - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/business/budget-calculator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-1.svg",
+    "title": "Inventory Turnover Calculator",
+    "desc": "Inventory Turnover Calculator - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/business/inventory-turnover-calculator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-33.svg",
+    "title": "Invoice Generator",
+    "desc": "Create professional invoices with auto-calculated taxes, customizable templates, and instant PDF export for freelancers and small businesses.",
+    "features": [
+      "Auto Tax Calculation",
+      "PDF Export",
+      "Custom Templates",
+      "Client Management",
+      "Professional Layout",
+      "Local Privacy"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/business/invoice-generator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-2.svg",
+    "title": "Quotation Generator",
+    "desc": "Create professional trade quotations with itemized pricing, tax calculations, and instant PDF export for seamless business transactions.",
+    "features": [
+      "Itemized Pricing",
+      "Tax Calculation",
+      "PDF Export",
+      "Discount Support",
+      "Terms Management",
+      "Client Details"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/business/quotation-generator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-50.svg",
+    "title": "Shipping Cost Estimator",
+    "desc": "Calculate domestic and international shipping costs instantly. Compare carrier rates based on weight, dimensions, and destination zones.",
+    "features": [
+      "Estimate Shipping Costs",
+      "Compare Carrier Rates",
+      "Dimension Calculator",
+      "Insurance Options",
+      "Domestic & International",
+      "Privacy Focused"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/business/shipping-cost-estimator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-3.svg",
+    "title": "Amazon Title Optimizer",
+    "desc": "Optimize Amazon product titles for better SEO, check character limits, and improve keyword placement for higher conversions.",
+    "features": [
+      "SEO Optimization",
+      "Character Limit Check",
+      "Keyword Placement",
+      "Readability Analysis",
+      "A/B Testing Support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/business/amazon-title-optimizer.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-16.svg",
+    "title": "Batch File Renamer",
+    "desc": "Rename multiple files instantly with prefixes, suffixes, numbering, and regex patterns directly in your browser.",
+    "features": [
+      "Add Prefixes And Suffixes",
+      "Sequential Numbering",
+      "Find And Replace Text",
+      "Regex Pattern Support",
+      "Real-time Preview",
+      "Local Browser Processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/business/batch-file-renamer.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-4.svg",
+    "title": "CSV Order Data Cleaner",
+    "desc": "Browser-based tool to clean, deduplicate, and prepare CSV order data for e-commerce platforms with local privacy.",
+    "features": [
+      "Deduplicate Rows",
+      "Remove Empty Entries",
+      "Trim Whitespace",
+      "Local Data Privacy",
+      "One-Click Export"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/business/csv-order-data-cleaner.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-5.svg",
+    "title": "Currency Converter",
+    "desc": "Convert between 150+ currencies instantly with real-time exchange rates, historical data, and offline support.",
+    "features": [
+      "Real-time Rates",
+      "150+ Currencies",
+      "Historical Data",
+      "Offline Support",
+      "Batch Conversion",
+      "Currency Charts"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/business/currency-converter.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-18.svg",
+    "title": "EAN Barcode Generator",
+    "desc": "Generate EAN-13, UPC-A, and ISBN barcodes in bulk locally. Validate checksums and export high-quality PNG images instantly.",
+    "features": [
+      "Batch Generation",
+      "Checksum Validation",
+      "Custom Dimensions",
+      "Local Processing",
+      "PNG Export",
+      "ISBN Support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/business/ean-barcode-generator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-20.svg",
+    "title": "Random Name Picker",
+    "desc": "Select random winners, shuffle teams, or draw lots from a list locally without uploads. Supports weighted selection and export.",
+    "features": [
+      "Pick Random Winners",
+      "Shuffle Teams",
+      "Weighted Selection",
+      "No Data Upload",
+      "Export Results"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/business/random-name-picker.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-1.svg",
+    "title": "Sku Generator",
+    "desc": "Sku Generator - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/business/sku-generator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-6.svg",
+    "title": "Tariff Calculator",
+    "desc": "Estimate import duties, taxes, and total landed costs for cross-border e-commerce shipments with country-specific rates.",
+    "features": [
+      "Calculate Import Duties",
+      "Estimate Landed Costs",
+      "HS Code Lookup",
+      "Country-Specific Rates",
+      "Trade Agreement Checks",
+      "Multi-Item Shipments"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/business/tariff-calculator.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "assets/icons/content-1.svg",
+    "title": "Article Rewriter & Similarity Checker",
+    "desc": "Rewrite articles using synonym substitution and check content similarity locally. Ensures privacy with zero server uploads.",
+    "features": [
+      "Synonym-Based Rewriting",
+      "Similarity Percentage Check",
+      "Offline Local Processing",
+      "One-Click Copy Result",
+      "No Data Server Upload"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/writing/article-rewriter-similarity-checker.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "assets/icons/content-21.svg",
+    "title": "Text Case Converter",
+    "desc": "Instantly convert text between multiple casing formats including camelCase, snake_case, kebab-case, and more. Fast, private, and runs entirely in your browser.",
+    "features": [
+      "Batch Convert",
+      "Multiple Formats",
+      "Local Processing",
+      "One-Click Copy",
+      "Dark Mode Support",
+      "Privacy Focused"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/writing/text-case-converter.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "assets/icons/content-1.svg",
+    "title": "Email Extractor",
+    "desc": "Email Extractor - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/writing/email-extractor.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-15.svg",
+    "title": "Encoding Fixer",
+    "desc": "Detect and repair garbled text from incorrect character encodings. Supports UTF-8, Latin-1, and Windows-1252 conversion directly in your browser.",
+    "features": [
+      "Fix Mojibake",
+      "Convert Encodings",
+      "Batch Processing",
+      "BOM Handling",
+      "Local Privacy"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/encoding-fixer.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "assets/icons/content-1.svg",
+    "title": "Line Sorter",
+    "desc": "Line Sorter - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/writing/line-sorter.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "assets/icons/content-2.svg",
+    "title": "Text Deduplication Tool",
+    "desc": "Remove duplicate lines from text instantly. Supports case-sensitive and fuzzy matching, comparison, and unique extraction locally.",
+    "features": [
+      "Remove Duplicate Lines",
+      "Fuzzy Matching Support",
+      "Compare Two Lists",
+      "Extract Unique Values",
+      "Case-Sensitive Options",
+      "Local Privacy Protection"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/writing/text-deduplication-tool.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "assets/icons/content-1.svg",
+    "title": "Whitespace Cleaner",
+    "desc": "Whitespace Cleaner - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/writing/whitespace-cleaner.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "assets/icons/content-37.svg",
+    "title": "Word Counter",
+    "desc": "Count words, characters, sentences, and reading time instantly with real-time frequency analysis and local privacy.",
+    "features": [
+      "Word Count",
+      "Character Count",
+      "Reading Time",
+      "Sentence Count",
+      "Word Frequency",
+      "Local Processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/writing/word-counter.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "assets/icons/content-11.svg",
+    "title": "Word Frequency Analyzer",
+    "desc": "Analyze text to find word frequencies, unique counts, and keyword density. Perfect for SEO, linguistics, and content strategy optimization.",
+    "features": [
+      "Count Word Frequencies",
+      "Filter Stop Words",
+      "Export CSV or JSON",
+      "Visualize Top Keywords",
+      "Detect Unique Words",
+      "Local Browser Processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/writing/word-frequency-analyzer.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-17.svg",
+    "title": "Aes Encryptor",
+    "desc": "Securely encrypt and decrypt text or files using AES-GCM locally in your browser with no server uploads.",
+    "features": [
+      "AES-256 Encryption",
+      "Local Browser Processing",
+      "Password-Based Security",
+      "Supports Text And Files",
+      "Offline Capable",
+      "GCM Mode Support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/aes-encryptor.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-28.svg",
+    "title": "Api Mock Data Generator",
+    "desc": "Generate realistic fake JSON data locally for API testing and prototyping without uploading sensitive information.",
+    "features": [
+      "Local JSON Generation",
+      "Custom Schema Support",
+      "Faker Integration",
+      "Privacy Focused",
+      "No Server Upload"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/api-mock-data-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-2.svg",
+    "title": "API Request Tester",
+    "desc": "Test REST APIs with custom headers, body, and params. Supports GET, POST, PUT, DELETE. View response status, headers, and body.",
+    "features": [
+      "Send HTTP Requests",
+      "Custom Headers Support",
+      "Request Body Editing",
+      "Response Inspection",
+      "Client-Side Processing",
+      "History Tracking"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/api-request-tester.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-36.svg",
+    "title": "Number Base Converter",
+    "desc": "Convert numbers between binary, octal, decimal, hex, and custom bases instantly with local processing and no data upload.",
+    "features": [
+      "Binary Octal Hex Conversion",
+      "Custom Base Support",
+      "IEEE 754 Float Handling",
+      "Two's Complement Calculation",
+      "Batch Conversion Mode",
+      "Local Privacy Protection"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/number-base-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-3.svg",
+    "title": "Batch Base64 Encoder",
+    "desc": "Encode or decode multiple files and strings simultaneously with local privacy, URL-safe options, and drag-and-drop support.",
+    "features": [
+      "Batch Encoding",
+      "Batch Decoding",
+      "Drag & Drop Files",
+      "URL-Safe Mode",
+      "Local Processing",
+      "MIME Detection"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/batch-base64-encoder.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-4.svg",
+    "title": "Base64 Url Jwt Tool",
+    "desc": "Encode and decode Base64 and URL data, parse JWTs, and generate cryptographic hashes securely in your browser.",
+    "features": [
+      "Base64 Encode Decode",
+      "URL Encode Decode",
+      "JWT Token Parser",
+      "Batch Processing Support",
+      "Hash Generator MD5 SHA",
+      "Client Side Privacy"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/base64-url-jwt-tool.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-11.svg",
+    "title": "Byte Unit Converter",
+    "desc": "Instantly convert digital storage sizes between bits, bytes, KB, MB, GB, TB, and PB with local privacy and precision control.",
+    "features": [
+      "Convert Storage Units",
+      "Binary vs Decimal",
+      "Bit/Byte Toggle",
+      "Copy Results Instantly",
+      "Adjust Precision",
+      "Private Local Processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/byte-unit-converter.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "assets/icons/design-3.svg",
+    "title": "Color Converter",
+    "desc": "Instantly convert between HEX, RGB, and HSL formats. Includes palette generation and WCAG contrast checking for accessible design.",
+    "features": [
+      "HEX RGB HSL Conversion",
+      "Visual Color Picker",
+      "Palette Generator",
+      "WCAG Contrast Checker",
+      "One-Click Copy",
+      "Export CSS Variables"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/design/color-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-34.svg",
+    "title": "Command Line Cheat Sheet",
+    "desc": "Search over 500 Linux, macOS, and Windows terminal commands with fuzzy search and instant copy functionality.",
+    "features": [
+      "Fuzzy Search Commands",
+      "Multi-OS Support",
+      "One-Click Copy",
+      "Offline Access",
+      "Category Filtering",
+      "Privacy Focused"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/command-line-cheat-sheet.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-31.svg",
+    "title": "Cron Expression Parser",
+    "desc": "Parse and validate cron expressions instantly. Visualize next run times, generate human-readable descriptions, and build schedules with timezone support.",
+    "features": [
+      "Parse Cron Expressions",
+      "Validate Syntax",
+      "Next Run Times",
+      "Human-Readable Output",
+      "Timezone Support",
+      "Interactive Builder"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/cron-expression-parser.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-5.svg",
+    "title": "Crud Code Template Generator",
+    "desc": "Instantly generate boilerplate CRUD code for REST APIs across multiple languages and frameworks directly in your browser.",
+    "features": [
+      "Multi-language Support",
+      "REST API Generation",
+      "Custom Templates",
+      "Local Processing",
+      "Validation Rules",
+      "Auth Integration"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/crud-code-template-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-6.svg",
+    "title": "Css Formatter",
+    "desc": "Css Formatter - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/css-formatter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-19.svg",
+    "title": "Duplicate File Comparator",
+    "desc": "Compare two lists of filenames to instantly identify duplicates, resolve sync conflicts, and clean up redundant data efficiently.",
+    "features": [
+      "Compare Filename Lists",
+      "Detect Sync Conflicts",
+      "Identify Redundant Files",
+      "Clean Up Duplicates",
+      "Export Comparison Report"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/duplicate-file-comparator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-29.svg",
+    "title": "Excel To Json Converter",
+    "desc": "Convert Excel XLSX and CSV files to structured JSON locally. Supports sheet selection, header mapping, nested objects, and type inference.",
+    "features": [
+      "Convert XLSX And CSV",
+      "Local Browser Processing",
+      "Sheet Selection Support",
+      "Header Mapping Options",
+      "Nested Object Creation",
+      "Automatic Type Inference"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/excel-to-json-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-7.svg",
+    "title": "Spreadsheet Formula Converter",
+    "desc": "Convert Excel and Google Sheets formulas into JavaScript, Python, or SQL code instantly with local privacy.",
+    "features": [
+      "Excel To Code",
+      "Python Conversion",
+      "SQL Translation",
+      "JavaScript Output",
+      "Cell Reference Resolution",
+      "Batch Processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/spreadsheet-formula-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-8.svg",
+    "title": "Gitignore Generator",
+    "desc": "Gitignore Generator - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/gitignore-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-9.svg",
+    "title": "Hash Generator",
+    "desc": "Generate MD5, SHA-1, SHA-256, and SHA-512 hashes locally. Supports text, files, HMAC, and batch processing with zero data upload.",
+    "features": [
+      "Local Processing",
+      "HMAC Support",
+      "Batch Hashing",
+      "File Integrity",
+      "Secure Generation"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/hash-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-10.svg",
+    "title": "Hex To Text Converter",
+    "desc": "Instantly convert between hexadecimal and text formats. Supports UTF-8, ASCII, byte arrays, and file dumps for efficient debugging.",
+    "features": [
+      "Hex To Text Conversion",
+      "Text To Hex Encoding",
+      "UTF-8 And ASCII Support",
+      "Byte Array Output",
+      "File Hex Dump Analysis",
+      "Endianness Toggle"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/hex-to-text-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-12.svg",
+    "title": "Htaccess Generator",
+    "desc": "Visually generate Apache .htaccess configurations including redirects, security headers, caching rules, and password protection directly in your browser.",
+    "features": [
+      "Generate Redirects",
+      "Add Security Headers",
+      "Configure Caching Rules",
+      "Set Password Protection",
+      "Block Bots And IPs",
+      "Custom Error Pages"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/htaccess-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-13.svg",
+    "title": "JavaScript Minifier",
+    "desc": "Instantly minify ES6+ JavaScript code locally in your browser. Reduce file size by removing comments, whitespace, and dead code with source map support.",
+    "features": [
+      "Minify ES6+ Code",
+      "Remove Comments And Whitespace",
+      "Variable Renaming",
+      "Dead Code Removal",
+      "Source Map Support",
+      "Local Browser Processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/javascript-minifier.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-14.svg",
+    "title": "JSON Field Cleaner",
+    "desc": "Clean and sanitize JSON data locally. Deduplicate keys, remove null values, and flatten objects without uploading files.",
+    "features": [
+      "Deduplicate Keys",
+      "Remove Null Values",
+      "Flatten Objects",
+      "Local Processing",
+      "Schema Validation",
+      "Fix Trailing Commas"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/json-field-cleaner.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-16.svg",
+    "title": "Json Format Converter",
+    "desc": "Convert JSON to CSV, XML, YAML, and TSV instantly. Secure, local processing with customizable options for developers.",
+    "features": [
+      "Convert JSON To CSV",
+      "Export To XML Format",
+      "Generate YAML Output",
+      "Local Browser Processing",
+      "Custom Delimiter Support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/json-format-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-18.svg",
+    "title": "Json Data Masker",
+    "desc": "Securely mask sensitive PII fields in JSON data locally. Preserves structure while replacing passwords, emails, and keys with asterisks or fake values.",
+    "features": [
+      "Mask Sensitive PII",
+      "Preserve JSON Structure",
+      "Local Browser Processing",
+      "Custom Masking Rules",
+      "Faker Integration",
+      "Regex Pattern Support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/json-data-masker.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-20.svg",
+    "title": "Json File Splitter",
+    "desc": "Effortlessly split large JSON arrays into manageable chunks directly in your browser. Ensures valid JSON output while keeping your data private and secure.",
+    "features": [
+      "Stream Processing",
+      "Memory Efficient",
+      "Valid JSON Output",
+      "Custom Chunk Naming",
+      "Local Data Privacy",
+      "Merge Back Support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/json-file-splitter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-21.svg",
+    "title": "JSON Formatter & Validator",
+    "desc": "Instantly format, minify, and validate JSON code with an interactive tree view and local privacy protection.",
+    "features": [
+      "Format JSON",
+      "Minify Code",
+      "Validate Syntax",
+      "Interactive Tree View",
+      "Local Privacy"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/json-formatter-validator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-22.svg",
+    "title": "JSON Minifier",
+    "desc": "Compress JSON by stripping whitespace and comments locally. Validate syntax, benchmark size reduction, and optimize payloads without uploading data.",
+    "features": [
+      "Minify JSON",
+      "Remove Whitespace",
+      "Validate Syntax",
+      "Benchmark Compression",
+      "Local Processing",
+      "Strip Comments"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/json-minifier.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-23.svg",
+    "title": "Json Path Extractor",
+    "desc": "Extract specific data from JSON structures using powerful JSONPath expressions directly in your browser.",
+    "features": [
+      "Query JSON Data",
+      "Support Multiple Queries",
+      "Export As JSON Or CSV",
+      "Local Browser Processing",
+      "Syntax Validation"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/json-path-extractor.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-24.svg",
+    "title": "JSON Key Sorter",
+    "desc": "Sort JSON object keys alphabetically with deep nesting support. Ensures consistent data structure for diffing, canonicalization, and API testing locally.",
+    "features": [
+      "Deep Key Sorting",
+      "Alphabetical Order",
+      "Local Processing",
+      "Canonical JSON",
+      "Nested Support",
+      "Privacy Focused"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/json-key-sorter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-47.svg",
+    "title": "Batch JSON Validator",
+    "desc": "Validate multiple JSON documents locally with syntax checks, schema support, and detailed error reporting for developers.",
+    "features": [
+      "Batch Validation",
+      "Syntax Checking",
+      "Schema Support",
+      "Local Processing",
+      "Error Reporting",
+      "Dark Mode"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/batch-json-validator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-25.svg",
+    "title": "Jwt Token Decoder",
+    "desc": "Instantly decode, verify, and inspect JWT tokens locally in your browser. Supports header, payload, signature validation, and expiration checks.",
+    "features": [
+      "Decode Header And Payload",
+      "Verify Signature",
+      "Check Expiration",
+      "Local Browser Processing",
+      "Copy Claims Data",
+      "JWKS Support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/jwt-token-decoder.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-27.svg",
+    "title": "Log File Formatter",
+    "desc": "Parse, format, and filter messy log files directly in your browser with local privacy and regex extraction.",
+    "features": [
+      "Parse Structured Logs",
+      "Filter By Level",
+      "Regex Extraction",
+      "Local Privacy",
+      "Export Cleaned Logs"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/log-file-formatter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-26.svg",
+    "title": "Mock Data Generator",
+    "desc": "Generate realistic test data for APIs and databases with customizable schemas, supporting JSON, CSV, and SQL exports directly in your browser.",
+    "features": [
+      "Realistic Test Data",
+      "Customizable Schemas",
+      "Multiple Export Formats",
+      "50+ Data Types",
+      "Relational Data Support",
+      "100% Private Processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/mock-data-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-30.svg",
+    "title": "Secure Batch Password Generator",
+    "desc": "Generate cryptographically secure passwords locally with customizable length, charset, and bulk options.",
+    "features": [
+      "Cryptographically Secure",
+      "Bulk Generation",
+      "Custom Charset",
+      "Local Processing",
+      "Strength Meter",
+      "Offline Ready"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/secure-batch-password-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-32.svg",
+    "title": "Password Strength Analyzer",
+    "desc": "Analyze password security locally with zxcvbn scoring, crack time estimates, and entropy visualization without uploading data.",
+    "features": [
+      "Local zxcvbn Scoring",
+      "Crack Time Estimate",
+      "Entropy Visualization",
+      "Pattern Detection",
+      "Privacy Focused Analysis",
+      "Improvement Tips"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/password-strength-analyzer.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-33.svg",
+    "title": "QR Code Generator",
+    "desc": "Create QR codes for URLs, text, and contacts locally. Supports custom colors, error correction, and PNG or SVG export.",
+    "features": [
+      "Text and URL Encoding",
+      "vCard Support",
+      "Custom Color Options",
+      "Error Correction Levels",
+      "PNG and SVG Export",
+      "Batch Generation"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/qr-code-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-35.svg",
+    "title": "Random Port Generator",
+    "desc": "Generate random network ports locally in your browser. Supports range filtering, batch creation, and conflict detection for developers.",
+    "features": [
+      "Batch Port Generation",
+      "Range Filtering",
+      "Conflict Detection",
+      "Local Privacy",
+      "Ephemeral Port Support",
+      "One-Click Copy"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/random-port-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-37.svg",
+    "title": "Regex Tester",
+    "desc": "Test regular expressions in real-time with instant match highlighting, capture group analysis, and common pattern templates.",
+    "features": [
+      "Real-time Matching",
+      "Pattern Highlighting",
+      "Common Templates",
+      "Match Statistics",
+      "Error Handling",
+      "Offline Support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/regex-tester-2.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-38.svg",
+    "title": "API Signature Validator",
+    "desc": "Generate and validate API request signatures with support for HMAC-SHA256, MD5, and custom algorithms for secure authentication testing.",
+    "features": [
+      "HMAC-SHA256 Validation",
+      "MD5 Signature Support",
+      "Custom Algorithm Input",
+      "Request Signing Test",
+      "Local Browser Processing",
+      "Secure Authentication"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/api-signature-validator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-39.svg",
+    "title": "URL Slug Generator",
+    "desc": "Convert titles into SEO-friendly URL slugs instantly. Supports Unicode, bulk generation, custom separators, and reserved word handling.",
+    "features": [
+      "SEO-friendly slugs",
+      "Unicode transliteration",
+      "Bulk generation",
+      "Custom separators",
+      "Reserved words filter",
+      "Local privacy"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/url-slug-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-40.svg",
+    "title": "Sql Formatter",
+    "desc": "Instantly format and beautify SQL queries for MySQL, PostgreSQL, and SQLite directly in your browser with local privacy.",
+    "features": [
+      "Multi-Dialect Support",
+      "Keyword Highlighting",
+      "Custom Indentation",
+      "Minify Option",
+      "Local Processing",
+      "Zero Data Upload"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/sql-formatter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-41.svg",
+    "title": "Svg Optimizer",
+    "desc": "Minify and compress SVG code locally by removing metadata, comments, and redundant attributes to reduce file size instantly.",
+    "features": [
+      "Remove Metadata",
+      "Minify Paths",
+      "Merge Shapes",
+      "Remove Unused IDs",
+      "Reduce File Size",
+      "Preserve Quality"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/svg-optimizer.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-42.svg",
+    "title": "Test Address Generator",
+    "desc": "Generate realistic fake addresses and phone numbers for multiple countries to streamline form testing and database population workflows.",
+    "features": [
+      "Multi-country Support",
+      "Realistic Data Format",
+      "Bulk Export Options",
+      "Geo-coordinate Generation",
+      "Privacy-Focused Local Processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/test-address-generator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-13.svg",
+    "title": "Global Time Zone Converter",
+    "desc": "Instantly convert dates and times across multiple time zones. Features meeting scheduling, world clocks, and DST indicators for seamless global coordination.",
+    "features": [
+      "Multi-Timezone Conversion",
+      "Meeting Time Generator",
+      "Live World Clock",
+      "DST Status Indicator",
+      "Real-Time Results",
+      "Offline Privacy"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/business/global-time-zone-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-43.svg",
+    "title": "Unicode Converter",
+    "desc": "Convert text to Unicode escapes, code points, and hex values instantly. Supports bidirectional conversion with full privacy.",
+    "features": [
+      "Text to Unicode Escape",
+      "Code Point Conversion",
+      "Hex Value Encoding",
+      "Bidirectional Decoding",
+      "Local Browser Processing",
+      "Privacy Safe"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/unicode-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-44.svg",
+    "title": "Unit Converter",
+    "desc": "Convert length, weight, area, volume, and more with precision. Fast, private, and fully client-side.",
+    "features": [
+      "Multi-category Support",
+      "Instant Conversion",
+      "Formula Display",
+      "Privacy Focused",
+      "Custom Units"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/unit-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-45.svg",
+    "title": "Unix Timestamp Converter",
+    "desc": "Instantly convert between Unix timestamps and human-readable dates with millisecond precision and timezone support.",
+    "features": [
+      "Timestamp to Date",
+      "Date to Timestamp",
+      "Millisecond Precision",
+      "Timezone Support",
+      "Batch Conversion",
+      "Local Processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/unix-timestamp-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-46.svg",
+    "title": "URL To JSON Converter",
+    "desc": "Instantly convert URL query strings into structured JSON. Supports nested objects, arrays, and local processing for secure debugging.",
+    "features": [
+      "Parse Query Strings",
+      "Support Nested Objects",
+      "Handle Array Brackets",
+      "Local Secure Processing",
+      "Pretty Print Output"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/url-to-json-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-48.svg",
+    "title": "UUID Generator",
+    "desc": "Generate UUID v1, v4, v5, and v7 in bulk locally. Copy, export, and ensure RFC4122 compliance without installation.",
+    "features": [
+      "Batch Generate UUIDs",
+      "Supports v1 v4 v5 v7",
+      "Local Browser Processing",
+      "Copy and Export Options",
+      "RFC4122 Compliant",
+      "No Installation Required"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/uuid-generator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "assets/icons/design-4.svg",
+    "title": "Background Remover",
+    "desc": "Instantly remove image backgrounds directly in your browser. Supports color similarity selection, batch processing, and preserves fine details like hair.",
+    "features": [
+      "Remove Backgrounds",
+      "Color Similarity Selection",
+      "Batch Processing",
+      "Transparent PNG Output",
+      "Local Privacy Protection",
+      "Hair Detail Preservation"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/design/background-remover.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "assets/icons/design-1.svg",
+    "title": "Css Gradient Generator",
+    "desc": "Css Gradient Generator - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/design/css-gradient-generator-2.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "assets/icons/design-1.svg",
+    "title": "Exif Remover",
+    "desc": "Exif Remover - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/design/exif-remover.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "assets/icons/design-38.svg",
+    "title": "Web Font Format Converter",
+    "desc": "Convert between TTF, OTF, WOFF, and WOFF2 formats locally. Preview glyphs, subset fonts, and generate CSS @font-face rules instantly.",
+    "features": [
+      "Convert Font Formats",
+      "Generate CSS Rules",
+      "Preview Glyphs",
+      "Subset Fonts",
+      "Batch Processing",
+      "Local Privacy"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/design/web-font-format-converter.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "assets/icons/design-47.svg",
+    "title": "Ico Icon Generator",
+    "desc": "Convert PNG and JPG images into multi-size ICO files for websites and apps with transparent backgrounds.",
+    "features": [
+      "Convert Images To Ico",
+      "Multi-Size Support",
+      "Transparent Backgrounds",
+      "Client-Side Processing",
+      "Favicon Generation"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/design/ico-icon-generator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "assets/icons/design-1.svg",
+    "title": "Batch Image Compressor",
+    "desc": "Compress JPG, PNG, and WebP images locally in your browser. Reduce file sizes instantly while preserving quality and privacy.",
+    "features": [
+      "Batch Compression",
+      "Local Processing",
+      "Format Support",
+      "Quality Control",
+      "Privacy Safe"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/design/batch-image-compressor.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "assets/icons/design-5.svg",
+    "title": "Batch Image Converter",
+    "desc": "Resize and convert multiple images locally with preset sizes, quality control, and instant download.",
+    "features": [
+      "Batch Processing",
+      "Format Conversion",
+      "Preset Sizes",
+      "Local Privacy",
+      "Quality Control",
+      "Instant Download"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/design/batch-image-converter.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "assets/icons/design-6.svg",
+    "title": "Image Filter & Color Adjust",
+    "desc": "Apply professional filters and adjust image colors like brightness and contrast directly in your browser with real-time preview and local processing.",
+    "features": [
+      "Real-time Preview",
+      "Brightness Adjustment",
+      "Color Filters",
+      "Local Processing",
+      "Batch Apply",
+      "Download Results"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/design/image-filter-color-adjust.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "assets/icons/design-13.svg",
+    "title": "Image Pixelator",
+    "desc": "Pixelate images to create retro art or blur sensitive data. Adjust block size and shape for custom effects.",
+    "features": [
+      "Adjustable Pixel Size",
+      "Custom Pixel Shapes",
+      "Face Anonymization",
+      "Batch Processing Support",
+      "Retro Art Styles",
+      "Local Browser Processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/design/image-pixelator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "assets/icons/design-7.svg",
+    "title": "Image Resizer & Cropper",
+    "desc": "Resize and crop images directly in your browser with batch support, aspect ratio locking, and instant downloads without uploading.",
+    "features": [
+      "Batch Image Resizing",
+      "Custom Dimension Input",
+      "Aspect Ratio Locking",
+      "Format Conversion",
+      "Privacy-Focused Local Processing",
+      "Preset Social Sizes"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/design/image-resizer-cropper.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "assets/icons/design-8.svg",
+    "title": "Image Watermark Tool",
+    "desc": "Add text or image watermarks to photos with batch processing, custom positioning, opacity, and tile patterns directly in your browser.",
+    "features": [
+      "Batch Watermark Processing",
+      "Text And Image Overlays",
+      "Custom Position And Opacity",
+      "Tile Pattern Support",
+      "Local Browser Processing",
+      "EXIF Data Preservation"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/design/image-watermark-tool.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "assets/icons/education-3.svg",
+    "icon": "assets/icons/education-1.svg",
     "title": "Academic Citation Generator",
-    "desc": "Create citations in APA, MLA, Chicago, Harvard, IEEE, and AMA formats. Features 6 document types and history.",
+    "desc": "Instantly generate accurate citations in APA, MLA, Chicago, and other styles. Supports multiple document types with local privacy and copy features.",
     "features": [
-      "6 Citation Styles",
-      "6 Document Types",
-      "Copy Citation",
-      "Save History"
+      "Six Citation Styles",
+      "Multiple Document Types",
+      "One-Click Copy",
+      "Citation History",
+      "Local Privacy",
+      "Offline Support"
     ],
-    "detailUrl": "tools/citation-generator/index.html",
-    "zipUrl": "assets/zip-packages/education/citation-generator.zip"
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/education/academic-citation-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-50.svg",
+    "title": "Open Graph Preview",
+    "desc": "Visually preview and debug Open Graph meta tags for social media platforms like Facebook, Twitter, and LinkedIn directly in your browser.",
+    "features": [
+      "Live Social Preview",
+      "OG Tag Debugger",
+      "Mobile View Support",
+      "Client-Side Processing",
+      "One-Click Copy Code"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/open-graph-preview.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-17.svg",
+    "title": "Password Strength Checker",
+    "desc": "Analyze password security locally with entropy calculation, breach detection, and visual feedback for enhanced privacy.",
+    "features": [
+      "Local Processing",
+      "Entropy Calculation",
+      "Breach Database Check",
+      "Visual Feedback",
+      "Pattern Analysis",
+      "Offline Operation"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/password-strength-checker.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-1.svg",
+    "title": "Pdf Metadata Viewer",
+    "desc": "Instantly view and edit PDF metadata like title, author, and dates directly in your browser with full privacy and zero uploads.",
+    "features": [
+      "View PDF Properties",
+      "Edit Document Info",
+      "Check Security Settings",
+      "100% Client-Side Privacy",
+      "Export Metadata Data"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/business/pdf-metadata-viewer.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-23.svg",
+    "title": "PDF Split & Merge",
+    "desc": "Split, merge, and reorder PDF pages directly in your browser. Secure, private, and requires no installation or server uploads.",
+    "features": [
+      "Split PDF Pages",
+      "Merge Multiple PDFs",
+      "Reorder Page Order",
+      "Extract Specific Pages",
+      "Batch Processing Support",
+      "Local Browser Privacy"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/business/pdf-split-merge.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-7.svg",
+    "title": "Backlink Spam Checker",
+    "desc": "Analyze backlinks for spam signals and toxic links. Check domain reputation and link quality indicators to protect your SEO health.",
+    "features": [
+      "Detect Toxic Links",
+      "Check Domain Reputation",
+      "Analyze Link Quality",
+      "Identify Spam Signals",
+      "Protect SEO Health"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/business/backlink-spam-checker.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-8.svg",
+    "title": "Business Day Calculator",
+    "desc": "Calculate working days between dates while excluding weekends and customizable holidays. Supports adding or subtracting business days from any specific date.",
+    "features": [
+      "Exclude Weekends",
+      "Custom Holidays",
+      "Add Business Days",
+      "Subtract Business Days",
+      "Date Range Count",
+      "Half-Day Support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/business/business-day-calculator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-9.svg",
+    "title": "Calendar Generator",
+    "desc": "Create and print customizable annual or monthly calendars with holiday markers, weekend highlighting, and ICS export for seamless scheduling.",
+    "features": [
+      "Customizable Year View",
+      "Holiday Marking",
+      "Print-Ready Layout",
+      "ICS Export Support",
+      "Dark Mode Theme",
+      "Local Processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/business/calendar-generator.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "assets/icons/content-5.svg",
+    "title": "Chinese-English Word Counter",
+    "desc": "Accurately count Chinese characters and English words in mixed text. Ideal for translators, writers, and content editors needing precise bilingual statistics.",
+    "features": [
+      "Bilingual Word Counting",
+      "Mixed Text Analysis",
+      "Character Type Breakdown",
+      "Reading Time Estimation",
+      "Paragraph Statistics",
+      "Local Privacy Protection"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/writing/chinese-english-word-counter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-28.svg",
+    "title": "CORS Policy Checker",
+    "desc": "Test Cross-Origin Resource Sharing headers and preflight requests directly in your browser to diagnose API access issues.",
+    "features": [
+      "Preflight Simulation",
+      "CORS Header Analysis",
+      "Error Diagnosis",
+      "Wildcard Detection",
+      "Share Results"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/cors-policy-checker.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-10.svg",
+    "title": "Countdown Timer Generator",
+    "desc": "Create customizable, embeddable countdown timers for events and launches. Generates shareable links and local code snippets instantly.",
+    "features": [
+      "Generate Embed Code",
+      "Custom Event Labels",
+      "Shareable Countdown Links",
+      "Local Browser Processing",
+      "Responsive Design Support",
+      "Dark Mode Compatible"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/business/countdown-timer-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-28.svg",
+    "title": "DNS Record Lookup",
+    "desc": "Query A, AAAA, MX, TXT, NS, CNAME, and SOA records instantly using DNS-over-HTTPS directly in your browser.",
+    "features": [
+      "Multi-record Support",
+      "DNS-over-HTTPS",
+      "Instant Results",
+      "Client-side Processing",
+      "Export Capabilities"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/dns-record-lookup.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-11.svg",
+    "title": "Domain ICP Filing Checker",
+    "desc": "Verify China ICP filing status and entity details for domains. Supports batch queries and historical record checks directly in your browser.",
+    "features": [
+      "Real-time ICP Status",
+      "Batch Domain Query",
+      "Entity Information",
+      "Historical Records",
+      "Privacy-Focused",
+      "No Installation Needed"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/business/domain-icp-filing-checker.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-12.svg",
+    "title": "DST Timezone Converter",
+    "desc": "Convert times across timezones while automatically handling Daylight Saving Time transitions for accurate global scheduling.",
+    "features": [
+      "Automatic DST Handling",
+      "Batch Time Conversion",
+      "Meeting Planner Support",
+      "Historical Date Lookup",
+      "Privacy-Focused Local Processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/business/dst-timezone-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-19.svg",
+    "title": "Expired Domain Finder",
+    "desc": "Discover expiring domains with SEO metrics, backlink history, and bulk export capabilities for investors and developers.",
+    "features": [
+      "Search Expiring Domains",
+      "Filter By SEO Metrics",
+      "View Backlink History",
+      "Export Bulk Data",
+      "Archive.org Snapshots",
+      "Local Privacy Processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/expired-domain-finder.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-28.svg",
+    "title": "Http Header Checker",
+    "desc": "Analyze HTTP response headers, security settings, caching rules, and server information for any URL directly in your browser.",
+    "features": [
+      "Inspect Response Headers",
+      "Check Security Headers",
+      "Analyze Caching Rules",
+      "View Redirect Chains",
+      "Get Server Information",
+      "Calculate Security Score"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/http-header-checker.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-6.svg",
+    "title": "IP Geolocation Lookup",
+    "desc": "Instantly retrieve detailed location, ISP, ASN, and proxy detection data for any IP address directly in your browser.",
+    "features": [
+      "Real-time IP lookup",
+      "ISP and ASN details",
+      "Batch processing support",
+      "Proxy detection",
+      "100% private local processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/ip-geolocation-lookup.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "assets/icons/education-8.svg",
+    "title": "ISBN Book Lookup",
+    "desc": "Instantly retrieve detailed book metadata, author details, publisher info, and cover images by entering an ISBN number.",
+    "features": [
+      "ISBN-10 and 13 Support",
+      "Retrieve Book Metadata",
+      "Display Cover Images",
+      "Export Citations",
+      "Price Comparison Data",
+      "Open Library Integration"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/education/isbn-book-lookup.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-2.svg",
+    "title": "Markdown To Html Converter",
+    "desc": "Instantly convert Markdown text to valid HTML with live preview, GFM support, and local processing for developers and writers.",
+    "features": [
+      "Live Preview",
+      "GFM Support",
+      "Local Processing",
+      "Copy HTML Output",
+      "Dark Mode"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/markdown-to-html-converter.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-28.svg",
+    "title": "Meeting Time Planner",
+    "desc": "Find optimal meeting times across multiple time zones with visual timelines and calendar export for global teams.",
+    "features": [
+      "Time Zone Overlap",
+      "Visual Timeline",
+      "Working Hours Filter",
+      "Calendar Export",
+      "Global Team Support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/business/meeting-time-planner.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-32.svg",
+    "title": "Browser Port Scanner",
+    "desc": "Scan common TCP ports and detect services directly in your browser. Secure, private, and requires no installation or server-side processing.",
+    "features": [
+      "Scan Common Ports",
+      "Service Detection",
+      "Custom Port Ranges",
+      "Local Processing",
+      "Export Results",
+      "Secure And Private"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/browser-port-scanner.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-32.svg",
+    "title": "Reverse Ip Lookup",
+    "desc": "Discover all domains hosted on a specific IP address. Ideal for security research, competitor analysis, and shared hosting detection.",
+    "features": [
+      "Domain By IP Search",
+      "Shared Hosting Detection",
+      "Security Reconnaissance",
+      "Competitor Analysis",
+      "Local Browser Processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/reverse-ip-lookup.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-31.svg",
+    "title": "Robots.txt Generator",
+    "desc": "Create and validate robots.txt files locally for SEO optimization. Supports user agents, allow rules, sitemaps, and crawl delays without server uploads.",
+    "features": [
+      "Generate Robots.txt",
+      "Validate Syntax",
+      "Crawl Delay Support",
+      "Sitemap Declaration",
+      "Local Processing",
+      "SEO Optimization"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/robots-txt-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-1.svg",
+    "title": "SEO Meta Tag Generator",
+    "desc": "Generate complete SEO meta tags, Open Graph, Twitter Cards, and JSON-LD locally in your browser for optimal web visibility.",
+    "features": [
+      "Generate Meta Tags",
+      "Open Graph Support",
+      "Twitter Card Markup",
+      "JSON-LD Schema",
+      "Real-time Preview",
+      "Local Processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/seo-meta-tag-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-31.svg",
+    "title": "XML Sitemap Generator",
+    "desc": "Generate XML sitemaps locally for SEO optimization. Supports crawling, priority settings, and media inclusion without uploading data.",
+    "features": [
+      "Local XML Generation",
+      "Crawl Website URLs",
+      "Set Priority & Frequency",
+      "Support Images & Videos",
+      "Respect Robots.txt",
+      "No Data Upload"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/xml-sitemap-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-9.svg",
+    "title": "Website Speed Test",
+    "desc": "Measure website load times and analyze performance metrics directly in your browser with detailed breakdowns.",
+    "features": [
+      "Load Time Analysis",
+      "Core Web Vitals",
+      "Resource Waterfall",
+      "Performance Insights",
+      "Privacy Focused"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/website-speed-test.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-16.svg",
+    "title": "SSL Certificate Checker",
+    "desc": "Verify SSL/TLS certificate details, validity, chain, and expiry locally in your browser without sending data to any server.",
+    "features": [
+      "Check Certificate Details",
+      "Validate Certificate Chain",
+      "View SAN Entries",
+      "Monitor Expiry Dates",
+      "OCSP and CRL Status",
+      "Grade Rating System"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/ssl-certificate-checker.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-14.svg",
+    "title": "Week Number Converter",
+    "desc": "Instantly convert dates to ISO or US week numbers and vice versa. Supports fiscal years, ranges, and calendar views with full privacy.",
+    "features": [
+      "Date to Week Conversion",
+      "Week to Date Range",
+      "ISO and US Standards",
+      "Fiscal Year Support",
+      "Batch Processing",
+      "Local Privacy Protection"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/business/week-number-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-19.svg",
+    "title": "Whois Lookup",
+    "desc": "Whois Lookup - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/dev/whois-lookup.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-1.svg",
+    "title": "Work Hours Calculator",
+    "desc": "Work Hours Calculator - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "assets/zip-packages/business/work-hours-calculator.zip"
   }
 ]

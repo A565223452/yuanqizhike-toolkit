@@ -1,6 +1,14 @@
 # Local admin tools (not for public repository)
 local-admin-generator.html
 
+# tools-list.json 备份文件（本地自用，不上传）
+tools-list.json.bak
+tools-list.json.cleanup-bak-*
+
+# Local auto-uploader tool (not for public repository)
+# 整个 tools-uploader/ 目录都不上传到仓库，仅本地自用
+tools-uploader/
+
 # Personal tutorials (Chinese, not for public repository)
 项目启动教程.md
 工具上传教程.md
