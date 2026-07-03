@@ -395,7 +395,7 @@
       "Word Frequency",
       "Local Processing"
     ],
-    "detailUrl": "",
+    "detailUrl": "tools/word-counter/index.html",
     "zipUrl": "/assets/zip-packages/writing/word-counter.zip"
   },
   {
@@ -538,7 +538,7 @@
       "One-Click Copy",
       "Export CSS Variables"
     ],
-    "detailUrl": "",
+    "detailUrl": "tools/color-converter/index.html",
     "zipUrl": "/assets/zip-packages/design/color-converter.zip"
   },
   {
@@ -672,7 +672,7 @@
       "File Integrity",
       "Secure Generation"
     ],
-    "detailUrl": "",
+    "detailUrl": "tools/hash-generator/index.html",
     "zipUrl": "/assets/zip-packages/dev/hash-generator.zip"
   },
   {
@@ -956,7 +956,7 @@
       "PNG and SVG Export",
       "Batch Generation"
     ],
-    "detailUrl": "",
+    "detailUrl": "tools/qr-code-generator/index.html",
     "zipUrl": "/assets/zip-packages/dev/qr-code-generator.zip"
   },
   {
@@ -1020,7 +1020,7 @@
       "Reserved words filter",
       "Local privacy"
     ],
-    "detailUrl": "",
+    "detailUrl": "tools/url-slug-generator/index.html",
     "zipUrl": "/assets/zip-packages/dev/url-slug-generator.zip"
   },
   {
@@ -1130,7 +1130,7 @@
       "Batch Conversion",
       "Local Processing"
     ],
-    "detailUrl": "",
+    "detailUrl": "tools/unix-timestamp-converter/index.html",
     "zipUrl": "/assets/zip-packages/dev/unix-timestamp-converter.zip"
   },
   {
@@ -1161,7 +1161,7 @@
       "RFC4122 Compliant",
       "No Installation Required"
     ],
-    "detailUrl": "",
+    "detailUrl": "tools/uuid-generator/index.html",
     "zipUrl": "/assets/zip-packages/dev/uuid-generator.zip"
   },
   {
@@ -1851,7 +1851,7 @@
       "Character Sets",
       "No Data Sent"
     ],
-    "detailUrl": "",
+    "detailUrl": "tools/password-generator/index.html",
     "zipUrl": "/assets/zip-packages/dev/password-generator.zip"
   },
   {

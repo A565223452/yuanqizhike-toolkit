@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batch Image Resizer & Format Converter | YuanQiZhiLe Toolkit</title>
+    <style>
+        *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
+        body{padding:20px;font-family:system-ui;background:#f5f5f5;transition:background 0.3s,color 0.3s}
+        body.dark{background:#1a1a2e;color:#e0e0e0}
+        body.dark .wrap{background:#16213e}
+        body.dark footer{border-color:#0f3460;color:#a0a0a0}
+        body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+        body.dark .bookmark-btn:hover{background:#0f3460}
+        body.dark .control-panel{background:#0f3460;border-color:#1a1a2e}
+        body.dark .control-panel select,body.dark .control-panel input{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+        body.dark .preview-item{border-color:#1a1a2e}
+        .wrap{max-width:1100px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+        h1{margin-bottom:16px;font-size:24px}
+        .top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+        .top-controls{display:flex;gap:8px;align-items:center}
+        .theme-toggle{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:16px;transition:all 0.2s;display:flex;align-items:center;justify-content:center;width:36px;height:36px}
+        .theme-toggle:hover{background:#f0f0f0}
+        .bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+        .bookmark-btn:hover{background:#f0f0f0}
+        .upload-area{border:2px dashed #2563eb;padding:40px;text-align:center;border-radius:8px;margin-bottom:20px;cursor:pointer;transition:background 0.3s}
+        .upload-area:hover{background:#f0f7ff}
+        .upload-area.dragover{background:#dbeafe;border-color:#1d4ed8}
+        #fileInput{display:none}
+        .control-panel{padding:16px;background:#f8f9fa;border-radius:8px;margin-bottom:16px;border:1px solid #e5e7eb;transition:background 0.3s}
+        .control-panel label{display:block;margin:10px 0 6px;font-weight:500;font-size:14px}
+        .control-panel select{width:100%;padding:10px;border:1px solid #ddd;border-radius:6px;font-size:14px;margin-bottom:8px;transition:background 0.3s,color 0.3s}
+        .btn-group{display:flex;gap:12px;margin:16px 0;flex-wrap:wrap}
+        button{padding:10px 20px;border:none;border-radius:6px;background:#2563eb;color:#fff;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+        button:hover{opacity:0.85}
+        button.secondary{background:#6b7280}
+        button:disabled{opacity:0.5;cursor:not-allowed}
+        #preview{display:flex;flex-wrap:wrap;gap:15px;margin:20px 0;min-height:60px;padding:10px;background:#f9fafb;border-radius:8px;border:1px solid #e5e7eb}
+        .preview-item{width:150px;height:150px;border:1px solid #ddd;border-radius:6px;overflow:hidden;position:relative}
+        .preview-item img{width:100%;height:100%;object-fit:cover}
+        .preview-item .filename{position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,0.7);color:#fff;font-size:11px;padding:4px 8px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+        .preview-item .remove-btn{position:absolute;top:4px;right:4px;width:24px;height:24px;border-radius:50%;background:rgba(220,38,38,0.9);color:#fff;border:none;cursor:pointer;font-size:14px;line-height:24px;text-align:center}
+        .stats{margin:12px 0;padding:12px;background:#f0f7ff;border-radius:6px;font-size:13px;color:#333}
+        .notification{margin:12px 0;padding:12px 16px;border-radius:6px;font-size:13px;display:none;animation:fadeIn 0.3s}
+        .notification.success{background:#dcfce7;border:1px solid #86efac;color:#166534}
+        .notification.info{background:#dbeafe;border:1px solid #93c5fd;color:#1e40af}
+        @keyframes fadeIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+        footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center}
+        @media(max-width:768px){
+            .wrap{padding:16px}
+            .btn-group{flex-direction:column}
+            button{width:100%}
+            .preview-item{width:100px;height:100px}
+            .upload-area{padding:20px}
+            .top-bar{flex-direction:column;align-items:stretch}
+            .top-controls{justify-content:space-between}
+            .bookmark-btn{position:static}
+        }
+        @media(max-width:480px){
+            body{padding:12px}
+            .wrap{padding:12px}
+            h1{font-size:20px}
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="top-bar">
+        <h1>Batch Image Resizer & Format Converter</h1>
+        <div class="top-controls">
+            <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">Bookmark</button>
+        </div>
+    </div>
+
+    <div class="upload-area" id="uploadArea">
+        <p>Click or drag images here to upload</p>
+        <p style="font-size:12px;color:#666;margin-top:8px">Supports: JPG, PNG, GIF, WebP, BMP, SVG</p>
+        <input type="file" id="fileInput" multiple accept="image/*">
+    </div>
+
+     <div class="stats" id="stats"></div>
+     <div class="notification" id="notification"></div>
+
+    <div class="control-panel">
+        <label>Preset Size:</label>
+        <select id="sizePreset">
+            <option value="custom">Custom Size</option>
+            <option value="800x800">Amazon Product 800×800</option>
+            <option value="1200x628">Facebook Share 1200×628</option>
+            <option value="1080x1080">Instagram Post 1080×1080</option>
+            <option value="1080x1920">Instagram Story 1080×1920</option>
+            <option value="1500x500">Twitter Header 1500×500</option>
+            <option value="1200x630">Open Graph 1200×630</option>
+            <option value="2560x1440">2K Monitor 2560×1440</option>
+            <option value="1920x1080">Full HD 1920×1080</option>
+            <option value="3840x2160">4K Ultra HD 3840×2160</option>
+        </select>
+
+        <div id="customSize" style="display:none;margin-top:12px">
+            <label>Width (px):</label>
+            <input type="number" id="customWidth" value="800" min="1" max="10000" style="width:100px;padding:8px;border:1px solid #ddd;border-radius:4px">
+            <label style="margin-left:12px">Height (px):</label>
+            <input type="number" id="customHeight" value="800" min="1" max="10000" style="width:100px;padding:8px;border:1px solid #ddd;border-radius:4px;margin-left:4px">
+        </div>
+
+        <label style="margin-top:12px">Output Format:</label>
+        <select id="outputFormat">
+            <option value="image/jpeg">JPG (Best for photos)</option>
+            <option value="image/png">PNG (Lossless, supports transparency)</option>
+            <option value="image/webp">WebP (Modern, best compression)</option>
+            <option value="image/bmp">BMP (Uncompressed bitmap)</option>
+        </select>
+
+        <div id="qualityControl" style="margin-top:12px">
+            <label>Quality: <span id="qualityValue">80</span>%</label>
+            <input type="range" id="quality" min="10" max="100" value="80" style="width:100%">
+        </div>
+    </div>
+
+    <div class="btn-group">
+        <button id="processBtn" disabled>Process & Download All</button>
+         <button class="secondary" id="clearBtn">Clear All</button>
+         <button class="secondary" id="optimizeBtn">Optimize Compression</button>
+     </div>
+
+     <div id="preview"></div>
+
+     <div class="control-panel" id="imageInfoPanel" style="display:none;margin-top:16px">
+         <h3>Image Information</h3>
+         <div id="imageInfoContent"></div>
+     </div>
+
+    <footer>YuanQiZhiLe Toolkit — Design & Media Tools</footer>
+</div>
+
+<script>
+const fileInput=document.getElementById('fileInput');
+const uploadArea=document.getElementById('uploadArea');
+const preview=document.getElementById('preview');
+const processBtn=document.getElementById('processBtn');
+const clearBtn=document.getElementById('clearBtn');
+const optimizeBtn=document.getElementById('optimizeBtn');
+const sizePreset=document.getElementById('sizePreset');
+const customSizeDiv=document.getElementById('customSize');
+const qualitySlider=document.getElementById('quality');
+const qualityValue=document.getElementById('qualityValue');
+const stats=document.getElementById('stats');
+const imageInfoPanel=document.getElementById('imageInfoPanel');
+const imageInfoContent=document.getElementById('imageInfoContent');
+const bookmarkBtn=document.getElementById('bookmarkBtn');
+const themeToggle=document.getElementById('themeToggle');
+
+let imageFiles=[];
+
+// Drag and drop
+uploadArea.addEventListener('dragover',(e)=>{e.preventDefault();uploadArea.classList.add('dragover')});
+uploadArea.addEventListener('dragleave',()=>uploadArea.classList.remove('dragover'));
+uploadArea.addEventListener('drop',(e)=>{
+    e.preventDefault();
+    uploadArea.classList.remove('dragover');
+    handleFiles(e.dataTransfer.files);
+});
+uploadArea.addEventListener('click',()=>fileInput.click());
+fileInput.addEventListener('change',(e)=>handleFiles(e.target.files));
+
+function handleFiles(files){
+    Array.from(files).forEach(file=>{
+        if(file.type.startsWith('image/')){
+            imageFiles.push(file);
+        }
+    });
+    renderPreview();
+    updateStats();
+}
+
+function renderPreview(){
+    preview.innerHTML='';
+    imageFiles.forEach((file,index)=>{
+        const reader=new FileReader();
+        reader.onload=(e)=>{
+            const div=document.createElement('div');
+            div.className='preview-item';
+            div.innerHTML=`<img src="${e.target.result}" alt="${file.name}"><div class="filename">${file.name}</div><button class="remove-btn" data-index="${index}">×</button>`;
+            preview.appendChild(div);
+            div.querySelector('.remove-btn').onclick=(ev)=>{
+                ev.stopPropagation();
+                imageFiles.splice(index,1);
+                renderPreview();
+                updateStats();
+            };
+        };
+        reader.readAsDataURL(file);
+    });
+    processBtn.disabled=imageFiles.length===0;
+}
+
+function updateStats(){
+    if(imageFiles.length===0){
+        stats.textContent='';
+        return;
+    }
+    const totalSize=imageFiles.reduce((sum,f)=>sum+f.size,0);
+    const sizeMB=(totalSize/1024/1024).toFixed(2);
+    stats.textContent=`${imageFiles.length} image(s) selected | Total size: ${sizeMB} MB`;
+}
+
+sizePreset.addEventListener('change',()=>{
+    customSizeDiv.style.display=sizePreset.value==='custom'?'block':'none';
+});
+
+qualitySlider.addEventListener('input',()=>{
+    qualityValue.textContent=qualitySlider.value;
+});
+
+// Click preview to show image info
+preview.addEventListener('click',(e)=>{
+    const previewItem=e.target.closest('.preview-item');
+    if(!previewItem||e.target.classList.contains('remove-btn'))return;
+    const index=Array.from(preview.children).indexOf(previewItem);
+    if(index>=0&&imageFiles[index]){
+        showImageInfo(imageFiles[index]);
+    }
+});
+
+function showImageInfo(file){
+    imageInfoPanel.style.display='block';
+    const sizeKB=(file.size/1024).toFixed(2);
+    const sizeMB=(file.size/1024/1024).toFixed(2);
+    const sizeStr=file.size>1024*1024?sizeMB+' MB':sizeKB+' KB';
+    imageInfoContent.innerHTML=`
+        <p><strong>Name:</strong> ${file.name}</p>
+        <p><strong>Type:</strong> ${file.type}</p>
+        <p><strong>Size:</strong> ${sizeStr} (${file.size} bytes)</p>
+        <p><strong>Last Modified:</strong> ${new Date(file.lastModified).toLocaleString()}</p>
+        <p style="font-size:12px;color:#666;margin-top:8px">💡 Tip: Click on an image preview to see its information</p>
+    `;
+}
+
+function showNotification(message,type='info'){
+    const notif=document.getElementById('notification');
+    notif.className='notification '+type;
+    notif.innerHTML=message;
+    notif.style.display='block';
+    setTimeout(()=>{notif.style.display='none'},5000);
+}
+
+// Optimize compression - find best quality setting
+optimizeBtn.onclick=async()=>{
+    if(imageFiles.length===0){showNotification('⚠️ Please upload images first','info');return}
+    
+    document.getElementById('outputFormat').value='image/webp';
+    qualitySlider.value=70;
+    qualityValue.textContent='70';
+    
+    const btn=optimizeBtn;
+    btn.textContent='✓ Optimized!';
+    setTimeout(()=>{btn.textContent='Optimize Compression'},2000);
+    
+    showNotification('✅ Compression optimized:<br>- Format: WebP (best compression)<br>- Quality: 70%<br>- Click "Process & Download All" to start','success');
+};
+
+processBtn.onclick=async()=>{
+    if(imageFiles.length===0)return;
+    processBtn.disabled=true;
+    processBtn.textContent='Processing...';
+
+    const preset=sizePreset.value;
+    let targetW,targetH;
+    if(preset==='custom'){
+        targetW=parseInt(document.getElementById('customWidth').value)||800;
+        targetH=parseInt(document.getElementById('customHeight').value)||800;
+    }else{
+        [targetW,targetH]=preset.split('x').map(Number);
+    }
+    const format=document.getElementById('outputFormat').value;
+    const quality=parseInt(qualitySlider.value)/100;
+
+    for(let i=0;i<imageFiles.length;i++){
+        await processImage(imageFiles[i],targetW,targetH,format,quality,i+1,imageFiles.length);
+    }
+
+    processBtn.disabled=false;
+    processBtn.textContent='Process & Download All';
+};
+
+function processImage(file,targetW,targetH,format,quality,index,total){
+    return new Promise((resolve)=>{
+        const img=new Image();
+        img.onload=()=>{
+            const canvas=document.createElement('canvas');
+            canvas.width=targetW;
+            canvas.height=targetH;
+            const ctx=canvas.getContext('2d');
+            ctx.fillStyle='#FFFFFF';
+            ctx.fillRect(0,0,targetW,targetH);
+            ctx.drawImage(img,0,0,targetW,targetH);
+
+            let downloadFormat=format;
+            if(format==='image/jpeg'){
+                canvas.toBlob((blob)=>{
+                    const url=URL.createObjectURL(blob);
+                    const link=document.createElement('a');
+                    link.download=file.name.replace(/\.\w+$/,'')+'.jpg';
+                    link.href=url;
+                    link.click();
+                    URL.revokeObjectURL(url);
+                    resolve();
+                },downloadFormat,quality);
+            }else{
+                canvas.toBlob((blob)=>{
+                    const url=URL.createObjectURL(blob);
+                    const link=document.createElement('a');
+                    const ext=format.split('/')[1]==='bmp'?'bmp':format.split('/')[1];
+                    link.download=file.name.replace(/\.\w+$/,'')+'.'+ext;
+                    link.href=url;
+                    link.click();
+                    URL.revokeObjectURL(url);
+                    resolve();
+                },downloadFormat,quality);
+            }
+        };
+        img.src=URL.createObjectURL(file);
+    });
+}
+
+clearBtn.onclick=()=>{
+    imageFiles=[];
+    preview.innerHTML='';
+    stats.textContent='';
+    fileInput.value='';
+    processBtn.disabled=true;
+};
+
+bookmarkBtn.onclick=()=>{
+    alert('Press Ctrl+D (or Cmd+D on Mac) to bookmark this page!');
+};
+
+// Theme toggle
+function setTheme(isDark){
+    if(isDark){
+        document.body.classList.add('dark');
+        themeToggle.textContent='☀️';
+        themeToggle.title='Switch to light mode';
+    }else{
+        document.body.classList.remove('dark');
+        themeToggle.textContent='🌙';
+        themeToggle.title='Switch to dark mode';
+    }
+    localStorage.setItem('theme',isDark?'dark':'light');
+}
+
+themeToggle.onclick=()=>{
+    const isDark=document.body.classList.contains('dark');
+    setTheme(!isDark);
+};
+
+// Load saved theme
+(function(){
+    const saved=localStorage.getItem('theme');
+    if(saved==='dark'||(!saved&&window.matchMedia('(prefers-color-scheme:dark)').matches)){
+        setTheme(true);
+    }
+})();
+</script>
+</body>
+</html>

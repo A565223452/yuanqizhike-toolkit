@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Formatter | YuanQiZhiLe Toolkit</title>
+    <style>
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{padding:20px;font-family:Arial,sans-serif;background:#f5f5f5;transition:background 0.3s,color 0.3s}
+        body.dark{background:#1a1a2e;color:#e0e0e0}
+        body.dark h1,body.dark h2{color:#e0e0e0}
+        body.dark textarea,body.dark .tree-view{background:#16213e;color:#e0e0e0;border-color:#0f3460}
+        body.dark .tree-node:hover{background:#0f3460}
+        body.dark .tree-key{color:#e94560}
+        body.dark .string-val{color:#00d2ff}
+        body.dark .number-val{color:#f5a623}
+        body.dark .bool-val{color:#7bed9f}
+        body.dark .null-val{color:#a0a0a0}
+        body.dark .tip{color:#ff6b6b}
+        body.dark footer{border-color:#0f3460;color:#a0a0a0}
+        body.dark .bookmark-btn{border-color:#0f3460;color:#a0a0a0}
+        body.dark .bookmark-btn:hover{background:#0f3460}
+        .container{max-width:1200px;margin:0 auto}
+        h1{margin-bottom:16px;color:#222}
+        .top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px}
+        .btns{display:flex;gap:8px;flex-wrap:wrap}
+        .btns-secondary{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;padding-top:8px;border-top:1px solid #ddd}
+        button{padding:8px 16px;cursor:pointer;border:none;border-radius:4px;background:#007bff;color:#fff;transition:opacity 0.2s}
+        button:hover{opacity:0.85}
+        button.secondary{background:#6c757d}
+        button.success{background:#28a745}
+        .convert-panel{display:none;margin-top:16px;padding:16px;background:#f8f9fa;border-radius:8px;border:1px solid #ddd}
+        .convert-panel.active{display:block}
+        .convert-panel h3{margin-bottom:12px;font-size:16px}
+        .convert-output{width:100%;min-height:200px;padding:12px;font-family:monospace;font-size:13px;border:1px solid #ddd;border-radius:4px;background:#fff;margin-bottom:12px}
+        .convert-tabs{display:flex;gap:4px;margin-bottom:12px;flex-wrap:wrap}
+        .convert-tab{padding:6px 12px;border:1px solid #ddd;border-radius:4px;background:#fff;cursor:pointer;font-size:13px}
+        .convert-tab.active{background:#007bff;color:#fff;border-color:#007bff}
+        textarea{width:100%;height:400px;padding:12px;font-family:monospace;font-size:14px;border:1px solid #ddd;border-radius:4px;resize:vertical}
+        .tip{margin-top:10px;color:#d93025;min-height:20px}
+        .tree-view{width:100%;max-height:400px;overflow:auto;padding:12px;font-family:monospace;font-size:14px;border:1px solid #ddd;border-radius:4px;background:#fff;margin-top:12px;display:none}
+        .tree-node{padding:2px 0;padding-left:20px}
+        .tree-node.level-0{padding-left:0}
+        .tree-header{display:flex;align-items:center;gap:4px;cursor:pointer;padding:2px 6px;border-radius:3px}
+        .tree-header:hover{background:#e8f0fe}
+        .tree-toggle{width:16px;text-align:center;font-size:12px;color:#666;user-select:none}
+        .tree-key{color:#d63384;font-weight:bold}
+        .tree-separator{color:#999}
+        .tree-val{word-break:break-all}
+        .string-val{color:#0b7500}
+        .number-val{color:#1750eb}
+        .bool-val{color:#ff6600}
+        .null-val{color:#888;font-style:italic}
+        .tree-bracket{color:#666;font-weight:bold}
+        .tree-children{overflow:hidden;transition:max-height 0.2s ease}
+        .tree-children.collapsed{max-height:0!important;overflow:hidden}
+        .tree-actions{margin-left:auto;display:none;gap:4px}
+        .tree-header:hover .tree-actions{display:flex}
+        .tree-copy-btn{padding:2px 6px;font-size:11px;background:#6c757d;border-radius:2px}
+        .view-toggle{margin-bottom:12px;display:flex;gap:8px}
+        .view-toggle button.active{background:#0056b3}
+        .file-input-hidden{display:none}
+        footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center}
+        .bookmark-btn{position:fixed;top:20px;right:20px;padding:8px 14px;background:#fff;border:1px solid #ccc;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#555;z-index:100;transition:all 0.2s;box-shadow:0 1px 3px rgba(0,0,0,0.1)}
+        .convert-section{margin-top:12px;padding:16px;background:#f8f9fa;border-radius:8px;border:1px solid #ddd}
+        .convert-section.hidden{display:none}
+        .convert-label{font-size:13px;font-weight:500;color:#555;margin-bottom:4px;display:block}
+        .bookmark-btn:hover{background:#f0f0f0;color:#333;border-color:#aaa}
+        @media(max-width:768px){
+            .btns{flex-direction:column}
+            .btns button{text-align:center}
+            textarea,.tree-view{height:250px}
+            .bookmark-btn{top:auto;bottom:10px;right:10px;padding:6px 10px;font-size:12px}
+        }
+    </style>
+</head>
+<body>
+<button class="bookmark-btn" id="bookmarkBtn" title="Add to bookmarks">⭐ Bookmark</button>
+<div class="container">
+    <div class="top-bar">
+        <h1>Online JSON Formatter / Validator</h1>
+        <div class="btns">
+            <button id="format">Format</button>
+            <button id="minify">Minify</button>
+            <button id="importBtn">📂 Import</button>
+            <button id="exportBtn">💾 Export</button>
+            <button id="clear">Clear</button>
+            <button id="copy">Copy</button>
+        </div>
+    </div>
+    <div class="view-toggle">
+        <button id="toggleCode" class="active">Code View</button>
+        <button id="toggleTree">Tree View</button>
+        <button id="toggleConvert">Code Convert</button>
+    </div>
+    
+    <div class="convert-section hidden" id="convertSection">
+        <div class="convert-tabs">
+            <button class="convert-tab active" data-lang="typescript">TypeScript</button>
+            <button class="convert-tab" data-lang="java">Java</button>
+            <button class="convert-tab" data-lang="go">Go</button>
+        </div>
+        <label class="convert-label">Converted Code:</label>
+        <textarea class="convert-output" id="convertOutput" readonly placeholder="Converted code will appear here..."></textarea>
+        <div class="btns">
+            <button id="convertBtn" class="success">Convert</button>
+            <button id="copyConvert" class="secondary">Copy Code</button>
+        </div>
+    </div>
+    <textarea id="jsonInput" placeholder="Paste your JSON here..."></textarea>
+    <div class="tree-view" id="treeView"></div>
+    <div class="tip" id="errTip"></div>
+    <footer>
+        YuanQiZhiLe Toolkit — Developer Free Utility Tools
+    </footer>
+</div>
+<input type="file" id="fileInput" class="file-input-hidden" accept=".json,.txt">
+<script>
+const input=document.getElementById('jsonInput');
+const errTip=document.getElementById('errTip');
+const treeView=document.getElementById('treeView');
+const fileInput=document.getElementById('fileInput');
+let currentView='code';
+
+// Format
+document.getElementById('format').onclick=()=>{
+    errTip.textContent='';
+    try{
+        const obj=JSON.parse(input.value.trim());
+        input.value=JSON.stringify(obj,null,2);
+        if(currentView==='tree')buildTree(obj);
+    }catch(e){errTip.textContent='JSON Syntax Error: '+e.message}
+};
+
+// Minify
+document.getElementById('minify').onclick=()=>{
+    errTip.textContent='';
+    try{
+        const obj=JSON.parse(input.value.trim());
+        input.value=JSON.stringify(obj);
+        if(currentView==='tree')buildTree(obj);
+    }catch(e){errTip.textContent='JSON Syntax Error: '+e.message}
+};
+
+// Clear
+document.getElementById('clear').onclick=()=>{
+    input.value='';treeView.innerHTML='';errTip.textContent='';
+};
+
+// Copy
+document.getElementById('copy').onclick=async()=>{
+    await navigator.clipboard.writeText(input.value);
+    alert('Copied!');
+};
+
+// Import file
+document.getElementById('importBtn').onclick=()=>fileInput.click();
+fileInput.onchange=(e)=>{
+    const file=e.target.files[0];
+    if(!file)return;
+    const reader=new FileReader();
+    reader.onload=(ev)=>{
+        input.value=ev.target.result;
+        errTip.textContent='Loaded: '+file.name;
+    };
+    reader.readAsText(file);
+    fileInput.value='';
+};
+
+// Export file
+document.getElementById('exportBtn').onclick=()=>{
+    if(!input.value.trim()){alert('Nothing to export');return}
+    const blob=new Blob([input.value],{type:'application/json'});
+    const a=document.createElement('a');
+    a.href=URL.createObjectURL(blob);
+    a.download='formatted.json';
+    a.click();
+    URL.revokeObjectURL(a.href);
+};
+
+// View toggle
+document.getElementById('toggleCode').onclick=()=>{
+    currentView='code';
+    input.style.display='';treeView.style.display='none';
+    document.querySelector('.convert-section').style.display='none';
+    document.getElementById('toggleCode').classList.add('active');
+    document.getElementById('toggleTree').classList.remove('active');
+    document.getElementById('toggleConvert').classList.remove('active');
+};
+document.getElementById('toggleTree').onclick=()=>{
+    currentView='tree';
+    input.style.display='none';treeView.style.display='';
+    document.querySelector('.convert-section').style.display='none';
+    document.getElementById('toggleTree').classList.add('active');
+    document.getElementById('toggleCode').classList.remove('active');
+    document.getElementById('toggleConvert').classList.remove('active');
+    var trimmed=input.value.trim();
+    if(!trimmed){errTip.textContent='Please paste JSON first';return}
+    try{buildTree(JSON.parse(trimmed))}catch(e){errTip.textContent='Invalid JSON: '+e.message}
+};
+document.getElementById('toggleConvert').onclick=()=>{
+    currentView='convert';
+    input.style.display='none';treeView.style.display='none';
+    document.querySelector('.convert-section').style.display='block';
+    document.getElementById('toggleConvert').classList.add('active');
+    document.getElementById('toggleCode').classList.remove('active');
+    document.getElementById('toggleTree').classList.remove('active');
+};
+
+// Convert tabs
+let convertLang='typescript';
+document.querySelectorAll('.convert-tab').forEach(tab=>{
+    tab.onclick=()=>{
+        document.querySelectorAll('.convert-tab').forEach(t=>t.classList.remove('active'));
+        tab.classList.add('active');
+        convertLang=tab.dataset.lang;
+    };
+});
+
+// Convert button
+document.getElementById('convertBtn').onclick=()=>{
+    errTip.textContent='';
+    var trimmed=input.value.trim();
+    if(!trimmed){errTip.textContent='Please paste JSON first';return}
+    try{
+        const obj=JSON.parse(trimmed);
+        let code='';
+        if(convertLang==='typescript')code=generateTS(obj);
+        else if(convertLang==='java')code=generateJava(obj);
+        else if(convertLang==='go')code=generateGo(obj);
+        document.getElementById('convertOutput').value=code;
+    }catch(e){errTip.textContent='Invalid JSON: '+e.message}
+};
+
+// Generate TypeScript Interface
+function generateTS(obj){
+    return 'interface '+toPascalCase(getRootKey(obj))+' {\n'+genTS(obj,'  ')+'\n}';
+}
+function genTS(obj,indent){
+    let s='';
+    for(const k in obj){
+        const v=obj[k];
+        if(v===null)s+=indent+k+': any;\n';
+        else if(Array.isArray(v))s+=indent+k+': '+genTSType(v)+'[];\n';
+        else if(typeof v==='object')s+=indent+k+': {\n'+genTS(v,indent+'  ')+'\n'+indent+'};\n';
+        else s+=indent+k+': '+getType(v)+';\n';
+    }
+    return s;
+}
+function genTSType(arr){
+    const types=[...new Set(arr.map(function(v){if(v===null)return'null';if(Array.isArray(v))return'array';return typeof v}))];
+    const typeMap={'null':'null','boolean':'boolean','number':'number','string':'string','array':'array'};
+    if(types.length===1)return typeMap[types[0]];
+    return types.map(function(t){if(t==='null')return'null';if(t==='array')return'any[]';return t}).join('|');
+}
+function getType(v){return v===null?'null':Array.isArray(v)?'array':typeof v}
+function toPascalCase(s){return s.charAt(0).toUpperCase()+s.slice(1).replace(/[_\-\s]([a-z])/g,(_,c)=>c.toUpperCase())}
+function getRootKey(obj){const k=Object.keys(obj);return k.length>0?k[0]:'Root'}
+
+// Generate Java Class
+function generateJava(obj){
+    let s='// Auto-generated Java class\n';
+    s+='public class '+toPascalCase(getRootKey(obj))+' {\n';
+    s+=genJava(obj,'    ');
+    s+='}\n';
+    return s;
+}
+function genJava(obj,indent){
+    let s='';
+    for(const k in obj){
+        const v=obj[k];
+        s+=indent+'private '+javaType(v)+' '+camelToSnake(k)+';\n';
+    }
+    s+='\n';
+    for(const k in obj){
+        const sk=camelToSnake(k);
+        s+=indent+'public '+javaType(obj[k])+' get'+toPascalCase(sk)+'() { return this.'+sk+'; }\n';
+        s+=indent+'public void set'+toPascalCase(sk)+'('+javaType(obj[k])+' '+sk+') { this.'+sk+' = '+sk+'; }\n\n';
+    }
+    return s;
+}
+function javaType(v){
+    if(v===null)return'double';
+    if(typeof v==='boolean')return'boolean';
+    if(typeof v==='number')return'double';
+    if(Array.isArray(v))return'List<Object>';
+    if(typeof v==='object')return'Object';
+    return'String';
+}
+function camelToSnake(s){return s.replace(/([a-z])([A-Z])/g,'$1_$2').toLowerCase()}
+
+// Generate Go Struct
+function generateGo(obj){
+    let s='// Auto-generated Go struct\n';
+    s+='type '+toPascalCase(getRootKey(obj))+' struct {\n';
+    s+=genGo(obj,'    ');
+    s+='}\n';
+    return s;
+}
+function genGo(obj,indent){
+    let s='';
+    for(const k in obj){
+        const tag=k.toLowerCase();
+        s+=indent+toPascalCase(k)+' '+goType(obj[k])+' `json:"'+tag+'"`\n';
+    }
+    return s;
+}
+function goType(v){
+    if(v===null)return'interface{}'
+    if(typeof v==='boolean')return'bool';
+    if(typeof v==='number'){return v%1===0?'int':'float64'}
+    if(typeof v==='string')return'string';
+    if(Array.isArray(v))return'[]'+(v.length>0?goType(v[0]):'interface{}');
+    if(typeof v==='object')return'*'+toPascalCase(getRootKey(v));
+    return'string';
+}
+
+// Tree view builder
+function buildTree(obj){
+    treeView.innerHTML='';
+    treeView.appendChild(buildNode(obj,'root',0));
+}
+
+function buildNode(value,key,name,level){
+    const node=document.createElement('div');
+    node.className='tree-node level-'+level;
+    
+    const header=document.createElement('div');
+    header.className='tree-header';
+    
+    const toggle=document.createElement('span');
+    toggle.className='tree-toggle';
+    toggle.textContent='';
+    
+    const keySpan=document.createElement('span');
+    if(name!=='root'){
+        keySpan.innerHTML='<span class="tree-key">"'+escHtml(name)+'"</span><span class="tree-separator">: </span>';
+    }
+    
+    const valSpan=document.createElement('span');
+    valSpan.className='tree-val';
+    
+    const actions=document.createElement('div');
+    actions.className='tree-actions';
+    if(name!=='root'){
+        const copyBtn=document.createElement('button');
+        copyBtn.className='tree-copy-btn';
+        copyBtn.textContent='📋';
+        copyBtn.title='Copy this value';
+        copyBtn.onclick=(e)=>{
+            e.stopPropagation();
+            navigator.clipboard.writeText(typeof value==='object'?JSON.stringify(value,null,2*(level+1)):String(value));
+        };
+        actions.appendChild(copyBtn);
+    }
+    
+    header.appendChild(toggle);
+    header.appendChild(keySpan);
+    header.appendChild(valSpan);
+    header.appendChild(actions);
+    node.appendChild(header);
+    
+    if(value===null){
+        valSpan.innerHTML='<span class="null-val">null</span>';
+    }else if(Array.isArray(value)){
+        toggle.textContent='▼';
+        if(value.length===0){
+            valSpan.innerHTML='<span class="tree-bracket">[]</span>';
+        }else{
+            const children=document.createElement('div');
+            children.className='tree-children';
+            children.style.maxHeight=value.length*30+'px';
+            value.forEach((item,i)=>{
+                children.appendChild(buildNode(item,i,'['+i+']',level+1));
+            });
+            node.appendChild(children);
+            toggle.onclick=()=>{
+                children.classList.toggle('collapsed');
+                toggle.textContent=children.classList.contains('collapsed')?'▶':'▼';
+            };
+        }
+    }else if(typeof value==='object'){
+        toggle.textContent='▼';
+        const keys=Object.keys(value);
+        if(keys.length===0){
+            valSpan.innerHTML='<span class="tree-bracket">{}</span>';
+        }else{
+            const children=document.createElement('div');
+            children.className='tree-children';
+            children.style.maxHeight=keys.length*30+'px';
+            keys.forEach(k=>{
+                children.appendChild(buildNode(value[k],k,k,level+1));
+            });
+            node.appendChild(children);
+            toggle.onclick=()=>{
+                children.classList.toggle('collapsed');
+                toggle.textContent=children.classList.contains('collapsed')?'▶':'▼';
+            };
+        }
+    }else if(typeof value==='string'){
+        valSpan.innerHTML='<span class="string-val">"'+escHtml(value)+'"</span>';
+    }else if(typeof value==='number'){
+        valSpan.innerHTML='<span class="number-val">'+value+'</span>';
+    }else if(typeof value==='boolean'){
+        valSpan.innerHTML='<span class="bool-val">'+value+'</span>';
+    }
+    
+    return node;
+}
+
+function escHtml(str){
+    return str.replace(/&/g,'&').replace(/</g,'<').replace(/>/g,'>').replace(/"/g,'"');
+}
+
+// Bookmark
+document.getElementById('bookmarkBtn').onclick=()=>{
+    if(!window.sidebar&&document.all&&!window.opera){
+        window.external.AddFavorite(location.href,document.title);
+    }else if(window.sidebar){
+        window.sidebar.addPanel(document.title,location.href,'');
+    }else{
+        alert('Press Ctrl+D (or Cmd+D on Mac) to bookmark this page!');
+    }
+};
+
+// Copy converted code
+document.getElementById('copyConvert').onclick=async()=>{
+    const output=document.getElementById('convertOutput');
+    if(!output.value){alert('Nothing to copy');return}
+    await navigator.clipboard.writeText(output.value);
+    alert('Code copied!');
+};
+</script>
+</body>
+</html>

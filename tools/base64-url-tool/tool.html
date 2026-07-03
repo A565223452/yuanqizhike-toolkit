@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Base64/URL/JWT Tool | YuanQiZhiLe Toolkit</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:system-ui;background:#f7f7f7;transition:background 0.3s,color 0.3s}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+body.dark .wrap{background:#16213e}
+body.dark textarea,body.dark .jwt-payload{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark .tab-btn{background:#0f3460;color:#a0a0a0}
+body.dark .tab-btn.active{background:#e94560;color:#fff}
+body.dark .tab-btn:hover:not(.active){background:#1a1a2e}
+body.dark .jwt-header,.body.dark .jwt-payload{background:#0f3460}
+body.dark .jwt-token{color:#e0e0e0}
+body.dark .copy-btn{background:#0f3460;color:#a0a0a0}
+body.dark .copy-btn:hover{background:#1a1a2e}
+body.dark .batch-item{background:#0f3460;border-color:#1a1a2e}
+body.dark .batch-item textarea{background:#16213e}
+body.dark .hash-btn{background:#0f3460;color:#a0a0a0;border-color:#1a1a2e}
+body.dark .hash-btn:hover{background:#1a1a2e}
+body.dark .hash-btn.active{background:#e94560;color:#fff}
+.wrap{max-width:900px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:16px}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+textarea{width:100%;height:140px;padding:10px;margin:8px 0;border:1px solid #ddd;border-radius:4px;font-family:monospace;font-size:13px;transition:background 0.3s,color 0.3s}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.btns button{padding:8px 14px;border:none;border-radius:4px;background:#007bff;color:#fff;cursor:pointer;transition:opacity 0.2s}
+.btns button:hover{opacity:0.85}
+.tabs{display:flex;gap:8px;margin:16px 0;flex-wrap:wrap}
+.tab-btn{padding:8px 16px;border:1px solid #ddd;border-radius:4px;background:#f8f8f8;cursor:pointer;font-size:13px;transition:all 0.2s}
+.tab-btn.active{background:#007bff;color:#fff;border-color:#007bff}
+.tab-btn:hover:not(.active){background:#e8f0fe}
+.tab-content{display:none}
+.tab-content.active{display:block}
+.jwt-section{margin-top:16px}
+.jwt-token{padding:12px;background:#f8f9fa;border:1px solid #ddd;border-radius:4px;font-family:monospace;font-size:12px;word-break:break-all;white-space:pre-wrap;max-height:150px;overflow-y:auto}
+.jwt-decode{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap}
+.jwt-header,.jwt-payload{flex:1;min-width:200px;padding:12px;border:1px solid #ddd;border-radius:4px;font-size:13px}
+.jwt-header h4,.jwt-payload h4{margin-bottom:8px;font-size:14px}
+.jwt-header pre,.jwt-payload pre{font-family:monospace;font-size:12px;white-space:pre-wrap;word-break:break-all}
+.copy-btn{padding:4px 10px;background:#6c757d;color:#fff;border:none;border-radius:3px;cursor:pointer;font-size:12px;margin-top:8px}
+.copy-btn:hover{opacity:0.85}
+.batch-section{margin-top:16px}
+.batch-item{padding:12px;border:1px solid #ddd;border-radius:4px;margin-bottom:8px}
+.batch-item textarea{height:60px;margin:0}
+.batch-result{margin-top:8px;font-size:13px;font-family:monospace;white-space:pre-wrap;word-break:break-all}
+.hash-section{margin-top:16px}
+.hash-btns{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.hash-btn{padding:6px 12px;border:1px solid #ddd;border-radius:4px;background:#f8f8f8;cursor:pointer;font-size:12px;transition:all 0.2s}
+.hash-btn.active{background:#007bff;color:#fff;border-color:#007bff}
+.hash-result{padding:10px;background:#f8f9fa;border:1px solid #ddd;border-radius:4px;font-family:monospace;font-size:12px;word-break:break-all;max-height:100px;overflow-y:auto}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center}
+@media(max-width:768px){
+    .wrap{padding:16px}
+    .jwt-decode{flex-direction:column}
+    .bookmark-btn{position:static;margin-top:8px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top-bar">
+    <h1>Base64 / URL Encoder Decoder</h1>
+    <button class="bookmark-btn" id="bookmarkBtn">Bookmark</button>
+</div>
+
+<div class="tabs">
+    <button class="tab-btn active" data-tab="encode">Encode/Decode</button>
+    <button class="tab-btn" data-tab="jwt">JWT Parser</button>
+    <button class="tab-btn" data-tab="batch">Batch</button>
+     <button class="tab-btn" data-tab="hash">Hash</button>
+     <button class="tab-btn" data-tab="image">Base64 Image</button>
+ </div>
+
+<!-- Encode/Decode Tab -->
+<div class="tab-content active" id="tab-encode">
+    <textarea id="inputBox" placeholder="Input text here"></textarea>
+    <div class="btns">
+        <button id="b64Encode">Base64 Encode</button>
+        <button id="b64Decode">Base64 Decode</button>
+        <button id="urlEncode">URL Encode</button>
+        <button id="urlDecode">URL Decode</button>
+        <button id="clearBtn">Clear</button>
+    </div>
+    <textarea id="outputBox" readonly placeholder="Result will show here"></textarea>
+</div>
+
+<!-- JWT Tab -->
+<div class="tab-content" id="tab-jwt">
+    <div class="jwt-section">
+        <label>JWT Token:</label>
+        <textarea id="jwtInput" placeholder="Paste your JWT token here..." style="height:80px"></textarea>
+        <button id="parseJwt" style="margin-top:8px">Parse JWT</button>
+        <div id="jwtDisplay" style="display:none">
+            <div class="jwt-token" id="jwtToken"></div>
+            <div class="jwt-decode">
+                <div class="jwt-header">
+                    <h4>Header</h4>
+                    <pre id="jwtHeader"></pre>
+                </div>
+                <div class="jwt-payload">
+                    <h4>Payload</h4>
+                    <pre id="jwtPayload"></pre>
+                </div>
+            </div>
+            <button class="copy-btn" id="copyJwt">Copy Decoded</button>
+        </div>
+    </div>
+</div>
+
+<!-- Batch Tab -->
+<div class="tab-content" id="tab-batch">
+    <div class="batch-section">
+        <label>Enter multiple lines (one per line):</label>
+        <textarea id="batchInput" placeholder="Line 1&#10;Line 2&#10;Line 3" style="height:120px"></textarea>
+        <div class="btns">
+            <button id="batchB64Enc">Base64 Encode All</button>
+            <button id="batchB64Dec">Base64 Decode All</button>
+            <button id="batchUrlEnc">URL Encode All</button>
+            <button id="batchUrlDec">URL Decode All</button>
+        </div>
+        <div id="batchResults"></div>
+    </div>
+</div>
+
+ <!-- Hash Tab -->
+ <div class="tab-content" id="tab-hash">
+     <div class="hash-section">
+         <label>Text to hash:</label>
+         <textarea id="hashInput" placeholder="Enter text to hash..." style="height:80px"></textarea>
+         <div class="hash-btns">
+             <button class="hash-btn" data-algo="sha256">SHA-256</button>
+             <button class="hash-btn" data-algo="sha384">SHA-384</button>
+             <button class="hash-btn" data-algo="sha512">SHA-512</button>
+         </div>
+         <div class="hash-result" id="hashResult">Hash will appear here...</div>
+         <button class="copy-btn" id="copyHash" style="display:none">Copy Hash</button>
+     </div>
+ </div>
+
+ <!-- Base64 Image Tab -->
+ <div class="tab-content" id="tab-image">
+     <div class="hash-section">
+         <h3>Base64 Image Preview</h3>
+         <textarea id="b64ImageInput" placeholder="Paste Base64 encoded image data (without data:image/png;base64, prefix)..." style="height:80px"></textarea>
+         <div class="btns">
+             <button id="previewImage">Preview Image</button>
+             <button id="clearImage">Clear</button>
+         </div>
+         <div id="imagePreview" style="margin-top:12px;text-align:center"></div>
+         <p style="font-size:12px;color:#666;margin-top:8px">Supports: PNG, JPEG, GIF, SVG, WebP</p>
+     </div>
+ </div>
+
+<footer>YuanQiZhiLe Toolkit - Developer Free Utility Tools</footer>
+</div>
+
+<script>
+const inputBox=document.getElementById('inputBox');
+const outputBox=document.getElementById('outputBox');
+const bookmarkBtn=document.getElementById('bookmarkBtn');
+const tabBtns=document.querySelectorAll('.tab-btn');
+
+// Encode/Decode
+document.getElementById('b64Encode').onclick=function(){
+    try{outputBox.value=btoa(unescape(encodeURIComponent(inputBox.value)))}catch(e){outputBox.value='Error: '+e.message}
+};
+document.getElementById('b64Decode').onclick=function(){
+    try{outputBox.value=decodeURIComponent(escape(atob(inputBox.value)))}catch(e){outputBox.value='Error: Invalid Base64'}
+};
+document.getElementById('urlEncode').onclick=function(){
+    outputBox.value=encodeURIComponent(inputBox.value)
+};
+document.getElementById('urlDecode').onclick=function(){
+    try{outputBox.value=decodeURIComponent(inputBox.value)}catch(e){outputBox.value='URL decode error'}
+};
+document.getElementById('clearBtn').onclick=function(){inputBox.value='';outputBox.value=''};
+
+// JWT Parser
+document.getElementById('parseJwt').onclick=function(){
+    var token=document.getElementById('jwtInput').value.trim();
+    if(!token){alert('Please enter a JWT token');return}
+    var parts=token.split('.');
+    if(parts.length!==3){alert('Invalid JWT format');return}
+    try{
+        var header=JSON.parse(decodeURIComponent(escape(atob(parts[0]))));
+        var payload=JSON.parse(decodeURIComponent(escape(atob(parts[1]))));
+        document.getElementById('jwtDisplay').style.display='block';
+        document.getElementById('jwtToken').textContent=token;
+        document.getElementById('jwtHeader').textContent=JSON.stringify(header,null,2);
+        document.getElementById('jwtPayload').textContent=JSON.stringify(payload,null,2);
+        if(payload.exp){
+            var expDate=new Date(payload.exp*1000);
+            document.getElementById('jwtPayload').textContent+='\n\nExpires: '+expDate.toUTCString();
+        }
+    }catch(e){alert('Failed to parse JWT: '+e.message)}
+};
+document.getElementById('copyJwt').onclick=function(){
+    var text='Header:\n'+document.getElementById('jwtHeader').textContent+'\n\nPayload:\n'+document.getElementById('jwtPayload').textContent;
+    navigator.clipboard.writeText(text);
+    alert('Copied!');
+};
+
+// Batch
+function processBatch(callback){
+    var lines=inputBox.value.split('\n');
+    var results=[];
+    for(var i=0;i<lines.length;i++){
+        try{results.push(callback(lines[i]))}catch(e){results.push('Error: '+e.message)}
+    }
+    return results.join('\n');
+}
+document.getElementById('batchB64Enc').onclick=function(){
+    var lines=document.getElementById('batchInput').value.split('\n');
+    var results=[];
+    for(var i=0;i<lines.length;i++){
+        try{results.push(unescape(encodeURIComponent(lines[i])))}catch(e){results.push('Error: '+e.message)}
+    }
+    displayBatchResults(results);
+};
+document.getElementById('batchB64Dec').onclick=function(){
+    var lines=document.getElementById('batchInput').value.split('\n');
+    var results=[];
+    for(var i=0;i<lines.length;i++){
+        try{results.push(decodeURIComponent(escape(atob(lines[i]))))}catch(e){results.push('Error: Invalid Base64')}
+    }
+    displayBatchResults(results);
+};
+document.getElementById('batchUrlEnc').onclick=function(){
+    var lines=document.getElementById('batchInput').value.split('\n');
+    var results=[];
+    for(var i=0;i<lines.length;i++){
+        results.push(encodeURIComponent(lines[i]));
+    }
+    displayBatchResults(results);
+};
+document.getElementById('batchUrlDec').onclick=function(){
+    var lines=document.getElementById('batchInput').value.split('\n');
+    var results=[];
+    for(var i=0;i<lines.length;i++){
+        try{results.push(decodeURIComponent(lines[i]))}catch(e){results.push('Error: Invalid URL encoding')}
+    }
+    displayBatchResults(results);
+};
+function displayBatchResults(results){
+    var html='';
+    for(var i=0;i<results.length;i++){
+        html+='<div class="batch-item"><strong>Line '+(i+1)+':</strong><div class="batch-result">'+results[i]+'</div></div>';
+    }
+    document.getElementById('batchResults').innerHTML=html;
+}
+
+// Hash (real Web Crypto API)
+async function computeHash(text,algo){
+    const encoder=new TextEncoder();
+    const data=encoder.encode(text);
+    const hashBuffer=await crypto.subtle.digest(algo,data);
+    const hashArray=Array.from(new Uint8Array(hashBuffer));
+    return hashArray.map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+
+document.querySelectorAll('.hash-btn').forEach(function(btn){
+    btn.onclick=async function(){
+        var text=document.getElementById('hashInput').value;
+        var algo=this.dataset.algo;
+        try{
+            var hash=await computeHash(text,algo);
+            document.getElementById('hashResult').textContent=hash;
+            document.getElementById('copyHash').style.display='inline-block';
+            document.getElementById('copyHash').onclick=function(){
+                navigator.clipboard.writeText(hash);
+                alert('Copied!');
+            };
+        }catch(e){
+            document.getElementById('hashResult').textContent='Error: '+e.message;
+        }
+    };
+});
+
+// Base64 Image Preview
+document.getElementById('previewImage').onclick=function(){
+    var b64data=document.getElementById('b64ImageInput').value.trim();
+    if(!b64data){alert('Please enter Base64 data');return}
+    var imagePreview=document.getElementById('imagePreview');
+    imagePreview.innerHTML='<img src="data:image/png;base64,'+b64data+'" style="max-width:100%;max-height:400px;border-radius:8px;border:1px solid #ddd">';
+};
+
+document.getElementById('clearImage').onclick=function(){
+    document.getElementById('b64ImageInput').value='';
+    document.getElementById('imagePreview').innerHTML='';
+};
+
+// Tab switching
+tabBtns.forEach(function(btn){
+    btn.onclick=function(){
+        tabBtns.forEach(function(b){b.classList.remove('active')});
+        this.classList.add('active');
+        document.querySelectorAll('.tab-content').forEach(function(tc){tc.classList.remove('active')});
+        document.getElementById('tab-'+this.dataset.tab).classList.add('active');
+    };
+});
+
+// Bookmark
+bookmarkBtn.onclick=function(){
+    alert('Press Ctrl+D (or Cmd+D on Mac) to bookmark this page!');
+};
+</script>
+</body>
+</html>
