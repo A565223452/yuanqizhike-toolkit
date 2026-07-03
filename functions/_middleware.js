@@ -7,11 +7,22 @@ async function errorHandler(context) {
   }
 }
 
-// 全局附加CORS头部中间件
+// 全局附加CORS头部中间件 + CSP安全策略（允许AdSense加载）
 async function setCorsHeader(context) {
   const response = await context.next();
   response.headers.set("Access-Control-Allow-Origin", "*");
   response.headers.set("Access-Control-Max-Age", "86400");
+  // CSP安全策略：允许谷歌广告脚本加载
+  response.headers.set(
+    "Content-Security-Policy",
+    "default-src 'self'; " +
+    "script-src 'self' https://pagead2.googlesyndication.com https://www.googletagmanager.com https://www.google.com https://www.gstatic.com 'unsafe-inline' 'unsafe-eval'; " +
+    "connect-src 'self' https://pagead2.googlesyndication.com https://www.googletagmanager.com https://fonts.googleapis.com; " +
+    "img-src 'self' https://googleads.g.doubleclick.net https://www.google.com https://www.gstatic.com data:; " +
+    "style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; " +
+    "font-src 'self' https://fonts.gstatic.com; " +
+    "frame-src 'self' https://pagead2.googlesyndication.com;"
+  );
   return response;
 }
 

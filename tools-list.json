@@ -11,7 +11,7 @@
       "One-Click Copy"
     ],
     "detailUrl": "tools/article-rewrite/index.html",
-    "zipUrl": "assets/zip-packages/writing/article-rewrite.zip"
+    "zipUrl": "/assets/zip-packages/writing/article-rewrite.zip"
   },
   {
     "category": "Developer Tools",
@@ -27,7 +27,7 @@
       "Copy Node"
     ],
     "detailUrl": "tools/json-formatter/index.html",
-    "zipUrl": "assets/zip-packages/dev/json-formatter.zip"
+    "zipUrl": "/assets/zip-packages/dev/json-formatter.zip"
   },
   {
     "category": "Developer Tools",
@@ -42,7 +42,7 @@
       "Export CSS Variables"
     ],
     "detailUrl": "tools/color-converter/index.html",
-    "zipUrl": "assets/zip-packages/dev/color-converter.zip"
+    "zipUrl": "/assets/zip-packages/dev/color-converter.zip"
   },
   {
     "category": "Developer Tools",
@@ -59,7 +59,7 @@
       "Hash Generator"
     ],
     "detailUrl": "tools/base64-url-tool/index.html",
-    "zipUrl": "assets/zip-packages/dev/base64-url-tool.zip"
+    "zipUrl": "/assets/zip-packages/dev/base64-url-tool.zip"
   },
   {
     "category": "Design & Media",
@@ -73,7 +73,7 @@
       "Quality Control"
     ],
     "detailUrl": "tools/image-converter/index.html",
-    "zipUrl": "assets/zip-packages/design/image-converter.zip"
+    "zipUrl": "/assets/zip-packages/design/image-converter.zip"
   },
   {
     "category": "Business & Productivity",
@@ -89,7 +89,7 @@
       "100% Private Local Processing"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/business/amazon-keyword-miner.zip"
+    "zipUrl": "/assets/zip-packages/business/amazon-keyword-miner.zip"
   },
   {
     "category": "Business & Productivity",
@@ -101,7 +101,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/business/budget-calculator.zip"
+    "zipUrl": "/assets/zip-packages/business/budget-calculator.zip"
   },
   {
     "category": "Business & Productivity",
@@ -113,7 +113,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/business/inventory-turnover-calculator.zip"
+    "zipUrl": "/assets/zip-packages/business/inventory-turnover-calculator.zip"
   },
   {
     "category": "Business & Productivity",
@@ -129,7 +129,7 @@
       "Local Privacy"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/business/invoice-generator.zip"
+    "zipUrl": "/assets/zip-packages/business/invoice-generator.zip"
   },
   {
     "category": "Business & Productivity",
@@ -145,7 +145,7 @@
       "Client Details"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/business/quotation-generator.zip"
+    "zipUrl": "/assets/zip-packages/business/quotation-generator.zip"
   },
   {
     "category": "Business & Productivity",
@@ -161,7 +161,7 @@
       "Privacy Focused"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/business/shipping-cost-estimator.zip"
+    "zipUrl": "/assets/zip-packages/business/shipping-cost-estimator.zip"
   },
   {
     "category": "Business & Productivity",
@@ -176,7 +176,7 @@
       "A/B Testing Support"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/business/amazon-title-optimizer.zip"
+    "zipUrl": "/assets/zip-packages/business/amazon-title-optimizer.zip"
   },
   {
     "category": "Business & Productivity",
@@ -192,7 +192,7 @@
       "Local Browser Processing"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/business/batch-file-renamer.zip"
+    "zipUrl": "/assets/zip-packages/business/batch-file-renamer.zip"
   },
   {
     "category": "Business & Productivity",
@@ -207,7 +207,7 @@
       "One-Click Export"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/business/csv-order-data-cleaner.zip"
+    "zipUrl": "/assets/zip-packages/business/csv-order-data-cleaner.zip"
   },
   {
     "category": "Business & Productivity",
@@ -223,7 +223,7 @@
       "Currency Charts"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/business/currency-converter.zip"
+    "zipUrl": "/assets/zip-packages/business/currency-converter.zip"
   },
   {
     "category": "Business & Productivity",
@@ -239,7 +239,7 @@
       "ISBN Support"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/business/ean-barcode-generator.zip"
+    "zipUrl": "/assets/zip-packages/business/ean-barcode-generator.zip"
   },
   {
     "category": "Business & Productivity",
@@ -254,7 +254,7 @@
       "Export Results"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/business/random-name-picker.zip"
+    "zipUrl": "/assets/zip-packages/business/random-name-picker.zip"
   },
   {
     "category": "Business & Productivity",
@@ -266,7 +266,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/business/sku-generator.zip"
+    "zipUrl": "/assets/zip-packages/business/sku-generator.zip"
   },
   {
     "category": "Business & Productivity",
@@ -282,7 +282,7 @@
       "Multi-Item Shipments"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/business/tariff-calculator.zip"
+    "zipUrl": "/assets/zip-packages/business/tariff-calculator.zip"
   },
   {
     "category": "Content & Writing",
@@ -297,7 +297,7 @@
       "No Data Server Upload"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/writing/article-rewriter-similarity-checker.zip"
+    "zipUrl": "/assets/zip-packages/writing/article-rewriter-similarity-checker.zip"
   },
   {
     "category": "Content & Writing",
@@ -313,7 +313,7 @@
       "Privacy Focused"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/writing/text-case-converter.zip"
+    "zipUrl": "/assets/zip-packages/writing/text-case-converter.zip"
   },
   {
     "category": "Content & Writing",
@@ -325,7 +325,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/writing/email-extractor.zip"
+    "zipUrl": "/assets/zip-packages/writing/email-extractor.zip"
   },
   {
     "category": "Developer Tools",
@@ -340,7 +340,7 @@
       "Local Privacy"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/encoding-fixer.zip"
+    "zipUrl": "/assets/zip-packages/dev/encoding-fixer.zip"
   },
   {
     "category": "Content & Writing",
@@ -352,7 +352,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/writing/line-sorter.zip"
+    "zipUrl": "/assets/zip-packages/writing/line-sorter.zip"
   },
   {
     "category": "Content & Writing",
@@ -368,7 +368,7 @@
       "Local Privacy Protection"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/writing/text-deduplication-tool.zip"
+    "zipUrl": "/assets/zip-packages/writing/text-deduplication-tool.zip"
   },
   {
     "category": "Content & Writing",
@@ -380,7 +380,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/writing/whitespace-cleaner.zip"
+    "zipUrl": "/assets/zip-packages/writing/whitespace-cleaner.zip"
   },
   {
     "category": "Content & Writing",
@@ -396,7 +396,7 @@
       "Local Processing"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/writing/word-counter.zip"
+    "zipUrl": "/assets/zip-packages/writing/word-counter.zip"
   },
   {
     "category": "Content & Writing",
@@ -412,7 +412,7 @@
       "Local Browser Processing"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/writing/word-frequency-analyzer.zip"
+    "zipUrl": "/assets/zip-packages/writing/word-frequency-analyzer.zip"
   },
   {
     "category": "Developer Tools",
@@ -428,7 +428,7 @@
       "GCM Mode Support"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/aes-encryptor.zip"
+    "zipUrl": "/assets/zip-packages/dev/aes-encryptor.zip"
   },
   {
     "category": "Developer Tools",
@@ -443,7 +443,7 @@
       "No Server Upload"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/api-mock-data-generator.zip"
+    "zipUrl": "/assets/zip-packages/dev/api-mock-data-generator.zip"
   },
   {
     "category": "Developer Tools",
@@ -459,7 +459,7 @@
       "History Tracking"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/api-request-tester.zip"
+    "zipUrl": "/assets/zip-packages/dev/api-request-tester.zip"
   },
   {
     "category": "Developer Tools",
@@ -475,7 +475,7 @@
       "Local Privacy Protection"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/number-base-converter.zip"
+    "zipUrl": "/assets/zip-packages/dev/number-base-converter.zip"
   },
   {
     "category": "Developer Tools",
@@ -491,7 +491,7 @@
       "MIME Detection"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/batch-base64-encoder.zip"
+    "zipUrl": "/assets/zip-packages/dev/batch-base64-encoder.zip"
   },
   {
     "category": "Developer Tools",
@@ -507,7 +507,7 @@
       "Client Side Privacy"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/base64-url-jwt-tool.zip"
+    "zipUrl": "/assets/zip-packages/dev/base64-url-jwt-tool.zip"
   },
   {
     "category": "Developer Tools",
@@ -523,7 +523,7 @@
       "Private Local Processing"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/byte-unit-converter.zip"
+    "zipUrl": "/assets/zip-packages/dev/byte-unit-converter.zip"
   },
   {
     "category": "Design & Media",
@@ -539,7 +539,7 @@
       "Export CSS Variables"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/design/color-converter.zip"
+    "zipUrl": "/assets/zip-packages/design/color-converter.zip"
   },
   {
     "category": "Developer Tools",
@@ -555,7 +555,7 @@
       "Privacy Focused"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/command-line-cheat-sheet.zip"
+    "zipUrl": "/assets/zip-packages/dev/command-line-cheat-sheet.zip"
   },
   {
     "category": "Developer Tools",
@@ -571,7 +571,7 @@
       "Interactive Builder"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/cron-expression-parser.zip"
+    "zipUrl": "/assets/zip-packages/dev/cron-expression-parser.zip"
   },
   {
     "category": "Developer Tools",
@@ -587,7 +587,7 @@
       "Auth Integration"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/crud-code-template-generator.zip"
+    "zipUrl": "/assets/zip-packages/dev/crud-code-template-generator.zip"
   },
   {
     "category": "Developer Tools",
@@ -599,7 +599,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/css-formatter.zip"
+    "zipUrl": "/assets/zip-packages/dev/css-formatter.zip"
   },
   {
     "category": "Developer Tools",
@@ -614,7 +614,7 @@
       "Export Comparison Report"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/duplicate-file-comparator.zip"
+    "zipUrl": "/assets/zip-packages/dev/duplicate-file-comparator.zip"
   },
   {
     "category": "Developer Tools",
@@ -630,7 +630,7 @@
       "Automatic Type Inference"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/excel-to-json-converter.zip"
+    "zipUrl": "/assets/zip-packages/dev/excel-to-json-converter.zip"
   },
   {
     "category": "Developer Tools",
@@ -646,7 +646,7 @@
       "Batch Processing"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/spreadsheet-formula-converter.zip"
+    "zipUrl": "/assets/zip-packages/dev/spreadsheet-formula-converter.zip"
   },
   {
     "category": "Developer Tools",
@@ -658,7 +658,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/gitignore-generator.zip"
+    "zipUrl": "/assets/zip-packages/dev/gitignore-generator.zip"
   },
   {
     "category": "Developer Tools",
@@ -673,7 +673,7 @@
       "Secure Generation"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/hash-generator.zip"
+    "zipUrl": "/assets/zip-packages/dev/hash-generator.zip"
   },
   {
     "category": "Developer Tools",
@@ -689,7 +689,7 @@
       "Endianness Toggle"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/hex-to-text-converter.zip"
+    "zipUrl": "/assets/zip-packages/dev/hex-to-text-converter.zip"
   },
   {
     "category": "Developer Tools",
@@ -705,7 +705,7 @@
       "Custom Error Pages"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/htaccess-generator.zip"
+    "zipUrl": "/assets/zip-packages/dev/htaccess-generator.zip"
   },
   {
     "category": "Developer Tools",
@@ -721,7 +721,7 @@
       "Local Browser Processing"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/javascript-minifier.zip"
+    "zipUrl": "/assets/zip-packages/dev/javascript-minifier.zip"
   },
   {
     "category": "Developer Tools",
@@ -737,7 +737,7 @@
       "Fix Trailing Commas"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/json-field-cleaner.zip"
+    "zipUrl": "/assets/zip-packages/dev/json-field-cleaner.zip"
   },
   {
     "category": "Developer Tools",
@@ -752,7 +752,7 @@
       "Custom Delimiter Support"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/json-format-converter.zip"
+    "zipUrl": "/assets/zip-packages/dev/json-format-converter.zip"
   },
   {
     "category": "Developer Tools",
@@ -768,7 +768,7 @@
       "Regex Pattern Support"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/json-data-masker.zip"
+    "zipUrl": "/assets/zip-packages/dev/json-data-masker.zip"
   },
   {
     "category": "Developer Tools",
@@ -784,7 +784,7 @@
       "Merge Back Support"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/json-file-splitter.zip"
+    "zipUrl": "/assets/zip-packages/dev/json-file-splitter.zip"
   },
   {
     "category": "Developer Tools",
@@ -799,7 +799,7 @@
       "Local Privacy"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/json-formatter-validator.zip"
+    "zipUrl": "/assets/zip-packages/dev/json-formatter-validator.zip"
   },
   {
     "category": "Developer Tools",
@@ -815,7 +815,7 @@
       "Strip Comments"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/json-minifier.zip"
+    "zipUrl": "/assets/zip-packages/dev/json-minifier.zip"
   },
   {
     "category": "Developer Tools",
@@ -830,7 +830,7 @@
       "Syntax Validation"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/json-path-extractor.zip"
+    "zipUrl": "/assets/zip-packages/dev/json-path-extractor.zip"
   },
   {
     "category": "Developer Tools",
@@ -846,7 +846,7 @@
       "Privacy Focused"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/json-key-sorter.zip"
+    "zipUrl": "/assets/zip-packages/dev/json-key-sorter.zip"
   },
   {
     "category": "Developer Tools",
@@ -862,7 +862,7 @@
       "Dark Mode"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/batch-json-validator.zip"
+    "zipUrl": "/assets/zip-packages/dev/batch-json-validator.zip"
   },
   {
     "category": "Developer Tools",
@@ -878,7 +878,7 @@
       "JWKS Support"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/jwt-token-decoder.zip"
+    "zipUrl": "/assets/zip-packages/dev/jwt-token-decoder.zip"
   },
   {
     "category": "Developer Tools",
@@ -893,7 +893,7 @@
       "Export Cleaned Logs"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/log-file-formatter.zip"
+    "zipUrl": "/assets/zip-packages/dev/log-file-formatter.zip"
   },
   {
     "category": "Developer Tools",
@@ -909,7 +909,7 @@
       "100% Private Processing"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/mock-data-generator.zip"
+    "zipUrl": "/assets/zip-packages/dev/mock-data-generator.zip"
   },
   {
     "category": "Developer Tools",
@@ -925,7 +925,7 @@
       "Offline Ready"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/secure-batch-password-generator.zip"
+    "zipUrl": "/assets/zip-packages/dev/secure-batch-password-generator.zip"
   },
   {
     "category": "Developer Tools",
@@ -941,7 +941,7 @@
       "Improvement Tips"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/password-strength-analyzer.zip"
+    "zipUrl": "/assets/zip-packages/dev/password-strength-analyzer.zip"
   },
   {
     "category": "Developer Tools",
@@ -957,7 +957,7 @@
       "Batch Generation"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/qr-code-generator.zip"
+    "zipUrl": "/assets/zip-packages/dev/qr-code-generator.zip"
   },
   {
     "category": "Developer Tools",
@@ -973,7 +973,7 @@
       "One-Click Copy"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/random-port-generator.zip"
+    "zipUrl": "/assets/zip-packages/dev/random-port-generator.zip"
   },
   {
     "category": "Developer Tools",
@@ -989,7 +989,7 @@
       "Offline Support"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/regex-tester-2.zip"
+    "zipUrl": "/assets/zip-packages/dev/regex-tester-2.zip"
   },
   {
     "category": "Developer Tools",
@@ -1005,7 +1005,7 @@
       "Secure Authentication"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/api-signature-validator.zip"
+    "zipUrl": "/assets/zip-packages/dev/api-signature-validator.zip"
   },
   {
     "category": "Developer Tools",
@@ -1021,7 +1021,7 @@
       "Local privacy"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/url-slug-generator.zip"
+    "zipUrl": "/assets/zip-packages/dev/url-slug-generator.zip"
   },
   {
     "category": "Developer Tools",
@@ -1037,7 +1037,7 @@
       "Zero Data Upload"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/sql-formatter.zip"
+    "zipUrl": "/assets/zip-packages/dev/sql-formatter.zip"
   },
   {
     "category": "Developer Tools",
@@ -1053,7 +1053,7 @@
       "Preserve Quality"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/svg-optimizer.zip"
+    "zipUrl": "/assets/zip-packages/dev/svg-optimizer.zip"
   },
   {
     "category": "Developer Tools",
@@ -1068,7 +1068,7 @@
       "Privacy-Focused Local Processing"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/test-address-generator.zip"
+    "zipUrl": "/assets/zip-packages/dev/test-address-generator.zip"
   },
   {
     "category": "Business & Productivity",
@@ -1084,7 +1084,7 @@
       "Offline Privacy"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/business/global-time-zone-converter.zip"
+    "zipUrl": "/assets/zip-packages/business/global-time-zone-converter.zip"
   },
   {
     "category": "Developer Tools",
@@ -1100,7 +1100,7 @@
       "Privacy Safe"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/unicode-converter.zip"
+    "zipUrl": "/assets/zip-packages/dev/unicode-converter.zip"
   },
   {
     "category": "Developer Tools",
@@ -1115,7 +1115,7 @@
       "Custom Units"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/unit-converter.zip"
+    "zipUrl": "/assets/zip-packages/dev/unit-converter.zip"
   },
   {
     "category": "Developer Tools",
@@ -1131,7 +1131,7 @@
       "Local Processing"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/unix-timestamp-converter.zip"
+    "zipUrl": "/assets/zip-packages/dev/unix-timestamp-converter.zip"
   },
   {
     "category": "Developer Tools",
@@ -1146,7 +1146,7 @@
       "Pretty Print Output"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/url-to-json-converter.zip"
+    "zipUrl": "/assets/zip-packages/dev/url-to-json-converter.zip"
   },
   {
     "category": "Developer Tools",
@@ -1162,7 +1162,7 @@
       "No Installation Required"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/uuid-generator.zip"
+    "zipUrl": "/assets/zip-packages/dev/uuid-generator.zip"
   },
   {
     "category": "Design & Media",
@@ -1178,7 +1178,7 @@
       "Hair Detail Preservation"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/design/background-remover.zip"
+    "zipUrl": "/assets/zip-packages/design/background-remover.zip"
   },
   {
     "category": "Design & Media",
@@ -1190,7 +1190,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/design/css-gradient-generator-2.zip"
+    "zipUrl": "/assets/zip-packages/design/css-gradient-generator-2.zip"
   },
   {
     "category": "Design & Media",
@@ -1202,7 +1202,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/design/exif-remover.zip"
+    "zipUrl": "/assets/zip-packages/design/exif-remover.zip"
   },
   {
     "category": "Design & Media",
@@ -1218,7 +1218,7 @@
       "Local Privacy"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/design/web-font-format-converter.zip"
+    "zipUrl": "/assets/zip-packages/design/web-font-format-converter.zip"
   },
   {
     "category": "Design & Media",
@@ -1233,7 +1233,7 @@
       "Favicon Generation"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/design/ico-icon-generator.zip"
+    "zipUrl": "/assets/zip-packages/design/ico-icon-generator.zip"
   },
   {
     "category": "Design & Media",
@@ -1248,7 +1248,7 @@
       "Privacy Safe"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/design/batch-image-compressor.zip"
+    "zipUrl": "/assets/zip-packages/design/batch-image-compressor.zip"
   },
   {
     "category": "Design & Media",
@@ -1264,7 +1264,7 @@
       "Instant Download"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/design/batch-image-converter.zip"
+    "zipUrl": "/assets/zip-packages/design/batch-image-converter.zip"
   },
   {
     "category": "Design & Media",
@@ -1280,7 +1280,7 @@
       "Download Results"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/design/image-filter-color-adjust.zip"
+    "zipUrl": "/assets/zip-packages/design/image-filter-color-adjust.zip"
   },
   {
     "category": "Design & Media",
@@ -1296,7 +1296,7 @@
       "Local Browser Processing"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/design/image-pixelator.zip"
+    "zipUrl": "/assets/zip-packages/design/image-pixelator.zip"
   },
   {
     "category": "Design & Media",
@@ -1312,7 +1312,7 @@
       "Preset Social Sizes"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/design/image-resizer-cropper.zip"
+    "zipUrl": "/assets/zip-packages/design/image-resizer-cropper.zip"
   },
   {
     "category": "Design & Media",
@@ -1328,7 +1328,7 @@
       "EXIF Data Preservation"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/design/image-watermark-tool.zip"
+    "zipUrl": "/assets/zip-packages/design/image-watermark-tool.zip"
   },
   {
     "category": "Education & Research",
@@ -1344,7 +1344,7 @@
       "Offline Support"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/education/academic-citation-generator.zip"
+    "zipUrl": "/assets/zip-packages/education/academic-citation-generator.zip"
   },
   {
     "category": "Developer Tools",
@@ -1359,7 +1359,7 @@
       "One-Click Copy Code"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/open-graph-preview.zip"
+    "zipUrl": "/assets/zip-packages/dev/open-graph-preview.zip"
   },
   {
     "category": "Developer Tools",
@@ -1375,7 +1375,7 @@
       "Offline Operation"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/password-strength-checker.zip"
+    "zipUrl": "/assets/zip-packages/dev/password-strength-checker.zip"
   },
   {
     "category": "Business & Productivity",
@@ -1390,7 +1390,7 @@
       "Export Metadata Data"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/business/pdf-metadata-viewer.zip"
+    "zipUrl": "/assets/zip-packages/business/pdf-metadata-viewer.zip"
   },
   {
     "category": "Business & Productivity",
@@ -1406,7 +1406,7 @@
       "Local Browser Privacy"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/business/pdf-split-merge.zip"
+    "zipUrl": "/assets/zip-packages/business/pdf-split-merge.zip"
   },
   {
     "category": "Business & Productivity",
@@ -1421,7 +1421,7 @@
       "Protect SEO Health"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/business/backlink-spam-checker.zip"
+    "zipUrl": "/assets/zip-packages/business/backlink-spam-checker.zip"
   },
   {
     "category": "Business & Productivity",
@@ -1437,7 +1437,7 @@
       "Half-Day Support"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/business/business-day-calculator.zip"
+    "zipUrl": "/assets/zip-packages/business/business-day-calculator.zip"
   },
   {
     "category": "Business & Productivity",
@@ -1453,7 +1453,7 @@
       "Local Processing"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/business/calendar-generator.zip"
+    "zipUrl": "/assets/zip-packages/business/calendar-generator.zip"
   },
   {
     "category": "Content & Writing",
@@ -1469,7 +1469,7 @@
       "Local Privacy Protection"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/writing/chinese-english-word-counter.zip"
+    "zipUrl": "/assets/zip-packages/writing/chinese-english-word-counter.zip"
   },
   {
     "category": "Developer Tools",
@@ -1484,7 +1484,7 @@
       "Share Results"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/cors-policy-checker.zip"
+    "zipUrl": "/assets/zip-packages/dev/cors-policy-checker.zip"
   },
   {
     "category": "Business & Productivity",
@@ -1500,7 +1500,7 @@
       "Dark Mode Compatible"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/business/countdown-timer-generator.zip"
+    "zipUrl": "/assets/zip-packages/business/countdown-timer-generator.zip"
   },
   {
     "category": "Developer Tools",
@@ -1515,7 +1515,7 @@
       "Export Capabilities"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/dns-record-lookup.zip"
+    "zipUrl": "/assets/zip-packages/dev/dns-record-lookup.zip"
   },
   {
     "category": "Business & Productivity",
@@ -1531,7 +1531,7 @@
       "No Installation Needed"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/business/domain-icp-filing-checker.zip"
+    "zipUrl": "/assets/zip-packages/business/domain-icp-filing-checker.zip"
   },
   {
     "category": "Business & Productivity",
@@ -1546,7 +1546,7 @@
       "Privacy-Focused Local Processing"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/business/dst-timezone-converter.zip"
+    "zipUrl": "/assets/zip-packages/business/dst-timezone-converter.zip"
   },
   {
     "category": "Developer Tools",
@@ -1562,7 +1562,7 @@
       "Local Privacy Processing"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/expired-domain-finder.zip"
+    "zipUrl": "/assets/zip-packages/dev/expired-domain-finder.zip"
   },
   {
     "category": "Developer Tools",
@@ -1578,7 +1578,7 @@
       "Calculate Security Score"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/http-header-checker.zip"
+    "zipUrl": "/assets/zip-packages/dev/http-header-checker.zip"
   },
   {
     "category": "Developer Tools",
@@ -1593,7 +1593,7 @@
       "100% private local processing"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/ip-geolocation-lookup.zip"
+    "zipUrl": "/assets/zip-packages/dev/ip-geolocation-lookup.zip"
   },
   {
     "category": "Education & Research",
@@ -1609,7 +1609,7 @@
       "Open Library Integration"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/education/isbn-book-lookup.zip"
+    "zipUrl": "/assets/zip-packages/education/isbn-book-lookup.zip"
   },
   {
     "category": "Developer Tools",
@@ -1624,7 +1624,7 @@
       "Dark Mode"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/markdown-to-html-converter.zip"
+    "zipUrl": "/assets/zip-packages/dev/markdown-to-html-converter.zip"
   },
   {
     "category": "Business & Productivity",
@@ -1639,7 +1639,7 @@
       "Global Team Support"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/business/meeting-time-planner.zip"
+    "zipUrl": "/assets/zip-packages/business/meeting-time-planner.zip"
   },
   {
     "category": "Developer Tools",
@@ -1655,7 +1655,7 @@
       "Secure And Private"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/browser-port-scanner.zip"
+    "zipUrl": "/assets/zip-packages/dev/browser-port-scanner.zip"
   },
   {
     "category": "Developer Tools",
@@ -1670,7 +1670,7 @@
       "Local Browser Processing"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/reverse-ip-lookup.zip"
+    "zipUrl": "/assets/zip-packages/dev/reverse-ip-lookup.zip"
   },
   {
     "category": "Developer Tools",
@@ -1686,7 +1686,7 @@
       "SEO Optimization"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/robots-txt-generator.zip"
+    "zipUrl": "/assets/zip-packages/dev/robots-txt-generator.zip"
   },
   {
     "category": "Developer Tools",
@@ -1702,7 +1702,7 @@
       "Local Processing"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/seo-meta-tag-generator.zip"
+    "zipUrl": "/assets/zip-packages/dev/seo-meta-tag-generator.zip"
   },
   {
     "category": "Developer Tools",
@@ -1718,7 +1718,7 @@
       "No Data Upload"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/xml-sitemap-generator.zip"
+    "zipUrl": "/assets/zip-packages/dev/xml-sitemap-generator.zip"
   },
   {
     "category": "Developer Tools",
@@ -1733,7 +1733,7 @@
       "Privacy Focused"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/website-speed-test.zip"
+    "zipUrl": "/assets/zip-packages/dev/website-speed-test.zip"
   },
   {
     "category": "Developer Tools",
@@ -1749,7 +1749,7 @@
       "Grade Rating System"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/ssl-certificate-checker.zip"
+    "zipUrl": "/assets/zip-packages/dev/ssl-certificate-checker.zip"
   },
   {
     "category": "Business & Productivity",
@@ -1765,7 +1765,7 @@
       "Local Privacy Protection"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/business/week-number-converter.zip"
+    "zipUrl": "/assets/zip-packages/business/week-number-converter.zip"
   },
   {
     "category": "Developer Tools",
@@ -1777,7 +1777,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/dev/whois-lookup.zip"
+    "zipUrl": "/assets/zip-packages/dev/whois-lookup.zip"
   },
   {
     "category": "Business & Productivity",
@@ -1789,6 +1789,101 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "assets/zip-packages/business/work-hours-calculator.zip"
+    "zipUrl": "/assets/zip-packages/business/work-hours-calculator.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-37.svg",
+    "title": "Academic Citation Generator",
+    "desc": "Generate accurate citations in APA, MLA, Chicago, Harvard, IEEE, and AMA formats locally without installation.",
+    "features": [
+      "Six Citation Styles",
+      "Multiple Document Types",
+      "One-Click Copy",
+      "Local History Storage",
+      "Offline Privacy Protection",
+      "Dynamic Form Fields"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/citation-generator.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-5.svg",
+    "title": "Final Grade Calculator",
+    "desc": "Calculate weighted course grades and reverse-calculate required final exam scores to achieve your target academic performance.",
+    "features": [
+      "Weighted Grade Calculation",
+      "Target Score Solver",
+      "Component Management",
+      "Dark Mode Support",
+      "Responsive Design",
+      "Export Results"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/final-grade-calculator.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "GPA Calculator",
+    "desc": "Calculate weighted and unweighted GPA on 4.0 or 5.0 scales. Reverse-engineer grades needed for target GPA with instant results.",
+    "features": [
+      "Weighted GPA",
+      "Unweighted GPA",
+      "Target Grade",
+      "4.0 Scale",
+      "5.0 Scale",
+      "Instant Results"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/gpa-calculator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-17.svg",
+    "title": "Secure Password Generator",
+    "desc": "Generate strong, customizable passwords locally in your browser with options for length, character sets, and ambiguity exclusion.",
+    "features": [
+      "Local Generation",
+      "Custom Length",
+      "Exclude Ambiguity",
+      "Character Sets",
+      "No Data Sent"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/password-generator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-2.svg",
+    "title": "Pomodoro Timer",
+    "desc": "Distraction-free focus timer with customizable work sprints, break intervals, sound alerts, and daily session tracking for enhanced productivity.",
+    "features": [
+      "Custom Durations",
+      "Sound Alerts",
+      "Daily Tracking",
+      "Dark Mode",
+      "Browser Notifications",
+      "Focus Sprints"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/pomodoro-timer.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-2.svg",
+    "title": "Roman Numeral Converter",
+    "desc": "Instantly convert between Arabic and Roman numerals with validation, reference tables, and batch processing support.",
+    "features": [
+      "Arabic to Roman",
+      "Roman to Arabic",
+      "Batch Conversion",
+      "Validation Check",
+      "Reference Table",
+      "Dark Mode Support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/roman-numeral-converter.zip"
   }
 ]
