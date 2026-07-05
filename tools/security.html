@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEO & Marketing - YuanqiZhiKe Toolkit</title>
-    <meta name="description" content="Free offline SEO and marketing tools. Keyword analyzers, meta tag generators, SERP previewers, and SEO optimizers that run locally.">
+    <title>Security & Privacy - YuanqiZhiKe Toolkit</title>
+    <meta name="description" content="Free offline security and privacy tools. Password generators, AES encryptors, hash generators, and encryption utilities. Your data never leaves your browser.">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="stylesheet" href="../assets/css/style.css">
     <!-- Google AdSense -->
@@ -31,10 +31,10 @@
                         <a href="research.html">Education & Research</a>
                         <a href="health.html">Health & Fitness</a>
                         <a href="finance.html">Finance & Crypto</a>
-                        <a href="seo.html" class="active">SEO & Marketing</a>
+                        <a href="seo.html">SEO & Marketing</a>
                         <a href="social.html">Social Media</a>
                         <a href="lifestyle.html">Lifestyle & Utilities</a>
-                        <a href="security.html">Security & Privacy</a>
+                        <a href="security.html" class="active">Security & Privacy</a>
                     </div>
                 </div>
                 <a href="../customize.html">Custom Dev</a>
@@ -46,18 +46,18 @@
     <!-- Tools Hero -->
     <section class="tool-hero">
         <div class="container">
-            <h1>SEO & Marketing</h1>
-            <p>Keyword analyzers, meta tag generators, SERP previewers, and SEO optimizers. All processing runs locally in your browser.</p>
+            <h1>Security & Privacy</h1>
+            <p>Password generators, AES encryptors, hash generators, and encryption utilities. Your sensitive data never leaves your browser - all processing runs locally.</p>
         </div>
     </section>
 
     <!-- Tools Catalog -->
     <main class="page-content">
         <div class="container">
-            <!-- Category: SEO & Marketing -->
-            <div id="category-seo" class="tool-category">
-                <h2 class="category-title">SEO & Marketing</h2>
-                <div class="tools-grid" data-category="SEO & Marketing">
+            <!-- Category: Security & Privacy -->
+            <div id="category-security" class="tool-category">
+                <h2 class="category-title">Security & Privacy</h2>
+                <div class="tools-grid" data-category="Security & Privacy">
                     <!-- Tools will be dynamically rendered here from tools-list.json -->
                 </div>
             </div>
@@ -125,10 +125,10 @@
         });
 
         function renderTools(tools) {
-            var container = document.getElementById('category-seo');
+            var container = document.getElementById('category-security');
             if (!container) return;
 
-            var categoryName = 'SEO & Marketing';
+            var categoryName = 'Security & Privacy';
             var toolsGrid = container.querySelector('.tools-grid');
             if (!toolsGrid) return;
 
@@ -143,7 +143,7 @@
 
             if (categoryTools.length === 0) {
                 toolsGrid.innerHTML = '<div class="tool-card coming-soon">' +
-                    '<div class="tool-icon">&#128202;</div>' +
+                    '<div class="tool-icon">&#128274;</div>' +
                     '<h3>Coming Soon</h3>' +
                     '<p class="tool-desc">Tools in this category are currently under development.</p>' +
                     '<div class="tool-actions">' +
@@ -187,7 +187,7 @@
             if (isSvgIcon) {
                 iconHtml = '<img src="' + escapeHtml(iconPath) + '" alt="' + escapeHtml(tool.title) + '">';
             } else {
-                iconHtml = tool.icon || '&#128187;';
+                iconHtml = tool.icon || '&#128274;';
             }
 
             card.innerHTML =
@@ -204,7 +204,7 @@
                 var img = card.querySelector('.tool-icon img');
                 if (img) {
                     img.addEventListener('error', function() {
-                        this.outerHTML = '&#128183;';
+                        this.outerHTML = '&#128274;';
                     });
                 }
             }
@@ -219,7 +219,7 @@
         }
     </script>
     <script>
-        trackPageView('seo-marketing');
+        trackPageView('security-privacy');
     </script>
 </body>
 </html>

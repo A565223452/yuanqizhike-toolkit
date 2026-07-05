@@ -2195,5 +2195,235 @@
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/seo/serp-snippet-preview.zip"
+  },
+  {
+    "category": "Social Media",
+    "icon": "",
+    "title": "Emoji Character Counter",
+    "desc": "Emoji Character Counter - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/social/emoji-character-counter.zip"
+  },
+  {
+    "category": "Social Media",
+    "icon": "",
+    "title": "Instagram Character Counter",
+    "desc": "Count characters, words, and hashtags for Instagram captions, bios, and names. Monitor limits in real-time with a visual progress bar to optimize your social media posts.",
+    "features": [
+      "Real-time character counting",
+      "Track word and line counts",
+      "Hashtag limit monitoring",
+      "Visual progress bar indicator"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/social/instagram-character-counter.zip"
+  },
+  {
+    "category": "Social Media",
+    "icon": "",
+    "title": "Social Media Image Size Guide",
+    "desc": "Get the latest image dimensions for Instagram, Facebook, X, TikTok, YouTube, and LinkedIn. Essential reference for profile photos, covers, posts, and stories.",
+    "features": [
+      "Platform-specific dimensions",
+      "Profile and cover sizes",
+      "Post and story ratios",
+      "Updated 2024 guidelines"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/social/social-media-image-size-guide.zip"
+  },
+  {
+    "category": "Social Media",
+    "icon": "",
+    "title": "TikTok Hashtag Generator",
+    "desc": "Boost your TikTok reach with this free hashtag generator. Select a niche or enter custom keywords to instantly get 30 optimized, trending tags including FYP and viral hashtags for maximum visibility.",
+    "features": [
+      "Niche-based tag selection",
+      "Custom keyword support",
+      "FYP and viral tags",
+      "One-click copy output"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/social/tiktok-hashtag-generator.zip"
+  },
+  {
+    "category": "Social Media",
+    "icon": "",
+    "title": "X (Twitter) Character Counter",
+    "desc": "Accurately count characters for X (Twitter) posts with smart weighting for emojis, CJK, and URL shortening. Stay within the 280-character limit with real-time visual feedback.",
+    "features": [
+      "Smart emoji and CJK counting",
+      "URL shortening logic support",
+      "Real-time character visualization",
+      "Over-limit warning indicators"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/social/x-character-counter.zip"
+  },
+  {
+    "category": "Social Media",
+    "icon": "",
+    "title": "YouTube Title Generator",
+    "desc": "Generate click-worthy YouTube video titles instantly using proven formulas. Optimize for SEO, stay under character limits, and boost your video views with engaging headlines.",
+    "features": [
+      "Proven title templates",
+      "SEO optimization focus",
+      "Character limit checker",
+      "One-click copy feature"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/social/youtube-title-generator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "",
+    "title": "Age Calculator",
+    "desc": "Age Calculator - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/age-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "",
+    "title": "Countdown Timer",
+    "desc": "Track time remaining to any event with this live countdown timer. Set dates, monitor days, hours, minutes, and seconds in real-time. Perfect for deadlines and celebrations.",
+    "features": [
+      "Live real-time tracking",
+      "Custom event naming",
+      "Days hours minutes seconds",
+      "Works offline instantly"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/countdown-timer.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "",
+    "title": "Date Calculator",
+    "desc": "Easily calculate the difference between two dates or add and subtract days, weeks, months, and years. Get precise results in days, weeks, months, and years instantly.",
+    "features": [
+      "Calculate date differences",
+      "Add or subtract time units",
+      "Results in days and weeks",
+      "Supports months and years",
+      "Simple and intuitive interface",
+      "Dark mode support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/date-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "",
+    "title": "Random Number Generator",
+    "desc": "Generate random integers or decimals within any range. Supports unique draws, multiple results, and configurable decimal places for games, lotteries, and quick picks.",
+    "features": [
+      "Customizable number ranges",
+      "Unique number generation",
+      "Integer and decimal support",
+      "Draw multiple results at once",
+      "Generation history tracking",
+      "Dark mode interface"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/random-number-generator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "",
+    "title": "Global Time Zone Converter",
+    "desc": "Convert times across global time zones instantly. Compare dates, schedule international meetings, and view a live world clock with DST indicators for seamless coordination.",
+    "features": [
+      "Instant timezone conversion",
+      "Multi-timezone comparison",
+      "Meeting time generator",
+      "Live world clock display",
+      "DST status indicator",
+      "Offline browser support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/timezone-converter.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "",
+    "title": "Unit Converter",
+    "desc": "Convert length, weight, volume, area, speed, time, data, and temperature units instantly. Supports metric and imperial systems with real-time results and comprehensive conversion tables.",
+    "features": [
+      "Real-time conversion",
+      "8+ unit categories",
+      "Metric and imperial",
+      "Swap units easily",
+      "All units display"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/unit-converter.zip"
+  },
+  {
+    "category": "Security & Privacy",
+    "icon": "",
+    "title": "AES Encrypt & Decrypt",
+    "desc": "Securely encrypt and decrypt text using AES-GCM 256-bit directly in your browser. All processing is local with PBKDF2 key derivation, ensuring complete privacy and zero data transmission.",
+    "features": [
+      "AES-GCM 256-bit encryption",
+      "Local browser processing",
+      "PBKDF2 key derivation",
+      "Secure password protection",
+      "Instant encrypt and decrypt",
+      "Base64 output format"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/security/aes-encryptor.zip"
+  },
+  {
+    "category": "Security & Privacy",
+    "icon": "",
+    "title": "Hash Generator",
+    "desc": "Generate MD5, SHA-1, SHA-256, SHA-384, and SHA-512 hashes instantly for text or files. Supports HMAC and verification. All processing is local, ensuring 100% privacy and security without uploading data.",
+    "features": [
+      "Generate MD5 and SHA hashes",
+      "HMAC support with custom keys",
+      "Local file hashing capability",
+      "Hash verification and comparison",
+      "100% private, no data upload"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/security/hash-generator.zip"
+  },
+  {
+    "category": "Security & Privacy",
+    "icon": "",
+    "title": "Batch Password Generator",
+    "desc": "Generate cryptographically secure passwords in bulk with customizable character sets, lengths, and exclusion rules. Features local processing, strength indicators, and copy or download options for enhanced security.",
+    "features": [
+      "Cryptographically secure generation",
+      "Bulk password creation",
+      "Custom character sets",
+      "Strength indicator badges",
+      "Local offline processing",
+      "One-click copy and download"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/security/password-generator.zip"
+  },
+  {
+    "category": "Security & Privacy",
+    "icon": "",
+    "title": "Password Strength Checker",
+    "desc": "Password Strength Checker - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/security/password-strength-checker.zip"
   }
 ]
