@@ -151,6 +151,22 @@ img {
     min-width: 220px;
     padding: 8px 0;
     z-index: 100;
+    max-height: 60vh;        /* 最大高度占屏幕60%，避免太长 */
+    overflow-y: auto;        /* 超出自动出现垂直滚动条 */
+    overflow-x: hidden;
+    padding-right: 4px;
+}
+
+/* 美化滚动条 */
+.dropdown-menu::-webkit-scrollbar {
+    width: 5px;
+}
+.dropdown-menu::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+.dropdown-menu::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
 }
 
 .dropdown-menu a {
@@ -1088,6 +1104,9 @@ img {
         border: none;
         background: var(--bg-light);
         margin-top: 8px;
+        max-height: none;      /* 移动端不限制高度，跟随主菜单滚动 */
+        overflow-y: visible;
+        padding-right: 0;
     }
 
     .nav-dropdown.open .dropdown-menu {
