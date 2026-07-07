@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health & Fitness - YuanqiZhiKe Toolkit</title>
-    <meta name="description" content="Free offline health and fitness calculators. BMI, body fat, calorie tracking, and wellness tools that run locally in your browser.">
+    <title>Pets & Animals - YuanqiZhiKe Toolkit</title>
+    <meta name="description" content="Free offline pet and animal tools. Pet age calculators, feeding guides, dosage calculators, and animal utilities that run locally.">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="stylesheet" href="../assets/css/style.css">
     <!-- Google AdSense -->
@@ -29,7 +29,7 @@
                         <a href="dev.html">Developer Tools</a>
                         <a href="business.html">Business & Productivity</a>
                         <a href="research.html">Education & Research</a>
-                        <a href="health.html" class="active">Health & Fitness</a>
+                        <a href="health.html">Health & Fitness</a>
                         <a href="finance.html">Finance & Crypto</a>
                         <a href="seo.html">SEO & Marketing</a>
                         <a href="social.html">Social Media</a>
@@ -48,7 +48,7 @@
                         <a href="photography.html">Photography Tools</a>
                         <a href="gaming.html">Gaming Tools</a>
                         <a href="hobbies.html">Hobbies & Crafts</a>
-                        <a href="pets.html">Pets & Animals</a>
+                        <a href="pets.html" class="active">Pets & Animals</a>
                         <a href="real-estate.html">Real Estate Tools</a>
                         <a href="religion.html">Religion & Spirituality</a>
                     </div>
@@ -62,18 +62,18 @@
     <!-- Tools Hero -->
     <section class="tool-hero">
         <div class="container">
-            <h1>Health & Fitness</h1>
-            <p>BMI calculators, calorie trackers, body fat estimators, and wellness tools. All processing runs locally in your browser.</p>
+            <h1>Pets & Animals</h1>
+            <p>Pet age calculators, feeding guides, dosage calculators, breeding tools, and animal utilities. All processing runs locally in your browser.</p>
         </div>
     </section>
 
     <!-- Tools Catalog -->
     <main class="page-content">
         <div class="container">
-            <!-- Category: Health & Fitness -->
-            <div id="category-health" class="tool-category">
-                <h2 class="category-title">Health & Fitness</h2>
-                <div class="tools-grid" data-category="Health & Fitness">
+            <!-- Category: Pets & Animals -->
+            <div id="category-finance" class="tool-category">
+                <h2 class="category-title">Pets & Animals</h2>
+                <div class="tools-grid" data-category="Pets & Animals">
                     <!-- Tools will be dynamically rendered here from tools-list.json -->
                 </div>
             </div>
@@ -141,10 +141,10 @@
         });
 
         function renderTools(tools) {
-            var container = document.getElementById('category-health');
+            var container = document.getElementById('category-finance');
             if (!container) return;
 
-            var categoryName = 'Health & Fitness';
+            var categoryName = 'Pets & Animals';
             var toolsGrid = container.querySelector('.tools-grid');
             if (!toolsGrid) return;
 
@@ -159,7 +159,7 @@
 
             if (categoryTools.length === 0) {
                 toolsGrid.innerHTML = '<div class="tool-card coming-soon">' +
-                    '<div class="tool-icon">&#128154;</div>' +
+                    '<div class="tool-icon">&#128062;</div>' +
                     '<h3>Coming Soon</h3>' +
                     '<p class="tool-desc">Tools in this category are currently under development.</p>' +
                     '<div class="tool-actions">' +
@@ -235,7 +235,7 @@
         }
     </script>
     <script>
-        trackPageView('health-fitness');
+        trackPageView('pets-animals');
     </script>
 </body>
 </html>
