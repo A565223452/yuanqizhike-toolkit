@@ -64,7 +64,7 @@
             <p>Describe your project requirements and we will get back to you within 24 hours with a detailed proposal and quote.</p>
 
             <div class="contact-form">
-                <form id="contactForm" action="/api/send-email" method="POST">
+                <form id="contactForm" action="mailto:260330663@qq.com" method="POST" enctype="text/plain">
                     <div class="form-group">
                         <label for="name">Your Name *</label>
                         <input type="text" id="name" name="name" required placeholder="John Doe">
@@ -137,31 +137,34 @@
             e.preventDefault();
             const submitBtn = this.querySelector('#submitBtn');
             const formStatus = this.querySelector('#formStatus');
-            
+
             submitBtn.disabled = true;
-            submitBtn.innerText = 'Submitting...';
+            submitBtn.innerText = 'Opening email...';
             formStatus.style.display = 'block';
             formStatus.style.color = '#666';
-            formStatus.textContent = 'Submitting...';
+            formStatus.textContent = 'Opening your email client...';
 
             try {
-                const resp = await fetch('/api/send-email', {
-                    method: 'POST',
-                    body: new FormData(this)
-                });
-                const resData = await resp.json();
-                
-                if (resData.success) {
-                    formStatus.style.color = '#28a745';
-                    formStatus.textContent = resData.msg || 'Thank you for your inquiry! We will respond within 24 hours.';
-                    this.reset();
-                } else {
-                    formStatus.style.color = '#dc3545';
-                    formStatus.textContent = resData.msg || 'Submission failed. Please try again later.';
-                }
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const projectType = document.getElementById('projectType').value;
+                const description = document.getElementById('description').value.trim();
+
+                const subject = encodeURIComponent('Custom Development Inquiry from ' + name);
+                const body = encodeURIComponent(
+                    'Name: ' + name + '\n' +
+                    'Email: ' + email + '\n' +
+                    'Project Type: ' + projectType + '\n\n' +
+                    'Description:\n' + description
+                );
+                window.location.href = 'mailto:260330663@qq.com?subject=' + subject + '&body=' + body;
+
+                formStatus.style.color = '#28a745';
+                formStatus.textContent = 'Email client opened. If it didn\'t open, please email us directly at 260330663@qq.com';
+                this.reset();
             } catch (error) {
                 formStatus.style.color = '#dc3545';
-                formStatus.textContent = 'Submission failed. Please try again later.';
+                formStatus.textContent = 'Failed to open email client. Please email us directly at 260330663@qq.com';
                 console.error('Form submission error:', error);
             } finally {
                 submitBtn.disabled = false;

@@ -71,7 +71,7 @@
     <main class="page-content">
         <div class="container">
             <!-- Category: Weather & Climate -->
-            <div id="category-finance" class="tool-category">
+            <div id="category-weather" class="tool-category">
                 <h2 class="category-title">Weather & Climate</h2>
                 <div class="tools-grid" data-category="Weather & Climate">
                     <!-- Tools will be dynamically rendered here from tools-list.json -->
@@ -141,7 +141,7 @@
         });
 
         function renderTools(tools) {
-            var container = document.getElementById('category-finance');
+            var container = document.getElementById('category-weather');
             if (!container) return;
 
             var categoryName = 'Weather & Climate';

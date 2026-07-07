@@ -13,9 +13,9 @@ export default {
     const headers = new Headers(res.headers);
     // 解除跨域、拦截限制头
     headers.set("Access-Control-Allow-Origin", "*");
-    headers.set("X-Frame-Options", "ALLOWALL");
+    headers.set("X-Frame-Options", "DENY");
     headers.set("X-Content-Type-Options", "nosniff");
-    headers.set("Referrer-Policy", "unsafe-url");
+    headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
 
     return new Response(res.body, {
       status: res.status,
