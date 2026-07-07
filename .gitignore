@@ -35,3 +35,13 @@ backup/
 大类扩展方案.md
 新大类工具开发清单.md
 AdSense变现-待执行清单.md
+
+# Cloudflare Worker 联系表单（敏感文件，禁止上传）
+# .dev.vars 含真实密钥（Resend API key、Turnstile secret、ADMIN_TOKEN）
+# .wrangler/ 是 wrangler CLI 本地缓存
+# node_modules/ 是依赖文件夹（几百 MB）
+workers/contact-form/.dev.vars
+workers/contact-form/.dev.vars.*
+!workers/contact-form/.dev.vars.example
+workers/contact-form/.wrangler/
+workers/contact-form/node_modules/

@@ -1,0 +1,22 @@
+name = "yuanqizhike-contact"
+main = "src/worker.js"
+compatibility_date = "2025-07-01"
+
+# D1 数据库绑定（部署前先用 wrangler d1 create yuanqizhike-db 创建，把返回的 database_id 填到下方）
+[[d1_databases]]
+binding = "DB"
+database_name = "yuanqizhike-db"
+database_id = "YOUR_D1_DATABASE_ID"
+
+# 环境变量（非敏感、可公开的放这里）
+[vars]
+TURNSTILE_SITE_KEY = "YOUR_TURNSTILE_SITE_KEY"
+ALLOWED_ORIGIN = "https://yuanqizhike.com"
+CONTACT_TO_EMAIL = "260330663@qq.com"
+CONTACT_FROM_EMAIL = "noreply@yuanqizhike.com"
+
+# 敏感密钥用 secrets（用 `wrangler secret put` 设置，不要写在这里）
+# 需配置的 secrets：
+#   wrangler secret put TURNSTILE_SECRET_KEY
+#   wrangler secret put RESEND_API_KEY
+#   wrangler secret put ADMIN_TOKEN
