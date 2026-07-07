@@ -6,11 +6,11 @@ compatibility_date = "2025-07-01"
 [[d1_databases]]
 binding = "DB"
 database_name = "yuanqizhike-db"
-database_id = "YOUR_D1_DATABASE_ID"
+database_id = "96f4c428-3fef-478c-8057-2ddb7e3b67fa"
 
 # 环境变量（非敏感、可公开的放这里）
 [vars]
-TURNSTILE_SITE_KEY = "YOUR_TURNSTILE_SITE_KEY"
+TURNSTILE_SITE_KEY = "0x4AAAAAADxZ2faDF6_AjI-K"
 ALLOWED_ORIGIN = "https://yuanqizhike.com"
 CONTACT_TO_EMAIL = "260330663@qq.com"
 CONTACT_FROM_EMAIL = "noreply@yuanqizhike.com"
