@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - YuanqiZhiKe Toolkit</title>
+    <meta name="robots" content="noindex,nofollow">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body { background: #f9fafb; }
+        .admin-wrap { max-width: 1100px; margin: 24px auto; padding: 0 16px 60px; }
+
+        /* 登录页 */
+        .login-card {
+            max-width: 380px;
+            margin: 80px auto;
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 32px;
+        }
+        .login-card h1 { font-size: 22px; margin: 0 0 8px; color: #111827; text-align: center; }
+        .login-card p { font-size: 13px; color: #6b7280; text-align: center; margin: 0 0 24px; }
+        .login-card input {
+            width: 100%;
+            padding: 11px 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 14px;
+            box-sizing: border-box;
+            margin-bottom: 12px;
+            font-family: monospace;
+        }
+        .login-card button {
+            width: 100%;
+            padding: 11px;
+            background: #2563eb;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .login-card button:hover { background: #1d4ed8; }
+        .login-error { color: #991b1b; font-size: 13px; text-align: center; min-height: 18px; margin-top: 8px; }
+
+        /* 主体 */
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .admin-header h1 { font-size: 22px; margin: 0; color: #111827; }
+        .admin-header .logout {
+            background: transparent;
+            color: #6b7280;
+            border: 1px solid #d1d5db;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 13px;
+            cursor: pointer;
+        }
+        .admin-header .logout:hover { background: #fee2e2; color: #991b1b; border-color: #fca5a5; }
+
+        /* 统计卡片 */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .stat-card {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 16px;
+        }
+        .stat-card .label { font-size: 12px; color: #6b7280; margin-bottom: 4px; }
+        .stat-card .value { font-size: 24px; font-weight: 700; color: #111827; }
+        .stat-card.pending .value { color: #d97706; }
+        .stat-card.approved .value { color: #059669; }
+        .stat-card.unread .value { color: #dc2626; }
+
+        /* 标签切换 */
+        .tabs {
+            display: flex;
+            gap: 4px;
+            border-bottom: 1px solid #e5e7eb;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+        .tab-btn {
+            background: transparent;
+            border: none;
+            padding: 10px 18px;
+            font-size: 14px;
+            color: #6b7280;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            font-weight: 500;
+        }
+        .tab-btn:hover { color: #2563eb; }
+        .tab-btn.active { color: #2563eb; border-bottom-color: #2563eb; }
+
+        /* 筛选条 */
+        .filter-bar {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .filter-bar select, .filter-bar button {
+            padding: 6px 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 13px;
+            background: #fff;
+            cursor: pointer;
+        }
+        .filter-bar button.active { background: #2563eb; color: #fff; border-color: #2563eb; }
+
+        /* 列表 */
+        .entry-row {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+        .entry-row-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .entry-meta { font-size: 12px; color: #6b7280; }
+        .entry-meta strong { color: #111827; }
+        .entry-meta .ip { font-family: monospace; color: #9ca3af; }
+        .entry-status {
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+        .status-pending { background: #fef3c7; color: #92400e; }
+        .status-approved { background: #d1fae5; color: #065f46; }
+        .status-rejected { background: #fee2e2; color: #991b1b; }
+        .status-spam { background: #f3f4f6; color: #6b7280; }
+
+        .entry-content {
+            color: #374151;
+            font-size: 14px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-break: break-word;
+            background: #f9fafb;
+            padding: 10px;
+            border-radius: 6px;
+            margin: 8px 0;
+        }
+        .entry-actions {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+        .action-btn {
+            padding: 5px 12px;
+            border: 1px solid #d1d5db;
+            background: #fff;
+            border-radius: 5px;
+            font-size: 12px;
+            cursor: pointer;
+            color: #374151;
+        }
+        .action-btn:hover { opacity: 0.85; }
+        .action-btn.approve { background: #d1fae5; color: #065f46; border-color: #6ee7b7; }
+        .action-btn.reject { background: #fee2e2; color: #991b1b; border-color: #fca5a5; }
+        .action-btn.spam { background: #f3f4f6; color: #6b7280; }
+        .action-btn.delete { background: #fef2f2; color: #991b1b; border-color: #fecaca; }
+        .action-btn.blockip { background: #fff7ed; color: #9a3412; border-color: #fdba74; }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: #9ca3af;
+            background: #fff;
+            border: 1px dashed #d1d5db;
+            border-radius: 8px;
+        }
+        .load-more-wrap { text-align: center; margin-top: 16px; }
+
+        /* 留言表单咨询卡片样式（不同布局） */
+        .msg-row { background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px; margin-bottom: 12px; }
+        .msg-row.unread { border-left: 3px solid #dc2626; }
+        .msg-row .msg-meta { font-size: 12px; color: #6b7280; margin-bottom: 6px; }
+        .msg-row .msg-meta strong { color: #111827; }
+        .msg-row .msg-content { background: #f9fafb; padding: 10px; border-radius: 6px; font-size: 13px; color: #374151; white-space: pre-wrap; }
+        .msg-row .msg-actions { margin-top: 8px; }
+    </style>
+</head>
+<body>
+    <div class="admin-wrap">
+        <!-- 登录页 -->
+        <div id="loginView" class="login-card">
+            <h1>Admin Panel</h1>
+            <p>Enter your admin token to continue</p>
+            <input type="password" id="tokenInput" placeholder="ADMIN_TOKEN" autocomplete="off">
+            <button id="loginBtn">Login</button>
+            <div id="loginError" class="login-error"></div>
+        </div>
+
+        <!-- 主面板 -->
+        <div id="panelView" style="display:none;">
+            <div class="admin-header">
+                <h1>Admin Panel</h1>
+                <button class="logout" id="logoutBtn">Logout</button>
+            </div>
+
+            <!-- 统计 -->
+            <div class="stats-grid" id="statsGrid">
+                <div class="stat-card pending"><div class="label">Guestbook Pending</div><div class="value" id="statGbPending">-</div></div>
+                <div class="stat-card approved"><div class="label">Guestbook Approved</div><div class="value" id="statGbApproved">-</div></div>
+                <div class="stat-card"><div class="label">Guestbook Spam</div><div class="value" id="statGbSpam">-</div></div>
+                <div class="stat-card unread"><div class="label">Inquiries Unread</div><div class="value" id="statMsgUnread">-</div></div>
+                <div class="stat-card"><div class="label">Inquiries Total</div><div class="value" id="statMsgTotal">-</div></div>
+            </div>
+
+            <!-- 标签 -->
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="guestbook">Guestbook</button>
+                <button class="tab-btn" data-tab="messages">Custom Inquiries</button>
+            </div>
+
+            <!-- Guestbook 面板 -->
+            <div id="guestbookPanel">
+                <div class="filter-bar">
+                    <strong style="font-size:13px;color:#374151;">Status:</strong>
+                    <button class="active" data-status="">All</button>
+                    <button data-status="pending">Pending</button>
+                    <button data-status="approved">Approved</button>
+                    <button data-status="rejected">Rejected</button>
+                    <button data-status="spam">Spam</button>
+                    <span style="flex:1;"></span>
+                    <select id="gbCatFilter">
+                        <option value="">All Categories</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="suggestion">Suggestion</option>
+                        <option value="cooperation">Cooperation</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div id="gbAdminList"></div>
+                <div class="load-more-wrap">
+                    <button id="gbLoadMore" class="action-btn" style="display:none;">Load More</button>
+                </div>
+            </div>
+
+            <!-- 留言表单面板 -->
+            <div id="messagesPanel" style="display:none;">
+                <div class="filter-bar">
+                    <strong style="font-size:13px;color:#374151;">Filter:</strong>
+                    <button class="active" data-msg-filter="all">All</button>
+                    <button data-msg-filter="unread">Unread Only</button>
+                </div>
+                <div id="msgList"></div>
+                <div class="load-more-wrap">
+                    <button id="msgLoadMore" class="action-btn" style="display:none;">Load More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ============ 状态 ============
+        let adminToken = sessionStorage.getItem('adminToken') || '';
+        let currentTab = 'guestbook';
+        let gbStatus = '';
+        let gbCat = '';
+        let gbOffset = 0;
+        const GB_LIMIT = 30;
+        let msgFilter = 'all';
+        let msgOffset = 0;
+        const MSG_LIMIT = 30;
+
+        // ============ 工具 ============
+        function api(path, options = {}) {
+            const headers = options.headers || {};
+            headers['Authorization'] = 'Bearer ' + adminToken;
+            if (options.body && !headers['Content-Type']) headers['Content-Type'] = 'application/json';
+            return fetch(path, { ...options, headers });
+        }
+
+        function escapeHtml(s) {
+            return String(s || '').replace(/[&<>"']/g, c => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+            }[c]));
+        }
+
+        function formatTime(ts) {
+            const d = new Date(ts * 1000);
+            return d.toLocaleString();
+        }
+
+        function categoryLabel(cat) {
+            return { feedback: 'Feedback', suggestion: 'Suggestion', cooperation: 'Cooperation', other: 'Other' }[cat] || 'Other';
+        }
+
+        // ============ 登录 ============
+        function showLogin() {
+            document.getElementById('loginView').style.display = 'block';
+            document.getElementById('panelView').style.display = 'none';
+        }
+
+        function showPanel() {
+            document.getElementById('loginView').style.display = 'none';
+            document.getElementById('panelView').style.display = 'block';
+            loadStats();
+            loadGuestbook(true);
+            loadMessages(true);
+        }
+
+        async function tryLogin() {
+            const token = document.getElementById('tokenInput').value.trim();
+            const errEl = document.getElementById('loginError');
+            errEl.textContent = '';
+            if (!token) { errEl.textContent = 'Please enter token'; return; }
+
+            try {
+                const res = await fetch('/api/admin/stats', {
+                    headers: { 'Authorization': 'Bearer ' + token }
+                });
+                if (res.status === 401) {
+                    errEl.textContent = 'Invalid token';
+                    return;
+                }
+                if (!res.ok) throw new Error('Server error');
+                adminToken = token;
+                sessionStorage.setItem('adminToken', token);
+                showPanel();
+            } catch (err) {
+                errEl.textContent = 'Login failed: ' + err.message;
+            }
+        }
+
+        document.getElementById('loginBtn').addEventListener('click', tryLogin);
+        document.getElementById('tokenInput').addEventListener('keypress', e => {
+            if (e.key === 'Enter') tryLogin();
+        });
+
+        document.getElementById('logoutBtn').addEventListener('click', function () {
+            adminToken = '';
+            sessionStorage.removeItem('adminToken');
+            showLogin();
+        });
+
+        // ============ 统计 ============
+        async function loadStats() {
+            try {
+                const res = await api('/api/admin/stats');
+                const data = await res.json();
+                if (!data.ok) return;
+                document.getElementById('statGbPending').textContent = data.guestbook.pending;
+                document.getElementById('statGbApproved').textContent = data.guestbook.approved;
+                document.getElementById('statGbSpam').textContent = data.guestbook.spam;
+                document.getElementById('statMsgUnread').textContent = data.messages.unread;
+                document.getElementById('statMsgTotal').textContent = data.messages.unread + data.messages.read;
+            } catch (err) {
+                console.error('Stats error:', err);
+            }
+        }
+
+        // ============ Guestbook 列表 ============
+        async function loadGuestbook(reset = false) {
+            if (reset) { gbOffset = 0; document.getElementById('gbAdminList').innerHTML = ''; }
+            const params = new URLSearchParams({ limit: String(GB_LIMIT), offset: String(gbOffset) });
+            if (gbStatus) params.set('status', gbStatus);
+            if (gbCat) params.set('category', gbCat);
+
+            try {
+                const res = await api('/api/admin/guestbook?' + params.toString());
+                const data = await res.json();
+                if (!data.ok) throw new Error(data.error);
+
+                const list = document.getElementById('gbAdminList');
+                if (data.entries.length === 0 && gbOffset === 0) {
+                    list.innerHTML = '<div class="empty-state">No entries found.</div>';
+                } else {
+                    list.insertAdjacentHTML('beforeend', data.entries.map(renderGbRow).join(''));
+                }
+
+                gbOffset += data.entries.length;
+                document.getElementById('gbLoadMore').style.display = (data.entries.length === GB_LIMIT) ? 'inline-block' : 'none';
+            } catch (err) {
+                console.error('Load guestbook error:', err);
+            }
+        }
+
+        function renderGbRow(e) {
+            return `
+                <div class="entry-row" data-id="${e.id}">
+                    <div class="entry-row-head">
+                        <div class="entry-meta">
+                            <strong>#${e.id} ${escapeHtml(e.nickname || 'Anonymous')}</strong>
+                            <span class="gb-cat-tag gb-cat-${e.category}">[${escapeHtml(categoryLabel(e.category))}]</span>
+                            &middot; <span class="ip">${escapeHtml(e.ip || '-')}</span>
+                            &middot; ${escapeHtml(formatTime(e.created_at))}
+                        </div>
+                        <span class="entry-status status-${e.status}">${escapeHtml(e.status)}</span>
+                    </div>
+                    <div class="entry-content">${escapeHtml(e.content)}</div>
+                    <div class="entry-actions">
+                        ${e.status !== 'approved' ? `<button class="action-btn approve" data-action="approve" data-id="${e.id}">Approve</button>` : ''}
+                        ${e.status !== 'rejected' ? `<button class="action-btn reject" data-action="reject" data-id="${e.id}">Reject</button>` : ''}
+                        ${e.status !== 'spam' ? `<button class="action-btn spam" data-action="spam" data-id="${e.id}">Mark Spam</button>` : ''}
+                        <button class="action-btn delete" data-action="delete" data-id="${e.id}">Delete</button>
+                        ${e.ip ? `<button class="action-btn blockip" data-action="block_ip" data-id="${e.id}" data-ip="${escapeHtml(e.ip)}">Block IP</button>` : ''}
+                    </div>
+                </div>
+            `;
+        }
+
+        // 委托事件处理
+        document.getElementById('gbAdminList').addEventListener('click', async function (e) {
+            const btn = e.target.closest('button[data-action]');
+            if (!btn) return;
+            const action = btn.dataset.action;
+            const id = parseInt(btn.dataset.id, 10);
+            const ip = btn.dataset.ip;
+
+            if (action === 'delete') {
+                if (!confirm('Delete this entry permanently?')) return;
+            }
+            if (action === 'block_ip') {
+                if (!confirm('Block IP ' + ip + '? Future submissions from this IP will be rejected.')) return;
+            }
+
+            const payload = { action };
+            if (id) payload.id = id;
+            if (ip) payload.ip = ip;
+
+            try {
+                const res = await api('/api/admin/guestbook', {
+                    method: 'POST',
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json();
+                if (data.ok) {
+                    if (action === 'delete') {
+                        document.querySelector(`.entry-row[data-id="${id}"]`)?.remove();
+                    } else if (action === 'block_ip') {
+                        alert('IP blocked: ' + ip);
+                    } else {
+                        // 更新状态
+                        const row = document.querySelector(`.entry-row[data-id="${id}"]`);
+                        if (row) {
+                            const statusEl = row.querySelector('.entry-status');
+                            statusEl.className = 'entry-status status-' + data.status;
+                            statusEl.textContent = data.status;
+                            // 重新渲染按钮
+                            const newHtml = renderGbRow({
+                                id, nickname: row.querySelector('.entry-meta strong').textContent.replace(/^#\d+\s*/, ''),
+                                category: row.querySelector('.gb-cat-tag').className.match(/gb-cat-(\w+)/)?.[1] || 'other',
+                                ip: row.querySelector('.ip').textContent,
+                                created_at: 0,
+                                content: row.querySelector('.entry-content').textContent,
+                                status: data.status
+                            });
+                            row.outerHTML = newHtml;
+                        }
+                    }
+                    loadStats();
+                } else {
+                    alert('Action failed: ' + (data.error || 'unknown'));
+                }
+            } catch (err) {
+                alert('Error: ' + err.message);
+            }
+        });
+
+        // 筛选
+        document.querySelectorAll('.filter-bar button[data-status]').forEach(btn => {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.filter-bar button[data-status]').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                gbStatus = this.dataset.status;
+                loadGuestbook(true);
+            });
+        });
+        document.getElementById('gbCatFilter').addEventListener('change', function () {
+            gbCat = this.value;
+            loadGuestbook(true);
+        });
+        document.getElementById('gbLoadMore').addEventListener('click', () => loadGuestbook(false));
+
+        // ============ 留言表单列表 ============
+        async function loadMessages(reset = false) {
+            if (reset) { msgOffset = 0; document.getElementById('msgList').innerHTML = ''; }
+            const params = new URLSearchParams({ limit: String(MSG_LIMIT), offset: String(msgOffset) });
+            if (msgFilter === 'unread') params.set('unread', '1');
+
+            try {
+                const res = await api('/api/admin/messages?' + params.toString());
+                const data = await res.json();
+                if (!data.ok) throw new Error(data.error);
+
+                const list = document.getElementById('msgList');
+                if (data.messages.length === 0 && msgOffset === 0) {
+                    list.innerHTML = '<div class="empty-state">No inquiries found.</div>';
+                } else {
+                    list.insertAdjacentHTML('beforeend', data.messages.map(renderMsgRow).join(''));
+                }
+
+                msgOffset += data.messages.length;
+                document.getElementById('msgLoadMore').style.display = (data.messages.length === MSG_LIMIT) ? 'inline-block' : 'none';
+            } catch (err) {
+                console.error('Load messages error:', err);
+            }
+        }
+
+        function renderMsgRow(m) {
+            const unreadClass = m.is_read === 0 ? 'unread' : '';
+            return `
+                <div class="msg-row ${unreadClass}" data-id="${m.id}">
+                    <div class="msg-meta">
+                        <strong>#${m.id} ${escapeHtml(m.name)}</strong>
+                        &lt;<a href="mailto:${escapeHtml(m.email)}" style="color:#2563eb;">${escapeHtml(m.email)}</a>&gt;
+                        &middot; [${escapeHtml(m.project_type || 'N/A')}]
+                        &middot; <span style="font-family:monospace;color:#9ca3af;">${escapeHtml(m.ip || '-')}</span>
+                        &middot; ${escapeHtml(formatTime(m.created_at))}
+                    </div>
+                    <div class="msg-content">${escapeHtml(m.description)}</div>
+                    <div class="msg-actions">
+                        ${m.is_read === 0 ? `<button class="action-btn approve" data-msg-action="markRead" data-id="${m.id}">Mark Read</button>` : '<span style="font-size:12px;color:#9ca3af;">✓ Read</span>'}
+                    </div>
+                </div>
+            `;
+        }
+
+        document.getElementById('msgList').addEventListener('click', async function (e) {
+            const btn = e.target.closest('button[data-msg-action]');
+            if (!btn) return;
+            const id = parseInt(btn.dataset.id, 10);
+
+            try {
+                const res = await api('/api/admin/messages?id=' + id, { method: 'POST' });
+                const data = await res.json();
+                if (data.ok) {
+                    const row = document.querySelector(`.msg-row[data-id="${id}"]`);
+                    if (row) {
+                        row.classList.remove('unread');
+                        btn.replaceWith(Object.assign(document.createElement('span'), {
+                            style: 'font-size:12px;color:#9ca3af;', textContent: '✓ Read'
+                        }));
+                    }
+                    loadStats();
+                }
+            } catch (err) {
+                console.error('Mark read error:', err);
+            }
+        });
+
+        document.querySelectorAll('.filter-bar button[data-msg-filter]').forEach(btn => {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.filter-bar button[data-msg-filter]').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                msgFilter = this.dataset.msgFilter;
+                loadMessages(true);
+            });
+        });
+        document.getElementById('msgLoadMore').addEventListener('click', () => loadMessages(false));
+
+        // ============ 标签切换 ============
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentTab = this.dataset.tab;
+                document.getElementById('guestbookPanel').style.display = (currentTab === 'guestbook') ? 'block' : 'none';
+                document.getElementById('messagesPanel').style.display = (currentTab === 'messages') ? 'block' : 'none';
+            });
+        });
+
+        // ============ 初始化 ============
+        if (adminToken) {
+            // 验证已存储的 token
+            fetch('/api/admin/stats', { headers: { 'Authorization': 'Bearer ' + adminToken } })
+                .then(r => { if (r.ok) showPanel(); else showLogin(); })
+                .catch(() => showLogin());
+        } else {
+            showLogin();
+        }
+    </script>
+</body>
+</html>

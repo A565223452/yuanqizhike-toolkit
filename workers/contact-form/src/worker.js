@@ -1,11 +1,19 @@
 /**
- * YuanqiZhiKe 留言表单 Worker
+ * YuanqiZhiKe 留言表单 + 留言板 Worker
  *
  * 路由：
- *   POST /api/contact          接收留言（带 Turnstile 校验）
- *   GET  /api/admin/messages   后台查询留言（需 Bearer Token）
- *   POST /api/admin/messages/:id/read  标记已读（需 Bearer Token）
- *   GET  /api/health           健康检查
+ *   POST /api/contact              定制咨询表单（带 Turnstile 校验）
+ *   GET  /api/admin/messages       后台查询咨询留言（需 Bearer Token）
+ *   POST /api/admin/messages       标记已读（需 Bearer Token）
+ *
+ *   GET  /api/guestbook            公开获取已审核留言（分页）
+ *   POST /api/guestbook            公开提交留言（待审核，带 Turnstile + 限流）
+ *
+ *   GET  /api/admin/guestbook      后台查询所有留言（需 Bearer Token）
+ *   POST /api/admin/guestbook      审核/删除/拉黑 IP（需 Bearer Token）
+ *   GET  /api/admin/stats          后台统计（需 Bearer Token）
+ *
+ *   GET  /api/health               健康检查
  *
  * 环境变量（在 wrangler.toml [vars] + secrets）：
  *   DB                   D1 数据库绑定
@@ -35,17 +43,34 @@ export default {
         return json({ ok: true, time: Date.now() });
       }
 
+      // 定制咨询表单
       if (path === '/api/contact' && method === 'POST') {
         return handleContact(request, env, ctx);
       }
-
       if (path === '/api/admin/messages' && method === 'GET') {
         return handleListMessages(request, env, url);
       }
-
       if (path === '/api/admin/messages' && method === 'POST') {
-        // 标记已读：/api/admin/messages?action=markRead&id=xxx
         return handleMarkRead(request, env, url);
+      }
+
+      // 留言板（公开）
+      if (path === '/api/guestbook' && method === 'GET') {
+        return handleListGuestbook(request, env, url);
+      }
+      if (path === '/api/guestbook' && method === 'POST') {
+        return handlePostGuestbook(request, env, ctx);
+      }
+
+      // 留言板管理
+      if (path === '/api/admin/guestbook' && method === 'GET') {
+        return handleAdminListGuestbook(request, env, url);
+      }
+      if (path === '/api/admin/guestbook' && method === 'POST') {
+        return handleAdminActionGuestbook(request, env, url);
+      }
+      if (path === '/api/admin/stats' && method === 'GET') {
+        return handleAdminStats(request, env);
       }
 
       return json({ error: 'Not Found' }, 404);
@@ -188,26 +213,27 @@ async function verifyTurnstile(token, ip, secretKey) {
   }
 }
 
-// ============ 频率限制（按 IP + 小时桶）============
-async function checkRateLimit(env, ip) {
+// ============ 频率限制（按 IP + 小时桶 + namespace）============
+async function checkRateLimit(env, ip, namespace = 'contact', maxPerHour = 5) {
   if (ip === 'unknown') return { ok: true };
   const now = Math.floor(Date.now() / 1000);
   const bucket = Math.floor(now / 3600); // 小时桶
-  const MAX_PER_HOUR = 5;
+  // 用 namespace 前缀区分不同接口的限流（contact / gb）
+  const ipKey = `${namespace}:${ip}`;
 
   try {
     // 原子 upsert：不存在则插入 count=1，存在则 count+1
-    const result = await env.DB.prepare(
+    await env.DB.prepare(
       `INSERT INTO rate_limit (ip, bucket, count) VALUES (?, ?, 1)
        ON CONFLICT(ip, bucket) DO UPDATE SET count = count + 1`
-    ).bind(ip, bucket).run();
+    ).bind(ipKey, bucket).run();
 
     const row = await env.DB.prepare(
       `SELECT count FROM rate_limit WHERE ip = ? AND bucket = ?`
-    ).bind(ip, bucket).first();
+    ).bind(ipKey, bucket).first();
 
     const count = row?.count || 0;
-    if (count > MAX_PER_HOUR) {
+    if (count > maxPerHour) {
       return { ok: false, count };
     }
     return { ok: true, count };
@@ -281,6 +307,270 @@ function buildEmailHtml({ name, email, projectType, description, ip, messageId }
     <p style="margin: 16px 0 0; color: #9ca3af; font-size: 12px;">Reply directly to this email to respond to ${escapeHtml(name)}.</p>
   </div>
 </div>`;
+}
+
+// ============ 留言板：公开列表（已审核通过）============
+async function handleListGuestbook(request, env, url) {
+  const page = Math.max(parseInt(url.searchParams.get('page') || '1', 10), 1);
+  const limit = Math.min(Math.max(parseInt(url.searchParams.get('limit') || '20', 10), 1), 50);
+  const offset = (page - 1) * limit;
+  const category = url.searchParams.get('category');
+
+  let where = 'WHERE status = ?';
+  let binds = ['approved'];
+  if (category && ['feedback', 'suggestion', 'cooperation', 'other'].includes(category)) {
+    where += ' AND category = ?';
+    binds.push(category);
+  }
+
+  const listStmt = env.DB.prepare(
+    `SELECT id, nickname, category, content, created_at
+     FROM guestbook ${where}
+     ORDER BY created_at DESC
+     LIMIT ? OFFSET ?`
+  ).bind(...binds, limit, offset);
+  const countStmt = env.DB.prepare(
+    `SELECT COUNT(*) as total FROM guestbook ${where}`
+  ).bind(...binds);
+
+  const [listResult, countResult] = await Promise.all([listStmt.all(), countStmt.first()]);
+  return json({
+    ok: true,
+    entries: listResult.results || [],
+    total: countResult?.total || 0,
+    page,
+    limit,
+    pages: Math.ceil((countResult?.total || 0) / limit)
+  });
+}
+
+// ============ 留言板：提交新留言（待审核）============
+const GB_CATEGORY_LABELS = {
+  feedback: 'feedback',
+  suggestion: 'suggestion',
+  cooperation: 'cooperation',
+  other: 'other'
+};
+
+// 简易垃圾词过滤（违禁词、常见 spam 词）
+const SPAM_KEYWORDS = [
+  'viagra', 'cialis', 'casino', 'gambling', 'lottery', 'porn', 'sex', 'escort',
+  'crypto-airdrop', 'free-money', 'make-money-online', 'click-here', 'buy-now'
+];
+
+async function handlePostGuestbook(request, env, ctx) {
+  const origin = request.headers.get('origin') || '';
+  if (env.ALLOWED_ORIGIN && origin !== env.ALLOWED_ORIGIN) {
+    return json({ error: 'Origin not allowed' }, 403);
+  }
+
+  let body;
+  try {
+    body = await request.json();
+  } catch (_) {
+    return json({ error: 'Invalid JSON body' }, 400);
+  }
+
+  const { nickname, category, content, 'cf-turnstile-response': turnstileToken, website } = body || {};
+
+  // honeypot：隐藏字段有值 = 机器人
+  if (website) {
+    return json({ ok: true, pending: true });
+  }
+
+  // 字段校验
+  const errors = validateGuestbook({ nickname, category, content });
+  if (errors.length > 0) {
+    return json({ error: 'Validation failed', details: errors }, 400);
+  }
+
+  const ip = request.headers.get('cf-connecting-ip') || 'unknown';
+
+  // IP 黑名单检查
+  if (ip !== 'unknown') {
+    const blocked = await env.DB.prepare(
+      `SELECT 1 FROM ip_blacklist WHERE ip = ?`
+    ).bind(ip).first();
+    if (blocked) {
+      return json({ error: 'Submission blocked.' }, 403);
+    }
+  }
+
+  // 频率限制：单 IP 每小时 3 条
+  const rateCheck = await checkRateLimit(env, ip, 'gb', 3);
+  if (!rateCheck.ok) {
+    return json({ error: 'Too many submissions. Please try again later.' }, 429);
+  }
+
+  // Turnstile 容错校验（同 contact 逻辑）
+  if (env.TURNSTILE_SECRET_KEY && turnstileToken) {
+    const verifyOk = await verifyTurnstile(turnstileToken, ip, env.TURNSTILE_SECRET_KEY);
+    if (!verifyOk) {
+      console.warn('Guestbook Turnstile verify failed, degrading. IP:', ip);
+    }
+  }
+
+  // 内容垃圾过滤
+  const contentLower = String(content).toLowerCase();
+  const hasSpamKeyword = SPAM_KEYWORDS.some(k => contentLower.includes(k));
+  // 前 5 条留言不能含外链
+  const hasUrl = /https?:\/\//i.test(content);
+  const userEntryCount = await env.DB.prepare(
+    `SELECT COUNT(*) as cnt FROM guestbook WHERE ip = ?`
+  ).bind(ip).first();
+  const isUrlBlocked = (userEntryCount?.cnt || 0) < 5 && hasUrl;
+
+  let status = 'pending';
+  if (hasSpamKeyword || isUrlBlocked) {
+    status = 'spam'; // 自动标记 spam，不展示也不进审核队列
+  }
+
+  const userAgent = request.headers.get('user-agent') || '';
+  const insertResult = await env.DB.prepare(
+    `INSERT INTO guestbook (nickname, category, content, ip, user_agent, status)
+     VALUES (?, ?, ?, ?, ?, ?)`
+  ).bind(
+    String(nickname || 'Anonymous').slice(0, 50),
+    String(category || 'feedback').slice(0, 20),
+    String(content).slice(0, 1000),
+    ip,
+    userAgent.slice(0, 500),
+    status
+  ).run();
+
+  return json({
+    ok: true,
+    id: insertResult.meta?.last_row_id,
+    pending: status === 'pending',
+    spam: status === 'spam'
+  });
+}
+
+function validateGuestbook({ nickname, category, content }) {
+  const errors = [];
+  if (nickname && String(nickname).length > 50) errors.push('Nickname too long (max 50 chars)');
+  if (!content || !String(content).trim()) errors.push('Content is required');
+  if (content) {
+    const len = String(content).length;
+    if (len < 5) errors.push('Content too short (min 5 chars)');
+    if (len > 1000) errors.push('Content too long (max 1000 chars)');
+  }
+  if (category && !GB_CATEGORY_LABELS[String(category)]) {
+    errors.push('Invalid category');
+  }
+  return errors;
+}
+
+// ============ 留言板：后台列表 ============
+async function handleAdminListGuestbook(request, env, url) {
+  const authErr = requireAdmin(request, env);
+  if (authErr) return authErr;
+
+  const status = url.searchParams.get('status'); // pending/approved/rejected/spam
+  const category = url.searchParams.get('category');
+  const limit = Math.min(parseInt(url.searchParams.get('limit') || '50', 10), 200);
+  const offset = Math.max(parseInt(url.searchParams.get('offset') || '0', 10), 0);
+
+  let where = 'WHERE 1=1';
+  let binds = [];
+  if (status) {
+    where += ' AND status = ?';
+    binds.push(status);
+  }
+  if (category) {
+    where += ' AND category = ?';
+    binds.push(category);
+  }
+
+  const result = await env.DB.prepare(
+    `SELECT id, nickname, category, content, ip, user_agent, status, created_at
+     FROM guestbook ${where}
+     ORDER BY created_at DESC
+     LIMIT ? OFFSET ?`
+  ).bind(...binds, limit, offset).all();
+
+  return json({ ok: true, entries: result.results || [], count: result.results?.length || 0 });
+}
+
+// ============ 留言板：后台操作（审核/删除/拉黑 IP）============
+async function handleAdminActionGuestbook(request, env, url) {
+  const authErr = requireAdmin(request, env);
+  if (authErr) return authErr;
+
+  let body;
+  try {
+    body = await request.json();
+  } catch (_) {
+    return json({ error: 'Invalid JSON body' }, 400);
+  }
+
+  const { action, id, ip, reason } = body || {};
+  if (!action) return json({ error: 'Missing action' }, 400);
+
+  // 审核/拒绝/标记 spam
+  if (['approve', 'reject', 'spam'].includes(action)) {
+    if (!id) return json({ error: 'Missing id' }, 400);
+    const newStatus = action === 'approve' ? 'approved' : (action === 'reject' ? 'rejected' : 'spam');
+    await env.DB.prepare(
+      `UPDATE guestbook SET status = ? WHERE id = ?`
+    ).bind(newStatus, parseInt(id, 10)).run();
+    return json({ ok: true, id: parseInt(id, 10), status: newStatus });
+  }
+
+  // 删除留言
+  if (action === 'delete') {
+    if (!id) return json({ error: 'Missing id' }, 400);
+    await env.DB.prepare(
+      `DELETE FROM guestbook WHERE id = ?`
+    ).bind(parseInt(id, 10)).run();
+    return json({ ok: true, deleted: parseInt(id, 10) });
+  }
+
+  // 拉黑 IP
+  if (action === 'block_ip') {
+    if (!ip) return json({ error: 'Missing ip' }, 400);
+    await env.DB.prepare(
+      `INSERT OR IGNORE INTO ip_blacklist (ip, reason) VALUES (?, ?)`
+    ).bind(String(ip).slice(0, 50), String(reason || '').slice(0, 200)).run();
+    return json({ ok: true, blocked: ip });
+  }
+
+  // 解除 IP 拉黑
+  if (action === 'unblock_ip') {
+    if (!ip) return json({ error: 'Missing ip' }, 400);
+    await env.DB.prepare(
+      `DELETE FROM ip_blacklist WHERE ip = ?`
+    ).bind(String(ip).slice(0, 50)).run();
+    return json({ ok: true, unblocked: ip });
+  }
+
+  return json({ error: 'Unknown action' }, 400);
+}
+
+// ============ 后台统计 ============
+async function handleAdminStats(request, env) {
+  const authErr = requireAdmin(request, env);
+  if (authErr) return authErr;
+
+  const [gbStats, msgStats] = await Promise.all([
+    env.DB.prepare(
+      `SELECT status, COUNT(*) as cnt FROM guestbook GROUP BY status`
+    ).all(),
+    env.DB.prepare(
+      `SELECT is_read, COUNT(*) as cnt FROM messages GROUP BY is_read`
+    ).all()
+  ]);
+
+  const gb = { pending: 0, approved: 0, rejected: 0, spam: 0 };
+  (gbStats.results || []).forEach(r => { gb[r.status] = r.cnt; });
+
+  const msgs = { unread: 0, read: 0 };
+  (msgStats.results || []).forEach(r => {
+    if (r.is_read === 0) msgs.unread = r.cnt;
+    else msgs.read = r.cnt;
+  });
+
+  return json({ ok: true, guestbook: gb, messages: msgs });
 }
 
 // ============ 工具函数 ============

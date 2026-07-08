@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - YuanqiZhiKe Toolkit</title>
+    <meta name="description" content="Share your feedback, suggestions, or cooperation ideas. We'd love to hear from you.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* 留言板专用样式 */
+        .gb-hero {
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            color: #fff;
+            padding: 48px 0 40px;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .gb-hero h1 { font-size: 32px; margin: 0 0 8px; }
+        .gb-hero p { font-size: 16px; opacity: 0.92; margin: 0; }
+
+        .gb-layout {
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 32px;
+            align-items: start;
+        }
+        @media (max-width: 900px) {
+            .gb-layout { grid-template-columns: 1fr; }
+        }
+
+        .gb-form-card {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 24px;
+            position: sticky;
+            top: 24px;
+        }
+        @media (max-width: 900px) {
+            .gb-form-card { position: static; }
+        }
+        .gb-form-card h2 { margin: 0 0 16px; font-size: 18px; color: #111827; }
+        .gb-form-card .form-group { margin-bottom: 14px; }
+        .gb-form-card label { display: block; font-size: 13px; color: #374151; margin-bottom: 6px; font-weight: 500; }
+        .gb-form-card input[type="text"],
+        .gb-form-card select,
+        .gb-form-card textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit;
+            box-sizing: border-box;
+            background: #fff;
+        }
+        .gb-form-card textarea { min-height: 110px; resize: vertical; }
+        .gb-form-card input:focus,
+        .gb-form-card select:focus,
+        .gb-form-card textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+        }
+        .gb-form-card .char-count { font-size: 12px; color: #9ca3af; text-align: right; margin-top: 4px; }
+        .gb-form-card .gb-submit {
+            width: 100%;
+            background: #2563eb;
+            color: #fff;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+        .gb-form-card .gb-submit:hover { background: #1d4ed8; }
+        .gb-form-card .gb-submit:disabled { background: #9ca3af; cursor: not-allowed; }
+        .gb-form-card #cf-turnstile { min-height: 65px; margin-top: 4px; }
+
+        .gb-alert {
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-size: 13px;
+            margin-bottom: 12px;
+            display: none;
+        }
+        .gb-alert.success { background: #d1fae5; color: #065f46; border: 1px solid #6ee7b7; display: block; }
+        .gb-alert.error { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; display: block; }
+        .gb-alert.info { background: #dbeafe; color: #1e40af; border: 1px solid #93c5fd; display: block; }
+
+        /* 留言列表区 */
+        .gb-list-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .gb-list-header h2 { margin: 0; font-size: 18px; color: #111827; }
+        .gb-filters { display: flex; gap: 6px; flex-wrap: wrap; }
+        .gb-filter-btn {
+            background: #fff;
+            border: 1px solid #d1d5db;
+            color: #6b7280;
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .gb-filter-btn:hover { border-color: #2563eb; color: #2563eb; }
+        .gb-filter-btn.active { background: #2563eb; color: #fff; border-color: #2563eb; }
+
+        .gb-entries {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        .gb-entry {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 18px;
+            transition: box-shadow 0.15s, transform 0.15s;
+        }
+        .gb-entry:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); transform: translateY(-1px); }
+        .gb-entry-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        .gb-entry-author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .gb-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 15px;
+            flex-shrink: 0;
+        }
+        .gb-entry-name { font-weight: 600; color: #111827; font-size: 14px; }
+        .gb-entry-time { color: #9ca3af; font-size: 11px; margin-top: 2px; }
+        .gb-category-tag {
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+        .gb-cat-feedback { background: #dbeafe; color: #1e40af; }
+        .gb-cat-suggestion { background: #d1fae5; color: #065f46; }
+        .gb-cat-cooperation { background: #fef3c7; color: #92400e; }
+        .gb-cat-other { background: #f3f4f6; color: #6b7280; }
+
+        .gb-entry-content {
+            color: #374151;
+            font-size: 14px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .gb-empty {
+            text-align: center;
+            padding: 48px 20px;
+            color: #9ca3af;
+            background: #fff;
+            border: 1px dashed #d1d5db;
+            border-radius: 10px;
+        }
+        .gb-empty-icon { font-size: 32px; margin-bottom: 8px; }
+
+        .gb-load-more {
+            display: block;
+            margin: 24px auto 0;
+            background: transparent;
+            color: #2563eb;
+            border: 1px solid #2563eb;
+            padding: 8px 24px;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .gb-load-more:hover { background: #2563eb; color: #fff; }
+        .gb-loading {
+            text-align: center;
+            padding: 24px;
+            color: #9ca3af;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="brand">
+                <span class="brand-icon">&#9670;</span>
+                <span class="brand-name">YuanqiZhiKe Toolkit</span>
+            </a>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="index.html#tools-section">Tools</a>
+                <a href="customize.html">Custom Dev</a>
+                <a href="guestbook.html">Feedback</a>
+                <a href="license.html">License</a>
+            </nav>
+            <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <section class="gb-hero">
+            <div class="container">
+                <h1>Leave Your Mark</h1>
+                <p>Feedback, suggestions, cooperation ideas, or just say hi &mdash; all welcome.</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="gb-layout">
+                <!-- 提交表单 -->
+                <aside class="gb-form-card">
+                    <h2>Share Your Thoughts</h2>
+                    <div id="gbAlert" class="gb-alert"></div>
+                    <form id="guestbookForm" autocomplete="off">
+                        <!-- honeypot 反机器人（用户不可见）-->
+                        <div style="position:absolute;left:-9999px;" aria-hidden="true">
+                            <label>Website (leave empty)<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gbNickname">Nickname (optional)</label>
+                            <input type="text" id="gbNickname" name="nickname" placeholder="Anonymous" maxlength="50">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gbCategory">Type</label>
+                            <select id="gbCategory" name="category">
+                                <option value="feedback">Feedback</option>
+                                <option value="suggestion">Suggestion</option>
+                                <option value="cooperation">Cooperation</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gbContent">Your Message *</label>
+                            <textarea id="gbContent" name="content" placeholder="Write your message here (5-1000 chars)..." maxlength="1000" required></textarea>
+                            <div class="char-count"><span id="gbCharCount">0</span>/1000</div>
+                        </div>
+
+                        <div class="form-group">
+                            <div id="cf-turnstile" style="min-height: 65px;"></div>
+                            <input type="hidden" name="cf-turnstile-response" id="cfTurnstileResponse">
+                        </div>
+
+                        <button type="submit" class="gb-submit" id="gbSubmit">Post Message</button>
+                    </form>
+                </aside>
+
+                <!-- 留言展示区 -->
+                <section>
+                    <div class="gb-list-header">
+                        <h2>Community Wall <span id="gbTotal" style="color:#9ca3af;font-weight:normal;font-size:14px;"></span></h2>
+                        <div class="gb-filters">
+                            <button class="gb-filter-btn active" data-cat="">All</button>
+                            <button class="gb-filter-btn" data-cat="feedback">Feedback</button>
+                            <button class="gb-filter-btn" data-cat="suggestion">Suggestion</button>
+                            <button class="gb-filter-btn" data-cat="cooperation">Cooperation</button>
+                            <button class="gb-filter-btn" data-cat="other">Other</button>
+                        </div>
+                    </div>
+
+                    <div id="gbEntries"></div>
+                    <div id="gbLoading" class="gb-loading" style="display:none;">Loading...</div>
+                    <button id="gbLoadMore" class="gb-load-more" style="display:none;">Load More</button>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; <span data-auto-date="year">2026</span> YuanqiZhiKe Toolkit. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad" async defer></script>
+    <script>
+        const TURNSTILE_SITE_KEY = '0x4AAAAAADxZ2faDF6_AjI-K';
+        let turnstileWidgetId = null;
+        let currentCategory = '';
+        let currentPage = 1;
+        let totalPages = 1;
+
+        // ============ Turnstile 渲染 ============
+        window.onTurnstileLoad = function () {
+            try {
+                if (window.turnstile && document.getElementById('cf-turnstile')) {
+                    turnstileWidgetId = window.turnstile.render('#cf-turnstile', {
+                        sitekey: TURNSTILE_SITE_KEY,
+                        theme: 'light',
+                        callback: function (token) {
+                            document.getElementById('cfTurnstileResponse').value = token;
+                        }
+                    });
+                }
+            } catch (e) {
+                console.warn('Turnstile init failed:', e);
+            }
+        };
+
+        // ============ 工具函数 ============
+        function showAlert(type, msg) {
+            const el = document.getElementById('gbAlert');
+            el.className = 'gb-alert ' + type;
+            el.textContent = msg;
+            setTimeout(() => { el.className = 'gb-alert'; }, 6000);
+        }
+
+        function escapeHtml(s) {
+            return String(s || '').replace(/[&<>"']/g, c => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+            }[c]));
+        }
+
+        function formatTime(ts) {
+            // ts 是 unix 秒
+            const now = Math.floor(Date.now() / 1000);
+            const diff = now - ts;
+            if (diff < 60) return 'just now';
+            if (diff < 3600) return Math.floor(diff / 60) + 'm ago';
+            if (diff < 86400) return Math.floor(diff / 3600) + 'h ago';
+            if (diff < 2592000) return Math.floor(diff / 86400) + 'd ago';
+            return new Date(ts * 1000).toISOString().slice(0, 10);
+        }
+
+        function categoryLabel(cat) {
+            return { feedback: 'Feedback', suggestion: 'Suggestion', cooperation: 'Cooperation', other: 'Other' }[cat] || 'Other';
+        }
+
+        function renderEntry(entry) {
+            const initial = (entry.nickname || 'A').charAt(0).toUpperCase();
+            const tagClass = 'gb-cat-' + (entry.category || 'other');
+            return `
+                <div class="gb-entry">
+                    <div class="gb-entry-head">
+                        <div class="gb-entry-author">
+                            <div class="gb-avatar">${escapeHtml(initial)}</div>
+                            <div>
+                                <div class="gb-entry-name">${escapeHtml(entry.nickname || 'Anonymous')}</div>
+                                <div class="gb-entry-time">${escapeHtml(formatTime(entry.created_at))}</div>
+                            </div>
+                        </div>
+                        <span class="gb-category-tag ${tagClass}">${escapeHtml(categoryLabel(entry.category))}</span>
+                    </div>
+                    <div class="gb-entry-content">${escapeHtml(entry.content)}</div>
+                </div>
+            `;
+        }
+
+        // ============ 加载留言 ============
+        async function loadEntries(page = 1, append = false) {
+            const loading = document.getElementById('gbLoading');
+            const list = document.getElementById('gbEntries');
+            loading.style.display = 'block';
+
+            try {
+                const params = new URLSearchParams({ page: String(page), limit: '12' });
+                if (currentCategory) params.set('category', currentCategory);
+
+                const res = await fetch('/api/guestbook?' + params.toString());
+                const data = await res.json();
+
+                if (!data.ok) throw new Error(data.error || 'Failed to load');
+
+                currentPage = data.page;
+                totalPages = data.pages;
+                document.getElementById('gbTotal').textContent = data.total ? `(${data.total})` : '';
+
+                if (!append) list.innerHTML = '';
+
+                if (data.entries.length === 0 && !append) {
+                    list.innerHTML = `
+                        <div class="gb-empty">
+                            <div class="gb-empty-icon">&#9993;</div>
+                            <div>No messages yet. Be the first to share your thoughts!</div>
+                        </div>
+                    `;
+                } else {
+                    list.insertAdjacentHTML('beforeend', data.entries.map(renderEntry).join(''));
+                }
+
+                // 加载更多按钮
+                const loadMoreBtn = document.getElementById('gbLoadMore');
+                loadMoreBtn.style.display = (currentPage < totalPages) ? 'block' : 'none';
+            } catch (err) {
+                if (!append) {
+                    list.innerHTML = `<div class="gb-empty"><div>Failed to load messages. Please refresh.</div></div>`;
+                }
+                console.error('Load guestbook error:', err);
+            } finally {
+                loading.style.display = 'none';
+            }
+        }
+
+        // ============ 提交留言 ============
+        document.getElementById('guestbookForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const btn = document.getElementById('gbSubmit');
+            const content = document.getElementById('gbContent').value.trim();
+            const nickname = document.getElementById('gbNickname').value.trim();
+            const category = document.getElementById('gbCategory').value;
+            const website = document.querySelector('input[name="website"]').value; // honeypot
+            const turnstileToken = document.getElementById('cfTurnstileResponse').value || '';
+
+            if (content.length < 5) {
+                showAlert('error', 'Message too short (min 5 characters).');
+                return;
+            }
+            if (content.length > 1000) {
+                showAlert('error', 'Message too long (max 1000 characters).');
+                return;
+            }
+
+            btn.disabled = true;
+            btn.textContent = 'Posting...';
+
+            try {
+                const payload = {
+                    nickname: nickname || 'Anonymous',
+                    category: category,
+                    content: content,
+                    'cf-turnstile-response': turnstileToken
+                };
+                if (website) payload.website = website; // honeypot
+
+                const res = await fetch('/api/guestbook', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await res.json();
+
+                if (!res.ok) {
+                    throw new Error(data.error || 'Submission failed');
+                }
+
+                if (data.spam) {
+                    showAlert('error', 'Your message was flagged. Please contact us directly if this is a mistake.');
+                } else if (data.pending) {
+                    showAlert('success', 'Thank you! Your message has been submitted and will appear after review (usually within 24 hours).');
+                    document.getElementById('guestbookForm').reset();
+                    document.getElementById('gbCharCount').textContent = '0';
+                }
+
+                // 重置 Turnstile
+                if (window.turnstile && turnstileWidgetId !== null) {
+                    try { window.turnstile.reset(turnstileWidgetId); } catch (_) {}
+                }
+                document.getElementById('cfTurnstileResponse').value = '';
+            } catch (err) {
+                showAlert('error', err.message || 'Failed to submit. Please try again.');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Post Message';
+            }
+        });
+
+        // 字符计数
+        document.getElementById('gbContent').addEventListener('input', function () {
+            document.getElementById('gbCharCount').textContent = this.value.length;
+        });
+
+        // 分类筛选
+        document.querySelectorAll('.gb-filter-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.gb-filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentCategory = this.dataset.cat;
+                loadEntries(1, false);
+            });
+        });
+
+        // 加载更多
+        document.getElementById('gbLoadMore').addEventListener('click', function () {
+            if (currentPage < totalPages) loadEntries(currentPage + 1, true);
+        });
+
+        // 初始加载
+        loadEntries(1, false);
+    </script>
+</body>
+</html>

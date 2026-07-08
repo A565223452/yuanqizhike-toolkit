@@ -25,3 +25,26 @@ CREATE TABLE IF NOT EXISTS rate_limit (
   count INTEGER DEFAULT 1,
   PRIMARY KEY (ip, bucket)
 );
+
+-- ============ 留言板表 ============
+-- 用法同上，重新执行本文件即可（IF NOT EXISTS 幂等）
+CREATE TABLE IF NOT EXISTS guestbook (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  nickname TEXT DEFAULT 'Anonymous',
+  category TEXT DEFAULT 'feedback',     -- feedback / suggestion / cooperation / other
+  content TEXT NOT NULL,
+  ip TEXT,
+  user_agent TEXT,
+  status TEXT DEFAULT 'pending',        -- pending / approved / rejected / spam
+  created_at INTEGER NOT NULL DEFAULT (unixepoch())
+);
+
+CREATE INDEX IF NOT EXISTS idx_guestbook_status_created ON guestbook(status, created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_guestbook_category ON guestbook(category, status);
+
+-- IP 黑名单表（管理员拉黑的 IP）
+CREATE TABLE IF NOT EXISTS ip_blacklist (
+  ip TEXT PRIMARY KEY,
+  reason TEXT,
+  created_at INTEGER NOT NULL DEFAULT (unixepoch())
+);
