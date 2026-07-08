@@ -245,8 +245,16 @@ async function sendEmail(env, { name, email, projectType, description, ip, messa
 
   if (!res.ok) {
     const txt = await res.text().catch(() => '');
-    console.error(`Resend API error ${res.status}: ${txt}`);
-    throw new Error(`Resend API ${res.status}`);
+    // 增强日志：打印完整请求参数和响应体，便于定位 400 根因
+    console.error('Resend API error details:', JSON.stringify({
+      status: res.status,
+      responseBody: txt,
+      from: env.CONTACT_FROM_EMAIL,
+      to: env.CONTACT_TO_EMAIL,
+      replyTo: email,
+      apiKeyPrefix: env.RESEND_API_KEY ? env.RESEND_API_KEY.substring(0, 10) + '...' : 'MISSING'
+    }));
+    throw new Error(`Resend API ${res.status}: ${txt}`);
   }
 
   const data = await res.json().catch(() => ({}));
