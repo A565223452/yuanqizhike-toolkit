@@ -37,15 +37,19 @@
         }
     }
 
-    // Load Google AdSense (only if consent = 'all')
+    // Load Google AdSense Auto Ads (only if consent = 'all')
+    // 使用自动广告代码：无需手动创建广告单元 slot，谷歌自动在页面合适位置插入广告
     function loadAdSense() {
         if (window.adsbygoogleLoaded) return;
         const script = document.createElement('script');
         script.async = true;
-        script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6181560564978988';
         script.crossOrigin = 'anonymous';
+        script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6181560564978988';
         document.head.appendChild(script);
+        // 推入空对象触发自动广告初始化
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
         window.adsbygoogleLoaded = true;
+        console.log('[AdSense] Auto ads script loaded (consent granted)');
     }
 
     // Load Analytics (only if consent = 'all')

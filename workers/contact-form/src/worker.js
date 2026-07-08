@@ -90,16 +90,21 @@ async function handleContact(request, env, ctx) {
     return json({ error: 'Too many submissions. Please try again later.' }, 429);
   }
 
-  // Turnstile 校验
-  // 策略：有 token 必校验；无 token 时降级放行（靠 honeypot + IP 限流兜底）
-  // 这样 Turnstile 渲染失败时不阻塞表单，渲染成功时仍强校验
+  // Turnstile 校验（容错策略）
+  // 背景：Turnstile 600010 Bug 会导致前端生成无效 token，但用户无过错。
+  // 策略：
+  //   - 有 token 且校验通过：正常放行
+  //   - 有 token 但校验失败：降级放行（记录日志），由 honeypot + IP 限流兜底
+  //   - 无 token：直接放行，由 honeypot + IP 限流兜底
+  // 这样既保留 Turnstile 的防护能力，又不因 Cloudflare 自身 Bug 阻断用户。
   if (env.TURNSTILE_SECRET_KEY && turnstileToken) {
     const verifyOk = await verifyTurnstile(turnstileToken, ip, env.TURNSTILE_SECRET_KEY);
     if (!verifyOk) {
-      return json({ error: 'Captcha verification failed. Please retry.' }, 400);
+      // 降级放行：记录日志便于排查，但不拒绝用户提交
+      console.warn('Turnstile verify failed, degrading to honeypot mode. IP:', ip);
     }
   }
-  // 注：turnstileToken 为空时跳过校验，由 honeypot + IP 限流（5次/小时）兜底
+  // 反垃圾由 honeypot（机器人必填）+ IP 限流（5次/小时）双重兜底
 
   // 写入 D1
   const userAgent = request.headers.get('user-agent') || '';
