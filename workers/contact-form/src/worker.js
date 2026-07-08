@@ -91,17 +91,15 @@ async function handleContact(request, env, ctx) {
   }
 
   // Turnstile 校验
-  // 若 TURNSTILE_SECRET_KEY 未配置或 token 为空，根据是否配置了 secret 决定是否放行
-  if (env.TURNSTILE_SECRET_KEY) {
-    if (!turnstileToken) {
-      return json({ error: 'Human verification required. Please complete the captcha.' }, 400);
-    }
+  // 策略：有 token 必校验；无 token 时降级放行（靠 honeypot + IP 限流兜底）
+  // 这样 Turnstile 渲染失败时不阻塞表单，渲染成功时仍强校验
+  if (env.TURNSTILE_SECRET_KEY && turnstileToken) {
     const verifyOk = await verifyTurnstile(turnstileToken, ip, env.TURNSTILE_SECRET_KEY);
     if (!verifyOk) {
       return json({ error: 'Captcha verification failed. Please retry.' }, 400);
     }
   }
-  // 若未配置 TURNSTILE_SECRET_KEY，跳过校验（仅靠 honeypot + 限流，开发阶段适用）
+  // 注：turnstileToken 为空时跳过校验，由 honeypot + IP 限流（5次/小时）兜底
 
   // 写入 D1
   const userAgent = request.headers.get('user-agent') || '';

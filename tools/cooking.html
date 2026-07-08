@@ -7,9 +7,8 @@
     <meta name="description" content="Free offline cooking and food tools. Recipe converters, cooking timers, unit converters, and nutrition calculators that run locally.">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6181560564978988"
-     crossorigin="anonymous"></script>
+    <!-- GDPR Cookie Consent - Controls AdSense loading based on user consent -->
+    <script src="../assets/js/cookie-consent.js"></script>
 </head>
 <body>
     <header class="site-header">
@@ -91,10 +90,10 @@
                 <p>Please read and accept the following terms before downloading:</p>
                 <div class="terms-box">
                     <h4>YuanqiZhiKe Toolkit - Source Code License Terms</h4>
-                    <p><strong>Effective Date:</strong> January 1, 2026</p>
+                    <p><strong>Effective Date:</strong> <span data-auto-date="full"></span></p>
                     <ul>
-                        <li>This source code is provided for <strong>personal learning purposes only</strong>. Commercial use is strictly prohibited without prior written consent from YuanqiZhiKe.</li>
-                        <li>You are <strong>forbidden</strong> from repackaging, reselling, or building any profit-generating website based on this source code.</li>
+                        <li>This source code is provided for <strong>personal learning and commercial use</strong>. You may deploy these tools on commercial or ad-supported websites (including Google AdSense), provided that all original copyright notices are preserved.</li>
+                        <li>You are <strong>forbidden</strong> from repackaging, reselling, or distributing the source code as a standalone product without substantial modification.</li>
                         <li>All risks arising from local modification and operation of this software are borne by the user themselves. YuanqiZhiKe provides <strong>no technical after-sales support</strong>.</li>
                         <li>This software is provided "as is" without any warranties, express or implied.</li>
                         <li>YuanqiZhiKe retains all intellectual property rights to the original source code.</li>
@@ -121,11 +120,13 @@
                 <a href="../license.html">Source License</a>
                 <a href="../customize.html">Custom Dev Service</a>
             </div>
-            <p class="copyright">&copy; 2026 YuanqiZhiKe. All rights reserved.</p>
+            <p class="copyright">&copy; <span data-auto-date="year"></span> YuanqiZhiKe. All rights reserved.</p>
         </div>
     </footer>
 
+    
     <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/date-utils.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             fetch('../tools-list.json')

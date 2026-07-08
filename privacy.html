@@ -6,9 +6,8 @@
     <title>Privacy Policy - YuanqiZhiKe Toolkit</title>
     <meta name="description" content="Privacy Policy for YuanqiZhiKe Toolkit. We respect your privacy and do not collect personal data.">
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6181560564978988"
-     crossorigin="anonymous"></script>
+    <!-- GDPR Cookie Consent - Controls AdSense loading based on user consent -->
+    <script src="assets/js/cookie-consent.js"></script>
 </head>
 <body>
     <header class="site-header">
@@ -30,7 +29,7 @@
     <main class="page-content">
         <div class="container">
             <h1>Privacy Policy</h1>
-            <p class="last-updated">Last Updated: January 1, 2026</p>
+            <p class="last-updated">Last Updated: <span data-auto-date="full"></span></p>
 
             <h2>1. Introduction</h2>
             <p>Welcome to YuanqiZhiKe Toolkit ("we," "our," or "us"). This Privacy Policy explains how we handle data when you visit and use our website and tools. We are committed to protecting your privacy and complying with GDPR, CCPA, and other global privacy regulations.</p>
@@ -55,10 +54,22 @@
             <p>This information cannot be used to identify you personally. We do not combine analytics data with any personal information.</p>
 
             <h2>4. Cookies</h2>
-            <p>Our website uses minimal cookies solely for technical purposes (e.g., maintaining session state). We do not use tracking cookies, advertising cookies, or any form of behavioral profiling. For details, please see our <a href="cookie.html">Cookie Notice</a>.</p>
+            <p>Our website uses cookies for the following purposes:</p>
+            <ul>
+                <li><strong>Essential Cookies:</strong> Required for basic website functionality (session management, preference storage). These do not require consent.</li>
+                <li><strong>Analytics Cookies:</strong> Used by Google Analytics 4 / Cloudflare Analytics to collect anonymous usage statistics. IP addresses are anonymized.</li>
+                <li><strong>Advertising Cookies:</strong> We display Google AdSense advertisements across our website pages. Google AdSense may deploy advertising cookies to deliver personalized advertisements according to visitor browsing behaviors. Visitors can disable personalized advertising by accessing <a href="https://adssettings.google.com/" target="_blank" rel="noopener">Google official ad privacy settings</a>. All ad-related data collection follows Google privacy rules and global data compliance regulations.</li>
+            </ul>
+            <p>For detailed cookie categories and management options, please see our <a href="cookie.html">Cookie Notice</a>.</p>
 
             <h2>5. Third-Party Services</h2>
             <p>Our tools are delivered as downloadable ZIP files containing standalone HTML/CSS/JavaScript. Once downloaded, these tools operate entirely offline. We are not responsible for any third-party services you may choose to integrate into your own use of the source code.</p>
+
+            <h3>5.1 Google AdSense</h3>
+            <p>This website displays advertisements served by Google AdSense. Google may use cookies and similar technologies to serve personalized ads based on your visits to this and other websites. You may opt out of personalized advertising by visiting <a href="https://adssettings.google.com/" target="_blank" rel="noopener">Google Ads Settings</a>. For more information on how Google uses data when you use our partners' sites or apps, see <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">How Google uses data</a>.</p>
+
+            <h3>5.2 Analytics Providers</h3>
+            <p>We may use Google Analytics 4 and/or Cloudflare Web Analytics to understand website usage. These services collect anonymized data only. Refer to their respective privacy policies: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>, <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare Privacy Policy</a>.</p>
 
             <h2>6. Data Security</h2>
             <p>Our website is served over HTTPS to ensure secure delivery of all downloadable files. We use industry-standard security measures to protect our hosting infrastructure.</p>
@@ -95,10 +106,11 @@
                 <a href="license.html">Source License</a>
                 <a href="customize.html">Custom Dev Service</a>
             </div>
-            <p class="copyright">&copy; 2026 YuanqiZhiKe. All rights reserved.</p>
+            <p class="copyright">&copy; <span data-auto-date="year"></span> YuanqiZhiKe. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/date-utils.js"></script>
 </body>
 </html>
