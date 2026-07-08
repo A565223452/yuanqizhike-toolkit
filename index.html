@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-i18n-init>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YuanqiZhiKe Toolkit - Free Offline Tools for Global Creators</title>
-    <meta name="description" content="One-stop platform providing free offline frontend tools covering multiple vertical industries for global creators and practitioners.">
+    <title data-i18n="page.title" data-i18n-keys="hero.title">YuanqiZhiKe Toolkit - Free Offline Tools for Global Creators</title>
+    <meta name="description" content="One-stop platform providing free offline frontend tools covering multiple vertical industries for global creators and practitioners." data-i18n="page.description">
+    <meta property="og:title" content="YuanqiZhiKe Toolkit - Free Offline Tools for Global Creators">
+    <meta property="og:description" content="One-stop platform providing free offline frontend tools covering multiple vertical industries for global creators and practitioners.">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="zh_CN">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:locale:alternate" content="ja_JP">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- GDPR Cookie Consent - Controls AdSense loading based on user consent -->
@@ -12,6 +18,12 @@
     <!-- Google Analytics 4 - Placeholder -->
     <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
     <!-- <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XXXXXXXXXX'); </script> -->
+    <!-- hreflang tags -->
+    <link rel="alternate" hreflang="en" href="?lang=en">
+    <link rel="alternate" hreflang="zh" href="?lang=zh">
+    <link rel="alternate" hreflang="es" href="?lang=es">
+    <link rel="alternate" hreflang="ja" href="?lang=ja">
+    <link rel="alternate" hreflang="x-default" href="/">
 </head>
 <body>
     <!-- Header Navigation -->
@@ -19,12 +31,12 @@
         <div class="container header-inner">
             <a href="index.html" class="brand">
                 <span class="brand-icon">&#9670;</span>
-                <span class="brand-name">YuanqiZhiKe Toolkit</span>
+                <span class="brand-name" data-i18n="brand.name">YuanqiZhiKe Toolkit</span>
             </a>
             <nav class="main-nav">
-                <a href="index.html" class="active">Home</a>
+                <a href="index.html" class="active" data-i18n="nav.home">Home</a>
                 <div class="nav-dropdown">
-                    <a href="tools.html">Tools &#9662;</a>
+                    <a href="tools.html" data-i18n="nav.tools">Tools &#9662;</a>
                     <div class="dropdown-menu">
                         <a href="tools.html#category-content">Content & Writing</a>
                         <a href="tools.html#category-design">Design & Media</a>
@@ -55,9 +67,19 @@
                         <a href="tools.html#category-religion">Religion & Spirituality</a>
                     </div>
                 </div>
-                <a href="customize.html">Custom Dev</a>
-                <a href="guestbook.html">Feedback</a>
+                <a href="customize.html" data-i18n="nav.customDev">Custom Dev</a>
+                <a href="guestbook.html" data-i18n="nav.feedback">Feedback</a>
             </nav>
+            <!-- Language Switcher -->
+            <div class="language-switcher">
+                <button class="lang-btn" id="languageSwitcher" aria-label="Switch language">
+                    <span class="lang-flag">🇺🇸</span>
+                    <span class="lang-name">English</span>
+                </button>
+                <div class="lang-dropdown" id="languageDropdown">
+                    <!-- Populated by i18n.js -->
+                </div>
+            </div>
             <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
         </div>
     </header>
@@ -65,36 +87,36 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Free Offline Tools for Every Vertical Industry</h1>
-            <p>YuanqiZhiKe Toolkit is a one-stop platform delivering free, privacy-first frontend tools to creators and professionals worldwide. Download, open locally, work offline -- no registration, no data collection, no compromises.</p>
-            <a href="tools.html" class="btn btn-primary">Explore All Tools</a>
+            <h1 data-i18n="hero.title">Free Offline Tools for Every Vertical Industry</h1>
+            <p data-i18n="hero.description">YuanqiZhiKe Toolkit is a one-stop platform delivering free, privacy-first frontend tools to creators and professionals worldwide. Download, open locally, work offline -- no registration, no data collection, no compromises.</p>
+            <a href="tools.html" class="btn btn-primary" data-i18n="hero.cta">Explore All Tools</a>
         </div>
     </section>
 
     <!-- Platform Positioning -->
     <section class="positioning-section">
         <div class="container">
-            <h2 class="section-title">What We Offer</h2>
+            <h2 class="section-title" data-i18n="positioning.title">What We Offer</h2>
             <div class="positioning-grid">
                 <div class="positioning-item">
                     <div class="positioning-icon">&#128218;</div>
-                    <h3>Multi-Industry Coverage</h3>
-                    <p>From content writing to web development, our tools span every major vertical industry. Find exactly what you need, when you need it.</p>
+                    <h3 data-i18n="positioning.item1.title">Multi-Industry Coverage</h3>
+                    <p data-i18n="positioning.item1.desc">From content writing to web development, our tools span every major vertical industry. Find exactly what you need, when you need it.</p>
                 </div>
                 <div class="positioning-item">
                     <div class="positioning-icon">&#9729;</div>
-                    <h3>100% Offline & Private</h3>
-                    <p>Every tool runs entirely in your browser. Your data never leaves your device. No servers, no tracking, no privacy concerns.</p>
+                    <h3 data-i18n="positioning.item2.title">100% Offline & Private</h3>
+                    <p data-i18n="positioning.item2.desc">Every tool runs entirely in your browser. Your data never leaves your device. No servers, no tracking, no privacy concerns.</p>
                 </div>
                 <div class="positioning-item">
                     <div class="positioning-icon">&#128187;</div>
-                    <h3>Open Source & Free</h3>
-                    <p>All tools come with full source code. Study, modify, and learn from production-ready code -- completely free of charge.</p>
+                    <h3 data-i18n="positioning.item3.title">Open Source & Free</h3>
+                    <p data-i18n="positioning.item3.desc">All tools come with full source code. Study, modify, and learn from production-ready code -- completely free of charge.</p>
                 </div>
                 <div class="positioning-item">
                     <div class="positioning-icon">&#128640;</div>
-                    <h3>Zero Barriers</h3>
-                    <p>No sign-up, no login, no paywalls. Just download the ZIP, unzip, and open in your browser. That simple.</p>
+                    <h3 data-i18n="positioning.item4.title">Zero Barriers</h3>
+                    <p data-i18n="positioning.item4.desc">No sign-up, no login, no paywalls. Just download the ZIP, unzip, and open in your browser. That simple.</p>
                 </div>
             </div>
         </div>
@@ -103,22 +125,22 @@
     <!-- How It Works -->
     <section class="how-it-works">
         <div class="container">
-            <h2 class="section-title">How It Works</h2>
+            <h2 class="section-title" data-i18n="howitworks.title">How It Works</h2>
             <div class="steps-row">
                 <div class="step-item">
                     <div class="step-number">1</div>
-                    <h3>Browse Tools</h3>
-                    <p>Visit our tools catalog and filter by category to find the right tool for your workflow.</p>
+                    <h3 data-i18n="howitworks.step1.title">Browse Tools</h3>
+                    <p data-i18n="howitworks.step1.desc">Visit our tools catalog and filter by category to find the right tool for your workflow.</p>
                 </div>
                 <div class="step-item">
                     <div class="step-number">2</div>
-                    <h3>Accept License</h3>
-                    <p>Click download, review and accept the source code license agreement.</p>
+                    <h3 data-i18n="howitworks.step2.title">Accept License</h3>
+                    <p data-i18n="howitworks.step2.desc">Click download, review and accept the source code license agreement.</p>
                 </div>
                 <div class="step-item">
                     <div class="step-number">3</div>
-                    <h3>Download & Use</h3>
-                    <p>Get the ZIP file, extract it, and open index.html in any browser. Start working offline immediately.</p>
+                    <h3 data-i18n="howitworks.step3.title">Download & Use</h3>
+                    <p data-i18n="howitworks.step3.desc">Get the ZIP file, extract it, and open index.html in any browser. Start working offline immediately.</p>
                 </div>
             </div>
         </div>
@@ -127,7 +149,7 @@
     <!-- Niche Categories Preview -->
     <section class="categories-preview">
         <div class="container">
-            <h2 class="section-title">Tool Categories</h2>
+            <h2 class="section-title" data-i18n="categories.title">Tool Categories</h2>
             <div class="categories-grid">
                 <a href="tools.html#category-content" class="category-card">
                     <div class="cat-icon">&#128221;</div>
@@ -266,7 +288,7 @@
                 </a>
             </div>
             <div style="text-align: center; margin-top: 40px;">
-                <a href="tools.html" class="btn btn-primary">Explore All Tools</a>
+                <a href="tools.html" class="btn btn-primary" data-i18n="hero.cta">Explore All Tools</a>
             </div>
         </div>
     </section>
@@ -274,16 +296,16 @@
     <!-- Custom Development CTA -->
     <section class="cta-section">
         <div class="container">
-            <h2>Need a Custom Tool or SaaS Product?</h2>
-            <p>We offer professional frontend tool and web application development services for businesses worldwide. From concept to deployment, our team delivers production-ready solutions.</p>
-            <a href="customize.html" class="btn btn-primary">Request Custom Development</a>
+            <h2 data-i18n="cta.title">Need a Custom Tool or SaaS Product?</h2>
+            <p data-i18n="cta.desc">We offer professional frontend tool and web application development services for businesses worldwide. From concept to deployment, our team delivers production-ready solutions.</p>
+            <a href="customize.html" class="btn btn-primary" data-i18n="cta.btn">Request Custom Development</a>
         </div>
     </section>
 
     <!-- Comments Section (Giscus) -->
     <section class="comments-section">
         <div class="container">
-            <h2 class="section-title">Comments</h2>
+            <h2 class="section-title" data-i18n="comments.title">Comments</h2>
             <script src="https://giscus.app/client.js"
                     data-repo="A565223452/yuanqizhike-comments"
                     data-repo-id="R_kgDOTJQHQ"
@@ -295,7 +317,7 @@
                     data-emit-metadata="0"
                     data-input-position="bottom"
                     data-theme="preferred_color_scheme"
-                    data-lang="zh-CN"
+                    data-lang=""
                     crossorigin="anonymous"
                     async>
             </script>
@@ -306,16 +328,16 @@
     <footer class="site-footer">
         <div class="container">
             <div class="footer-links">
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="cookie.html">Cookie Notice</a>
-                <a href="license.html">Source License</a>
-                <a href="customize.html">Custom Dev Service</a>
+                <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+                <a href="cookie.html" data-i18n="footer.cookie">Cookie Notice</a>
+                <a href="license.html" data-i18n="footer.license">Source License</a>
+                <a href="customize.html" data-i18n="footer.customDev">Custom Dev Service</a>
             </div>
             <p class="copyright">&copy; <span data-auto-date="year"></span> YuanqiZhiKe. All rights reserved.</p>
         </div>
     </footer>
 
-    
+    <script src="assets/js/i18n.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/date-utils.js"></script>
 </body>

@@ -1,0 +1,231 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "tools": "ツール",
+    "customDev": "カスタム開発",
+    "feedback": "フィードバック"
+  },
+  "dropdown": {
+    "tools": "ツール",
+    "contentWriting": "コンテンツ・ライティング",
+    "designMedia": "デザイン・メディア",
+    "developerTools": "開発者ツール",
+    "businessProductivity": "ビジネス・生産性",
+    "educationResearch": "教育・研究",
+    "healthFitness": "ヘルス・フィットネス",
+    "financeCrypto": "金融・暗号通貨",
+    "seoMarketing": "SEO・マーケティング",
+    "socialMedia": "ソーシャルメディア",
+    "lifestyleUtilities": "ライフスタイル・ユーティリティ",
+    "securityPrivacy": "セキュリティ・プライバシー",
+    "mathScience": "数学・科学",
+    "aiMlUtilities": "AI・機械学習",
+    "travelTools": "旅行ツール",
+    "cookingFood": "料理・フード",
+    "carsVehicles": "自動車・車両",
+    "colorDesignUtilities": "カラー・デザインユーティリティ",
+    "formsGenerators": "フォーム・ジェネレーター",
+    "weatherClimate": "天気・気候",
+    "audioMusicTools": "オーディオ・音楽",
+    "videoTools": "ビデオツール",
+    "photographyTools": "写真・カメラ",
+    "gamingTools": "ゲームツール",
+    "hobbiesCrafts": "趣味・クラフト",
+    "petsAnimals": "ペット・動物",
+    "realEstateTools": "不動産ツール",
+    "religionSpirituality": "宗教・スピリチュアル"
+  },
+  "hero": {
+    "title": "すべての業界に対応する無料オフラインツール",
+    "description": "YuanqiZhiKe Toolkit は、世界中のクリエイターやプロフェッショナルのために、無料でプライバシーを重視したフロントエンドツールを提供するワンストッププラットフォームです。ダウンロードしてローカルで開き、オフラインで作業——登録不要、データ収集なし、妥換なし。",
+    "exploreBtn": "すべてのツールを見る"
+  },
+  "positioning": {
+    "title": "私たちの提供",
+    "multiIndustry": {
+      "title": "多業界対応",
+      "desc": "コンテンツライティングからウェブ開発まで、当社のツールは主要な垂直業界すべてをカバーしています。必要なものを、必要な時に正確に見つけましょう。"
+    },
+    "offlinePrivate": {
+      "title": "100% オフライン＆プライバシー保護",
+      "desc": "すべてのツールはブラウザ上で完全に動作します。データはあなたのデバイスから決して外出力ません。サーバーなし、追跡なし、プライバシーの心配なし。"
+    },
+    "openSource": {
+      "title": "オープンソース＆無料",
+      "desc": "すべてのツールには完全なソースコードが付属しています。本番環境対応のコードを勉強、修正、学習——完全に無料。"
+    },
+    "zeroBarriers": {
+      "title": "ハードルゼロ",
+      "desc": "サインアップ不要、ログイン不要、有料機能なし。ZIP をダウンロードして解凍し、ブラウザで開くだけ。それだけ簡単。"
+    }
+  },
+  "howItWorks": {
+    "title": "使い方",
+    "steps": [
+      {
+        "number": 1,
+        "title": "ツールを探す",
+        "desc": "ツールカタログを訪れ、カテゴリでフィルタリングして、あなたのワークフローに最適なツールを見つけましょう。"
+      },
+      {
+        "number": 2,
+        "title": "ライセンスに同意",
+        "desc": "ダウンロードをクリックし、ソースコードライセンス契約を確認して同意します。"
+      },
+      {
+        "number": 3,
+        "title": "ダウンロードして使用",
+        "desc": "ZIP ファイルを取得し、解凍して、任意のブラウザで index.html を開きます。すぐにオフラインでの作業を開始できます。"
+      }
+    ]
+  },
+  "categories": {
+    "title": "ツールカテゴリ",
+    "contentWriting": {
+      "title": "コンテンツ・ライティング",
+      "desc": "記事書き換え、パラフレーズ、文法チェックなど。"
+    },
+    "designMedia": {
+      "title": "デザイン・メディア",
+      "desc": "画像処理、カラーピッカー、SVG ツール、デザインユーティリティ。"
+    },
+    "developerTools": {
+      "title": "開発者ツール",
+      "desc": "コードフォーマッター、JSON バリデーター、ハッシュジェネレーター、デバッグヘルパー。"
+    },
+    "businessProductivity": {
+      "title": "ビジネス・生産性",
+      "desc": "PDF コンバーター、スプレッドシートツール、請求書ジェネレーターなど。"
+    },
+    "educationResearch": {
+      "title": "教育・研究",
+      "desc": "引用ジェネレーター、フラッシュカードメーカー、プラギアチェッカー、学習支援。"
+    },
+    "healthFitness": {
+      "title": "ヘルス・フィットネス",
+      "desc": "BMI 計算機、カロリートラッカー、体脂肪推定、ウェルネスツール。"
+    },
+    "financeCrypto": {
+      "title": "金融・暗号通貨",
+      "desc": "ローン計算機、複利、暗号通貨コンバーター、税務推定。"
+    },
+    "seoMarketing": {
+      "title": "SEO・マーケティング",
+      "desc": "キーワード分析、メタタグジェネレーター、SERP プレビュー、SEO 最適化。"
+    },
+    "socialMedia": {
+      "title": "ソーシャルメディア",
+      "desc": "文字カウンター、ハッシュタグジェネレーター、Instagram、TikTok、YouTube、X 用プラットフォーム固有ツール。"
+    },
+    "lifestyleUtilities": {
+      "title": "ライフスタイル・ユーティリティ",
+      "desc": "タイムゾーンコンバーター、単位変換、日付計算機、年齢計算機、カウントダウンタイマー。"
+    },
+    "securityPrivacy": {
+      "title": "セキュリティ・プライバシー",
+      "desc": "パスワードジェネレーター、AES 暗号化、ハッシュジェネレーター、暗号化ユーティリティ。"
+    },
+    "mathScience": {
+      "title": "数学・科学",
+      "desc": "科学計算機、方程式ソルバー、単位変換、統計ツール。"
+    },
+    "aiMlUtilities": {
+      "title": "AI・機械学習",
+      "desc": "プロンプトジェネレーター、トークンカウンター、モデル計算機、データセットユーティリティ。"
+    },
+    "travelTools": {
+      "title": "旅行ツール",
+      "desc": "距離計算機、通貨コンバーター、旅行プランナー、タイムゾーンツール。"
+    },
+    "cookingFood": {
+      "title": "料理・フード",
+      "desc": "レシピコンバーター、調理タイマー、単位変換、栄養計算機。"
+    },
+    "carsVehicles": {
+      "title": "自動車・車両",
+      "desc": "燃料計算機、走行距離トラッカー、タイヤ空気圧コンバーター、車両ツール。"
+    },
+    "colorDesignUtilities": {
+      "title": "カラー・デザインユーティリティ",
+      "desc": "カラーピッカー、パレットジェネレーター、グラデーションメーカー、デザインユーティリティ。"
+    },
+    "formsGenerators": {
+      "title": "フォーム・ジェネレーター",
+      "desc": "フォームビルダー、テンプレートジェネレーター、ドキュメントクリエーター、コードジェネレーター。"
+    },
+    "weatherClimate": {
+      "title": "天気・気候",
+      "desc": "温度変換、暑さ指数計算機、風冷指数、気候ツール。"
+    },
+    "audioMusicTools": {
+      "title": "オーディオ・音楽",
+      "desc": "オーディオコンバーター、BPM デテクター、周波数計算機、音楽ユーティリティ。"
+    },
+    "videoTools": {
+      "title": "ビデオツール",
+      "desc": "ビデオフォーマットコンバーター、解像度計算機、ビットレートツール、ビデオユーティリティ。"
+    },
+    "photographyTools": {
+      "title": "写真・カメラ",
+      "desc": "EXIF ビューアー、焦点距離計算機、露出ツール、写真ユーティリティ。"
+    },
+    "gamingTools": {
+      "title": "ゲームツール",
+      "desc": "サイコロ、ステータス計算機、ビルドプランナー、ゲームユーティリティ。"
+    },
+    "hobbiesCrafts": {
+      "title": "趣味・クラフト",
+      "desc": "パターンジェネレーター、糸計算機、クラフトプランナー、趣味ユーティリティ。"
+    },
+    "petsAnimals": {
+      "title": "ペット・動物",
+      "desc": "ペット年齢計算機、給餌ガイド、投与量計算機、動物ツール。"
+    },
+    "realEstateTools": {
+      "title": "不動産ツール",
+      "desc": "住宅ローンを計算機、物件推定、ROI 計算機、不動産ツール。"
+    },
+    "religionSpirituality": {
+      "title": "宗教・スピリチュアル",
+      "desc": "祈り時間計算機、宗教カレンダー、瞑想タイマー、スピリチュアルツール。"
+    }
+  },
+  "cta": {
+    "title": "カスタムツールや SaaS 製品が必要ですか？",
+    "desc": "世界中の企業に対して、専門的なフロントエンドツールおよび Web アプリケーション開発サービスを提供しています。コンセプトからデプロイメントまで、当社のチームが本番環境対応のソリューションを提供します。",
+    "btn": "カスタム開発を依頼"
+  },
+  "comments": {
+    "title": "コメント"
+  },
+  "footer": {
+    "privacy": "プライバシーポリシー",
+    "cookie": "Cookie 通知",
+    "license": "ソースライセンス",
+    "customDev": "カスタム開発サービス",
+    "copyright": "全著作権所有。"
+  },
+  "download": {
+    "modalTitle": "ソースコードライセンス契約",
+    "modalDesc": "ダウンロードすることで、以下の条項に同意したことになります：",
+    "term1": "ソースコードは教育および個人利用のみを提供します。",
+    "term2": "自己使用のためにコードを変更することができますが、オリジナルの著作権表示を残す必要があります。",
+    "term3": "再配布または商業利用には明示的な許可が必要です。",
+    "checkbox": "利用規約を読み、同意します",
+    "cancel": "キャンセル",
+    "confirm": "確認してダウンロード"
+  },
+  "tool": {
+    "download": "ダウンロード",
+    "backToTools": "ツール一覧に戻る",
+    "category": "カテゴリ",
+    "comingSoon": "近日公開"
+  },
+  "languageSwitcher": {
+    "title": "言語",
+    "en": "English",
+    "zh": "中文",
+    "es": "Español",
+    "ja": "日本語"
+  }
+}

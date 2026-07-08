@@ -1,0 +1,231 @@
+{
+  "nav": {
+    "home": "首页",
+    "tools": "工具",
+    "customDev": "定制开发",
+    "feedback": "反馈"
+  },
+  "dropdown": {
+    "tools": "工具",
+    "contentWriting": "内容与写作",
+    "designMedia": "设计与媒体",
+    "developerTools": "开发者工具",
+    "businessProductivity": "商务与效率",
+    "educationResearch": "教育与研究",
+    "healthFitness": "健康与健身",
+    "financeCrypto": "金融与加密货币",
+    "seoMarketing": "SEO 与营销",
+    "socialMedia": "社交媒体",
+    "lifestyleUtilities": "生活与实用工具",
+    "securityPrivacy": "安全与隐私",
+    "mathScience": "数学与科学",
+    "aiMlUtilities": "AI 与机器学习",
+    "travelTools": "旅行工具",
+    "cookingFood": "烹饪与美食",
+    "carsVehicles": "汽车与交通",
+    "colorDesignUtilities": "色彩与设计工具",
+    "formsGenerators": "表单与生成器",
+    "weatherClimate": "天气与气候",
+    "audioMusicTools": "音频与音乐",
+    "videoTools": "视频工具",
+    "photographyTools": "摄影工具",
+    "gamingTools": "游戏工具",
+    "hobbiesCrafts": "爱好与手工",
+    "petsAnimals": "宠物与动物",
+    "realEstateTools": "房地产工具",
+    "religionSpirituality": "宗教与灵性"
+  },
+  "hero": {
+    "title": "免费离线工具，覆盖全行业",
+    "description": "元气知识工具包是一个一站式平台，为全球创作者和专业人士提供免费、注重隐私的前端工具。下载、本地打开、离线工作——无需注册、无需收集数据、无需妥协。",
+    "exploreBtn": "探索所有工具"
+  },
+  "positioning": {
+    "title": "我们提供什么",
+    "multiIndustry": {
+      "title": "全行业覆盖",
+      "desc": "从内容创作到网站开发，我们的工具涵盖每一个主要垂直行业。随时随地找到您需要的工具。"
+    },
+    "offlinePrivate": {
+      "title": "100% 离线与隐私保护",
+      "desc": "每个工具都在您的浏览器中完全运行。您的数据永远不会离开您的设备。没有服务器、没有追踪、没有隐私担忧。"
+    },
+    "openSource": {
+      "title": "开源且免费",
+      "desc": "所有工具都附带完整源代码。学习、修改、从生产级代码中学习——完全免费。"
+    },
+    "zeroBarriers": {
+      "title": "零门槛",
+      "desc": "无需注册、无需登录、无需付费。只需下载 ZIP 文件、解压、在浏览器中打开即可使用。就是这么简单。"
+    }
+  },
+  "howItWorks": {
+    "title": "如何使用",
+    "steps": [
+      {
+        "number": 1,
+        "title": "浏览工具",
+        "desc": "访问我们的工具目录，按类别筛选，找到适合您工作流程的工具。"
+      },
+      {
+        "number": 2,
+        "title": "接受许可协议",
+        "desc": "点击下载，查看并接受源代码许可协议。"
+      },
+      {
+        "number": 3,
+        "title": "下载并使用",
+        "desc": "获取 ZIP 文件，解压后在任何浏览器中打开 index.html。立即开始离线工作。"
+      }
+    ]
+  },
+  "categories": {
+    "title": "工具分类",
+    "contentWriting": {
+      "title": "内容与写作",
+      "desc": "文章改写、同义替换、语法检查等。"
+    },
+    "designMedia": {
+      "title": "设计与媒体",
+      "desc": "图像处理、取色器、SVG 工具和设计辅助工具。"
+    },
+    "developerTools": {
+      "title": "开发者工具",
+      "desc": "代码格式化、JSON 验证、哈希生成和调试助手。"
+    },
+    "businessProductivity": {
+      "title": "商务与效率",
+      "desc": "PDF 转换、电子表格工具、发票生成等。"
+    },
+    "educationResearch": {
+      "title": "教育与研究",
+      "desc": "引用生成、闪卡制作、查重工具和助学辅助。"
+    },
+    "healthFitness": {
+      "title": "健康与健身",
+      "desc": "BMI 计算器、卡路里追踪、体脂估算和健康工具。"
+    },
+    "financeCrypto": {
+      "title": "金融与加密货币",
+      "desc": "贷款计算器、复利计算、加密货币转换和税务估算。"
+    },
+    "seoMarketing": {
+      "title": "SEO 与营销",
+      "desc": "关键词分析、Meta 标签生成、搜索结果预览和 SEO 优化。"
+    },
+    "socialMedia": {
+      "title": "社交媒体",
+      "desc": "字符计数器、标签生成器，以及针对 Instagram、TikTok、YouTube 和 X 的平台特定工具。"
+    },
+    "lifestyleUtilities": {
+      "title": "生活与实用工具",
+      "desc": "时区转换、单位转换、日期计算器、年龄计算器和倒计时器。"
+    },
+    "securityPrivacy": {
+      "title": "安全与隐私",
+      "desc": "密码生成器、AES 加密、哈希生成和加密工具。"
+    },
+    "mathScience": {
+      "title": "数学与科学",
+      "desc": "科学计算器、方程求解器、单位转换和统计工具。"
+    },
+    "aiMlUtilities": {
+      "title": "AI 与机器学习",
+      "desc": "提示词生成、Token 计数、模型计算和数据集工具。"
+    },
+    "travelTools": {
+      "title": "旅行工具",
+      "desc": "距离计算器、货币转换、行程规划器和时区工具。"
+    },
+    "cookingFood": {
+      "title": "烹饪与美食",
+      "desc": "食谱转换、烹饪计时器、单位转换和营养计算器。"
+    },
+    "carsVehicles": {
+      "title": "汽车与交通",
+      "desc": "油耗计算器、里程追踪、胎压转换和车辆工具。"
+    },
+    "colorDesignUtilities": {
+      "title": "色彩与设计工具",
+      "desc": "取色器、调色板生成、渐变制作和设计辅助工具。"
+    },
+    "formsGenerators": {
+      "title": "表单与生成器",
+      "desc": "表单构建器、模板生成、文档创建和代码生成。"
+    },
+    "weatherClimate": {
+      "title": "天气与气候",
+      "desc": "温度转换、热指数计算器、风寒指数和气候工具。"
+    },
+    "audioMusicTools": {
+      "title": "音频与音乐",
+      "desc": "音频转换、BPM 检测、频率计算和音乐工具。"
+    },
+    "videoTools": {
+      "title": "视频工具",
+      "desc": "视频格式转换、分辨率计算器、码率工具和视频辅助。"
+    },
+    "photographyTools": {
+      "title": "摄影工具",
+      "desc": "EXIF 查看器、焦距计算器、曝光工具和照片辅助。"
+    },
+    "gamingTools": {
+      "title": "游戏工具",
+      "desc": "骰子掷点、属性计算器、建造规划和游戏辅助。"
+    },
+    "hobbiesCrafts": {
+      "title": "爱好与手工",
+      "desc": "图案生成、毛线计算、手工规划和爱好辅助。"
+    },
+    "petsAnimals": {
+      "title": "宠物与动物",
+      "desc": "宠物年龄计算器、喂养指南、剂量计算和动物工具。"
+    },
+    "realEstateTools": {
+      "title": "房地产工具",
+      "desc": "房贷计算器、房产估价、投资回报率计算和房地产工具。"
+    },
+    "religionSpirituality": {
+      "title": "宗教与灵性",
+      "desc": "祈祷时间计算器、宗教日历、冥想计时器和灵性工具。"
+    }
+  },
+  "cta": {
+    "title": "需要定制工具或 SaaS 产品？",
+    "desc": "我们为全球企业提供专业的前端工具和 Web 应用开发服务。从概念到部署，我们的团队交付生产级解决方案。",
+    "btn": "请求定制开发"
+  },
+  "comments": {
+    "title": "评论"
+  },
+  "footer": {
+    "privacy": "隐私政策",
+    "cookie": "Cookie 声明",
+    "license": "源代码许可",
+    "customDev": "定制开发服务",
+    "copyright": "版权所有。"
+  },
+  "download": {
+    "modalTitle": "源代码许可协议",
+    "modalDesc": "下载即表示您同意以下条款：",
+    "term1": "源代码仅供教育和个人使用。",
+    "term2": "您可以修改代码供自己使用，但必须保留原始版权声明。",
+    "term3": "重新分发或商业使用需要明确许可。",
+    "checkbox": "我已阅读并同意许可条款",
+    "cancel": "取消",
+    "confirm": "确认并下载"
+  },
+  "tool": {
+    "download": "下载",
+    "backToTools": "返回工具列表",
+    "category": "分类",
+    "comingSoon": "即将推出"
+  },
+  "languageSwitcher": {
+    "title": "语言",
+    "en": "English",
+    "zh": "中文",
+    "es": "Español",
+    "ja": "日本語"
+  }
+}

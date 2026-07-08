@@ -1,0 +1,71 @@
+{
+  "page": {
+    "title": "YuanqiZhiKe Toolkit - Free Offline Tools for Global Creators",
+    "description": "One-stop platform providing free offline frontend tools covering multiple vertical industries for global creators and practitioners."
+  },
+  "brand": {
+    "name": "YuanqiZhiKe Toolkit"
+  },
+  "nav": {
+    "home": "Home",
+    "tools": "Tools ▾",
+    "customDev": "Custom Dev",
+    "feedback": "Feedback"
+  },
+  "hero": {
+    "title": "Free Offline Tools for Every Vertical Industry",
+    "description": "YuanqiZhiKe Toolkit is a one-stop platform delivering free, privacy-first frontend tools to creators and professionals worldwide. Download, open locally, work offline -- no registration, no data collection, no compromises.",
+    "cta": "Explore All Tools"
+  },
+  "positioning": {
+    "title": "What We Offer",
+    "item1": {
+      "title": "Multi-Industry Coverage",
+      "desc": "From content writing to web development, our tools span every major vertical industry. Find exactly what you need, when you need it."
+    },
+    "item2": {
+      "title": "100% Offline & Private",
+      "desc": "Every tool runs entirely in your browser. Your data never leaves your device. No servers, no tracking, no privacy concerns."
+    },
+    "item3": {
+      "title": "Open Source & Free",
+      "desc": "All tools come with full source code. Study, modify, and learn from production-ready code -- completely free of charge."
+    },
+    "item4": {
+      "title": "Zero Barriers",
+      "desc": "No sign-up, no login, no paywalls. Just download the ZIP, unzip, and open in your browser. That simple."
+    }
+  },
+  "howitworks": {
+    "title": "How It Works",
+    "step1": {
+      "title": "Browse Tools",
+      "desc": "Visit our tools catalog and filter by category to find the right tool for your workflow."
+    },
+    "step2": {
+      "title": "Accept License",
+      "desc": "Click download, review and accept the source code license agreement."
+    },
+    "step3": {
+      "title": "Download & Use",
+      "desc": "Get the ZIP file, extract it, and open index.html in any browser. Start working offline immediately."
+    }
+  },
+  "categories": {
+    "title": "Tool Categories"
+  },
+  "cta": {
+    "title": "Need a Custom Tool or SaaS Product?",
+    "desc": "We offer professional frontend tool and web application development services for businesses worldwide. From concept to deployment, our team delivers production-ready solutions.",
+    "btn": "Request Custom Development"
+  },
+  "comments": {
+    "title": "Comments"
+  },
+  "footer": {
+    "privacy": "Privacy Policy",
+    "cookie": "Cookie Notice",
+    "license": "Source License",
+    "customDev": "Custom Dev Service"
+  }
+}

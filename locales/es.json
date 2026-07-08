@@ -1,0 +1,231 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "tools": "Herramientas",
+    "customDev": "Desarrollo a Medida",
+    "feedback": "Comentarios"
+  },
+  "dropdown": {
+    "tools": "Herramientas",
+    "contentWriting": "Contenido y Redacción",
+    "designMedia": "Diseño y Multimedia",
+    "developerTools": "Herramientas para Desarrolladores",
+    "businessProductivity": "Negocios y Productividad",
+    "educationResearch": "Educación e Investigación",
+    "healthFitness": "Salud y Fitness",
+    "financeCrypto": "Finanzas y Cripto",
+    "seoMarketing": "SEO y Marketing",
+    "socialMedia": "Redes Sociales",
+    "lifestyleUtilities": "Estilo de Vida y Utilidades",
+    "securityPrivacy": "Seguridad y Privacidad",
+    "mathScience": "Matemáticas y Ciencias",
+    "aiMlUtilities": "IA y Machine Learning",
+    "travelTools": "Herramientas de Viaje",
+    "cookingFood": "Cocina y Comida",
+    "carsVehicles": "Coches y Vehículos",
+    "colorDesignUtilities": "Colores y Utilidades de Diseño",
+    "formsGenerators": "Formularios y Generadores",
+    "weatherClimate": "Clima y Climatología",
+    "audioMusicTools": "Audio y Música",
+    "videoTools": "Herramientas de Video",
+    "photographyTools": "Fotografía",
+    "gamingTools": "Herramientas de Juegos",
+    "hobbiesCrafts": "Pasatiempos y Manualidades",
+    "petsAnimals": "Mascotas y Animales",
+    "realEstateTools": "Bienes Raíces",
+    "religionSpirituality": "Religión y Espiritualidad"
+  },
+  "hero": {
+    "title": "Herramientas Offline Gratuitas para Cada Industria",
+    "description": "YuanqiZhiKe Toolkit es una plataforma integral que ofrece herramientas frontend gratuitas y centradas en la privacidad para creadores y profesionales de todo el mundo. Descarga, abre localmente, trabaja sin conexión: sin registro, sin recopilación de datos, sin compromisos.",
+    "exploreBtn": "Explorar Todas las Herramientas"
+  },
+  "positioning": {
+    "title": "Qué Ofrecemos",
+    "multiIndustry": {
+      "title": "Cobertura Multi-Industria",
+      "desc": "Desde redacción de contenido hasta desarrollo web, nuestras herramientas abarcan todas las principales industrias verticales. Encuentra exactamente lo que necesitas, cuando lo necesitas."
+    },
+    "offlinePrivate": {
+      "title": "100% Offline y Privado",
+      "desc": "Cada herramienta se ejecuta completamente en tu navegador. Tus datos nunca salen de tu dispositivo. Sin servidores, sin seguimiento, sin preocupaciones de privacidad."
+    },
+    "openSource": {
+      "title": "Código Abierto y Gratuito",
+      "desc": "Todas las herramientas vienen con código fuente completo. Estudia, modifica y aprende de código listo para producción: completamente gratis."
+    },
+    "zeroBarriers": {
+      "title": "Sin Barreras",
+      "desc": "Sin registro, sin inicio de sesión, sin muros de pago. Solo descarga el ZIP, descomprime y abre en tu navegador. Así de simple."
+    }
+  },
+  "howItWorks": {
+    "title": "Cómo Funciona",
+    "steps": [
+      {
+        "number": 1,
+        "title": "Navega por las Herramientas",
+        "desc": "Visita nuestro catálogo de herramientas y filtra por categoría para encontrar la herramienta adecuada para tu flujo de trabajo."
+      },
+      {
+        "number": 2,
+        "title": "Acepta la Licencia",
+        "desc": "Haz clic en descargar, revisa y acepta el acuerdo de licencia del código fuente."
+      },
+      {
+        "number": 3,
+        "title": "Descarga y Usa",
+        "desc": "Obtén el archivo ZIP, extráelo y abre index.html en cualquier navegador. Comienza a trabajar sin conexión inmediatamente."
+      }
+    ]
+  },
+  "categories": {
+    "title": "Categorías de Herramientas",
+    "contentWriting": {
+      "title": "Contenido y Redacción",
+      "desc": "Reescritores de artículos, parafraseadores, correctores gramaticales y más."
+    },
+    "designMedia": {
+      "title": "Diseño y Multimedia",
+      "desc": "Procesadores de imágenes, selectores de color, herramientas SVG y utilidades de diseño."
+    },
+    "developerTools": {
+      "title": "Herramientas para Desarrolladores",
+      "desc": "Formateadores de código, validadores JSON, generadores de hash y ayudantes de depuración."
+    },
+    "businessProductivity": {
+      "title": "Negocios y Productividad",
+      "desc": "Convertidores PDF, herramientas de hojas de cálculo, generadores de facturas y más."
+    },
+    "educationResearch": {
+      "title": "Educación e Investigación",
+      "desc": "Generadores de citas, creadores de flashcards, detectores de plagio y ayudas de estudio."
+    },
+    "healthFitness": {
+      "title": "Salud y Fitness",
+      "desc": "Calculadoras de IMC, rastreadores de calorías, estimadores de grasa corporal y herramientas de bienestar."
+    },
+    "financeCrypto": {
+      "title": "Finanzas y Cripto",
+      "desc": "Calculadoras de préstamos, interés compuesto, convertidores cripto y estimadores de impuestos."
+    },
+    "seoMarketing": {
+      "title": "SEO y Marketing",
+      "desc": "Analizadores de palabras clave, generadores de metaetiquetas, previsualizadores SERP y optimizadores SEO."
+    },
+    "socialMedia": {
+      "title": "Redes Sociales",
+      "desc": "Contadores de caracteres, generadores de hashtags y herramientas específicas para Instagram, TikTok, YouTube y X."
+    },
+    "lifestyleUtilities": {
+      "title": "Estilo de Vida y Utilidades",
+      "desc": "Convertidores de zona horaria, convertidores de unidades, calculadoras de fechas, calculadoras de edad y temporizadores de cuenta regresiva."
+    },
+    "securityPrivacy": {
+      "title": "Seguridad y Privacidad",
+      "desc": "Generadores de contraseñas, cifradores AES, generadores de hash y utilidades de cifrado."
+    },
+    "mathScience": {
+      "title": "Matemáticas y Ciencias",
+      "desc": "Calculadoras científicas, solucionadores de ecuaciones, convertidores de unidades y herramientas estadísticas."
+    },
+    "aiMlUtilities": {
+      "title": "IA y Machine Learning",
+      "desc": "Generadores de prompts, contadores de tokens, calculadoras de modelos y utilidades de conjuntos de datos."
+    },
+    "travelTools": {
+      "title": "Herramientas de Viaje",
+      "desc": "Calculadoras de distancia, convertidores de moneda, planificadores de viajes y herramientas de zona horaria."
+    },
+    "cookingFood": {
+      "title": "Cocina y Comida",
+      "desc": "Convertidores de recetas, temporizadores de cocina, convertidores de unidades y calculadoras de nutrición."
+    },
+    "carsVehicles": {
+      "title": "Coches y Vehículos",
+      "desc": "Calculadoras de combustible, rastreadores de millaje, convertidores de presión de neumáticos y herramientas de vehículos."
+    },
+    "colorDesignUtilities": {
+      "title": "Colores y Utilidades de Diseño",
+      "desc": "Selectores de color, generadores de paletas, creadores de degradados y utilidades de diseño."
+    },
+    "formsGenerators": {
+      "title": "Formularios y Generadores",
+      "desc": "Constructores de formularios, generadores de plantillas, creadores de documentos y generadores de código."
+    },
+    "weatherClimate": {
+      "title": "Clima y Climatología",
+      "desc": "Convertidores de temperatura, calculadoras de índice de calor, enfriamiento eólico y herramientas climáticas."
+    },
+    "audioMusicTools": {
+      "title": "Audio y Música",
+      "desc": "Convertidores de audio, detectores de BPM, calculadoras de frecuencia y utilidades musicales."
+    },
+    "videoTools": {
+      "title": "Herramientas de Video",
+      "desc": "Convertidores de formato de video, calculadoras de resolución, herramientas de bitrate y utilidades de video."
+    },
+    "photographyTools": {
+      "title": "Fotografía",
+      "desc": "Visores EXIF, calculadoras de distancia focal, herramientas de exposición y utilidades fotográficas."
+    },
+    "gamingTools": {
+      "title": "Herramientas de Juegos",
+      "desc": "Dados, calculadoras de estadísticas, planificadores de construcción y utilidades de juegos."
+    },
+    "hobbiesCrafts": {
+      "title": "Pasatiempos y Manualidades",
+      "desc": "Generadores de patrones, calculadoras de hilo, planificadores de manualidades y utilidades de pasatiempos."
+    },
+    "petsAnimals": {
+      "title": "Mascotas y Animales",
+      "desc": "Calculadoras de edad de mascotas, guías de alimentación, calculadoras de dosis y herramientas animales."
+    },
+    "realEstateTools": {
+      "title": "Bienes Raíces",
+      "desc": "Calculadoras de hipotecas, estimadores de propiedades, calculadoras de ROI y herramientas inmobiliarias."
+    },
+    "religionSpirituality": {
+      "title": "Religión y Espiritualidad",
+      "desc": "Calculadoras de horas de oración, calendarios religiosos, temporizadores de meditación y herramientas de espiritualidad."
+    }
+  },
+  "cta": {
+    "title": "¿Necesitas una Herramienta Personalizada o Producto SaaS?",
+    "desc": "Ofrecemos servicios profesionales de desarrollo de herramientas frontend y aplicaciones web para empresas de todo el mundo. Desde el concepto hasta el despliegue, nuestro equipo entrega soluciones listas para producción.",
+    "btn": "Solicitar Desarrollo a Medida"
+  },
+  "comments": {
+    "title": "Comentarios"
+  },
+  "footer": {
+    "privacy": "Política de Privacidad",
+    "cookie": "Aviso de Cookies",
+    "license": "Licencia del Código Fuente",
+    "customDev": "Servicio de Desarrollo a Medida",
+    "copyright": "Todos los derechos reservados."
+  },
+  "download": {
+    "modalTitle": "Acuerdo de Licencia del Código Fuente",
+    "modalDesc": "Al descargar, aceptas los siguientes términos:",
+    "term1": "El código fuente se proporciona solo para uso educativo y personal.",
+    "term2": "Puedes modificar el código para tu uso pero debes conservar los avisos de copyright originales.",
+    "term3": "La redistribución o uso comercial requiere permiso explícito.",
+    "checkbox": "He leído y acepto los términos de la licencia",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar y Descargar"
+  },
+  "tool": {
+    "download": "Descargar",
+    "backToTools": "Volver a Herramientas",
+    "category": "Categoría",
+    "comingSoon": "Próximamente"
+  },
+  "languageSwitcher": {
+    "title": "Idioma",
+    "en": "English",
+    "zh": "中文",
+    "es": "Español",
+    "ja": "日本語"
+  }
+}
