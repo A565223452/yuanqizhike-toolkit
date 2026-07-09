@@ -76,7 +76,6 @@ img {
 .header-inner {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding: 16px 20px;
     max-width: var(--max-width);
     margin: 0 auto;
@@ -98,6 +97,7 @@ img {
 .main-nav {
     display: flex;
     gap: 28px;
+    margin-left: auto;
     align-items: center;
 }
 
@@ -1138,8 +1138,6 @@ img {
 
 /* --- Language Switcher --- */
 .language-switcher {
-    /* keep the original layout; push to right side of nav */
-    margin-left: auto;
     position: relative;
 }
 

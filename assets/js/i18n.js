@@ -20,7 +20,9 @@ const I18N = {
     const langFromStorage = localStorage.getItem('yuanqi_lang');
     const browserLang = this.detectBrowserLanguage();
 
-    this.currentLang = langFromUrl || langFromStorage || browserLang || 'en';
+    // Priority: URL param > user's saved preference > English default (do NOT auto-detect browser lang)
+    // First-time visitors always see English regardless of browser language
+    this.currentLang = langFromUrl || langFromStorage || 'en';
     
     // Load translations
     await this.loadTranslations(this.currentLang);
@@ -42,6 +44,9 @@ const I18N = {
     
     // Listen for language changes
     this.setupLangChangeHandler();
+    
+    // Bind language switcher button click to toggle dropdown
+    this.setupSwitcherToggle();
   },
 
   // Detect browser language
@@ -81,10 +86,32 @@ const I18N = {
       if (value && typeof value === 'object' && k in value) {
         value = value[k];
       } else {
-        return fallback || key;
+        // Key not found in current language — fallback to English
+        return this._fallbackToEnglish(key, fallback);
       }
     }
     
+    // Found but it's an object not a string — fallback to English
+    if (typeof value !== 'string') {
+      return this._fallbackToEnglish(key, fallback);
+    }
+    return value;
+  },
+
+  // Fallback to English translation when key is missing
+  _fallbackToEnglish(key, fallback) {
+    if (this.currentLang === 'en') {
+      return fallback || key;
+    }
+    const keys = key.split('.');
+    let value = this.translations['en'];
+    for (const k of keys) {
+      if (value && typeof value === 'object' && k in value) {
+        value = value[k];
+      } else {
+        return fallback || key;
+      }
+    }
     return typeof value === 'string' ? value : fallback || key;
   },
 
@@ -241,6 +268,33 @@ const I18N = {
     defaultLink.hreflang = 'x-default';
     defaultLink.href = baseUrl;
     document.head.appendChild(defaultLink);
+  },
+
+  // Setup language switcher toggle (click button to open/close dropdown)
+  setupSwitcherToggle() {
+    const switcherBtn = document.getElementById('languageSwitcher');
+    const dropdown = document.getElementById('languageDropdown');
+    if (!switcherBtn || !dropdown) return;
+
+    // Remove any previously bound cloned event to avoid duplicate handlers
+    switcherBtn.removeEventListener('click', this._switcherClickHandler);
+    
+    // Store handler reference so we can remove it later
+    this._switcherClickHandler = (e) => {
+      e.stopPropagation();
+      dropdown.classList.toggle('open');
+    };
+    switcherBtn.addEventListener('click', this._switcherClickHandler);
+
+    // Close dropdown when clicking outside
+    document.removeEventListener('click', this._outsideClickHandler);
+    this._outsideClickHandler = (e) => {
+      const switcher = document.querySelector('.language-switcher');
+      if (switcher && !switcher.contains(e.target)) {
+        dropdown.classList.remove('open');
+      }
+    };
+    document.addEventListener('click', this._outsideClickHandler);
   },
 
   // Update Giscus comment section language

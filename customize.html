@@ -13,7 +13,7 @@
         <div class="container header-inner">
             <a href="index.html" class="brand">
                 <span class="brand-icon">&#9670;</span>
-                <span class="brand-name">YuanqiZhiKe Toolkit</span>
+                <span class="brand-name" data-i18n="brand.name">YuanqiZhiKe Toolkit</span>
             </a>
             <nav class="main-nav">
                 <a href="index.html" data-i18n="nav.home">Home</a>
@@ -21,6 +21,11 @@
                 <a href="customize.html" data-i18n="nav.customDev">Custom Dev</a>
                 <a href="guestbook.html" data-i18n="nav.feedback">Feedback</a>
                 <a href="license.html" data-i18n="nav.license">License</a>
+                <!-- Language Switcher -->
+                <div class="language-switcher">
+                    <button class="lang-btn" id="languageSwitcher">🇺🇸 English</button>
+                    <div class="lang-dropdown" id="languageDropdown"></div>
+                </div>
             </nav>
             <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
         </div>
@@ -137,38 +142,12 @@
         </div>
     </footer>
 
-    <div id="languageSwitcherContainer"></div>
     <script src="assets/js/i18n.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/date-utils.js"></script>
     <!-- Cloudflare Turnstile 加载脚本（异步渲染，失败时前端走 honeypot fallback） -->
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad" async defer></script>
     <script>
-        // Language switcher HTML template
-        const languageSwitcherHTML = `
-            <div class="language-switcher" id="languageSwitcherContainerInner">
-                <button class="lang-btn" id="languageSwitcher">🇺🇸 English</button>
-                <div class="lang-dropdown" id="languageDropdown"></div>
-            </div>
-        `;
-
-        // Insert language switcher into header
-        document.addEventListener('DOMContentLoaded', function() {
-            const headerInner = document.querySelector('.header-inner');
-            if (headerInner) {
-                const container = document.getElementById('languageSwitcherContainer');
-                if (container) {
-                    container.innerHTML = languageSwitcherHTML;
-                    // Move the language switcher into the header
-                    const langSwitcher = document.querySelector('.language-switcher');
-                    if (langSwitcher) {
-                        headerInner.appendChild(langSwitcher);
-                    }
-                    container.innerHTML = '';
-                }
-            }
-        });
-
         // Turnstile 配置（site key 部署后替换为真实值）
         const TURNSTILE_SITE_KEY = '0x4AAAAAADxZ2faDF6_AjI-K';
         let turnstileWidgetId = null;
