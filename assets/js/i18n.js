@@ -174,17 +174,26 @@ const I18N = {
     // Update button display
     const currentLang = this.supportedLangs.find(l => l.code === this.currentLang);
     if (currentLang) {
-      switcher.innerHTML = `${currentLang.flag} ${currentLang.nativeName}`;
+      switcher.innerHTML = `<span class="lang-flag">${currentLang.flag}</span><span class="lang-name">${currentLang.nativeName}</span>`;
     }
 
     // Build dropdown menu
     dropdown.innerHTML = this.supportedLangs.map(lang => `
-      <a href="#" class="lang-option" data-lang="${lang.code}" onclick="I18N.switchTo('${lang.code}'); return false;">
+      <button class="lang-option ${lang.code === this.currentLang ? 'selected' : ''}" data-lang="${lang.code}">
         <span class="lang-flag">${lang.flag}</span>
         <span class="lang-name">${lang.nativeName}</span>
-        ${lang.code === this.currentLang ? '<span class="lang-current">✓</span>' : ''}
-      </a>
+        <span class="check-icon">${lang.code === this.currentLang ? '✓' : ''}</span>
+      </button>
     `).join('');
+
+    // Bind click events to dropdown options
+    dropdown.querySelectorAll('.lang-option').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const lang = btn.getAttribute('data-lang');
+        this.switchTo(lang);
+      });
+    });
   },
 
   // Switch to a different language
@@ -283,6 +292,7 @@ const I18N = {
     this._switcherClickHandler = (e) => {
       e.stopPropagation();
       dropdown.classList.toggle('open');
+      switcherBtn.classList.toggle('active');
     };
     switcherBtn.addEventListener('click', this._switcherClickHandler);
 
@@ -292,6 +302,7 @@ const I18N = {
       const switcher = document.querySelector('.language-switcher');
       if (switcher && !switcher.contains(e.target)) {
         dropdown.classList.remove('open');
+        switcherBtn.classList.remove('active');
       }
     };
     document.addEventListener('click', this._outsideClickHandler);
