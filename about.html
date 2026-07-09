@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - YuanqiZhiKe Toolkit</title>
-    <meta name="description" content="Learn about YuanqiZhiKe Toolkit - our mission to provide free, privacy-first offline tools for global creators and developers.">
+    <title data-i18n="staticPages.about.title">About Us - YuanqiZhiKe Toolkit</title>
+    <meta name="description" data-i18n="staticPages.about.title" data-i18n-attr="content" content="Learn about YuanqiZhiKe Toolkit - our mission to provide free, privacy-first offline tools for global creators and developers.">
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- GDPR Cookie Consent - Controls AdSense loading based on user consent -->
     <script src="assets/js/cookie-consent.js"></script>
 </head>
 <body>
@@ -14,14 +13,19 @@
         <div class="container header-inner">
             <a href="index.html" class="brand">
                 <span class="brand-icon">&#9670;</span>
-                <span class="brand-name">YuanqiZhiKe Toolkit</span>
+                <span class="brand-name" data-i18n="brand.name">YuanqiZhiKe Toolkit</span>
             </a>
             <nav class="main-nav">
-                <a href="index.html">Home</a>
-                <a href="index.html#tools-section">Tools</a>
-                <a href="customize.html">Custom Dev</a>
-                <a href="guestbook.html">Feedback</a>
-                <a href="license.html">License</a>
+                <a href="index.html" data-i18n="nav.home">Home</a>
+                <a href="index.html#tools-section" data-i18n="nav.tools">Tools</a>
+                <a href="customize.html" data-i18n="nav.customDev">Custom Dev</a>
+                <a href="guestbook.html" data-i18n="nav.feedback">Feedback</a>
+                <a href="license.html" data-i18n="nav.license">License</a>
+                <!-- Language Switcher -->
+                <div class="lang-switcher">
+                    <button class="lang-switcher-btn" id="languageSwitcher">🇺🇸 English</button>
+                    <div class="lang-dropdown" id="languageDropdown"></div>
+                </div>
             </nav>
             <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
         </div>
@@ -29,64 +33,64 @@
 
     <main class="page-content">
         <div class="container">
-            <h1>About Us</h1>
-            <p class="subtitle">Empowering creators worldwide with free, privacy-first tools.</p>
+            <h1 data-i18n="staticPages.about.heading">About Us</h1>
+            <p class="subtitle" data-i18n="staticPages.about.subtitle">Empowering creators worldwide with free, privacy-first tools.</p>
 
-            <h2>Our Mission</h2>
-            <p>YuanqiZhiKe Toolkit was founded with a simple belief: everyone deserves access to powerful, professional-grade tools -- regardless of their location, income, or technical background. We build free, offline-capable frontend tools that respect your privacy and put you in control of your data.</p>
+            <h2 data-i18n="staticPages.about.ourMission">Our Mission</h2>
+            <p data-i18n="staticPages.about.missionDesc">YuanqiZhiKe Toolkit was founded with a simple belief: everyone deserves access to powerful, professional-grade tools -- regardless of their location, income, or technical background. We build free, offline-capable frontend tools that respect your privacy and put you in control of your data.</p>
 
-            <h2>What Makes Us Different</h2>
+            <h2 data-i18n="staticPages.about.whatMakesUsDifferent">What Makes Us Different</h2>
             <div class="about-features">
                 <div class="about-feature">
-                    <h3>🔒 Privacy First</h3>
-                    <p>Every tool runs entirely in your browser. Your data never leaves your device. No servers, no tracking, no compromises.</p>
+                    <h3 data-i18n="staticPages.about.featurePrivacyFirst">🔒 Privacy First</h3>
+                    <p data-i18n="staticPages.about.featurePrivacyFirstDesc">Every tool runs entirely in your browser. Your data never leaves your device. No servers, no tracking, no compromises.</p>
                 </div>
                 <div class="about-feature">
-                    <h3>💰 Completely Free</h3>
-                    <p>No sign-ups, no paywalls, no hidden fees. All tools are free to use and free to download with full source code.</p>
+                    <h3 data-i18n="staticPages.about.featureCompletelyFree">💰 Completely Free</h3>
+                    <p data-i18n="staticPages.about.featureCompletelyFreeDesc">No sign-ups, no paywalls, no hidden fees. All tools are free to use and free to download with full source code.</p>
                 </div>
                 <div class="about-feature">
-                    <h3>🌍 Global Community</h3>
-                    <p>Our tools are designed for creators worldwide -- from independent developers to enterprise teams. Multilingual support ensures accessibility for everyone.</p>
+                    <h3 data-i18n="staticPages.about.featureGlobalCommunity">🌍 Global Community</h3>
+                    <p data-i18n="staticPages.about.featureGlobalCommunityDesc">Our tools are designed for creators worldwide -- from independent developers to enterprise teams. Multilingual support ensures accessibility for everyone.</p>
                 </div>
                 <div class="about-feature">
-                    <h3>📦 Open Source</h3>
-                    <p>All tools come with full source code under a permissive license. Study, modify, and learn from production-ready code.</p>
+                    <h3 data-i18n="staticPages.about.featureOpenSource">📦 Open Source</h3>
+                    <p data-i18n="staticPages.about.featureOpenSourceDesc">All tools come with full source code under a permissive license. Study, modify, and learn from production-ready code.</p>
                 </div>
             </div>
 
-            <h2>Our Story</h2>
-            <p>YuanqiZhiKe started as a small project to help Chinese creators access the same quality of tools that Western developers take for granted. Over time, we expanded our catalog to serve a global audience, growing from a handful of tools to a comprehensive toolkit covering content writing, design, development, business, and education.</p>
-            <p>Today, our toolkit serves thousands of users daily across dozens of countries. We remain committed to our founding principles: free, private, and open.</p>
+            <h2 data-i18n="staticPages.about.ourStory">Our Story</h2>
+            <p data-i18n="staticPages.about.storyPart1">YuanqiZhiKe started as a small project to help Chinese creators access the same quality of tools that Western developers take for granted. Over time, we expanded our catalog to serve a global audience, growing from a handful of tools to a comprehensive toolkit covering content writing, design, development, business, and education.</p>
+            <p data-i18n="staticPages.about.storyPart2">Today, our toolkit serves thousands of users daily across dozens of countries. We remain committed to our founding principles: free, private, and open.</p>
 
-            <h2>Our Values</h2>
+            <h2 data-i18n="staticPages.about.ourValues">Our Values</h2>
             <ul>
-                <li><strong>Accessibility:</strong> Tools should be available to everyone, everywhere</li>
-                <li><strong>Privacy:</strong> Your data belongs to you, and stays on your device</li>
-                <li><strong>Transparency:</strong> Full source code, clear licensing, honest communication</li>
-                <li><strong>Quality:</strong> Production-ready code that works reliably in real-world scenarios</li>
-                <li><strong>Community:</strong> Building together, sharing knowledge, empowering creators</li>
+                <li data-i18n="staticPages.about.valueAccessibility"><strong>Accessibility:</strong> Tools should be available to everyone, everywhere</li>
+                <li data-i18n="staticPages.about.valuePrivacy"><strong>Privacy:</strong> Your data belongs to you, and stays on your device</li>
+                <li data-i18n="staticPages.about.valueTransparency"><strong>Transparency:</strong> Full source code, clear licensing, honest communication</li>
+                <li data-i18n="staticPages.about.valueQuality"><strong>Quality:</strong> Production-ready code that works reliably in real-world scenarios</li>
+                <li data-i18n="staticPages.about.valueCommunity"><strong>Community:</strong> Building together, sharing knowledge, empowering creators</li>
             </ul>
 
-            <h2>Get Involved</h2>
-            <p>We welcome contributions from the community! Whether you want to report a bug, suggest a new tool, improve existing code, or translate our tools into your language -- there are many ways to get involved.</p>
+            <h2 data-i18n="staticPages.about.getInvolved">Get Involved</h2>
+            <p data-i18n="staticPages.about.getInvolvedDesc">We welcome contributions from the community! Whether you want to report a bug, suggest a new tool, improve existing code, or translate our tools into your language -- there are many ways to get involved.</p>
             <ul>
-                <li><strong>Report Issues:</strong> Found a bug? Let us know via our GitHub repository</li>
-                <li><strong>Suggest Tools:</strong> Have an idea? Share it with us</li>
-                <li><strong>Translate:</strong> Help us reach more users by translating tools into your language</li>
-                <li><strong>Custom Development:</strong> Need a tailored solution? <a href="customize.html">Contact our development team</a></li>
+                <li data-i18n="staticPages.about.involveReportIssues"><strong>Report Issues:</strong> Found a bug? Let us know via our GitHub repository</li>
+                <li data-i18n="staticPages.about.involveSuggestTools"><strong>Suggest Tools:</strong> Have an idea? Share it with us</li>
+                <li data-i18n="staticPages.about.involveTranslate"><strong>Translate:</strong> Help us reach more users by translating tools into your language</li>
+                <li><strong data-i18n="staticPages.about.involveCustomDev">Custom Development:</strong> <a href="customize.html" data-i18n="nav.customDev">Contact our development team</a></li>
             </ul>
 
-            <h2>Contact</h2>
-            <p>Have questions or feedback? We'd love to hear from you.</p>
-            <p>Email: <a href="mailto:260330663@qq.com">260330663@qq.com</a></p>
+            <h2 data-i18n="staticPages.about.contact">Contact</h2>
+            <p data-i18n="staticPages.about.contactDesc">Have questions or feedback? We'd love to hear from you.</p>
+            <p><span data-i18n="staticPages.about.contactEmail">Email: 260330663@qq.com</span> <a href="mailto:260330663@qq.com">260330663@qq.com</a></p>
         </div>
     </main>
 
     <!-- Comments Section (Giscus) -->
     <section class="comments-section">
         <div class="container">
-            <h2 class="section-title">Comments</h2>
+            <h2 class="section-title" data-i18n="comments.title">Comments</h2>
             <script src="https://giscus.app/client.js"
                     data-repo="A565223452/yuanqizhike-comments"
                     data-repo-id="R_kgDOTJQHQ"
@@ -108,17 +112,17 @@
     <footer class="site-footer">
         <div class="container">
             <div class="footer-links">
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="cookie.html">Cookie Notice</a>
-                <a href="license.html">Source License</a>
-                <a href="customize.html">Custom Dev Service</a>
+                <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+                <a href="cookie.html" data-i18n="footer.cookie">Cookie Notice</a>
+                <a href="license.html" data-i18n="footer.license">Source License</a>
+                <a href="customize.html" data-i18n="footer.customDev">Custom Dev Service</a>
             </div>
-            <p class="copyright">&copy; <span data-auto-date="year"></span> YuanqiZhiKe. All rights reserved.</p>
+            <p class="copyright">&copy; <span data-auto-date="year"></span> YuanqiZhiKe. <span data-i18n="footer.copyright">All rights reserved.</span></p>
         </div>
     </footer>
 
     
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/i18n.js"></script>
     <script src="assets/js/date-utils.js"></script>
 </body>
 </html>

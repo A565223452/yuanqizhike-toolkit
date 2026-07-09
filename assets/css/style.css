@@ -1134,18 +1134,11 @@ img {
     .page-content {
         padding: 40px 0;
     }
-
-    .positioning-grid,
-    .steps-row,
-    .categories-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
 /* --- Language Switcher --- */
 .language-switcher {
+    /* keep the original layout; push to right side of nav */
+    margin-left: auto;
     position: relative;
-    margin-left: 16px;
 }
 
 .lang-btn {
@@ -1173,15 +1166,15 @@ img {
 .lang-dropdown {
     display: none;
     position: absolute;
-    top: calc(100% + 8px);
+    top: 100%;
     right: 0;
-    background: var(--bg-color);
+    min-width: 140px;
+    background: var(--bg-light);
     border: 1px solid var(--border-color);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-lg);
-    min-width: 160px;
-    padding: 8px 0;
+    border-radius: 4px;
     z-index: 1000;
+    padding: 4px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .lang-dropdown.open {
@@ -1191,12 +1184,20 @@ img {
 .lang-option {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 10px 16px;
-    font-size: 0.9rem;
+    padding: 4px 12px;
     color: var(--text-color);
-    transition: var(--transition);
+    font-size: 0.9rem;
     cursor: pointer;
+    transition: background var(--transition);
+}
+
+.lang-option:hover {
+    background: var(--bg-light);
+}
+
+.lang-option.active {
+    background: var(--primary-color);
+    color: #fff;
 }
 
 .lang-option:hover {

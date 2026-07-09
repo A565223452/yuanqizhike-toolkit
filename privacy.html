@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - YuanqiZhiKe Toolkit</title>
-    <meta name="description" content="Privacy Policy for YuanqiZhiKe Toolkit. We respect your privacy and do not collect personal data.">
+    <title data-i18n="staticPages.privacy.title">Privacy Policy - YuanqiZhiKe Toolkit</title>
+    <meta name="description" data-i18n="staticPages.privacy.title" data-i18n-attr="content" content="Privacy Policy for YuanqiZhiKe Toolkit. We respect your privacy and do not collect personal data.">
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- GDPR Cookie Consent - Controls AdSense loading based on user consent -->
     <script src="assets/js/cookie-consent.js"></script>
@@ -14,14 +14,19 @@
         <div class="container header-inner">
             <a href="index.html" class="brand">
                 <span class="brand-icon">&#9670;</span>
-                <span class="brand-name">YuanqiZhiKe Toolkit</span>
+                <span class="brand-name" data-i18n="brand.name">YuanqiZhiKe Toolkit</span>
             </a>
             <nav class="main-nav">
-                <a href="index.html">Home</a>
-                <a href="index.html#tools-section">Tools</a>
-                <a href="customize.html">Custom Dev</a>
-                <a href="guestbook.html">Feedback</a>
-                <a href="license.html">License</a>
+                <a href="index.html" data-i18n="nav.home">Home</a>
+                <a href="index.html#tools-section" data-i18n="nav.tools">Tools</a>
+                <a href="customize.html" data-i18n="nav.customDev">Custom Dev</a>
+                <a href="guestbook.html" data-i18n="nav.feedback">Feedback</a>
+                <a href="license.html" data-i18n="nav.license">License</a>
+                <!-- Language Switcher -->
+                <div class="lang-switcher">
+                    <button class="lang-switcher-btn" id="languageSwitcher">🇺🇸 English</button>
+                    <div class="lang-dropdown" id="languageDropdown"></div>
+                </div>
             </nav>
             <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
         </div>
@@ -29,72 +34,72 @@
 
     <main class="page-content">
         <div class="container">
-            <h1>Privacy Policy</h1>
-            <p class="last-updated">Last Updated: <span data-auto-date="full"></span></p>
+            <h1 data-i18n="staticPages.privacy.heading">Privacy Policy</h1>
+            <p class="last-updated"><span data-i18n="staticPages.privacy.lastUpdated">Last Updated</span>: <span data-auto-date="full"></span></p>
 
-            <h2>1. Introduction</h2>
-            <p>Welcome to YuanqiZhiKe Toolkit ("we," "our," or "us"). This Privacy Policy explains how we handle data when you visit and use our website and tools. We are committed to protecting your privacy and complying with GDPR, CCPA, and other global privacy regulations.</p>
+            <h2 data-i18n="staticPages.privacy.section1Title">1. Introduction</h2>
+            <p data-i18n="staticPages.privacy.section1Text">Welcome to YuanqiZhiKe Toolkit ("we," "our," or "us"). This Privacy Policy explains how we handle data when you visit and use our website and tools. We are committed to protecting your privacy and complying with GDPR, CCPA, and other global privacy regulations.</p>
 
-            <h2>2. Information We Do NOT Collect</h2>
-            <p>YuanqiZhiKe Toolkit is designed with privacy as a core principle. Specifically:</p>
+            <h2 data-i18n="staticPages.privacy.section2Title">2. Information We Do NOT Collect</h2>
+            <p data-i18n="staticPages.privacy.section2Intro">YuanqiZhiKe Toolkit is designed with privacy as a core principle. Specifically:</p>
             <ul>
-                <li>We do <strong>not</strong> collect personal information such as names, email addresses, or phone numbers.</li>
-                <li>We do <strong>not</strong> require user registration or login.</li>
-                <li>We do <strong>not</strong> store any data you input into our tools on our servers.</li>
-                <li>All tool processing happens <strong>locally on your device</strong> -- no data is transmitted to any remote server.</li>
+                <li data-i18n="staticPages.privacy.section2Item1">We do <strong>not</strong> collect personal information such as names, email addresses, or phone numbers.</li>
+                <li data-i18n="staticPages.privacy.section2Item2">We do <strong>not</strong> require user registration or login.</li>
+                <li data-i18n="staticPages.privacy.section2Item3">We do <strong>not</strong> store any data you input into our tools on our servers.</li>
+                <li data-i18n="staticPages.privacy.section2Item4">All tool processing happens <strong>locally on your device</strong> -- no data is transmitted to any remote server.</li>
             </ul>
 
-            <h2>3. Anonymous Analytics</h2>
-            <p>We may use third-party analytics services (such as Google Analytics 4 or Cloudflare Analytics) to collect anonymous, aggregated website usage statistics. This data includes:</p>
+            <h2 data-i18n="staticPages.privacy.section3Title">3. Anonymous Analytics</h2>
+            <p data-i18n="staticPages.privacy.section3Intro">We may use third-party analytics services (such as Google Analytics 4 or Cloudflare Analytics) to collect anonymous, aggregated website usage statistics. This data includes:</p>
             <ul>
-                <li>Pages visited and time spent on each page</li>
-                <li>Referring websites and search terms</li>
-                <li>General geographic region (country-level only)</li>
-                <li>Browser type and operating system (non-specific)</li>
+                <li data-i18n="staticPages.privacy.section3Item1">Pages visited and time spent on each page</li>
+                <li data-i18n="staticPages.privacy.section3Item2">Referring websites and search terms</li>
+                <li data-i18n="staticPages.privacy.section3Item3">General geographic region (country-level only)</li>
+                <li data-i18n="staticPages.privacy.section3Item4">Browser type and operating system (non-specific)</li>
             </ul>
-            <p>This information cannot be used to identify you personally. We do not combine analytics data with any personal information.</p>
+            <p data-i18n="staticPages.privacy.section3Note">This information cannot be used to identify you personally. We do not combine analytics data with any personal information.</p>
 
-            <h2>4. Cookies</h2>
-            <p>Our website uses cookies for the following purposes:</p>
+            <h2 data-i18n="staticPages.privacy.section4Title">4. Cookies</h2>
+            <p data-i18n="staticPages.privacy.section4Intro">Our website uses cookies for the following purposes:</p>
             <ul>
-                <li><strong>Essential Cookies:</strong> Required for basic website functionality (session management, preference storage). These do not require consent.</li>
-                <li><strong>Analytics Cookies:</strong> Used by Google Analytics 4 / Cloudflare Analytics to collect anonymous usage statistics. IP addresses are anonymized.</li>
-                <li><strong>Advertising Cookies:</strong> We display Google AdSense advertisements across our website pages. Google AdSense may deploy advertising cookies to deliver personalized advertisements according to visitor browsing behaviors. Visitors can disable personalized advertising by accessing <a href="https://adssettings.google.com/" target="_blank" rel="noopener">Google official ad privacy settings</a>. All ad-related data collection follows Google privacy rules and global data compliance regulations.</li>
+                <li><strong data-i18n="staticPages.privacy.section4Essential">Essential Cookies:</strong> <span data-i18n="staticPages.privacy.section4EssentialDesc">Required for basic website functionality (session management, preference storage). These do not require consent.</span></li>
+                <li><strong data-i18n="staticPages.privacy.section4Analytics">Analytics Cookies:</strong> <span data-i18n="staticPages.privacy.section4AnalyticsDesc">Used by Google Analytics 4 / Cloudflare Analytics to collect anonymous usage statistics. IP addresses are anonymized.</span></li>
+                <li><strong data-i18n="staticPages.privacy.section4Advertising">Advertising Cookies:</strong> <span data-i18n="staticPages.privacy.section4AdvertisingDesc">We display Google AdSense advertisements across our website pages. Google AdSense may deploy advertising cookies to deliver personalized advertisements according to visitor browsing behaviors. Visitors can disable personalized advertising by accessing </span><a href="https://adssettings.google.com/" target="_blank" rel="noopener" data-i18n="staticPages.privacy.googleAdSettings">Google official ad privacy settings</a>.<span data-i18n="staticPages.privacy.section4AdvertisingDesc2"> All ad-related data collection follows Google privacy rules and global data compliance regulations.</span></li>
             </ul>
-            <p>For detailed cookie categories and management options, please see our <a href="cookie.html">Cookie Notice</a>.</p>
+            <p><span data-i18n="staticPages.privacy.section4CookieNotice">For detailed cookie categories and management options, please see our</span> <a href="cookie.html" data-i18n="footer.cookie">Cookie Notice</a>.</p>
 
-            <h2>5. Third-Party Services</h2>
-            <p>Our tools are delivered as downloadable ZIP files containing standalone HTML/CSS/JavaScript. Once downloaded, these tools operate entirely offline. We are not responsible for any third-party services you may choose to integrate into your own use of the source code.</p>
+            <h2 data-i18n="staticPages.privacy.section5Title">5. Third-Party Services</h2>
+            <p data-i18n="staticPages.privacy.section5Intro">Our tools are delivered as downloadable ZIP files containing standalone HTML/CSS/JavaScript. Once downloaded, these tools operate entirely offline. We are not responsible for any third-party services you may choose to integrate into your own use of the source code.</p>
 
-            <h3>5.1 Google AdSense</h3>
-            <p>This website displays advertisements served by Google AdSense. Google may use cookies and similar technologies to serve personalized ads based on your visits to this and other websites. You may opt out of personalized advertising by visiting <a href="https://adssettings.google.com/" target="_blank" rel="noopener">Google Ads Settings</a>. For more information on how Google uses data when you use our partners' sites or apps, see <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">How Google uses data</a>.</p>
+            <h3 data-i18n="staticPages.privacy.section5AdSense">5.1 Google AdSense</h3>
+            <p data-i18n="staticPages.privacy.section5AdSenseText">This website displays advertisements served by Google AdSense. Google may use cookies and similar technologies to serve personalized ads based on your visits to this and other websites. You may opt out of personalized advertising by visiting <a href="https://adssettings.google.com/" target="_blank" rel="noopener">Google Ads Settings</a>. For more information on how Google uses data when you use our partners' sites or apps, see <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">How Google uses data</a>.</p>
 
-            <h3>5.2 Analytics Providers</h3>
-            <p>We may use Google Analytics 4 and/or Cloudflare Web Analytics to understand website usage. These services collect anonymized data only. Refer to their respective privacy policies: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>, <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare Privacy Policy</a>.</p>
+            <h3 data-i18n="staticPages.privacy.section5AnalyticsTitle">5.2 Analytics Providers</h3>
+            <p data-i18n="staticPages.privacy.section5AnalyticsText">We may use Google Analytics 4 and/or Cloudflare Web Analytics to understand website usage. These services collect anonymized data only. Refer to their respective privacy policies: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>, <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare Privacy Policy</a>.</p>
 
-            <h2>6. Data Security</h2>
-            <p>Our website is served over HTTPS to ensure secure delivery of all downloadable files. We use industry-standard security measures to protect our hosting infrastructure.</p>
+            <h2 data-i18n="staticPages.privacy.section6Title">6. Data Security</h2>
+            <p data-i18n="staticPages.privacy.section6Text">Our website is served over HTTPS to ensure secure delivery of all downloadable files. We use industry-standard security measures to protect our hosting infrastructure.</p>
 
-            <h2>7. Your Rights (GDPR)</h2>
-            <p>If you are located in the European Economic Area (EEA), you have the following rights:</p>
+            <h2 data-i18n="staticPages.privacy.section7Title">7. Your Rights (GDPR)</h2>
+            <p data-i18n="staticPages.privacy.section7Intro">If you are located in the European Economic Area (EEA), you have the following rights:</p>
             <ul>
-                <li><strong>Right of Access:</strong> Request a copy of any personal data we hold about you.</li>
-                <li><strong>Right to Rectification:</strong> Request correction of inaccurate data.</li>
-                <li><strong>Right to Erasure:</strong> Request deletion of your personal data.</li>
-                <li><strong>Right to Restrict Processing:</strong> Request that we limit how we use your data.</li>
-                <li><strong>Right to Data Portability:</strong> Request your data in a machine-readable format.</li>
-                <li><strong>Right to Object:</strong> Object to our processing of your data.</li>
+                <li><strong data-i18n="staticPages.privacy.section7Right1Title">Right of Access:</strong> <span data-i18n="staticPages.privacy.section7Right1Desc">Request a copy of any personal data we hold about you.</span></li>
+                <li><strong data-i18n="staticPages.privacy.section7Right2Title">Right to Rectification:</strong> <span data-i18n="staticPages.privacy.section7Right2Desc">Request correction of inaccurate data.</span></li>
+                <li><strong data-i18n="staticPages.privacy.section7Right3Title">Right to Erasure:</strong> <span data-i18n="staticPages.privacy.section7Right3Desc">Request deletion of your personal data.</span></li>
+                <li><strong data-i18n="staticPages.privacy.section7Right4Title">Right to Restrict Processing:</strong> <span data-i18n="staticPages.privacy.section7Right4Desc">Request that we limit how we use your data.</span></li>
+                <li><strong data-i18n="staticPages.privacy.section7Right5Title">Right to Data Portability:</strong> <span data-i18n="staticPages.privacy.section7Right5Desc">Request your data in a machine-readable format.</span></li>
+                <li><strong data-i18n="staticPages.privacy.section7Right6Title">Right to Object:</strong> <span data-i18n="staticPages.privacy.section7Right6Desc">Object to our processing of your data.</span></li>
             </ul>
-            <p>To exercise any of these rights, please contact us at <a href="mailto:260330663@qq.com">260330663@qq.com</a>.</p>
+            <p data-i18n="staticPages.privacy.section7Contact">To exercise any of these rights, please contact us at <a href="mailto:260330663@qq.com">260330663@qq.com</a>.</p>
 
-            <h2>8. Children's Privacy</h2>
-            <p>Our services are not directed to individuals under the age of 16. We do not knowingly collect personal data from children. If we become aware of such collection, we will take steps to delete the information.</p>
+            <h2 data-i18n="staticPages.privacy.section8Title">8. Children's Privacy</h2>
+            <p data-i18n="staticPages.privacy.section8Text">Our services are not directed to individuals under the age of 16. We do not knowingly collect personal data from children. If we become aware of such collection, we will take steps to delete the information.</p>
 
-            <h2>9. Changes to This Policy</h2>
-            <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated "Last Updated" date. We encourage you to review this policy periodically.</p>
+            <h2 data-i18n="staticPages.privacy.section9Title">9. Changes to This Policy</h2>
+            <p data-i18n="staticPages.privacy.section9Text">We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated "Last Updated" date. We encourage you to review this policy periodically.</p>
 
-            <h2>10. Contact Us</h2>
-            <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+            <h2 data-i18n="staticPages.privacy.section10Title">10. Contact Us</h2>
+            <p data-i18n="staticPages.privacy.section10Text">If you have any questions about this Privacy Policy, please contact us at:</p>
             <p><a href="mailto:260330663@qq.com">260330663@qq.com</a></p>
         </div>
     </main>
@@ -102,16 +107,16 @@
     <footer class="site-footer">
         <div class="container">
             <div class="footer-links">
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="cookie.html">Cookie Notice</a>
-                <a href="license.html">Source License</a>
-                <a href="customize.html">Custom Dev Service</a>
+                <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+                <a href="cookie.html" data-i18n="footer.cookie">Cookie Notice</a>
+                <a href="license.html" data-i18n="footer.license">Source License</a>
+                <a href="customize.html" data-i18n="footer.customDev">Custom Dev Service</a>
             </div>
-            <p class="copyright">&copy; <span data-auto-date="year"></span> YuanqiZhiKe. All rights reserved.</p>
+            <p class="copyright">&copy; <span data-auto-date="year"></span> YuanqiZhiKe. <span data-i18n="footer.copyright">All rights reserved.</span></p>
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/i18n.js"></script>
     <script src="assets/js/date-utils.js"></script>
 </body>
 </html>

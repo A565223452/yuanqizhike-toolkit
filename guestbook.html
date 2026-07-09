@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback - YuanqiZhiKe Toolkit</title>
-    <meta name="description" content="Share your feedback, suggestions, or cooperation ideas. We'd love to hear from you.">
+    <title data-i18n="staticPages.guestbook.title">Feedback - YuanqiZhiKe Toolkit</title>
+    <meta name="description" content="Share your feedback, suggestions, or cooperation ideas. We'd love to hear from you." data-i18n="staticPages.guestbook.subtitle">
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
         /* 留言板专用样式 */
@@ -212,11 +212,11 @@
                 <span class="brand-name">YuanqiZhiKe Toolkit</span>
             </a>
             <nav class="main-nav">
-                <a href="index.html">Home</a>
-                <a href="index.html#tools-section">Tools</a>
-                <a href="customize.html">Custom Dev</a>
-                <a href="guestbook.html">Feedback</a>
-                <a href="license.html">License</a>
+                <a href="index.html" data-i18n="nav.home">Home</a>
+                <a href="index.html#tools-section" data-i18n="dropdown.tools">Tools</a>
+                <a href="customize.html" data-i18n="nav.customDev">Custom Dev</a>
+                <a href="guestbook.html" data-i18n="nav.feedback">Feedback</a>
+                <a href="license.html" data-i18n="nav.license">License</a>
             </nav>
             <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
         </div>
@@ -225,8 +225,8 @@
     <main class="page-content">
         <section class="gb-hero">
             <div class="container">
-                <h1>Leave Your Mark</h1>
-                <p>Feedback, suggestions, cooperation ideas, or just say hi &mdash; all welcome.</p>
+                <h1 data-i18n="staticPages.guestbook.heading">Leave Your Mark</h1>
+                <p data-i18n="staticPages.guestbook.subtitle">Feedback, suggestions, cooperation ideas, or just say hi &mdash; all welcome.</p>
             </div>
         </section>
 
@@ -234,7 +234,7 @@
             <div class="gb-layout">
                 <!-- 提交表单 -->
                 <aside class="gb-form-card">
-                    <h2>Share Your Thoughts</h2>
+                    <h2 data-i18n="staticPages.guestbook.shareThoughts">Share Your Thoughts</h2>
                     <div id="gbAlert" class="gb-alert"></div>
                     <form id="guestbookForm" autocomplete="off">
                         <!-- honeypot 反机器人（用户不可见）-->
@@ -243,23 +243,23 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="gbNickname">Nickname (optional)</label>
-                            <input type="text" id="gbNickname" name="nickname" placeholder="Anonymous" maxlength="50">
+                            <label for="gbNickname" data-i18n="staticPages.guestbook.formNickname">Nickname (optional)</label>
+                            <input type="text" id="gbNickname" name="nickname" placeholder="Anonymous" maxlength="50" data-i18n-placeholder="staticPages.guestbook.formNicknamePlaceholder">
                         </div>
 
                         <div class="form-group">
-                            <label for="gbCategory">Type</label>
+                            <label for="gbCategory" data-i18n="staticPages.guestbook.formType">Type</label>
                             <select id="gbCategory" name="category">
-                                <option value="feedback">Feedback</option>
-                                <option value="suggestion">Suggestion</option>
-                                <option value="cooperation">Cooperation</option>
-                                <option value="other">Other</option>
+                                <option value="feedback" data-i18n="staticPages.guestbook.formFeedback">Feedback</option>
+                                <option value="suggestion" data-i18n="staticPages.guestbook.formSuggestion">Suggestion</option>
+                                <option value="cooperation" data-i18n="staticPages.guestbook.formCooperation">Cooperation</option>
+                                <option value="other" data-i18n="staticPages.guestbook.formOther">Other</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="gbContent">Your Message *</label>
-                            <textarea id="gbContent" name="content" placeholder="Write your message here (5-1000 chars)..." maxlength="1000" required></textarea>
+                            <label for="gbContent" data-i18n="staticPages.guestbook.formMessage">Your Message *</label>
+                            <textarea id="gbContent" name="content" placeholder="Write your message here (5-1000 chars)..." maxlength="1000" required data-i18n-placeholder="staticPages.guestbook.formMessagePlaceholder"></textarea>
                             <div class="char-count"><span id="gbCharCount">0</span>/1000</div>
                         </div>
 
@@ -268,26 +268,26 @@
                             <input type="hidden" name="cf-turnstile-response" id="cfTurnstileResponse">
                         </div>
 
-                        <button type="submit" class="gb-submit" id="gbSubmit">Post Message</button>
+                        <button type="submit" class="gb-submit" id="gbSubmit" data-i18n="staticPages.guestbook.formSubmit">Post Message</button>
                     </form>
                 </aside>
 
                 <!-- 留言展示区 -->
                 <section>
                     <div class="gb-list-header">
-                        <h2>Community Wall <span id="gbTotal" style="color:#9ca3af;font-weight:normal;font-size:14px;"></span></h2>
+                        <h2><span data-i18n="staticPages.guestbook.communityWall">Community Wall</span> <span id="gbTotal" style="color:#9ca3af;font-weight:normal;font-size:14px;"></span></h2>
                         <div class="gb-filters">
-                            <button class="gb-filter-btn active" data-cat="">All</button>
-                            <button class="gb-filter-btn" data-cat="feedback">Feedback</button>
-                            <button class="gb-filter-btn" data-cat="suggestion">Suggestion</button>
-                            <button class="gb-filter-btn" data-cat="cooperation">Cooperation</button>
-                            <button class="gb-filter-btn" data-cat="other">Other</button>
+                            <button class="gb-filter-btn active" data-cat="" data-i18n="staticPages.guestbook.filterAll">All</button>
+                            <button class="gb-filter-btn" data-cat="feedback" data-i18n="staticPages.guestbook.filterFeedback">Feedback</button>
+                            <button class="gb-filter-btn" data-cat="suggestion" data-i18n="staticPages.guestbook.filterSuggestion">Suggestion</button>
+                            <button class="gb-filter-btn" data-cat="cooperation" data-i18n="staticPages.guestbook.filterCooperation">Cooperation</button>
+                            <button class="gb-filter-btn" data-cat="other" data-i18n="staticPages.guestbook.filterOther">Other</button>
                         </div>
                     </div>
 
                     <div id="gbEntries"></div>
-                    <div id="gbLoading" class="gb-loading" style="display:none;">Loading...</div>
-                    <button id="gbLoadMore" class="gb-load-more" style="display:none;">Load More</button>
+                    <div id="gbLoading" class="gb-loading" style="display:none;" data-i18n="staticPages.guestbook.loading">Loading...</div>
+                    <button id="gbLoadMore" class="gb-load-more" style="display:none;" data-i18n="staticPages.guestbook.loadMore">Load More</button>
                 </section>
             </div>
         </div>
@@ -295,18 +295,36 @@
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; <span data-auto-date="year">2026</span> YuanqiZhiKe Toolkit. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+                <a href="cookie.html" data-i18n="footer.cookie">Cookie Notice</a>
+                <a href="license.html" data-i18n="footer.license">Source License</a>
+                <a href="customize.html" data-i18n="footer.customDev">Custom Dev Service</a>
+            </div>
+            <p class="copyright">&copy; <span data-auto-date="year">2026</span> YuanqiZhiKe. <span data-i18n="footer.copyright">All rights reserved.</span></p>
         </div>
     </footer>
 
+    <div id="languageSwitcherContainer"></div>
+    <script src="assets/js/i18n.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad" async defer></script>
+
     <script>
         const TURNSTILE_SITE_KEY = '0x4AAAAAADxZ2faDF6_AjI-K';
         let turnstileWidgetId = null;
         let currentCategory = '';
         let currentPage = 1;
         let totalPages = 1;
+
+        // ============ i18n 辅助函数 ============
+        function __t(key, fallback) {
+            if (window.I18N && window.I18N.t) {
+                const val = window.I18N.t(key, fallback);
+                return typeof val === 'string' ? val : fallback;
+            }
+            return fallback;
+        }
 
         // ============ Turnstile 渲染 ============
         window.onTurnstileLoad = function () {
@@ -325,6 +343,29 @@
             }
         };
 
+        // ============ 语言切换器 ============
+        const languageSwitcherHTML = `
+            <div class="language-switcher" id="languageSwitcherContainerInner">
+                <button class="lang-btn" id="languageSwitcher">🇺🇸 English</button>
+                <div class="lang-dropdown" id="languageDropdown"></div>
+            </div>
+        `;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const headerInner = document.querySelector('.header-inner');
+            if (headerInner) {
+                const container = document.getElementById('languageSwitcherContainer');
+                if (container) {
+                    container.innerHTML = languageSwitcherHTML;
+                    const langSwitcher = document.querySelector('.language-switcher');
+                    if (langSwitcher) {
+                        headerInner.appendChild(langSwitcher);
+                    }
+                    container.innerHTML = '';
+                }
+            }
+        });
+
         // ============ 工具函数 ============
         function showAlert(type, msg) {
             const el = document.getElementById('gbAlert');
@@ -335,23 +376,28 @@
 
         function escapeHtml(s) {
             return String(s || '').replace(/[&<>"']/g, c => ({
-                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+                '&': '&', '<': '<', '>': '>', '"': '"', "'": '&#39;'
             }[c]));
         }
 
-        function formatTime(ts) {
-            // ts 是 unix 秒
-            const now = Math.floor(Date.now() / 1000);
-            const diff = now - ts;
-            if (diff < 60) return 'just now';
-            if (diff < 3600) return Math.floor(diff / 60) + 'm ago';
-            if (diff < 86400) return Math.floor(diff / 3600) + 'h ago';
-            if (diff < 2592000) return Math.floor(diff / 86400) + 'd ago';
-            return new Date(ts * 1000).toISOString().slice(0, 10);
+        function getCategoryLabel(cat) {
+            const map = {
+                'feedback': __t('staticPages.guestbook.filterFeedback', 'Feedback'),
+                'suggestion': __t('staticPages.guestbook.filterSuggestion', 'Suggestion'),
+                'cooperation': __t('staticPages.guestbook.filterCooperation', 'Cooperation'),
+                'other': __t('staticPages.guestbook.filterOther', 'Other')
+            };
+            return map[cat] || map['other'];
         }
 
-        function categoryLabel(cat) {
-            return { feedback: 'Feedback', suggestion: 'Suggestion', cooperation: 'Cooperation', other: 'Other' }[cat] || 'Other';
+        function formatTime(ts) {
+            const now = Math.floor(Date.now() / 1000);
+            const diff = now - ts;
+            if (diff < 60) return __t('staticPages.guestbook.justNow', 'just now');
+            if (diff < 3600) return Math.floor(diff / 60) + __t('staticPages.guestbook.minAgo', 'm ago');
+            if (diff < 86400) return Math.floor(diff / 3600) + __t('staticPages.guestbook.hourAgo', 'h ago');
+            if (diff < 2592000) return Math.floor(diff / 86400) + __t('staticPages.guestbook.dayAgo', 'd ago');
+            return new Date(ts * 1000).toISOString().slice(0, 10);
         }
 
         function renderEntry(entry) {
@@ -367,7 +413,7 @@
                                 <div class="gb-entry-time">${escapeHtml(formatTime(entry.created_at))}</div>
                             </div>
                         </div>
-                        <span class="gb-category-tag ${tagClass}">${escapeHtml(categoryLabel(entry.category))}</span>
+                        <span class="gb-category-tag ${tagClass}">${escapeHtml(getCategoryLabel(entry.category))}</span>
                     </div>
                     <div class="gb-entry-content">${escapeHtml(entry.content)}</div>
                 </div>
@@ -399,7 +445,7 @@
                     list.innerHTML = `
                         <div class="gb-empty">
                             <div class="gb-empty-icon">&#9993;</div>
-                            <div>No messages yet. Be the first to share your thoughts!</div>
+                            <div>${escapeHtml(__t('staticPages.guestbook.noMessages', 'No messages yet. Be the first to share your thoughts!'))}</div>
                         </div>
                     `;
                 } else {
@@ -411,7 +457,7 @@
                 loadMoreBtn.style.display = (currentPage < totalPages) ? 'block' : 'none';
             } catch (err) {
                 if (!append) {
-                    list.innerHTML = `<div class="gb-empty"><div>Failed to load messages. Please refresh.</div></div>`;
+                    list.innerHTML = `<div class="gb-empty"><div>${escapeHtml(__t('staticPages.guestbook.loadFailed', 'Failed to load messages. Please refresh.'))}</div></div>`;
                 }
                 console.error('Load guestbook error:', err);
             } finally {
@@ -430,16 +476,16 @@
             const turnstileToken = document.getElementById('cfTurnstileResponse').value || '';
 
             if (content.length < 5) {
-                showAlert('error', 'Message too short (min 5 characters).');
+                showAlert('error', __t('staticPages.guestbook.messageTooShort', 'Message too short (min 5 characters).'));
                 return;
             }
             if (content.length > 1000) {
-                showAlert('error', 'Message too long (max 1000 characters).');
+                showAlert('error', __t('staticPages.guestbook.messageTooLong', 'Message too long (max 1000 characters).'));
                 return;
             }
 
             btn.disabled = true;
-            btn.textContent = 'Posting...';
+            btn.textContent = __t('staticPages.guestbook.posting', 'Posting...');
 
             try {
                 const payload = {
@@ -463,9 +509,9 @@
                 }
 
                 if (data.spam) {
-                    showAlert('error', 'Your message was flagged. Please contact us directly if this is a mistake.');
+                    showAlert('error', __t('staticPages.guestbook.flaggedMessage', 'Your message was flagged. Please contact us directly if this is a mistake.'));
                 } else if (data.pending) {
-                    showAlert('success', 'Thank you! Your message has been submitted and will appear after review (usually within 24 hours).');
+                    showAlert('success', __t('staticPages.guestbook.submittedMessage', 'Thank you! Your message has been submitted and will appear after review (usually within 24 hours).'));
                     document.getElementById('guestbookForm').reset();
                     document.getElementById('gbCharCount').textContent = '0';
                 }
@@ -476,10 +522,10 @@
                 }
                 document.getElementById('cfTurnstileResponse').value = '';
             } catch (err) {
-                showAlert('error', err.message || 'Failed to submit. Please try again.');
+                showAlert('error', err.message || __t('staticPages.guestbook.submitFailed', 'Failed to submit. Please try again.'));
             } finally {
                 btn.disabled = false;
-                btn.textContent = 'Post Message';
+                btn.textContent = __t('staticPages.guestbook.formSubmit', 'Post Message');
             }
         });
 

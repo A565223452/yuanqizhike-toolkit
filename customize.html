@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Development Services - YuanqiZhiKe Toolkit</title>
-    <meta name="description" content="Professional custom frontend tool and SaaS development services by YuanqiZhiKe.">
+    <title data-i18n="staticPages.customize.title">Custom Development Services - YuanqiZhiKe Toolkit</title>
+    <meta name="description" data-i18n="staticPages.customize.description" data-i18n-attr="content" content="Professional custom frontend tool and SaaS development services by YuanqiZhiKe.">
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- 定制页不放广告，避免分散用户注意力 -->
 </head>
@@ -16,11 +16,11 @@
                 <span class="brand-name">YuanqiZhiKe Toolkit</span>
             </a>
             <nav class="main-nav">
-                <a href="index.html">Home</a>
-                <a href="index.html#tools-section">Tools</a>
-                <a href="customize.html">Custom Dev</a>
-                <a href="guestbook.html">Feedback</a>
-                <a href="license.html">License</a>
+                <a href="index.html" data-i18n="nav.home">Home</a>
+                <a href="index.html#tools-section" data-i18n="dropdown.tools">Tools</a>
+                <a href="customize.html" data-i18n="nav.customDev">Custom Dev</a>
+                <a href="guestbook.html" data-i18n="nav.feedback">Feedback</a>
+                <a href="license.html" data-i18n="nav.license">License</a>
             </nav>
             <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
         </div>
@@ -28,85 +28,85 @@
 
     <main class="page-content">
         <div class="container">
-            <h1>Custom Development Services</h1>
-            <p>Need a tailored solution? Our team specializes in building high-quality frontend tools, web applications, and SaaS products for businesses worldwide.</p>
+            <h1 data-i18n="staticPages.customize.heading">Custom Development Services</h1>
+            <p data-i18n="staticPages.customize.description">Need a tailored solution? Our team specializes in building high-quality frontend tools, web applications, and SaaS products for businesses worldwide.</p>
 
-            <h2>Our Services</h2>
+            <h2 data-i18n="staticPages.customize.ourServices">Our Services</h2>
             <div class="service-cards">
                 <div class="service-card">
-                    <h3>Frontend Tools</h3>
-                    <p>Custom text processors, converters, generators, and productivity tools built with modern HTML/CSS/JavaScript. Fully offline-capable and browser-based.</p>
+                    <h3 data-i18n="staticPages.customize.serviceFrontendTools">Frontend Tools</h3>
+                    <p data-i18n="staticPages.customize.serviceFrontendToolsDesc">Custom text processors, converters, generators, and productivity tools built with modern HTML/CSS/JavaScript. Fully offline-capable and browser-based.</p>
                 </div>
                 <div class="service-card">
-                    <h3>SaaS Applications</h3>
-                    <p>Full-stack web application development with responsive design, user authentication, payment integration, and cloud deployment.</p>
+                    <h3 data-i18n="staticPages.customize.serviceSaaS">SaaS Applications</h3>
+                    <p data-i18n="staticPages.customize.serviceSaaSDesc">Full-stack web application development with responsive design, user authentication, payment integration, and cloud deployment.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Landing Pages</h3>
-                    <p>High-converting, beautifully designed landing pages optimized for speed, SEO, and mobile experience.</p>
+                    <h3 data-i18n="staticPages.customize.serviceLandingPages">Landing Pages</h3>
+                    <p data-i18n="staticPages.customize.serviceLandingPagesDesc">High-converting, beautifully designed landing pages optimized for speed, SEO, and mobile experience.</p>
                 </div>
                 <div class="service-card">
-                    <h3>API Integration</h3>
-                    <p>Connect your tools to third-party services including payment gateways, AI APIs, databases, and cloud storage solutions.</p>
+                    <h3 data-i18n="staticPages.customize.serviceApiIntegration">API Integration</h3>
+                    <p data-i18n="staticPages.customize.serviceApiIntegrationDesc">Connect your tools to third-party services including payment gateways, AI APIs, databases, and cloud storage solutions.</p>
                 </div>
             </div>
 
-            <h2>Why Choose Us</h2>
+            <h2 data-i18n="staticPages.customize.whyChooseUs">Why Choose Us</h2>
             <ul>
-                <li><strong>Clean Code:</strong> Well-structured, maintainable, and documented codebase</li>
-                <li><strong>Responsive Design:</strong> Perfect experience across desktop, tablet, and mobile</li>
-                <li><strong>Fast Delivery:</strong> Agile development process with regular progress updates</li>
-                <li><strong>Post-Delivery Support:</strong> 30-day free bug-fixing period after project handover</li>
+                <li><strong data-i18n="staticPages.customize.reasonCleanCode">Clean Code:</strong> Well-structured, maintainable, and documented codebase</li>
+                <li><strong data-i18n="staticPages.customize.reasonResponsive">Responsive Design:</strong> Perfect experience across desktop, tablet, and mobile</li>
+                <li><strong data-i18n="staticPages.customize.reasonFastDelivery">Fast Delivery:</strong> Agile development process with regular progress updates</li>
+                <li><strong data-i18n="staticPages.customize.reasonSupport">Post-Delivery Support:</strong> 30-day free bug-fixing period after project handover</li>
             </ul>
 
-            <h2>Get in Touch</h2>
-            <p>Describe your project requirements and we will get back to you within 24 hours with a detailed proposal and quote.</p>
+            <h2 data-i18n="staticPages.customize.getInTouch">Get in Touch</h2>
+            <p data-i18n="staticPages.customize.getInTouchDesc">Describe your project requirements and we will get back to you within 24 hours with a detailed proposal and quote.</p>
 
             <div class="contact-form">
                 <form id="contactForm" action="/api/contact" method="POST" novalidate>
                     <!-- Honeypot 反垃圾（Turnstile 加载失败时作为 fallback） -->
                     <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
                     <div class="form-group">
-                        <label for="name">Your Name *</label>
-                        <input type="text" id="name" name="name" required placeholder="John Doe">
+                        <label for="name" data-i18n="staticPages.customize.formName">Your Name *</label>
+                        <input type="text" id="name" name="name" required data-i18n-placeholder="staticPages.customize.formName">
                     </div>
                     <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required placeholder="john@example.com">
+                        <label for="email" data-i18n="staticPages.customize.formEmail">Email Address *</label>
+                        <input type="email" id="email" name="email" required data-i18n-placeholder="staticPages.customize.formEmail">
                     </div>
                     <div class="form-group">
-                        <label for="projectType">Project Type</label>
+                        <label for="projectType" data-i18n="staticPages.customize.formProjectType">Project Type</label>
                         <select id="projectType" name="projectType">
-                            <option value="">Select a category</option>
-                            <option value="frontend-tool">Frontend Tool</option>
-                            <option value="saas-app">SaaS Application</option>
-                            <option value="landing-page">Landing Page</option>
-                            <option value="api-integration">API Integration</option>
-                            <option value="other">Other</option>
+                            <option value="" data-i18n="staticPages.customize.formSelectCategory">Select a category</option>
+                            <option value="frontend-tool" data-i18n="staticPages.customize.formFrontendTool">Frontend Tool</option>
+                            <option value="saas-app" data-i18n="staticPages.customize.formSaaS">SaaS Application</option>
+                            <option value="landing-page" data-i18n="staticPages.customize.formLandingPage">Landing Page</option>
+                            <option value="api-integration" data-i18n="staticPages.customize.formApiIntegration">API Integration</option>
+                            <option value="other" data-i18n="staticPages.customize.formOther">Other</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="description">Project Description *</label>
-                        <textarea id="description" name="description" required placeholder="Tell us about your project requirements, timeline, and budget..."></textarea>
+                        <label for="description" data-i18n="staticPages.customize.formDescription">Project Description *</label>
+                        <textarea id="description" name="description" required data-i18n-placeholder="staticPages.customize.formDescription"></textarea>
                     </div>
                     <!-- Cloudflare Turnstile 人机验证容器 -->
                     <div class="form-group">
                         <div id="cf-turnstile" style="min-height: 65px;"></div>
                         <input type="hidden" name="cf-turnstile-response" id="cfTurnstileResponse">
                     </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;" id="submitBtn">Send Inquiry</button>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;" id="submitBtn" data-i18n="staticPages.customize.formSubmit">Send Inquiry</button>
                     <div id="formStatus" style="margin-top: 12px; text-align: center; display: none;"></div>
                 </form>
             </div>
 
-            <p style="text-align: center; margin-top: 24px;">Or email us directly at <a href="mailto:260330663@qq.com">260330663@qq.com</a></p>
+            <p style="text-align: center; margin-top: 24px;" data-i18n="staticPages.customize.orEmail">Or email us directly at <a href="mailto:260330663@qq.com">260330663@qq.com</a></p>
         </div>
     </main>
 
     <!-- Comments Section (Giscus) -->
     <section class="comments-section">
         <div class="container">
-            <h2 class="section-title">Comments</h2>
+            <h2 class="section-title" data-i18n="staticPages.comments.title">Comments</h2>
             <script src="https://giscus.app/client.js"
                     data-repo="A565223452/yuanqizhike-comments"
                     data-repo-id="R_kgDOTJQHQ"
@@ -128,21 +128,47 @@
     <footer class="site-footer">
         <div class="container">
             <div class="footer-links">
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="cookie.html">Cookie Notice</a>
-                <a href="license.html">Source License</a>
-                <a href="customize.html">Custom Dev Service</a>
+                <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+                <a href="cookie.html" data-i18n="footer.cookie">Cookie Notice</a>
+                <a href="license.html" data-i18n="footer.license">Source License</a>
+                <a href="customize.html" data-i18n="footer.customDev">Custom Dev Service</a>
             </div>
-            <p class="copyright">&copy; <span data-auto-date="year"></span> YuanqiZhiKe. All rights reserved.</p>
+            <p class="copyright">&copy; <span data-auto-date="year"></span> YuanqiZhiKe. <span data-i18n="footer.copyright">All rights reserved.</span></p>
         </div>
     </footer>
 
-    
+    <div id="languageSwitcherContainer"></div>
+    <script src="assets/js/i18n.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/date-utils.js"></script>
     <!-- Cloudflare Turnstile 加载脚本（异步渲染，失败时前端走 honeypot fallback） -->
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad" async defer></script>
     <script>
+        // Language switcher HTML template
+        const languageSwitcherHTML = `
+            <div class="language-switcher" id="languageSwitcherContainerInner">
+                <button class="lang-btn" id="languageSwitcher">🇺🇸 English</button>
+                <div class="lang-dropdown" id="languageDropdown"></div>
+            </div>
+        `;
+
+        // Insert language switcher into header
+        document.addEventListener('DOMContentLoaded', function() {
+            const headerInner = document.querySelector('.header-inner');
+            if (headerInner) {
+                const container = document.getElementById('languageSwitcherContainer');
+                if (container) {
+                    container.innerHTML = languageSwitcherHTML;
+                    // Move the language switcher into the header
+                    const langSwitcher = document.querySelector('.language-switcher');
+                    if (langSwitcher) {
+                        headerInner.appendChild(langSwitcher);
+                    }
+                    container.innerHTML = '';
+                }
+            }
+        });
+
         // Turnstile 配置（site key 部署后替换为真实值）
         const TURNSTILE_SITE_KEY = '0x4AAAAAADxZ2faDF6_AjI-K';
         let turnstileWidgetId = null;
@@ -175,16 +201,24 @@
             }
         };
 
+        // Form submission handler with i18n support
+        function getFormStatusText(key, fallback) {
+            if (window.I18N && window.I18N.t) {
+                return window.I18N.t(key, fallback);
+            }
+            return fallback;
+        }
+
         document.getElementById('contactForm').addEventListener('submit', async function (e) {
             e.preventDefault();
             const submitBtn = this.querySelector('#submitBtn');
             const formStatus = this.querySelector('#formStatus');
 
             submitBtn.disabled = true;
-            submitBtn.innerText = 'Sending...';
+            submitBtn.innerText = getFormStatusText('form.sending', 'Sending...');
             formStatus.style.display = 'block';
             formStatus.style.color = '#666';
-            formStatus.textContent = 'Sending your inquiry...';
+            formStatus.textContent = getFormStatusText('form.sendingInquiry', 'Sending your inquiry...');
 
             try {
                 const formData = new FormData(this);
@@ -193,7 +227,7 @@
                 // honeypot：如果隐藏字段有值，说明是机器人，假装成功但不发送
                 if (payload.website) {
                     formStatus.style.color = '#28a745';
-                    formStatus.textContent = 'Thank you! Your inquiry has been sent.';
+                    formStatus.textContent = getFormStatusText('form.thankYou', 'Thank you! Your inquiry has been sent.');
                     this.reset();
                     return;
                 }
@@ -212,7 +246,7 @@
 
                 if (res.ok && data.ok) {
                     formStatus.style.color = '#28a745';
-                    formStatus.textContent = 'Thank you! Your inquiry has been sent. We will reply within 24 hours.';
+                    formStatus.textContent = getFormStatusText('form.sentSuccess', 'Thank you! Your inquiry has been sent. We will reply within 24 hours.');
                     this.reset();
                     // 重置 Turnstile
                     if (turnstileWidgetId !== null && turnstile) {
@@ -224,11 +258,11 @@
                 }
             } catch (error) {
                 formStatus.style.color = '#dc3545';
-                formStatus.textContent = 'Failed to send: ' + error.message + '. Please email us at 260330663@qq.com';
+                formStatus.textContent = getFormStatusText('form.sendFailed', 'Failed to send: ') + error.message + '. ' + getFormStatusText('form.emailFallback', 'Please email us at 260330663@qq.com');
                 console.error('Form submission error:', error);
             } finally {
                 submitBtn.disabled = false;
-                submitBtn.innerText = 'Send Inquiry';
+                submitBtn.innerText = getFormStatusText('staticPages.customize.formSubmit', 'Send Inquiry');
             }
         });
     </script>
