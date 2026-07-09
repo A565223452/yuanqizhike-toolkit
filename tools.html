@@ -356,7 +356,9 @@
     </footer>
 
     
+    <script src="assets/js/i18n.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/statistics.js"></script>
     <script src="assets/js/date-utils.js"></script>
     <script>
         /**
@@ -448,6 +450,17 @@
 
             // Re-initialize download modal for dynamically created buttons
             initDownloadModal();
+            
+            // Override download button click handler to track downloads
+            document.querySelectorAll('.btn-download').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const card = this.closest('.tool-card');
+                    const toolTitle = card ? card.querySelector('h3')?.textContent || 'Unknown' : 'Unknown';
+                    if (window.YQZ_STATS) {
+                        YQZ_STATS.download(toolTitle, this.dataset.download);
+                    }
+                });
+            });
         }
 
         /**

@@ -8,7 +8,7 @@ const I18N = {
   supportedLangs: [
     { code: 'en', name: 'English', nativeName: 'English', flag: '🇺🇸' },
     { code: 'zh', name: 'Chinese', nativeName: '中文', flag: '🇨🇳' },
-    { code: 'es', name: 'Spanish', nativeName: 'Español', flag: '🇪🇸' },
+    { code: 'ko', name: 'Korean', nativeName: '한국어', flag: '��' },
     { code: 'ja', name: 'Japanese', nativeName: '日本語', flag: '🇯🇵' }
   ],
 
@@ -48,7 +48,7 @@ const I18N = {
   detectBrowserLanguage() {
     const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
     if (browserLang.startsWith('zh')) return 'zh';
-    if (browserLang.startsWith('es')) return 'es';
+    if (browserLang.startsWith('ko')) return 'ko';
     if (browserLang.startsWith('ja')) return 'ja';
     return 'en';
   },
@@ -251,7 +251,7 @@ const I18N = {
       const langMap = {
         'en': 'en',
         'zh': 'zh-CN',
-        'es': 'es',
+        'ko': 'ko',
         'ja': 'ja'
       };
       

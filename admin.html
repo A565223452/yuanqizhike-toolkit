@@ -84,6 +84,9 @@
         .stat-card.pending .value { color: #d97706; }
         .stat-card.approved .value { color: #059669; }
         .stat-card.unread .value { color: #dc2626; }
+        .stat-card.blue .value { color: #2563eb; }
+        .stat-card.green .value { color: #059669; }
+        .stat-card.purple .value { color: #7c3aed; }
 
         /* 标签切换 */
         .tabs {
@@ -238,6 +241,7 @@
             <div class="tabs">
                 <button class="tab-btn active" data-tab="guestbook">Guestbook</button>
                 <button class="tab-btn" data-tab="messages">Custom Inquiries</button>
+                <button class="tab-btn" data-tab="stats">Analytics</button>
             </div>
 
             <!-- Guestbook 面板 -->
@@ -274,6 +278,70 @@
                 <div id="msgList"></div>
                 <div class="load-more-wrap">
                     <button id="msgLoadMore" class="action-btn" style="display:none;">Load More</button>
+                </div>
+            </div>
+
+            <!-- 分析统计面板 -->
+            <div id="statsPanel" style="display:none;">
+                <!-- 概览卡片 -->
+                <div class="stats-grid" id="statsOverview">
+                    <div class="stat-card blue"><div class="label">Total Downloads</div><div class="value" id="statDownloadsTotal">-</div></div>
+                    <div class="stat-card green"><div class="label">Today PV</div><div class="value" id="statTodayPV">-</div></div>
+                    <div class="stat-card purple"><div class="label">Yesterday PV</div><div class="value" id="statYesterdayPV">-</div></div>
+                    <div class="stat-card"><div class="label">Total Page Views</div><div class="value" id="statTotalPV">-</div></div>
+                    <div class="stat-card"><div class="label">Language Switches</div><div class="value" id="statLangSwitches">-</div></div>
+                </div>
+
+                <!-- 统计子标签 -->
+                <div class="tabs" style="margin-top: 16px;">
+                    <button class="tab-btn active" data-stat-tab="downloads">Downloads</button>
+                    <button class="tab-btn" data-stat-tab="pageviews">Page Views</button>
+                    <button class="tab-btn" data-stat-tab="languages">Languages</button>
+                </div>
+
+                <!-- 下载统计 -->
+                <div id="downloadStatsContent">
+                    <h3 style="font-size:15px;color:#111827;margin:16px 0 8px;">Top Tools by Downloads</h3>
+                    <div id="downloadByTool"></div>
+                    <h3 style="font-size:15px;color:#111827;margin:16px 0 8px;">Recent Downloads</h3>
+                    <div id="downloadList"></div>
+                    <div class="load-more-wrap">
+                        <button id="dlLoadMore" class="action-btn" style="display:none;">Load More</button>
+                    </div>
+                </div>
+
+                <!-- PV 统计 -->
+                <div id="pageviewStatsContent" style="display:none;">
+                    <div class="filter-bar">
+                        <strong style="font-size:13px;color:#374151;">Language:</strong>
+                        <select id="pvLangFilter">
+                            <option value="">All Languages</option>
+                            <option value="zh">中文</option>
+                            <option value="en">English</option>
+                            <option value="es">Español</option>
+                            <option value="ja">日本語</option>
+                        </select>
+                    </div>
+                    <h3 style="font-size:15px;color:#111827;margin:16px 0 8px;">Top Pages</h3>
+                    <div id="pvByPage"></div>
+                    <h3 style="font-size:15px;color:#111827;margin:16px 0 8px;">Recent Views</h3>
+                    <div id="pvList"></div>
+                    <div class="load-more-wrap">
+                        <button id="pvLoadMore" class="action-btn" style="display:none;">Load More</button>
+                    </div>
+                </div>
+
+                <!-- 语言统计 -->
+                <div id="languageStatsContent" style="display:none;">
+                    <h3 style="font-size:15px;color:#111827;margin:16px 0 8px;">Target Language Distribution</h3>
+                    <div id="langByLanguage"></div>
+                    <h3 style="font-size:15px;color:#111827;margin:16px 0 8px;">Language Switch Flows</h3>
+                    <div id="langFlows"></div>
+                    <h3 style="font-size:15px;color:#111827;margin:16px 0 8px;">Recent Switches</h3>
+                    <div id="langSwitchList"></div>
+                    <div class="load-more-wrap">
+                        <button id="langLoadMore" class="action-btn" style="display:none;">Load More</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -579,15 +647,218 @@
         document.getElementById('msgLoadMore').addEventListener('click', () => loadMessages(false));
 
         // ============ 标签切换 ============
-        document.querySelectorAll('.tab-btn').forEach(btn => {
+        document.querySelectorAll('.tabs .tab-btn').forEach(btn => {
             btn.addEventListener('click', function () {
-                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                const parentTabs = this.closest('.tabs');
+                parentTabs.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
-                currentTab = this.dataset.tab;
-                document.getElementById('guestbookPanel').style.display = (currentTab === 'guestbook') ? 'block' : 'none';
-                document.getElementById('messagesPanel').style.display = (currentTab === 'messages') ? 'block' : 'none';
+                
+                // 主标签
+                if (this.dataset.tab) {
+                    currentTab = this.dataset.tab;
+                    document.getElementById('guestbookPanel').style.display = (currentTab === 'guestbook') ? 'block' : 'none';
+                    document.getElementById('messagesPanel').style.display = (currentTab === 'messages') ? 'block' : 'none';
+                    document.getElementById('statsPanel').style.display = (currentTab === 'stats') ? 'block' : 'none';
+                    
+                    // 切换到统计标签时加载数据
+                    if (currentTab === 'stats') {
+                        loadStatsOverview();
+                        loadDownloadStats(true);
+                    }
+                }
+                
+                // 统计子标签
+                if (this.dataset.statTab) {
+                    const statTab = this.dataset.statTab;
+                    document.getElementById('downloadStatsContent').style.display = statTab === 'downloads' ? 'block' : 'none';
+                    document.getElementById('pageviewStatsContent').style.display = statTab === 'pageviews' ? 'block' : 'none';
+                    document.getElementById('languageStatsContent').style.display = statTab === 'languages' ? 'block' : 'none';
+                    
+                    if (statTab === 'downloads') loadDownloadStats(true);
+                    if (statTab === 'pageviews') loadPageViewStats(true);
+                    if (statTab === 'languages') loadLanguageStats(true);
+                }
             });
         });
+
+        // PV 语言筛选
+        document.getElementById('pvLangFilter').addEventListener('change', function () {
+            loadPageViewStats(true);
+        });
+
+        // ============ 统计概览 ============
+        async function loadStatsOverview() {
+            try {
+                // 下载总数
+                const dlRes = await api('/api/admin/downloads?limit=1');
+                const dlData = await dlRes.json();
+                document.getElementById('statDownloadsTotal').textContent = dlData.ok ? (dlData.total || 0) : '-';
+                
+                // PV 数据
+                const pvRes = await api('/api/admin/pageviews?limit=1');
+                const pvData = await pvRes.json();
+                if (pvData.ok) {
+                    document.getElementById('statTodayPV').textContent = pvData.today || 0;
+                    document.getElementById('statYesterdayPV').textContent = pvData.yesterday || 0;
+                    document.getElementById('statTotalPV').textContent = pvData.total || 0;
+                } else {
+                    document.getElementById('statTodayPV').textContent = '-';
+                    document.getElementById('statYesterdayPV').textContent = '-';
+                    document.getElementById('statTotalPV').textContent = '-';
+                }
+                
+                // 语言切换总数
+                const langRes = await api('/api/admin/language-stats?limit=1');
+                const langData = await langRes.json();
+                document.getElementById('statLangSwitches').textContent = langData.ok ? (langData.total || 0) : '-';
+            } catch (err) {
+                console.error('Load stats overview error:', err);
+            }
+        }
+
+        // ============ 下载统计 ============
+        let dlOffset = 0;
+        async function loadDownloadStats(reset = false) {
+            if (reset) dlOffset = 0;
+            
+            try {
+                const res = await api(`/api/admin/downloads?limit=20&offset=${dlOffset}`);
+                const data = await res.json();
+                if (!data.ok) throw new Error(data.error);
+                
+                // 按工具聚合
+                const byToolEl = document.getElementById('downloadByTool');
+                if (reset) byToolEl.innerHTML = '';
+                byToolEl.insertAdjacentHTML('beforeend', (data.byTool || []).map(t => `
+                    <div class="entry-row" style="padding:10px 16px;display:flex;justify-content:space-between;align-items:center;">
+                        <strong>${escapeHtml(t.tool_name)}</strong>
+                        <span style="background:#dbeafe;color:#1d4ed8;padding:2px 10px;border-radius:12px;font-size:13px;font-weight:600;">${t.cnt} downloads</span>
+                    </div>
+                `).join(''));
+                
+                // 列表
+                const listEl = document.getElementById('downloadList');
+                if (reset) listEl.innerHTML = '';
+                listEl.insertAdjacentHTML('beforeend', (data.downloads || []).map(d => `
+                    <div class="entry-row" style="padding:10px 16px;">
+                        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;">
+                            <div>
+                                <strong>${escapeHtml(d.tool_name)}</strong>
+                                &middot; <span style="font-family:monospace;color:#9ca3af;font-size:12px;">${escapeHtml(d.ip)}</span>
+                                &middot; ${formatTime(d.created_at)}
+                            </div>
+                        </div>
+                        ${d.referrer ? `<div style="font-size:12px;color:#6b7280;margin-top:4px;">Ref: ${escapeHtml(d.referrer.slice(0, 100))}</div>` : ''}
+                    </div>
+                `).join(''));
+                
+                dlOffset += (data.downloads || []).length;
+                document.getElementById('dlLoadMore').style.display = (data.downloads.length === 20) ? 'inline-block' : 'none';
+            } catch (err) {
+                console.error('Load download stats error:', err);
+            }
+        }
+        document.getElementById('dlLoadMore').addEventListener('click', () => loadDownloadStats(false));
+
+        // ============ PV 统计 ============
+        let pvOffset = 0;
+        async function loadPageViewStats(reset = false) {
+            if (reset) pvOffset = 0;
+            
+            const lang = document.getElementById('pvLangFilter').value;
+            let url = `/api/admin/pageviews?limit=20&offset=${pvOffset}`;
+            if (lang) url += `&lang=${lang}`;
+            
+            try {
+                const res = await api(url);
+                const data = await res.json();
+                if (!data.ok) throw new Error(data.error);
+                
+                // 按页面聚合
+                const byPageEl = document.getElementById('pvByPage');
+                if (reset) byPageEl.innerHTML = '';
+                byPageEl.insertAdjacentHTML('beforeend', (data.byPage || []).map(p => `
+                    <div class="entry-row" style="padding:10px 16px;display:flex;justify-content:space-between;align-items:center;">
+                        <span style="max-width:70%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${escapeHtml(p.page_path)}">${escapeHtml(p.page_path)}${p.lang !== 'zh' ? ' <small style="color:#6b7280;">[' + p.lang + ']</small>' : ''}</span>
+                        <span style="background:#d1fae5;color:#065f46;padding:2px 10px;border-radius:12px;font-size:13px;font-weight:600;flex-shrink:0;">${p.cnt} views</span>
+                    </div>
+                `).join(''));
+                
+                // 列表
+                const listEl = document.getElementById('pvList');
+                if (reset) listEl.innerHTML = '';
+                listEl.insertAdjacentHTML('beforeend', (data.views || []).map(v => `
+                    <div class="entry-row" style="padding:10px 16px;">
+                        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;">
+                            <div>
+                                <strong>${escapeHtml(v.page_path)}</strong>
+                                ${v.lang !== 'zh' ? ` <small style="color:#6b7280;">[${v.lang}]</small>` : ''}
+                                &middot; <span style="font-family:monospace;color:#9ca3af;font-size:12px;">${escapeHtml(v.ip)}</span>
+                                &middot; ${formatTime(v.created_at)}
+                            </div>
+                        </div>
+                    </div>
+                `).join(''));
+                
+                pvOffset += (data.views || []).length;
+                document.getElementById('pvLoadMore').style.display = (data.views.length === 20) ? 'inline-block' : 'none';
+            } catch (err) {
+                console.error('Load pageview stats error:', err);
+            }
+        }
+        document.getElementById('pvLoadMore').addEventListener('click', () => loadPageViewStats(false));
+
+        // ============ 语言统计 ============
+        let langOffset = 0;
+        async function loadLanguageStats(reset = false) {
+            if (reset) langOffset = 0;
+            
+            try {
+                const res = await api(`/api/admin/language-stats?limit=20&offset=${langOffset}`);
+                const data = await res.json();
+                if (!data.ok) throw new Error(data.error);
+                
+                // 按目标语言聚合
+                const byLangEl = document.getElementById('langByLanguage');
+                if (reset) byLangEl.innerHTML = '';
+                const langNames = { zh: '中文', en: 'English', es: 'Español', ja: '日本語' };
+                byLangEl.insertAdjacentHTML('beforeend', (data.byLanguage || []).map(l => `
+                    <div class="entry-row" style="padding:10px 16px;display:flex;justify-content:space-between;align-items:center;">
+                        <strong>${escapeHtml(langNames[l.to_lang] || l.to_lang)}</strong>
+                        <span style="background:#ede9fe;color:#6d28d9;padding:2px 10px;border-radius:12px;font-size:13px;font-weight:600;">${l.cnt} switches</span>
+                    </div>
+                `).join(''));
+                
+                // 流向
+                const flowsEl = document.getElementById('langFlows');
+                if (reset) flowsEl.innerHTML = '';
+                flowsEl.insertAdjacentHTML('beforeend', (data.flows || []).map(f => `
+                    <div class="entry-row" style="padding:10px 16px;display:flex;justify-content:space-between;align-items:center;">
+                        <span>${escapeHtml(langNames[f.from_lang] || f.from_lang)} → ${escapeHtml(langNames[f.to_lang] || f.to_lang)}</span>
+                        <span style="background:#fef3c7;color:#92400e;padding:2px 10px;border-radius:12px;font-size:13px;font-weight:600;">${f.cnt}</span>
+                    </div>
+                `).join(''));
+                
+                // 列表
+                const listEl = document.getElementById('langSwitchList');
+                if (reset) listEl.innerHTML = '';
+                listEl.insertAdjacentHTML('beforeend', (data.switches || []).map(s => `
+                    <div class="entry-row" style="padding:10px 16px;">
+                        <div>
+                            <strong>${escapeHtml(langNames[s.from_lang] || s.from_lang)} → ${escapeHtml(langNames[s.to_lang] || s.to_lang)}</strong>
+                            &middot; <span style="font-family:monospace;color:#9ca3af;font-size:12px;">${escapeHtml(s.ip)}</span>
+                            &middot; ${formatTime(s.created_at)}
+                        </div>
+                    </div>
+                `).join(''));
+                
+                langOffset += (data.switches || []).length;
+                document.getElementById('langLoadMore').style.display = (data.switches.length === 20) ? 'inline-block' : 'none';
+            } catch (err) {
+                console.error('Load language stats error:', err);
+            }
+        }
+        document.getElementById('langLoadMore').addEventListener('click', () => loadLanguageStats(false));
 
         // ============ 初始化 ============
         if (adminToken) {

@@ -69,8 +69,41 @@ export default {
       if (path === '/api/admin/guestbook' && method === 'POST') {
         return handleAdminActionGuestbook(request, env, url);
       }
+      // ============ 统计相关路由 ============
+      
+      // 下载统计 API（公开，无需认证）
+      if (path === '/api/stat/download' && method === 'POST') {
+        return handleDownloadStat(request, env);
+      }
+      
+      // 语言切换统计 API（公开，无需认证）
+      if (path === '/api/stat/language' && method === 'POST') {
+        return handleLanguageSwitchStat(request, env);
+      }
+      
+      // 页面 PV 统计 API（公开，无需认证）
+      if (path === '/api/stat/pv' && method === 'POST') {
+        return handlePageViewStat(request, env);
+      }
+      
+      // 管理后台统计汇总（需认证）
       if (path === '/api/admin/stats' && method === 'GET') {
         return handleAdminStats(request, env);
+      }
+      
+      // 管理后台下载统计详情（需认证）
+      if (path === '/api/admin/downloads' && method === 'GET') {
+        return handleAdminDownloads(request, env, url);
+      }
+      
+      // 管理后台语言切换统计（需认证）
+      if (path === '/api/admin/language-stats' && method === 'GET') {
+        return handleAdminLanguageStats(request, env, url);
+      }
+      
+      // 管理后台 PV 统计（需认证）
+      if (path === '/api/admin/pageviews' && method === 'GET') {
+        return handleAdminPageViews(request, env, url);
       }
 
       return json({ error: 'Not Found' }, 404);
@@ -616,5 +649,313 @@ function handleCORS(env) {
       'Access-Control-Allow-Headers': 'Content-Type, Authorization',
       'Access-Control-Max-Age': '86400',
     },
+  });
+}
+
+// ============ 统计工具函数 ============
+
+/**
+ * 匿名化 IP：保留前 3 段，最后一段替换为 0
+ * 例如：192.168.1.105 -> 192.168.1.0
+ */
+function anonymizeIP(ip) {
+  if (!ip || ip === 'unknown') return '0.0.0.0';
+  const parts = ip.split('.');
+  if (parts.length === 4) {
+    parts[3] = '0';
+    return parts.join('.');
+  }
+  return ip.slice(0, -2) + '0'; // IPv6 截断
+}
+
+/**
+ * 获取用户当前语言（从 cookie 或 accept-language）
+ */
+function getCurrentLang(request) {
+  // 优先从 cookie 读取
+  const cookies = request.headers.get('cookie') || '';
+  const langMatch = cookies.match(/(?:^|;\s*)yqz_lang=([^;]+)/);
+  if (langMatch) return langMatch[1];
+  
+  // 其次从 accept-language
+  const acceptLang = request.headers.get('accept-language') || '';
+  if (acceptLang.includes('zh')) return 'zh';
+  if (acceptLang.includes('es')) return 'es';
+  if (acceptLang.includes('ja')) return 'ja';
+  if (acceptLang.includes('en')) return 'en';
+  return 'zh'; // 默认中文
+}
+
+// ============ 下载统计处理 ============
+async function handleDownloadStat(request, env) {
+  let body;
+  try {
+    body = await request.json();
+  } catch (_) {
+    return json({ ok: false, error: 'Invalid JSON' }, 400);
+  }
+  
+  const { toolName, toolZipUrl } = body || {};
+  if (!toolName) {
+    return json({ ok: false, error: 'Missing toolName' }, 400);
+  }
+  
+  const ip = anonymizeIP(request.headers.get('cf-connecting-ip') || 'unknown');
+  const userAgent = (request.headers.get('user-agent') || '').slice(0, 500);
+  const referer = (request.headers.get('referer') || '').slice(0, 500);
+  
+  try {
+    await env.DB.prepare(
+      `INSERT INTO downloads (tool_name, tool_zip_url, ip, user_agent, referrer)
+       VALUES (?, ?, ?, ?, ?)`
+    ).bind(
+      String(toolName).slice(0, 100),
+      String(toolZipUrl || '').slice(0, 500),
+      ip,
+      userAgent,
+      referer
+    ).run();
+  } catch (err) {
+    console.error('Download stat insert error:', err);
+  }
+  
+  return json({ ok: true });
+}
+
+// ============ 语言切换统计处理 ============
+async function handleLanguageSwitchStat(request, env) {
+  let body;
+  try {
+    body = await request.json();
+  } catch (_) {
+    return json({ ok: false, error: 'Invalid JSON' }, 400);
+  }
+  
+  const { fromLang, toLang } = body || {};
+  if (!toLang) {
+    return json({ ok: false, error: 'Missing toLang' }, 400);
+  }
+  
+  const actualFrom = fromLang || getCurrentLang(request);
+  const ip = anonymizeIP(request.headers.get('cf-connecting-ip') || 'unknown');
+  const userAgent = (request.headers.get('user-agent') || '').slice(0, 500);
+  
+  try {
+    await env.DB.prepare(
+      `INSERT INTO language_switches (from_lang, to_lang, ip, user_agent)
+       VALUES (?, ?, ?, ?)`
+    ).bind(
+      String(actualFrom).slice(0, 10),
+      String(toLang).slice(0, 10),
+      ip,
+      userAgent
+    ).run();
+  } catch (err) {
+    console.error('Language switch stat insert error:', err);
+  }
+  
+  return json({ ok: true });
+}
+
+// ============ 页面 PV 统计处理 ============
+async function handlePageViewStat(request, env) {
+  let body;
+  try {
+    body = await request.json();
+  } catch (_) {
+    return json({ ok: false, error: 'Invalid JSON' }, 400);
+  }
+  
+  const { pagePath, lang } = body || {};
+  if (!pagePath) {
+    return json({ ok: false, error: 'Missing pagePath' }, 400);
+  }
+  
+  const ip = anonymizeIP(request.headers.get('cf-connecting-ip') || 'unknown');
+  const userAgent = (request.headers.get('user-agent') || '').slice(0, 500);
+  const actualLang = lang || getCurrentLang(request);
+  
+  try {
+    await env.DB.prepare(
+      `INSERT INTO page_views (page_path, lang, ip, user_agent)
+       VALUES (?, ?, ?, ?)`
+    ).bind(
+      String(pagePath).slice(0, 500),
+      String(actualLang).slice(0, 10),
+      ip,
+      userAgent
+    ).run();
+  } catch (err) {
+    console.error('Page view stat insert error:', err);
+  }
+  
+  return json({ ok: true });
+}
+
+// ============ 管理后台：下载统计详情 ============
+async function handleAdminDownloads(request, env, url) {
+  const authErr = requireAdmin(request, env);
+  if (authErr) return authErr;
+  
+  const limit = Math.min(parseInt(url.searchParams.get('limit') || '50', 10), 200);
+  const offset = Math.max(parseInt(url.searchParams.get('offset') || '0', 10), 0);
+  const toolFilter = url.searchParams.get('tool');
+  
+  let where = 'WHERE 1=1';
+  let binds = [];
+  if (toolFilter) {
+    where += ' AND tool_name = ?';
+    binds.push(toolFilter);
+  }
+  
+  // 总数量
+  const countStmt = env.DB.prepare(
+    `SELECT COUNT(*) as total FROM downloads ${where}`
+  ).bind(...binds);
+  
+  // 列表
+  const listStmt = env.DB.prepare(
+    `SELECT id, tool_name, tool_zip_url, ip, user_agent, referrer, created_at
+     FROM downloads ${where}
+     ORDER BY created_at DESC
+     LIMIT ? OFFSET ?`
+  ).bind(...binds, limit, offset);
+  
+  // 按工具聚合
+  const aggStmt = env.DB.prepare(
+    `SELECT tool_name, COUNT(*) as cnt 
+     FROM downloads 
+     ${where}
+     GROUP BY tool_name 
+     ORDER BY cnt DESC`
+  ).bind(...binds);
+  
+  const [countResult, listResult, aggResult] = await Promise.all([
+    countStmt.first(),
+    listStmt.all(),
+    aggStmt.all()
+  ]);
+  
+  return json({
+    ok: true,
+    total: countResult?.total || 0,
+    downloads: listResult.results || [],
+    byTool: aggResult.results || []
+  });
+}
+
+// ============ 管理后台：语言切换统计 ============
+async function handleAdminLanguageStats(request, env, url) {
+  const authErr = requireAdmin(request, env);
+  if (authErr) return authErr;
+  
+  const limit = Math.min(parseInt(url.searchParams.get('limit') || '50', 10), 200);
+  const offset = Math.max(parseInt(url.searchParams.get('offset') || '0', 10), 0);
+  
+  // 总数量
+  const countResult = await env.DB.prepare(
+    `SELECT COUNT(*) as total FROM language_switches`
+  ).first();
+  
+  // 列表
+  const listResult = await env.DB.prepare(
+    `SELECT id, from_lang, to_lang, ip, user_agent, created_at
+     FROM language_switches
+     ORDER BY created_at DESC
+     LIMIT ? OFFSET ?`
+  ).bind(limit, offset).all();
+  
+  // 按目标语言聚合
+  const langAgg = await env.DB.prepare(
+    `SELECT to_lang, COUNT(*) as cnt 
+     FROM language_switches 
+     GROUP BY to_lang 
+     ORDER BY cnt DESC`
+  ).all();
+  
+  // 语言切换流向统计
+  const flowAgg = await env.DB.prepare(
+    `SELECT from_lang, to_lang, COUNT(*) as cnt 
+     FROM language_switches 
+     GROUP BY from_lang, to_lang 
+     ORDER BY cnt DESC`
+  ).all();
+  
+  return json({
+    ok: true,
+    total: countResult?.total || 0,
+    switches: listResult.results || [],
+    byLanguage: langAgg.results || [],
+    flows: flowAgg.results || []
+  });
+}
+
+// ============ 管理后台：PV 统计 ============
+async function handleAdminPageViews(request, env, url) {
+  const authErr = requireAdmin(request, env);
+  if (authErr) return authErr;
+  
+  const limit = Math.min(parseInt(url.searchParams.get('limit') || '50', 10), 200);
+  const offset = Math.max(parseInt(url.searchParams.get('offset') || '0', 10), 0);
+  const pathFilter = url.searchParams.get('path');
+  
+  let where = 'WHERE 1=1';
+  let binds = [];
+  if (pathFilter) {
+    where += ' AND page_path LIKE ?';
+    binds.push('%' + pathFilter + '%');
+  }
+  
+  // 总数量
+  const countResult = await env.DB.prepare(
+    `SELECT COUNT(*) as total FROM page_views ${where}`
+  ).bind(...binds).first();
+  
+  // 列表
+  const listResult = await env.DB.prepare(
+    `SELECT id, page_path, lang, ip, user_agent, created_at
+     FROM page_views ${where}
+     ORDER BY created_at DESC
+     LIMIT ? OFFSET ?`
+  ).bind(...binds, limit, offset).all();
+  
+  // 按页面聚合
+  const pageAgg = await env.DB.prepare(
+    `SELECT page_path, lang, COUNT(*) as cnt 
+     FROM page_views 
+     ${where}
+     GROUP BY page_path, lang 
+     ORDER BY cnt DESC
+     LIMIT 50`
+  ).bind(...binds).all();
+  
+  // 今日 PV
+  const todayStart = Math.floor(Date.now() / 1000) - 86400;
+  const todayCount = await env.DB.prepare(
+    `SELECT COUNT(*) as cnt FROM page_views WHERE created_at >= ?`
+  ).bind(todayStart).first();
+  
+  // 昨日 PV
+  const yesterdayStart = Math.floor(Date.now() / 1000) - 86400 * 2;
+  const yesterdayCount = await env.DB.prepare(
+    `SELECT COUNT(*) as cnt FROM page_views WHERE created_at >= ? AND created_at < ?`
+  ).bind(yesterdayStart, todayStart).first();
+  
+  // 按语言分布
+  const langAgg = await env.DB.prepare(
+    `SELECT lang, COUNT(*) as cnt 
+     FROM page_views 
+     GROUP BY lang 
+     ORDER BY cnt DESC`
+  ).all();
+  
+  return json({
+    ok: true,
+    total: countResult?.total || 0,
+    views: listResult.results || [],
+    byPage: pageAgg.results || [],
+    today: todayCount?.cnt || 0,
+    yesterday: yesterdayCount?.cnt || 0,
+    byLanguage: langAgg.results || []
   });
 }
