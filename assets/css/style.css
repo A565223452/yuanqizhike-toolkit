@@ -1134,6 +1134,8 @@ img {
     .page-content {
         padding: 40px 0;
     }
+}
+
 /* --- Language Switcher --- */
 .language-switcher {
     /* keep the original layout; push to right side of nav */
