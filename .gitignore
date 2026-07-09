@@ -35,6 +35,7 @@ backup/
 大类扩展方案.md
 新大类工具开发清单.md
 AdSense变现-待执行清单.md
+项目开发迭代路线图（三层架构）.md
 
 # Cloudflare Worker 联系表单（敏感文件，禁止上传）
 # .dev.vars 含真实密钥（Resend API key、Turnstile secret、ADMIN_TOKEN）
