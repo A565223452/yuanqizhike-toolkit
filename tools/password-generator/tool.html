@@ -137,7 +137,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <input type="text" id="password" readonly style="font-family:monospace;font-size:18px;text-align:center;padding:14px">
     </div>
     <div class="group">
-        <label>Password Strength: <span id="strengthLabel" style="font-weight:bold">¡ª</span></label>
+        <label>Password Strength: <span id="strengthLabel" style="font-weight:bold">ï¿½ï¿½</span></label>
         <div style="height:10px;background:#eee;border-radius:5px;overflow:hidden">
             <div id="strengthBar" style="height:100%;width:0;background:#ddd;transition:all 0.3s"></div>
         </div>
@@ -154,21 +154,21 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
     <!-- Contact Modal -->
     <div class="contact-modal" id="contactModal">
         <div class="box">
-            <button class="close" id="contactClose" aria-label="Close">¡Á</button>
+            <button class="close" id="contactClose" aria-label="Close">ï¿½ï¿½</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business ¡ª batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business ï¿½ï¿½ batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">??</span>
                 <span class="email" id="contactEmail">260330663@qq.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">?? Send us an email</a>
-            <div class="form-hint">¡ª or describe your need below ¡ª</div>
+            <div class="form-hint">ï¿½ï¿½ or describe your need below ï¿½ï¿½</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit ¡ú</button>
+                <button type="submit">Submit ï¿½ï¿½</button>
             </form>
         </div>
     </div>
@@ -185,7 +185,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 </ol>
 <p style="margin-top:8px;font-size:12px;color:#666">All passwords are generated locally with the Web Crypto API. Nothing is stored or transmitted.</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit ¡ª Free Online Tools</footer>
+    <footer>YuanQiZhiLe Toolkit ï¿½ï¿½ Free Online Tools</footer>
 </div>
 <script>
 
@@ -326,7 +326,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         else if(s <= 4){ bar.style.background = '#ffc107'; label.textContent = 'Fair'; label.style.color = '#d39e00'; }
         else if(s <= 6){ bar.style.background = '#28a745'; label.textContent = 'Strong'; label.style.color = '#28a745'; }
         else { bar.style.background = '#198754'; label.textContent = 'Very Strong'; label.style.color = '#198754'; }
-        if(!pw){ bar.style.width = '0%'; label.textContent = '¡ª'; label.style.color = ''; }
+        if(!pw){ bar.style.width = '0%'; label.textContent = 'ï¿½ï¿½'; label.style.color = ''; }
     }
     function refresh(){
         var pw = generate();

@@ -111,7 +111,7 @@
     <div class="tree-view" id="treeView"></div>
     <div class="tip" id="errTip"></div>
     <footer>
-        YuanQiZhiLe Toolkit ¡ª Developer Free Utility Tools
+        YuanQiZhiLe Toolkit ï¿½ï¿½ Developer Free Utility Tools
     </footer>
 </div>
 <input type="file" id="fileInput" class="file-input-hidden" accept=".json,.txt">
@@ -363,7 +363,7 @@ function buildNode(value,key,name,level){
     if(value===null){
         valSpan.innerHTML='<span class="null-val">null</span>';
     }else if(Array.isArray(value)){
-        toggle.textContent='¨‹';
+        toggle.textContent='ï¿½ï¿½';
         if(value.length===0){
             valSpan.innerHTML='<span class="tree-bracket">[]</span>';
         }else{
@@ -376,11 +376,11 @@ function buildNode(value,key,name,level){
             node.appendChild(children);
             toggle.onclick=()=>{
                 children.classList.toggle('collapsed');
-                toggle.textContent=children.classList.contains('collapsed')?'?':'¨‹';
+                toggle.textContent=children.classList.contains('collapsed')?'?':'ï¿½ï¿½';
             };
         }
     }else if(typeof value==='object'){
-        toggle.textContent='¨‹';
+        toggle.textContent='ï¿½ï¿½';
         const keys=Object.keys(value);
         if(keys.length===0){
             valSpan.innerHTML='<span class="tree-bracket">{}</span>';
@@ -394,7 +394,7 @@ function buildNode(value,key,name,level){
             node.appendChild(children);
             toggle.onclick=()=>{
                 children.classList.toggle('collapsed');
-                toggle.textContent=children.classList.contains('collapsed')?'?':'¨‹';
+                toggle.textContent=children.classList.contains('collapsed')?'?':'ï¿½ï¿½';
             };
         }
     }else if(typeof value==='string'){

@@ -144,7 +144,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
     <div class="tab-content" id="tab-file">
         <div class="file-drop" id="fileDrop">
             <div>?? Drop a file here or click to select</div>
-            <div style="font-size:12px;margin-top:6px;color:#999">All processing happens locally ¡ª file never uploads</div>
+            <div style="font-size:12px;margin-top:6px;color:#999">All processing happens locally ï¿½ï¿½ file never uploads</div>
         </div>
         <input type="file" id="fileInput" style="display:none">
         <div id="fileInfo" style="margin-top:8px;font-size:13px;color:#666"></div>
@@ -186,27 +186,27 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
     <!-- Contact Modal -->
     <div class="contact-modal" id="contactModal">
         <div class="box">
-            <button class="close" id="contactClose" aria-label="Close">¡Á</button>
+            <button class="close" id="contactClose" aria-label="Close">ï¿½ï¿½</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business ¡ª batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business ï¿½ï¿½ batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">??</span>
                 <span class="email" id="contactEmail">260330663@qq.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">?? Send us an email</a>
-            <div class="form-hint">¡ª or describe your need below ¡ª</div>
+            <div class="form-hint">ï¿½ï¿½ or describe your need below ï¿½ï¿½</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit ¡ú</button>
+                <button type="submit">Submit ï¿½ï¿½</button>
             </form>
         </div>
     </div>
 
     <footer>
-        <div>YuanQiZhiLe Toolkit ¡¤ Process locally in your browser, no data upload.</div>
+        <div>YuanQiZhiLe Toolkit ï¿½ï¿½ Process locally in your browser, no data upload.</div>
     </footer>
 </div>
 
@@ -488,7 +488,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             const results = {};
             for(const a of algorithms){
                 if(a.name === 'MD5'){
-                    // MD5 over file ¡ª read in chunks to avoid stack overflow on big files
+                    // MD5 over file ï¿½ï¿½ read in chunks to avoid stack overflow on big files
                     results[a.name] = '[Use SHA-256+ for large files]';
                 } else {
                     results[a.name] = await sha(a.algo, bytes);
@@ -521,10 +521,10 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         }
         computed = computed.toLowerCase();
         if(computed === expected){
-            result.textContent = '? MATCH ¡ª Hash verified successfully';
+            result.textContent = '? MATCH ï¿½ï¿½ Hash verified successfully';
             result.className = 'compare-result match';
         } else {
-            result.textContent = `? MISMATCH ¡ª Computed: ${computed}`;
+            result.textContent = `? MISMATCH ï¿½ï¿½ Computed: ${computed}`;
             result.className = 'compare-result mismatch';
         }
     });

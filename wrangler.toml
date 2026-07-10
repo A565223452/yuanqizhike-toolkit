@@ -1,5 +1,5 @@
 [build]
-command = "echo 'No build step required'"
+command = "node build-templates.js"
 
 [pages]
 output_dir = "."

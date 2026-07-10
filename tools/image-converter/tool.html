@@ -86,15 +86,15 @@
         <label>Preset Size:</label>
         <select id="sizePreset">
             <option value="custom">Custom Size</option>
-            <option value="800x800">Amazon Product 800¡Á800</option>
-            <option value="1200x628">Facebook Share 1200¡Á628</option>
-            <option value="1080x1080">Instagram Post 1080¡Á1080</option>
-            <option value="1080x1920">Instagram Story 1080¡Á1920</option>
-            <option value="1500x500">Twitter Header 1500¡Á500</option>
-            <option value="1200x630">Open Graph 1200¡Á630</option>
-            <option value="2560x1440">2K Monitor 2560¡Á1440</option>
-            <option value="1920x1080">Full HD 1920¡Á1080</option>
-            <option value="3840x2160">4K Ultra HD 3840¡Á2160</option>
+            <option value="800x800">Amazon Product 800ï¿½ï¿½800</option>
+            <option value="1200x628">Facebook Share 1200ï¿½ï¿½628</option>
+            <option value="1080x1080">Instagram Post 1080ï¿½ï¿½1080</option>
+            <option value="1080x1920">Instagram Story 1080ï¿½ï¿½1920</option>
+            <option value="1500x500">Twitter Header 1500ï¿½ï¿½500</option>
+            <option value="1200x630">Open Graph 1200ï¿½ï¿½630</option>
+            <option value="2560x1440">2K Monitor 2560ï¿½ï¿½1440</option>
+            <option value="1920x1080">Full HD 1920ï¿½ï¿½1080</option>
+            <option value="3840x2160">4K Ultra HD 3840ï¿½ï¿½2160</option>
         </select>
 
         <div id="customSize" style="display:none;margin-top:12px">
@@ -131,7 +131,7 @@
          <div id="imageInfoContent"></div>
      </div>
 
-    <footer>YuanQiZhiLe Toolkit ¡ª Design & Media Tools</footer>
+    <footer>YuanQiZhiLe Toolkit ï¿½ï¿½ Design & Media Tools</footer>
 </div>
 
 <script>
@@ -181,7 +181,7 @@ function renderPreview(){
         reader.onload=(e)=>{
             const div=document.createElement('div');
             div.className='preview-item';
-            div.innerHTML=`<img src="${e.target.result}" alt="${file.name}"><div class="filename">${file.name}</div><button class="remove-btn" data-index="${index}">¡Á</button>`;
+            div.innerHTML=`<img src="${e.target.result}" alt="${file.name}"><div class="filename">${file.name}</div><button class="remove-btn" data-index="${index}">ï¿½ï¿½</button>`;
             preview.appendChild(div);
             div.querySelector('.remove-btn').onclick=(ev)=>{
                 ev.stopPropagation();

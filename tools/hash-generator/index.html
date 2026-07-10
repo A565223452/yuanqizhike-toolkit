@@ -11,20 +11,54 @@
 </head>
 <body>
     <header class="site-header">
-        <div class="container header-inner">
-            <a href="../../index.html" class="brand">
-                <span class="brand-icon">&#9670;</span>
-                <span class="brand-name">YuanqiZhiKe Toolkit</span>
-            </a>
-            <nav class="main-nav">
-                <a href="../../index.html">Home</a>
-                <a href="../../tools.html">Tools</a>
-                <a href="../../customize.html">Custom Dev</a>
-                <a href="../../guestbook.html">Feedback</a>
-            </nav>
-            <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
+    <div class="container header-inner">
+        <a href="index.html" class="brand">
+            <span class="brand-icon">&#9670;</span>
+            <span class="brand-name" data-i18n="brand.name">YuanqiZhiKe Toolkit</span>
+        </a>
+        <nav class="main-nav">
+            <a href="index.html" data-i18n="nav.home">Home</a>
+            <div class="nav-dropdown">
+                <a href="tools.html" data-i18n="nav.tools">Tools &#9662;</a>
+                <div class="dropdown-menu">
+                    <a href="tools.html#category-content">Content & Writing</a>
+                    <a href="tools.html#category-design">Design & Media</a>
+                    <a href="tools.html#category-dev">Developer Tools</a>
+                    <a href="tools.html#category-business">Business & Productivity</a>
+                    <a href="tools.html#category-education">Education & Research</a>
+                    <a href="tools.html#category-health">Health & Fitness</a>
+                    <a href="tools.html#category-finance">Finance & Crypto</a>
+                    <a href="tools.html#category-seo">SEO & Marketing</a>
+                    <a href="tools.html#category-social">Social Media</a>
+                    <a href="tools.html#category-lifestyle">Lifestyle & Utilities</a>
+                    <a href="tools.html#category-security">Security & Privacy</a>
+                    <a href="tools.html#category-math">Math & Science</a>
+                    <a href="tools.html#category-ai">AI & ML Utilities</a>
+                    <a href="tools.html#category-travel">Travel Tools</a>
+                    <a href="tools.html#category-cooking">Cooking & Food</a>
+                    <a href="tools.html#category-cars">Cars & Vehicles</a>
+                    <a href="tools.html#category-color">Color & Design Utilities</a>
+                    <a href="tools.html#category-forms">Forms & Generators</a>
+                    <a href="tools.html#category-weather">Weather & Climate</a>
+                    <a href="tools.html#category-audio">Audio & Music Tools</a>
+                    <a href="tools.html#category-video">Video Tools</a>
+                    <a href="tools.html#category-photography">Photography Tools</a>
+                    <a href="tools.html#category-gaming">Gaming Tools</a>
+                    <a href="tools.html#category-hobbies">Hobbies & Crafts</a>
+                    <a href="tools.html#category-pets">Pets & Animals</a>
+                    <a href="tools.html#category-real-estate">Real Estate Tools</a>
+                    <a href="tools.html#category-religion">Religion & Spirituality</a>
+                </div>
+            </div>
+            <a href="customize.html" data-i18n="nav.customDev">Custom Dev</a>
+            <a href="guestbook.html" data-i18n="nav.feedback">Feedback</a>
+        </nav>
+        <div class="global-earth-icon" id="globalEarthIcon" title="Switch Language">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c.06.16.1.33.1.51 0 1.1-.9 2-2v-1h-3c-.55 0-1-.45-1-1V8c0-.55.45-1 1-1h3V5c0-1.1.9-2 2-2V2.07C15.98 2.02 15.94 2 15.9 2H12c-1.1 0-2 .9-2 2v2H6c-1.1 0-2 .9-2 2v2H2c0 4.42 3.55 7.95 8.01 8.79-.34-.49-.57-1.06-.67-1.68z"/></svg>
         </div>
-    </header>
+        <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
+    </div>
+</header>
 
     <section class="tool-hero">
         <div class="container">

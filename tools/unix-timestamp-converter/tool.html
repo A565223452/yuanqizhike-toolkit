@@ -98,7 +98,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
     <div class="top-bar">
         <div>
             <h1>Unix Timestamp Converter</h2>
-            <div class="subtitle">Convert between epoch timestamp & human date. Seconds / ms / ¦Ìs / ns. Local, no upload.</div>
+            <div class="subtitle">Convert between epoch timestamp & human date. Seconds / ms / ï¿½ï¿½s / ns. Local, no upload.</div>
         </div>
         <div style="display:flex;gap:8px;align-items:center">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark (Ctrl+Shift+T)">??</button>
@@ -108,13 +108,13 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 
     <div class="now-box">
         <div class="label">Current Unix Timestamp (auto-updating)</div>
-        <div class="big" id="nowSec">¡ª</div>
-        <div class="sub" id="nowDetails">¡ª</div>
+        <div class="big" id="nowSec">ï¿½ï¿½</div>
+        <div class="sub" id="nowDetails">ï¿½ï¿½</div>
     </div>
 
     <div class="grid">
         <div class="field">
-            <label class="field-label" for="tsInput">Timestamp ¡ú Date</label>
+            <label class="field-label" for="tsInput">Timestamp ï¿½ï¿½ Date</label>
             <input type="text" id="tsInput" placeholder="e.g. 1700000000 or 1700000000000">
             <select id="tsUnit">
                 <option value="auto">Auto detect</option>
@@ -132,7 +132,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         </div>
 
         <div class="field">
-            <label class="field-label" for="dateInput">Date ¡ú Timestamp</label>
+            <label class="field-label" for="dateInput">Date ï¿½ï¿½ Timestamp</label>
             <input type="datetime-local" id="dateInput" step="1">
             <select id="tzMode">
                 <option value="local" selected>Local time</option>
@@ -159,27 +159,27 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
     <!-- Contact Modal -->
     <div class="contact-modal" id="contactModal">
         <div class="box">
-            <button class="close" id="contactClose" aria-label="Close">¡Á</button>
+            <button class="close" id="contactClose" aria-label="Close">ï¿½ï¿½</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business ¡ª batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business ï¿½ï¿½ batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">??</span>
                 <span class="email" id="contactEmail">260330663@qq.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">?? Send us an email</a>
-            <div class="form-hint">¡ª or describe your need below ¡ª</div>
+            <div class="form-hint">ï¿½ï¿½ or describe your need below ï¿½ï¿½</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit ¡ú</button>
+                <button type="submit">Submit ï¿½ï¿½</button>
             </form>
         </div>
     </div>
 
     <footer>
-        <div>YuanQiZhiLe Toolkit ¡¤ Process locally in your browser, no data upload.</div>
+        <div>YuanQiZhiLe Toolkit ï¿½ï¿½ Process locally in your browser, no data upload.</div>
     </footer>
 </div>
 
@@ -255,7 +255,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         const d = new Date(ms);
         document.getElementById('nowSec').textContent = Math.floor(ms / 1000);
         document.getElementById('nowDetails').textContent =
-            `ms: ${ms}   ¡¤   UTC: ${d.toISOString()}   ¡¤   Local: ${d.toString()}`;
+            `ms: ${ms}   ï¿½ï¿½   UTC: ${d.toISOString()}   ï¿½ï¿½   Local: ${d.toString()}`;
     }
     fmtNow();
     setInterval(fmtNow, 1000);
@@ -285,7 +285,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(errId) document.getElementById(errId).textContent = '';
     }
 
-    // --- Timestamp ¡ú Date ---
+    // --- Timestamp ï¿½ï¿½ Date ---
     function tsToDate(ts, unit){
         let ms;
         const s = String(ts).trim();
@@ -333,7 +333,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 
     document.getElementById('tsInput').addEventListener('keydown', e => { if(e.key === 'Enter') document.getElementById('tsConvert').click(); });
 
-    // --- Date ¡ú Timestamp ---
+    // --- Date ï¿½ï¿½ Timestamp ---
     function localInputToDate(val, tzMode){
         if(tzMode === 'utc'){
             // treat input as UTC
