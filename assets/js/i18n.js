@@ -47,6 +47,9 @@ const I18N = {
     
     // Bind language switcher button click to toggle dropdown
     this.setupSwitcherToggle();
+    
+    // Inject global earth icon
+    this.injectEarthIcon();
   },
 
   // Detect browser language
@@ -306,6 +309,20 @@ const I18N = {
       }
     };
     document.addEventListener('click', this._outsideClickHandler);
+  },
+
+  // Inject global earth icon in top-right corner
+  injectEarthIcon() {
+    // Check if already injected
+    if (document.getElementById('globalEarthIcon')) return;
+    
+    const earthIcon = document.createElement('div');
+    earthIcon.id = 'globalEarthIcon';
+    earthIcon.className = 'global-earth-icon';
+    earthIcon.textContent = '🌐';
+    earthIcon.title = 'YuanqiZhiKe';
+    earthIcon.setAttribute('aria-label', 'Global website icon');
+    document.body.appendChild(earthIcon);
   },
 
   // Update Giscus comment section language
