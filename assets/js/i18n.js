@@ -287,20 +287,27 @@ const I18N = {
 
   // Inject global earth icon with language selector popup
   injectEarthIcon() {
-    if (document.getElementById('globalEarthIcon')) return;
+    // Get existing icon or create new one
+    let earthIcon = document.getElementById('globalEarthIcon');
+    const needsCreate = !earthIcon;
+    
+    if (needsCreate) {
+      earthIcon = document.createElement('div');
+      earthIcon.id = 'globalEarthIcon';
+      earthIcon.className = 'global-earth-icon';
+      earthIcon.textContent = '🌐';
+      earthIcon.title = 'Switch Language';
+      document.body.appendChild(earthIcon);
+    }
 
-    const earthIcon = document.createElement('div');
-    earthIcon.id = 'globalEarthIcon';
-    earthIcon.className = 'global-earth-icon';
-    earthIcon.textContent = '🌐';
-    earthIcon.title = 'Switch Language';
-    document.body.appendChild(earthIcon);
-
-    // Create language selection popup
-    const langMenu = document.createElement('div');
-    langMenu.id = 'earthLangMenu';
-    langMenu.className = 'earth-lang-menu';
-    document.body.appendChild(langMenu);
+    // Create language selection popup (or get existing)
+    let langMenu = document.getElementById('earthLangMenu');
+    if (!langMenu) {
+      langMenu = document.createElement('div');
+      langMenu.id = 'earthLangMenu';
+      langMenu.className = 'earth-lang-menu';
+      document.body.appendChild(langMenu);
+    }
 
     // Populate menu items
     this.updateLanguageSwitcher();
