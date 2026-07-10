@@ -982,7 +982,7 @@ img {
 }
 
 .global-earth-icon::before {
-    content: "🌐";
+    content: "\1F30D";
 }
 
 .global-earth-icon:hover {
