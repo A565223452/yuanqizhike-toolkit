@@ -9,7 +9,8 @@ const I18N = {
     { code: 'en', name: 'English', nativeName: 'English', flag: '🇺🇸' },
     { code: 'zh', name: 'Chinese', nativeName: '中文', flag: '🇨🇳' },
     { code: 'ko', name: 'Korean', nativeName: '한국어', flag: '🇰🇷' },
-    { code: 'ja', name: 'Japanese', nativeName: '日本語', flag: '🇯🇵' }
+    { code: 'ja', name: 'Japanese', nativeName: '日本語', flag: '🇯🇵' },
+    { code: 'nl', name: 'Dutch', nativeName: 'Nederlands', flag: '🇳🇱' }
   ],
 
   // Initialize i18n system
@@ -52,6 +53,7 @@ const I18N = {
     if (browserLang.startsWith('zh')) return 'zh';
     if (browserLang.startsWith('ko')) return 'ko';
     if (browserLang.startsWith('ja')) return 'ja';
+    if (browserLang.startsWith('nl')) return 'nl';
     return 'en';
   },
 

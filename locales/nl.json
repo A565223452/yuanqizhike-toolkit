@@ -1,0 +1,524 @@
+{
+  "page": {
+    "title": "YuanqiZhiKe Toolkit - Free Offline Tools for Global Creators",
+    "description": "One-stop platform providing free offline frontend tools covering multiple vertical industries for global creators and practitioners."
+  },
+  "brand": {
+    "name": "YuanqiZhiKe Toolkit"
+  },
+  "nav": {
+    "home": "Home",
+    "tools": "Tools",
+    "customDev": "Custom Dev",
+    "feedback": "Feedback",
+    "license": "License"
+  },
+  "dropdown": {
+    "contentWriting": "Content & Writing",
+    "designMedia": "Design & Media",
+    "developerTools": "Developer Tools",
+    "businessProductivity": "Business & Productivity",
+    "educationResearch": "Education & Research",
+    "healthFitness": "Health & Fitness",
+    "financeCrypto": "Finance & Crypto",
+    "seoMarketing": "SEO & Marketing",
+    "socialMedia": "Social Media",
+    "lifestyleUtilities": "Lifestyle & Utilities",
+    "securityPrivacy": "Security & Privacy",
+    "mathScience": "Math & Science",
+    "aiMlUtilities": "AI & ML Utilities",
+    "travelTools": "Travel Tools",
+    "cookingFood": "Cooking & Food",
+    "carsVehicles": "Cars & Vehicles",
+    "colorDesignUtilities": "Color & Design Utilities",
+    "formsGenerators": "Forms & Generators",
+    "weatherClimate": "Weather & Climate",
+    "audioMusicTools": "Audio & Music Tools",
+    "videoTools": "Video Tools",
+    "photographyTools": "Photography Tools",
+    "gamingTools": "Gaming Tools",
+    "hobbiesCrafts": "Hobbies & Crafts",
+    "petsAnimals": "Pets & Animals",
+    "realEstateTools": "Real Estate Tools",
+    "religionSpirituality": "Religion & Spirituality"
+  },
+  "hero": {
+    "title": "Free Offline Tools for Every Vertical Industry",
+    "description": "YuanqiZhiKe Toolkit is a one-stop platform delivering free, privacy-first frontend tools to creators and professionals worldwide. Download, open locally, work offline -- no registration, no data collection, no compromises.",
+    "exploreBtn": "Explore All Tools",
+    "cta": "Explore All Tools"
+  },
+  "positioning": {
+    "title": "What We Offer",
+    "multiIndustry": {
+      "title": "Multi-Industry Coverage",
+      "desc": "From content writing to web development, our tools span every major vertical industry. Find exactly what you need, when you need it."
+    },
+    "offlinePrivate": {
+      "title": "100% Offline & Private",
+      "desc": "Every tool runs entirely in your browser. Your data never leaves your device. No servers, no tracking, no privacy concerns."
+    },
+    "openSource": {
+      "title": "Open Source & Free",
+      "desc": "All tools come with full source code. Study, modify, and learn from production-ready code -- completely free of charge."
+    },
+    "zeroBarriers": {
+      "title": "Zero Barriers",
+      "desc": "No sign-up, no login, no paywalls. Just download the ZIP, unzip, and open in your browser. That simple."
+    }
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "steps": [
+      {
+        "number": 1,
+        "title": "Browse Tools",
+        "desc": "Visit our tools catalog and filter by category to find the right tool for your workflow."
+      },
+      {
+        "number": 2,
+        "title": "Accept License",
+        "desc": "Click download, review and accept the source code license agreement."
+      },
+      {
+        "number": 3,
+        "title": "Download & Use",
+        "desc": "Get the ZIP file, extract it, and open index.html in any browser. Start working offline immediately."
+      }
+    ]
+  },
+  "categories": {
+    "title": "Tool Categories",
+    "contentWriting": {
+      "title": "Content & Writing",
+      "desc": "Article rewriters, paraphrasers, grammar checkers, and more."
+    },
+    "designMedia": {
+      "title": "Design & Media",
+      "desc": "Image processors, color pickers, SVG tools, and design utilities."
+    },
+    "developerTools": {
+      "title": "Developer Tools",
+      "desc": "Code formatters, JSON validators, hash generators, and debug helpers."
+    },
+    "businessProductivity": {
+      "title": "Business & Productivity",
+      "desc": "PDF converters, spreadsheet tools, invoice generators, and more."
+    },
+    "educationResearch": {
+      "title": "Education & Research",
+      "desc": "Citation generators, flashcard makers, plagiarism checkers, and study aids."
+    },
+    "healthFitness": {
+      "title": "Health & Fitness",
+      "desc": "BMI calculators, calorie trackers, body fat estimators, and wellness tools."
+    },
+    "financeCrypto": {
+      "title": "Finance & Crypto",
+      "desc": "Loan calculators, compound interest, crypto converters, and tax estimators."
+    },
+    "seoMarketing": {
+      "title": "SEO & Marketing",
+      "desc": "Keyword analyzers, meta tag generators, SERP previewers, and SEO optimizers."
+    },
+    "socialMedia": {
+      "title": "Social Media",
+      "desc": "Character counters, hashtag generators, and platform-specific tools for Instagram, TikTok, YouTube, and X."
+    },
+    "lifestyleUtilities": {
+      "title": "Lifestyle & Utilities",
+      "desc": "Time zone converters, unit converters, date calculators, age calculators, and countdown timers."
+    },
+    "securityPrivacy": {
+      "title": "Security & Privacy",
+      "desc": "Password generators, AES encryptors, hash generators, and encryption utilities."
+    },
+    "mathScience": {
+      "title": "Math & Science",
+      "desc": "Scientific calculators, equation solvers, unit converters, and statistics tools."
+    },
+    "aiMlUtilities": {
+      "title": "AI & ML Utilities",
+      "desc": "Prompt generators, token counters, model calculators, and dataset utilities."
+    },
+    "travelTools": {
+      "title": "Travel Tools",
+      "desc": "Distance calculators, currency converters, trip planners, and time zone tools."
+    },
+    "cookingFood": {
+      "title": "Cooking & Food",
+      "desc": "Recipe converters, cooking timers, unit converters, and nutrition calculators."
+    },
+    "carsVehicles": {
+      "title": "Cars & Vehicles",
+      "desc": "Fuel calculators, mileage trackers, tire pressure converters, and vehicle tools."
+    },
+    "colorDesignUtilities": {
+      "title": "Color & Design Utilities",
+      "desc": "Color pickers, palette generators, gradient makers, and design utilities."
+    },
+    "formsGenerators": {
+      "title": "Forms & Generators",
+      "desc": "Form builders, template generators, document creators, and code generators."
+    },
+    "weatherClimate": {
+      "title": "Weather & Climate",
+      "desc": "Temperature converters, heat index calculators, wind chill, and climate tools."
+    },
+    "audioMusicTools": {
+      "title": "Audio & Music Tools",
+      "desc": "Audio converters, BPM detectors, frequency calculators, and music utilities."
+    },
+    "videoTools": {
+      "title": "Video Tools",
+      "desc": "Video format converters, resolution calculators, bitrate tools, and video utilities."
+    },
+    "photographyTools": {
+      "title": "Photography Tools",
+      "desc": "EXIF viewers, focal length calculators, exposure tools, and photo utilities."
+    },
+    "gamingTools": {
+      "title": "Gaming Tools",
+      "desc": "Dice rollers, stat calculators, build planners, and gaming utilities."
+    },
+    "hobbiesCrafts": {
+      "title": "Hobbies & Crafts",
+      "desc": "Pattern generators, yarn calculators, craft planners, and hobby utilities."
+    },
+    "petsAnimals": {
+      "title": "Pets & Animals",
+      "desc": "Pet age calculators, feeding guides, dosage calculators, and animal tools."
+    },
+    "realEstateTools": {
+      "title": "Real Estate Tools",
+      "desc": "Mortgage calculators, property estimators, ROI calculators, and real estate tools."
+    },
+    "religionSpirituality": {
+      "title": "Religion & Spirituality",
+      "desc": "Prayer time calculators, religious calendars, meditation timers, and spirituality tools."
+    }
+  },
+  "cta": {
+    "title": "Need a Custom Tool or SaaS Product?",
+    "desc": "We offer professional frontend tool and web application development services for businesses worldwide. From concept to deployment, our team delivers production-ready solutions.",
+    "btn": "Request Custom Development"
+  },
+  "comments": {
+    "title": "Comments"
+  },
+  "footer": {
+    "privacy": "Privacy Policy",
+    "cookie": "Cookie Notice",
+    "license": "Source License",
+    "customDev": "Custom Dev Service",
+    "copyright": "All rights reserved."
+  },
+"download": {
+    "modalTitle": "Source Code License Agreement",
+    "modalDesc": "Please read and accept the following terms before downloading:",
+    "term1": "This source code is provided for <strong>personal learning and commercial use</strong>. You may deploy these tools on commercial or ad-supported websites (including Google AdSense), provided that all original copyright notices are preserved.",
+    "term2": "You are <strong>forbidden</strong> from repackaging, reselling, or distributing the source code as a standalone product without substantial modification.",
+    "term3": "All risks arising from local modification and operation of this software are borne by the user themselves. YuanqiZhiKe provides <strong>no technical after-sales support</strong>.",
+    "checkbox": "I have read and agree to the above Source License Terms",
+    "cancel": "Cancel",
+    "confirm": "Confirm & Download"
+  },
+  "tool": {
+    "download": "Download",
+    "backToTools": "Back to Tools",
+    "category": "Category",
+    "comingSoon": "Coming Soon",
+    "pageTitle": "All Tools",
+    "pageDesc": "Browse our growing collection of free offline frontend tools. Click on any tool to view details and download the source code.",
+    "viewDetails": "View Details",
+    "downloadZip": "Download ZIP",
+    "stayTuned": "Stay Tuned",
+    "comingSoonDesc": "Tools in this category are currently under development."
+  },
+  "languageSwitcher": {
+    "title": "Language",
+    "en": "English",
+    "zh": "中文",
+    "es": "Español",
+    "ja": "日本語"
+  },
+  "staticPages": {
+    "about": {
+      "title": "About Us - YuanqiZhiKe Toolkit",
+      "heading": "About Us",
+      "subtitle": "Empowering creators worldwide with free, privacy-first tools.",
+      "ourMission": "Our Mission",
+      "missionDesc": "YuanqiZhiKe Toolkit was founded with a simple belief: everyone deserves access to powerful, professional-grade tools -- regardless of their location, income, or technical background. We build free, offline-capable frontend tools that respect your privacy and put you in control of your data.",
+      "whatMakesUsDifferent": "What Makes Us Different",
+      "featurePrivacyFirst": "🔒 Privacy First",
+      "featurePrivacyFirstDesc": "Every tool runs entirely in your browser. Your data never leaves your device. No servers, no tracking, no compromises.",
+      "featureCompletelyFree": "💰 Completely Free",
+      "featureCompletelyFreeDesc": "No sign-ups, no paywalls, no hidden fees. All tools are free to use and free to download with full source code.",
+      "featureGlobalCommunity": "🌍 Global Community",
+      "featureGlobalCommunityDesc": "Our tools are designed for creators worldwide -- from independent developers to enterprise teams. Multilingual support ensures accessibility for everyone.",
+      "featureOpenSource": "📦 Open Source",
+      "featureOpenSourceDesc": "All tools come with full source code under a permissive license. Study, modify, and learn from production-ready code.",
+      "ourStory": "Our Story",
+      "storyPart1": "YuanqiZhiKe started as a small project to help Chinese creators access the same quality of tools that Western developers take for granted. Over time, we expanded our catalog to serve a global audience, growing from a handful of tools to a comprehensive toolkit covering content writing, design, development, business, and education.",
+      "storyPart2": "Today, our toolkit serves thousands of users daily across dozens of countries. We remain committed to our founding principles: free, private, and open.",
+      "ourValues": "Our Values",
+      "valueAccessibility": "Accessibility: Tools should be available to everyone, everywhere",
+      "valuePrivacy": "Privacy: Your data belongs to you, and stays on your device",
+      "valueTransparency": "Transparency: Full source code, clear licensing, honest communication",
+      "valueQuality": "Quality: Production-ready code that works reliably in real-world scenarios",
+      "valueCommunity": "Community: Building together, sharing knowledge, empowering creators",
+      "getInvolved": "Get Involved",
+      "getInvolvedDesc": "We welcome contributions from the community! Whether you want to report a bug, suggest a new tool, improve existing code, or translate our tools into your language -- there are many ways to get involved.",
+      "involveReportIssues": "Report Issues: Found a bug? Let us know via our GitHub repository",
+      "involveSuggestTools": "Suggest Tools: Have an idea? Share it with us",
+      "involveTranslate": "Translate: Help us reach more users by translating tools into your language",
+      "involveCustomDev": "Custom Development: Need a tailored solution? Contact our development team",
+      "contact": "Contact",
+      "contactDesc": "Have questions or feedback? We'd love to hear from you.",
+      "contactEmail": "Email: 260330663@qq.com"
+    },
+    "privacy": {
+      "title": "Privacy Policy - YuanqiZhiKe Toolkit",
+      "heading": "Privacy Policy",
+      "lastUpdated": "Last Updated",
+      "section1Title": "1. Introduction",
+      "section1Text": "Welcome to YuanqiZhiKe Toolkit (\"we,\" \"our,\" or \"us\"). This Privacy Policy explains how we handle data when you visit and use our website and tools. We are committed to protecting your privacy and complying with GDPR, CCPA, and other global privacy regulations.",
+      "section2Title": "2. Information We Do NOT Collect",
+      "section2Intro": "YuanqiZhiKe Toolkit is designed with privacy as a core principle. Specifically:",
+      "section2Item1": "We do not collect personal information such as names, email addresses, or phone numbers.",
+      "section2Item2": "We do not require user registration or login.",
+      "section2Item3": "We do not store any data you input into our tools on our servers.",
+      "section2Item4": "All tool processing happens locally on your device -- no data is transmitted to any remote server.",
+      "section3Title": "3. Anonymous Analytics",
+      "section3Intro": "We may use third-party analytics services (such as Google Analytics 4 or Cloudflare Analytics) to collect anonymous, aggregated website usage statistics. This data includes:",
+      "section3Item1": "Pages visited and time spent on each page",
+      "section3Item2": "Referring websites and search terms",
+      "section3Item3": "General geographic region (country-level only)",
+      "section3Item4": "Browser type and operating system (non-specific)",
+      "section3Note": "This information cannot be used to identify you personally. We do not combine analytics data with any personal information.",
+      "section4Title": "4. Cookies",
+      "section4Intro": "Our website uses cookies for the following purposes:",
+      "section4Essential": "Essential Cookies:",
+      "section4EssentialDesc": "Required for basic website functionality (session management, preference storage). These do not require consent.",
+      "section4Analytics": "Analytics Cookies:",
+      "section4AnalyticsDesc": "Used by Google Analytics 4 / Cloudflare Analytics to collect anonymous usage statistics. IP addresses are anonymized.",
+      "section4Advertising": "Advertising Cookies:",
+      "section4AdvertisingDesc": "We display Google AdSense advertisements across our website pages. Google AdSense may deploy advertising cookies to deliver personalized advertisements according to visitor browsing behaviors. Visitors can disable personalized advertising by accessing",
+      "googleAdSettings": "Google official ad privacy settings",
+      "section4AdvertisingDesc2": "All ad-related data collection follows Google privacy rules and global data compliance regulations.",
+      "section4CookieNotice": "For detailed cookie categories and management options, please see our",
+      "section5Title": "5. Third-Party Services",
+      "section5Intro": "Our tools are delivered as downloadable ZIP files containing standalone HTML/CSS/JavaScript. Once downloaded, these tools operate entirely offline. We are not responsible for any third-party services you may choose to integrate into your own use of the source code.",
+      "section5AdSense": "5.1 Google AdSense",
+      "section5AdSenseText": "This website displays advertisements served by Google AdSense. Google may use cookies and similar technologies to serve personalized ads based on your visits to this and other websites. You may opt out of personalized advertising by visiting Google Ads Settings. For more information on how Google uses data when you use our partners' sites or apps, see How Google uses data.",
+      "section5AnalyticsTitle": "5.2 Analytics Providers",
+      "section5AnalyticsText": "We may use Google Analytics 4 and/or Cloudflare Web Analytics to understand website usage. These services collect anonymized data only. Refer to their respective privacy policies: Google Privacy Policy, Cloudflare Privacy Policy.",
+      "section6Title": "6. Data Security",
+      "section6Text": "Our website is served over HTTPS to ensure secure delivery of all downloadable files. We use industry-standard security measures to protect our hosting infrastructure.",
+      "section7Title": "7. Your Rights (GDPR)",
+      "section7Intro": "If you are located in the European Economic Area (EEA), you have the following rights:",
+      "section7Right1Title": "Right of Access:",
+      "section7Right1Desc": "Request a copy of any personal data we hold about you.",
+      "section7Right2Title": "Right to Rectification:",
+      "section7Right2Desc": "Request correction of inaccurate data.",
+      "section7Right3Title": "Right to Erasure:",
+      "section7Right3Desc": "Request deletion of your personal data.",
+      "section7Right4Title": "Right to Restrict Processing:",
+      "section7Right4Desc": "Request that we limit how we use your data.",
+      "section7Right5Title": "Right to Data Portability:",
+      "section7Right5Desc": "Request your data in a machine-readable format.",
+      "section7Right6Title": "Right to Object:",
+      "section7Right6Desc": "Object to our processing of your data.",
+      "section7Contact": "To exercise any of these rights, please contact us at",
+      "section8Title": "8. Children's Privacy",
+      "section8Text": "Our services are not directed to individuals under the age of 16. We do not knowingly collect personal data from children. If we become aware of such collection, we will take steps to delete the information.",
+      "section9Title": "9. Changes to This Policy",
+      "section9Text": "We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated \"Last Updated\" date. We encourage you to review this policy periodically.",
+      "section10Title": "10. Contact Us",
+      "section10Text": "If you have any questions about this Privacy Policy, please contact us at:"
+    },
+    "cookie": {
+      "title": "Cookie Notice - YuanqiZhiKe Toolkit",
+      "heading": "Cookie Notice",
+      "lastUpdated": "Last Updated",
+      "section1Title": "1. What Are Cookies",
+      "section1Text": "Cookies are small text files stored on your device (computer, tablet, or mobile phone) when you visit a website. They help websites function properly and provide a better user experience.",
+      "section2Title": "2. Cookies We Use",
+      "section2Intro": "YuanqiZhiKe Toolkit uses the following categories of cookies:",
+      "section2EssHeading": "2.1 Essential Cookies (Strictly Necessary)",
+      "section2EssPurpose": "Maintain basic website functionality during your visit (session state, language preference, cookie consent choice).",
+      "section2EssDuration": "Session or up to 365 days for consent preference.",
+      "section2EssLegal": "Legitimate interest / strict necessity.",
+      "section2EssData": "None (truly anonymous).",
+      "section2AnalyticsHeading": "2.2 Analytics Cookies (Optional)",
+      "section2AnalyticsPurpose": "Collect anonymous, aggregated website usage statistics via Google Analytics 4 or Cloudflare Analytics.",
+      "section2AnalyticsDuration": "Up to 2 years (_ga) / 24 hours (_gid).",
+      "section2AnalyticsLegal": "Consent (GDPR Art. 6(1)(a)).",
+      "section2AnalyticsData": "Pages visited, time on page, referrer, country-level geography, browser/OS (non-specific). IP anonymized.",
+      "section2AdHeading": "2.3 Advertising Cookies (Optional - Google AdSense)",
+      "section2AdPurpose": "Deliver personalized advertisements via Google AdSense based on browsing behavior.",
+      "section2AdDuration": "Varies by Google (typically 13 months for IDE, 2 years for ANID).",
+      "section2AdLegal": "Consent (GDPR Art. 6(1)(a)) / Legitimate interest for non-personalized ads.",
+      "section2AdData": "Pseudonymous identifiers, browsing history across sites, ad interaction data.",
+      "section2AdOptOut": "Visit",
+      "section2AdOptOut2": "to disable personalized ads.",
+      "purpose": "Purpose:",
+      "duration": "Duration:",
+      "legalBasis": "Legal Basis:",
+      "dataCollected": "Data collected:",
+      "optOut": "Opt-out:",
+      "section3Title": "3. Third-Party Cookies",
+      "section3Intro": "The following third parties may set cookies when you visit our website:",
+      "section3AdSense": "Serves personalized/non-personalized ads.",
+      "section3AdSenseLink": "Google Advertising Cookie Policy",
+      "section3GA": "Anonymous usage analytics.",
+      "section3GALink": "Google Cookie Policy",
+      "section3CF": "Privacy-first analytics.",
+      "section3CFLink": "Cloudflare Privacy Policy",
+      "section4Title": "4. Cookies We Do NOT Use",
+      "section4Intro": "We explicitly do not use the following types of cookies directly:",
+      "section4Item1": "Social media embedding cookies",
+      "section4Item2": "Any cookies that collect personal data for our own marketing purposes",
+      "section4Item3": "First-party tracking cookies beyond analytics/advertising disclosed above",
+      "section4Note": "Note: Third-party advertising cookies (Google AdSense) are used as disclosed in Section 2.3. These are governed by Google's policies.",
+      "section5Title": "5. How to Manage Cookies",
+      "section5Intro": "You can control and manage cookies through your browser settings. Most browsers allow you to:",
+      "section5Item1": "View what cookies are stored and delete them individually or in bulk",
+      "section5Item2": "Block third-party cookies",
+      "section5Item3": "Block cookies from specific sites",
+      "section5Item4": "Block all cookies",
+      "section5Item5": "Delete all cookies when you close the browser",
+      "section5Note": "Please note that blocking all cookies may affect the functionality of this website.",
+      "section6Title": "6. Consent Management",
+      "section6Intro": "On your first visit, a cookie consent banner will appear allowing you to choose:",
+      "section6AcceptAll": "Accept All Cookies:",
+      "section6AcceptAllDesc": "Allows essential, analytics, and advertising cookies.",
+      "section6EssentialOnly": "Only Essential Cookies:",
+      "section6EssentialOnlyDesc": "Allows only strictly necessary cookies; blocks analytics and advertising cookies.",
+      "section6Storage": "Your choice is stored locally in your browser for 365 days. You can change your preference at any time by clearing site data or adjusting your browser settings.",
+      "section6Consent": "By continuing to use our website after making your choice, you consent to the cookie categories you have selected.",
+      "section7Title": "7. Updates to This Notice",
+      "section7Text": "We may update this Cookie Notice from time to time. Any changes will be posted on this page with an updated \"Last Updated\" date.",
+      "section8Title": "8. Contact Us",
+      "section8Text": "If you have any questions about our use of cookies, please contact us at:"
+    },
+    "license": {
+      "title": "Source Code License - YuanqiZhiKe Toolkit",
+      "heading": "Source Code License Agreement",
+      "lastUpdated": "Last Updated",
+      "section1Title": "1. Grant of License",
+      "section1Text": "YuanqiZhiKe Toolkit (\"the Company\") grants you a limited, non-exclusive, non-transferable license to use the source code packages (\"Tools\") provided on this website. By downloading, installing, or using any Tool, you agree to be bound by the terms of this Agreement.",
+      "section2Title": "2. Permitted Use",
+      "section2PermittedIntro": "You are permitted to:",
+      "section2Permitted1": "Download and use the Tools for personal, non-commercial learning and educational purposes.",
+      "section2Permitted2": "Modify the source code for your own personal use.",
+      "section2Permitted3": "Run the Tools locally on your own devices.",
+      "section3Title": "3. Prohibited Use",
+      "section3ProhibitedIntro": "You are strictly prohibited from:",
+      "section3ProhibitedItem1Title": "Repackaging & Reselling:",
+      "section3ProhibitedItem1Desc": "Repackaging, redistributing, or reselling the Tools or any derivative works as standalone products.",
+      "section3ProhibitedItem2Title": "Claiming Ownership:",
+      "section3ProhibitedItem2Desc": "Removing or altering copyright notices, trademark symbols, or attribution statements from the source code.",
+      "section3ProhibitedItem3Title": "Technical Support:",
+      "section3ProhibitedItem3Desc": "Demanding technical support, bug fixes, or updates from YuanqiZhiKe Toolkit.",
+      "section4Title": "4. Commercial & Advertisement Usage",
+      "section4Text": "You are allowed to deploy these tools on commercial websites or websites with advertisement monetization such as Google AdSense, provided that you retain all original copyright marks, source attribution statements of YuanqiZhiKe Toolkit, and do not resell the source code independently.",
+      "section4SubTitle": "4.1 Personal vs Commercial Use",
+      "section4PersonalTitle": "Personal / Educational Use:",
+      "section4PersonalDesc": "Free for personal learning, non-commercial projects, and educational purposes. No attribution required but appreciated.",
+      "section4CommercialTitle": "Commercial / Ad-Supported Websites:",
+      "section4CommercialDesc": "Permitted to use the Tools on websites that display advertisements (including Google AdSense), provided that:",
+      "section4CommercialCond1": "All original copyright notices and attribution statements are preserved in the source code",
+      "section4CommercialCond2": "The Tools are not resold, sublicensed, or distributed as standalone products",
+      "section4CommercialCond3": "No claim of ownership over the original source code is made",
+      "section4ProhibitedTitle": "Prohibited:",
+      "section4ProhibitedDesc": "Repackaging the source code as your own product for sale, removing copyright notices, or offering the Tools as a paid service without substantial modification.",
+      "section5Title": "5. Disclaimer of Warranties",
+      "section5Text": "THE TOOLS ARE PROVIDED ON AN \"AS IS\" AND \"AS AVAILABLE\" BASIS, WITHOUT ANY WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED. YUANQI TECH TOOLKIT MAKES NO REPRESENTATIONS OR WARRANTIES REGARDING NON-INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE TOOLS IS WITH YOU.",
+      "section6Title": "6. Limitation of Liability",
+      "section6Text": "IN NO EVENT SHALL YUANQI TECH TOOLKIT BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES ARISING OUT OF OR IN CONNECTION WITH THE USE OR INABILITY TO USE THE TOOLS, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.",
+      "section7Title": "7. User Responsibility",
+      "section7Text": "You are solely responsible for any modifications you make to the source code and any consequences resulting from your use of the Tools. This includes but is not limited to:",
+      "section7Item1": "Data loss or corruption caused by Tool malfunctions",
+      "section7Item2": "Business losses resulting from incorrect Tool outputs",
+      "section7Item3": "Legal issues arising from misuse of the Tools",
+      "section8Title": "8. Intellectual Property",
+      "section8Text": "All intellectual property rights in the Tools, including but not limited to copyrights, trademarks, and trade secrets, remain the exclusive property of YuanqiZhiKe Toolkit. This Agreement does not transfer any ownership rights to you.",
+      "section9Title": "9. Termination",
+      "section9Text": "This license is effective until terminated. Your rights under this license will terminate automatically without notice if you fail to comply with any term herein. Upon termination, you must cease all use and destroy all copies of the Tools in your possession.",
+      "section10Title": "10. Governing Law",
+      "section10Text": "This Agreement shall be governed by and construed in accordance with the laws of the jurisdiction in which YuanqiZhiKe Toolkit operates, without regard to conflict of law principles.",
+      "section11Title": "11. Contact",
+      "section11Text": "For licensing inquiries beyond the scope of this Agreement, please contact us at:"
+    },
+    "customize": {
+      "title": "Custom Development Services - YuanqiZhiKe Toolkit",
+      "heading": "Custom Development Services",
+      "description": "Need a tailored solution? Our team specializes in building high-quality frontend tools, web applications, and SaaS products for businesses worldwide.",
+      "ourServices": "Our Services",
+      "serviceFrontendTools": "Frontend Tools",
+      "serviceFrontendToolsDesc": "Custom text processors, converters, generators, and productivity tools built with modern HTML/CSS/JavaScript. Fully offline-capable and browser-based.",
+      "serviceSaaS": "SaaS Applications",
+      "serviceSaaSDesc": "Full-stack web application development with responsive design, user authentication, payment integration, and cloud deployment.",
+      "serviceLandingPages": "Landing Pages",
+      "serviceLandingPagesDesc": "High-converting, beautifully designed landing pages optimized for speed, SEO, and mobile experience.",
+      "serviceApiIntegration": "API Integration",
+      "serviceApiIntegrationDesc": "Connect your tools to third-party services including payment gateways, AI APIs, databases, and cloud storage solutions.",
+      "whyChooseUs": "Why Choose Us",
+      "reasonCleanCode": "Clean Code: Well-structured, maintainable, and documented codebase",
+      "reasonResponsive": "Responsive Design: Perfect experience across desktop, tablet, and mobile",
+      "reasonFastDelivery": "Fast Delivery: Agile development process with regular progress updates",
+      "reasonSupport": "Post-Delivery Support: 30-day free bug-fixing period after project handover",
+      "getInTouch": "Get in Touch",
+      "getInTouchDesc": "Describe your project requirements and we will get back to you within 24 hours with a detailed proposal and quote.",
+      "formName": "Your Name *",
+      "formEmail": "Email Address *",
+      "formProjectType": "Project Type",
+      "formSelectCategory": "Select a category",
+      "formFrontendTool": "Frontend Tool",
+      "formSaaS": "SaaS Application",
+      "formLandingPage": "Landing Page",
+      "formApiIntegration": "API Integration",
+      "formOther": "Other",
+      "formDescription": "Project Description *",
+      "formSubmit": "Send Inquiry",
+      "orEmail": "Or email us directly at"
+    },
+    "guestbook": {
+      "title": "Feedback - YuanqiZhiKe Toolkit",
+      "heading": "Leave Your Mark",
+      "subtitle": "Feedback, suggestions, cooperation ideas, or just say hi — all welcome.",
+      "shareThoughts": "Share Your Thoughts",
+      "formNickname": "Nickname (optional)",
+      "formNicknamePlaceholder": "Anonymous",
+      "formType": "Type",
+      "formFeedback": "Feedback",
+      "formSuggestion": "Suggestion",
+      "formCooperation": "Cooperation",
+      "formOther": "Other",
+      "formMessage": "Your Message *",
+      "formMessagePlaceholder": "Write your message here (5-1000 chars)...",
+      "formSubmit": "Post Message",
+      "communityWall": "Community Wall",
+      "filterAll": "All",
+      "filterFeedback": "Feedback",
+      "filterSuggestion": "Suggestion",
+      "filterCooperation": "Cooperation",
+      "filterOther": "Other",
+      "loading": "Loading...",
+      "loadMore": "Load More",
+      "noMessages": "No messages yet. Be the first to share your thoughts!",
+      "loadFailed": "Failed to load messages. Please refresh.",
+      "messageTooShort": "Message too short (min 5 characters).",
+      "messageTooLong": "Message too long (max 1000 characters).",
+      "posting": "Posting...",
+      "flaggedMessage": "Your message was flagged. Please contact us directly if this is a mistake.",
+      "submittedMessage": "Thank you! Your message has been submitted and will appear after review (usually within 24 hours).",
+      "submitFailed": "Failed to submit. Please try again.",
+      "justNow": "just now",
+      "minAgo": "m ago",
+      "hourAgo": "h ago",
+      "dayAgo": "d ago"
+    }
+  }
+}
