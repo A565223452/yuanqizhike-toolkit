@@ -1,69 +1,78 @@
 export default async function onRequest({ request }) {
-    // Handle all requests uniformly to avoid 405 errors from unstable onRequestPost detection
     if (request.method !== "POST") {
         return new Response(JSON.stringify({
             code: 405,
-            message: "Only POST requests are allowed for form submission"
-        }), {
-            status: 405,
-            headers: { "Content-Type": "application/json" }
-        });
+            message: "Only POST requests are allowed"
+        }), { status: 405, headers: { "Content-Type": "application/json" } });
     }
 
     try {
-        // Receive form data from frontend
         const formData = await request.formData();
+        
+        // Turnstile token verification
+        const turnstileToken = formData.get("cf-turnstile-response");
+        if (!turnstileToken) {
+            return new Response(JSON.stringify({
+                code: 400,
+                success: false,
+                msg: "CAPTCHA required"
+            }), { status: 400, headers: { "Content-Type": "application/json" } });
+        }
 
-        // Strictly match frontend input/select/textarea name attributes
-        const customerName = formData.get("name") || "Name not provided";
-        const customerEmail = formData.get("email") || "Email not provided";
-        const projectType = formData.get("projectType") || "Project type not selected";
-        const projectDesc = formData.get("description") || "No description provided";
+        const verifyRes = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams({
+                secret: "0x4AAAAAADxZ2faDF6_AjI-K",
+                response: turnstileToken
+            })
+        });
+        const verifyData = await verifyRes.json();
+        if (!verifyData.success) {
+            return new Response(JSON.stringify({
+                code: 400,
+                success: false,
+                msg: "CAPTCHA verification failed"
+            }), { status: 400, headers: { "Content-Type": "application/json" } });
+        }
 
-        // Assemble email content
+        const customerName = formData.get("name") || "Anonymous";
+        const customerEmail = formData.get("email") || "No email";
+        const projectType = formData.get("projectType") || "General inquiry";
+        const projectDesc = formData.get("description") || "No description";
+
         const mailContent = `
-===== New Custom Consultation Lead =====
-Customer Name: ${customerName}
-Customer Email: ${customerEmail}
-Project Type: ${projectType}
-Requirements:
+===== New Lead =====
+Name: ${customerName}
+Email: ${customerEmail}
+Type: ${projectType}
+Description:
 ${projectDesc}
         `;
 
-        // MailChannels free email sending channel
-        const mailRes = await fetch("https://api.mailchannels.net/tx/v1/send", {
+        await fetch("https://api.mailchannels.net/tx/v1/send", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 personalizations: [{ to: [{ email: "260330663@qq.com" }] }],
-                from: { email: "noreply@yuanqizhike-toolkit.pages.dev", name: "YuanqiZhiKe Custom Dev" },
-                subject: "New Custom Consultation Received",
+                from: { email: "noreply@yuanqizhike-toolkit.pages.dev", name: "YuanqiZhiKe" },
+                subject: "New Lead Received",
                 content: [{ type: "text/plain", value: mailContent }]
             })
         });
 
-        // Log MailChannels error response
-        const mailResult = await mailRes.json();
-        if (!mailRes.ok) throw new Error(`Email API error: ${JSON.stringify(mailResult)}`);
-
-        // Return success response
         return new Response(JSON.stringify({
             code: 200,
             success: true,
-            msg: "Consultation submitted successfully! We will contact you within 24 hours."
-        }), {
-            headers: { "Content-Type": "application/json" }
-        });
+            msg: "Submitted successfully!"
+        }), { headers: { "Content-Type": "application/json" } });
+
     } catch (error) {
-        console.error("Form submission error:", error);
-        // Return failure response
+        console.error("Form error:", error);
         return new Response(JSON.stringify({
             code: 500,
             success: false,
-            msg: "Submission failed. Please try again later."
-        }), {
-            status: 500,
-            headers: { "Content-Type": "application/json" }
-        });
+            msg: "Submission failed"
+        }), { status: 500, headers: { "Content-Type": "application/json" } });
     }
 }
