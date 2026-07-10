@@ -286,21 +286,6 @@
   },
   {
     "category": "Content & Writing",
-    "icon": "assets/icons/content-1.svg",
-    "title": "Article Rewriter & Similarity Checker",
-    "desc": "Rewrite articles using synonym substitution and check content similarity locally. Ensures privacy with zero server uploads.",
-    "features": [
-      "Synonym-Based Rewriting",
-      "Similarity Percentage Check",
-      "Offline Local Processing",
-      "One-Click Copy Result",
-      "No Data Server Upload"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/writing/article-rewriter-similarity-checker.zip"
-  },
-  {
-    "category": "Content & Writing",
     "icon": "assets/icons/content-21.svg",
     "title": "Text Case Converter",
     "desc": "Instantly convert text between multiple casing formats including camelCase, snake_case, kebab-case, and more. Fast, private, and runs entirely in your browser.",

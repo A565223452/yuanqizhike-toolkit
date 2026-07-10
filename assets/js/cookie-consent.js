@@ -45,11 +45,16 @@
         script.async = true;
         script.crossOrigin = 'anonymous';
         script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6181560564978988';
+        script.onload = function() {
+            // 脚本加载完成后推送空对象触发自动广告初始化
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+            window.adsbygoogleLoaded = true;
+            console.log('[AdSense] Auto ads script loaded (consent granted)');
+        };
+        script.onerror = function() {
+            console.warn('[AdSense] Failed to load AdSense script');
+        };
         document.head.appendChild(script);
-        // 推入空对象触发自动广告初始化
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-        window.adsbygoogleLoaded = true;
-        console.log('[AdSense] Auto ads script loaded (consent granted)');
     }
 
     // Load Analytics (only if consent = 'all')
@@ -70,18 +75,8 @@
         if (choice === 'all') {
             loadAdSense();
             loadAnalytics();
-            // Enable existing AdSense slots
-            // Push to queue — works even before AdSense script finishes loading
-            document.querySelectorAll('ins.adsbygoogle').forEach(function(ad) {
-                (window.adsbygoogle = window.adsbygoogle || []).push({});
-            });
-        } else {
-            // Block AdSense: hide ad slots
-            document.querySelectorAll('ins.adsbygoogle').forEach(function(ad) {
-                ad.style.display = 'none';
-                ad.innerHTML = '';
-            });
         }
+        // Note: AdSense slots are handled automatically by the auto ads script
     }
 
     // Create and show banner

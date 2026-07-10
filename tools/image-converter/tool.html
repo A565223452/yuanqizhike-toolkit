@@ -1,4 +1,4 @@
-Ôªø<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -63,12 +63,12 @@
         }
     </style>
 </head>
-<body><div class="global-earth-icon" id="globalEarthIcon" title="Switch Language">È¶ÉÂØ™</div>
+<body>
 <div class="wrap">
     <div class="top-bar">
         <h1>Batch Image Resizer & Format Converter</h1>
         <div class="top-controls">
-            <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">üåô</button>
+            <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">??</button>
             <button class="bookmark-btn" id="bookmarkBtn">Bookmark</button>
         </div>
     </div>
@@ -86,15 +86,15 @@
         <label>Preset Size:</label>
         <select id="sizePreset">
             <option value="custom">Custom Size</option>
-            <option value="800x800">Amazon Product 800√ó800</option>
-            <option value="1200x628">Facebook Share 1200√ó628</option>
-            <option value="1080x1080">Instagram Post 1080√ó1080</option>
-            <option value="1080x1920">Instagram Story 1080√ó1920</option>
-            <option value="1500x500">Twitter Header 1500√ó500</option>
-            <option value="1200x630">Open Graph 1200√ó630</option>
-            <option value="2560x1440">2K Monitor 2560√ó1440</option>
-            <option value="1920x1080">Full HD 1920√ó1080</option>
-            <option value="3840x2160">4K Ultra HD 3840√ó2160</option>
+            <option value="800x800">Amazon Product 800°¡800</option>
+            <option value="1200x628">Facebook Share 1200°¡628</option>
+            <option value="1080x1080">Instagram Post 1080°¡1080</option>
+            <option value="1080x1920">Instagram Story 1080°¡1920</option>
+            <option value="1500x500">Twitter Header 1500°¡500</option>
+            <option value="1200x630">Open Graph 1200°¡630</option>
+            <option value="2560x1440">2K Monitor 2560°¡1440</option>
+            <option value="1920x1080">Full HD 1920°¡1080</option>
+            <option value="3840x2160">4K Ultra HD 3840°¡2160</option>
         </select>
 
         <div id="customSize" style="display:none;margin-top:12px">
@@ -131,7 +131,7 @@
          <div id="imageInfoContent"></div>
      </div>
 
-    <footer>YuanQiZhiLe Toolkit ‚Äî Design & Media Tools</footer>
+    <footer>YuanQiZhiLe Toolkit °™ Design & Media Tools</footer>
 </div>
 
 <script>
@@ -181,7 +181,7 @@ function renderPreview(){
         reader.onload=(e)=>{
             const div=document.createElement('div');
             div.className='preview-item';
-            div.innerHTML=`<img src="${e.target.result}" alt="${file.name}"><div class="filename">${file.name}</div><button class="remove-btn" data-index="${index}">√ó</button>`;
+            div.innerHTML=`<img src="${e.target.result}" alt="${file.name}"><div class="filename">${file.name}</div><button class="remove-btn" data-index="${index}">°¡</button>`;
             preview.appendChild(div);
             div.querySelector('.remove-btn').onclick=(ev)=>{
                 ev.stopPropagation();
@@ -233,7 +233,7 @@ function showImageInfo(file){
         <p><strong>Type:</strong> ${file.type}</p>
         <p><strong>Size:</strong> ${sizeStr} (${file.size} bytes)</p>
         <p><strong>Last Modified:</strong> ${new Date(file.lastModified).toLocaleString()}</p>
-        <p style="font-size:12px;color:#666;margin-top:8px">üí° Tip: Click on an image preview to see its information</p>
+        <p style="font-size:12px;color:#666;margin-top:8px">?? Tip: Click on an image preview to see its information</p>
     `;
 }
 
@@ -247,17 +247,17 @@ function showNotification(message,type='info'){
 
 // Optimize compression - find best quality setting
 optimizeBtn.onclick=async()=>{
-    if(imageFiles.length===0){showNotification('‚ö†Ô∏è Please upload images first','info');return}
+    if(imageFiles.length===0){showNotification('?? Please upload images first','info');return}
     
     document.getElementById('outputFormat').value='image/webp';
     qualitySlider.value=70;
     qualityValue.textContent='70';
     
     const btn=optimizeBtn;
-    btn.textContent='‚úì Optimized!';
+    btn.textContent='? Optimized!';
     setTimeout(()=>{btn.textContent='Optimize Compression'},2000);
     
-    showNotification('‚úÖ Compression optimized:<br>- Format: WebP (best compression)<br>- Quality: 70%<br>- Click "Process & Download All" to start','success');
+    showNotification('? Compression optimized:<br>- Format: WebP (best compression)<br>- Quality: 70%<br>- Click "Process & Download All" to start','success');
 };
 
 processBtn.onclick=async()=>{
@@ -340,11 +340,11 @@ bookmarkBtn.onclick=()=>{
 function setTheme(isDark){
     if(isDark){
         document.body.classList.add('dark');
-        themeToggle.textContent='‚òÄÔ∏è';
+        themeToggle.textContent='??';
         themeToggle.title='Switch to light mode';
     }else{
         document.body.classList.remove('dark');
-        themeToggle.textContent='üåô';
+        themeToggle.textContent='??';
         themeToggle.title='Switch to dark mode';
     }
     localStorage.setItem('theme',isDark?'dark':'light');

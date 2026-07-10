@@ -1,4 +1,4 @@
-Ôªø<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -74,16 +74,16 @@
         }
     </style>
 </head>
-<body><div class="global-earth-icon" id="globalEarthIcon" title="Switch Language">È¶ÉÂØ™</div>
-<button class="bookmark-btn" id="bookmarkBtn" title="Add to bookmarks">‚≠ê Bookmark</button>
+<body>
+<button class="bookmark-btn" id="bookmarkBtn" title="Add to bookmarks">? Bookmark</button>
 <div class="container">
     <div class="top-bar">
         <h1>Online JSON Formatter / Validator</h1>
         <div class="btns">
             <button id="format">Format</button>
             <button id="minify">Minify</button>
-            <button id="importBtn">üìÇ Import</button>
-            <button id="exportBtn">üíæ Export</button>
+            <button id="importBtn">?? Import</button>
+            <button id="exportBtn">?? Export</button>
             <button id="clear">Clear</button>
             <button id="copy">Copy</button>
         </div>
@@ -111,7 +111,7 @@
     <div class="tree-view" id="treeView"></div>
     <div class="tip" id="errTip"></div>
     <footer>
-        YuanQiZhiLe Toolkit ‚Äî Developer Free Utility Tools
+        YuanQiZhiLe Toolkit °™ Developer Free Utility Tools
     </footer>
 </div>
 <input type="file" id="fileInput" class="file-input-hidden" accept=".json,.txt">
@@ -345,7 +345,7 @@ function buildNode(value,key,name,level){
     if(name!=='root'){
         const copyBtn=document.createElement('button');
         copyBtn.className='tree-copy-btn';
-        copyBtn.textContent='üìã';
+        copyBtn.textContent='??';
         copyBtn.title='Copy this value';
         copyBtn.onclick=(e)=>{
             e.stopPropagation();
@@ -363,7 +363,7 @@ function buildNode(value,key,name,level){
     if(value===null){
         valSpan.innerHTML='<span class="null-val">null</span>';
     }else if(Array.isArray(value)){
-        toggle.textContent='‚ñº';
+        toggle.textContent='®ã';
         if(value.length===0){
             valSpan.innerHTML='<span class="tree-bracket">[]</span>';
         }else{
@@ -376,11 +376,11 @@ function buildNode(value,key,name,level){
             node.appendChild(children);
             toggle.onclick=()=>{
                 children.classList.toggle('collapsed');
-                toggle.textContent=children.classList.contains('collapsed')?'‚ñ∂':'‚ñº';
+                toggle.textContent=children.classList.contains('collapsed')?'?':'®ã';
             };
         }
     }else if(typeof value==='object'){
-        toggle.textContent='‚ñº';
+        toggle.textContent='®ã';
         const keys=Object.keys(value);
         if(keys.length===0){
             valSpan.innerHTML='<span class="tree-bracket">{}</span>';
@@ -394,7 +394,7 @@ function buildNode(value,key,name,level){
             node.appendChild(children);
             toggle.onclick=()=>{
                 children.classList.toggle('collapsed');
-                toggle.textContent=children.classList.contains('collapsed')?'‚ñ∂':'‚ñº';
+                toggle.textContent=children.classList.contains('collapsed')?'?':'®ã';
             };
         }
     }else if(typeof value==='string'){

@@ -213,13 +213,13 @@
     "customDev": "Custom Dev Service",
     "copyright": "All rights reserved."
   },
-  "download": {
+"download": {
     "modalTitle": "Source Code License Agreement",
-    "modalDesc": "By downloading you agree to the following terms:",
-    "term1": "The source code is provided for educational and personal use only.",
-    "term2": "You may modify the code for your own use, but must retain the original copyright notice.",
-    "term3": "Redistribution or commercial use requires explicit permission.",
-    "checkbox": "I have read and agree to the license terms",
+    "modalDesc": "Please read and accept the following terms before downloading:",
+    "term1": "This source code is provided for <strong>personal learning and commercial use</strong>. You may deploy these tools on commercial or ad-supported websites (including Google AdSense), provided that all original copyright notices are preserved.",
+    "term2": "You are <strong>forbidden</strong> from repackaging, reselling, or distributing the source code as a standalone product without substantial modification.",
+    "term3": "All risks arising from local modification and operation of this software are borne by the user themselves. YuanqiZhiKe provides <strong>no technical after-sales support</strong>.",
+    "checkbox": "I have read and agree to the above Source License Terms",
     "cancel": "Cancel",
     "confirm": "Confirm & Download"
   },

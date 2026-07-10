@@ -6,6 +6,8 @@
     <title data-i18n="staticPages.guestbook.title">Feedback - YuanqiZhiKe Toolkit</title>
     <meta name="description" content="Share your feedback, suggestions, or cooperation ideas. We'd love to hear from you." data-i18n="staticPages.guestbook.subtitle">
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- GDPR Cookie Consent - Controls AdSense loading based on user consent -->
+    <script src="assets/js/cookie-consent.js"></script>
     <style>
         /* 留言板专用样式 */
         .gb-hero {
@@ -204,7 +206,7 @@
         }
     </style>
 </head>
-<body><div class="global-earth-icon" id="globalEarthIcon" title="Switch Language">馃寪</div>
+<body>
     <header class="site-header">
         <div class="container header-inner">
             <a href="index.html" class="brand">
@@ -217,12 +219,8 @@
                 <a href="customize.html" data-i18n="nav.customDev">Custom Dev</a>
                 <a href="guestbook.html" data-i18n="nav.feedback">Feedback</a>
                 <a href="license.html" data-i18n="nav.license">License</a>
-                <!-- Language Switcher -->
-                <div class="language-switcher">
-                    <button class="lang-btn" id="languageSwitcher">🇺🇸 English</button>
-                    <div class="lang-dropdown" id="languageDropdown"></div>
-                </div>
             </nav>
+            <div class="global-earth-icon" id="globalEarthIcon" title="Switch Language"></div>
             <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
         </div>
     </header>
@@ -306,7 +304,7 @@
                 <a href="license.html" data-i18n="footer.license">Source License</a>
                 <a href="customize.html" data-i18n="footer.customDev">Custom Dev Service</a>
             </div>
-            <p class="copyright">&copy; <span data-auto-date="year">2026</span> YuanqiZhiKe. <span data-i18n="footer.copyright">All rights reserved.</span></p>
+            <p class="copyright">&copy; <span data-auto-date="year"></span> YuanqiZhiKe. <span data-i18n="footer.copyright">All rights reserved.</span></p>
         </div>
     </footer>
 

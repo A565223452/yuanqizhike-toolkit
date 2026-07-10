@@ -76,7 +76,7 @@ img {
 .header-inner {
     display: flex;
     align-items: center;
-    padding: 16px 20px;
+    padding: 8px 12px;
     max-width: var(--max-width);
     margin: 0 auto;
 }
@@ -96,9 +96,21 @@ img {
 
 .main-nav {
     display: flex;
-    gap: 28px;
-    margin-left: auto;
+    gap: 16px;
     align-items: center;
+    margin-left: auto;
+}
+
+/* --- Global Earth Icon (in header) --- */
+.global-earth-icon {
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+    margin-left: 12px;
+    padding-right: 20px;
+    user-select: none;
+    opacity: 0.8;
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .main-nav > a,
@@ -151,13 +163,12 @@ img {
     min-width: 220px;
     padding: 8px 0;
     z-index: 100;
-    max-height: 60vh;        /* 最大高度占屏幕60%，避免太长 */
-    overflow-y: auto;        /* 超出自动出现垂直滚动条 */
+    max-height: 60vh;
+    overflow-y: auto;
     overflow-x: hidden;
     padding-right: 4px;
 }
 
-/* 美化滚动条 */
 .dropdown-menu::-webkit-scrollbar {
     width: 5px;
 }
@@ -813,97 +824,6 @@ img {
     min-height: 120px;
 }
 
-/* --- Responsive --- */
-@media (max-width: 768px) {
-    .main-nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--bg-color);
-        flex-direction: column;
-        padding: 20px;
-        gap: 16px;
-        border-bottom: 1px solid var(--border-color);
-        box-shadow: var(--shadow-md);
-    }
-
-    .main-nav.open {
-        display: flex;
-    }
-
-    .mobile-menu-btn {
-        display: block;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .tools-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .tool-info-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .tool-sidebar {
-        position: static;
-    }
-
-    .footer-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 16px;
-    }
-
-    .modal-actions {
-        flex-direction: column;
-    }
-
-    .tool-actions {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero {
-        padding: 60px 0 50px;
-    }
-}
-
-/* --- Global Earth Icon --- */
-.global-earth-icon {
-    position: fixed;
-    top: 12px;
-    right: 12px;
-    z-index: 9998;
-    font-size: 1.8rem;
-    cursor: pointer;
-    opacity: 0.6;
-    transition: opacity 0.3s ease;
-    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
-    pointer-events: auto;
-}
-
-.global-earth-icon:hover {
-    opacity: 1;
-}
-
-@media (max-width: 768px) {
-    .global-earth-icon {
-        font-size: 1.5rem;
-        top: 10px;
-        right: 10px;
-    }
-}
-
 /* --- Positioning Section --- */
 .positioning-section {
     padding: 80px 0;
@@ -1049,200 +969,49 @@ img {
     box-shadow: var(--shadow-sm);
 }
 
-/* --- Responsive --- */
-@media (max-width: 768px) {
-    .main-nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--bg-color);
-        flex-direction: column;
-        padding: 20px;
-        gap: 16px;
-        border-bottom: 1px solid var(--border-color);
-        box-shadow: var(--shadow-md);
-    }
-
-    .main-nav.open {
-        display: flex;
-    }
-
-    .mobile-menu-btn {
-        display: block;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .tools-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .tool-info-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .tool-sidebar {
-        position: static;
-    }
-
-    .footer-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 16px;
-    }
-
-    .modal-actions {
-        flex-direction: column;
-    }
-
-    .tool-actions {
-        flex-direction: column;
-    }
-
-    /* Mobile dropdown */
-    .dropdown-menu {
-        position: static;
-        box-shadow: none;
-        border: none;
-        background: var(--bg-light);
-        margin-top: 8px;
-        max-height: none;      /* 移动端不限制高度，跟随主菜单滚动 */
-        overflow-y: visible;
-        padding-right: 0;
-    }
-
-    .nav-dropdown.open .dropdown-menu {
-        display: block;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero {
-        padding: 60px 0 50px;
-    }
-
-    .hero h1 {
-        font-size: 1.6rem;
-    }
-
-    .section-title {
-        font-size: 1.5rem;
-    }
-
-    .tool-card {
-        padding: 24px;
-    }
-
-    .page-content {
-        padding: 40px 0;
-    }
-}
-
-/* --- Global Earth Icon (Fixed Top-Right) --- */
+/* --- Global Earth Icon (in header) --- */
 .global-earth-icon {
-    position: fixed;
-    top: 16px;
-    right: 20px;
-    z-index: 9999;
-    font-size: 1.8rem;
+    font-size: 20px;
     cursor: pointer;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    line-height: 1;
+    margin-left: 12px;
+    padding-right: 20px;
     user-select: none;
+    opacity: 0.8;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.global-earth-icon::before {
+    content: "🌐";
 }
 
 .global-earth-icon:hover {
+    transform: scale(1.15);
     opacity: 1;
 }
 
-@media (max-width: 768px) {
-    .global-earth-icon {
-        font-size: 1.5rem;
-        top: 12px;
-        right: 12px;
-    }
-}
-
-/* --- Language Switcher --- */
-.language-switcher {
-    position: relative;
-    margin-left: 16px;
-}
-
-.lang-btn {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 6px 12px;
-    background: var(--bg-light);
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    font-size: 0.9rem;
-    color: var(--text-color);
-    cursor: pointer;
-    transition: var(--transition);
-    white-space: nowrap;
-}
-
-.lang-btn:hover {
-    background: var(--border-color);
-}
-
-.lang-btn .lang-flag {
-    font-size: 1.1rem;
-}
-
-.lang-btn .lang-name {
-    font-weight: 500;
-}
-
-.lang-btn::after {
-    content: '';
-    border: solid var(--text-color);
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 2px;
-    transform: rotate(45deg);
-    margin-left: 4px;
-    transition: transform 0.2s ease;
-}
-
-.lang-btn.active::after {
-    transform: rotate(-135deg);
-    margin-left: 4px;
-    margin-right: 4px;
-}
-
-.lang-dropdown {
+/* Earth Icon Language Selector Popup */
+.earth-lang-menu {
     display: none;
-    position: absolute;
-    top: calc(100% + 8px);
-    right: 0;
-    min-width: 160px;
+    position: fixed;
+    top: 45px;
+    right: 12px;
+    min-width: 170px;
     background: var(--bg-color);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
-    z-index: 10000;
+    border-radius: 10px;
+    z-index: 10001;
     padding: 6px 0;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
     overflow: hidden;
 }
 
-.lang-dropdown.open {
+.earth-lang-menu.open {
     display: block;
-    animation: dropdownFadeIn 0.2s ease;
+    animation: earthMenuFadeIn 0.2s ease;
 }
 
-@keyframes dropdownFadeIn {
+@keyframes earthMenuFadeIn {
     from {
         opacity: 0;
         transform: translateY(-8px);
@@ -1253,7 +1022,7 @@ img {
     }
 }
 
-.lang-option {
+.earth-lang-option {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -1266,44 +1035,48 @@ img {
     background: none;
     width: 100%;
     text-align: left;
+    line-height: 1.4;
 }
 
-.lang-option:hover {
+.earth-lang-option:hover {
     background: var(--bg-light);
 }
 
-.lang-option.selected {
+.earth-lang-option.selected {
     background: var(--primary-color);
     color: #fff;
 }
 
-.lang-option .lang-flag {
+.earth-lang-option .lang-flag {
     font-size: 1.2rem;
+    line-height: 1;
 }
 
-.lang-option .lang-name {
+.earth-lang-option .lang-name {
     flex: 1;
     font-weight: 500;
 }
 
-.lang-option .check-icon {
+.earth-lang-option .check-icon {
     font-size: 0.9rem;
     opacity: 0;
 }
 
-.lang-option.selected .check-icon {
+.earth-lang-option.selected .check-icon {
     opacity: 1;
 }
 
-/* Mobile language switcher */
+/* Mobile adjustment for earth icon */
 @media (max-width: 768px) {
-    .language-switcher {
-        margin-left: 0;
-        margin-top: 12px;
+    .global-earth-icon {
+        font-size: 24px;
+        top: 12px;
+        right: 12px;
     }
-    
-    .lang-dropdown {
-        right: 0;
-        min-width: 160px;
+
+    .earth-lang-menu {
+        top: 50px;
+        right: 10px;
+        min-width: 150px;
     }
 }

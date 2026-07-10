@@ -30,9 +30,6 @@ const I18N = {
     // Apply translations to page
     this.applyTranslations();
     
-    // Update language switcher UI
-    this.updateLanguageSwitcher();
-    
     // Update HTML lang attribute
     document.documentElement.lang = this.currentLang;
     
@@ -45,10 +42,7 @@ const I18N = {
     // Listen for language changes
     this.setupLangChangeHandler();
     
-    // Bind language switcher button click to toggle dropdown
-    this.setupSwitcherToggle();
-    
-    // Inject global earth icon
+    // Inject global earth icon with language selector
     this.injectEarthIcon();
   },
 
@@ -64,19 +58,33 @@ const I18N = {
   // Load translations for a language
   async loadTranslations(lang) {
     try {
-      const response = await fetch(`locales/${lang}.json`);
-      if (response.ok) {
-        this.translations[lang] = await response.json();
+      // Use XMLHttpRequest for local file:// protocol support
+      const isLocal = window.location.protocol === 'file:';
+      let data;
+      
+      if (isLocal) {
+        // Local file mode - use synchronous XMLHttpRequest
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', `locales/${lang}.json`, false);
+        xhr.send();
+        if (xhr.status === 0 || xhr.status === 200) {
+          data = JSON.parse(xhr.responseText);
+        }
       } else {
-        // Fallback to English
-        console.warn(`Failed to load ${lang} translations, using English fallback.`);
-        const enResponse = await fetch('locales/en.json');
-        this.translations[lang] = enResponse.ok ? await enResponse.json() : {};
-        this.currentLang = 'en';
+        // HTTP mode - use fetch
+        const response = await fetch(`locales/${lang}.json`);
+        if (response.ok) {
+          data = await response.json();
+        }
       }
+      
+      this.translations[lang] = data || {};
     } catch (error) {
-      console.error('Error loading translations:', error);
-      this.translations[lang] = {};
+      console.warn('Error loading translations, using English fallback:', error);
+      if (this.currentLang !== 'en') {
+        this.currentLang = 'en';
+        await this.loadTranslations('en');
+      }
     }
   },
 
@@ -167,34 +175,29 @@ const I18N = {
     });
   },
 
-  // Update language switcher dropdown
+  // Update language switcher dropdown (used by earth icon menu)
   updateLanguageSwitcher() {
-    const switcher = document.getElementById('languageSwitcher');
-    const dropdown = document.getElementById('languageDropdown');
-    
-    if (!switcher || !dropdown) return;
+    const menu = document.getElementById('earthLangMenu');
+    if (!menu) return;
 
-    // Update button display
     const currentLang = this.supportedLangs.find(l => l.code === this.currentLang);
-    if (currentLang) {
-      switcher.innerHTML = `<span class="lang-flag">${currentLang.flag}</span><span class="lang-name">${currentLang.nativeName}</span>`;
-    }
 
     // Build dropdown menu
-    dropdown.innerHTML = this.supportedLangs.map(lang => `
-      <button class="lang-option ${lang.code === this.currentLang ? 'selected' : ''}" data-lang="${lang.code}">
+    menu.innerHTML = this.supportedLangs.map(lang => `
+      <button class="earth-lang-option ${lang.code === this.currentLang ? 'selected' : ''}" data-lang="${lang.code}">
         <span class="lang-flag">${lang.flag}</span>
         <span class="lang-name">${lang.nativeName}</span>
         <span class="check-icon">${lang.code === this.currentLang ? '✓' : ''}</span>
       </button>
     `).join('');
 
-    // Bind click events to dropdown options
-    dropdown.querySelectorAll('.lang-option').forEach(btn => {
+    // Bind click events
+    menu.querySelectorAll('.earth-lang-option').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
         const lang = btn.getAttribute('data-lang');
         this.switchTo(lang);
+        menu.classList.remove('open');
       });
     });
   },
@@ -282,47 +285,38 @@ const I18N = {
     document.head.appendChild(defaultLink);
   },
 
-  // Setup language switcher toggle (click button to open/close dropdown)
-  setupSwitcherToggle() {
-    const switcherBtn = document.getElementById('languageSwitcher');
-    const dropdown = document.getElementById('languageDropdown');
-    if (!switcherBtn || !dropdown) return;
-
-    // Remove any previously bound cloned event to avoid duplicate handlers
-    switcherBtn.removeEventListener('click', this._switcherClickHandler);
-    
-    // Store handler reference so we can remove it later
-    this._switcherClickHandler = (e) => {
-      e.stopPropagation();
-      dropdown.classList.toggle('open');
-      switcherBtn.classList.toggle('active');
-    };
-    switcherBtn.addEventListener('click', this._switcherClickHandler);
-
-    // Close dropdown when clicking outside
-    document.removeEventListener('click', this._outsideClickHandler);
-    this._outsideClickHandler = (e) => {
-      const switcher = document.querySelector('.language-switcher');
-      if (switcher && !switcher.contains(e.target)) {
-        dropdown.classList.remove('open');
-        switcherBtn.classList.remove('active');
-      }
-    };
-    document.addEventListener('click', this._outsideClickHandler);
-  },
-
-  // Inject global earth icon in top-right corner
+  // Inject global earth icon with language selector popup
   injectEarthIcon() {
-    // Check if already injected
     if (document.getElementById('globalEarthIcon')) return;
-    
+
     const earthIcon = document.createElement('div');
     earthIcon.id = 'globalEarthIcon';
     earthIcon.className = 'global-earth-icon';
     earthIcon.textContent = '🌐';
-    earthIcon.title = 'YuanqiZhiKe';
-    earthIcon.setAttribute('aria-label', 'Global website icon');
+    earthIcon.title = 'Switch Language';
     document.body.appendChild(earthIcon);
+
+    // Create language selection popup
+    const langMenu = document.createElement('div');
+    langMenu.id = 'earthLangMenu';
+    langMenu.className = 'earth-lang-menu';
+    document.body.appendChild(langMenu);
+
+    // Populate menu items
+    this.updateLanguageSwitcher();
+
+    // Toggle menu on earth icon click
+    earthIcon.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langMenu.classList.toggle('open');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!earthIcon.contains(e.target) && !langMenu.contains(e.target)) {
+        langMenu.classList.remove('open');
+      }
+    });
   },
 
   // Update Giscus comment section language
