@@ -101,18 +101,6 @@ img {
     margin-left: auto;
 }
 
-/* --- Global Earth Icon (in header) --- */
-.global-earth-icon {
-    font-size: 20px;
-    cursor: pointer;
-    line-height: 1;
-    margin-left: 12px;
-    padding-right: 20px;
-    user-select: none;
-    opacity: 0.8;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
 .main-nav > a,
 .main-nav .nav-dropdown > a {
     font-size: 0.95rem;
@@ -981,6 +969,7 @@ img {
     transition: transform 0.2s ease, opacity 0.2s ease;
     display: flex;
     align-items: center;
+    color: var(--text-color);
 }
 
 .global-earth-icon svg {
