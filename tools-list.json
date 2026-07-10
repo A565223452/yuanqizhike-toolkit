@@ -3403,5 +3403,365 @@
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/math/vector-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-9.svg",
+    "title": "Ai Agent Workflow Planner",
+    "desc": "A free offline tool for ai agent workflow planner calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/ai-agent-workflow-planner.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-10.svg",
+    "title": "Ai Content Detector Lite",
+    "desc": "A free offline tool for ai content detector lite calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/ai-content-detector-lite.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-11.svg",
+    "title": "Ai Detection Score Tool",
+    "desc": "A free offline tool for ai detection score tool calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/ai-detection-score-tool.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-12.svg",
+    "title": "Ai Model Comparison Table",
+    "desc": "A free offline tool for ai model comparison table calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/ai-model-comparison-table.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Ai Prompt Generator",
+    "desc": "A free offline tool for ai prompt generator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/ai-prompt-generator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Ai Writing Style Detector",
+    "desc": "A free offline tool for ai writing style detector calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/ai-writing-style-detector.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Chatgpt System Message Builder",
+    "desc": "A free offline tool for chatgpt system message builder calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/chatgpt-system-message-builder.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Conversation Token Trimmer",
+    "desc": "A free offline tool for conversation token trimmer calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/conversation-token-trimmer.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Dalle Prompt Builder",
+    "desc": "A free offline tool for dalle prompt builder calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/dalle-prompt-builder.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Embedding Cost Estimator",
+    "desc": "A free offline tool for embedding cost estimator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/embedding-cost-estimator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Fine Tune Data Formatter",
+    "desc": "A free offline tool for fine tune data formatter calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/fine-tune-data-formatter.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Image Prompt Builder",
+    "desc": "A free offline tool for image prompt builder calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/image-prompt-builder.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Llm Cost Estimator",
+    "desc": "A free offline tool for llm cost estimator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/llm-cost-estimator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Midjourney Prompt Builder",
+    "desc": "A free offline tool for midjourney prompt builder calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/midjourney-prompt-builder.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Negative Prompt Generator",
+    "desc": "A free offline tool for negative prompt generator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/negative-prompt-generator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Prompt Engineering Cheat Sheet",
+    "desc": "A free offline tool for prompt engineering cheat sheet calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/prompt-engineering-cheat-sheet.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Prompt Template Library",
+    "desc": "A free offline tool for prompt template library calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/prompt-template-library.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Rag Chunker",
+    "desc": "A free offline tool for rag chunker calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/rag-chunker.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Stable Diffusion Prompt Builder",
+    "desc": "A free offline tool for stable diffusion prompt builder calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/stable-diffusion-prompt-builder.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Text Token Counter",
+    "desc": "A free offline tool for text token counter calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/text-token-counter.zip"
+  },
+  {
+    "category": "Audio & Music Tools",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Brake Pad Wear Estimator",
+    "desc": "A free offline tool for brake pad wear estimator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/brake-pad-wear-estimator.zip"
+  },
+  {
+    "category": "Audio & Music Tools",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Car Loan Payoff Calculator",
+    "desc": "A free offline tool for car loan payoff calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/car-loan-payoff-calculator.zip"
+  },
+  {
+    "category": "Audio & Music Tools",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Car Maintenance Schedule",
+    "desc": "A free offline tool for car maintenance schedule calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/car-maintenance-schedule.zip"
+  },
+  {
+    "category": "Audio & Music Tools",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Car Payment Calculator",
+    "desc": "A free offline tool for car payment calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/car-payment-calculator.zip"
+  },
+  {
+    "category": "Audio & Music Tools",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Car Resale Value Calculator",
+    "desc": "A free offline tool for car resale value calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/car-resale-value-calculator.zip"
+  },
+  {
+    "category": "Audio & Music Tools",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Driving Cost Per Mile",
+    "desc": "A free offline tool for driving cost per mile calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/driving-cost-per-mile.zip"
+  },
+  {
+    "category": "Audio & Music Tools",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Ev Charging Cost Calculator",
+    "desc": "A free offline tool for ev charging cost calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/ev-charging-cost-calculator.zip"
+  },
+  {
+    "category": "Audio & Music Tools",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Fuel Cost Calculator",
+    "desc": "A free offline tool for fuel cost calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/fuel-cost-calculator.zip"
+  },
+  {
+    "category": "Audio & Music Tools",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Fuel Cost Comparison",
+    "desc": "A free offline tool for fuel cost comparison calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/fuel-cost-comparison.zip"
+  },
+  {
+    "category": "Audio & Music Tools",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Mpg Calculator",
+    "desc": "A free offline tool for mpg calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/mpg-calculator.zip"
+  },
+  {
+    "category": "Audio & Music Tools",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Road Trip Planner",
+    "desc": "A free offline tool for road trip planner calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/road-trip-planner.zip"
+  },
+  {
+    "category": "Audio & Music Tools",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Tire Pressure Calculator",
+    "desc": "A free offline tool for tire pressure calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/tire-pressure-calculator.zip"
+  },
+  {
+    "category": "Audio & Music Tools",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Tire Size Calculator",
+    "desc": "A free offline tool for tire size calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/tire-size-calculator.zip"
+  },
+  {
+    "category": "Audio & Music Tools",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Trip Mileage Log",
+    "desc": "A free offline tool for trip mileage log calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/trip-mileage-log.zip"
+  },
+  {
+    "category": "Audio & Music Tools",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Vehicle Depreciation",
+    "desc": "A free offline tool for vehicle depreciation calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/vehicle-depreciation.zip"
+  },
+  {
+    "category": "Cars & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Car Payment Calculator",
+    "desc": "A free offline tool for car payment calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cars/car-payment-calculator.zip"
+  },
+  {
+    "category": "Cars & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Ev Range Calculator",
+    "desc": "A free offline tool for ev range calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cars/ev-range-calculator.zip"
+  },
+  {
+    "category": "Cars & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Fuel Cost Calculator",
+    "desc": "A free offline tool for fuel cost calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cars/fuel-cost-calculator.zip"
+  },
+  {
+    "category": "Cars & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Oil Change Interval",
+    "desc": "A free offline tool for oil change interval calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cars/oil-change-interval.zip"
+  },
+  {
+    "category": "Cars & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Tire Size Converter",
+    "desc": "A free offline tool for tire size converter calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cars/tire-size-converter.zip"
   }
 ]
