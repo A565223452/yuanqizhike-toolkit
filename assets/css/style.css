@@ -485,23 +485,6 @@ img {
     opacity: 0.7;
 }
 
-/* --- Comments Section (Giscus) --- */
-.comments-section {
-    padding: 48px 0;
-    background: var(--bg-light);
-    border-top: 1px solid var(--border-color);
-}
-
-.comments-section .section-title {
-    text-align: center;
-    margin-bottom: 32px;
-}
-
-.comments-section .giscus {
-    max-width: 100%;
-    overflow: hidden;
-}
-
 /* --- Page Content Layout --- */
 .page-content {
     padding: 60px 0;
