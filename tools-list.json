@@ -10,7 +10,7 @@
       "Synonym Dictionary",
       "One-Click Copy"
     ],
-    "detailUrl": "tools/article-rewrite/index.html",
+    "detailUrl": "/tools/article-rewrite/index.html",
     "zipUrl": "/assets/zip-packages/writing/article-rewrite.zip"
   },
   {
@@ -26,7 +26,7 @@
       "Export File",
       "Copy Node"
     ],
-    "detailUrl": "tools/json-formatter/index.html",
+    "detailUrl": "/tools/json-formatter/index.html",
     "zipUrl": "/assets/zip-packages/dev/json-formatter.zip"
   },
   {
@@ -41,7 +41,7 @@
       "WCAG Contrast Checker",
       "Export CSS Variables"
     ],
-    "detailUrl": "tools/color-converter/index.html",
+    "detailUrl": "/tools/color-converter/index.html",
     "zipUrl": "/assets/zip-packages/dev/color-converter.zip"
   },
   {
@@ -58,7 +58,7 @@
       "Batch Processing",
       "Hash Generator"
     ],
-    "detailUrl": "tools/base64-url-tool/index.html",
+    "detailUrl": "/tools/base64-url-tool/index.html",
     "zipUrl": "/assets/zip-packages/dev/base64-url-tool.zip"
   },
   {
@@ -72,7 +72,7 @@
       "JPG/PNG/WebP/BMP",
       "Quality Control"
     ],
-    "detailUrl": "tools/image-converter/index.html",
+    "detailUrl": "/tools/image-converter/index.html",
     "zipUrl": "/assets/zip-packages/design/image-converter.zip"
   },
   {
@@ -380,7 +380,7 @@
       "Word Frequency",
       "Local Processing"
     ],
-    "detailUrl": "tools/word-counter/index.html",
+    "detailUrl": "/tools/word-counter/index.html",
     "zipUrl": "/assets/zip-packages/writing/word-counter.zip"
   },
   {
@@ -523,7 +523,7 @@
       "One-Click Copy",
       "Export CSS Variables"
     ],
-    "detailUrl": "tools/color-converter/index.html",
+    "detailUrl": "/tools/color-converter/index.html",
     "zipUrl": "/assets/zip-packages/design/color-converter.zip"
   },
   {
@@ -657,7 +657,7 @@
       "File Integrity",
       "Secure Generation"
     ],
-    "detailUrl": "tools/hash-generator/index.html",
+    "detailUrl": "/tools/hash-generator/index.html",
     "zipUrl": "/assets/zip-packages/dev/hash-generator.zip"
   },
   {
@@ -941,7 +941,7 @@
       "PNG and SVG Export",
       "Batch Generation"
     ],
-    "detailUrl": "tools/qr-code-generator/index.html",
+    "detailUrl": "/tools/qr-code-generator/index.html",
     "zipUrl": "/assets/zip-packages/dev/qr-code-generator.zip"
   },
   {
@@ -1005,7 +1005,7 @@
       "Reserved words filter",
       "Local privacy"
     ],
-    "detailUrl": "tools/url-slug-generator/index.html",
+    "detailUrl": "/tools/url-slug-generator/index.html",
     "zipUrl": "/assets/zip-packages/dev/url-slug-generator.zip"
   },
   {
@@ -1115,7 +1115,7 @@
       "Batch Conversion",
       "Local Processing"
     ],
-    "detailUrl": "tools/unix-timestamp-converter/index.html",
+    "detailUrl": "/tools/unix-timestamp-converter/index.html",
     "zipUrl": "/assets/zip-packages/dev/unix-timestamp-converter.zip"
   },
   {
@@ -1146,7 +1146,7 @@
       "RFC4122 Compliant",
       "No Installation Required"
     ],
-    "detailUrl": "tools/uuid-generator/index.html",
+    "detailUrl": "/tools/uuid-generator/index.html",
     "zipUrl": "/assets/zip-packages/dev/uuid-generator.zip"
   },
   {
@@ -1836,7 +1836,7 @@
       "Character Sets",
       "No Data Sent"
     ],
-    "detailUrl": "tools/password-generator/index.html",
+    "detailUrl": "/tools/password-generator/index.html",
     "zipUrl": "/assets/zip-packages/dev/password-generator.zip"
   },
   {
@@ -3739,10 +3739,16 @@
   },
   {
     "category": "Cars & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
+    "icon": "/assets/icons/cars-3.svg",
     "title": "Fuel Cost Calculator",
-    "desc": "A free offline tool for fuel cost calculator calculations. Works in your browser.",
-    "features": [],
+    "desc": "Calculate trip fuel expenses instantly with our free online calculator. Input distance, MPG, and gas prices to estimate costs, split fares among passengers, and compare gasoline versus electric vehicle savings.",
+    "features": [
+      "Calculate trip fuel costs",
+      "Support MPG and L100km units",
+      "Split expenses among passengers",
+      "Compare gas and EV costs",
+      "Convert miles and kilometers"
+    ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/cars/fuel-cost-calculator.zip"
   },
@@ -3943,5 +3949,161 @@
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/ai/rag-chunker.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-10.svg",
+    "title": "Brake Pad Wear Estimator",
+    "desc": "A free offline tool for brake pad wear estimator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/brake-pad-wear-estimator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-11.svg",
+    "title": "Car Loan Payoff Calculator",
+    "desc": "A free offline tool for car loan payoff calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/car-loan-payoff-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Car Maintenance Schedule",
+    "desc": "A free offline tool for car maintenance schedule calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/car-maintenance-schedule.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-8.svg",
+    "title": "Car Payment Calculator",
+    "desc": "Calculate your exact monthly car payment and total loan cost instantly. Factor in down payments, trade-in values, interest rates, sales tax, and fees for accurate auto financing estimates.",
+    "features": [
+      "Calculate monthly auto payments",
+      "Factor in trade-in value",
+      "Include sales tax and fees",
+      "View total loan cost breakdown",
+      "Adjustable loan term options"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/finance/car-payment-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Car Resale Value Calculator",
+    "desc": "A free offline tool for car resale value calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/car-resale-value-calculator.zip"
+  },
+  {
+    "category": "Cars & Vehicles",
+    "icon": "/assets/icons/cars-2.svg",
+    "title": "Driving Cost Per Mile Calculator",
+    "desc": "Calculate your true vehicle operating expenses with this comprehensive driving cost per mile calculator. Track fuel, depreciation, insurance, and maintenance to make smarter automotive financial decisions.",
+    "features": [
+      "Calculate total cost per mile",
+      "Track fuel and depreciation costs",
+      "Break down annual ownership expenses",
+      "Instant real-time cost analysis",
+      "Comprehensive expense category breakdown"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cars/driving-cost-per-mile.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Ev Charging Cost Calculator",
+    "desc": "A free offline tool for ev charging cost calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/ev-charging-cost-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Fuel Cost Comparison",
+    "desc": "A free offline tool for fuel cost comparison calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/fuel-cost-comparison.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Mpg Calculator",
+    "desc": "A free offline tool for mpg calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/mpg-calculator.zip"
+  },
+  {
+    "category": "Travel Tools",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Road Trip Planner",
+    "desc": "Plan your next adventure with our free road trip planner. Calculate fuel, tolls, meals, and hotel costs while estimating drive time, rest stops, and per-person expenses for a stress-free journey.",
+    "features": [
+      "Calculate fuel and toll costs",
+      "Estimate drive time and rest stops",
+      "Budget meals and hotel expenses",
+      "Split total costs per passenger",
+      "Support metric and imperial units"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/road-trip-planner.zip"
+  },
+  {
+    "category": "Cars & Vehicles",
+    "icon": "/assets/icons/cars-4.svg",
+    "title": "Tire Pressure Calculator",
+    "desc": "Calculate optimal tire pressure for your car or truck based on weight, load, and temperature. Get precise PSI recommendations, compare with door stickers, and ensure safe driving with this free online tool.",
+    "features": [
+      "Calculate optimal PSI per tire",
+      "Adjust for temperature changes",
+      "Compare with door sticker values",
+      "Support cars, trucks, and motorcycles",
+      "Instant cold and hot pressure results"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cars/tire-pressure-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Tire Size Calculator",
+    "desc": "A free offline tool for tire size calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/tire-size-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Trip Mileage Log",
+    "desc": "A free offline tool for trip mileage log calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/trip-mileage-log.zip"
+  },
+  {
+    "category": "Cars & Vehicles",
+    "icon": "/assets/icons/cars-5.svg",
+    "title": "Vehicle Depreciation Calculator",
+    "desc": "Track your car's value loss over time with our free vehicle depreciation calculator. Enter purchase price, type, mileage, and condition to get a detailed year-by-year breakdown and optimal selling advice.",
+    "features": [
+      "Year-by-year value projection",
+      "Adjust for vehicle type and mileage",
+      "Condition-based depreciation multiplier",
+      "Optimal selling time insights",
+      "Detailed financial breakdown table"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cars/vehicle-depreciation.zip"
   }
 ]

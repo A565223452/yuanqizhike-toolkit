@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="categories.securityPrivacy.title">Security & Privacy - YuanqiZhiKe Toolkit</title>
     <meta name="description" content="Free offline security and privacy tools. Password generators, AES encryptors, hash generators, and encryption utilities. Your data never leaves your browser." data-i18n="categories.securityPrivacy.desc" data-i18n-attr="content">
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <!-- GDPR Cookie Consent - Controls AdSense loading based on user consent -->
-    <script src="../assets/js/cookie-consent.js"></script>
+    <script src="/assets/js/cookie-consent.js"></script>
 </head>
 <body><header class="site-header">
     <div class="container header-inner">
@@ -126,12 +126,12 @@
     </footer>
 
     
-    <script src="../assets/js/i18n.js"></script>
-    <script src="../assets/js/main.js"></script>
-    <script src="../assets/js/date-utils.js"></script>
+    <script src="/assets/js/i18n.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/date-utils.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            fetch('../tools-list.json')
+            fetch('/tools-list.json')
                 .then(function (response) {
                     return response.json();
                 })
@@ -203,7 +203,7 @@
 
             var iconPath = tool.icon;
             if (iconPath && (iconPath.indexOf('assets/') === 0 || iconPath.indexOf('.svg') === iconPath.length - 4)) {
-                iconPath = '../' + iconPath;
+                iconPath = '/' + iconPath;
             }
             var iconHtml = '';
             var isSvgIcon = tool.icon && (tool.icon.indexOf('assets/') === 0 || tool.icon.indexOf('.svg') === tool.icon.length - 4);
