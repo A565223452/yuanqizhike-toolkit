@@ -117,48 +117,41 @@
   },
   {
     "category": "Business & Productivity",
-    "icon": "assets/icons/business-33.svg",
+    "icon": "/assets/icons/business-1.svg",
     "title": "Invoice Generator",
-    "desc": "Create professional invoices with auto-calculated taxes, customizable templates, and instant PDF export for freelancers and small businesses.",
+    "desc": "A free offline tool for invoice generator calculations. Works in your browser.",
     "features": [
-      "Auto Tax Calculation",
-      "PDF Export",
-      "Custom Templates",
-      "Client Management",
-      "Professional Layout",
-      "Local Privacy"
+      "Easy to use",
+      "Works offline"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/business/invoice-generator.zip"
   },
   {
     "category": "Business & Productivity",
-    "icon": "assets/icons/business-2.svg",
+    "icon": "/assets/icons/business-1.svg",
     "title": "Quotation Generator",
-    "desc": "Create professional trade quotations with itemized pricing, tax calculations, and instant PDF export for seamless business transactions.",
+    "desc": "Generate professional price quotes for international trade with our free online quotation generator. Add products, calculate totals, apply discounts and taxes, and export as a printable PDF.",
     "features": [
-      "Itemized Pricing",
-      "Tax Calculation",
-      "PDF Export",
-      "Discount Support",
-      "Terms Management",
-      "Client Details"
+      "Add itemized products",
+      "Calculate subtotal and total",
+      "Apply discounts and taxes",
+      "Print or save as PDF"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/business/quotation-generator.zip"
   },
   {
     "category": "Business & Productivity",
-    "icon": "assets/icons/business-50.svg",
+    "icon": "/assets/icons/business-1.svg",
     "title": "Shipping Cost Estimator",
-    "desc": "Calculate domestic and international shipping costs instantly. Compare carrier rates based on weight, dimensions, and destination zones.",
+    "desc": "Estimate international shipping costs for e-commerce with our free online calculator. Compare rates by weight, dimensions, destination zone, and shipping method. Get detailed cost breakdown including fuel surcharge, insurance, and tax.",
     "features": [
-      "Estimate Shipping Costs",
-      "Compare Carrier Rates",
-      "Dimension Calculator",
-      "Insurance Options",
-      "Domestic & International",
-      "Privacy Focused"
+      "Weight and dimension input",
+      "Multiple shipping methods",
+      "Zone-based rate calculation",
+      "Insurance and value options",
+      "Detailed cost breakdown"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/business/shipping-cost-estimator.zip"
@@ -180,16 +173,12 @@
   },
   {
     "category": "Business & Productivity",
-    "icon": "assets/icons/business-16.svg",
+    "icon": "/assets/icons/business-1.svg",
     "title": "Batch File Renamer",
-    "desc": "Rename multiple files instantly with prefixes, suffixes, numbering, and regex patterns directly in your browser.",
+    "desc": "A free offline tool for batch file renamer calculations. Works in your browser.",
     "features": [
-      "Add Prefixes And Suffixes",
-      "Sequential Numbering",
-      "Find And Replace Text",
-      "Regex Pattern Support",
-      "Real-time Preview",
-      "Local Browser Processing"
+      "Easy to use",
+      "Works offline"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/business/batch-file-renamer.zip"
@@ -227,16 +216,12 @@
   },
   {
     "category": "Business & Productivity",
-    "icon": "assets/icons/business-18.svg",
-    "title": "EAN Barcode Generator",
-    "desc": "Generate EAN-13, UPC-A, and ISBN barcodes in bulk locally. Validate checksums and export high-quality PNG images instantly.",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Ean Barcode Generator",
+    "desc": "A free offline tool for ean barcode generator calculations. Works in your browser.",
     "features": [
-      "Batch Generation",
-      "Checksum Validation",
-      "Custom Dimensions",
-      "Local Processing",
-      "PNG Export",
-      "ISBN Support"
+      "Easy to use",
+      "Works offline"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/business/ean-barcode-generator.zip"
@@ -258,12 +243,15 @@
   },
   {
     "category": "Business & Productivity",
-    "icon": "assets/icons/business-1.svg",
-    "title": "Sku Generator",
-    "desc": "Sku Generator - a handy browser-based tool.",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Batch SKU Generator",
+    "desc": "Generate unique product SKU codes in bulk with custom patterns, prefixes, categories, and sequential numbering. Fully local processing ensures privacy and speed.",
     "features": [
-      "Easy to use",
-      "Works offline"
+      "Custom pattern builder",
+      "Bulk generation up to 5000",
+      "Duplicate prevention",
+      "Copy and download results",
+      "Local no-upload processing"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/business/sku-generator.zip"
@@ -1841,16 +1829,15 @@
   },
   {
     "category": "Business & Productivity",
-    "icon": "/assets/icons/business-2.svg",
+    "icon": "/assets/icons/business-1.svg",
     "title": "Pomodoro Timer",
-    "desc": "Distraction-free focus timer with customizable work sprints, break intervals, sound alerts, and daily session tracking for enhanced productivity.",
+    "desc": "Boost your productivity with our free online Pomodoro timer. Customize focus and break durations, track sessions, and stay on task using the proven time management technique.",
     "features": [
-      "Custom Durations",
-      "Sound Alerts",
-      "Daily Tracking",
-      "Dark Mode",
-      "Browser Notifications",
-      "Focus Sprints"
+      "Customizable work/break durations",
+      "Session tracking with history",
+      "Auto-start next session",
+      "Sound notifications",
+      "Today's focus stats"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/business/pomodoro-timer.zip"
@@ -4105,5 +4092,1206 @@
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/cars/vehicle-depreciation.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "AI Agent Workflow Planner",
+    "desc": "Plan multi-step AI agent workflows with our free online planner. Define nodes, inputs, outputs, and tools. Export as JSON for LangGraph/AutoGen or as Mermaid diagrams for visual representation.",
+    "features": [
+      "Define multi-step agent nodes",
+      "Export as JSON or Mermaid",
+      "Supports LLM, Tool, Router, Human types",
+      "Configurable iterations and memory",
+      "No signup required"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/ai-agent-workflow-planner.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "AI Content Detector Lite",
+    "desc": "Detect AI-generated text with our free heuristic-based analyzer. Analyzes sentence length variance, vocabulary diversity, and repetitive patterns to estimate AI probability. No upload required, runs entirely in your browser.",
+    "features": [
+      "Heuristic AI detection",
+      "Sentence variance analysis",
+      "Vocabulary diversity check",
+      "Pattern repetition detection",
+      "Free and private"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/ai-content-detector-lite.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "AI Detection Score Tool",
+    "desc": "Free heuristic AI content detector that analyzes text for AI-generated patterns using perplexity, burstiness, common AI phrases, and vocabulary richness. Get an instant AI score and signal breakdown to assess if text is likely human-written or AI-generated.",
+    "features": [
+      "Instant AI scoring",
+      "Perplexity and burstiness metrics",
+      "AI phrase frequency detection",
+      "Vocabulary richness analysis",
+      "Signal breakdown visualization"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/ai-detection-score-tool.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "AI Model Comparison Table",
+    "desc": "Compare features, pricing, and capabilities of major LLMs including GPT-4, Claude, Gemini, and Llama. Free AI model comparison reference for developers to choose the best model for their needs.",
+    "features": [
+      "Search models by name",
+      "Filter by vendor",
+      "Compare context and pricing",
+      "View multimodal support",
+      "Quick recommendations"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/ai-model-comparison-table.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "AI Prompt Generator",
+    "desc": "Generate effective AI prompts with our free online prompt engineering tool. Add role, context, examples, and constraints to craft perfect prompts for ChatGPT and other AI models.",
+    "features": [
+      "Role and persona selection",
+      "Output format options",
+      "Tone and length control",
+      "Context and constraints input",
+      "Instant prompt generation"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/ai-prompt-generator.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "AI Writing Style Detector",
+    "desc": "Analyze your writing style with our free AI Writing Style Detector. Get insights on tone, formality, sentence complexity, readability, and AI-likeness. Perfect for editors and writers.",
+    "features": [
+      "Tone and formality analysis",
+      "Readability score (Flesch)",
+      "Sentence complexity metrics",
+      "AI-likeness estimation",
+      "Vocabulary richness check"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/ai-writing-style-detector.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Car Battery Size Selector",
+    "desc": "Find the right car battery group size for your vehicle with our free online selector. Compare BCI group dimensions, CCA ratings, and get recommendations based on vehicle type and climate.",
+    "features": [
+      "Vehicle type selection",
+      "Climate-based CCA filtering",
+      "BCI group size chart",
+      "Instant battery recommendations",
+      "Compare dimensions and specs"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/battery-size-selector.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Brake Pad Wear Estimator",
+    "desc": "Estimate brake pad wear and replacement timing with our free online calculator. Input current thickness, mileage, driving style, and vehicle type to get accurate lifespan predictions and maintenance alerts.",
+    "features": [
+      "Current thickness input",
+      "Driving style selection",
+      "Replacement timing estimate",
+      "Wear rate calculation",
+      "Maintenance status alerts"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/brake-pad-wear-estimator.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Car Depreciation Calculator",
+    "desc": "Calculate your car's depreciation over time with our free online tool. Estimate yearly value loss based on purchase price, vehicle type, and annual mileage. Plan your car's resale value accurately.",
+    "features": [
+      "Yearly depreciation schedule",
+      "Multiple vehicle types",
+      "Annual mileage adjustment",
+      "Total value loss calculation",
+      "Break-even year estimate"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/car-depreciation-calculator.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Car Loan Payoff Calculator",
+    "desc": "Calculate how extra payments can accelerate your car loan payoff. See months saved and interest reduced with our free auto loan payoff calculator. Plan your early payoff strategy.",
+    "features": [
+      "Extra payment simulation",
+      "Biweekly payment option",
+      "Lump sum calculation",
+      "Interest savings comparison",
+      "Payoff time comparison"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/car-loan-payoff-calculator.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Car Maintenance Schedule Calculator",
+    "desc": "Plan your vehicle's maintenance schedule based on mileage, vehicle type, and driving conditions. Get service intervals for oil changes, tire rotation, brake inspection, and more. Free online tool.",
+    "features": [
+      "Mileage-based service intervals",
+      "Supports gas, diesel, hybrid, electric",
+      "Normal and severe driving conditions",
+      "Upcoming and past due services",
+      "Cost estimates for each service"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/car-maintenance-schedule.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Car Payment Calculator",
+    "desc": "Calculate monthly car payments and total loan cost with our free auto loan calculator. Enter vehicle price, down payment, trade-in value, interest rate, and loan term for instant results.",
+    "features": [
+      "Monthly payment calculation",
+      "Total loan cost breakdown",
+      "Down payment and trade-in",
+      "Interest rate and term options",
+      "Sales tax and fees included"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/car-payment-calculator.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Car Resale Value Calculator",
+    "desc": "Estimate your car's resale value over time with our free depreciation calculator. Input purchase price, age, mileage, and vehicle type to get current and future worth.",
+    "features": [
+      "Purchase price input",
+      "Depreciation analysis",
+      "Future value projection",
+      "Mileage penalty calculation",
+      "Vehicle type selection",
+      "Condition adjustment"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/car-resale-value-calculator.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "ChatGPT System Message Builder",
+    "desc": "Build custom system messages for ChatGPT API. Define assistant role, behavior, response format, expertise areas, and constraints. Free online tool for developers and LLM users.",
+    "features": [
+      "Role and behavior configuration",
+      "Response format selection",
+      "Constraint and rule setting",
+      "One-click system message generation",
+      "Copy as text or JSON"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/chatgpt-system-message-builder.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Conversation Token Trimmer",
+    "desc": "Trim conversation history to fit token limits with smart truncation. Preserve system messages and recent context. Free online LLM context trimmer for developers and AI users.",
+    "features": [
+      "Smart truncation strategies",
+      "Preserve system message",
+      "Recent context retention",
+      "Token limit estimation",
+      "Copy trimmed output"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/conversation-token-trimmer.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "DALL-E Prompt Builder",
+    "desc": "Build optimized DALL-E 3 prompts with natural language descriptions. Choose style, mood, lighting, composition, and more to generate detailed image prompts for OpenAI's DALL-E 3.",
+    "features": [
+      "Natural language input",
+      "Style and mood selection",
+      "Aspect ratio options",
+      "One-click prompt generation",
+      "Copy to clipboard support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/dalle-prompt-builder.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Driving Cost Per Mile Calculator",
+    "desc": "Calculate the true cost per mile of driving with our free online calculator. Includes fuel, depreciation, maintenance, insurance, registration, and parking costs. Perfect for budgeting and comparing vehicle expenses.",
+    "features": [
+      "Depreciation cost calculation",
+      "Fuel cost per mile",
+      "Annual ownership estimate",
+      "Cost breakdown by category",
+      "Supports multiple expense inputs"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/driving-cost-per-mile.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Embedding Cost Estimator",
+    "desc": "Estimate embedding API costs for OpenAI, Cohere, Voyage, and custom providers. Calculate token count, dimensions, and total cost per call or per month. Free online tool for developers building RAG or vector search applications.",
+    "features": [
+      "Multi-provider support",
+      "Token and cost calculation",
+      "File upload support",
+      "Custom pricing option",
+      "Storage estimation"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/embedding-cost-estimator.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "EV Charging Cost Calculator",
+    "desc": "Calculate electric vehicle charging costs instantly with our free EV charging cost calculator. Estimate home and public charging expenses based on battery size, efficiency, and electricity rates.",
+    "features": [
+      "Battery size input",
+      "Charging location selection",
+      "Cost breakdown details",
+      "Monthly and annual estimates"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/ev-charging-cost-calculator.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Fine-tune Data Formatter",
+    "desc": "Format data for LLM fine-tuning with our free online tool. Convert Q&A pairs to JSONL for OpenAI, Anthropic, and other providers. Prepare your fine-tune dataset easily.",
+    "features": [
+      "Multiple output formats",
+      "Custom separator support",
+      "System message integration",
+      "Dataset statistics display",
+      "One-click JSONL generation"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/fine-tune-data-formatter.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Fuel Cost Calculator",
+    "desc": "Calculate trip fuel costs instantly with our free fuel cost calculator. Enter distance, vehicle efficiency, and fuel price to get accurate cost estimates. Supports MPG, L/100km, and cost per person.",
+    "features": [
+      "Trip distance input",
+      "Multiple efficiency units",
+      "Cost per person split",
+      "Round trip support",
+      "EV cost comparison"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/fuel-cost-calculator.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Car Fuel Cost Calculator",
+    "desc": "Calculate your trip fuel expenses instantly with our free car fuel cost calculator. Enter distance, MPG or L/100km, and gas price to estimate total cost, driving time, and carbon footprint.",
+    "features": [
+      "Trip distance input",
+      "Fuel efficiency conversion",
+      "Gas price estimation",
+      "Round trip calculation",
+      "Driving time estimate",
+      "Carbon footprint calculation"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/fuel-cost-calculator-car.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Fuel Cost Comparison: Gas vs EV vs Hybrid",
+    "desc": "Compare fuel costs between gas, electric, and hybrid vehicles over years of ownership. Enter annual mileage, fuel prices, and efficiency to calculate total cost, cost per mile, and lifetime savings. Free online vehicle fuel comparison tool.",
+    "features": [
+      "Gas vs EV vs Hybrid comparison",
+      "Lifetime cost calculation",
+      "Cost per mile breakdown",
+      "Customizable charging mix",
+      "No signup required"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/fuel-cost-comparison.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Image Prompt Builder",
+    "desc": "Build detailed image prompts for Midjourney, DALL-E, and Stable Diffusion. Customize subject, art style, lighting, composition, mood, and aspect ratio to generate optimized AI art prompts.",
+    "features": [
+      "Custom subject and style",
+      "Lighting and composition options",
+      "Mood and color palette",
+      "Aspect ratio presets",
+      "Multi-platform support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/image-prompt-builder.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Kilometers to Miles Converter",
+    "desc": "Convert kilometers to miles instantly with our free online distance converter. Supports meters, feet, yards, running pace, and driving time estimates. Perfect for runners, cyclists, and travelers.",
+    "features": [
+      "Instant km to mi conversion",
+      "Multiple unit display",
+      "Running pace conversion",
+      "Driving time estimates",
+      "Common distance references"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/km-to-miles.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "L/100km to MPG Converter",
+    "desc": "Convert fuel consumption between L/100km and MPG instantly with our free bidirectional converter. Supports US and UK gallons, km/L, and includes a reference table for common fuel economy ratings.",
+    "features": [
+      "Bidirectional L/100km ↔ MPG",
+      "US and UK MPG support",
+      "Instant conversion results",
+      "Reference table for common values"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/l-100km-to-mpg.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "LLM Cost Estimator",
+    "desc": "Estimate the cost of using large language models like GPT-4, Claude, and Gemini. Input token counts and compare pricing across models to budget your AI API usage.",
+    "features": [
+      "Multi-model cost comparison",
+      "Input and output token counts",
+      "Real-time price calculation",
+      "Supports major LLM providers"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/llm-cost-estimator.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Midjourney Prompt Builder",
+    "desc": "Build optimized Midjourney prompts with parameters like style, aspect ratio, stylize, and chaos. Free online tool to craft detailed AI art prompts for stunning image generation.",
+    "features": [
+      "Preset style selection",
+      "Aspect ratio options",
+      "Stylize and chaos sliders",
+      "Artist reference input",
+      "One-click prompt copy"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/midjourney-prompt-builder.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Miles to Kilometers Converter",
+    "desc": "Convert miles to kilometers instantly with our free online converter. Supports bidirectional conversion, common distance references, and driving time estimates for travel, running, and driving.",
+    "features": [
+      "Bidirectional conversion",
+      "Common distance references",
+      "Driving time estimates",
+      "Multiple unit display",
+      "No signup required"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/miles-to-km.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "MPG Calculator",
+    "desc": "Calculate your car fuel efficiency in MPG (miles per gallon). Track gas mileage and improve fuel economy with our free online MPG calculator.",
+    "features": [
+      "Calculate MPG from distance and fuel",
+      "Convert between MPG, L/100km, km/L",
+      "Estimate fuel cost per trip",
+      "Compare to US average efficiency",
+      "Get fuel saving tips"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/mpg-calculator.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Negative Prompt Generator",
+    "desc": "Generate effective negative prompts for Stable Diffusion and AI image generators. Exclude quality issues, anatomy flaws, style mismatches, and custom elements to improve image output.",
+    "features": [
+      "Select image type",
+      "Toggle quality exclusions",
+      "Add custom exclusions",
+      "Generate and copy prompt"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/negative-prompt-generator.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Prompt Engineering Cheat Sheet",
+    "desc": "Master prompt engineering with this free interactive cheat sheet. Learn few-shot, chain-of-thought, RAG, and advanced techniques to improve AI interactions and output quality.",
+    "features": [
+      "Search techniques by name",
+      "Filter by category",
+      "View examples and usage",
+      "Covers basic to advanced methods",
+      "Free and easy to use"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/prompt-engineering-cheat-sheet.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Prompt Template Library",
+    "desc": "Browse our curated prompt template library organized by category. Copy ready-to-use prompts for ChatGPT, Claude, Midjourney, and more. Free online tool for writers, marketers, and developers.",
+    "features": [
+      "Search by keyword",
+      "Filter by category",
+      "Filter by AI tool",
+      "Copy to clipboard",
+      "Interactive template filling"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/prompt-template-library.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "RAG Text Chunker",
+    "desc": "Split long text into chunks for Retrieval Augmented Generation (RAG). Configurable chunk size, overlap, and strategy. Free online tool for AI developers to prepare documents for vector databases.",
+    "features": [
+      "Multiple chunking strategies",
+      "Configurable chunk size and overlap",
+      "Separator preference for clean breaks",
+      "Download results as JSON or TXT",
+      "Trim whitespace option"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/rag-chunker.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Road Trip Planner",
+    "desc": "Plan your road trip with our free online calculator. Estimate fuel, tolls, food, hotel costs, drive time, and rest stops. Get a complete budget breakdown per person for your journey.",
+    "features": [
+      "Total cost estimation",
+      "Drive time calculation",
+      "Per-person cost breakdown",
+      "Customizable inputs",
+      "Rest stop planning",
+      "Fuel cost calculator"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/road-trip-planner.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Speed Converter",
+    "desc": "Convert speed units instantly with our free online speed converter. Supports mph, km/h, m/s, knots, ft/s, and Mach. Ideal for cars, planes, sports, and everyday use.",
+    "features": [
+      "Instant unit conversion",
+      "Supports 6 speed units",
+      "Contextual speed comparison",
+      "Reference speed table",
+      "Dark mode support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/speed-converter.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Stable Diffusion Prompt Builder",
+    "desc": "Build detailed Stable Diffusion prompts with positive and negative tags, sampler settings, CFG scale, and more. Free online tool for AI image generation enthusiasts.",
+    "features": [
+      "Positive and negative prompts",
+      "Sampler and CFG settings",
+      "Preset style templates",
+      "Quick copy to clipboard",
+      "Dark mode support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/stable-diffusion-prompt-builder.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Text Token Counter",
+    "desc": "Count tokens for GPT, Claude, and other LLMs with our free online token counter. Estimate API costs and context window usage before sending prompts. Perfect for AI/ML developers.",
+    "features": [
+      "Multi-model support",
+      "Token and cost estimation",
+      "Context window tracking",
+      "Character and word count",
+      "Reading time estimate"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/text-token-counter.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Tire Pressure Calculator",
+    "desc": "Calculate recommended tire pressure based on vehicle weight, tire load rating, and temperature. Adjust for load conditions and compare with door sticker PSI for optimal safety and fuel efficiency.",
+    "features": [
+      "Vehicle weight input",
+      "Temperature adjustment",
+      "Load condition selection",
+      "Door sticker comparison",
+      "Cold and hot pressure"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/tire-pressure-calculator.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Tire Pressure Converter",
+    "desc": "Convert tire pressure between PSI, bar, kPa, and kg/cm2 with our free online converter. Instantly get accurate pressure conversions for cars, bikes, and trucks.",
+    "features": [
+      "Multiple unit support",
+      "Instant conversion results",
+      "Reference pressure guide",
+      "Free to use online"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/tire-pressure-converter.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Tire Size Calculator",
+    "desc": "Compare tire sizes and dimensions with our free online tire size calculator. Calculate diameter, width, sidewall height, circumference, and revolutions per mile for two tire sizes.",
+    "features": [
+      "Parse standard tire size formats",
+      "Calculate overall diameter difference",
+      "Compute sidewall and width specs",
+      "Display revolutions per mile",
+      "Warn if diameter exceeds 3% difference",
+      "Speedometer error estimation"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/tire-size-calculator.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Tire Size Converter",
+    "desc": "Convert tire sizes between metric and inch formats with our free online calculator. Compare tire dimensions, sidewall height, overall diameter, and speedometer impact for alternative sizes.",
+    "features": [
+      "Metric to inch conversion",
+      "Sidewall height calculation",
+      "Overall diameter comparison",
+      "Speedometer impact analysis",
+      "Alternative size suggestions"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/tire-size-converter.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Trip Cost Estimator",
+    "desc": "Estimate total road trip expenses including gas, tolls, parking, and vehicle wear. Plan your travel budget with accurate cost breakdown per mile. Free online trip cost calculator.",
+    "features": [
+      "Gas cost calculation",
+      "Toll and parking input",
+      "Wear and maintenance cost",
+      "Cost per mile breakdown",
+      "IRS mileage rate reference"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/trip-cost-estimator.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Trip Mileage Log Calculator",
+    "desc": "Track mileage for tax deductions with our free IRS mileage log. Record business, personal, and medical trips, and calculate your total deduction instantly.",
+    "features": [
+      "Record trip details",
+      "Calculate tax deduction",
+      "Support multiple trip types",
+      "Clear and remove trips",
+      "Total mileage summary"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/trip-mileage-log.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Vehicle Depreciation Calculator",
+    "desc": "Calculate your vehicle's depreciation over time with our free online tool. Enter purchase price, vehicle type, annual mileage, and condition to see year-by-year value loss and find the best time to sell.",
+    "features": [
+      "Year-by-year depreciation schedule",
+      "Multiple vehicle types supported",
+      "Mileage and condition adjustments",
+      "Best time to sell indicator",
+      "Visual value chart"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/auto & vehicles/vehicle-depreciation.zip"
+  },
+  {
+    "category": "Beauty & Fashion",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Body Measurement Tracker",
+    "desc": "Track your body measurements over time including chest, waist, hips, arms, and thighs. Free online fitness progress tracker with history and health indicators.",
+    "features": [
+      "Save measurement entries",
+      "View change over time",
+      "Calculate waist-hip ratio",
+      "Track multiple body parts",
+      "Local data storage"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/beauty & fashion/body-measurement-tracker.zip"
+  },
+  {
+    "category": "Beauty & Fashion",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Closet Organizer",
+    "desc": "Organize your wardrobe digitally with our free Closet Organizer. Add items by category, color, and name, then generate random outfit suggestions. Perfect for capsule wardrobe planning and daily outfit inspiration.",
+    "features": [
+      "Add items by category",
+      "Color and name tracking",
+      "Random outfit generator",
+      "Local storage persistence",
+      "Capsule wardrobe support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/beauty & fashion/closet-organizer.zip"
+  },
+  {
+    "category": "Beauty & Fashion",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Clothing Size Converter",
+    "desc": "Convert clothing sizes between US, EU, UK, AU, and JP with our free online tool. Supports dresses, shirts, shoes, pants, and bras for accurate international size matching.",
+    "features": [
+      "Multiple clothing types",
+      "International size charts",
+      "Instant conversion results",
+      "Supports US, EU, UK, AU, JP",
+      "Free and easy to use"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/beauty & fashion/clothing-size-converter.zip"
+  },
+  {
+    "category": "Beauty & Fashion",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Fabric Yardage Calculator",
+    "desc": "Calculate fabric needed for sewing projects with our free online tool. Supports dresses, shirts, quilts, curtains and more. Get yardage in yards, meters and inches.",
+    "features": [
+      "Project type selection",
+      "Size and width options",
+      "Yardage and meter display",
+      "Extra fabric allowance",
+      "Quilt and curtain support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/beauty & fashion/fabric-yardage-calc.zip"
+  },
+  {
+    "category": "Beauty & Fashion",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Hair Color Developer Calculator",
+    "desc": "Calculate the perfect hair color to developer ratio for your desired lift level. Our free online tool recommends the correct developer volume and provides a precise mixing recipe for salon-quality results.",
+    "features": [
+      "Color-developer ratio calculation",
+      "Developer volume recommendation",
+      "Mixing recipe with grams",
+      "Lift level analysis",
+      "Multiple ratio support",
+      "Natural to target level input"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/beauty & fashion/hair-color-developer.zip"
+  },
+  {
+    "category": "Beauty & Fashion",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Hair Color Predictor",
+    "desc": "Predict your hair dye results with our free online hair color calculator. Enter natural hair level, desired level, and hair condition to get developer volume, method, and processing time recommendations. Perfect for DIY hair coloring planning.",
+    "features": [
+      "Natural level input",
+      "Desired level selector",
+      "Hair condition options",
+      "Developer volume recommendation",
+      "Processing time estimate",
+      "Color journey visualization"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/beauty & fashion/hair-color-predictor.zip"
+  },
+  {
+    "category": "Beauty & Fashion",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Hair Type Identifier",
+    "desc": "Identify your hair type instantly with our free online hair type finder. Select curl pattern, density, porosity, and scalp condition to get personalized hair care tips and product recommendations.",
+    "features": [
+      "Curl pattern selection",
+      "Density and porosity input",
+      "Personalized care routine",
+      "Instant hair type identification"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/beauty & fashion/hair-type-identifier.zip"
+  },
+  {
+    "category": "Beauty & Fashion",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Hairstyle Length Calculator",
+    "desc": "Find the perfect hairstyle length for your face shape and hair type. Calculate growth time to reach your desired length with adjustable growth rate and trim frequency. Free online hairstyle length calculator.",
+    "features": [
+      "Face shape recommendations",
+      "Hair type shrinkage adjustment",
+      "Growth time estimation",
+      "Trim frequency calculation",
+      "Styling tips for each face shape"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/beauty & fashion/hairstyle-length-calculator.zip"
+  },
+  {
+    "category": "Beauty & Fashion",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Jewelry Size Calculator",
+    "desc": "Find your perfect ring, bracelet, necklace, and bangle size with our free online jewelry size calculator. Convert between US, UK, EU, and Asian ring sizes easily. Accurate measurements for all jewelry types.",
+    "features": [
+      "Ring size conversion",
+      "Bracelet and necklace sizing",
+      "Knuckle adjustment",
+      "International size charts",
+      "Easy measurement input"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/beauty & fashion/jewelry-size-calculator.zip"
+  },
+  {
+    "category": "Beauty & Fashion",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Laundry Symbol Guide",
+    "desc": "Decode laundry care symbols with our free online guide. Quickly identify washing, bleaching, drying, ironing, and dry cleaning icons to properly care for your clothes and avoid fabric damage.",
+    "features": [
+      "Decode washing symbols",
+      "Identify care instructions",
+      "Learn drying methods",
+      "Understand ironing settings",
+      "Avoid fabric damage",
+      "Free online reference"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/beauty & fashion/laundry-symbol-guide.zip"
+  },
+  {
+    "category": "Beauty & Fashion",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Makeup Shade Matcher",
+    "desc": "Find your perfect foundation shade match across top beauty brands like MAC, Fenty, NARS, Maybelline, and L'Oréal. Our free online shade matcher converts your current shade to equivalent shades in other brands based on undertone and depth.",
+    "features": [
+      "Cross-brand shade matching",
+      "Undertone and depth analysis",
+      "Supports 5 major brands",
+      "Instant shade conversion",
+      "Free online tool"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/beauty & fashion/makeup-shade-matcher.zip"
+  },
+  {
+    "category": "Beauty & Fashion",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Nail Art Ideas",
+    "desc": "Discover endless nail art design ideas tailored to your occasion, color preference, and style. Get free inspiration for manicures, from minimalist to glittery, with difficulty and time estimates.",
+    "features": [
+      "Filter by occasion, color, style",
+      "View difficulty and time estimates",
+      "Get instant design suggestions",
+      "Explore various nail lengths",
+      "Free and easy to use"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/beauty & fashion/nail-art-ideas.zip"
+  },
+  {
+    "category": "Beauty & Fashion",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Nail Polish Mixer",
+    "desc": "A free offline tool for nail polish mixer calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/beauty & fashion/nail-polish-mixer.zip"
+  },
+  {
+    "category": "Beauty & Fashion",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Outfit Color Matcher",
+    "desc": "A free offline tool for outfit color matcher calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/beauty & fashion/outfit-color-matcher.zip"
+  },
+  {
+    "category": "Beauty & Fashion",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Outfit Planner",
+    "desc": "A free offline tool for outfit planner calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/beauty & fashion/outfit-planner.zip"
+  },
+  {
+    "category": "Beauty & Fashion",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Perfume Dilution Calculator",
+    "desc": "A free offline tool for perfume dilution calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/beauty & fashion/perfume-dilution-calculator.zip"
+  },
+  {
+    "category": "Beauty & Fashion",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Perfume Finder",
+    "desc": "A free offline tool for perfume finder calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/beauty & fashion/perfume-finder.zip"
+  },
+  {
+    "category": "Beauty & Fashion",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Skincare Routine Builder",
+    "desc": "A free offline tool for skincare routine builder calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/beauty & fashion/skincare-routine-builder.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Amazon Keyword Miner",
+    "desc": "A free offline tool for amazon keyword miner calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/amazon-keyword-miner.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Amazon Title Optimizer",
+    "desc": "A free offline tool for amazon title optimizer calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/amazon-title-optimizer.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Budget Calculator",
+    "desc": "A free offline tool for budget calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/budget-calculator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Contract Template Builder",
+    "desc": "A free offline tool for contract template builder calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/contract-template-builder.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Csv Cleaner",
+    "desc": "A free offline tool for csv cleaner calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/csv-cleaner.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Currency Converter",
+    "desc": "A free offline tool for currency converter calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/currency-converter.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Discount Calculator",
+    "desc": "A free offline tool for discount calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/discount-calculator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Hourly Rate Calculator",
+    "desc": "A free offline tool for hourly rate calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/hourly-rate-calculator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Inventory Turnover Calculator",
+    "desc": "A free offline tool for inventory turnover calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/inventory-turnover-calculator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Invoice Generator Simple",
+    "desc": "A free offline tool for invoice generator simple calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/invoice-generator-simple.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Meeting Cost Calculator",
+    "desc": "Calculate the real cost of meetings based on attendee salaries and duration. Understand how much meetings cost your company and improve productivity with this free online tool.",
+    "features": [
+      "Attendee salary input",
+      "Duration calculation",
+      "Per-role cost breakdown",
+      "Total cost display",
+      "Productivity insights"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/meeting-cost-calculator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Meeting Notes Template",
+    "desc": "Create structured meeting notes with attendees, agenda, decisions, and action items. Export as Markdown, plain text, or HTML. Free online meeting notes generator for teams and professionals.",
+    "features": [
+      "Structured meeting notes",
+      "Agenda and decisions tracking",
+      "Action items with owners",
+      "Export to Markdown/HTML",
+      "Free online tool"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/meeting-notes-template.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Random Name Picker",
+    "desc": "Free online random name picker and lottery draw tool. Pick winners, split into teams, or shuffle names from any list. All processing is local and private, no data upload required.",
+    "features": [
+      "Pick random winners",
+      "Split into teams",
+      "Shuffle order",
+      "Animated draw effect",
+      "Copy results",
+      "No data upload"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/name-picker.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "OKR Template Generator",
+    "desc": "Generate Objectives and Key Results (OKR) templates for quarterly goal tracking. Create measurable outcomes with customizable objectives and key results. Free online OKR generator for teams and individuals.",
+    "features": [
+      "Generate OKR templates",
+      "Track quarterly goals",
+      "Measurable key results",
+      "Multiple output formats",
+      "Copy to clipboard",
+      "Customizable objectives"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/okr-template-generator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Profit Margin Calculator",
+    "desc": "Calculate profit margin, markup, and net profit instantly from cost and selling price. Enter any two values to compute the third. Perfect for entrepreneurs, ecommerce sellers, and small business owners to analyze pricing and profitability.",
+    "features": [
+      "Instant profit calculation",
+      "Margin and markup display",
+      "ROI percentage output",
+      "Live formula breakdown",
+      "Dark mode support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/profit-margin-calculator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Project Estimate Calculator",
+    "desc": "Estimate project costs and timelines with our free online tool. Add tasks, hours, and rates to generate a detailed quote including buffer, expenses, and profit margin. Perfect for freelancers and agencies.",
+    "features": [
+      "Add tasks with hours",
+      "Adjust difficulty multipliers",
+      "Include buffer and expenses",
+      "Calculate profit margin",
+      "Generate detailed quote breakdown"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/project-estimate-calculator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Sales Tax Calculator",
+    "desc": "Calculate US sales tax for any state with our free online tool. Choose a state to auto-fill the rate or enter a custom rate. Get tax amount, total price, and support reverse calculation.",
+    "features": [
+      "State rate auto-fill",
+      "Forward and reverse modes",
+      "Instant tax calculation",
+      "Custom rate support",
+      "No signup required"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/sales-tax-calculator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Cross-Border Tariff Calculator",
+    "desc": "Calculate import tariffs, duties, and taxes for cross-border e-commerce. Estimate total landed cost including CIF value, duty, VAT, and processing fees for international shipping.",
+    "features": [
+      "Import duty calculation",
+      "Landed cost estimation",
+      "Country-specific rates",
+      "VAT/GST inclusion",
+      "Product category support",
+      "Custom rate option"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/tariff-calculator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Time Tracker",
+    "desc": "Track time spent on tasks and projects with our free online time tracker. Start and stop timers, log sessions, and view totals by project. Ideal for freelancers and teams to boost productivity.",
+    "features": [
+      "Add tasks with projects",
+      "Start and stop timer",
+      "View total time per task",
+      "Session history logging",
+      "Project-based time breakdown"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/time-tracker.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Timezone Meeting Planner",
+    "desc": "Plan meetings across time zones effortlessly. Add participants, set working hours, and find the best overlapping times with our free timezone meeting planner. Visualize availability with a 24-hour timeline.",
+    "features": [
+      "Add multiple timezones",
+      "Set working hours",
+      "Find best meeting times",
+      "Visual 24-hour timeline",
+      "Adjustable meeting duration"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/timezone-meeting-planner.zip"
   }
 ]
