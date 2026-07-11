@@ -461,18 +461,13 @@ var categoryMap = {
                 }
             }
 
-            // Override download button click handler to track downloads and navigate
-            document.querySelectorAll('.btn-download').forEach(function(btn) {
-                btn.addEventListener('click', function (e) {
-                    e.stopPropagation();
+            // Override download link click handler to track downloads
+            document.querySelectorAll('.btn-download-zip').forEach(function(link) {
+                link.addEventListener('click', function () {
                     var card = this.closest('.tool-card');
                     var toolTitle = card ? card.querySelector('h3')?.textContent || 'Unknown' : 'Unknown';
                     if (window.YQZ_STATS) {
-                        YQZ_STATS.download(toolTitle, this.dataset.download);
-                    }
-                    // 执行实际跳转下载
-                    if (this.dataset.download) {
-                        window.location.href = this.dataset.download;
+                        YQZ_STATS.download(toolTitle, this.href);
                     }
                 });
             });
@@ -507,7 +502,7 @@ var categoryMap = {
             // Build Download ZIP button (only if zipUrl is provided)
             var downloadHtml = '';
             if (tool.zipUrl) {
-                downloadHtml = '<button class="btn btn-download-zip btn-download" data-download="' + escapeHtml(tool.zipUrl) + '">' + t('tool.downloadZip', 'Download ZIP') + '</button>';
+                downloadHtml = '<a href="' + escapeHtml(tool.zipUrl) + '" class="btn btn-download-zip" target="_blank">' + t('tool.downloadZip', 'Download ZIP') + '</a>';
             }
 
             // Determine if icon is an SVG path (starts with 'assets/' or ends with '.svg')
