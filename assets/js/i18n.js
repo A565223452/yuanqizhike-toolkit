@@ -15,24 +15,13 @@ const I18N = {
 
   // Initialize i18n system
   async init() {
-    // Get language from URL param, localStorage, or browser
+    // Get language from URL param only - default to English for international audience
     const urlParams = new URLSearchParams(window.location.search);
     const langFromUrl = urlParams.get('lang');
     
-    // Check for legacy language keys and migrate/clear if needed
-    const legacyLang = localStorage.getItem('yqz_lang');
-    if (legacyLang) {
-      // Migrate legacy key to new key
-      localStorage.setItem('yuanqi_lang', legacyLang);
-      localStorage.removeItem('yqz_lang');
-    }
-    
-    const langFromStorage = localStorage.getItem('yuanqi_lang');
-    const browserLang = this.detectBrowserLanguage();
-
-    // Priority: URL param > user's saved preference > English default (do NOT auto-detect browser lang)
-    // First-time visitors always see English regardless of browser language
-    this.currentLang = langFromUrl || langFromStorage || 'en';
+    // Use URL language parameter, otherwise default to English
+    // Do NOT use browser detection or localStorage saved preference for international sites
+    this.currentLang = langFromUrl || 'en';
     
     // Load translations
     await this.loadTranslations(this.currentLang);
@@ -221,7 +210,6 @@ const I18N = {
     if (!this.supportedLangs.find(l => l.code === lang)) return;
     
     this.currentLang = lang;
-    localStorage.setItem('yuanqi_lang', lang);
     
     // Update URL without page reload
     const url = new URL(window.location);
