@@ -15,13 +15,14 @@ const I18N = {
 
   // Initialize i18n system
   async init() {
-    // Get language from URL param only - default to English for international audience
+    // Get language ONLY from URL parameter - default to English
+    // Do NOT auto-detect or use stored preferences for international sites
     const urlParams = new URLSearchParams(window.location.search);
     const langFromUrl = urlParams.get('lang');
     
-    // Use URL language parameter, otherwise default to English
-    // Do NOT use browser detection or localStorage saved preference for international sites
-    this.currentLang = langFromUrl || 'en';
+    // Hardcode English as default for international audience
+    // Only override if explicit ?lang=XX parameter is present
+    this.currentLang = (langFromUrl && this.supportedLangs.find(l => l.code === langFromUrl)) ? langFromUrl : 'en';
     
     // Load translations
     await this.loadTranslations(this.currentLang);
