@@ -18,6 +18,15 @@ const I18N = {
     // Get language from URL param, localStorage, or browser
     const urlParams = new URLSearchParams(window.location.search);
     const langFromUrl = urlParams.get('lang');
+    
+    // Check for legacy language keys and migrate/clear if needed
+    const legacyLang = localStorage.getItem('yqz_lang');
+    if (legacyLang) {
+      // Migrate legacy key to new key
+      localStorage.setItem('yuanqi_lang', legacyLang);
+      localStorage.removeItem('yqz_lang');
+    }
+    
     const langFromStorage = localStorage.getItem('yuanqi_lang');
     const browserLang = this.detectBrowserLanguage();
 
