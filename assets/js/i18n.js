@@ -80,7 +80,6 @@ const I18N = {
           data = await response.json();
         }
       }
-      }
       
       this.translations[lang] = data || {};
     } catch (error) {
@@ -288,10 +287,14 @@ const I18N = {
     document.head.appendChild(defaultLink);
   },
 
-  // Inject global earth icon with language selector popup
+// Inject global earth icon with language selector popup
   injectEarthIcon() {
+    console.log('[I18N] injectEarthIcon called, currentLang:', this.currentLang);
+    
     // Get existing icon or create new one
     let earthIcon = document.getElementById('globalEarthIcon');
+    console.log('[I18N] earthIcon found:', !!earthIcon);
+    
     const needsCreate = !earthIcon;
     
     if (needsCreate) {
@@ -302,7 +305,7 @@ const I18N = {
       earthIcon.title = 'Switch Language';
       document.body.appendChild(earthIcon);
     }
-
+    
     // Create language selection popup (or get existing)
     let langMenu = document.getElementById('earthLangMenu');
     if (!langMenu) {
@@ -311,12 +314,13 @@ const I18N = {
       langMenu.className = 'earth-lang-menu';
       document.body.appendChild(langMenu);
     }
-
+    
     // Populate menu items
     this.updateLanguageSwitcher();
-
+    
     // Toggle menu on earth icon click
     earthIcon.addEventListener('click', (e) => {
+      console.log('[I18N] Earth icon clicked');
       e.stopPropagation();
       langMenu.classList.toggle('open');
     });
@@ -361,5 +365,7 @@ window.I18N = I18N;
 
 // Auto-initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
-  I18N.init().catch(console.error);
+  I18N.init().catch(function(err) {
+    console.error('[I18N] Init failed:', err);
+  });
 });
