@@ -26,7 +26,6 @@ Disallow: /
 Disallow: /admin
 Disallow: /wp-*
 Disallow: /*.env
-Disallow: /?*
 
 # 允许所有其他合法爬虫
 User-agent: *

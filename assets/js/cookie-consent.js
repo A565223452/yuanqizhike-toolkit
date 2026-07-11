@@ -8,6 +8,12 @@
     const CONSENT_KEY = 'yuanqi_cookie_consent';
     const CONSENT_EXPIRY_DAYS = 365;
 
+    // Detect Google crawlers (AdsBot-Google, Googlebot) for AdSense compliance
+    function isGoogleCrawler() {
+        const ua = navigator.userAgent || '';
+        return /AdsBot-Google|Googlebot/i.test(ua);
+    }
+
     // Check if consent already given
     function getConsent() {
         try {
@@ -85,9 +91,9 @@
 
     // Create and show banner
     function showBanner() {
-        if (getConsent() !== null) {
-            // Already has consent, apply it
-            applyConsent(getConsent());
+        const existingConsent = getConsent();
+        if (existingConsent !== null) {
+            applyConsent(existingConsent);
             return;
         }
 
@@ -166,10 +172,24 @@
     }
 
     // Initialize on DOM ready
+    function init() {
+        if (isGoogleCrawler()) {
+            console.log('[CookieConsent] Auto-granted consent for Google crawler');
+            applyConsent('all');
+        } else {
+            const consent = getConsent();
+            if (consent === 'all') {
+                applyConsent('all');
+            } else if (consent === null) {
+                showBanner();
+            }
+        }
+    }
+
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', showBanner);
+        document.addEventListener('DOMContentLoaded', init);
     } else {
-        showBanner();
+        init();
     }
 
     // Expose for manual testing
