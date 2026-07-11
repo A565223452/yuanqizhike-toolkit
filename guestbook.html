@@ -439,7 +439,7 @@
                 const params = new URLSearchParams({ page: String(page), limit: '12' });
                 if (currentCategory) params.set('category', currentCategory);
 
-                const res = await fetch('https://yuanqizhike-contact.260330663.workers.dev/api/guestbook?' + params.toString());
+                const res = await fetch('/api/guestbook?' + params.toString());
                 const data = await res.json();
 
                 if (!data.ok) throw new Error(data.error || 'Failed to load');
@@ -505,7 +505,7 @@
                 };
                 if (website) payload.website = website; // honeypot
 
-                const res = await fetch('https://yuanqizhike-contact.260330663.workers.dev/api/guestbook', {
+                const res = await fetch('/api/guestbook', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)

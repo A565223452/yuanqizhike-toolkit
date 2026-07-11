@@ -364,9 +364,7 @@
             const headers = options.headers || {};
             headers['Authorization'] = 'Bearer ' + adminToken;
             if (options.body && !headers['Content-Type']) headers['Content-Type'] = 'application/json';
-            // 后台API通过Worker子域提供
-            const apiPath = path.startsWith('http') ? path : 'https://yuanqizhike-contact.260330663.workers.dev' + path;
-            return fetch(apiPath, { ...options, headers });
+            return fetch(path, { ...options, headers });
         }
 
         function escapeHtml(s) {
@@ -405,7 +403,7 @@
             if (!token) { errEl.textContent = 'Please enter token'; return; }
 
             try {
-                const res = await fetch('https://yuanqizhike-contact.260330663.workers.dev/api/admin/stats', {
+                const res = await fetch('/api/admin/stats', {
                     headers: { 'Authorization': 'Bearer ' + token }
                 });
                 if (res.status === 401) {
@@ -865,7 +863,7 @@
         // ============ 初始化 ============
         if (adminToken) {
             // 验证已存储的 token
-            fetch('https://yuanqizhike-contact.260330663.workers.dev/api/admin/stats', { headers: { 'Authorization': 'Bearer ' + adminToken } })
+            fetch('/api/admin/stats', { headers: { 'Authorization': 'Bearer ' + adminToken } })
                 .then(r => { if (r.ok) showPanel(); else showLogin(); })
                 .catch(() => showLogin());
         } else {
