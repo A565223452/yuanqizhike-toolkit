@@ -385,10 +385,14 @@ const GB_CATEGORY_LABELS = {
   other: 'other'
 };
 
-// 简易垃圾词过滤（违禁词、常见 spam 词）
+// 简易垃圾词过滤（违禁词、常见 spam 词、购物链接）
 const SPAM_KEYWORDS = [
   'viagra', 'cialis', 'casino', 'gambling', 'lottery', 'porn', 'sex', 'escort',
-  'crypto-airdrop', 'free-money', 'make-money-online', 'click-here', 'buy-now'
+  'crypto-airdrop', 'free-money', 'make-money-online', 'click-here', 'buy-now',
+  'shop-now', 'order-now', 'discount', 'deal', 'promo', 'promotion',
+  'amazon-links', 'ebay', 'aliexpress', 'shopify', 'woocommerce',
+  'seo-tools', 'backlink', 'domain-registration', 'hosting-deals',
+  'loan', 'credit', 'investment', 'binary-options', 'forex-trading'
 ];
 
 async function handlePostGuestbook(request, env, ctx) {
@@ -446,16 +450,26 @@ async function handlePostGuestbook(request, env, ctx) {
   // 内容垃圾过滤
   const contentLower = String(content).toLowerCase();
   const hasSpamKeyword = SPAM_KEYWORDS.some(k => contentLower.includes(k));
-  // 前 5 条留言不能含外链
+  
+  // 链接检测：购物链接、短链、推广类型
+  const urlPattern = /https?:\/\/(www\.)?[a-z0-9.-]+\.(com|net|org|co|io|me|tv|cc)\/[a-z0-9\/_-]+/i;
+  const hasCommercialUrl = urlPattern.test(contentLower) && /product|shop|buy|cart|order|deal/i.test(contentLower);
+  const hasShortUrl = /bit\.ly|tinyurl|t\.co|goo\.gl|adf\.ly|tinyurl|shorturl/i.test(contentLower);
   const hasUrl = /https?:\/\//i.test(content);
+  
+  // 前 5 条留言不能含外链（购物链接/短链永远标记spam）
   const userEntryCount = await env.DB.prepare(
     `SELECT COUNT(*) as cnt FROM guestbook WHERE ip = ?`
   ).bind(ip).first();
   const isUrlBlocked = (userEntryCount?.cnt || 0) < 5 && hasUrl;
+  const isSpam = hasSpamKeyword || hasCommercialUrl || hasShortUrl || isUrlBlocked;
 
   let status = 'pending';
-  if (hasSpamKeyword || isUrlBlocked) {
+  if (isSpam) {
     status = 'spam'; // 自动标记 spam，不展示也不进审核队列
+    console.log('[Spam] Blocked guestbook submission. IP:', ip, 'reason:', 
+      hasSpamKeyword ? 'keyword' : (hasCommercialUrl ? 'commercial_url' : (hasShortUrl ? 'short_url' : 'new_user_url'))
+    );
   }
 
   const userAgent = request.headers.get('user-agent') || '';
