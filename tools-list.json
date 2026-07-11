@@ -76,7 +76,7 @@
     "zipUrl": "/assets/zip-packages/design/image-converter.zip"
   },
   {
-    "category": "SEO & Marketing",
+    "category": "Webmaster & SEO Tools",
     "icon": "assets/icons/business-34.svg",
     "title": "Amazon Keyword Miner",
     "desc": "Discover high-traffic Amazon keywords for SEO optimization. Analyze competitors and export data locally without server uploads.",
@@ -89,7 +89,7 @@
       "100% Private Local Processing"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/business/amazon-keyword-miner.zip"
+    "zipUrl": "/assets/zip-packages/seo/amazon-keyword-miner.zip"
   },
   {
     "category": "Finance & Crypto",
@@ -101,7 +101,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/business/budget-calculator.zip"
+    "zipUrl": "/assets/zip-packages/finance/budget-calculator.zip"
   },
   {
     "category": "Finance & Crypto",
@@ -113,7 +113,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/business/inventory-turnover-calculator.zip"
+    "zipUrl": "/assets/zip-packages/finance/inventory-turnover-calculator.zip"
   },
   {
     "category": "Business & Productivity",
@@ -164,7 +164,7 @@
     "zipUrl": "/assets/zip-packages/business/shipping-cost-estimator.zip"
   },
   {
-    "category": "SEO & Marketing",
+    "category": "Webmaster & SEO Tools",
     "icon": "assets/icons/business-3.svg",
     "title": "Amazon Title Optimizer",
     "desc": "Optimize Amazon product titles for better SEO, check character limits, and improve keyword placement for higher conversions.",
@@ -176,7 +176,7 @@
       "A/B Testing Support"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/business/amazon-title-optimizer.zip"
+    "zipUrl": "/assets/zip-packages/seo/amazon-title-optimizer.zip"
   },
   {
     "category": "Business & Productivity",
@@ -223,7 +223,7 @@
       "Currency Charts"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/business/currency-converter.zip"
+    "zipUrl": "/assets/zip-packages/finance/currency-converter.zip"
   },
   {
     "category": "Business & Productivity",
@@ -282,7 +282,7 @@
       "Multi-Item Shipments"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/business/tariff-calculator.zip"
+    "zipUrl": "/assets/zip-packages/finance/tariff-calculator.zip"
   },
   {
     "category": "Content & Writing",
@@ -1394,7 +1394,7 @@
     "zipUrl": "/assets/zip-packages/business/pdf-split-merge.zip"
   },
   {
-    "category": "SEO & Marketing",
+    "category": "Webmaster & SEO Tools",
     "icon": "assets/icons/business-7.svg",
     "title": "Backlink Spam Checker",
     "desc": "Analyze backlinks for spam signals and toxic links. Check domain reputation and link quality indicators to protect your SEO health.",
@@ -1406,7 +1406,7 @@
       "Protect SEO Health"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/business/backlink-spam-checker.zip"
+    "zipUrl": "/assets/zip-packages/seo/backlink-spam-checker.zip"
   },
   {
     "category": "Business & Productivity",
@@ -2098,7 +2098,7 @@
     "zipUrl": "/assets/zip-packages/health/water-intake-calculator.zip"
   },
   {
-    "category": "SEO & Marketing",
+    "category": "Webmaster & SEO Tools",
     "icon": "/assets/icons/seo-2.svg",
     "title": "Keyword Density Checker",
     "desc": "Analyze keyword density and frequency in your content for better SEO optimization. Identify over-optimized keywords and improve your search engine rankings.",
@@ -2124,7 +2124,7 @@
     "zipUrl": "/assets/zip-packages/dev/meta-tag-generator.zip"
   },
   {
-    "category": "SEO & Marketing",
+    "category": "Webmaster & SEO Tools",
     "icon": "/assets/icons/seo-4.svg",
     "title": "Open Graph Generator",
     "desc": "Generate optimized Open Graph meta tags for Facebook, LinkedIn, and Twitter. Preview social share cards instantly and ensure your links look perfect on all platforms.",
@@ -2138,7 +2138,7 @@
     "zipUrl": "/assets/zip-packages/seo/open-graph-generator.zip"
   },
   {
-    "category": "SEO & Marketing",
+    "category": "Webmaster & SEO Tools",
     "icon": "/assets/icons/seo-1.svg",
     "title": "Robots.txt Generator",
     "desc": "Create valid robots.txt files to control search engine crawlers. Define allow and disallow rules, set crawl delays, and link your sitemap for better SEO.",
@@ -2152,7 +2152,7 @@
     "zipUrl": "/assets/zip-packages/seo/robots-txt-generator.zip"
   },
   {
-    "category": "SEO & Marketing",
+    "category": "Webmaster & SEO Tools",
     "icon": "/assets/icons/seo-3.svg",
     "title": "Schema Markup Generator",
     "desc": "Generate valid JSON-LD schema markup for Articles, Products, FAQs, Local Businesses, and Persons. Boost SEO with structured data and enhance Google Rich Results visibility effortlessly.",
@@ -2166,7 +2166,7 @@
     "zipUrl": "/assets/zip-packages/seo/schema-markup-generator.zip"
   },
   {
-    "category": "SEO & Marketing",
+    "category": "Webmaster & SEO Tools",
     "icon": "/assets/icons/seo-5.svg",
     "title": "SERP Snippet Preview",
     "desc": "Preview how your website appears in Google search results. Test title length, meta description truncation, and URL display for both desktop and mobile views to optimize click-through rates.",
@@ -2267,7 +2267,7 @@
     "zipUrl": "/assets/zip-packages/social/youtube-title-generator.zip"
   },
   {
-    "category": "Lifestyle & Utilities",
+    "category": "Time & Date",
     "icon": "/assets/icons/lifestyle-1.svg",
     "title": "Age Calculator",
     "desc": "Calculate your exact age in years, months, and days with precision. Get fun statistics like total heartbeats, days lived, and countdowns to your next birthday or half-birthday.",
@@ -2278,10 +2278,10 @@
       "Fun life statistics"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/age-calculator.zip"
+    "zipUrl": "/assets/zip-packages/time/age-calculator.zip"
   },
   {
-    "category": "Lifestyle & Utilities",
+    "category": "Time & Date",
     "icon": "/assets/icons/lifestyle-2.svg",
     "title": "Countdown Timer",
     "desc": "Countdown Timer - a handy browser-based tool.",
@@ -2290,10 +2290,10 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/countdown-timer.zip"
+    "zipUrl": "/assets/zip-packages/time/countdown-timer.zip"
   },
   {
-    "category": "Lifestyle & Utilities",
+    "category": "Time & Date",
     "icon": "/assets/icons/lifestyle-3.svg",
     "title": "Date Calculator",
     "desc": "Easily calculate the difference between two dates or add and subtract days, weeks, months, and years. Get precise results in days, weeks, months, and years instantly.",
@@ -2305,10 +2305,10 @@
       "Instant real-time calculation"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/date-calculator.zip"
+    "zipUrl": "/assets/zip-packages/time/date-calculator.zip"
   },
   {
-    "category": "Lifestyle & Utilities",
+    "category": "Time & Date",
     "icon": "/assets/icons/lifestyle-4.svg",
     "title": "Random Number Generator",
     "desc": "Generate random numbers within any range instantly. Supports unique selection, sorting, and history tracking. Perfect for lotteries, raffles, sampling, and decision making without signup.",
@@ -2320,10 +2320,10 @@
       "Generation history log"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/random-number-generator.zip"
+    "zipUrl": "/assets/zip-packages/time/random-number-generator.zip"
   },
   {
-    "category": "Lifestyle & Utilities",
+    "category": "Time & Date",
     "icon": "/assets/icons/lifestyle-5.svg",
     "title": "Global Time Zone Converter",
     "desc": "Easily convert time across multiple global time zones with this free online tool. Compare dates, find optimal meeting times, and view a live world clock with DST indicators.",
@@ -2335,10 +2335,10 @@
       "DST status indicator"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/timezone-converter.zip"
+    "zipUrl": "/assets/zip-packages/time/timezone-converter.zip"
   },
   {
-    "category": "Lifestyle & Utilities",
+    "category": "Time & Date",
     "icon": "/assets/icons/lifestyle-6.svg",
     "title": "Unit Converter",
     "desc": "Convert length, weight, temperature, volume, area, speed, time, and digital storage units instantly. Switch between metric and imperial systems with a simple, fast, and responsive interface.",
@@ -2349,7 +2349,7 @@
       "Quick reference table display"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/unit-converter.zip"
+    "zipUrl": "/assets/zip-packages/time/unit-converter.zip"
   },
   {
     "category": "Security & Privacy",
@@ -2466,7 +2466,7 @@
     "zipUrl": "/assets/zip-packages/social/social-media-character-counter-all.zip"
   },
   {
-    "category": "SEO & Marketing",
+    "category": "Webmaster & SEO Tools",
     "icon": "/assets/icons/seo-6.svg",
     "title": "YouTube Tag Generator",
     "desc": "Boost your video visibility with this free YouTube tag generator. Create SEO-optimized, high-ranking tags based on your title and niche to attract more views and subscribers.",
@@ -2480,7 +2480,7 @@
     "zipUrl": "/assets/zip-packages/seo/youtube-tag-generator.zip"
   },
   {
-    "category": "Lifestyle & Utilities",
+    "category": "Time & Date",
     "icon": "/assets/icons/lifestyle-7.svg",
     "title": "Budget Tracker",
     "desc": "Budget Tracker - a handy browser-based tool.",
@@ -2489,10 +2489,10 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/budget-tracker.zip"
+    "zipUrl": "/assets/zip-packages/time/budget-tracker.zip"
   },
   {
-    "category": "Lifestyle & Utilities",
+    "category": "Time & Date",
     "icon": "/assets/icons/lifestyle-8.svg",
     "title": "Coin Flipper",
     "desc": "Flip a virtual coin for quick decisions with animated results. Track heads and tails statistics, view flip history, and reset counters easily. Perfect for random choices.",
@@ -2503,7 +2503,7 @@
       "Reset counter option"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/coin-flipper.zip"
+    "zipUrl": "/assets/zip-packages/time/coin-flipper.zip"
   },
   {
     "category": "Business & Productivity",
@@ -2522,7 +2522,7 @@
     "zipUrl": "/assets/zip-packages/business/daily-planner.zip"
   },
   {
-    "category": "Lifestyle & Utilities",
+    "category": "Time & Date",
     "icon": "/assets/icons/lifestyle-9.svg",
     "title": "Date Difference Calculator",
     "desc": "Calculate the exact difference between two dates in days, weeks, months, and years. Includes business day counting and date addition features for project planning and age tracking.",
@@ -2535,10 +2535,10 @@
       "Age and duration calculator"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/date-difference-calculator.zip"
+    "zipUrl": "/assets/zip-packages/time/date-difference-calculator.zip"
   },
   {
-    "category": "Gaming Tools",
+    "category": "Games & Entertainment",
     "icon": "/assets/icons/gaming-1.svg",
     "title": "Dice Roller",
     "desc": "Roll virtual dice online for D&D, RPGs, and board games. Supports D4, D6, D8, D10, D12, D20, D100, and custom dice with modifiers and roll history.",
@@ -2552,7 +2552,7 @@
     "zipUrl": "/assets/zip-packages/gaming/dice-roller.zip"
   },
   {
-    "category": "Lifestyle & Utilities",
+    "category": "Time & Date",
     "icon": "/assets/icons/lifestyle-10.svg",
     "title": "Gift Idea Generator",
     "desc": "Discover unique gift suggestions tailored to any recipient, occasion, and budget. Filter by interests like tech, cooking, or travel to find the perfect present instantly.",
@@ -2563,7 +2563,7 @@
       "Instant personalized suggestions"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/gift-idea-generator.zip"
+    "zipUrl": "/assets/zip-packages/time/gift-idea-generator.zip"
   },
   {
     "category": "Business & Productivity",
@@ -2580,7 +2580,7 @@
     "zipUrl": "/assets/zip-packages/business/habit-streak-tracker.zip"
   },
   {
-    "category": "Lifestyle & Utilities",
+    "category": "Time & Date",
     "icon": "/assets/icons/lifestyle-11.svg",
     "title": "Habit Tracker",
     "desc": "Habit Tracker - a handy browser-based tool.",
@@ -2589,10 +2589,10 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/habit-tracker.zip"
+    "zipUrl": "/assets/zip-packages/time/habit-tracker.zip"
   },
   {
-    "category": "Lifestyle & Utilities",
+    "category": "Time & Date",
     "icon": "/assets/icons/lifestyle-12.svg",
     "title": "Meditation Timer",
     "desc": "Enhance your mindfulness practice with this customizable meditation timer. Features interval bells, soothing audio cues, and a guided breathing exercise to help you relax and focus.",
@@ -2603,10 +2603,10 @@
       "Guided breathing exercise"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/meditation-timer.zip"
+    "zipUrl": "/assets/zip-packages/time/meditation-timer.zip"
   },
   {
-    "category": "Lifestyle & Utilities",
+    "category": "Time & Date",
     "icon": "/assets/icons/lifestyle-1.svg",
     "title": "Productivity Score Calculator",
     "desc": "Evaluate your daily work efficiency with this comprehensive productivity score calculator. Track task completion, focus time, energy levels, and mood to get actionable insights and personalized tips for improvement.",
@@ -2618,10 +2618,10 @@
       "Visual score breakdown and progress bar"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/productivity-score-calculator.zip"
+    "zipUrl": "/assets/zip-packages/time/productivity-score-calculator.zip"
   },
   {
-    "category": "Lifestyle & Utilities",
+    "category": "Time & Date",
     "icon": "/assets/icons/lifestyle-2.svg",
     "title": "Sleep Cycle Calculator",
     "desc": "Optimize your rest by calculating ideal bedtime and wake-up times based on 90-minute sleep cycles. Enter your desired wake time or current moment to find the perfect sleep schedule for maximum refreshment.",
@@ -2634,10 +2634,10 @@
       "Mobile friendly interface"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/sleep-cycle-calculator.zip"
+    "zipUrl": "/assets/zip-packages/time/sleep-cycle-calculator.zip"
   },
   {
-    "category": "Lifestyle & Utilities",
+    "category": "Time & Date",
     "icon": "/assets/icons/lifestyle-3.svg",
     "title": "Online Stopwatch",
     "desc": "Start a precise online stopwatch with millisecond accuracy and lap tracking. Perfect for sports, cooking, workouts, and presentations. Features keyboard shortcuts and a clean interface.",
@@ -2648,10 +2648,10 @@
       "Dark mode available"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/stopwatch.zip"
+    "zipUrl": "/assets/zip-packages/time/stopwatch.zip"
   },
   {
-    "category": "Lifestyle & Utilities",
+    "category": "Time & Date",
     "icon": "/assets/icons/lifestyle-4.svg",
     "title": "Online To-Do List",
     "desc": "Organize your daily tasks efficiently with this free online to-do list. Set priorities, assign due dates, and track progress using local storage without signup.",
@@ -2662,10 +2662,10 @@
       "Dark mode and responsive design"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/to-do-list-online.zip"
+    "zipUrl": "/assets/zip-packages/time/to-do-list-online.zip"
   },
   {
-    "category": "Lifestyle & Utilities",
+    "category": "Time & Date",
     "icon": "/assets/icons/lifestyle-5.svg",
     "title": "Wheel Spinner",
     "desc": "Spin a custom wheel to make random choices instantly. Add options, spin the wheel, and get a random winner. Perfect for giveaways, decision making, and games.",
@@ -2676,10 +2676,10 @@
       "Random decision maker"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/wheel-spinner.zip"
+    "zipUrl": "/assets/zip-packages/time/wheel-spinner.zip"
   },
   {
-    "category": "Lifestyle & Utilities",
+    "category": "Time & Date",
     "icon": "/assets/icons/lifestyle-6.svg",
     "title": "World Clock",
     "desc": "Track current time across major global cities with this free world clock. Easily compare time zones for international meetings, travel planning, and remote team coordination.",
@@ -2690,7 +2690,7 @@
       "Searchable city list"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/world-clock.zip"
+    "zipUrl": "/assets/zip-packages/time/world-clock.zip"
   },
   {
     "category": "Security & Privacy",
@@ -2791,7 +2791,7 @@
     "zipUrl": "/assets/zip-packages/security/uuid-generator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-1.svg",
     "title": "Average Calculator",
     "desc": "Calculate the arithmetic mean, median, variance, and standard deviation of any number set. Get instant statistical summaries including sum, min, max, and range for data analysis.",
@@ -2802,10 +2802,10 @@
       "Supports multiple number formats"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/average-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/average-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-2.svg",
     "title": "Basic Calculator",
     "desc": "Basic Calculator - a handy browser-based tool.",
@@ -2814,10 +2814,10 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/basic-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/basic-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-3.svg",
     "title": "Binomial Distribution Calculator",
     "desc": "Compute binomial distribution probabilities including PMF, CDF, mean, variance, and standard deviation. Visualize data with interactive charts and detailed tables for statistical analysis.",
@@ -2829,10 +2829,10 @@
       "Support large trial numbers efficiently"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/binomial-distribution-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/binomial-distribution-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-4.svg",
     "title": "Chi Square Test Calculator",
     "desc": "Chi Square Test Calculator - a handy browser-based tool.",
@@ -2841,10 +2841,10 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/chi-square-test-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/chi-square-test-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-5.svg",
     "title": "Circle Geometry Calculator",
     "desc": "Instantly calculate circle area, circumference, diameter, and radius from any single input. Includes bonus sphere volume and surface area calculations with visual diagrams.",
@@ -2856,10 +2856,10 @@
       "Supports all unit inputs"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/circle-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/circle-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-6.svg",
     "title": "Complex Number Calculator",
     "desc": "Complex Number Calculator - a handy browser-based tool.",
@@ -2868,10 +2868,10 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/complex-number-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/complex-number-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-7.svg",
     "title": "Cone Calculator",
     "desc": "Calculate cone volume, surface area, and slant height instantly. Solve for missing dimensions using radius, height, or lateral area with detailed geometric formulas.",
@@ -2883,10 +2883,10 @@
       "Supports metric and imperial units"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/cone-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/cone-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-8.svg",
     "title": "Cube Calculator",
     "desc": "Calculate cube volume, surface area, diagonals, and edge length instantly. Solve for side length using volume or space diagonal with precise geometric formulas.",
@@ -2897,10 +2897,10 @@
       "Precise geometric formulas"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/cube-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/cube-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-9.svg",
     "title": "Cylinder Calculator",
     "desc": "Compute cylinder volume, surface area, and dimensions instantly. Solve for missing radius or height using standard geometric formulas. Perfect for students and engineers.",
@@ -2911,10 +2911,10 @@
       "Geometric formula display"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/cylinder-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/cylinder-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-10.svg",
     "title": "Derivative Calculator",
     "desc": "Compute numerical derivatives for any function instantly. Supports first, second, and third-order calculations with customizable step sizes and visual plotting for calculus students.",
@@ -2925,10 +2925,10 @@
       "Detailed result interpretation"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/derivative-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/derivative-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-11.svg",
     "title": "Exponent Calculator",
     "desc": "Calculate powers and exponents instantly with step-by-step solutions. Supports negative, fractional, and large exponents with detailed mathematical breakdowns and reciprocal values.",
@@ -2941,10 +2941,10 @@
       "Quick preset buttons"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/exponent-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/exponent-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-12.svg",
     "title": "Factorial Calculator",
     "desc": "Calculate factorial n! for any non-negative integer up to 1000!. View exact results, digit counts, trailing zeros, and Stirling approximations instantly.",
@@ -2955,10 +2955,10 @@
       "Stirling approximation"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/factorial-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/factorial-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-1.svg",
     "title": "Fraction Calculator",
     "desc": "Perform addition, subtraction, multiplication, and division of fractions instantly. Simplifies results, converts to decimals and percentages, and shows step-by-step calculations for educational clarity.",
@@ -2969,10 +2969,10 @@
       "Show step-by-step calculation process"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/fraction-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/fraction-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-2.svg",
     "title": "Linear Equation Solver",
     "desc": "Linear Equation Solver - a handy browser-based tool.",
@@ -2981,10 +2981,10 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/linear-equation-solver.zip"
+    "zipUrl": "/assets/zip-packages/education/linear-equation-solver.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-3.svg",
     "title": "Logarithm Calculator",
     "desc": "Calculate logarithms with any base including natural, common, and binary. Supports antilog operations and displays results across multiple bases instantly.",
@@ -2995,10 +2995,10 @@
       "Display multi-base results"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/logarithm-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/logarithm-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-4.svg",
     "title": "Logarithm Calculator Extended",
     "desc": "Calculate logarithms with any base including common, natural, and binary. Solve for unknown variables and explore log properties with instant verification and detailed results.",
@@ -3010,10 +3010,10 @@
       "Display log rules and properties"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/logarithm-calculator-extended.zip"
+    "zipUrl": "/assets/zip-packages/education/logarithm-calculator-extended.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-5.svg",
     "title": "Math Formula Reference",
     "desc": "Math Formula Reference - a handy browser-based tool.",
@@ -3022,10 +3022,10 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/math-formula-reference.zip"
+    "zipUrl": "/assets/zip-packages/education/math-formula-reference.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-6.svg",
     "title": "Matrix Calculator",
     "desc": "Perform essential linear algebra operations including addition, subtraction, multiplication, determinant, inverse, transpose, and rank calculation for matrices up to 4x4.",
@@ -3036,7 +3036,7 @@
       "Transpose and rank tools"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/matrix-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/matrix-calculator.zip"
   },
   {
     "category": "Developer Tools",
@@ -3051,7 +3051,7 @@
     "zipUrl": "/assets/zip-packages/dev/median-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-7.svg",
     "title": "Mode Calculator",
     "desc": "Mode Calculator - a handy browser-based tool.",
@@ -3060,10 +3060,10 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/mode-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/mode-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-8.svg",
     "title": "Normal Distribution Calculator",
     "desc": "Calculate normal distribution probabilities, z-scores, PDF, and CDF instantly. Visualize Gaussian curves with interactive charts and reference tables for statistics.",
@@ -3074,10 +3074,10 @@
       "Supports multiple calculation types"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/normal-distribution-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/normal-distribution-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-9.svg",
     "title": "Percentage Calculator Math",
     "desc": "Percentage Calculator Math - a handy browser-based tool.",
@@ -3086,10 +3086,10 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/percentage-calculator-math.zip"
+    "zipUrl": "/assets/zip-packages/education/percentage-calculator-math.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-10.svg",
     "title": "Percentage Change Calculator",
     "desc": "Instantly calculate percentage increase or decrease between two values. Includes tools for finding percentages, ratios, and multipliers with real-time results and clear visual indicators.",
@@ -3100,10 +3100,10 @@
       "Real-time instant results"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/percentage-change-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/percentage-change-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-11.svg",
     "title": "Permutation and Combination Calculator",
     "desc": "Calculate permutations (nPr) and combinations (nCr) with or without repetition. Get instant results, formulas, factorials, and common use cases for math and statistics.",
@@ -3115,10 +3115,10 @@
       "Common use examples"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/permutation-combination-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/permutation-combination-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-12.svg",
     "title": "Poisson Distribution Calculator",
     "desc": "Calculate Poisson distribution probabilities including PMF, CDF, mean, variance, and standard deviation. Visualize data with interactive charts and comprehensive probability tables for statistical analysis.",
@@ -3129,10 +3129,10 @@
       "Calculate mean and variance instantly"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/poisson-distribution-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/poisson-distribution-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-1.svg",
     "title": "Prime Number Checker",
     "desc": "Instantly verify if a number is prime, perform prime factorization, find adjacent primes, and generate lists. A comprehensive number theory tool for students and math enthusiasts.",
@@ -3143,10 +3143,10 @@
       "List primes up to limit"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/prime-number-checker.zip"
+    "zipUrl": "/assets/zip-packages/education/prime-number-checker.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-2.svg",
     "title": "Probability Calculator",
     "desc": "Calculate single event probabilities, combined AND/OR events, and conditional dependencies. Supports independent and dependent scenarios with detailed odds and formulas.",
@@ -3157,10 +3157,10 @@
       "Odds and formula display"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/probability-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/probability-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-3.svg",
     "title": "Proportion Calculator",
     "desc": "Solve proportions A:B = C:D instantly using cross-multiplication. Find missing values, verify ratios, and simplify fractions with this free online math tool.",
@@ -3171,10 +3171,10 @@
       "Quick recipe examples"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/proportion-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/proportion-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-4.svg",
     "title": "Pythagorean Theorem Calculator",
     "desc": "Solve right triangles instantly using the Pythagorean theorem. Calculate hypotenuse or legs with step-by-step solutions, angle measurements, area, perimeter, and visual diagrams.",
@@ -3187,10 +3187,10 @@
       "Input validation and verification"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/pythagorean-theorem-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/pythagorean-theorem-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-5.svg",
     "title": "Quadratic Equation Solver",
     "desc": "Solve quadratic equations ax² + bx + c = 0 instantly. Calculate real and complex roots, discriminant, and view detailed step-by-step solutions for algebra problems.",
@@ -3201,10 +3201,10 @@
       "Supports linear equations"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/quadratic-equation-solver.zip"
+    "zipUrl": "/assets/zip-packages/education/quadratic-equation-solver.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-6.svg",
     "title": "Range Calculator",
     "desc": "Compute statistical range, midrange, IQR, and quartiles for any dataset. Visualize data spread with an interactive number line and get detailed statistical breakdowns instantly.",
@@ -3215,10 +3215,10 @@
       "Detailed statistical summary"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/range-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/range-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-7.svg",
     "title": "Ratio Calculator",
     "desc": "Simplify, scale, and solve ratios instantly with step-by-step calculations. Convert ratios to fractions and percentages for math homework and engineering tasks.",
@@ -3229,10 +3229,10 @@
       "Convert to fractions and percentages"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/ratio-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/ratio-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-8.svg",
     "title": "Scientific Calculator",
     "desc": "Perform complex mathematical calculations with this free online scientific calculator. Supports trigonometry, logarithms, exponents, factorials, and constants like pi and e for precise results.",
@@ -3244,7 +3244,7 @@
       "Calculation history tracking"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/scientific-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/scientific-calculator.zip"
   },
   {
     "category": "Real Estate Tools",
@@ -3262,7 +3262,7 @@
     "zipUrl": "/assets/zip-packages/real-estate/solar-panel-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-9.svg",
     "title": "Sphere Calculator",
     "desc": "Calculate sphere volume, surface area, radius, and circumference instantly. Solve for dimensions using known values. Free online geometry tool with detailed formulas and hemisphere calculations.",
@@ -3274,10 +3274,10 @@
       "Detailed formula explanations"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/sphere-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/sphere-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-10.svg",
     "title": "Standard Deviation Calculator",
     "desc": "Compute standard deviation, variance, mean, median, and quartiles instantly. Supports sample and population data with detailed statistical dispersion analysis.",
@@ -3290,10 +3290,10 @@
       "Supports decimal rounding"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/standard-deviation-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/standard-deviation-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-11.svg",
     "title": "Statistics Calculator",
     "desc": "Compute comprehensive descriptive statistics including mean, median, mode, variance, standard deviation, quartiles, and skewness. Analyze data distributions and identify outliers instantly with this free online tool.",
@@ -3305,10 +3305,10 @@
       "Analyze skewness distribution"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/statistics-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/statistics-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-12.svg",
     "title": "T Test Calculator",
     "desc": "T Test Calculator - a handy browser-based tool.",
@@ -3317,10 +3317,10 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/t-test-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/t-test-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-1.svg",
     "title": "Triangle Calculator",
     "desc": "Solve any triangle instantly using SSS, SAS, ASA, or SSA methods. Calculate area, perimeter, angles, and side lengths with precision and ease.",
@@ -3331,10 +3331,10 @@
       "Detect triangle types"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/triangle-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/triangle-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-2.svg",
     "title": "Trigonometry Calculator",
     "desc": "Compute sine, cosine, tangent, and inverse trigonometric functions instantly. Supports degrees and radians with hyperbolic options and a comprehensive reference table for all common angles.",
@@ -3347,10 +3347,10 @@
       "Common angles reference table included"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/trigonometry-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/trigonometry-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-3.svg",
     "title": "Unit Converter",
     "desc": "Unit Converter - a handy browser-based tool.",
@@ -3359,10 +3359,10 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/unit-converter.zip"
+    "zipUrl": "/assets/zip-packages/education/unit-converter.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-4.svg",
     "title": "Unit Rate Calculator",
     "desc": "Compare prices per ounce, pound, or liter to find the best value. Calculate unit rates instantly and determine savings between products for smarter shopping decisions.",
@@ -3373,10 +3373,10 @@
       "Savings percentage display"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/unit-rate-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/unit-rate-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-5.svg",
     "title": "Variance Calculator",
     "desc": "Compute sample and population variance with detailed statistical analysis. Instantly calculate mean, standard deviation, and view step-by-step formulas for accurate data spread measurement.",
@@ -3387,10 +3387,10 @@
       "Detailed calculation table"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/variance-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/variance-calculator.zip"
   },
   {
-    "category": "Math & Science",
+    "category": "Education & Research",
     "icon": "/assets/icons/math-6.svg",
     "title": "Vector Calculator",
     "desc": "Perform essential 2D and 3D vector calculations instantly. Compute magnitude, dot and cross products, angles, projections, and unit vectors with precise results.",
@@ -3402,7 +3402,7 @@
       "Vector projection"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/vector-calculator.zip"
+    "zipUrl": "/assets/zip-packages/education/vector-calculator.zip"
   },
   {
     "category": "Health & Fitness",
@@ -3720,7 +3720,7 @@
     "zipUrl": "/assets/zip-packages/audio/vehicle-depreciation.zip"
   },
   {
-    "category": "Cars & Vehicles",
+    "category": "Auto & Vehicles",
     "icon": "/assets/icons/cars-1.svg",
     "title": "Car Payment Calculator",
     "desc": "A free offline tool for car payment calculator calculations. Works in your browser.",
@@ -3729,7 +3729,7 @@
     "zipUrl": "/assets/zip-packages/cars/car-payment-calculator.zip"
   },
   {
-    "category": "Cars & Vehicles",
+    "category": "Auto & Vehicles",
     "icon": "/assets/icons/cars-1.svg",
     "title": "Ev Range Calculator",
     "desc": "A free offline tool for ev range calculator calculations. Works in your browser.",
@@ -3738,7 +3738,7 @@
     "zipUrl": "/assets/zip-packages/cars/ev-range-calculator.zip"
   },
   {
-    "category": "Cars & Vehicles",
+    "category": "Auto & Vehicles",
     "icon": "/assets/icons/cars-3.svg",
     "title": "Fuel Cost Calculator",
     "desc": "Calculate trip fuel expenses instantly with our free online calculator. Input distance, MPG, and gas prices to estimate costs, split fares among passengers, and compare gasoline versus electric vehicle savings.",
@@ -3753,7 +3753,7 @@
     "zipUrl": "/assets/zip-packages/cars/fuel-cost-calculator.zip"
   },
   {
-    "category": "Cars & Vehicles",
+    "category": "Auto & Vehicles",
     "icon": "/assets/icons/cars-1.svg",
     "title": "Oil Change Interval",
     "desc": "A free offline tool for oil change interval calculations. Works in your browser.",
@@ -3762,7 +3762,7 @@
     "zipUrl": "/assets/zip-packages/cars/oil-change-interval.zip"
   },
   {
-    "category": "Cars & Vehicles",
+    "category": "Auto & Vehicles",
     "icon": "/assets/icons/cars-1.svg",
     "title": "Tire Size Converter",
     "desc": "A free offline tool for tire size converter calculations. Works in your browser.",
@@ -3771,7 +3771,7 @@
     "zipUrl": "/assets/zip-packages/cars/tire-size-converter.zip"
   },
   {
-    "category": "AI & ML Utilities",
+    "category": "Developer Tools",
     "icon": "/assets/icons/ai-1.svg",
     "title": "AI Agent Workflow Planner",
     "desc": "Design and visualize multi-step AI agent workflows with ease. Define nodes, tools, and routing logic, then export structured JSON or Mermaid diagrams ready for LangGraph, AutoGen, or CrewAI integration.",
@@ -3783,10 +3783,10 @@
       "Support LangGraph and CrewAI"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/ai/ai-agent-workflow-planner.zip"
+    "zipUrl": "/assets/zip-packages/dev/ai-agent-workflow-planner.zip"
   },
   {
-    "category": "AI & ML Utilities",
+    "category": "Developer Tools",
     "icon": "/assets/icons/ai-2.svg",
     "title": "AI Model Comparison Table",
     "desc": "Compare top AI language models side-by-side with our comprehensive reference table. Analyze pricing, context windows, multimodal support, and key strengths to choose the perfect LLM for your projects.",
@@ -3798,10 +3798,10 @@
       "Get quick usage recommendations"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/ai/ai-model-comparison-table.zip"
+    "zipUrl": "/assets/zip-packages/dev/ai-model-comparison-table.zip"
   },
   {
-    "category": "AI & ML Utilities",
+    "category": "Developer Tools",
     "icon": "/assets/icons/ai-3.svg",
     "title": "AI Prompt Generator",
     "desc": "Craft highly effective AI prompts instantly with our free prompt generator. Customize roles, formats, tones, and constraints to get precise, production-ready outputs for any language model.",
@@ -3813,7 +3813,7 @@
       "Copy formatted text to clipboard"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/ai/ai-prompt-generator.zip"
+    "zipUrl": "/assets/zip-packages/dev/ai-prompt-generator.zip"
   },
   {
     "category": "Content & Writing",
@@ -3831,7 +3831,7 @@
     "zipUrl": "/assets/zip-packages/writing/ai-writing-style-detector.zip"
   },
   {
-    "category": "AI & ML Utilities",
+    "category": "Developer Tools",
     "icon": "/assets/icons/ai-4.svg",
     "title": "ChatGPT System Message Builder",
     "desc": "Generate optimized system prompts for ChatGPT and other LLMs instantly. Define roles, behaviors, output formats, and constraints to craft precise AI instructions for consistent results.",
@@ -3843,10 +3843,10 @@
       "Generate ready-to-use prompts"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/ai/chatgpt-system-message-builder.zip"
+    "zipUrl": "/assets/zip-packages/dev/chatgpt-system-message-builder.zip"
   },
   {
-    "category": "AI & ML Utilities",
+    "category": "Developer Tools",
     "icon": "/assets/icons/ai-5.svg",
     "title": "Conversation Token Trimmer",
     "desc": "Trim your LLM conversation history to fit exact token limits while preserving system prompts and critical context. Choose smart truncation strategies for optimal AI model performance.",
@@ -3859,10 +3859,10 @@
       "Copy trimmed output instantly"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/ai/conversation-token-trimmer.zip"
+    "zipUrl": "/assets/zip-packages/dev/conversation-token-trimmer.zip"
   },
   {
-    "category": "AI & ML Utilities",
+    "category": "Developer Tools",
     "icon": "/assets/icons/ai-6.svg",
     "title": "Embedding Cost Estimator",
     "desc": "Estimate AI embedding API costs instantly. Calculate token usage, vector dimensions, and monthly expenses for OpenAI, Cohere, and Voyage models. Optimize your RAG pipeline budget efficiently.",
@@ -3874,10 +3874,10 @@
       "Real-time cost breakdown per call"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/ai/embedding-cost-estimator.zip"
+    "zipUrl": "/assets/zip-packages/dev/embedding-cost-estimator.zip"
   },
   {
-    "category": "AI & ML Utilities",
+    "category": "Developer Tools",
     "icon": "/assets/icons/ai-7.svg",
     "title": "Image Prompt Builder",
     "desc": "Create highly detailed AI image prompts for Midjourney, DALL-E, and Stable Diffusion in seconds. Easily customize subjects, art styles, lighting, and composition to generate optimized prompts for stunning visuals.",
@@ -3889,10 +3889,10 @@
       "Copy ready-to-use prompts instantly"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/ai/image-prompt-builder.zip"
+    "zipUrl": "/assets/zip-packages/dev/image-prompt-builder.zip"
   },
   {
-    "category": "AI & ML Utilities",
+    "category": "Developer Tools",
     "icon": "/assets/icons/ai-8.svg",
     "title": "Midjourney Prompt Builder",
     "desc": "Generate optimized Midjourney AI art prompts instantly. Customize styles, lighting, composition, and parameters like aspect ratio and stylization. Copy ready-to-use commands directly to Discord for stunning results.",
@@ -3903,10 +3903,10 @@
       "Copy ready-to-use Discord commands"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/ai/midjourney-prompt-builder.zip"
+    "zipUrl": "/assets/zip-packages/dev/midjourney-prompt-builder.zip"
   },
   {
-    "category": "AI & ML Utilities",
+    "category": "Developer Tools",
     "icon": "/assets/icons/ai-9.svg",
     "title": "Negative Prompt Generator",
     "desc": "Generate optimized negative prompts for Stable Diffusion and other AI image generators. Select quality and style exclusions to eliminate artifacts, improve composition, and enhance your generated artwork instantly.",
@@ -3918,10 +3918,10 @@
       "Optimized for AI image generation"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/ai/negative-prompt-generator.zip"
+    "zipUrl": "/assets/zip-packages/dev/negative-prompt-generator.zip"
   },
   {
-    "category": "AI & ML Utilities",
+    "category": "Developer Tools",
     "icon": "/assets/icons/ai-10.svg",
     "title": "Prompt Engineering Cheat Sheet",
     "desc": "Master AI interactions with this comprehensive prompt engineering cheat sheet. Explore essential techniques like few-shot learning, chain-of-thought reasoning, RAG, and role prompting to optimize LLM outputs effectively.",
@@ -3933,10 +3933,10 @@
       "Interactive technique explorer"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/ai/prompt-engineering-cheat-sheet.zip"
+    "zipUrl": "/assets/zip-packages/dev/prompt-engineering-cheat-sheet.zip"
   },
   {
-    "category": "AI & ML Utilities",
+    "category": "Developer Tools",
     "icon": "/assets/icons/ai-11.svg",
     "title": "RAG Text Chunker",
     "desc": "Split long documents into optimal chunks for Retrieval-Augmented Generation pipelines. Customize chunk size, overlap, and strategies like words or sentences to improve AI context retrieval accuracy.",
@@ -3948,7 +3948,7 @@
       "Clean whitespace trimming options"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/ai/rag-chunker.zip"
+    "zipUrl": "/assets/zip-packages/dev/rag-chunker.zip"
   },
   {
     "category": "Health & Fitness",
@@ -4002,7 +4002,7 @@
     "zipUrl": "/assets/zip-packages/health/car-resale-value-calculator.zip"
   },
   {
-    "category": "Cars & Vehicles",
+    "category": "Auto & Vehicles",
     "icon": "/assets/icons/cars-2.svg",
     "title": "Driving Cost Per Mile Calculator",
     "desc": "Calculate your true vehicle operating expenses with this comprehensive driving cost per mile calculator. Track fuel, depreciation, insurance, and maintenance to make smarter automotive financial decisions.",
@@ -4044,7 +4044,7 @@
     "zipUrl": "/assets/zip-packages/health/mpg-calculator.zip"
   },
   {
-    "category": "Travel Tools",
+    "category": "Travel & Transportation",
     "icon": "/assets/icons/travel-1.svg",
     "title": "Road Trip Planner",
     "desc": "Plan your next adventure with our free road trip planner. Calculate fuel, tolls, meals, and hotel costs while estimating drive time, rest stops, and per-person expenses for a stress-free journey.",
@@ -4059,7 +4059,7 @@
     "zipUrl": "/assets/zip-packages/travel/road-trip-planner.zip"
   },
   {
-    "category": "Cars & Vehicles",
+    "category": "Auto & Vehicles",
     "icon": "/assets/icons/cars-4.svg",
     "title": "Tire Pressure Calculator",
     "desc": "Calculate optimal tire pressure for your car or truck based on weight, load, and temperature. Get precise PSI recommendations, compare with door stickers, and ensure safe driving with this free online tool.",
@@ -4092,7 +4092,7 @@
     "zipUrl": "/assets/zip-packages/health/trip-mileage-log.zip"
   },
   {
-    "category": "Cars & Vehicles",
+    "category": "Auto & Vehicles",
     "icon": "/assets/icons/cars-5.svg",
     "title": "Vehicle Depreciation Calculator",
     "desc": "Track your car's value loss over time with our free vehicle depreciation calculator. Enter purchase price, type, mileage, and condition to get a detailed year-by-year breakdown and optimal selling advice.",
