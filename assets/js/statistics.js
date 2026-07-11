@@ -24,19 +24,17 @@ const YQZ_STATS = {
    * 获取当前语言
    */
   getCurrentLang() {
-    // 优先从 cookie 读取
     const cookies = document.cookie.split(';');
     for (let cookie of cookies) {
       const [name, ...valueParts] = cookie.trim().split('=');
-      if (name === 'yqz_lang') {
+      if (name === 'yuanqi_lang') {
         return valueParts.join('=');
       }
     }
-    // 其次从 localStorage 读取
     try {
-      return localStorage.getItem('yqz_lang') || 'zh';
+      return localStorage.getItem('yuanqi_lang') || 'en';
     } catch (_) {
-      return 'zh';
+      return 'en';
     }
   },
   
@@ -115,17 +113,13 @@ const YQZ_STATS = {
    * - 监听语言切换事件
    */
   init() {
-    // 页面 PV 统计
     this.pageView();
     
-    // 监听语言切换（如果 i18n.js 已加载）
-    const originalSetLang = window.setLanguage;
-    if (originalSetLang) {
-      window.setLanguage = function(lang) {
-        const fromLang = window.yqzCurrentLang || 'zh';
-        originalSetLang(lang);
-        window.yqzCurrentLang = lang;
-        // 延迟一下确保 cookie 已写入
+    const originalSwitchTo = window.I18N ? window.I18N.switchTo : null;
+    if (originalSwitchTo) {
+      window.I18N.switchTo = async function(lang) {
+        const fromLang = window.I18N.currentLang || 'en';
+        await originalSwitchTo.call(window.I18N, lang);
         setTimeout(() => {
           YQZ_STATS.languageSwitch(fromLang, lang);
         }, 100);
