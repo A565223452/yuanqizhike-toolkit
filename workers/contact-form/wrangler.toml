@@ -1,6 +1,10 @@
 name = "yuanqizhike-contact"
 main = "src/worker.js"
 compatibility_date = "2025-07-01"
+# Routes for API endpoints - routes to custom domain
+[[routes]]
+pattern = "yuanqizhike.com/api/*"
+zone_name = "yuanqizhike.com"
 
 # D1 数据库绑定（部署前先用 wrangler d1 create yuanqizhike-db 创建，把返回的 database_id 填到下方）
 [[d1_databases]]
