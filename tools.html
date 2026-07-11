@@ -461,9 +461,6 @@ var categoryMap = {
                 }
             }
 
-            // Re-initialize download modal for dynamically created buttons
-            initDownloadModal();
-            
             // Override download button click handler to track downloads
             document.querySelectorAll('.btn-download').forEach(function(btn) {
                 btn.addEventListener('click', function () {
@@ -471,6 +468,10 @@ var categoryMap = {
                     var toolTitle = card ? card.querySelector('h3')?.textContent || 'Unknown' : 'Unknown';
                     if (window.YQZ_STATS) {
                         YQZ_STATS.download(toolTitle, this.dataset.download);
+                    }
+                    // 执行实际跳转下载
+                    if (this.dataset.download) {
+                        window.location.href = this.dataset.download;
                     }
                 });
             });
