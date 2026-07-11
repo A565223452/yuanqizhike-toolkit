@@ -461,14 +461,17 @@ var categoryMap = {
                 }
             }
 
-            // Override download link click handler to track downloads
-            document.querySelectorAll('.btn-download-zip').forEach(function(link) {
-                link.addEventListener('click', function (e) {
-                    e.stopPropagation();
-                    var card = this.closest('.tool-card');
-                    var toolTitle = card ? card.querySelector('h3')?.textContent || 'Unknown' : 'Unknown';
-                    if (window.YQZ_STATS) {
-                        YQZ_STATS.download(toolTitle, this.href);
+            // Override download button click handler
+            document.querySelectorAll('.btn-download').forEach(btn => {
+                btn.addEventListener('click', function (e) {
+                    var zipPath = this.getAttribute('data-download');
+                    if (zipPath) {
+                        var card = this.closest('.tool-card');
+                        var toolTitle = card ? card.querySelector('h3')?.textContent || 'Unknown' : 'Unknown';
+                        if (window.YQZ_STATS) {
+                            YQZ_STATS.download(toolTitle, zipPath);
+                        }
+                        window.open(zipPath, '_blank');
                     }
                 });
             });
@@ -503,7 +506,7 @@ var categoryMap = {
             // Build Download ZIP button (only if zipUrl is provided)
             var downloadHtml = '';
             if (tool.zipUrl) {
-                downloadHtml = '<a href="' + escapeHtml(tool.zipUrl) + '" class="btn btn-download-zip" target="_blank">' + t('tool.downloadZip', 'Download ZIP') + '</a>';
+                downloadHtml = '<button class="btn btn-download-zip btn-download" data-download="' + escapeHtml(tool.zipUrl) + '" data-i18n="tool.downloadZip">Download ZIP</button>';
             }
 
             // Determine if icon is an SVG path (starts with 'assets/' or ends with '.svg')
