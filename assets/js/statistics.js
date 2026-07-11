@@ -53,8 +53,12 @@ const YQZ_STATS = {
     
     // 优先使用 sendBeacon（页面卸载时可靠）
     if (navigator.sendBeacon) {
-      const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
-      navigator.sendBeacon(this.apiBase + endpoint, blob);
+      try {
+        const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
+        navigator.sendBeacon(this.apiBase + endpoint, blob);
+      } catch (e) {
+        // 静默失败
+      }
     } else {
       // 降级为 fetch
       fetch(this.apiBase + endpoint, {

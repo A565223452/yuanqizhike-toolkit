@@ -41,14 +41,18 @@
     // 使用自动广告代码：无需手动创建广告单元 slot，谷歌自动在页面合适位置插入广告
     function loadAdSense() {
         if (window.adsbygoogleLoaded) return;
+        window.adsbygoogleLoaded = true;
         const script = document.createElement('script');
         script.async = true;
         script.crossOrigin = 'anonymous';
         script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6181560564978988';
         script.onload = function() {
-            // 脚本加载完成后推送空对象触发自动广告初始化
-            (window.adsbygoogle = window.adsbygoogle || []).push({});
-            window.adsbygoogleLoaded = true;
+            // Auto Ads 自动在页面插入广告，静默处理 push 错误
+            try {
+                (window.adsbygoogle = window.adsbygoogle || []).push({});
+            } catch (e) {
+                console.log('[AdSense] Auto ads already initialized or error suppressed');
+            }
             console.log('[AdSense] Auto ads script loaded (consent granted)');
         };
         script.onerror = function() {

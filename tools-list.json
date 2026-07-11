@@ -3415,7 +3415,7 @@
   },
   {
     "category": "Health & Fitness",
-    "icon": "/assets/icons/health-10.svg",
+    "icon": "/assets/icons/health-1.svg",
     "title": "Ai Content Detector Lite",
     "desc": "A free offline tool for ai content detector lite calculations. Works in your browser.",
     "features": [],
@@ -3424,7 +3424,7 @@
   },
   {
     "category": "Health & Fitness",
-    "icon": "/assets/icons/health-11.svg",
+    "icon": "/assets/icons/health-1.svg",
     "title": "Ai Detection Score Tool",
     "desc": "A free offline tool for ai detection score tool calculations. Works in your browser.",
     "features": [],
@@ -3763,5 +3763,185 @@
     "features": [],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/cars/tire-size-converter.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/ai-1.svg",
+    "title": "AI Agent Workflow Planner",
+    "desc": "Design and visualize multi-step AI agent workflows with ease. Define nodes, tools, and routing logic, then export structured JSON or Mermaid diagrams ready for LangGraph, AutoGen, or CrewAI integration.",
+    "features": [
+      "Visualize multi-step agent workflows",
+      "Define nodes, tools, and routing",
+      "Export structured JSON configurations",
+      "Generate Mermaid flowchart diagrams",
+      "Support LangGraph and CrewAI"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/ai/ai-agent-workflow-planner.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/ai-2.svg",
+    "title": "AI Model Comparison Table",
+    "desc": "Compare top AI language models side-by-side with our comprehensive reference table. Analyze pricing, context windows, multimodal support, and key strengths to choose the perfect LLM for your projects.",
+    "features": [
+      "Compare top AI models",
+      "Filter by vendor or name",
+      "View pricing and context limits",
+      "Check multimodal support status",
+      "Get quick usage recommendations"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/ai/ai-model-comparison-table.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/ai-3.svg",
+    "title": "AI Prompt Generator",
+    "desc": "Craft highly effective AI prompts instantly with our free prompt generator. Customize roles, formats, tones, and constraints to get precise, production-ready outputs for any language model.",
+    "features": [
+      "Customize AI personas and roles",
+      "Select output format and tone",
+      "Add context and strict constraints",
+      "Generate production-ready prompts instantly",
+      "Copy formatted text to clipboard"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/ai/ai-prompt-generator.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "/assets/icons/content-1.svg",
+    "title": "AI Writing Style Detector",
+    "desc": "Analyze writing style, tone, formality, and readability instantly. Detect AI-like patterns, track sentence complexity, and get actionable editing tips to improve your content quality.",
+    "features": [
+      "Analyze tone and formality",
+      "Detect AI writing patterns",
+      "Measure readability scores",
+      "Track sentence complexity",
+      "Identify passive voice usage"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/ai-writing-style-detector.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/ai-4.svg",
+    "title": "ChatGPT System Message Builder",
+    "desc": "Generate optimized system prompts for ChatGPT and other LLMs instantly. Define roles, behaviors, output formats, and constraints to craft precise AI instructions for consistent results.",
+    "features": [
+      "Customize AI assistant roles",
+      "Define behavior and tone",
+      "Set output formatting rules",
+      "Add constraints and guidelines",
+      "Generate ready-to-use prompts"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/ai/chatgpt-system-message-builder.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/ai-5.svg",
+    "title": "Conversation Token Trimmer",
+    "desc": "Trim your LLM conversation history to fit exact token limits while preserving system prompts and critical context. Choose smart truncation strategies for optimal AI model performance.",
+    "features": [
+      "Preserve system messages automatically",
+      "Estimate tokens by language type",
+      "Keep most recent conversation turns",
+      "Summarize dropped message history",
+      "Fit exact context window limits",
+      "Copy trimmed output instantly"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/ai/conversation-token-trimmer.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/ai-6.svg",
+    "title": "Embedding Cost Estimator",
+    "desc": "Estimate AI embedding API costs instantly. Calculate token usage, vector dimensions, and monthly expenses for OpenAI, Cohere, and Voyage models. Optimize your RAG pipeline budget efficiently.",
+    "features": [
+      "Supports multiple AI providers",
+      "Calculates token count and API costs",
+      "Estimates vector storage requirements",
+      "Custom pricing for any model",
+      "Real-time cost breakdown per call"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/ai/embedding-cost-estimator.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/ai-7.svg",
+    "title": "Image Prompt Builder",
+    "desc": "Create highly detailed AI image prompts for Midjourney, DALL-E, and Stable Diffusion in seconds. Easily customize subjects, art styles, lighting, and composition to generate optimized prompts for stunning visuals.",
+    "features": [
+      "Generate AI image prompts",
+      "Customize style and lighting",
+      "Support Midjourney and DALL-E",
+      "Adjust composition and mood",
+      "Copy ready-to-use prompts instantly"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/ai/image-prompt-builder.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/ai-8.svg",
+    "title": "Midjourney Prompt Builder",
+    "desc": "Generate optimized Midjourney AI art prompts instantly. Customize styles, lighting, composition, and parameters like aspect ratio and stylization. Copy ready-to-use commands directly to Discord for stunning results.",
+    "features": [
+      "Custom style and lighting presets",
+      "Adjust aspect ratio and stylization",
+      "One-click prompt generation",
+      "Copy ready-to-use Discord commands"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/ai/midjourney-prompt-builder.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/ai-9.svg",
+    "title": "Negative Prompt Generator",
+    "desc": "Generate optimized negative prompts for Stable Diffusion and other AI image generators. Select quality and style exclusions to eliminate artifacts, improve composition, and enhance your generated artwork instantly.",
+    "features": [
+      "Generate Stable Diffusion prompts",
+      "Exclude quality and style flaws",
+      "Add custom negative terms",
+      "One-click copy output",
+      "Optimized for AI image generation"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/ai/negative-prompt-generator.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/ai-10.svg",
+    "title": "Prompt Engineering Cheat Sheet",
+    "desc": "Master AI interactions with this comprehensive prompt engineering cheat sheet. Explore essential techniques like few-shot learning, chain-of-thought reasoning, RAG, and role prompting to optimize LLM outputs effectively.",
+    "features": [
+      "Search and filter techniques",
+      "Step-by-step reasoning guides",
+      "RAG and system prompt tips",
+      "Zero-shot and few-shot examples",
+      "Interactive technique explorer"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/ai/prompt-engineering-cheat-sheet.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/ai-11.svg",
+    "title": "RAG Text Chunker",
+    "desc": "Split long documents into optimal chunks for Retrieval-Augmented Generation pipelines. Customize chunk size, overlap, and strategies like words or sentences to improve AI context retrieval accuracy.",
+    "features": [
+      "Configurable chunk sizes and overlaps",
+      "Multiple splitting strategies supported",
+      "Optimized for RAG pipelines",
+      "Instant text segmentation output",
+      "Clean whitespace trimming options"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/ai/rag-chunker.zip"
   }
 ]
