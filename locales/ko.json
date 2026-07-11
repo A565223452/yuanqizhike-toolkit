@@ -1,0 +1,525 @@
+{
+  "page": {
+    "title": "YuanqiZhiKe Toolkit - 글로벌 크리에이터를 위한 무료 오프라인 도구",
+    "description": "전 세계 크리에이터와 실무자를 위한 무료 오프라인 프론트엔드 도구를 제공하는 원스톱 플랫폼입니다."
+  },
+  "brand": {
+    "name": "YuanqiZhiKe Toolkit"
+  },
+  "nav": {
+    "home": "홈",
+    "tools": "도구",
+    "customDev": "맞춤 개발",
+    "feedback": "피드백",
+    "license": "라이선스"
+  },
+  "dropdown": {
+    "tools": "도구",
+    "contentWriting": "콘텐츠 및 작성",
+    "designMedia": "디자인 및 미디어",
+    "developerTools": "개발자 도구",
+    "businessProductivity": "비즈니스 및 생산성",
+    "educationResearch": "교육 및 연구",
+    "healthFitness": "건강 및 피트니스",
+    "financeCrypto": "금융 및 암호화폐",
+    "seoMarketing": "SEO 및 마케팅",
+    "socialMedia": "소셜 미디어",
+    "lifestyleUtilities": "생활 및 유틸리티",
+    "securityPrivacy": "보안 및 개인정보",
+    "mathScience": "수학 및 과학",
+    "aiMlUtilities": "AI 및 머신러닝",
+    "travelTools": "여행 도구",
+    "cookingFood": "요리 및 음식",
+    "carsVehicles": "자동차 및 차량",
+    "colorDesignUtilities": "색상 및 디자인 도구",
+    "formsGenerators": "양식 및 생성기",
+    "weatherClimate": "날씨 및 기후",
+    "audioMusicTools": "오디오 및 음악 도구",
+    "videoTools": "비디오 도구",
+    "photographyTools": "사진 도구",
+    "gamingTools": "게임 도구",
+    "hobbiesCrafts": "취미 및 공예",
+    "petsAnimals": "반려동물 및 동물",
+    "realEstateTools": "부동산 도구",
+    "religionSpirituality": "종교 및 영성"
+  },
+  "hero": {
+    "title": "모든 산업을 위한 무료 오프라인 도구",
+    "description": "YuanqiZhiKe Toolkit은 전 세계 크리에이터와 전문가에게 무료 개인정보 보호 중심의 프론트엔드 도구를 제공하는 원스톱 플랫폼입니다. 다운로드, 로컬에서 열기, 오프라인으로 작업 — 등록 불필요, 데이터 수집 없음, 타협 없음.",
+    "exploreBtn": "모든 도구 보기",
+    "cta": "모든 도구 보기"
+  },
+  "positioning": {
+    "title": "제공하는 것",
+    "multiIndustry": {
+      "title": "전 산업 커버리지",
+      "desc": "콘텐츠 작성부터 웹 개발까지, 당사의 도구는 모든 주요 산업을 아우릅니다. 필요할 때 필요한 도구를 찾아보세요."
+    },
+    "offlinePrivate": {
+      "title": "100% 오프라인 및 개인정보 보호",
+      "desc": "모든 도구는 브라우저에서 완전히 실행됩니다. 데이터는 절대 기기를 떠나지 않습니다. 서버 없음, 추적 없음, 개인정보 걱정 없음."
+    },
+    "openSource": {
+      "title": "오픈소스 및 무료",
+      "desc": "모든 도구는 전체 소스 코드와 함께 제공됩니다. 생산급 코드를 공부, 수정, 학습하세요 — 완전 무료입니다."
+    },
+    "zeroBarriers": {
+      "title": "제로 장벽",
+      "desc": "가입 불필요, 로그인 불필요, 결제 불필요. ZIP을 다운로드하고, 압축을 풀고, 브라우저에서 열기만 하면 됩니다. 그렇게 간단합니다."
+    }
+  },
+  "howItWorks": {
+    "title": "사용 방법",
+    "steps": [
+      {
+        "number": 1,
+        "title": "도구 찾아보기",
+        "desc": "도구 카탈로그를 방문하여 카테고리별로 필터링하고 작업 흐름에 맞는 도구를 찾으세요."
+      },
+      {
+        "number": 2,
+        "title": "라이선스 동의",
+        "desc": "다운로드를 클릭하고 소스 코드 라이선스 계약을 검토 및 동의하세요."
+      },
+      {
+        "number": 3,
+        "title": "다운로드 및 사용",
+        "desc": "ZIP 파일을 받아 압축을 풀고 브라우저에서 index.html을 여세요. 즉시 오프라인 작업을 시작하세요."
+      }
+    ]
+  },
+  "categories": {
+    "title": "도구 카테고리",
+    "contentWriting": {
+      "title": "콘텐츠 및 작성",
+      "desc": "글 재작성, 의역, 문법 검사 등."
+    },
+    "designMedia": {
+      "title": "디자인 및 미디어",
+      "desc": "이미지 처리, 색상 선택기, SVG 도구 및 디자인 유틸리티."
+    },
+    "developerTools": {
+      "title": "개발자 도구",
+      "desc": "코드 포맷터, JSON 검증기, 해시 생성기 및 디버그 도우미."
+    },
+    "businessProductivity": {
+      "title": "비즈니스 및 생산성",
+      "desc": "PDF 변환기, 스프레드시트 도구, 송장 생성기 등."
+    },
+    "educationResearch": {
+      "title": "교육 및 연구",
+      "desc": "인용 생성기, 플래시카드 제작기, 표절 검사기 및 학습 도구."
+    },
+    "healthFitness": {
+      "title": "건강 및 피트니스",
+      "desc": "BMI 계산기, 칼로리 추적기, 체지방 추정기 및 건강 도구."
+    },
+    "financeCrypto": {
+      "title": "금융 및 암호화폐",
+      "desc": "대출 계산기, 복리 계산, 암호화폐 변환기 및 세금 추정기."
+    },
+    "seoMarketing": {
+      "title": "SEO 및 마케팅",
+      "desc": "키워드 분석기, 메타 태그 생성기, SERP 미리보기 및 SEO 최적화 도구."
+    },
+    "socialMedia": {
+      "title": "소셜 미디어",
+      "desc": "문자 카운터, 해시태그 생성기 및 Instagram, TikTok, YouTube, X용 플랫폼별 도구."
+    },
+    "lifestyleUtilities": {
+      "title": "생활 및 유틸리티",
+      "desc": "시간대 변환기, 단위 변환기, 날짜 계산기, 나이 계산기 및 카운트다운 타이머."
+    },
+    "securityPrivacy": {
+      "title": "보안 및 개인정보",
+      "desc": "비밀번호 생성기, AES 암호화기, 해시 생성기 및 암호화 유틸리티."
+    },
+    "mathScience": {
+      "title": "수학 및 과학",
+      "desc": "공학용 계산기, 방정식 풀이기, 단위 변환기 및 통계 도구."
+    },
+    "aiMlUtilities": {
+      "title": "AI 및 머신러닝",
+      "desc": "프롬프트 생성기, 토큰 카운터, 모델 계산기 및 데이터셋 도구."
+    },
+    "travelTools": {
+      "title": "여행 도구",
+      "desc": "거리 계산기, 환율 변환기, 여행 플래너 및 시간대 도구."
+    },
+    "cookingFood": {
+      "title": "요리 및 음식",
+      "desc": "레시피 변환기, 요리 타이머, 단위 변환기 및 영양 계산기."
+    },
+    "carsVehicles": {
+      "title": "자동차 및 차량",
+      "desc": "연비 계산기, 주행 거리 추적기, 타이어 압력 변환기 및 차량 도구."
+    },
+    "colorDesignUtilities": {
+      "title": "색상 및 디자인 도구",
+      "desc": "색상 선택기, 팔레트 생성기, 그라데이션 제작기 및 디자인 유틸리티."
+    },
+    "formsGenerators": {
+      "title": "양식 및 생성기",
+      "desc": "양식 빌더, 템플릿 생성기, 문서 제작기 및 코드 생성기."
+    },
+    "weatherClimate": {
+      "title": "날씨 및 기후",
+      "desc": "온도 변환기, 열지수 계산기, 체감온도 및 기후 도구."
+    },
+    "audioMusicTools": {
+      "title": "오디오 및 음악 도구",
+      "desc": "오디오 변환기, BPM 감지기, 주파수 계산기 및 음악 유틸리티."
+    },
+    "videoTools": {
+      "title": "비디오 도구",
+      "desc": "비디오 형식 변환기, 해상도 계산기, 비트레이트 도구 및 비디오 유틸리티."
+    },
+    "photographyTools": {
+      "title": "사진 도구",
+      "desc": "EXIF 뷰어, 초점 거리 계산기, 노출 도구 및 사진 유틸리티."
+    },
+    "gamingTools": {
+      "title": "게임 도구",
+      "desc": "주사위 굴리기, 능력치 계산기, 빌드 플래너 및 게임 유틸리티."
+    },
+    "hobbiesCrafts": {
+      "title": "취미 및 공예",
+      "desc": "패턴 생성기, 실 계산기, 공예 플래너 및 취미 유틸리티."
+    },
+    "petsAnimals": {
+      "title": "반려동물 및 동물",
+      "desc": "반려동물 나이 계산기, 급여 가이드, 투약 계산기 및 동물 도구."
+    },
+    "realEstateTools": {
+      "title": "부동산 도구",
+      "desc": "주택담보대출 계산기, 부동산 평가기, ROI 계산기 및 부동산 도구."
+    },
+    "religionSpirituality": {
+      "title": "종교 및 영성",
+      "desc": "기도 시간 계산기, 종교 달력, 명상 타이머 및 영성 도구."
+    }
+  },
+  "cta": {
+    "title": "맞춤 도구 또는 SaaS 제품이 필요하신가요?",
+    "desc": "저희는 전 세계 비즈니스를 위한 전문 프론트엔드 도구 및 웹 애플리케이션 개발 서비스를 제공합니다. 컨셉부터 배포까지, 저희 팀이 프로덕션급 솔루션을 제공합니다.",
+    "btn": "맞춤 개발 문의"
+  },
+  "comments": {
+    "title": "댓글"
+  },
+  "footer": {
+    "privacy": "개인정보 처리방침",
+    "cookie": "쿠키 알림",
+    "license": "소스 코드 라이선스",
+    "customDev": "맞춤 개발 서비스",
+    "copyright": "모든 권리 보유."
+  },
+  "download": {
+    "modalTitle": "소스 코드 라이선스 계약",
+    "modalDesc": "다운로드하면 다음 약관에 동의하는 것으로 간주됩니다:",
+    "term1": "소스 코드는 교육 및 개인 용도로만 제공됩니다.",
+    "term2": "자신의 용도로 코드를 수정할 수 있지만 원본 저작권 표시를 유지해야 합니다.",
+    "term3": "재배포 또는 상업적 사용에는 명시적 허가가 필요합니다.",
+    "checkbox": "라이선스 약관을 읽고 동의합니다",
+    "cancel": "취소",
+    "confirm": "확인 및 다운로드"
+  },
+  "tool": {
+    "download": "다운로드",
+    "backToTools": "도구 목록으로 돌아가기",
+    "category": "카테고리",
+    "comingSoon": "출시 예정",
+    "pageTitle": "모든 도구",
+    "pageDesc": "성장하는 무료 오프라인 프론트엔드 도구 컬렉션을 둘러보세요. 도구를 클릭하여 세부 정보를 확인하고 소스 코드를 다운로드하세요.",
+    "viewDetails": "자세히 보기",
+    "downloadZip": "ZIP 다운로드",
+    "stayTuned": "기대해 주세요",
+    "comingSoonDesc": "이 카테고리의 도구는 현재 개발 중입니다."
+  },
+  "languageSwitcher": {
+    "title": "언어",
+    "en": "English",
+    "zh": "中文",
+    "es": "Español",
+    "ja": "日本語"
+  },
+  "staticPages": {
+    "about": {
+      "title": "소개 - YuanqiZhiKe Toolkit",
+      "heading": "소개",
+      "subtitle": "무료 개인정보 보호 중심 도구로 글로벌 크리에이터를 지원합니다.",
+      "ourMission": "우리의 사명",
+      "missionDesc": "YuanqiZhiKe Toolkit은 간단한 신념으로 설립되었습니다: 모든 사람이 위치, 수입, 기술 배경에 관계없이 강력하고 전문가 수준의 도구에 접근할 수 있어야 합니다. 우리는 귀하의 개인정보를 존중하는 무료 오프라인 프론트엔드 도구를 만듭니다.",
+      "whatMakesUsDifferent": "차별점",
+      "featurePrivacyFirst": "🔒 개인정보 우선",
+      "featurePrivacyFirstDesc": "모든 도구는 브라우저에서 완전히 실행됩니다. 귀하의 데이터는 절대 기기를 떠나지 않습니다. 서버 없음, 추적 없음, 타협 없음.",
+      "featureCompletelyFree": "💰 완전 무료",
+      "featureCompletelyFreeDesc": "등록 불필요, 결제 장벽 없음, 숨은 비용 없음. 모든 도구는 전체 소스 코드와 함께 무료로 사용 및 다운로드할 수 있습니다.",
+      "featureGlobalCommunity": "🌍 글로벌 커뮤니티",
+      "featureGlobalCommunityDesc": "당사의 도구는 개인 개발자부터 기업 팀까지 전 세계 크리에이터를 위해 설계되었습니다.",
+      "featureOpenSource": "📦 오픈소스",
+      "featureOpenSourceDesc": "모든 도구는 관대한 라이선스 하에 전체 소스 코드를 포함합니다. 학습, 수정, 활용하세요.",
+      "ourStory": "우리의 이야기",
+      "storyPart1": "YuanqiZhiKe는 중국 크리에이터들이 서양 개발자들이 당연하게 여기는 동일한 품질의 도구에 접근할 수 있도록 하는 작은 프로젝트로 시작되었습니다.",
+      "storyPart2": "현재 당사의 도구 키트는 수십 개 국가에서 매일 수천 명의 사용자에게 서비스를 제공합니다. 우리는 무료, 프라이빗, 오픈이라는 창립 원칙을 계속 지키고 있습니다.",
+      "ourValues": "우리의 가치",
+      "valueAccessibility": "접근성: 도구는 모든 사람이 어디서나 사용할 수 있어야 합니다",
+      "valuePrivacy": "개인정보: 귀하의 데이터는 귀하의 것이며 기기에 남아 있습니다",
+      "valueTransparency": "투명성: 전체 소스 코드, 명확한 라이선스, 정직한 커뮤니케이션",
+      "valueQuality": "품질: 안정적으로 작동하는 프로덕션급 코드",
+      "valueCommunity": "커뮤니티: 함께 구축하고, 지식을 공유하며, 크리에이터를 지원",
+      "getInvolved": "참여하기",
+      "getInvolvedDesc": "커뮤니티 기여를 환영합니다! 버그 신고, 도구 제안, 코드 개선, 번역 등.",
+      "involveReportIssues": "문제 신고: 버그를 찾으셨나요? 알려주세요",
+      "involveSuggestTools": "도구 제안: 아이디어가 있나요? 공유해 주세요",
+      "involveTranslate": "번역: 도구를 번역하여 더 많은 사용자에게 도달하는 데 도움을 주세요",
+      "involveCustomDev": "맞춤 개발: 맞춤 솔루션이 필요하신가요? 문의해 주세요",
+      "contact": "연락처",
+      "contactDesc": "질문이나 피드백이 있으신가요? 여러분의 의견을 듣고 싶습니다.",
+      "contactEmail": "이메일: 260330663@qq.com"
+    },
+    "privacy": {
+      "title": "개인정보 처리방침 - YuanqiZhiKe Toolkit",
+      "heading": "개인정보 처리방침",
+      "lastUpdated": "최종 업데이트",
+      "section1Title": "1. 소개",
+      "section1Text": "YuanqiZhiKe Toolkit(\"당사\" 또는 \"저희\")에 오신 것을 환영합니다. 본 개인정보 처리방침은 귀하가 당사 웹사이트 및 도구를 방문하고 사용할 때 데이터를 처리하는 방법을 설명합니다. 당사는 귀하의 개인정보를 보호하고 GDPR, CCPA 및 기타 글로벌 개인정보 보호 규정을 준수하기 위해 노력하고 있습니다.",
+      "section2Title": "2. 당사가 수집하지 않는 정보",
+      "section2Intro": "YuanqiZhiKe Toolkit은 개인정보 보호를 기본 원칙으로 설계되었습니다. 구체적으로:",
+      "section2Item1": "이름, 이메일 주소, 전화번호 등의 개인 정보를 수집하지 않습니다.",
+      "section2Item2": "사용자 등록이나 로그인이 필요하지 않습니다.",
+      "section2Item3": "도구에 입력한 데이터를 당사 서버에 저장하지 않습니다.",
+      "section2Item4": "모든 도구 처리는 귀하의 기기에서 로컬로 실행되며, 원격 서버로 데이터가 전송되지 않습니다.",
+      "section3Title": "3. 익명 분석",
+      "section3Intro": "당사는 제3자 분석 서비스(Google Analytics 4 또는 Cloudflare Analytics 등)를 사용하여 익명의 집계된 웹사이트 사용 통계를 수집할 수 있습니다. 이 데이터에는 다음이 포함됩니다:",
+      "section3Item1": "방문한 페이지 및 각 페이지에서 보낸 시간",
+      "section3Item2": "참조 웹사이트 및 검색어",
+      "section3Item3": "대략적인 지리적 지역(국가 수준만)",
+      "section3Item4": "브라우저 유형 및 운영 체제(비특정)",
+      "section3Note": "이 정보는 귀하를 개인적으로 식별하는 데 사용될 수 없습니다. 분석 데이터를 개인 정보와 결합하지 않습니다.",
+      "section4Title": "4. 쿠키",
+      "section4Intro": "당사 웹사이트는 다음 목적으로 쿠키를 사용합니다:",
+      "section4Essential": "필수 쿠키:",
+      "section4EssentialDesc": "웹사이트 기본 기능(세션 관리, 기본 설정 저장)에 필요합니다. 이는 동의가 필요하지 않습니다.",
+      "section4Analytics": "분석 쿠키:",
+      "section4AnalyticsDesc": "Google Analytics 4 / Cloudflare Analytics가 익명 사용 통계를 수집하는 데 사용합니다. IP 주소는 익명화됩니다.",
+      "section4Advertising": "광고 쿠키:",
+      "section4AdvertisingDesc": "당사 웹페이지에 Google AdSense 광고를 게재합니다. Google AdSense는 방문자의 검색 행동에 따라 맞춤형 광고를 제공하기 위해 광고 쿠키를 사용할 수 있습니다. 방문자는",
+      "googleAdSettings": "Google 광고 개인정보 설정",
+      "section4AdvertisingDesc2": "모든 광고 관련 데이터 수집은 Google의 개인정보 보호 규칙 및 글로벌 데이터 규정을 따릅니다.",
+      "section4CookieNotice": "자세한 쿠키 카테고리 및 관리 옵션은 당사의",
+      "section5Title": "5. 제3자 서비스",
+      "section5Intro": "당사의 도구는 독립형 HTML/CSS/JavaScript를 포함한 다운로드 가능한 ZIP 파일로 제공됩니다. 다운로드 후 이러한 도구는 완전히 오프라인으로 작동합니다. 귀하가 소스 코드 사용에 통합하기로 선택한 제3자 서비스에 대해 당사는 책임을 지지 않습니다.",
+      "section5AdSense": "5.1 Google AdSense",
+      "section5AdSenseText": "본 웹사이트는 Google AdSense가 제공하는 광고를 표시합니다. Google은 쿠키 및 유사 기술을 사용하여 귀하의 본 사이트 및 기타 사이트 방문을 기반으로 맞춤형 광고를 제공할 수 있습니다. Google 광고 설정을 방문하여 맞춤형 광고를 거부할 수 있습니다. Google이 파트너 사이트 또는 앱을 사용할 때 데이터를 사용하는 방법에 대한 자세한 내용은 Google의 데이터 사용을 참조하십시오.",
+      "section5AnalyticsTitle": "5.2 분석 제공업체",
+      "section5AnalyticsText": "당사는 웹사이트 사용 현황을 파악하기 위해 Google Analytics 4 및/또는 Cloudflare Web Analytics를 사용할 수 있습니다. 이 서비스는 익명화된 데이터만 수집합니다. 각각의 개인정보 처리방침을 참조하십시오: Google 개인정보 처리방침, Cloudflare 개인정보 처리방침.",
+      "section6Title": "6. 데이터 보안",
+      "section6Text": "당사 웹사이트는 HTTPS를 통해 제공되어 모든 다운로드 가능한 파일의 안전한 전송을 보장합니다. 호스팅 인프라를 보호하기 위해 업계 표준 보안 조치를 사용합니다.",
+      "section7Title": "7. 귀하의 권리 (GDPR)",
+      "section7Intro": "유럽 경제 지역(EEA)에 거주하는 경우 다음과 같은 권리가 있습니다:",
+      "section7Right1Title": "접근권:",
+      "section7Right1Desc": "당사가 보유한 귀하의 개인 데이터 사본을 요청할 권리.",
+      "section7Right2Title": "정정권:",
+      "section7Right2Desc": "부정확한 데이터의 정정을 요청할 권리.",
+      "section7Right3Title": "삭제권:",
+      "section7Right3Desc": "귀하의 개인 데이터 삭제를 요청할 권리.",
+      "section7Right4Title": "처리 제한권:",
+      "section7Right4Desc": "당사의 데이터 사용을 제한하도록 요청할 권리.",
+      "section7Right5Title": "데이터 이동권:",
+      "section7Right5Desc": "기계가 읽을 수 있는 형식으로 데이터를 받을 권리.",
+      "section7Right6Title": "반대권:",
+      "section7Right6Desc": "당사의 데이터 처리에 반대할 권리.",
+      "section7Contact": "이러한 권리를 행사하려면 다음으로 연락해 주십시오",
+      "section8Title": "8. 아동 개인정보 보호",
+      "section8Text": "당사의 서비스는 16세 미만의 개인을 대상으로 하지 않습니다. 아동의 개인 데이터를 의도적으로 수집하지 않습니다. 그러한 수집이 발견되면 정보를 삭제하기 위한 조치를 취할 것입니다.",
+      "section9Title": "9. 본 방침의 변경",
+      "section9Text": "당사는 수시로 본 개인정보 처리방침을 업데이트할 수 있습니다. 변경 사항은 \"최종 업데이트\" 날짜를 업데이트하여 이 페이지에 게시됩니다. 정기적으로 본 방침을 검토하시기 바랍니다.",
+      "section10Title": "10. 문의처",
+      "section10Text": "본 개인정보 처리방침에 관한 질문이 있으시면 다음으로 연락해 주십시오:"
+    },
+    "cookie": {
+      "title": "쿠키 알림 - YuanqiZhiKe Toolkit",
+      "heading": "쿠키 알림",
+      "lastUpdated": "마지막 업데이트",
+      "section1Title": "1. 쿠키란 무엇인가요",
+      "section1Text": "쿠키는 웹사이트 방문 시 귀하의 기기(컴퓨터, 태블릿, 휴대폰)에 저장되는 작은 텍스트 파일입니다. 웹사이트가 제대로 작동하고 더 나은 사용자 경험을 제공하도록 돕습니다.",
+      "section2Title": "2. 당사가 사용하는 쿠키",
+      "section2Intro": "YuanqiZhiKe Toolkit은 다음 범주의 쿠키를 사용합니다:",
+      "section2EssHeading": "2.1 필수 쿠키(엄격히 필요한 쿠키)",
+      "section2EssPurpose": "방문 중 기본 웹사이트 기능 유지(세션 상태, 언어 선호도, 쿠키 동의 선택).",
+      "section2EssDuration": "세션 기간 또는 동의 선호도의 경우 최대 365일.",
+      "section2EssLegal": "정당한 이익 / 엄격한 필요성.",
+      "section2EssData": "없음(완전 익명).",
+      "section2AnalyticsHeading": "2.2 분석 쿠키(선택 사항)",
+      "section2AnalyticsPurpose": "Google Analytics 4 또는 Cloudflare Analytics를 통해 익명의 집계된 웹사이트 사용 통계 수집.",
+      "section2AnalyticsDuration": "최대 2년 (_ga) / 24시간 (_gid).",
+      "section2AnalyticsLegal": "동의(GDPR 제6조(1)(a)).",
+      "section2AnalyticsData": "방문한 페이지, 페이지 체류 시간, 참조 사이트, 국가 수준 지역, 브라우저/OS(비특정). IP 익명화.",
+      "section2AdHeading": "2.3 광고 쿠키(선택 사항 - Google AdSense)",
+      "section2AdPurpose": "Google AdSense를 통해 브라우징 행동 기반 맞춤형 광고 게재.",
+      "section2AdDuration": "Google에 따라 다름(일반적으로 IDE 13개월, ANID 2년).",
+      "section2AdLegal": "동의(GDPR 제6조(1)(a)) / 비맞춤형 광고의 정당한 이익.",
+      "section2AdData": "가명 식별자, 사이트 간 브라우징 기록, 광고 상호작용 데이터.",
+      "section2AdOptOut": "방문",
+      "section2AdOptOut2": "하여 맞춤형 광고를 비활성화하세요.",
+      "purpose": "목적:",
+      "duration": "기간:",
+      "legalBasis": "법적 근거:",
+      "dataCollected": "수집되는 데이터:",
+      "optOut": "옵트아웃:",
+      "section3Title": "3. 타사 쿠키",
+      "section3Intro": "다음 타사 업체가 귀하가 당사 웹사이트를 방문할 때 쿠키를 설정할 수 있습니다:",
+      "section3AdSense": "맞춤형/비맞춤형 광고 게재.",
+      "section3AdSenseLink": "Google 광고 쿠키 정책",
+      "section3GA": "익명 사용 분석.",
+      "section3GALink": "Google 쿠키 정책",
+      "section3CF": "개인정보 보호 중심 분석.",
+      "section3CFLink": "Cloudflare 개인정보 처리방침",
+      "section4Title": "4. 당사가 사용하지 않는 쿠키",
+      "section4Intro": "당사는 다음 유형의 쿠키를 직접 사용하지 않습니다:",
+      "section4Item1": "소셜 미디어 임베딩 쿠키",
+      "section4Item2": "당사 마케팅 목적으로 개인 데이터를 수집하는 쿠키",
+      "section4Item3": "위에 공개된 분석/광고 이외의 자사 추적 쿠키",
+      "section4Note": "참고: 타사 광고 쿠키(Google AdSense)는 섹션 2.3에 공개된 대로 사용되며, Google 정책이 적용됩니다.",
+      "section5Title": "5. 쿠키 관리 방법",
+      "section5Intro": "브라우저 설정을 통해 쿠키를 제어하고 관리할 수 있습니다. 대부분의 브라우저에서 다음을 할 수 있습니다:",
+      "section5Item1": "저장된 쿠키 확인 및 개별 또는 일괄 삭제",
+      "section5Item2": "타사 쿠키 차단",
+      "section5Item3": "특정 사이트의 쿠키 차단",
+      "section5Item4": "모든 쿠키 차단",
+      "section5Item5": "브라우저 종료 시 모든 쿠키 삭제",
+      "section5Note": "모든 쿠키를 차단하면 이 웹사이트의 기능에 영향을 줄 수 있습니다.",
+      "section6Title": "6. 동의 관리",
+      "section6Intro": "첫 방문 시 쿠키 동의 배너가 표시되어 선택할 수 있습니다:",
+      "section6AcceptAll": "모든 쿠키 수락:",
+      "section6AcceptAllDesc": "필수, 분석 및 광고 쿠키를 허용합니다.",
+      "section6EssentialOnly": "필수 쿠키만:",
+      "section6EssentialOnlyDesc": "엄격히 필요한 쿠키만 허용하고 분석 및 광고 쿠키를 차단합니다.",
+      "section6Storage": "귀하의 선택은 브라우저에 365일 동안 로컬로 저장됩니다. 사이트 데이터를 지우거나 브라우저 설정을 조정하여 언제든지 기본 설정을 변경할 수 있습니다.",
+      "section6Consent": "선택 후 당사 웹사이트를 계속 사용하면 선택한 쿠키 범주에 동의하는 것으로 간주됩니다.",
+      "section7Title": "7. 본 알림의 업데이트",
+      "section7Text": "당사는 수시로 본 쿠키 알림을 업데이트할 수 있습니다. 변경 사항은 이 페이지에 게시되며 \"마지막 업데이트\" 날짜가 갱신됩니다.",
+      "section8Title": "8. 문의하기",
+      "section8Text": "쿠키 사용에 관한 질문이 있으시면 다음으로 문의해 주세요:"
+    },
+    "license": {
+      "title": "소스 코드 라이선스 - YuanqiZhiKe Toolkit",
+      "heading": "소스 코드 라이선스 계약",
+      "lastUpdated": "최종 업데이트",
+      "section1Title": "1. 라이선스 부여",
+      "section1Text": "YuanqiZhiKe Toolkit(이하 \"회사\")는 본 웹사이트에서 제공하는 소스 코드 패키지(이하 \"도구\")를 사용할 수 있는 제한적, 비독점적, 양도 불가능한 라이선스를 귀하에게 부여합니다. 도구를 다운로드, 설치 또는 사용함으로써 귀하는 본 계약의 조건에 구속되는 데 동의하는 것으로 간주됩니다.",
+      "section2Title": "2. 허용된 사용",
+      "section2PermittedIntro": "귀하는 다음을 허용받습니다:",
+      "section2Permitted1": "개인적, 비상업적, 학습 및 교육 목적으로 도구를 다운로드하여 사용할 수 있습니다.",
+      "section2Permitted2": "자신의 개인적 사용을 위해 소스 코드를 수정할 수 있습니다.",
+      "section2Permitted3": "자신의 기기에서 도구를 로컬로 실행할 수 있습니다.",
+      "section3Title": "3. 금지된 사용",
+      "section3ProhibitedIntro": "귀하는 다음이 엄격히 금지됩니다:",
+      "section3ProhibitedItem1Title": "재패키징 및 재판매:",
+      "section3ProhibitedItem1Desc": "도구 또는 파생 저작물을 독립 실행형 제품으로 재패키징, 재배포 또는 재판매하는 행위.",
+      "section3ProhibitedItem2Title": "소유권 주장:",
+      "section3ProhibitedItem2Desc": "소스 코드에서 저작권 표시, 상표 기호 또는 귀속 표시를 제거하거나 변경하는 행위.",
+      "section3ProhibitedItem3Title": "기술 지원:",
+      "section3ProhibitedItem3Desc": "YuanqiZhiKe Toolkit에 기술 지원, 버그 수정 또는 업데이트를 요구하는 행위.",
+      "section4Title": "4. 상업적 및 광고 이용",
+      "section4Text": "모든 원본 저작권 표시와 YuanqiZhiKe Toolkit의 소스 귀속 표시를 유지하고 소스 코드를 독립적으로 재판매하지 않는 한, 상업적 웹사이트나 Google AdSense 등의 광고 수익 창출 사이트에 이러한 도구를 배포할 수 있습니다.",
+      "section4SubTitle": "4.1 개인 이용과 상업적 이용",
+      "section4PersonalTitle": "개인/교육 목적:",
+      "section4PersonalDesc": "개인 학습, 비영리 프로젝트 및 교육 목적으로 무료로 사용할 수 있습니다. 귀속은 필수가 아니지만 환영합니다.",
+      "section4CommercialTitle": "상업적/광고 지원 사이트:",
+      "section4CommercialDesc": "광고(Google AdSense 포함)를 표시하는 웹사이트에서 도구 사용이 허용됩니다. 단, 다음 조건이 적용됩니다:",
+      "section4CommercialCond1": "모든 원본 저작권 표시와 귀속 표시가 소스 코드에 유지되어야 함",
+      "section4CommercialCond2": "도구가 독립 실행형 제품으로 재판매, 서브라이선스 또는 배포되지 않아야 함",
+      "section4CommercialCond3": "원본 소스 코드에 대한 소유권 주장이 이루어지지 않아야 함",
+      "section4ProhibitedTitle": "금지:",
+      "section4ProhibitedDesc": "소스 코드를 자체 제품으로 판매용으로 재패키징하거나, 저작권 표시를 제거하거나, 실질적인 변경 없이 도구를 유료 서비스로 제공하는 행위.",
+      "section5Title": "5. 보증의 면책",
+      "section5Text": "도구는 \"있는 그대로\" 및 \"사용 가능한 상태로\" 제공되며, 명시적이거나 묵시적인 어떠한 종류의 보증도 없습니다. YUANQI TECH TOOLKIT는 비침해, 상품성 또는 특정 목적에의 적합성에 대해 어떠한 진술이나 보증도 하지 않습니다. 도구의 품질 및 성능에 관한 모든 위험은 귀하에게 있습니다.",
+      "section6Title": "6. 책임의 제한",
+      "section6Text": "어떠한 경우에도 YUANQI TECH TOOLKIT는 도구의 사용 또는 사용 불능으로 인해 발생하는 직접적, 간접적, 부수적, 특별, 징벌적 또는 결과적 손해에 대해 책임을 지지 않으며, 그러한 손해의 가능성에 대해 사전에 통지를 받았더라도 마찬가지입니다.",
+      "section7Title": "7. 사용자의 책임",
+      "section7Text": "귀하는 소스 코드에 대한 모든 변경 사항과 도구 사용으로 인한 결과에 대해 단독으로 책임을 집니다. 여기에는 다음이 포함되지만 이에 국한되지 않습니다:",
+      "section7Item1": "도구 오작동으로 인한 데이터 손실 또는 손상",
+      "section7Item2": "도구 출력의 부정확성으로 인한 사업 손실",
+      "section7Item3": "도구 오용으로 인해 발생하는 법적 문제",
+      "section8Title": "8. 지적 재산권",
+      "section8Text": "도구에 관한 모든 지적 재산권(저작권, 상표권, 영업 비밀을 포함하되 이에 국한되지 않음)은 YuanqiZhiKe Toolkit의 독점 재산으로 유지됩니다. 본 계약은 귀하에게 어떠한 소유권도 양도하지 않습니다.",
+      "section9Title": "9. 계약 해지",
+      "section9Text": "본 라이선스는 해지될 때까지 유효합니다. 본 계약의 조건을 위반하는 경우, 본 라이선스에 따른 권리는 통지 없이 자동으로 해지됩니다. 해지 시 귀하는 모든 사용을 중단하고 보유한 모든 도구 사본을 폐기해야 합니다.",
+      "section10Title": "10. 준거법",
+      "section10Text": "본 계약은 충돌 법규 원칙과 관계없이 YuanqiZhiKe Toolkit이 사업을 운영하는 관할권의 법률에 따라 해석 및 적용됩니다.",
+      "section11Title": "11. 문의",
+      "section11Text": "본 계약의 범위를 초과하는 라이선스 문의는 다음으로 연락해 주세요:"
+    },
+    "customize": {
+      "title": "맞춤 개발 서비스 - YuanqiZhiKe Toolkit",
+      "heading": "맞춤 개발 서비스",
+      "description": "맞춤 솔루션이 필요하신가요? 저희 팀은 고품질 프론트엔드 도구, 웹 애플리케이션 및 SaaS 제품 제작을 전문으로 합니다.",
+      "ourServices": "저희 서비스",
+      "serviceFrontendTools": "프론트엔드 도구",
+      "serviceFrontendToolsDesc": "맞춤형 텍스트 프로세서, 변환기, 생성기 및 생산성 도구. 완전 오프라인.",
+      "serviceSaaS": "SaaS 애플리케이션",
+      "serviceSaaSDesc": "반응형 디자인, 인증, 결제 및 클라우드 배포를 갖춘 풀스택 웹 애플리케이션 개발.",
+      "serviceLandingPages": "랜딩 페이지",
+      "serviceLandingPagesDesc": "속도, SEO 및 모바일 경험에 최적화된 아름답게 디자인된 고전환율 랜딩 페이지.",
+      "serviceApiIntegration": "API 통합",
+      "serviceApiIntegrationDesc": "결제 게이트웨이, AI API, 클라우드 스토리지 등 외부 서비스에 도구 연결.",
+      "whyChooseUs": "선택해야 하는 이유",
+      "reasonCleanCode": "깔끔한 코드: 구조화되고 유지 관리 가능하며 문서화된 코드",
+      "reasonResponsive": "반응형 디자인: 데스크톱, 태블릿, 모바일에서 완벽한 경험",
+      "reasonFastDelivery": "신속한 제공: 정기적인 업데이트를 통한 애자일 프로세스",
+      "reasonSupport": "제공 후 지원: 30일 무료 버그 수정",
+      "getInTouch": "문의하기",
+      "getInTouchDesc": "프로젝트 요구 사항을 설명해 주세요. 24시간 이내에 상세한 제안과 견적을 보내드립니다.",
+      "formName": "이름 *",
+      "formEmail": "이메일 주소 *",
+      "formProjectType": "프로젝트 유형",
+      "formSelectCategory": "카테고리 선택",
+      "formFrontendTool": "프론트엔드 도구",
+      "formSaaS": "SaaS 애플리케이션",
+      "formLandingPage": "랜딩 페이지",
+      "formApiIntegration": "API 통합",
+      "formOther": "기타",
+      "formDescription": "프로젝트 설명 *",
+      "formSubmit": "문의 보내기",
+      "orEmail": "또는 다음으로 직접 이메일 보내기"
+    },
+    "guestbook": {
+      "title": "방명록 - YuanqiZhiKe Toolkit",
+      "heading": "흔적을 남기세요",
+      "subtitle": "피드백, 제안, 협업 아이디어 또는 간단한 인사 — 모두 환영합니다.",
+      "shareThoughts": "생각 공유하기",
+      "formNickname": "닉네임 (선택사항)",
+      "formNicknamePlaceholder": "익명",
+      "formType": "유형",
+      "formFeedback": "피드백",
+      "formSuggestion": "제안",
+      "formCooperation": "협업",
+      "formOther": "기타",
+      "formMessage": "메시지 *",
+      "formMessagePlaceholder": "여기에 메시지를 작성하세요 (5-1000자)...",
+      "formSubmit": "메시지 게시",
+      "communityWall": "커뮤니티 게시판",
+      "filterAll": "전체",
+      "filterFeedback": "피드백",
+      "filterSuggestion": "제안",
+      "filterCooperation": "협업",
+      "filterOther": "기타",
+      "loading": "로딩 중...",
+      "loadMore": "더 보기",
+      "noMessages": "아직 메시지가 없습니다. 첫 번째로 생각을 공유해 보세요!",
+      "loadFailed": "메시지 로딩 실패. 페이지를 새로고침하세요.",
+      "messageTooShort": "메시지가 너무 짧습니다 (최소 5자).",
+      "messageTooLong": "메시지가 너무 깁니다 (최대 1000자).",
+      "posting": "게시 중...",
+      "flaggedMessage": "메시지가 신고되었습니다. 오해라고 생각되면 직접 문의해 주세요.",
+      "submittedMessage": "감사합니다! 메시지가 검토 후 24시간 이내에 표시됩니다.",
+      "submitFailed": "제출 실패. 다시 시도해 주세요.",
+      "justNow": "방금",
+      "minAgo": "분 전",
+      "hourAgo": "시간 전",
+      "dayAgo": "일 전"
+    }
+  }
+}

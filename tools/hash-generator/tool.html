@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Free online hash generator. Compute MD5, SHA-1, SHA-256, SHA-384, SHA-512 hashes from text or files. HMAC support. Local, no upload.">
+<meta name="keywords" content="MD5 generator, SHA256 generator, SHA512 generator, hash calculator, online hash tool, HMAC generator, file hash">
+<title>Hash Generator - MD5 / SHA-1 / SHA-256 / SHA-512 | YuanQiZhiLe Toolkit</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:system-ui,-apple-system,sans-serif;background:#f7f7f7;transition:background 0.3s,color 0.3s}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+body.dark .wrap{background:#16213e}
+body.dark textarea,body.dark input[type=text]{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark .hash-card{background:#0f3460;border-color:#1a1a2e}
+body.dark .hash-card .lbl{color:#c8c8c8}
+body.dark .field-label,body.dark label{color:#c8c8c8}
+.wrap{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:6px;font-size:24px}
+.subtitle{color:#888;font-size:13px;margin-bottom:18px}
+.top-bar{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.tab-btn{padding:8px 16px;border:1px solid #ddd;border-radius:4px;background:#f8f8f8;cursor:pointer;font-size:13px;transition:all 0.2s}
+body.dark .tab-btn{background:#0f3460;border-color:#1a1a2e;color:#c8c8c8}
+.tab-btn.active{background:#007bff;color:#fff;border-color:#007bff}
+.tab-btn:hover:not(.active){background:#e8f0fe}
+.tab-content{display:none}
+.tab-content.active{display:block}
+.field-label{font-size:13px;font-weight:600;color:#444;margin-bottom:6px;display:block}
+textarea,input[type=text]{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-family:monospace;font-size:13px;transition:background 0.3s,color 0.3s}
+textarea{height:140px;resize:vertical}
+.options{display:flex;flex-wrap:wrap;gap:14px;margin:10px 0;align-items:center}
+.check-label{display:flex;align-items:center;gap:6px;font-size:13px;color:#444;cursor:pointer}
+.file-drop{padding:20px;border:2px dashed #ccc;border-radius:6px;text-align:center;color:#666;cursor:pointer;transition:all 0.2s;margin:10px 0}
+.file-drop:hover,.file-drop.drag{background:#f0f4ff;border-color:#007bff}
+body.dark .file-drop{border-color:#0f3460;color:#a0a0a0}
+body.dark .file-drop:hover,body.dark .file-drop.drag{background:#16213e;border-color:#007bff}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.btns button{padding:9px 16px;border:none;border-radius:4px;background:#007bff;color:#fff;cursor:pointer;transition:opacity 0.2s;font-size:14px}
+.btns button:hover{opacity:0.85}
+.btns button.secondary{background:#6c757d}
+.btns button.success{background:#28a745}
+.hash-grid{display:grid;grid-template-columns:1fr;gap:10px;margin-top:12px}
+.hash-card{padding:12px;border:1px solid #ddd;border-radius:6px;background:#fafafa;transition:background 0.3s}
+.hash-card .lbl{font-size:12px;color:#666;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center}
+.hash-card .val{font-family:monospace;font-size:13px;word-break:break-all;white-space:pre-wrap;background:#fff;padding:6px;border-radius:3px;border:1px solid #eee}
+body.dark .hash-card .val{background:#16213e;border-color:#0f3460}
+.hash-card .copy1{padding:3px 8px;font-size:11px;background:#6c757d;color:#fff;border:none;border-radius:3px;cursor:pointer}
+.compare-input{width:100%;padding:8px 10px;border:1px solid #ddd;border-radius:4px;font-family:monospace;font-size:13px;margin-top:6px}
+body.dark .compare-input{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+.compare-result{margin-top:8px;font-size:13px;font-weight:bold;min-height:20px}
+.match{color:#16a34a}
+.mismatch{color:#dc2626}
+.lead{margin-top:14px;padding:12px;background:#fff8e1;border:1px solid #ffe082;border-radius:6px;font-size:13px;color:#7a5c00;text-align:center}
+body.dark .lead{background:#3a2e00;border-color:#5c4400;color:#ffd54f}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+footer a{color:#007bff;text-decoration:none}
+@media(max-width:768px){
+    .wrap{padding:16px}
+    .bookmark-btn{position:static;margin-top:8px}
+}
+
+/* === Common: theme toggle button + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}.instructions li{margin:4px 0;font-size:13px;line-height:1.6}body.dark .instructions{background:#1e2a3a;border-color:#2c4a6e}body.dark .instructions h2{color:#5ba3f5}
+</style>
+</head>
+<body>
+<div class="wrap">
+    <div class="top-bar">
+        <div>
+            <h1>Hash Generator</h1>
+            <div class="subtitle">MD5, SHA-1, SHA-256, SHA-384, SHA-512. Text & file hashing, HMAC. Local, no upload.</div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark (Ctrl+Shift+T)">??</button>
+            <button class="bookmark-btn" id="bookmarkBtn">? Bookmark</button>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-btn active" data-tab="text">Text Hash</button>
+        <button class="tab-btn" data-tab="file">File Hash</button>
+        <button class="tab-btn" data-tab="compare">Compare / Verify</button>
+    </div>
+
+    <!-- Text tab -->
+    <div class="tab-content active" id="tab-text">
+        <label class="field-label" for="textInput">Input text</label>
+        <textarea id="textInput" placeholder="Type text to hash..."></textarea>
+        <div class="options">
+            <label class="check-label"><input type="checkbox" id="opt-utf8" checked> UTF-8</label>
+            <label class="check-label"><input type="checkbox" id="opt-upper"> Uppercase</label>
+            <label class="check-label"><input type="checkbox" id="opt-hmac"> HMAC</label>
+            <input type="text" id="hmacKey" placeholder="HMAC key" style="flex:1;min-width:150px;display:none">
+        </div>
+        <div class="btns">
+            <button id="hashText" class="success">Generate Hashes</button>
+            <button id="clearText" class="secondary">Clear</button>
+        </div>
+        <div class="hash-grid" id="textHashes"></div>
+    </div>
+
+    <!-- File tab -->
+    <div class="tab-content" id="tab-file">
+        <div class="file-drop" id="fileDrop">
+            <div>?? Drop a file here or click to select</div>
+            <div style="font-size:12px;margin-top:6px;color:#999">All processing happens locally �� file never uploads</div>
+        </div>
+        <input type="file" id="fileInput" style="display:none">
+        <div id="fileInfo" style="margin-top:8px;font-size:13px;color:#666"></div>
+        <div class="hash-grid" id="fileHashes"></div>
+    </div>
+
+    <!-- Compare tab -->
+    <div class="tab-content" id="tab-compare">
+        <label class="field-label">Expected hash</label>
+        <input type="text" class="compare-input" id="expectedHash" placeholder="Paste the expected hash...">
+        <label class="field-label" style="margin-top:12px">Input text</label>
+        <textarea id="compareInput" placeholder="Text to verify..."></textarea>
+        <div class="options">
+            <label class="check-label">Algorithm:
+                <select id="compareAlgo" style="margin-left:6px">
+                    <option value="MD5">MD5</option>
+                    <option value="SHA-1">SHA-1</option>
+                    <option value="SHA-256" selected>SHA-256</option>
+                    <option value="SHA-384">SHA-384</option>
+                    <option value="SHA-512">SHA-512</option>
+                </select>
+            </label>
+        </div>
+        <div class="btns">
+            <button id="verifyHash" class="success">Verify</button>
+        </div>
+        <div class="compare-result" id="compareResult"></div>
+    </div>
+
+    
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol><li>Enter text to hash</li><li>Select algorithm (MD5, SHA-1, SHA-256, SHA-512)</li><li>Click <strong>Generate Hash</strong></li><li>Copy the hash value</li></ol>
+    </div>
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">��</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business �� batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">??</span>
+                <span class="email" id="contactEmail">260330663@qq.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">?? Send us an email</a>
+            <div class="form-hint">�� or describe your need below ��</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit ��</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div>YuanQiZhiLe Toolkit �� Process locally in your browser, no data upload.</div>
+    </footer>
+</div>
+
+<script>
+(function(){
+    // === Common: theme + contact modal ===
+    const __themeBtn = document.getElementById('themeToggle');
+    function __applyTheme(t){
+        document.body.classList.toggle('dark', t === 'dark');
+        if(__themeBtn) __themeBtn.textContent = (t === 'dark') ? '??' : '??';
+    }
+    const __saved = localStorage.getItem('theme');
+    if(__saved){
+        __applyTheme(__saved);
+    } else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
+        __applyTheme('dark');
+    } else {
+        __applyTheme('light');
+    }
+    if(__themeBtn){
+        __themeBtn.addEventListener('click', () => {
+            const next = document.body.classList.contains('dark') ? 'light' : 'dark';
+            __applyTheme(next);
+            localStorage.setItem('theme', next);
+        });
+    }
+    document.addEventListener('keydown', e => {
+        if(e.key === 't' && e.ctrlKey && e.shiftKey){
+            e.preventDefault();
+            const next = document.body.classList.contains('dark') ? 'light' : 'dark';
+            __applyTheme(next);
+            localStorage.setItem('theme', next);
+        }
+    });
+    document.getElementById('bookmarkBtn').addEventListener('click', () => alert('Press Ctrl/Cmd + D to bookmark this page.'));
+
+    // Contact modal
+    const __modal = document.getElementById('contactModal');
+    const __trig = document.getElementById('contactTrigger');
+    const __close = document.getElementById('contactClose');
+    function __openModal(){ if(__modal) __modal.classList.add('open'); }
+    function __closeModal(){ if(__modal) __modal.classList.remove('open'); }
+    if(__trig) __trig.addEventListener('click', __openModal);
+    if(__close) __close.addEventListener('click', __closeModal);
+    if(__modal) __modal.addEventListener('click', e => { if(e.target === __modal) __closeModal(); });
+    document.addEventListener('keydown', e => { if(e.key === 'Escape') __closeModal(); });
+    const __copyBtn = document.getElementById('copyEmail');
+    if(__copyBtn){
+        __copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText('260330663@qq.com').then(() => {
+                const old = __copyBtn.textContent;
+                __copyBtn.textContent = '?';
+                setTimeout(() => __copyBtn.textContent = old, 1500);
+            });
+        });
+    }
+    const __form = document.getElementById('contactForm');
+    if(__form){
+        __form.addEventListener('submit', e => {
+            e.preventDefault();
+            const name = document.getElementById('formName').value.trim();
+            const email = document.getElementById('formEmail').value.trim();
+            const desc = document.getElementById('formDesc').value.trim();
+            const subject = encodeURIComponent('Bespoke Tool Development Inquiry');
+            const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nRequirement:\n' + desc);
+            window.location.href = 'mailto:260330663@qq.com?subject=' + subject + '&body=' + body;
+        });
+    }
+
+    // Tabs
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+        });
+    });
+
+    document.getElementById('opt-hmac').addEventListener('change', e => {
+        document.getElementById('hmacKey').style.display = e.target.checked ? 'block' : 'none';
+    });
+
+    function hexToBytes(hex){
+        const arr = new Uint8Array(hex.length / 2);
+        for(let i = 0; i < hex.length; i += 2) arr[i/2] = parseInt(hex.substr(i, 2), 16);
+        return arr;
+    }
+
+    async function sha(algo, bytes){
+        const hash = await crypto.subtle.digest(algo, bytes);
+        return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    async function hmac(algo, bytes, keyStr){
+        const enc = new TextEncoder();
+        const key = await crypto.subtle.importKey('raw', enc.encode(keyStr), {name:'HMAC', hash: algo}, false, ['sign']);
+        const sig = await crypto.subtle.sign('HMAC', key, bytes);
+        return Array.from(new Uint8Array(sig)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    // MD5 implementation (pure JS, RFC 1321)
+    const md5 = (function(){
+        function rl(n, c){ return (n << c) | (n >>> (32 - c)); }
+        function au(n, l){ return (n & 0xFFFFFFFF) + (l & 0xFFFFFFFF); }
+        function cmn(q, a, b, x, s, t){ return au(rl(au(au(a, q), au(x, t)), s), b); }
+        function ff(a,b,c,d,x,s,t){ return cmn((b & c) | (~b & d), a, b, x, s, t); }
+        function gg(a,b,c,d,x,s,t){ return cmn((b & d) | (c & ~d), a, b, x, s, t); }
+        function hh(a,b,c,d,x,s,t){ return cmn(b ^ c ^ d, a, b, x, s, t); }
+        function ii(a,b,c,d,x,s,t){ return cmn(c ^ (b | ~d), a, b, x, s, t); }
+
+        function toBytes(str){
+            const out = [];
+            for(let i = 0; i < str.length; i++){
+                const c = str.charCodeAt(i);
+                if(c < 128) out.push(c);
+                else if(c < 2048){ out.push(192 | (c >> 6), 128 | (c & 63)); }
+                else{ out.push(224 | (c >> 12), 128 | ((c >> 6) & 63), 128 | (c & 63)); }
+            }
+            return out;
+        }
+
+        function run(input){
+            const x = toBytes(input);
+            const len = x.length;
+            x.push(0x80);
+            while(x.length % 64 !== 56) x.push(0);
+            const bits = len * 8;
+            for(let i = 0; i < 8; i++) x.push((bits >>> (i * 8)) & 0xFF);
+
+            let a = 1732584193, b = -271733879, c = -1732584194, d = 271733878;
+            for(let i = 0; i < x.length; i += 64){
+                const aa = a, bb = b, cc = c, dd = d;
+                const blk = [];
+                for(let j = 0; j < 16; j++){
+                    blk[j] = x[i + j*4] | (x[i + j*4 + 1] << 8) | (x[i + j*4 + 2] << 16) | (x[i + j*4 + 3] << 24);
+                }
+                const S = [[7,12,17,22],[5,9,14,20],[4,11,16,23],[6,10,15,21]];
+                const K = [
+                    -680876936,-389564586,606105819,-1044525330,-176418897,1200080427,-1473231341,-45705983,
+                    1770035416,-1958414417,-42063,-1990404162,1804603682,-40341101,-1502002290,1236535329,
+                    -165796510,-1069501632,643717713,-373897302,-701558691,38016083,-660478335,-405537848,568446438,
+                    -1019803794,-187363961,1163531501,-1444681467,-51403784,1735328473,-1926607734,-378558,
+                    -2022574463,1839030562,-35309556,-1530992060,1272893353,-155497632,-1094730640,681279174,
+                    -358537222,-722521979,760291269,-640364487,-421815835,530742520,-995338651,-198630844,
+                    1126891415,-1416354905,-574340554,1700485571,-1894986606,-1051523,-2054922799,1873313359,
+                    -30611744,-1560198380,1309151649,-145523070,-1120210379,722521979,1240150016,-783418371
+                ];
+                let idx = 0;
+                for(let r = 0; r < 4; r++){
+                    const s = S[r];
+                    for(let j = 0; j < 16; j++){
+                        const xk = blk[idx];
+                        if(r === 0) a = ff(a, b, c, d, xk, s[j%4], K[idx]);
+                        else if(r === 1) a = gg(a, b, c, d, xk, s[j%4], K[idx]);
+                        else if(r === 2) a = hh(a, b, c, d, xk, s[j%4], K[idx]);
+                        else a = ii(a, b, c, d, xk, s[j%4], K[idx]);
+                        const tmp = d; d = c; c = b; b = a; a = tmp;
+                        idx++;
+                    }
+                }
+                a = au(a, aa); b = au(b, bb); c = au(c, cc); d = au(d, dd);
+            }
+            const hex = n => ('0' + ((n >>> 0).toString(16))).slice(-8);
+            return hex(a) + hex(b) + hex(c) + hex(d);
+        }
+        return { run };
+    })();
+
+    function applyStyle(hex){
+        return document.getElementById('opt-upper').checked ? hex.toUpperCase() : hex;
+    }
+
+    async function computeHashes(bytes, isUtf8){
+        const algorithms = [
+            { name: 'MD5', algo: 'MD5' },
+            { name: 'SHA-1', algo: 'SHA-1' },
+            { name: 'SHA-256', algo: 'SHA-256' },
+            { name: 'SHA-384', algo: 'SHA-384' },
+            { name: 'SHA-512', algo: 'SHA-512' }
+        ];
+        const useHmac = document.getElementById('opt-hmac').checked;
+        const hmacKey = document.getElementById('hmacKey').value;
+        const results = {};
+        for(const a of algorithms){
+            if(a.name === 'MD5'){
+                if(useHmac){
+                    results[a.name] = '[MD5 HMAC not supported by WebCrypto]';
+                } else {
+                    results[a.name] = md5.run(new TextDecoder().decode(bytes));
+                }
+            } else {
+                if(useHmac){
+                    if(!hmacKey){ results[a.name] = '[HMAC key required]'; }
+                    else results[a.name] = await hmac(a.algo, bytes, hmacKey);
+                } else {
+                    results[a.name] = await sha(a.algo, bytes);
+                }
+            }
+        }
+        return results;
+    }
+
+    function renderHashes(containerId, results){
+        const container = document.getElementById(containerId);
+        container.innerHTML = '';
+        Object.entries(results).forEach(([algo, hash]) => {
+            const card = document.createElement('div');
+            card.className = 'hash-card';
+            card.innerHTML = `<div class="lbl"><span>${algo}</span><button class="copy1">Copy</button></div><div class="val"></div>`;
+            card.querySelector('.val').textContent = hash.startsWith('[') ? hash : applyStyle(hash);
+            card.querySelector('.copy1').addEventListener('click', () => {
+                if(hash.startsWith('[')) return;
+                navigator.clipboard.writeText(applyStyle(hash)).then(() => {
+                    const b = card.querySelector('.copy1');
+                    const old = b.textContent;
+                    b.textContent = '?';
+                    setTimeout(() => b.textContent = old, 1200);
+                });
+            });
+            container.appendChild(card);
+        });
+    }
+
+    // Text hashing
+    async function hashText(){
+        const text = document.getElementById('textInput').value;
+        if(!text){ document.getElementById('textHashes').innerHTML = ''; return; }
+        const bytes = new TextEncoder().encode(text);
+        const results = await computeHashes(bytes, true);
+        renderHashes('textHashes', results);
+    }
+
+    document.getElementById('hashText').addEventListener('click', hashText);
+    document.getElementById('textInput').addEventListener('input', () => {
+        clearTimeout(window._hashTimer);
+        window._hashTimer = setTimeout(hashText, 300);
+    });
+    document.getElementById('opt-upper').addEventListener('change', hashText);
+    document.getElementById('opt-hmac').addEventListener('change', hashText);
+    document.getElementById('hmacKey').addEventListener('input', () => {
+        clearTimeout(window._hashTimer);
+        window._hashTimer = setTimeout(hashText, 300);
+    });
+
+    document.getElementById('clearText').addEventListener('click', () => {
+        document.getElementById('textInput').value = '';
+        document.getElementById('textHashes').innerHTML = '';
+    });
+
+    // File hashing
+    const fileDrop = document.getElementById('fileDrop');
+    const fileInput = document.getElementById('fileInput');
+    fileDrop.addEventListener('click', () => fileInput.click());
+    fileDrop.addEventListener('dragover', e => { e.preventDefault(); fileDrop.classList.add('drag'); });
+    fileDrop.addEventListener('dragleave', () => fileDrop.classList.remove('drag'));
+    fileDrop.addEventListener('drop', e => {
+        e.preventDefault();
+        fileDrop.classList.remove('drag');
+        if(e.dataTransfer.files[0]) hashFile(e.dataTransfer.files[0]);
+    });
+    fileInput.addEventListener('change', () => {
+        if(fileInput.files[0]) hashFile(fileInput.files[0]);
+    });
+
+    async function hashFile(file){
+        document.getElementById('fileInfo').textContent = `Processing: ${file.name} (${formatBytes(file.size)})...`;
+        document.getElementById('fileHashes').innerHTML = '';
+        try {
+            const buf = await file.arrayBuffer();
+            const bytes = new Uint8Array(buf);
+            const algorithms = [
+                { name: 'MD5', algo: 'MD5' },
+                { name: 'SHA-1', algo: 'SHA-1' },
+                { name: 'SHA-256', algo: 'SHA-256' },
+                { name: 'SHA-384', algo: 'SHA-384' },
+                { name: 'SHA-512', algo: 'SHA-512' }
+            ];
+            const results = {};
+            for(const a of algorithms){
+                if(a.name === 'MD5'){
+                    // MD5 over file �� read in chunks to avoid stack overflow on big files
+                    results[a.name] = '[Use SHA-256+ for large files]';
+                } else {
+                    results[a.name] = await sha(a.algo, bytes);
+                }
+            }
+            document.getElementById('fileInfo').textContent = `? ${file.name} (${formatBytes(file.size)})`;
+            renderHashes('fileHashes', results);
+        } catch(err){
+            document.getElementById('fileInfo').textContent = 'Error: ' + err.message;
+        }
+    }
+
+    // Compare / verify
+    document.getElementById('verifyHash').addEventListener('click', async () => {
+        const expected = document.getElementById('expectedHash').value.trim().toLowerCase();
+        const input = document.getElementById('compareInput').value;
+        const algo = document.getElementById('compareAlgo').value;
+        const result = document.getElementById('compareResult');
+        if(!expected || !input){
+            result.textContent = 'Please provide both expected hash and input text.';
+            result.className = 'compare-result mismatch';
+            return;
+        }
+        const bytes = new TextEncoder().encode(input);
+        let computed;
+        if(algo === 'MD5'){
+            computed = md5.run(input);
+        } else {
+            computed = await sha(algo, bytes);
+        }
+        computed = computed.toLowerCase();
+        if(computed === expected){
+            result.textContent = '? MATCH �� Hash verified successfully';
+            result.className = 'compare-result match';
+        } else {
+            result.textContent = `? MISMATCH �� Computed: ${computed}`;
+            result.className = 'compare-result mismatch';
+        }
+    });
+
+    function formatBytes(bytes){
+        if(bytes < 1024) return bytes + ' B';
+        if(bytes < 1024 * 1024) return (bytes / 1024).toFixed(2) + ' KB';
+        if(bytes < 1024 * 1024 * 1024) return (bytes / 1024 / 1024).toFixed(2) + ' MB';
+        return (bytes / 1024 / 1024 / 1024).toFixed(2) + ' GB';
+    }
+
+    // Initial hash
+    hashText();
+})();
+</script>
+
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>
+

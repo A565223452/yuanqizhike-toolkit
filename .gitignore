@@ -1,0 +1,53 @@
+# Local admin tools (not for public repository)
+local-admin-generator.html
+
+# tools-list.json 备份文件（本地自用，不上传）
+tools-list.json.bak
+tools-list.json.cleanup-bak-*
+
+# Local auto-uploader tool (not for public repository)
+# 整个 tools-uploader/ 目录都不上传到仓库，仅本地自用
+tools-uploader/
+
+# Personal tutorials (Chinese, not for public repository)
+项目启动教程.md
+工具上传教程.md
+
+# Helper scripts (local use only)
+scripts/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Project backup (local use only, not for repository)
+backup/
+
+# Large archive/backup files (cause Cloudflare Pages deployment failure)
+*.zip
+*.tar.gz
+*.gz
+
+# Internal reference documents (not for repository)
+网站优化清单-内部参考.md
+聊天机器人集成方案-内部参考.md
+大类扩展方案.md
+新大类工具开发清单.md
+AdSense变现-待执行清单.md
+项目开发迭代路线图（三层架构）.md
+
+# Cloudflare Worker 联系表单（敏感文件，禁止上传）
+# .dev.vars 含真实密钥（Resend API key、Turnstile secret、ADMIN_TOKEN）
+# .wrangler/ 是 wrangler CLI 本地缓存
+# node_modules/ 是依赖文件夹（几百 MB）
+workers/contact-form/.dev.vars
+workers/contact-form/.dev.vars.*
+!workers/contact-form/.dev.vars.example
+workers/contact-form/.wrangler/
+workers/contact-form/node_modules/

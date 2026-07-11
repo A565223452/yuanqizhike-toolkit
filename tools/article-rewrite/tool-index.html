@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline Article Rewriter - YuanqiZhiKe Toolkit</title>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #2563eb; --primary-dark: #1d4ed8; --bg: #f8fafc;
+            --card: #ffffff; --text: #1e293b; --text-light: #64748b;
+            --border: #e2e8f0; --radius: 8px;
+        }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        header { background: var(--card); border-bottom: 1px solid var(--border); padding: 16px 0; }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        .brand { font-weight: 700; color: var(--primary); font-size: 1.1rem; }
+        .brand span { margin-right: 6px; }
+        .badge { background: #dcfce7; color: #166534; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+        main { padding: 40px 0; }
+        h1 { font-size: 1.8rem; margin-bottom: 8px; }
+        .subtitle { color: var(--text-light); margin-bottom: 32px; }
+        .mode-tabs { display: flex; gap: 8px; margin-bottom: 20px; }
+        .mode-tab { padding: 10px 24px; border: 2px solid var(--border); border-radius: var(--radius); background: var(--card); cursor: pointer; font-weight: 600; font-size: 0.95rem; transition: all 0.2s; }
+        .mode-tab.active { border-color: var(--primary); background: var(--primary); color: #fff; }
+        .mode-tab:hover:not(.active) { border-color: var(--primary); color: var(--primary); }
+        textarea { width: 100%; min-height: 200px; padding: 16px; border: 2px solid var(--border); border-radius: var(--radius); font-size: 1rem; font-family: inherit; resize: vertical; transition: border-color 0.2s; }
+        textarea:focus { outline: none; border-color: var(--primary); }
+        .controls { display: flex; gap: 12px; margin: 20px 0; align-items: center; flex-wrap: wrap; }
+        .intensity-select { padding: 10px 16px; border: 2px solid var(--border); border-radius: var(--radius); font-size: 0.95rem; background: var(--card); cursor: pointer; }
+        .btn { padding: 12px 28px; border: none; border-radius: var(--radius); font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.2s; }
+        .btn-primary { background: var(--primary); color: #fff; }
+        .btn-primary:hover { background: var(--primary-dark); }
+        .btn-secondary { background: var(--card); color: var(--primary); border: 2px solid var(--primary); }
+        .btn-secondary:hover { background: var(--primary); color: #fff; }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .output-area { margin-top: 24px; }
+        .output-area h3 { margin-bottom: 12px; font-size: 1.1rem; }
+        .output-box { background: var(--card); border: 2px solid var(--border); border-radius: var(--radius); padding: 16px; min-height: 150px; white-space: pre-wrap; font-size: 1rem; line-height: 1.8; }
+        .output-box.empty { color: var(--text-light); font-style: italic; }
+        .stats { display: flex; gap: 24px; margin-top: 16px; flex-wrap: wrap; }
+        .stat-item { font-size: 0.9rem; color: var(--text-light); }
+        .stat-item strong { color: var(--text); }
+        footer { text-align: center; padding: 32px 0; color: var(--text-light); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 40px; }
+        footer a { color: var(--primary); }
+        @media (max-width: 600px) {
+            h1 { font-size: 1.4rem; }
+            .mode-tabs { flex-direction: column; }
+            .controls { flex-direction: column; align-items: stretch; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="brand"><span>&#9670;</span> Offline Article Rewriter</div>
+            <div class="badge">&#9729; 100% Offline</div>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Rewrite Your Articles Locally</h1>
+        <p class="subtitle">Paste your text below, choose a rewriting mode, and get a paraphrased version -- all processed in your browser.</p>
+
+        <div class="mode-tabs">
+            <button class="mode-tab active" data-mode="synonym" onclick="switchMode('synonym')">Synonym Replacement</button>
+            <button class="mode-tab" data-mode="structure" onclick="switchMode('structure')">Structure Reorder</button>
+        </div>
+
+        <textarea id="inputText" placeholder="Paste or type your article text here..."></textarea>
+
+        <div class="controls">
+            <select class="intensity-select" id="intensity">
+                <option value="low">Low Intensity</option>
+                <option value="medium" selected>Medium Intensity</option>
+                <option value="high">High Intensity</option>
+            </select>
+            <button class="btn btn-primary" onclick="rewriteText()">Rewrite</button>
+            <button class="btn btn-secondary" onclick="clearAll()">Clear</button>
+            <button class="btn btn-secondary" onclick="copyResult()" id="copyBtn" style="display:none;">Copy Result</button>
+        </div>
+
+        <div class="output-area">
+            <h3>Output</h3>
+            <div class="output-box empty" id="outputBox">Your rewritten text will appear here...</div>
+            <div class="stats" id="stats" style="display:none;">
+                <div class="stat-item">Original words: <strong id="origWords">0</strong></div>
+                <div class="stat-item">Rewritten words: <strong id="newWords">0</strong></div>
+                <div class="stat-item">Similarity: <strong id="similarity">0%</strong></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span data-auto-date="year"></span> YuanqiZhiKe. Licensed under YuanqiZhiKe Source License.</p>
+            <p style="margin-top: 8px;">This tool runs entirely offline. No data is sent to any server.</p>
+        </div>
+    </footer>
+
+    <script>
+    // ===================================
+    // Offline Article Rewriter Engine
+    // ===================================
+    let currentMode = 'synonym';
+
+    // Basic synonym dictionary for demonstration
+    var synonymDict = {
+        'good': ['fine', 'satisfactory', 'pleasant', 'excellent'],
+        'bad': ['poor', 'terrible', 'unpleasant', 'inferior'],
+        'big': ['large', 'huge', 'massive', 'enormous'],
+        'small': ['tiny', 'little', 'miniature', 'compact'],
+        'fast': ['quick', 'rapid', 'swift', 'speedy'],
+        'slow': ['sluggish', 'lazy', 'gradual', 'unhurried'],
+        'happy': ['joyful', 'pleased', 'content', 'delighted'],
+        'sad': ['unhappy', 'sorrowful', 'gloomy', 'melancholy'],
+        'important': ['significant', 'crucial', 'vital', 'essential'],
+        'interesting': ['fascinating', 'engaging', 'captivating', 'intriguing'],
+        'beautiful': ['gorgeous', 'stunning', 'attractive', 'lovely'],
+        'ugly': ['hideous', 'unsightly', 'unattractive', 'grotesque'],
+        'strong': ['powerful', 'robust', 'sturdy', 'mighty'],
+        'weak': ['feeble', 'fragile', 'delicate', 'flimsy'],
+        'old': ['ancient', 'elderly', 'aged', 'vintage'],
+        'new': ['fresh', 'modern', 'recent', 'novel'],
+        'young': ('youthful', 'juvenile', 'immature', 'green'),
+        'hot': ['warm', 'scorching', 'burning', 'sweltering'],
+        'cold': ['chilly', 'freezing', 'frosted', 'icy'],
+        'easy': ['simple', 'effortless', 'straightforward', 'uncomplicated'],
+        'difficult': ['hard', 'challenging', 'tough', 'arduous'],
+        'quick': ['fast', 'rapid', 'swift', 'speedy'],
+        'long': ['extended', 'lengthy', 'extensive', 'prolonged'],
+        'short': ['brief', 'concise', 'compact', 'minimal'],
+        'very': ['extremely', 'highly', 'remarkably', 'exceptionally'],
+        'really': ['truly', 'genuinely', 'actually', 'certainly'],
+        'also': ['additionally', 'furthermore', 'besides', 'moreover'],
+        'however': ['nevertheless', 'nonetheless', 'yet', 'still'],
+        'therefore': ['thus', 'hence', 'accordingly', 'consequently'],
+        'because': ['since', 'as', 'due to', 'owing to'],
+        'show': ['demonstrate', 'display', 'reveal', 'present'],
+        'tell': ['say', 'state', 'mention', 'inform'],
+        'make': ['create', 'build', 'produce', 'construct'],
+        'get': ['obtain', 'acquire', 'receive', 'gain'],
+        'use': ['utilize', 'employ', 'apply', 'operate'],
+        'help': ['assist', 'aid', 'support', 'facilitate'],
+        'think': ['believe', 'consider', 'feel', 'suppose'],
+        'know': ['understand', 'realize', 'comprehend', 'recognize'],
+        'want': ['wish', 'desire', 'need', 'seek'],
+        'give': ['provide', 'offer', 'supply', 'deliver'],
+        'come': ['arrive', 'approach', 'reach', 'appear'],
+        'take': ['fetch', 'grab', 'seize', 'acquire'],
+        'say': ['state', 'mention', 'remark', 'express'],
+        'went': ['headed', 'traveled', 'departed', 'proceeded'],
+        'said': ['stated', 'mentioned', 'remarked', 'expressed'],
+        'great': ['excellent', 'outstanding', 'superb', 'magnificent'],
+        'nice': ['pleasant', 'delightful', 'agreeable', 'enjoyable'],
+        'lot': ['number', 'amount', 'quantity', 'measure'],
+        'thing': ['item', 'object', 'entity', 'concept'],
+        'things': ['items', 'objects', 'entities', 'concepts'],
+        'place': ['location', 'area', 'spot', 'region'],
+        'world': ['globe', 'earth', 'planet', 'realm'],
+        'life': ['existence', 'being', 'living', 'survival'],
+        'time': ['period', 'moment', 'instant', 'duration'],
+        'day': ['daily', 'everyday', '24-hours', 'sunrise-to-sunset'],
+        'work': ['job', 'labor', 'effort', 'task'],
+        'right': ['correct', 'proper', 'accurate', 'just'],
+        'left': ['remaining', 'leftover', 'residual', 'balance'],
+        'even': ['fair', 'equitable', 'balanced', 'uniform'],
+        'still': ['yet', 'already', 'even-now', 'up-to-now'],
+        'just': ['simply', 'merely', 'only', 'barely'],
+        'only': ['solely', 'just', 'merely', 'exclusively'],
+        'always': ['forever', 'constantly', 'continuously', 'ever'],
+        'never': ['not-ever', 'at-no-time', 'not-once', 'zero-times'],
+        'might': ['could', 'may', 'perhaps', 'possibly'],
+        'must': ['should', 'have-to', 'need-to', 'obliged'],
+        'can': ['could', 'be-able-to', 'may', 'possibly'],
+        'seem': ['appear', 'look', 'seem-like', 'give-impression'],
+        'begin': ['start', 'commence', 'initiate', 'launch'],
+        'end': ['finish', 'conclude', 'terminate', 'close'],
+        'keep': ['retain', 'maintain', 'hold', 'preserve'],
+        'let': ['allow', 'permit', 'enable', 'authorize'],
+        'seems': ['appears', 'looks-like', 'gives-impression', 'comes-across'],
+        'found': ['discovered', 'located', 'uncovered', 'revealed'],
+        'provide': ['supply', 'offer', 'furnish', 'give'],
+        'several': ['multiple', 'various', 'several', 'assorted'],
+        'individual': ['single', 'personal', 'independent', 'solitary'],
+        'children': ['kids', 'youths', 'youngsters', 'offspring'],
+        'consider': ['think-about', 'contemplate', 'evaluate', 'examine'],
+        'understand': ['comprehend', 'grasp', 'realize', 'recognize'],
+        'develop': ['grow', 'evolve', 'advance', 'progress'],
+        'follow': ['pursue', 'observe', 'watch', 'execute'],
+        'expect': ['anticipate', 'predict', 'foresee', 'await'],
+        'ensure': ['guarantee', 'confirm', 'verify', 'secure'],
+        'establish': ['found', 'set-up', 'create', 'found'],
+        'remain': ['stay', 'continue', 'persist', 'endure'],
+        'suggest': ['propose', 'recommend', 'advise', 'put-forward'],
+        'produce': ['create', 'manufacture', 'generate', 'yield'],
+        'indicate': ['show', 'point-to', 'signal', 'display'],
+        'represent': ['symbolize', 'stand-for', 'embody', 'portray'],
+        'increase': ['raise', 'grow', 'expand', 'boost'],
+        'reduce': ['decrease', 'lower', 'cut', 'shrink'],
+        'lead': ['guide', 'direct', 'command', 'steer'],
+        'include': ['contain', 'incorporate', 'encompass', 'cover'],
+        'different': ['various', 'diverse', 'distinct', 'several'],
+        'possible': ['feasible', 'achievable', 'attainable', 'realizable'],
+        'available': ['accessible', 'obtainable', 'unavailable', 'on-hand'],
+        'necessary': ['required', 'needed', 'essential', 'mandatory'],
+        'specific': ['particular', 'definite', 'precise', 'explicit'],
+        'general': ['overall', 'broad', 'common', 'universal'],
+        'similar': ['alike', 'comparable', 'related', 'analogous'],
+        'obvious': ['clear', 'evident', 'apparent', 'manifest'],
+        'complex': ['complicated', 'intricate', 'elaborate', 'multifaceted'],
+        'simple': ['easy', 'basic', 'straightforward', 'uncomplicated'],
+        'natural': ['native', 'innate', 'inherent', 'built-in'],
+        'current': ['present', 'existing', 'ongoing', 'contemporary'],
+        'traditional': ['conventional', 'classic', 'established', 'customary'],
+        'local': ['regional', 'area', 'neighboring', 'nearby'],
+        'national': ['country-wide', 'domestic', 'federal', 'statewide'],
+        'economic': ['financial', 'monetary', 'commercial', 'fiscal'],
+        'social': ['societal', 'community', 'public', 'collective'],
+        'political': ['governmental', 'public-affairs', 'partisan', 'electoral'],
+        'physical': ['bodily', 'material', 'tangible', 'corporeal'],
+        'mental': ['psychological', 'cognitive', 'intellectual', 'emotional'],
+        'early': ['soon', 'premature', 'initial', 'front-loaded'],
+        'late': ['delayed', 'tardy', 'subsequent', 'belated'],
+        'own': ['personal', 'private', 'one\'s-own', 'individual'],
+        'other': ['another', 'different', 'alternative', 'additional'],
+        'each': ['every', 'all', 'per', 'individual'],
+        'every': ['all', 'each', 'entire', 'whole'],
+        'much': ['a-lot-of', 'numerous', 'abundant', 'great'],
+        'many': ['several', 'numerous', 'a-lot-of', 'countless'],
+        'more': ['additional', 'extra', 'further', 'greater'],
+        'most': ['majority', 'largest', 'greatest', 'most'],
+        'some': ['certain', 'unspecified', 'partial', 'any'],
+        'all': ['every', 'total', 'complete', 'entire'],
+        'both': ['two-either', 'each-one', 'double', 'paired'],
+        'such': ['like-this', 'of-this-kind', 'aforementioned', 'aforesaid'],
+        'well': ['good', 'properly', 'adequately', 'thoroughly'],
+        'back': ['return', 'reverse', 'behind', 'previous'],
+        'part': ['section', 'piece', 'component', 'portion'],
+        'point': ['aspect', 'detail', 'feature', 'element'],
+        'level': ['stage', 'degree', 'tier', 'grade'],
+        'number': ['figure', 'digit', 'numeral', 'count'],
+        'group': ['team', 'cluster', 'collection', 'set'],
+        'hand': ['palm', 'grip', 'hold', 'touch'],
+        'head': ['top', 'leader', 'brain', 'mind'],
+        'eye': ['sight', 'vision', 'look', 'gaze'],
+        'way': ['method', 'manner', 'approach', 'means'],
+        'fact': ['reality', 'truth', 'actuality', 'certainty'],
+        'case': ['situation', 'circumstance', 'instance', 'example'],
+        'reason': ['cause', 'motive', 'basis', 'ground'],
+        'result': ['outcome', 'effect', 'consequence', 'product'],
+        'problem': ['issue', 'challenge', 'difficulty', 'obstacle'],
+        'question': ['query', 'inquiry', 'question', 'interrogation'],
+        'answer': ['response', 'reply', 'solution', 'resolution'],
+        'idea': ['concept', 'thought', 'notion', 'plan'],
+        'story': ['tale', 'narrative', 'account', 'report'],
+        'people': ['persons', 'folks', 'individuals', 'public'],
+        'year': ['twelve-months', 'annum', 'calendar-year', '365-days'],
+        'right': ['correct', 'proper', 'just', 'appropriate'],
+        'left': ['remaining', 'leftover', 'residual', 'balance'],
+        'first': ['initial', 'primary', 'leading', 'foremost'],
+        'last': ['final', 'ultimate', 'latest', 'most-recent'],
+        'next': ['following', 'subsequent', 'coming', 'forthcoming'],
+        'same': ['identical', 'equal', 'equivalent', 'alike'],
+        'real': ['actual', 'genuine', 'authentic', 'true'],
+        'sure': ['certain', 'confident', 'positive', 'convinced'],
+        'clear': ['obvious', 'evident', 'plain', 'transparent'],
+        'ready': ['prepared', 'set', 'willing', 'eager'],
+        'able': ['capable', 'qualified', 'competent', 'skilled'],
+        'able': ['capable', 'qualified', 'competent', 'skilled'],
+        'able': ['capable', 'qualified', 'competent', 'skilled']
+    };
+
+    // Common word pairs for structure reordering
+    var sentencePatterns = [
+        { pattern: /^(.+)$/, replace: function(m) { return m[1]; }},
+    ];
+
+    function switchMode(mode) {
+        currentMode = mode;
+        document.querySelectorAll('.mode-tab').forEach(function(tab) {
+            tab.classList.toggle('active', tab.getAttribute('data-mode') === mode);
+        });
+    }
+
+    function rewriteText() {
+        var text = document.getElementById('inputText').value.trim();
+        if (!text) {
+            alert('Please enter some text to rewrite.');
+            return;
+        }
+
+        var intensity = document.getElementById('intensity').value;
+        var ratio = intensity === 'low' ? 0.15 : intensity === 'medium' ? 0.35 : 0.6;
+        var result = '';
+
+        if (currentMode === 'synonym') {
+            result = synonymRewrite(text, ratio);
+        } else {
+            result = structureRewrite(text, ratio);
+        }
+
+        // Display result
+        var outputBox = document.getElementById('outputBox');
+        outputBox.textContent = result;
+        outputBox.classList.remove('empty');
+
+        // Show stats
+        var origWords = text.split(/\s+/).length;
+        var newWords = result.split(/\s+/).length;
+        document.getElementById('origWords').textContent = origWords;
+        document.getElementById('newWords').textContent = newWords;
+        document.getElementById('stats').style.display = 'flex';
+        document.getElementById('copyBtn').style.display = 'inline-block';
+
+        // Calculate rough similarity
+        var sim = calculateSimilarity(text, result);
+        document.getElementById('similarity').textContent = Math.round(sim) + '%';
+    }
+
+    function synonymRewrite(text, ratio) {
+        var words = text.split(/(\s+)/);
+        var result = [];
+        var replacedCount = 0;
+        var totalWords = 0;
+
+        for (var i = 0; i < words.length; i++) {
+            var w = words[i];
+            if (/^\s+$/.test(w)) {
+                result.push(w);
+            } else {
+                totalWords++;
+                var lower = w.toLowerCase().replace(/[^a-z']/g, '');
+                if (lower.length > 2 && synonymDict[lower] && Math.random() < ratio) {
+                    var syns = synonymDict[lower];
+                    var replacement = syns[Math.floor(Math.random() * syns.length)];
+                    // Preserve capitalization
+                    if (w[0] === w[0].toUpperCase()) {
+                        replacement = replacement.charAt(0).toUpperCase() + replacement.slice(1);
+                    }
+                    result.push(replacement);
+                    replacedCount++;
+                } else {
+                    result.push(w);
+                }
+            }
+        }
+
+        return result.join('');
+    }
+
+    function structureRewrite(text, ratio) {
+        // Split into sentences
+        var sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
+        var result = [];
+
+        for (var i = 0; i < sentences.length; i++) {
+            var s = sentences[i].trim();
+            if (!s) continue;
+
+            // Shuffle sentence order with some randomness
+            if (Math.random() < ratio && result.length > 0) {
+                var insertPos = Math.floor(Math.random() * (result.length + 1));
+                result.splice(insertPos, 0, s);
+            } else {
+                result.push(s);
+            }
+        }
+
+        // Try to reverse some sentences (active <-> passive)
+        for (var j = 0; j < result.length; j++) {
+            if (Math.random() < ratio * 0.5) {
+                result[j] = tryReverseVoice(result[j]);
+            }
+        }
+
+        return result.join(' ');
+    }
+
+    function tryReverseVoice(sentence) {
+        // Simple passive/active conversion attempts
+        var patterns = [
+            { regex: /([^.!?]+)\s+(was|were|is|are|has been|have been)\s+(\w+)\s+by\s+([^.!?]+)/,
+              replace: '$3 $2 $1 by $4' },
+        ];
+
+        for (var i = 0; i < patterns.length; i++) {
+            if (patterns[i].regex.test(sentence)) {
+                return sentence.replace(patterns[i].regex, patterns[i].replace);
+            }
+        }
+        return sentence;
+    }
+
+    function calculateSimilarity(a, b) {
+        var wordsA = a.toLowerCase().split(/\s+/);
+        var wordsB = b.toLowerCase().split(/\s+/);
+        var matches = 0;
+        for (var i = 0; i < wordsA.length; i++) {
+            for (var j = 0; j < wordsB.length; j++) {
+                if (wordsA[i] === wordsB[j]) { matches++; break; }
+            }
+        }
+        return (matches / Math.max(wordsA.length, wordsB.length)) * 100;
+    }
+
+    function clearAll() {
+        document.getElementById('inputText').value = '';
+        var outputBox = document.getElementById('outputBox');
+        outputBox.textContent = 'Your rewritten text will appear here...';
+        outputBox.classList.add('empty');
+        document.getElementById('stats').style.display = 'none';
+        document.getElementById('copyBtn').style.display = 'none';
+    }
+
+    function copyResult() {
+        var text = document.getElementById('outputBox').textContent;
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(text).then(function() {
+                var btn = document.getElementById('copyBtn');
+                btn.textContent = 'Copied!';
+                setTimeout(function() { btn.textContent = 'Copy Result'; }, 2000);
+            });
+        } else {
+            // Fallback
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+            var btn = document.getElementById('copyBtn');
+            btn.textContent = 'Copied!';
+            setTimeout(function() { btn.textContent = 'Copy Result'; }, 2000);
+        }
+    }
+    </script>
+
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

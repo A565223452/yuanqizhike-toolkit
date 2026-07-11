@@ -1,0 +1,12 @@
+[build]
+command = "node build-templates.js"
+
+[pages]
+output_dir = "."
+
+[vars]
+NODE_VERSION = "20.0.0"
+
+# Cloudflare Pages Functions 配置
+[functions]
+included_files = ["assets/zip-packages/**"]

@@ -1,0 +1,4109 @@
+[
+  {
+    "category": "Content & Writing",
+    "icon": "assets/icons/content-4.svg",
+    "title": "Offline Article Rewriter",
+    "desc": "Rewrite articles and check content similarity. Built-in synonym dictionary with 100+ word entries. All processing runs locally in your browser.",
+    "features": [
+      "Content Rewriting",
+      "Similarity Checker",
+      "Synonym Dictionary",
+      "One-Click Copy"
+    ],
+    "detailUrl": "/tools/article-rewrite/index.html",
+    "zipUrl": "/assets/zip-packages/writing/article-rewrite.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-1.svg",
+    "title": "JSON Formatter / Validator",
+    "desc": "Format, validate, and beautify JSON data instantly in your browser. Features tree view, import/export, and one-click copy.",
+    "features": [
+      "Format JSON",
+      "Minify JSON",
+      "Tree View",
+      "Import File",
+      "Export File",
+      "Copy Node"
+    ],
+    "detailUrl": "/tools/json-formatter/index.html",
+    "zipUrl": "/assets/zip-packages/dev/json-formatter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-1.svg",
+    "title": "Color Code Converter",
+    "desc": "Convert between HEX, RGB, and HSL color formats. Features palette generation, WCAG contrast checker, and CSS variable export.",
+    "features": [
+      "HEX to RGB",
+      "RGB to HSL",
+      "Palette Generator",
+      "WCAG Contrast Checker",
+      "Export CSS Variables"
+    ],
+    "detailUrl": "/tools/color-converter/index.html",
+    "zipUrl": "/assets/zip-packages/dev/color-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-1.svg",
+    "title": "Base64 / URL Encoder & Decoder",
+    "desc": "Encode and decode text using Base64 or URL encoding. Features JWT parser, batch processing, and hash generator (MD5, SHA-1, SHA-256, SHA-512).",
+    "features": [
+      "Base64 Encode",
+      "Base64 Decode",
+      "URL Encode",
+      "URL Decode",
+      "JWT Parser",
+      "Batch Processing",
+      "Hash Generator"
+    ],
+    "detailUrl": "/tools/base64-url-tool/index.html",
+    "zipUrl": "/assets/zip-packages/dev/base64-url-tool.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "assets/icons/design-2.svg",
+    "title": "Batch Image Resizer & Format Converter",
+    "desc": "Resize and convert multiple images at once. Features preset sizes, format conversion, and quality control.",
+    "features": [
+      "Batch Processing",
+      "9 Preset Sizes",
+      "JPG/PNG/WebP/BMP",
+      "Quality Control"
+    ],
+    "detailUrl": "/tools/image-converter/index.html",
+    "zipUrl": "/assets/zip-packages/design/image-converter.zip"
+  },
+  {
+    "category": "SEO & Marketing",
+    "icon": "assets/icons/business-34.svg",
+    "title": "Amazon Keyword Miner",
+    "desc": "Discover high-traffic Amazon keywords for SEO optimization. Analyze competitors and export data locally without server uploads.",
+    "features": [
+      "Mine High-Traffic Keywords",
+      "Analyze Competitor Data",
+      "Estimate Search Volume",
+      "Export Keyword Lists",
+      "Filter By Relevance",
+      "100% Private Local Processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/amazon-keyword-miner.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "assets/icons/business-1.svg",
+    "title": "Budget Calculator",
+    "desc": "Budget Calculator - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/budget-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "assets/icons/business-1.svg",
+    "title": "Inventory Turnover Calculator",
+    "desc": "Inventory Turnover Calculator - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/inventory-turnover-calculator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-33.svg",
+    "title": "Invoice Generator",
+    "desc": "Create professional invoices with auto-calculated taxes, customizable templates, and instant PDF export for freelancers and small businesses.",
+    "features": [
+      "Auto Tax Calculation",
+      "PDF Export",
+      "Custom Templates",
+      "Client Management",
+      "Professional Layout",
+      "Local Privacy"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/invoice-generator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-2.svg",
+    "title": "Quotation Generator",
+    "desc": "Create professional trade quotations with itemized pricing, tax calculations, and instant PDF export for seamless business transactions.",
+    "features": [
+      "Itemized Pricing",
+      "Tax Calculation",
+      "PDF Export",
+      "Discount Support",
+      "Terms Management",
+      "Client Details"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/quotation-generator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-50.svg",
+    "title": "Shipping Cost Estimator",
+    "desc": "Calculate domestic and international shipping costs instantly. Compare carrier rates based on weight, dimensions, and destination zones.",
+    "features": [
+      "Estimate Shipping Costs",
+      "Compare Carrier Rates",
+      "Dimension Calculator",
+      "Insurance Options",
+      "Domestic & International",
+      "Privacy Focused"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/shipping-cost-estimator.zip"
+  },
+  {
+    "category": "SEO & Marketing",
+    "icon": "assets/icons/business-3.svg",
+    "title": "Amazon Title Optimizer",
+    "desc": "Optimize Amazon product titles for better SEO, check character limits, and improve keyword placement for higher conversions.",
+    "features": [
+      "SEO Optimization",
+      "Character Limit Check",
+      "Keyword Placement",
+      "Readability Analysis",
+      "A/B Testing Support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/amazon-title-optimizer.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-16.svg",
+    "title": "Batch File Renamer",
+    "desc": "Rename multiple files instantly with prefixes, suffixes, numbering, and regex patterns directly in your browser.",
+    "features": [
+      "Add Prefixes And Suffixes",
+      "Sequential Numbering",
+      "Find And Replace Text",
+      "Regex Pattern Support",
+      "Real-time Preview",
+      "Local Browser Processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/batch-file-renamer.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-4.svg",
+    "title": "CSV Order Data Cleaner",
+    "desc": "Browser-based tool to clean, deduplicate, and prepare CSV order data for e-commerce platforms with local privacy.",
+    "features": [
+      "Deduplicate Rows",
+      "Remove Empty Entries",
+      "Trim Whitespace",
+      "Local Data Privacy",
+      "One-Click Export"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/csv-order-data-cleaner.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "assets/icons/business-5.svg",
+    "title": "Currency Converter",
+    "desc": "Convert between 150+ currencies instantly with real-time exchange rates, historical data, and offline support.",
+    "features": [
+      "Real-time Rates",
+      "150+ Currencies",
+      "Historical Data",
+      "Offline Support",
+      "Batch Conversion",
+      "Currency Charts"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/currency-converter.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-18.svg",
+    "title": "EAN Barcode Generator",
+    "desc": "Generate EAN-13, UPC-A, and ISBN barcodes in bulk locally. Validate checksums and export high-quality PNG images instantly.",
+    "features": [
+      "Batch Generation",
+      "Checksum Validation",
+      "Custom Dimensions",
+      "Local Processing",
+      "PNG Export",
+      "ISBN Support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/ean-barcode-generator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-20.svg",
+    "title": "Random Name Picker",
+    "desc": "Select random winners, shuffle teams, or draw lots from a list locally without uploads. Supports weighted selection and export.",
+    "features": [
+      "Pick Random Winners",
+      "Shuffle Teams",
+      "Weighted Selection",
+      "No Data Upload",
+      "Export Results"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/random-name-picker.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-1.svg",
+    "title": "Sku Generator",
+    "desc": "Sku Generator - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/sku-generator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "assets/icons/business-6.svg",
+    "title": "Tariff Calculator",
+    "desc": "Estimate import duties, taxes, and total landed costs for cross-border e-commerce shipments with country-specific rates.",
+    "features": [
+      "Calculate Import Duties",
+      "Estimate Landed Costs",
+      "HS Code Lookup",
+      "Country-Specific Rates",
+      "Trade Agreement Checks",
+      "Multi-Item Shipments"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/tariff-calculator.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "assets/icons/content-21.svg",
+    "title": "Text Case Converter",
+    "desc": "Instantly convert text between multiple casing formats including camelCase, snake_case, kebab-case, and more. Fast, private, and runs entirely in your browser.",
+    "features": [
+      "Batch Convert",
+      "Multiple Formats",
+      "Local Processing",
+      "One-Click Copy",
+      "Dark Mode Support",
+      "Privacy Focused"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/text-case-converter.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "assets/icons/content-1.svg",
+    "title": "Email Extractor",
+    "desc": "Email Extractor - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/email-extractor.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-15.svg",
+    "title": "Encoding Fixer",
+    "desc": "Detect and repair garbled text from incorrect character encodings. Supports UTF-8, Latin-1, and Windows-1252 conversion directly in your browser.",
+    "features": [
+      "Fix Mojibake",
+      "Convert Encodings",
+      "Batch Processing",
+      "BOM Handling",
+      "Local Privacy"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/encoding-fixer.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "assets/icons/content-1.svg",
+    "title": "Line Sorter",
+    "desc": "Line Sorter - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/line-sorter.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "assets/icons/content-2.svg",
+    "title": "Text Deduplication Tool",
+    "desc": "Remove duplicate lines from text instantly. Supports case-sensitive and fuzzy matching, comparison, and unique extraction locally.",
+    "features": [
+      "Remove Duplicate Lines",
+      "Fuzzy Matching Support",
+      "Compare Two Lists",
+      "Extract Unique Values",
+      "Case-Sensitive Options",
+      "Local Privacy Protection"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/text-deduplication-tool.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "assets/icons/content-1.svg",
+    "title": "Whitespace Cleaner",
+    "desc": "Whitespace Cleaner - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/whitespace-cleaner.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "assets/icons/content-37.svg",
+    "title": "Word Counter",
+    "desc": "Count words, characters, sentences, and reading time instantly with real-time frequency analysis and local privacy.",
+    "features": [
+      "Word Count",
+      "Character Count",
+      "Reading Time",
+      "Sentence Count",
+      "Word Frequency",
+      "Local Processing"
+    ],
+    "detailUrl": "/tools/word-counter/index.html",
+    "zipUrl": "/assets/zip-packages/writing/word-counter.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "assets/icons/content-11.svg",
+    "title": "Word Frequency Analyzer",
+    "desc": "Analyze text to find word frequencies, unique counts, and keyword density. Perfect for SEO, linguistics, and content strategy optimization.",
+    "features": [
+      "Count Word Frequencies",
+      "Filter Stop Words",
+      "Export CSV or JSON",
+      "Visualize Top Keywords",
+      "Detect Unique Words",
+      "Local Browser Processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/word-frequency-analyzer.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-17.svg",
+    "title": "Aes Encryptor",
+    "desc": "Securely encrypt and decrypt text or files using AES-GCM locally in your browser with no server uploads.",
+    "features": [
+      "AES-256 Encryption",
+      "Local Browser Processing",
+      "Password-Based Security",
+      "Supports Text And Files",
+      "Offline Capable",
+      "GCM Mode Support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/aes-encryptor.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-28.svg",
+    "title": "Api Mock Data Generator",
+    "desc": "Generate realistic fake JSON data locally for API testing and prototyping without uploading sensitive information.",
+    "features": [
+      "Local JSON Generation",
+      "Custom Schema Support",
+      "Faker Integration",
+      "Privacy Focused",
+      "No Server Upload"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/api-mock-data-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-2.svg",
+    "title": "API Request Tester",
+    "desc": "Test REST APIs with custom headers, body, and params. Supports GET, POST, PUT, DELETE. View response status, headers, and body.",
+    "features": [
+      "Send HTTP Requests",
+      "Custom Headers Support",
+      "Request Body Editing",
+      "Response Inspection",
+      "Client-Side Processing",
+      "History Tracking"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/api-request-tester.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-36.svg",
+    "title": "Number Base Converter",
+    "desc": "Convert numbers between binary, octal, decimal, hex, and custom bases instantly with local processing and no data upload.",
+    "features": [
+      "Binary Octal Hex Conversion",
+      "Custom Base Support",
+      "IEEE 754 Float Handling",
+      "Two's Complement Calculation",
+      "Batch Conversion Mode",
+      "Local Privacy Protection"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/number-base-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-3.svg",
+    "title": "Batch Base64 Encoder",
+    "desc": "Encode or decode multiple files and strings simultaneously with local privacy, URL-safe options, and drag-and-drop support.",
+    "features": [
+      "Batch Encoding",
+      "Batch Decoding",
+      "Drag & Drop Files",
+      "URL-Safe Mode",
+      "Local Processing",
+      "MIME Detection"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/batch-base64-encoder.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-4.svg",
+    "title": "Base64 Url Jwt Tool",
+    "desc": "Encode and decode Base64 and URL data, parse JWTs, and generate cryptographic hashes securely in your browser.",
+    "features": [
+      "Base64 Encode Decode",
+      "URL Encode Decode",
+      "JWT Token Parser",
+      "Batch Processing Support",
+      "Hash Generator MD5 SHA",
+      "Client Side Privacy"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/base64-url-jwt-tool.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-11.svg",
+    "title": "Byte Unit Converter",
+    "desc": "Instantly convert digital storage sizes between bits, bytes, KB, MB, GB, TB, and PB with local privacy and precision control.",
+    "features": [
+      "Convert Storage Units",
+      "Binary vs Decimal",
+      "Bit/Byte Toggle",
+      "Copy Results Instantly",
+      "Adjust Precision",
+      "Private Local Processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/byte-unit-converter.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "assets/icons/design-3.svg",
+    "title": "Color Converter",
+    "desc": "Instantly convert between HEX, RGB, and HSL formats. Includes palette generation and WCAG contrast checking for accessible design.",
+    "features": [
+      "HEX RGB HSL Conversion",
+      "Visual Color Picker",
+      "Palette Generator",
+      "WCAG Contrast Checker",
+      "One-Click Copy",
+      "Export CSS Variables"
+    ],
+    "detailUrl": "/tools/color-converter/index.html",
+    "zipUrl": "/assets/zip-packages/design/color-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-34.svg",
+    "title": "Command Line Cheat Sheet",
+    "desc": "Search over 500 Linux, macOS, and Windows terminal commands with fuzzy search and instant copy functionality.",
+    "features": [
+      "Fuzzy Search Commands",
+      "Multi-OS Support",
+      "One-Click Copy",
+      "Offline Access",
+      "Category Filtering",
+      "Privacy Focused"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/command-line-cheat-sheet.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-31.svg",
+    "title": "Cron Expression Parser",
+    "desc": "Parse and validate cron expressions instantly. Visualize next run times, generate human-readable descriptions, and build schedules with timezone support.",
+    "features": [
+      "Parse Cron Expressions",
+      "Validate Syntax",
+      "Next Run Times",
+      "Human-Readable Output",
+      "Timezone Support",
+      "Interactive Builder"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/cron-expression-parser.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-5.svg",
+    "title": "Crud Code Template Generator",
+    "desc": "Instantly generate boilerplate CRUD code for REST APIs across multiple languages and frameworks directly in your browser.",
+    "features": [
+      "Multi-language Support",
+      "REST API Generation",
+      "Custom Templates",
+      "Local Processing",
+      "Validation Rules",
+      "Auth Integration"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/crud-code-template-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-6.svg",
+    "title": "Css Formatter",
+    "desc": "Css Formatter - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/css-formatter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-19.svg",
+    "title": "Duplicate File Comparator",
+    "desc": "Compare two lists of filenames to instantly identify duplicates, resolve sync conflicts, and clean up redundant data efficiently.",
+    "features": [
+      "Compare Filename Lists",
+      "Detect Sync Conflicts",
+      "Identify Redundant Files",
+      "Clean Up Duplicates",
+      "Export Comparison Report"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/duplicate-file-comparator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-29.svg",
+    "title": "Excel To Json Converter",
+    "desc": "Convert Excel XLSX and CSV files to structured JSON locally. Supports sheet selection, header mapping, nested objects, and type inference.",
+    "features": [
+      "Convert XLSX And CSV",
+      "Local Browser Processing",
+      "Sheet Selection Support",
+      "Header Mapping Options",
+      "Nested Object Creation",
+      "Automatic Type Inference"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/excel-to-json-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-7.svg",
+    "title": "Spreadsheet Formula Converter",
+    "desc": "Convert Excel and Google Sheets formulas into JavaScript, Python, or SQL code instantly with local privacy.",
+    "features": [
+      "Excel To Code",
+      "Python Conversion",
+      "SQL Translation",
+      "JavaScript Output",
+      "Cell Reference Resolution",
+      "Batch Processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/spreadsheet-formula-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-8.svg",
+    "title": "Gitignore Generator",
+    "desc": "Gitignore Generator - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/gitignore-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-9.svg",
+    "title": "Hash Generator",
+    "desc": "Generate MD5, SHA-1, SHA-256, and SHA-512 hashes locally. Supports text, files, HMAC, and batch processing with zero data upload.",
+    "features": [
+      "Local Processing",
+      "HMAC Support",
+      "Batch Hashing",
+      "File Integrity",
+      "Secure Generation"
+    ],
+    "detailUrl": "/tools/hash-generator/index.html",
+    "zipUrl": "/assets/zip-packages/dev/hash-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-10.svg",
+    "title": "Hex To Text Converter",
+    "desc": "Instantly convert between hexadecimal and text formats. Supports UTF-8, ASCII, byte arrays, and file dumps for efficient debugging.",
+    "features": [
+      "Hex To Text Conversion",
+      "Text To Hex Encoding",
+      "UTF-8 And ASCII Support",
+      "Byte Array Output",
+      "File Hex Dump Analysis",
+      "Endianness Toggle"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/hex-to-text-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-12.svg",
+    "title": "Htaccess Generator",
+    "desc": "Visually generate Apache .htaccess configurations including redirects, security headers, caching rules, and password protection directly in your browser.",
+    "features": [
+      "Generate Redirects",
+      "Add Security Headers",
+      "Configure Caching Rules",
+      "Set Password Protection",
+      "Block Bots And IPs",
+      "Custom Error Pages"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/htaccess-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-13.svg",
+    "title": "JavaScript Minifier",
+    "desc": "Instantly minify ES6+ JavaScript code locally in your browser. Reduce file size by removing comments, whitespace, and dead code with source map support.",
+    "features": [
+      "Minify ES6+ Code",
+      "Remove Comments And Whitespace",
+      "Variable Renaming",
+      "Dead Code Removal",
+      "Source Map Support",
+      "Local Browser Processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/javascript-minifier.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-14.svg",
+    "title": "JSON Field Cleaner",
+    "desc": "Clean and sanitize JSON data locally. Deduplicate keys, remove null values, and flatten objects without uploading files.",
+    "features": [
+      "Deduplicate Keys",
+      "Remove Null Values",
+      "Flatten Objects",
+      "Local Processing",
+      "Schema Validation",
+      "Fix Trailing Commas"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/json-field-cleaner.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-16.svg",
+    "title": "Json Format Converter",
+    "desc": "Convert JSON to CSV, XML, YAML, and TSV instantly. Secure, local processing with customizable options for developers.",
+    "features": [
+      "Convert JSON To CSV",
+      "Export To XML Format",
+      "Generate YAML Output",
+      "Local Browser Processing",
+      "Custom Delimiter Support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/json-format-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-18.svg",
+    "title": "Json Data Masker",
+    "desc": "Securely mask sensitive PII fields in JSON data locally. Preserves structure while replacing passwords, emails, and keys with asterisks or fake values.",
+    "features": [
+      "Mask Sensitive PII",
+      "Preserve JSON Structure",
+      "Local Browser Processing",
+      "Custom Masking Rules",
+      "Faker Integration",
+      "Regex Pattern Support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/json-data-masker.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-20.svg",
+    "title": "Json File Splitter",
+    "desc": "Effortlessly split large JSON arrays into manageable chunks directly in your browser. Ensures valid JSON output while keeping your data private and secure.",
+    "features": [
+      "Stream Processing",
+      "Memory Efficient",
+      "Valid JSON Output",
+      "Custom Chunk Naming",
+      "Local Data Privacy",
+      "Merge Back Support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/json-file-splitter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-21.svg",
+    "title": "JSON Formatter & Validator",
+    "desc": "Instantly format, minify, and validate JSON code with an interactive tree view and local privacy protection.",
+    "features": [
+      "Format JSON",
+      "Minify Code",
+      "Validate Syntax",
+      "Interactive Tree View",
+      "Local Privacy"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/json-formatter-validator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-22.svg",
+    "title": "JSON Minifier",
+    "desc": "Compress JSON by stripping whitespace and comments locally. Validate syntax, benchmark size reduction, and optimize payloads without uploading data.",
+    "features": [
+      "Minify JSON",
+      "Remove Whitespace",
+      "Validate Syntax",
+      "Benchmark Compression",
+      "Local Processing",
+      "Strip Comments"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/json-minifier.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-23.svg",
+    "title": "Json Path Extractor",
+    "desc": "Extract specific data from JSON structures using powerful JSONPath expressions directly in your browser.",
+    "features": [
+      "Query JSON Data",
+      "Support Multiple Queries",
+      "Export As JSON Or CSV",
+      "Local Browser Processing",
+      "Syntax Validation"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/json-path-extractor.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-24.svg",
+    "title": "JSON Key Sorter",
+    "desc": "Sort JSON object keys alphabetically with deep nesting support. Ensures consistent data structure for diffing, canonicalization, and API testing locally.",
+    "features": [
+      "Deep Key Sorting",
+      "Alphabetical Order",
+      "Local Processing",
+      "Canonical JSON",
+      "Nested Support",
+      "Privacy Focused"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/json-key-sorter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-47.svg",
+    "title": "Batch JSON Validator",
+    "desc": "Validate multiple JSON documents locally with syntax checks, schema support, and detailed error reporting for developers.",
+    "features": [
+      "Batch Validation",
+      "Syntax Checking",
+      "Schema Support",
+      "Local Processing",
+      "Error Reporting",
+      "Dark Mode"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/batch-json-validator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-25.svg",
+    "title": "Jwt Token Decoder",
+    "desc": "Instantly decode, verify, and inspect JWT tokens locally in your browser. Supports header, payload, signature validation, and expiration checks.",
+    "features": [
+      "Decode Header And Payload",
+      "Verify Signature",
+      "Check Expiration",
+      "Local Browser Processing",
+      "Copy Claims Data",
+      "JWKS Support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/jwt-token-decoder.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-27.svg",
+    "title": "Log File Formatter",
+    "desc": "Parse, format, and filter messy log files directly in your browser with local privacy and regex extraction.",
+    "features": [
+      "Parse Structured Logs",
+      "Filter By Level",
+      "Regex Extraction",
+      "Local Privacy",
+      "Export Cleaned Logs"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/log-file-formatter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-26.svg",
+    "title": "Mock Data Generator",
+    "desc": "Generate realistic test data for APIs and databases with customizable schemas, supporting JSON, CSV, and SQL exports directly in your browser.",
+    "features": [
+      "Realistic Test Data",
+      "Customizable Schemas",
+      "Multiple Export Formats",
+      "50+ Data Types",
+      "Relational Data Support",
+      "100% Private Processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/mock-data-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-30.svg",
+    "title": "Secure Batch Password Generator",
+    "desc": "Generate cryptographically secure passwords locally with customizable length, charset, and bulk options.",
+    "features": [
+      "Cryptographically Secure",
+      "Bulk Generation",
+      "Custom Charset",
+      "Local Processing",
+      "Strength Meter",
+      "Offline Ready"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/secure-batch-password-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-32.svg",
+    "title": "Password Strength Analyzer",
+    "desc": "Analyze password security locally with zxcvbn scoring, crack time estimates, and entropy visualization without uploading data.",
+    "features": [
+      "Local zxcvbn Scoring",
+      "Crack Time Estimate",
+      "Entropy Visualization",
+      "Pattern Detection",
+      "Privacy Focused Analysis",
+      "Improvement Tips"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/password-strength-analyzer.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-33.svg",
+    "title": "QR Code Generator",
+    "desc": "Create QR codes for URLs, text, and contacts locally. Supports custom colors, error correction, and PNG or SVG export.",
+    "features": [
+      "Text and URL Encoding",
+      "vCard Support",
+      "Custom Color Options",
+      "Error Correction Levels",
+      "PNG and SVG Export",
+      "Batch Generation"
+    ],
+    "detailUrl": "/tools/qr-code-generator/index.html",
+    "zipUrl": "/assets/zip-packages/dev/qr-code-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-35.svg",
+    "title": "Random Port Generator",
+    "desc": "Generate random network ports locally in your browser. Supports range filtering, batch creation, and conflict detection for developers.",
+    "features": [
+      "Batch Port Generation",
+      "Range Filtering",
+      "Conflict Detection",
+      "Local Privacy",
+      "Ephemeral Port Support",
+      "One-Click Copy"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/random-port-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-37.svg",
+    "title": "Regex Tester",
+    "desc": "Test regular expressions in real-time with instant match highlighting, capture group analysis, and common pattern templates.",
+    "features": [
+      "Real-time Matching",
+      "Pattern Highlighting",
+      "Common Templates",
+      "Match Statistics",
+      "Error Handling",
+      "Offline Support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/regex-tester-2.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-38.svg",
+    "title": "API Signature Validator",
+    "desc": "Generate and validate API request signatures with support for HMAC-SHA256, MD5, and custom algorithms for secure authentication testing.",
+    "features": [
+      "HMAC-SHA256 Validation",
+      "MD5 Signature Support",
+      "Custom Algorithm Input",
+      "Request Signing Test",
+      "Local Browser Processing",
+      "Secure Authentication"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/api-signature-validator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-39.svg",
+    "title": "URL Slug Generator",
+    "desc": "Convert titles into SEO-friendly URL slugs instantly. Supports Unicode, bulk generation, custom separators, and reserved word handling.",
+    "features": [
+      "SEO-friendly slugs",
+      "Unicode transliteration",
+      "Bulk generation",
+      "Custom separators",
+      "Reserved words filter",
+      "Local privacy"
+    ],
+    "detailUrl": "/tools/url-slug-generator/index.html",
+    "zipUrl": "/assets/zip-packages/dev/url-slug-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-40.svg",
+    "title": "Sql Formatter",
+    "desc": "Instantly format and beautify SQL queries for MySQL, PostgreSQL, and SQLite directly in your browser with local privacy.",
+    "features": [
+      "Multi-Dialect Support",
+      "Keyword Highlighting",
+      "Custom Indentation",
+      "Minify Option",
+      "Local Processing",
+      "Zero Data Upload"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/sql-formatter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-41.svg",
+    "title": "Svg Optimizer",
+    "desc": "Minify and compress SVG code locally by removing metadata, comments, and redundant attributes to reduce file size instantly.",
+    "features": [
+      "Remove Metadata",
+      "Minify Paths",
+      "Merge Shapes",
+      "Remove Unused IDs",
+      "Reduce File Size",
+      "Preserve Quality"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/svg-optimizer.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-42.svg",
+    "title": "Test Address Generator",
+    "desc": "Generate realistic fake addresses and phone numbers for multiple countries to streamline form testing and database population workflows.",
+    "features": [
+      "Multi-country Support",
+      "Realistic Data Format",
+      "Bulk Export Options",
+      "Geo-coordinate Generation",
+      "Privacy-Focused Local Processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/test-address-generator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-13.svg",
+    "title": "Global Time Zone Converter",
+    "desc": "Instantly convert dates and times across multiple time zones. Features meeting scheduling, world clocks, and DST indicators for seamless global coordination.",
+    "features": [
+      "Multi-Timezone Conversion",
+      "Meeting Time Generator",
+      "Live World Clock",
+      "DST Status Indicator",
+      "Real-Time Results",
+      "Offline Privacy"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/global-time-zone-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-43.svg",
+    "title": "Unicode Converter",
+    "desc": "Convert text to Unicode escapes, code points, and hex values instantly. Supports bidirectional conversion with full privacy.",
+    "features": [
+      "Text to Unicode Escape",
+      "Code Point Conversion",
+      "Hex Value Encoding",
+      "Bidirectional Decoding",
+      "Local Browser Processing",
+      "Privacy Safe"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/unicode-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-44.svg",
+    "title": "Unit Converter",
+    "desc": "Convert length, weight, area, volume, and more with precision. Fast, private, and fully client-side.",
+    "features": [
+      "Multi-category Support",
+      "Instant Conversion",
+      "Formula Display",
+      "Privacy Focused",
+      "Custom Units"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/unit-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-45.svg",
+    "title": "Unix Timestamp Converter",
+    "desc": "Instantly convert between Unix timestamps and human-readable dates with millisecond precision and timezone support.",
+    "features": [
+      "Timestamp to Date",
+      "Date to Timestamp",
+      "Millisecond Precision",
+      "Timezone Support",
+      "Batch Conversion",
+      "Local Processing"
+    ],
+    "detailUrl": "/tools/unix-timestamp-converter/index.html",
+    "zipUrl": "/assets/zip-packages/dev/unix-timestamp-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-46.svg",
+    "title": "URL To JSON Converter",
+    "desc": "Instantly convert URL query strings into structured JSON. Supports nested objects, arrays, and local processing for secure debugging.",
+    "features": [
+      "Parse Query Strings",
+      "Support Nested Objects",
+      "Handle Array Brackets",
+      "Local Secure Processing",
+      "Pretty Print Output"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/url-to-json-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-48.svg",
+    "title": "UUID Generator",
+    "desc": "Generate UUID v1, v4, v5, and v7 in bulk locally. Copy, export, and ensure RFC4122 compliance without installation.",
+    "features": [
+      "Batch Generate UUIDs",
+      "Supports v1 v4 v5 v7",
+      "Local Browser Processing",
+      "Copy and Export Options",
+      "RFC4122 Compliant",
+      "No Installation Required"
+    ],
+    "detailUrl": "/tools/uuid-generator/index.html",
+    "zipUrl": "/assets/zip-packages/dev/uuid-generator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "assets/icons/design-4.svg",
+    "title": "Background Remover",
+    "desc": "Instantly remove image backgrounds directly in your browser. Supports color similarity selection, batch processing, and preserves fine details like hair.",
+    "features": [
+      "Remove Backgrounds",
+      "Color Similarity Selection",
+      "Batch Processing",
+      "Transparent PNG Output",
+      "Local Privacy Protection",
+      "Hair Detail Preservation"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/background-remover.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "assets/icons/design-1.svg",
+    "title": "Css Gradient Generator",
+    "desc": "Css Gradient Generator - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/css-gradient-generator-2.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "assets/icons/design-1.svg",
+    "title": "Exif Remover",
+    "desc": "Exif Remover - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/exif-remover.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "assets/icons/design-38.svg",
+    "title": "Web Font Format Converter",
+    "desc": "Convert between TTF, OTF, WOFF, and WOFF2 formats locally. Preview glyphs, subset fonts, and generate CSS @font-face rules instantly.",
+    "features": [
+      "Convert Font Formats",
+      "Generate CSS Rules",
+      "Preview Glyphs",
+      "Subset Fonts",
+      "Batch Processing",
+      "Local Privacy"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/web-font-format-converter.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "assets/icons/design-47.svg",
+    "title": "Ico Icon Generator",
+    "desc": "Convert PNG and JPG images into multi-size ICO files for websites and apps with transparent backgrounds.",
+    "features": [
+      "Convert Images To Ico",
+      "Multi-Size Support",
+      "Transparent Backgrounds",
+      "Client-Side Processing",
+      "Favicon Generation"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/ico-icon-generator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "assets/icons/design-1.svg",
+    "title": "Batch Image Compressor",
+    "desc": "Compress JPG, PNG, and WebP images locally in your browser. Reduce file sizes instantly while preserving quality and privacy.",
+    "features": [
+      "Batch Compression",
+      "Local Processing",
+      "Format Support",
+      "Quality Control",
+      "Privacy Safe"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/batch-image-compressor.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "assets/icons/design-5.svg",
+    "title": "Batch Image Converter",
+    "desc": "Resize and convert multiple images locally with preset sizes, quality control, and instant download.",
+    "features": [
+      "Batch Processing",
+      "Format Conversion",
+      "Preset Sizes",
+      "Local Privacy",
+      "Quality Control",
+      "Instant Download"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/batch-image-converter.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "assets/icons/design-6.svg",
+    "title": "Image Filter & Color Adjust",
+    "desc": "Apply professional filters and adjust image colors like brightness and contrast directly in your browser with real-time preview and local processing.",
+    "features": [
+      "Real-time Preview",
+      "Brightness Adjustment",
+      "Color Filters",
+      "Local Processing",
+      "Batch Apply",
+      "Download Results"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/image-filter-color-adjust.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "assets/icons/design-13.svg",
+    "title": "Image Pixelator",
+    "desc": "Pixelate images to create retro art or blur sensitive data. Adjust block size and shape for custom effects.",
+    "features": [
+      "Adjustable Pixel Size",
+      "Custom Pixel Shapes",
+      "Face Anonymization",
+      "Batch Processing Support",
+      "Retro Art Styles",
+      "Local Browser Processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/image-pixelator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "assets/icons/design-7.svg",
+    "title": "Image Resizer & Cropper",
+    "desc": "Resize and crop images directly in your browser with batch support, aspect ratio locking, and instant downloads without uploading.",
+    "features": [
+      "Batch Image Resizing",
+      "Custom Dimension Input",
+      "Aspect Ratio Locking",
+      "Format Conversion",
+      "Privacy-Focused Local Processing",
+      "Preset Social Sizes"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/image-resizer-cropper.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "assets/icons/design-8.svg",
+    "title": "Image Watermark Tool",
+    "desc": "Add text or image watermarks to photos with batch processing, custom positioning, opacity, and tile patterns directly in your browser.",
+    "features": [
+      "Batch Watermark Processing",
+      "Text And Image Overlays",
+      "Custom Position And Opacity",
+      "Tile Pattern Support",
+      "Local Browser Processing",
+      "EXIF Data Preservation"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/image-watermark-tool.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "assets/icons/education-1.svg",
+    "title": "Academic Citation Generator",
+    "desc": "Instantly generate accurate citations in APA, MLA, Chicago, and other styles. Supports multiple document types with local privacy and copy features.",
+    "features": [
+      "Six Citation Styles",
+      "Multiple Document Types",
+      "One-Click Copy",
+      "Citation History",
+      "Local Privacy",
+      "Offline Support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/academic-citation-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-50.svg",
+    "title": "Open Graph Preview",
+    "desc": "Visually preview and debug Open Graph meta tags for social media platforms like Facebook, Twitter, and LinkedIn directly in your browser.",
+    "features": [
+      "Live Social Preview",
+      "OG Tag Debugger",
+      "Mobile View Support",
+      "Client-Side Processing",
+      "One-Click Copy Code"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/open-graph-preview.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-17.svg",
+    "title": "Password Strength Checker",
+    "desc": "Analyze password security locally with entropy calculation, breach detection, and visual feedback for enhanced privacy.",
+    "features": [
+      "Local Processing",
+      "Entropy Calculation",
+      "Breach Database Check",
+      "Visual Feedback",
+      "Pattern Analysis",
+      "Offline Operation"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/password-strength-checker.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-1.svg",
+    "title": "Pdf Metadata Viewer",
+    "desc": "Instantly view and edit PDF metadata like title, author, and dates directly in your browser with full privacy and zero uploads.",
+    "features": [
+      "View PDF Properties",
+      "Edit Document Info",
+      "Check Security Settings",
+      "100% Client-Side Privacy",
+      "Export Metadata Data"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/pdf-metadata-viewer.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-23.svg",
+    "title": "PDF Split & Merge",
+    "desc": "Split, merge, and reorder PDF pages directly in your browser. Secure, private, and requires no installation or server uploads.",
+    "features": [
+      "Split PDF Pages",
+      "Merge Multiple PDFs",
+      "Reorder Page Order",
+      "Extract Specific Pages",
+      "Batch Processing Support",
+      "Local Browser Privacy"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/pdf-split-merge.zip"
+  },
+  {
+    "category": "SEO & Marketing",
+    "icon": "assets/icons/business-7.svg",
+    "title": "Backlink Spam Checker",
+    "desc": "Analyze backlinks for spam signals and toxic links. Check domain reputation and link quality indicators to protect your SEO health.",
+    "features": [
+      "Detect Toxic Links",
+      "Check Domain Reputation",
+      "Analyze Link Quality",
+      "Identify Spam Signals",
+      "Protect SEO Health"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/backlink-spam-checker.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-8.svg",
+    "title": "Business Day Calculator",
+    "desc": "Calculate working days between dates while excluding weekends and customizable holidays. Supports adding or subtracting business days from any specific date.",
+    "features": [
+      "Exclude Weekends",
+      "Custom Holidays",
+      "Add Business Days",
+      "Subtract Business Days",
+      "Date Range Count",
+      "Half-Day Support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/business-day-calculator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-9.svg",
+    "title": "Calendar Generator",
+    "desc": "Create and print customizable annual or monthly calendars with holiday markers, weekend highlighting, and ICS export for seamless scheduling.",
+    "features": [
+      "Customizable Year View",
+      "Holiday Marking",
+      "Print-Ready Layout",
+      "ICS Export Support",
+      "Dark Mode Theme",
+      "Local Processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/calendar-generator.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "assets/icons/content-5.svg",
+    "title": "Chinese-English Word Counter",
+    "desc": "Accurately count Chinese characters and English words in mixed text. Ideal for translators, writers, and content editors needing precise bilingual statistics.",
+    "features": [
+      "Bilingual Word Counting",
+      "Mixed Text Analysis",
+      "Character Type Breakdown",
+      "Reading Time Estimation",
+      "Paragraph Statistics",
+      "Local Privacy Protection"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/chinese-english-word-counter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-28.svg",
+    "title": "CORS Policy Checker",
+    "desc": "Test Cross-Origin Resource Sharing headers and preflight requests directly in your browser to diagnose API access issues.",
+    "features": [
+      "Preflight Simulation",
+      "CORS Header Analysis",
+      "Error Diagnosis",
+      "Wildcard Detection",
+      "Share Results"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/cors-policy-checker.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-10.svg",
+    "title": "Countdown Timer Generator",
+    "desc": "Create customizable, embeddable countdown timers for events and launches. Generates shareable links and local code snippets instantly.",
+    "features": [
+      "Generate Embed Code",
+      "Custom Event Labels",
+      "Shareable Countdown Links",
+      "Local Browser Processing",
+      "Responsive Design Support",
+      "Dark Mode Compatible"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/countdown-timer-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-28.svg",
+    "title": "DNS Record Lookup",
+    "desc": "Query A, AAAA, MX, TXT, NS, CNAME, and SOA records instantly using DNS-over-HTTPS directly in your browser.",
+    "features": [
+      "Multi-record Support",
+      "DNS-over-HTTPS",
+      "Instant Results",
+      "Client-side Processing",
+      "Export Capabilities"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/dns-record-lookup.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-11.svg",
+    "title": "Domain ICP Filing Checker",
+    "desc": "Verify China ICP filing status and entity details for domains. Supports batch queries and historical record checks directly in your browser.",
+    "features": [
+      "Real-time ICP Status",
+      "Batch Domain Query",
+      "Entity Information",
+      "Historical Records",
+      "Privacy-Focused",
+      "No Installation Needed"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/domain-icp-filing-checker.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-12.svg",
+    "title": "DST Timezone Converter",
+    "desc": "Convert times across timezones while automatically handling Daylight Saving Time transitions for accurate global scheduling.",
+    "features": [
+      "Automatic DST Handling",
+      "Batch Time Conversion",
+      "Meeting Planner Support",
+      "Historical Date Lookup",
+      "Privacy-Focused Local Processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/dst-timezone-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-19.svg",
+    "title": "Expired Domain Finder",
+    "desc": "Discover expiring domains with SEO metrics, backlink history, and bulk export capabilities for investors and developers.",
+    "features": [
+      "Search Expiring Domains",
+      "Filter By SEO Metrics",
+      "View Backlink History",
+      "Export Bulk Data",
+      "Archive.org Snapshots",
+      "Local Privacy Processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/expired-domain-finder.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-28.svg",
+    "title": "Http Header Checker",
+    "desc": "Analyze HTTP response headers, security settings, caching rules, and server information for any URL directly in your browser.",
+    "features": [
+      "Inspect Response Headers",
+      "Check Security Headers",
+      "Analyze Caching Rules",
+      "View Redirect Chains",
+      "Get Server Information",
+      "Calculate Security Score"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/http-header-checker.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-6.svg",
+    "title": "IP Geolocation Lookup",
+    "desc": "Instantly retrieve detailed location, ISP, ASN, and proxy detection data for any IP address directly in your browser.",
+    "features": [
+      "Real-time IP lookup",
+      "ISP and ASN details",
+      "Batch processing support",
+      "Proxy detection",
+      "100% private local processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/ip-geolocation-lookup.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "assets/icons/education-8.svg",
+    "title": "ISBN Book Lookup",
+    "desc": "Instantly retrieve detailed book metadata, author details, publisher info, and cover images by entering an ISBN number.",
+    "features": [
+      "ISBN-10 and 13 Support",
+      "Retrieve Book Metadata",
+      "Display Cover Images",
+      "Export Citations",
+      "Price Comparison Data",
+      "Open Library Integration"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/isbn-book-lookup.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-2.svg",
+    "title": "Markdown To Html Converter",
+    "desc": "Instantly convert Markdown text to valid HTML with live preview, GFM support, and local processing for developers and writers.",
+    "features": [
+      "Live Preview",
+      "GFM Support",
+      "Local Processing",
+      "Copy HTML Output",
+      "Dark Mode"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/markdown-to-html-converter.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-28.svg",
+    "title": "Meeting Time Planner",
+    "desc": "Find optimal meeting times across multiple time zones with visual timelines and calendar export for global teams.",
+    "features": [
+      "Time Zone Overlap",
+      "Visual Timeline",
+      "Working Hours Filter",
+      "Calendar Export",
+      "Global Team Support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/meeting-time-planner.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-32.svg",
+    "title": "Browser Port Scanner",
+    "desc": "Scan common TCP ports and detect services directly in your browser. Secure, private, and requires no installation or server-side processing.",
+    "features": [
+      "Scan Common Ports",
+      "Service Detection",
+      "Custom Port Ranges",
+      "Local Processing",
+      "Export Results",
+      "Secure And Private"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/browser-port-scanner.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-32.svg",
+    "title": "Reverse Ip Lookup",
+    "desc": "Discover all domains hosted on a specific IP address. Ideal for security research, competitor analysis, and shared hosting detection.",
+    "features": [
+      "Domain By IP Search",
+      "Shared Hosting Detection",
+      "Security Reconnaissance",
+      "Competitor Analysis",
+      "Local Browser Processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/reverse-ip-lookup.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-31.svg",
+    "title": "Robots.txt Generator",
+    "desc": "Create and validate robots.txt files locally for SEO optimization. Supports user agents, allow rules, sitemaps, and crawl delays without server uploads.",
+    "features": [
+      "Generate Robots.txt",
+      "Validate Syntax",
+      "Crawl Delay Support",
+      "Sitemap Declaration",
+      "Local Processing",
+      "SEO Optimization"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/robots-txt-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-1.svg",
+    "title": "SEO Meta Tag Generator",
+    "desc": "Generate complete SEO meta tags, Open Graph, Twitter Cards, and JSON-LD locally in your browser for optimal web visibility.",
+    "features": [
+      "Generate Meta Tags",
+      "Open Graph Support",
+      "Twitter Card Markup",
+      "JSON-LD Schema",
+      "Real-time Preview",
+      "Local Processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/seo-meta-tag-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-31.svg",
+    "title": "XML Sitemap Generator",
+    "desc": "Generate XML sitemaps locally for SEO optimization. Supports crawling, priority settings, and media inclusion without uploading data.",
+    "features": [
+      "Local XML Generation",
+      "Crawl Website URLs",
+      "Set Priority & Frequency",
+      "Support Images & Videos",
+      "Respect Robots.txt",
+      "No Data Upload"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/xml-sitemap-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-9.svg",
+    "title": "Website Speed Test",
+    "desc": "Measure website load times and analyze performance metrics directly in your browser with detailed breakdowns.",
+    "features": [
+      "Load Time Analysis",
+      "Core Web Vitals",
+      "Resource Waterfall",
+      "Performance Insights",
+      "Privacy Focused"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/website-speed-test.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-16.svg",
+    "title": "SSL Certificate Checker",
+    "desc": "Verify SSL/TLS certificate details, validity, chain, and expiry locally in your browser without sending data to any server.",
+    "features": [
+      "Check Certificate Details",
+      "Validate Certificate Chain",
+      "View SAN Entries",
+      "Monitor Expiry Dates",
+      "OCSP and CRL Status",
+      "Grade Rating System"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/ssl-certificate-checker.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-14.svg",
+    "title": "Week Number Converter",
+    "desc": "Instantly convert dates to ISO or US week numbers and vice versa. Supports fiscal years, ranges, and calendar views with full privacy.",
+    "features": [
+      "Date to Week Conversion",
+      "Week to Date Range",
+      "ISO and US Standards",
+      "Fiscal Year Support",
+      "Batch Processing",
+      "Local Privacy Protection"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/week-number-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-19.svg",
+    "title": "Whois Lookup",
+    "desc": "Whois Lookup - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/whois-lookup.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-1.svg",
+    "title": "Work Hours Calculator",
+    "desc": "Work Hours Calculator - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/work-hours-calculator.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-37.svg",
+    "title": "Academic Citation Generator",
+    "desc": "Generate accurate citations in APA, MLA, Chicago, Harvard, IEEE, and AMA formats locally without installation.",
+    "features": [
+      "Six Citation Styles",
+      "Multiple Document Types",
+      "One-Click Copy",
+      "Local History Storage",
+      "Offline Privacy Protection",
+      "Dynamic Form Fields"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/citation-generator.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-5.svg",
+    "title": "Final Grade Calculator",
+    "desc": "Calculate weighted course grades and reverse-calculate required final exam scores to achieve your target academic performance.",
+    "features": [
+      "Weighted Grade Calculation",
+      "Target Score Solver",
+      "Component Management",
+      "Dark Mode Support",
+      "Responsive Design",
+      "Export Results"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/final-grade-calculator.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "GPA Calculator",
+    "desc": "Calculate weighted and unweighted GPA on 4.0 or 5.0 scales. Reverse-engineer grades needed for target GPA with instant results.",
+    "features": [
+      "Weighted GPA",
+      "Unweighted GPA",
+      "Target Grade",
+      "4.0 Scale",
+      "5.0 Scale",
+      "Instant Results"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/gpa-calculator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-17.svg",
+    "title": "Secure Password Generator",
+    "desc": "Generate strong, customizable passwords locally in your browser with options for length, character sets, and ambiguity exclusion.",
+    "features": [
+      "Local Generation",
+      "Custom Length",
+      "Exclude Ambiguity",
+      "Character Sets",
+      "No Data Sent"
+    ],
+    "detailUrl": "/tools/password-generator/index.html",
+    "zipUrl": "/assets/zip-packages/dev/password-generator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-2.svg",
+    "title": "Pomodoro Timer",
+    "desc": "Distraction-free focus timer with customizable work sprints, break intervals, sound alerts, and daily session tracking for enhanced productivity.",
+    "features": [
+      "Custom Durations",
+      "Sound Alerts",
+      "Daily Tracking",
+      "Dark Mode",
+      "Browser Notifications",
+      "Focus Sprints"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/pomodoro-timer.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-2.svg",
+    "title": "Roman Numeral Converter",
+    "desc": "Instantly convert between Arabic and Roman numerals with validation, reference tables, and batch processing support.",
+    "features": [
+      "Arabic to Roman",
+      "Roman to Arabic",
+      "Batch Conversion",
+      "Validation Check",
+      "Reference Table",
+      "Dark Mode Support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/roman-numeral-converter.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-11.svg",
+    "title": "Auto Loan Calculator",
+    "desc": "Calculate monthly car payments, total interest, and loan costs instantly. Includes down payment, trade-in value, and sales tax for accurate auto financing estimates.",
+    "features": [
+      "Monthly payment calculation",
+      "Includes trade-in value",
+      "Sales tax computation",
+      "Detailed cost breakdown"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/finance/auto-loan-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-1.svg",
+    "title": "Compound Interest Calculator",
+    "desc": "Calculate compound interest and visualize investment growth over time. Supports regular contributions, multiple compounding frequencies, and detailed amortization tables for smarter financial planning.",
+    "features": [
+      "Calculate compound interest",
+      "Support regular contributions",
+      "Multiple compounding frequencies",
+      "Visual growth chart",
+      "Detailed yearly breakdown"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/finance/compound-interest-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-2.svg",
+    "title": "Credit Card Payoff Calculator",
+    "desc": "Compare snowball versus avalanche debt repayment strategies to minimize interest costs. Enter balances and rates to calculate payoff timelines and savings for multiple credit cards.",
+    "features": [
+      "Snowball vs avalanche comparison",
+      "Multiple card support",
+      "Interest savings analysis",
+      "Custom monthly budget input"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/finance/credit-card-payoff-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-3.svg",
+    "title": "Crypto Profit Calculator",
+    "desc": "Calculate cryptocurrency trading profits, ROI, and net gains after fees. Instantly analyze buy and sell prices for BTC, ETH, and other digital assets with detailed breakdowns.",
+    "features": [
+      "Instant profit calculation",
+      "ROI percentage display",
+      "Fee deduction support",
+      "Buy and sell analysis"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/finance/crypto-profit-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-4.svg",
+    "title": "Mortgage Calculator",
+    "desc": "Calculate monthly mortgage payments, total interest, and amortization schedules instantly. Free online tool for home loans with detailed breakdowns and responsive design.",
+    "features": [
+      "Monthly payment calculation",
+      "Amortization schedule generation",
+      "Total interest computation",
+      "Dark mode support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/finance/mortgage-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-5.svg",
+    "title": "Retirement Savings Calculator",
+    "desc": "Plan your financial future with this comprehensive retirement calculator. Estimate your nest egg, safe monthly withdrawals using the 4% rule, and adjust for inflation.",
+    "features": [
+      "Nest egg projection",
+      "4% rule withdrawal",
+      "Inflation adjustment",
+      "Monthly savings planner"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/finance/retirement-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-6.svg",
+    "title": "ROI Calculator",
+    "desc": "Calculate Return on Investment and annualized CAGR instantly. Enter initial cost and final value to determine profit, loss, and yearly growth rates for smarter financial decisions.",
+    "features": [
+      "Instant ROI calculation",
+      "CAGR computation",
+      "Profit and loss display",
+      "Supports years and months"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/finance/roi-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-7.svg",
+    "title": "US Federal Income Tax Calculator",
+    "desc": "Estimate your 2024 US federal income tax instantly. Calculate taxable income, effective rates, and marginal brackets for single, married, or head of household filers with detailed breakdowns.",
+    "features": [
+      "2024 tax bracket calculation",
+      "Effective and marginal rates",
+      "Itemized deduction support",
+      "Detailed tax breakdown table"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/finance/tax-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-2.svg",
+    "title": "BMI Calculator",
+    "desc": "Calculate your Body Mass Index instantly with our free online BMI calculator. Supports metric and imperial units to determine your weight category and healthy range.",
+    "features": [
+      "Instant BMI calculation",
+      "Metric and imperial units",
+      "Healthy weight range",
+      "Weight category indicator"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/bmi-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Body Fat Calculator",
+    "desc": "Estimate your body fat percentage using the US Navy method. Enter height, neck, waist, and hip measurements to get instant results and fitness categories.",
+    "features": [
+      "US Navy method calculation",
+      "Instant body fat percentage",
+      "Fitness level categorization",
+      "Supports male and female"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/body-fat-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-3.svg",
+    "title": "Calorie Calculator",
+    "desc": "Calculate your daily calorie needs (TDEE) and BMR using the Mifflin-St Jeor formula. Get personalized targets for weight loss, maintenance, or muscle gain based on your activity level.",
+    "features": [
+      "TDEE and BMR calculation",
+      "Mifflin-St Jeor formula",
+      "Weight loss targets",
+      "Muscle gain recommendations",
+      "Dark mode support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/calorie-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-4.svg",
+    "title": "Heart Rate Zone Calculator",
+    "desc": "Calculate 5 personalized heart rate training zones using the Karvonen formula or standard max heart rate method. Optimize your cardio workouts with precise target ranges for fat burn, endurance, and VO2 max.",
+    "features": [
+      "Karvonen formula support",
+      "5 distinct training zones",
+      "Fat burn to VO2 max",
+      "Instant bpm calculations"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/heart-rate-zone-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-5.svg",
+    "title": "Ideal Weight Calculator",
+    "desc": "Calculate your ideal body weight using four proven formulas: Devine, Robinson, Miller, and Hamwi. Get instant results in kilograms and pounds alongside a healthy BMI range for comprehensive health insights.",
+    "features": [
+      "Four scientific formulas",
+      "Kilogram and pound output",
+      "Healthy BMI range display",
+      "Dark mode support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/ideal-weight-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-6.svg",
+    "title": "Macro Calculator",
+    "desc": "Calculate your daily macronutrient needs for protein, carbs, and fat based on calorie targets. Supports balanced, low-carb, keto, and high-protein diets with instant results.",
+    "features": [
+      "Daily macro calculation",
+      "Keto and low-carb support",
+      "Multiple diet presets",
+      "Instant gram conversion"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/macro-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-7.svg",
+    "title": "Running Pace Calculator",
+    "desc": "Calculate running pace, time, or distance instantly. Supports 5K, 10K, half marathon, and marathon distances with metric and imperial unit conversions for runners.",
+    "features": [
+      "Calculate pace from time and distance",
+      "Compute total run time or distance",
+      "Supports 5K to marathon distances",
+      "Converts km and miles automatically"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/pace-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-8.svg",
+    "title": "Water Intake Calculator",
+    "desc": "Calculate your ideal daily water intake based on weight, exercise, and climate. Get personalized hydration goals in liters and cups to stay healthy and energized.",
+    "features": [
+      "Personalized hydration goals",
+      "Exercise and climate factors",
+      "Liters and cups output",
+      "Instant daily calculation"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/water-intake-calculator.zip"
+  },
+  {
+    "category": "SEO & Marketing",
+    "icon": "/assets/icons/seo-2.svg",
+    "title": "Keyword Density Checker",
+    "desc": "Analyze keyword density and frequency in your content for better SEO optimization. Identify over-optimized keywords and improve your search engine rankings.",
+    "features": [
+      "Real-time density analysis",
+      "Top keywords highlighted",
+      "SEO optimization tips",
+      "Word frequency count"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/keyword-density-checker.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-8.svg",
+    "title": "Meta Tag Generator",
+    "desc": "Meta Tag Generator - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/meta-tag-generator.zip"
+  },
+  {
+    "category": "SEO & Marketing",
+    "icon": "/assets/icons/seo-4.svg",
+    "title": "Open Graph Generator",
+    "desc": "Generate optimized Open Graph meta tags for Facebook, LinkedIn, and Twitter. Preview social share cards instantly and ensure your links look perfect on all platforms.",
+    "features": [
+      "Social media preview",
+      "Auto-generate OG tags",
+      "Multi-platform support",
+      "Image dimension tips"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/open-graph-generator.zip"
+  },
+  {
+    "category": "SEO & Marketing",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "Robots.txt Generator",
+    "desc": "Create valid robots.txt files to control search engine crawlers. Define allow and disallow rules, set crawl delays, and link your sitemap for better SEO.",
+    "features": [
+      "Custom allow and disallow rules",
+      "Set crawl delay settings",
+      "Add sitemap URL references",
+      "Instant preview and copy"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/robots-txt-generator.zip"
+  },
+  {
+    "category": "SEO & Marketing",
+    "icon": "/assets/icons/seo-3.svg",
+    "title": "Schema Markup Generator",
+    "desc": "Generate valid JSON-LD schema markup for Articles, Products, FAQs, Local Businesses, and Persons. Boost SEO with structured data and enhance Google Rich Results visibility effortlessly.",
+    "features": [
+      "JSON-LD generation",
+      "Multiple schema types",
+      "Rich results ready",
+      "Easy copy output"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/schema-markup-generator.zip"
+  },
+  {
+    "category": "SEO & Marketing",
+    "icon": "/assets/icons/seo-5.svg",
+    "title": "SERP Snippet Preview",
+    "desc": "Preview how your website appears in Google search results. Test title length, meta description truncation, and URL display for both desktop and mobile views to optimize click-through rates.",
+    "features": [
+      "Real-time SERP preview",
+      "Desktop and mobile views",
+      "Title length checker",
+      "Meta description analyzer",
+      "Visual truncation indicators",
+      "Optimization tips included"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/serp-snippet-preview.zip"
+  },
+  {
+    "category": "Social Media",
+    "icon": "/assets/icons/social-1.svg",
+    "title": "Emoji Character Counter",
+    "desc": "Emoji Character Counter - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/social/emoji-character-counter.zip"
+  },
+  {
+    "category": "Social Media",
+    "icon": "/assets/icons/social-2.svg",
+    "title": "Instagram Character Counter",
+    "desc": "Count characters for Instagram captions, bios, names, and hashtags instantly. Track limits, word counts, and hashtag usage with a live progress bar for optimal posting.",
+    "features": [
+      "Live character tracking",
+      "Caption and bio limits",
+      "Hashtag counter included",
+      "Word and line count"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/social/instagram-character-counter.zip"
+  },
+  {
+    "category": "Social Media",
+    "icon": "/assets/icons/social-3.svg",
+    "title": "Social Media Image Size Guide",
+    "desc": "Get the latest image dimensions for Instagram, Facebook, X, TikTok, YouTube, and LinkedIn. A quick reference guide for profile photos, covers, posts, and stories to ensure perfect formatting.",
+    "features": [
+      "Platform-specific dimensions",
+      "Profile and cover sizes",
+      "Post and story ratios",
+      "Updated 2024 guidelines"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/social/social-media-image-size-guide.zip"
+  },
+  {
+    "category": "Social Media",
+    "icon": "/assets/icons/social-4.svg",
+    "title": "TikTok Hashtag Generator",
+    "desc": "Boost your TikTok reach with this free hashtag generator. Create optimized, trending, and niche-specific tags for cooking, fitness, beauty, and more to grow your audience.",
+    "features": [
+      "Generate niche-specific hashtags",
+      "Trending and viral tag suggestions",
+      "Audience size targeting options",
+      "One-click copy to clipboard",
+      "Mix broad and niche tags",
+      "Free online tool"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/social/tiktok-hashtag-generator.zip"
+  },
+  {
+    "category": "Social Media",
+    "icon": "/assets/icons/social-5.svg",
+    "title": "X Character Counter",
+    "desc": "Accurately count characters for X (Twitter) posts with real-time weighted counting. Handles URLs, emojis, and CJK characters to ensure your tweets stay within the 280-character limit.",
+    "features": [
+      "Real-time weighted counting",
+      "Handles URLs and emojis",
+      "CJK character support",
+      "Visual progress indicator",
+      "Dark mode support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/social/x-character-counter.zip"
+  },
+  {
+    "category": "Social Media",
+    "icon": "/assets/icons/social-6.svg",
+    "title": "YouTube Title Generator",
+    "desc": "Boost your YouTube CTR with clickable, SEO-optimized titles. Generate engaging video titles based on your topic and style to increase views and rankings instantly.",
+    "features": [
+      "Generate clickable titles",
+      "SEO optimized for YouTube",
+      "Multiple style templates",
+      "Character count indicator"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/social/youtube-title-generator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Age Calculator",
+    "desc": "Calculate your exact age in years, months, and days with precision. Get fun statistics like total heartbeats, days lived, and countdowns to your next birthday or half-birthday.",
+    "features": [
+      "Exact age calculation",
+      "Total days and weeks",
+      "Birthday countdown timer",
+      "Fun life statistics"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/age-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-2.svg",
+    "title": "Countdown Timer",
+    "desc": "Countdown Timer - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/countdown-timer.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-3.svg",
+    "title": "Date Calculator",
+    "desc": "Easily calculate the difference between two dates or add and subtract days, weeks, months, and years. Get precise results in days, weeks, months, and years instantly.",
+    "features": [
+      "Calculate date differences",
+      "Add or subtract time units",
+      "Results in days and weeks",
+      "Supports months and years",
+      "Instant real-time calculation"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/date-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-4.svg",
+    "title": "Random Number Generator",
+    "desc": "Generate random numbers within any range instantly. Supports unique selection, sorting, and history tracking. Perfect for lotteries, raffles, sampling, and decision making without signup.",
+    "features": [
+      "Custom range generation",
+      "Unique number mode",
+      "Sort results option",
+      "Copy to clipboard",
+      "Generation history log"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/random-number-generator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-5.svg",
+    "title": "Global Time Zone Converter",
+    "desc": "Easily convert time across multiple global time zones with this free online tool. Compare dates, find optimal meeting times, and view a live world clock with DST indicators.",
+    "features": [
+      "Convert time between time zones",
+      "Multi-timezone comparison view",
+      "Meeting time generator",
+      "Live world clock display",
+      "DST status indicator"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/timezone-converter.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-6.svg",
+    "title": "Unit Converter",
+    "desc": "Convert length, weight, temperature, volume, area, speed, time, and digital storage units instantly. Switch between metric and imperial systems with a simple, fast, and responsive interface.",
+    "features": [
+      "Multi-category conversion support",
+      "Metric to imperial switching",
+      "Real-time result calculation",
+      "Quick reference table display"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/unit-converter.zip"
+  },
+  {
+    "category": "Security & Privacy",
+    "icon": "/assets/icons/security-1.svg",
+    "title": "AES Encrypt & Decrypt",
+    "desc": "Securely encrypt and decrypt text using AES-GCM 256-bit directly in your browser. All processing happens locally via Web Crypto API, ensuring complete privacy and zero data transmission.",
+    "features": [
+      "AES-GCM 256-bit encryption",
+      "Local browser processing",
+      "PBKDF2 key derivation",
+      "Instant text decryption"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/security/aes-encryptor.zip"
+  },
+  {
+    "category": "Security & Privacy",
+    "icon": "/assets/icons/security-2.svg",
+    "title": "Hash Generator",
+    "desc": "Generate MD5, SHA-1, SHA-256, SHA-384, and SHA-512 hashes locally in your browser. Supports text, files, and HMAC verification with complete privacy.",
+    "features": [
+      "Generate MD5 and SHA hashes",
+      "Local file and text hashing",
+      "HMAC signature support",
+      "Hash verification and compare",
+      "100% private and secure"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/security/hash-generator.zip"
+  },
+  {
+    "category": "Security & Privacy",
+    "icon": "/assets/icons/security-3.svg",
+    "title": "Batch Password Generator",
+    "desc": "Generate cryptographically secure passwords in bulk with customizable character sets, length, and exclusion rules. Features local processing, strength indicators, and easy copy or download options for enhanced security.",
+    "features": [
+      "Cryptographically secure generation",
+      "Batch password creation",
+      "Custom character sets",
+      "Strength indicator badges",
+      "Local offline processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/security/password-generator.zip"
+  },
+  {
+    "category": "Security & Privacy",
+    "icon": "/assets/icons/security-4.svg",
+    "title": "Password Strength Checker",
+    "desc": "Evaluate password security instantly with real-time entropy calculation and crack time estimation. Get actionable tips to strengthen your passwords while ensuring 100% local privacy.",
+    "features": [
+      "Real-time entropy calculation",
+      "Crack time estimation",
+      "Security checklist analysis",
+      "Actionable improvement tips",
+      "100% private local processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/security/password-strength-checker.zip"
+  },
+  {
+    "category": "Social Media",
+    "icon": "/assets/icons/social-7.svg",
+    "title": "Instagram Bio Generator",
+    "desc": "Instagram Bio Generator - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/social/instagram-bio-generator.zip"
+  },
+  {
+    "category": "Social Media",
+    "icon": "/assets/icons/social-8.svg",
+    "title": "Instagram Caption Generator",
+    "desc": "Create engaging Instagram captions instantly with emojis and hashtags. Select a mood, enter your topic, and generate ready-to-post text optimized for maximum social media engagement.",
+    "features": [
+      "Generate captions by mood",
+      "Auto-add relevant emojis",
+      "Include trending hashtags",
+      "One-click copy to clipboard",
+      "Optimized for engagement"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/social/instagram-caption-generator.zip"
+  },
+  {
+    "category": "Social Media",
+    "icon": "/assets/icons/social-9.svg",
+    "title": "LinkedIn Character Counter",
+    "desc": "Check character counts for LinkedIn posts, headlines, and summaries. Get real-time limits, word counts, reading time, and platform-specific optimization tips.",
+    "features": [
+      "Real-time character counting",
+      "Multiple LinkedIn sections support",
+      "Word and emoji statistics",
+      "Optimization tips included"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/social/linkedin-character-counter.zip"
+  },
+  {
+    "category": "Social Media",
+    "icon": "/assets/icons/social-10.svg",
+    "title": "Social Media Character Counter",
+    "desc": "Check character and word counts for Twitter, Instagram, Facebook, LinkedIn, TikTok, and more. Visual progress bars ensure your posts stay within platform limits.",
+    "features": [
+      "Multi-platform character limits",
+      "Real-time usage progress bars",
+      "Emoji hashtag mention tracking",
+      "Dark mode support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/social/social-media-character-counter-all.zip"
+  },
+  {
+    "category": "SEO & Marketing",
+    "icon": "/assets/icons/seo-6.svg",
+    "title": "YouTube Tag Generator",
+    "desc": "Boost your video visibility with this free YouTube tag generator. Create SEO-optimized, high-ranking tags based on your title and niche to attract more views and subscribers.",
+    "features": [
+      "Auto-generate relevant tags",
+      "Niche-specific suggestions",
+      "Copy comma-separated tags",
+      "Optimize for YouTube SEO"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/youtube-tag-generator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-7.svg",
+    "title": "Budget Tracker",
+    "desc": "Budget Tracker - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/budget-tracker.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-8.svg",
+    "title": "Coin Flipper",
+    "desc": "Flip a virtual coin for quick decisions with animated results. Track heads and tails statistics, view flip history, and reset counters easily. Perfect for random choices.",
+    "features": [
+      "Animated coin flip",
+      "Live statistics tracking",
+      "Flip history log",
+      "Reset counter option"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/coin-flipper.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-7.svg",
+    "title": "Daily Planner",
+    "desc": "Organize your day effectively with this free daily planner. Add priority tasks, set hourly schedules, and track completion. Boost productivity with time blocking and smart sorting features.",
+    "features": [
+      "Add priority-based tasks",
+      "Hourly schedule view",
+      "Track task completion",
+      "Local storage persistence",
+      "Dark mode support",
+      "Productivity tips included"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/daily-planner.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-9.svg",
+    "title": "Date Difference Calculator",
+    "desc": "Calculate the exact difference between two dates in days, weeks, months, and years. Includes business day counting and date addition features for project planning and age tracking.",
+    "features": [
+      "Calculate date differences",
+      "Count business days only",
+      "Add or subtract days",
+      "Supports years and months",
+      "Project deadline planner",
+      "Age and duration calculator"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/date-difference-calculator.zip"
+  },
+  {
+    "category": "Gaming Tools",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Dice Roller",
+    "desc": "Roll virtual dice online for D&D, RPGs, and board games. Supports D4, D6, D8, D10, D12, D20, D100, and custom dice with modifiers and roll history.",
+    "features": [
+      "Support all standard RPG dice",
+      "Add bonuses and penalties",
+      "View individual roll results",
+      "Track roll history log"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/dice-roller.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-10.svg",
+    "title": "Gift Idea Generator",
+    "desc": "Discover unique gift suggestions tailored to any recipient, occasion, and budget. Filter by interests like tech, cooking, or travel to find the perfect present instantly.",
+    "features": [
+      "Filter by recipient and occasion",
+      "Budget-based gift filtering",
+      "Interest-specific recommendations",
+      "Instant personalized suggestions"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/gift-idea-generator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-3.svg",
+    "title": "Habit Streak Tracker",
+    "desc": "Track your daily habits and build consistency with streak counters. Monitor progress for building good habits or breaking bad ones with visual stats and local storage.",
+    "features": [
+      "Track build and break habits",
+      "Visual streak statistics",
+      "Local data persistence",
+      "Dark mode support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/habit-streak-tracker.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-11.svg",
+    "title": "Habit Tracker",
+    "desc": "Habit Tracker - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/habit-tracker.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-12.svg",
+    "title": "Meditation Timer",
+    "desc": "Enhance your mindfulness practice with this customizable meditation timer. Features interval bells, soothing audio cues, and a guided breathing exercise to help you relax and focus.",
+    "features": [
+      "Customizable meditation duration",
+      "Interval bell notifications",
+      "Soothing bell sound options",
+      "Guided breathing exercise"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/meditation-timer.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Productivity Score Calculator",
+    "desc": "Evaluate your daily work efficiency with this comprehensive productivity score calculator. Track task completion, focus time, energy levels, and mood to get actionable insights and personalized tips for improvement.",
+    "features": [
+      "Calculate weighted productivity score",
+      "Track task completion and focus time",
+      "Assess energy and mood levels",
+      "Get personalized improvement tips",
+      "Visual score breakdown and progress bar"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/productivity-score-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-2.svg",
+    "title": "Sleep Cycle Calculator",
+    "desc": "Optimize your rest by calculating ideal bedtime and wake-up times based on 90-minute sleep cycles. Enter your desired wake time or current moment to find the perfect sleep schedule for maximum refreshment.",
+    "features": [
+      "Calculate optimal bedtimes",
+      "Wake up refreshed naturally",
+      "90-minute cycle logic",
+      "Suggests best sleep duration",
+      "Includes sleep stage info",
+      "Mobile friendly interface"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/sleep-cycle-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-3.svg",
+    "title": "Online Stopwatch",
+    "desc": "Start a precise online stopwatch with millisecond accuracy and lap tracking. Perfect for sports, cooking, workouts, and presentations. Features keyboard shortcuts and a clean interface.",
+    "features": [
+      "Millisecond precision timing",
+      "Record lap splits easily",
+      "Keyboard shortcut support",
+      "Dark mode available"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/stopwatch.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-4.svg",
+    "title": "Online To-Do List",
+    "desc": "Organize your daily tasks efficiently with this free online to-do list. Set priorities, assign due dates, and track progress using local storage without signup.",
+    "features": [
+      "Set task priorities and due dates",
+      "Filter by active or completed status",
+      "Persistent local storage saving",
+      "Dark mode and responsive design"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/to-do-list-online.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-5.svg",
+    "title": "Wheel Spinner",
+    "desc": "Spin a custom wheel to make random choices instantly. Add options, spin the wheel, and get a random winner. Perfect for giveaways, decision making, and games.",
+    "features": [
+      "Customizable wheel options",
+      "Animated spin results",
+      "Winner history tracking",
+      "Random decision maker"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/wheel-spinner.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-6.svg",
+    "title": "World Clock",
+    "desc": "Track current time across major global cities with this free world clock. Easily compare time zones for international meetings, travel planning, and remote team coordination.",
+    "features": [
+      "Live time for multiple cities",
+      "Time zone comparison tool",
+      "Day and night indicators",
+      "Searchable city list"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/world-clock.zip"
+  },
+  {
+    "category": "Security & Privacy",
+    "icon": "/assets/icons/security-5.svg",
+    "title": "API Key Generator",
+    "desc": "Generate secure, random API keys with custom prefixes, lengths, and formats. Supports Hex, Base64, UUID, and Alphanumeric standards with local entropy calculation.",
+    "features": [
+      "Custom prefix support",
+      "Multiple format options",
+      "Local entropy calculation",
+      "Bulk key generation"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/security/api-key-generator.zip"
+  },
+  {
+    "category": "Security & Privacy",
+    "icon": "/assets/icons/security-6.svg",
+    "title": "Base64 Encoder Decoder",
+    "desc": "Instantly encode text to Base64 or decode Base64 strings back to readable text. Supports UTF-8, Unicode, and URL-safe formats with local processing for privacy.",
+    "features": [
+      "Encode and decode Base64",
+      "URL-safe encoding support",
+      "UTF-8 and Unicode handling",
+      "Local client-side processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/security/base64-encode-decode.zip"
+  },
+  {
+    "category": "Security & Privacy",
+    "icon": "/assets/icons/security-7.svg",
+    "title": "Data Masker",
+    "desc": "Protect sensitive information by automatically masking emails, phone numbers, credit cards, SSNs, and IP addresses. Securely anonymize PII before sharing documents or logs.",
+    "features": [
+      "Mask emails and phone numbers",
+      "Hide credit cards and SSNs",
+      "Anonymize IP addresses",
+      "Custom masking styles"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/security/data-masker.zip"
+  },
+  {
+    "category": "Security & Privacy",
+    "icon": "/assets/icons/security-8.svg",
+    "title": "JWT Decoder",
+    "desc": "Decode and inspect JSON Web Tokens locally in your browser. View headers, payloads, and standard claims like exp and iat. Tokens never leave your device for maximum privacy and security.",
+    "features": [
+      "Local decoding only",
+      "Inspect header and payload",
+      "View standard claims",
+      "Expiration status check"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/security/jwt-decoder.zip"
+  },
+  {
+    "category": "Security & Privacy",
+    "icon": "/assets/icons/security-9.svg",
+    "title": "Random Token Generator",
+    "desc": "Generate cryptographically secure random tokens for API keys, sessions, and passwords. Customize length, character sets, and prefixes with real-time entropy calculation.",
+    "features": [
+      "Cryptographically secure generation",
+      "Customizable character sets",
+      "Real-time entropy calculation",
+      "Batch token generation"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/security/random-token-generator.zip"
+  },
+  {
+    "category": "Security & Privacy",
+    "icon": "/assets/icons/security-10.svg",
+    "title": "URL Encode Decode",
+    "desc": "Instantly encode or decode strings for URLs. Supports standard and component encoding, handles UTF-8, query strings, and form data with real-time conversion.",
+    "features": [
+      "Encode and decode strings",
+      "Handle UTF-8 characters",
+      "Component encoding support",
+      "Real-time conversion"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/security/url-encode-decode.zip"
+  },
+  {
+    "category": "Security & Privacy",
+    "icon": "/assets/icons/security-11.svg",
+    "title": "UUID Generator",
+    "desc": "Generate RFC 4122 compliant UUIDs instantly. Support for v1, v4, and nil versions with bulk generation up to 1000 IDs. Customize format, copy, or download results.",
+    "features": [
+      "Generate UUID v1 and v4",
+      "Bulk create up to 1000 IDs",
+      "Customize output formatting",
+      "One-click copy and download"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/security/uuid-generator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-1.svg",
+    "title": "Average Calculator",
+    "desc": "Calculate the arithmetic mean, median, variance, and standard deviation of any number set. Get instant statistical summaries including sum, min, max, and range for data analysis.",
+    "features": [
+      "Calculate mean and median",
+      "Compute variance and std dev",
+      "Find min, max, and range",
+      "Supports multiple number formats"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/average-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-2.svg",
+    "title": "Basic Calculator",
+    "desc": "Basic Calculator - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/basic-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-3.svg",
+    "title": "Binomial Distribution Calculator",
+    "desc": "Compute binomial distribution probabilities including PMF, CDF, mean, variance, and standard deviation. Visualize data with interactive charts and detailed tables for statistical analysis.",
+    "features": [
+      "Calculate PMF and CDF values",
+      "Display mean and variance stats",
+      "Generate probability distribution table",
+      "Visualize results with interactive chart",
+      "Support large trial numbers efficiently"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/binomial-distribution-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-4.svg",
+    "title": "Chi Square Test Calculator",
+    "desc": "Chi Square Test Calculator - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/chi-square-test-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-5.svg",
+    "title": "Circle Geometry Calculator",
+    "desc": "Instantly calculate circle area, circumference, diameter, and radius from any single input. Includes bonus sphere volume and surface area calculations with visual diagrams.",
+    "features": [
+      "Calculate area and circumference",
+      "Determine radius and diameter",
+      "Sphere volume and surface area",
+      "Visual SVG diagram included",
+      "Supports all unit inputs"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/circle-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-6.svg",
+    "title": "Complex Number Calculator",
+    "desc": "Complex Number Calculator - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/complex-number-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-7.svg",
+    "title": "Cone Calculator",
+    "desc": "Calculate cone volume, surface area, and slant height instantly. Solve for missing dimensions using radius, height, or lateral area with detailed geometric formulas.",
+    "features": [
+      "Calculate volume and surface area",
+      "Determine slant height and angles",
+      "Solve for missing dimensions",
+      "Display step-by-step formulas",
+      "Supports metric and imperial units"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/cone-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-8.svg",
+    "title": "Cube Calculator",
+    "desc": "Calculate cube volume, surface area, diagonals, and edge length instantly. Solve for side length using volume or space diagonal with precise geometric formulas.",
+    "features": [
+      "Volume and surface area",
+      "Face and space diagonals",
+      "Reverse side calculation",
+      "Precise geometric formulas"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/cube-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-9.svg",
+    "title": "Cylinder Calculator",
+    "desc": "Compute cylinder volume, surface area, and dimensions instantly. Solve for missing radius or height using standard geometric formulas. Perfect for students and engineers.",
+    "features": [
+      "Calculate volume and surface area",
+      "Solve for missing dimensions",
+      "Supports radius and height inputs",
+      "Geometric formula display"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/cylinder-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-10.svg",
+    "title": "Derivative Calculator",
+    "desc": "Compute numerical derivatives for any function instantly. Supports first, second, and third-order calculations with customizable step sizes and visual plotting for calculus students.",
+    "features": [
+      "First second third order derivatives",
+      "Customizable step size accuracy",
+      "Visual function chart plotting",
+      "Detailed result interpretation"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/derivative-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-11.svg",
+    "title": "Exponent Calculator",
+    "desc": "Calculate powers and exponents instantly with step-by-step solutions. Supports negative, fractional, and large exponents with detailed mathematical breakdowns and reciprocal values.",
+    "features": [
+      "Instant power calculation",
+      "Step-by-step explanations",
+      "Supports fractional exponents",
+      "Handles negative bases",
+      "Reciprocal value display",
+      "Quick preset buttons"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/exponent-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-12.svg",
+    "title": "Factorial Calculator",
+    "desc": "Calculate factorial n! for any non-negative integer up to 1000!. View exact results, digit counts, trailing zeros, and Stirling approximations instantly.",
+    "features": [
+      "Large number support",
+      "Exact factorial results",
+      "Digit and zero counting",
+      "Stirling approximation"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/factorial-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-1.svg",
+    "title": "Fraction Calculator",
+    "desc": "Perform addition, subtraction, multiplication, and division of fractions instantly. Simplifies results, converts to decimals and percentages, and shows step-by-step calculations for educational clarity.",
+    "features": [
+      "Add subtract multiply divide fractions",
+      "Auto-simplify results using GCD",
+      "Convert to decimal and percentage",
+      "Show step-by-step calculation process"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/fraction-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-2.svg",
+    "title": "Linear Equation Solver",
+    "desc": "Linear Equation Solver - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/linear-equation-solver.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-3.svg",
+    "title": "Logarithm Calculator",
+    "desc": "Calculate logarithms with any base including natural, common, and binary. Supports antilog operations and displays results across multiple bases instantly.",
+    "features": [
+      "Calculate logs with any base",
+      "Support natural and common logs",
+      "Compute antilog values",
+      "Display multi-base results"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/logarithm-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-4.svg",
+    "title": "Logarithm Calculator Extended",
+    "desc": "Calculate logarithms with any base including common, natural, and binary. Solve for unknown variables and explore log properties with instant verification and detailed results.",
+    "features": [
+      "Calculate logs with any base",
+      "Solve for unknown x, b, or result",
+      "Show other base conversions",
+      "Verify calculations automatically",
+      "Display log rules and properties"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/logarithm-calculator-extended.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-5.svg",
+    "title": "Math Formula Reference",
+    "desc": "Math Formula Reference - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/math-formula-reference.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-6.svg",
+    "title": "Matrix Calculator",
+    "desc": "Perform essential linear algebra operations including addition, subtraction, multiplication, determinant, inverse, transpose, and rank calculation for matrices up to 4x4.",
+    "features": [
+      "Add subtract multiply matrices",
+      "Calculate determinant easily",
+      "Find matrix inverse",
+      "Transpose and rank tools"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/matrix-calculator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-2.svg",
+    "title": "Median Calculator",
+    "desc": "Median Calculator - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/median-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-7.svg",
+    "title": "Mode Calculator",
+    "desc": "Mode Calculator - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/mode-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-8.svg",
+    "title": "Normal Distribution Calculator",
+    "desc": "Calculate normal distribution probabilities, z-scores, PDF, and CDF instantly. Visualize Gaussian curves with interactive charts and reference tables for statistics.",
+    "features": [
+      "Calculate z-scores and probabilities",
+      "Interactive distribution chart",
+      "PDF and CDF computation",
+      "Supports multiple calculation types"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/normal-distribution-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-9.svg",
+    "title": "Percentage Calculator Math",
+    "desc": "Percentage Calculator Math - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/percentage-calculator-math.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-10.svg",
+    "title": "Percentage Change Calculator",
+    "desc": "Instantly calculate percentage increase or decrease between two values. Includes tools for finding percentages, ratios, and multipliers with real-time results and clear visual indicators.",
+    "features": [
+      "Calculate percent change",
+      "Find percentage of value",
+      "Determine ratio multiplier",
+      "Real-time instant results"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/percentage-change-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-11.svg",
+    "title": "Permutation and Combination Calculator",
+    "desc": "Calculate permutations (nPr) and combinations (nCr) with or without repetition. Get instant results, formulas, factorials, and common use cases for math and statistics.",
+    "features": [
+      "Calculate nPr and nCr",
+      "Supports repetition options",
+      "Shows formulas used",
+      "Displays factorials",
+      "Common use examples"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/permutation-combination-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-12.svg",
+    "title": "Poisson Distribution Calculator",
+    "desc": "Calculate Poisson distribution probabilities including PMF, CDF, mean, variance, and standard deviation. Visualize data with interactive charts and comprehensive probability tables for statistical analysis.",
+    "features": [
+      "Compute PMF and CDF values",
+      "Generate probability distribution table",
+      "Visualize distribution with charts",
+      "Calculate mean and variance instantly"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/poisson-distribution-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-1.svg",
+    "title": "Prime Number Checker",
+    "desc": "Instantly verify if a number is prime, perform prime factorization, find adjacent primes, and generate lists. A comprehensive number theory tool for students and math enthusiasts.",
+    "features": [
+      "Verify primality instantly",
+      "Prime factorization display",
+      "Find next and previous primes",
+      "List primes up to limit"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/prime-number-checker.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-2.svg",
+    "title": "Probability Calculator",
+    "desc": "Calculate single event probabilities, combined AND/OR events, and conditional dependencies. Supports independent and dependent scenarios with detailed odds and formulas.",
+    "features": [
+      "Single event calculation",
+      "AND OR probability logic",
+      "Conditional dependency support",
+      "Odds and formula display"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/probability-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-3.svg",
+    "title": "Proportion Calculator",
+    "desc": "Solve proportions A:B = C:D instantly using cross-multiplication. Find missing values, verify ratios, and simplify fractions with this free online math tool.",
+    "features": [
+      "Solve missing proportion values",
+      "Cross-multiplication verification",
+      "Simplify ratio fractions",
+      "Quick recipe examples"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/proportion-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-4.svg",
+    "title": "Pythagorean Theorem Calculator",
+    "desc": "Solve right triangles instantly using the Pythagorean theorem. Calculate hypotenuse or legs with step-by-step solutions, angle measurements, area, perimeter, and visual diagrams.",
+    "features": [
+      "Calculate hypotenuse or legs",
+      "Step-by-step solution display",
+      "Triangle area and perimeter",
+      "Visual SVG diagram generation",
+      "Angle measurement calculation",
+      "Input validation and verification"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/pythagorean-theorem-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-5.svg",
+    "title": "Quadratic Equation Solver",
+    "desc": "Solve quadratic equations ax² + bx + c = 0 instantly. Calculate real and complex roots, discriminant, and view detailed step-by-step solutions for algebra problems.",
+    "features": [
+      "Find real and complex roots",
+      "Calculate discriminant value",
+      "Step-by-step solution guide",
+      "Supports linear equations"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/quadratic-equation-solver.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-6.svg",
+    "title": "Range Calculator",
+    "desc": "Compute statistical range, midrange, IQR, and quartiles for any dataset. Visualize data spread with an interactive number line and get detailed statistical breakdowns instantly.",
+    "features": [
+      "Calculate range and midrange",
+      "Compute IQR and quartiles",
+      "Interactive number line visualization",
+      "Detailed statistical summary"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/range-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-7.svg",
+    "title": "Ratio Calculator",
+    "desc": "Simplify, scale, and solve ratios instantly with step-by-step calculations. Convert ratios to fractions and percentages for math homework and engineering tasks.",
+    "features": [
+      "Simplify ratios using GCD",
+      "Scale ratios by any factor",
+      "Solve missing ratio terms",
+      "Convert to fractions and percentages"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/ratio-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-8.svg",
+    "title": "Scientific Calculator",
+    "desc": "Perform complex mathematical calculations with this free online scientific calculator. Supports trigonometry, logarithms, exponents, factorials, and constants like pi and e for precise results.",
+    "features": [
+      "Trigonometric functions support",
+      "Logarithm and exponent tools",
+      "Factorial and square root",
+      "Degree and radian toggle",
+      "Calculation history tracking"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/scientific-calculator.zip"
+  },
+  {
+    "category": "Real Estate Tools",
+    "icon": "/assets/icons/real-estate-1.svg",
+    "title": "Solar Panel Calculator",
+    "desc": "Estimate solar panel savings, ROI, and payback period. Calculate lifetime benefits, CO2 reduction, and system costs based on your electricity usage and local sun hours.",
+    "features": [
+      "Calculate ROI and payback",
+      "Estimate lifetime savings",
+      "CO2 reduction tracking",
+      "System cost analysis",
+      "Customize sun hours and efficiency"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/real-estate/solar-panel-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-9.svg",
+    "title": "Sphere Calculator",
+    "desc": "Calculate sphere volume, surface area, radius, and circumference instantly. Solve for dimensions using known values. Free online geometry tool with detailed formulas and hemisphere calculations.",
+    "features": [
+      "Calculate volume and surface area",
+      "Solve radius from volume or area",
+      "Compute circumference and diameter",
+      "Supports hemisphere calculations",
+      "Detailed formula explanations"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/sphere-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-10.svg",
+    "title": "Standard Deviation Calculator",
+    "desc": "Compute standard deviation, variance, mean, median, and quartiles instantly. Supports sample and population data with detailed statistical dispersion analysis.",
+    "features": [
+      "Calculate standard deviation",
+      "Compute variance and mean",
+      "Sample vs population mode",
+      "Find median and quartiles",
+      "Display min and max values",
+      "Supports decimal rounding"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/standard-deviation-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-11.svg",
+    "title": "Statistics Calculator",
+    "desc": "Compute comprehensive descriptive statistics including mean, median, mode, variance, standard deviation, quartiles, and skewness. Analyze data distributions and identify outliers instantly with this free online tool.",
+    "features": [
+      "Calculate mean and median",
+      "Compute variance and std dev",
+      "Find quartiles and IQR",
+      "Identify data outliers",
+      "Analyze skewness distribution"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/statistics-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-12.svg",
+    "title": "T Test Calculator",
+    "desc": "T Test Calculator - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/t-test-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-1.svg",
+    "title": "Triangle Calculator",
+    "desc": "Solve any triangle instantly using SSS, SAS, ASA, or SSA methods. Calculate area, perimeter, angles, and side lengths with precision and ease.",
+    "features": [
+      "Solve triangles SSS SAS ASA SSA",
+      "Calculate area and perimeter",
+      "Find all angles and sides",
+      "Detect triangle types"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/triangle-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-2.svg",
+    "title": "Trigonometry Calculator",
+    "desc": "Compute sine, cosine, tangent, and inverse trigonometric functions instantly. Supports degrees and radians with hyperbolic options and a comprehensive reference table for all common angles.",
+    "features": [
+      "Calculate sin cos tan functions",
+      "Support inverse trigonometric operations",
+      "Hyperbolic sinh cosh tanh support",
+      "Degree and radian unit conversion",
+      "Display all trig values simultaneously",
+      "Common angles reference table included"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/trigonometry-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-3.svg",
+    "title": "Unit Converter",
+    "desc": "Unit Converter - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/unit-converter.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-4.svg",
+    "title": "Unit Rate Calculator",
+    "desc": "Compare prices per ounce, pound, or liter to find the best value. Calculate unit rates instantly and determine savings between products for smarter shopping decisions.",
+    "features": [
+      "Best buy comparison",
+      "Unit price calculation",
+      "Multiple item support",
+      "Savings percentage display"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/unit-rate-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-5.svg",
+    "title": "Variance Calculator",
+    "desc": "Compute sample and population variance with detailed statistical analysis. Instantly calculate mean, standard deviation, and view step-by-step formulas for accurate data spread measurement.",
+    "features": [
+      "Sample and population variance",
+      "Standard deviation calculation",
+      "Step-by-step formulas",
+      "Detailed calculation table"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/variance-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/math-6.svg",
+    "title": "Vector Calculator",
+    "desc": "Perform essential 2D and 3D vector calculations instantly. Compute magnitude, dot and cross products, angles, projections, and unit vectors with precise results.",
+    "features": [
+      "2D and 3D vector support",
+      "Magnitude and unit vectors",
+      "Dot and cross products",
+      "Angle calculation",
+      "Vector projection"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/math/vector-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-9.svg",
+    "title": "Ai Agent Workflow Planner",
+    "desc": "A free offline tool for ai agent workflow planner calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/ai-agent-workflow-planner.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Ai Content Detector Lite",
+    "desc": "A free offline tool for ai content detector lite calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/ai-content-detector-lite.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Ai Detection Score Tool",
+    "desc": "A free offline tool for ai detection score tool calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/ai-detection-score-tool.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-12.svg",
+    "title": "Ai Model Comparison Table",
+    "desc": "A free offline tool for ai model comparison table calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/ai-model-comparison-table.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Ai Prompt Generator",
+    "desc": "A free offline tool for ai prompt generator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/ai-prompt-generator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Ai Writing Style Detector",
+    "desc": "A free offline tool for ai writing style detector calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/ai-writing-style-detector.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Chatgpt System Message Builder",
+    "desc": "A free offline tool for chatgpt system message builder calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/chatgpt-system-message-builder.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Conversation Token Trimmer",
+    "desc": "A free offline tool for conversation token trimmer calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/conversation-token-trimmer.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Dalle Prompt Builder",
+    "desc": "A free offline tool for dalle prompt builder calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/dalle-prompt-builder.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Embedding Cost Estimator",
+    "desc": "A free offline tool for embedding cost estimator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/embedding-cost-estimator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Fine Tune Data Formatter",
+    "desc": "A free offline tool for fine tune data formatter calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/fine-tune-data-formatter.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Image Prompt Builder",
+    "desc": "A free offline tool for image prompt builder calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/image-prompt-builder.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Llm Cost Estimator",
+    "desc": "A free offline tool for llm cost estimator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/llm-cost-estimator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Midjourney Prompt Builder",
+    "desc": "A free offline tool for midjourney prompt builder calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/midjourney-prompt-builder.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Negative Prompt Generator",
+    "desc": "A free offline tool for negative prompt generator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/negative-prompt-generator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Prompt Engineering Cheat Sheet",
+    "desc": "A free offline tool for prompt engineering cheat sheet calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/prompt-engineering-cheat-sheet.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Prompt Template Library",
+    "desc": "A free offline tool for prompt template library calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/prompt-template-library.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Rag Chunker",
+    "desc": "A free offline tool for rag chunker calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/rag-chunker.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Stable Diffusion Prompt Builder",
+    "desc": "A free offline tool for stable diffusion prompt builder calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/stable-diffusion-prompt-builder.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Text Token Counter",
+    "desc": "A free offline tool for text token counter calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/text-token-counter.zip"
+  },
+  {
+    "category": "Audio & Music Tools",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Brake Pad Wear Estimator",
+    "desc": "A free offline tool for brake pad wear estimator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/brake-pad-wear-estimator.zip"
+  },
+  {
+    "category": "Audio & Music Tools",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Car Loan Payoff Calculator",
+    "desc": "A free offline tool for car loan payoff calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/car-loan-payoff-calculator.zip"
+  },
+  {
+    "category": "Audio & Music Tools",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Car Maintenance Schedule",
+    "desc": "A free offline tool for car maintenance schedule calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/car-maintenance-schedule.zip"
+  },
+  {
+    "category": "Audio & Music Tools",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Car Payment Calculator",
+    "desc": "A free offline tool for car payment calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/car-payment-calculator.zip"
+  },
+  {
+    "category": "Audio & Music Tools",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Car Resale Value Calculator",
+    "desc": "A free offline tool for car resale value calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/car-resale-value-calculator.zip"
+  },
+  {
+    "category": "Audio & Music Tools",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Driving Cost Per Mile",
+    "desc": "A free offline tool for driving cost per mile calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/driving-cost-per-mile.zip"
+  },
+  {
+    "category": "Audio & Music Tools",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Ev Charging Cost Calculator",
+    "desc": "A free offline tool for ev charging cost calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/ev-charging-cost-calculator.zip"
+  },
+  {
+    "category": "Audio & Music Tools",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Fuel Cost Calculator",
+    "desc": "A free offline tool for fuel cost calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/fuel-cost-calculator.zip"
+  },
+  {
+    "category": "Audio & Music Tools",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Fuel Cost Comparison",
+    "desc": "A free offline tool for fuel cost comparison calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/fuel-cost-comparison.zip"
+  },
+  {
+    "category": "Audio & Music Tools",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Mpg Calculator",
+    "desc": "A free offline tool for mpg calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/mpg-calculator.zip"
+  },
+  {
+    "category": "Audio & Music Tools",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Road Trip Planner",
+    "desc": "A free offline tool for road trip planner calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/road-trip-planner.zip"
+  },
+  {
+    "category": "Audio & Music Tools",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Tire Pressure Calculator",
+    "desc": "A free offline tool for tire pressure calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/tire-pressure-calculator.zip"
+  },
+  {
+    "category": "Audio & Music Tools",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Tire Size Calculator",
+    "desc": "A free offline tool for tire size calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/tire-size-calculator.zip"
+  },
+  {
+    "category": "Audio & Music Tools",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Trip Mileage Log",
+    "desc": "A free offline tool for trip mileage log calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/trip-mileage-log.zip"
+  },
+  {
+    "category": "Audio & Music Tools",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Vehicle Depreciation",
+    "desc": "A free offline tool for vehicle depreciation calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/vehicle-depreciation.zip"
+  },
+  {
+    "category": "Cars & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Car Payment Calculator",
+    "desc": "A free offline tool for car payment calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cars/car-payment-calculator.zip"
+  },
+  {
+    "category": "Cars & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Ev Range Calculator",
+    "desc": "A free offline tool for ev range calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cars/ev-range-calculator.zip"
+  },
+  {
+    "category": "Cars & Vehicles",
+    "icon": "/assets/icons/cars-3.svg",
+    "title": "Fuel Cost Calculator",
+    "desc": "Calculate trip fuel expenses instantly with our free online calculator. Input distance, MPG, and gas prices to estimate costs, split fares among passengers, and compare gasoline versus electric vehicle savings.",
+    "features": [
+      "Calculate trip fuel costs",
+      "Support MPG and L100km units",
+      "Split expenses among passengers",
+      "Compare gas and EV costs",
+      "Convert miles and kilometers"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cars/fuel-cost-calculator.zip"
+  },
+  {
+    "category": "Cars & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Oil Change Interval",
+    "desc": "A free offline tool for oil change interval calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cars/oil-change-interval.zip"
+  },
+  {
+    "category": "Cars & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Tire Size Converter",
+    "desc": "A free offline tool for tire size converter calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cars/tire-size-converter.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/ai-1.svg",
+    "title": "AI Agent Workflow Planner",
+    "desc": "Design and visualize multi-step AI agent workflows with ease. Define nodes, tools, and routing logic, then export structured JSON or Mermaid diagrams ready for LangGraph, AutoGen, or CrewAI integration.",
+    "features": [
+      "Visualize multi-step agent workflows",
+      "Define nodes, tools, and routing",
+      "Export structured JSON configurations",
+      "Generate Mermaid flowchart diagrams",
+      "Support LangGraph and CrewAI"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/ai/ai-agent-workflow-planner.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/ai-2.svg",
+    "title": "AI Model Comparison Table",
+    "desc": "Compare top AI language models side-by-side with our comprehensive reference table. Analyze pricing, context windows, multimodal support, and key strengths to choose the perfect LLM for your projects.",
+    "features": [
+      "Compare top AI models",
+      "Filter by vendor or name",
+      "View pricing and context limits",
+      "Check multimodal support status",
+      "Get quick usage recommendations"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/ai/ai-model-comparison-table.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/ai-3.svg",
+    "title": "AI Prompt Generator",
+    "desc": "Craft highly effective AI prompts instantly with our free prompt generator. Customize roles, formats, tones, and constraints to get precise, production-ready outputs for any language model.",
+    "features": [
+      "Customize AI personas and roles",
+      "Select output format and tone",
+      "Add context and strict constraints",
+      "Generate production-ready prompts instantly",
+      "Copy formatted text to clipboard"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/ai/ai-prompt-generator.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "/assets/icons/content-1.svg",
+    "title": "AI Writing Style Detector",
+    "desc": "Analyze writing style, tone, formality, and readability instantly. Detect AI-like patterns, track sentence complexity, and get actionable editing tips to improve your content quality.",
+    "features": [
+      "Analyze tone and formality",
+      "Detect AI writing patterns",
+      "Measure readability scores",
+      "Track sentence complexity",
+      "Identify passive voice usage"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/ai-writing-style-detector.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/ai-4.svg",
+    "title": "ChatGPT System Message Builder",
+    "desc": "Generate optimized system prompts for ChatGPT and other LLMs instantly. Define roles, behaviors, output formats, and constraints to craft precise AI instructions for consistent results.",
+    "features": [
+      "Customize AI assistant roles",
+      "Define behavior and tone",
+      "Set output formatting rules",
+      "Add constraints and guidelines",
+      "Generate ready-to-use prompts"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/ai/chatgpt-system-message-builder.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/ai-5.svg",
+    "title": "Conversation Token Trimmer",
+    "desc": "Trim your LLM conversation history to fit exact token limits while preserving system prompts and critical context. Choose smart truncation strategies for optimal AI model performance.",
+    "features": [
+      "Preserve system messages automatically",
+      "Estimate tokens by language type",
+      "Keep most recent conversation turns",
+      "Summarize dropped message history",
+      "Fit exact context window limits",
+      "Copy trimmed output instantly"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/ai/conversation-token-trimmer.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/ai-6.svg",
+    "title": "Embedding Cost Estimator",
+    "desc": "Estimate AI embedding API costs instantly. Calculate token usage, vector dimensions, and monthly expenses for OpenAI, Cohere, and Voyage models. Optimize your RAG pipeline budget efficiently.",
+    "features": [
+      "Supports multiple AI providers",
+      "Calculates token count and API costs",
+      "Estimates vector storage requirements",
+      "Custom pricing for any model",
+      "Real-time cost breakdown per call"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/ai/embedding-cost-estimator.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/ai-7.svg",
+    "title": "Image Prompt Builder",
+    "desc": "Create highly detailed AI image prompts for Midjourney, DALL-E, and Stable Diffusion in seconds. Easily customize subjects, art styles, lighting, and composition to generate optimized prompts for stunning visuals.",
+    "features": [
+      "Generate AI image prompts",
+      "Customize style and lighting",
+      "Support Midjourney and DALL-E",
+      "Adjust composition and mood",
+      "Copy ready-to-use prompts instantly"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/ai/image-prompt-builder.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/ai-8.svg",
+    "title": "Midjourney Prompt Builder",
+    "desc": "Generate optimized Midjourney AI art prompts instantly. Customize styles, lighting, composition, and parameters like aspect ratio and stylization. Copy ready-to-use commands directly to Discord for stunning results.",
+    "features": [
+      "Custom style and lighting presets",
+      "Adjust aspect ratio and stylization",
+      "One-click prompt generation",
+      "Copy ready-to-use Discord commands"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/ai/midjourney-prompt-builder.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/ai-9.svg",
+    "title": "Negative Prompt Generator",
+    "desc": "Generate optimized negative prompts for Stable Diffusion and other AI image generators. Select quality and style exclusions to eliminate artifacts, improve composition, and enhance your generated artwork instantly.",
+    "features": [
+      "Generate Stable Diffusion prompts",
+      "Exclude quality and style flaws",
+      "Add custom negative terms",
+      "One-click copy output",
+      "Optimized for AI image generation"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/ai/negative-prompt-generator.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/ai-10.svg",
+    "title": "Prompt Engineering Cheat Sheet",
+    "desc": "Master AI interactions with this comprehensive prompt engineering cheat sheet. Explore essential techniques like few-shot learning, chain-of-thought reasoning, RAG, and role prompting to optimize LLM outputs effectively.",
+    "features": [
+      "Search and filter techniques",
+      "Step-by-step reasoning guides",
+      "RAG and system prompt tips",
+      "Zero-shot and few-shot examples",
+      "Interactive technique explorer"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/ai/prompt-engineering-cheat-sheet.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/ai-11.svg",
+    "title": "RAG Text Chunker",
+    "desc": "Split long documents into optimal chunks for Retrieval-Augmented Generation pipelines. Customize chunk size, overlap, and strategies like words or sentences to improve AI context retrieval accuracy.",
+    "features": [
+      "Configurable chunk sizes and overlaps",
+      "Multiple splitting strategies supported",
+      "Optimized for RAG pipelines",
+      "Instant text segmentation output",
+      "Clean whitespace trimming options"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/ai/rag-chunker.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-10.svg",
+    "title": "Brake Pad Wear Estimator",
+    "desc": "A free offline tool for brake pad wear estimator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/brake-pad-wear-estimator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-11.svg",
+    "title": "Car Loan Payoff Calculator",
+    "desc": "A free offline tool for car loan payoff calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/car-loan-payoff-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Car Maintenance Schedule",
+    "desc": "A free offline tool for car maintenance schedule calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/car-maintenance-schedule.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-8.svg",
+    "title": "Car Payment Calculator",
+    "desc": "Calculate your exact monthly car payment and total loan cost instantly. Factor in down payments, trade-in values, interest rates, sales tax, and fees for accurate auto financing estimates.",
+    "features": [
+      "Calculate monthly auto payments",
+      "Factor in trade-in value",
+      "Include sales tax and fees",
+      "View total loan cost breakdown",
+      "Adjustable loan term options"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/finance/car-payment-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Car Resale Value Calculator",
+    "desc": "A free offline tool for car resale value calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/car-resale-value-calculator.zip"
+  },
+  {
+    "category": "Cars & Vehicles",
+    "icon": "/assets/icons/cars-2.svg",
+    "title": "Driving Cost Per Mile Calculator",
+    "desc": "Calculate your true vehicle operating expenses with this comprehensive driving cost per mile calculator. Track fuel, depreciation, insurance, and maintenance to make smarter automotive financial decisions.",
+    "features": [
+      "Calculate total cost per mile",
+      "Track fuel and depreciation costs",
+      "Break down annual ownership expenses",
+      "Instant real-time cost analysis",
+      "Comprehensive expense category breakdown"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cars/driving-cost-per-mile.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Ev Charging Cost Calculator",
+    "desc": "A free offline tool for ev charging cost calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/ev-charging-cost-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Fuel Cost Comparison",
+    "desc": "A free offline tool for fuel cost comparison calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/fuel-cost-comparison.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Mpg Calculator",
+    "desc": "A free offline tool for mpg calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/mpg-calculator.zip"
+  },
+  {
+    "category": "Travel Tools",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Road Trip Planner",
+    "desc": "Plan your next adventure with our free road trip planner. Calculate fuel, tolls, meals, and hotel costs while estimating drive time, rest stops, and per-person expenses for a stress-free journey.",
+    "features": [
+      "Calculate fuel and toll costs",
+      "Estimate drive time and rest stops",
+      "Budget meals and hotel expenses",
+      "Split total costs per passenger",
+      "Support metric and imperial units"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/road-trip-planner.zip"
+  },
+  {
+    "category": "Cars & Vehicles",
+    "icon": "/assets/icons/cars-4.svg",
+    "title": "Tire Pressure Calculator",
+    "desc": "Calculate optimal tire pressure for your car or truck based on weight, load, and temperature. Get precise PSI recommendations, compare with door stickers, and ensure safe driving with this free online tool.",
+    "features": [
+      "Calculate optimal PSI per tire",
+      "Adjust for temperature changes",
+      "Compare with door sticker values",
+      "Support cars, trucks, and motorcycles",
+      "Instant cold and hot pressure results"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cars/tire-pressure-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Tire Size Calculator",
+    "desc": "A free offline tool for tire size calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/tire-size-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Trip Mileage Log",
+    "desc": "A free offline tool for trip mileage log calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/trip-mileage-log.zip"
+  },
+  {
+    "category": "Cars & Vehicles",
+    "icon": "/assets/icons/cars-5.svg",
+    "title": "Vehicle Depreciation Calculator",
+    "desc": "Track your car's value loss over time with our free vehicle depreciation calculator. Enter purchase price, type, mileage, and condition to get a detailed year-by-year breakdown and optimal selling advice.",
+    "features": [
+      "Year-by-year value projection",
+      "Adjust for vehicle type and mileage",
+      "Condition-based depreciation multiplier",
+      "Optimal selling time insights",
+      "Detailed financial breakdown table"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cars/vehicle-depreciation.zip"
+  }
+]

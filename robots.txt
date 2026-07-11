@@ -1,0 +1,33 @@
+# 允许谷歌爬虫（保障AdSense、谷歌收录）
+User-agent: Googlebot
+Allow: /
+User-agent: Googlebot-Image
+Allow: /
+User-agent: AdsBot-Google
+Allow: /
+
+# 屏蔽各类扫描爬虫、恶意采集器，减少无效4xx报错
+User-agent: AhrefsBot
+Disallow: /
+User-agent: SemrushBot
+Disallow: /
+User-agent: MJ12bot
+Disallow: /
+User-agent: DotBot
+Disallow: /
+User-agent: BLEXBot
+Disallow: /
+User-agent: PetalBot
+Disallow: /
+User-agent: YandexBot
+Disallow: /
+
+# 屏蔽爬虫扫描不存在的后台、测试路径
+Disallow: /admin
+Disallow: /wp-*
+Disallow: /*.env
+Disallow: /?*
+
+# 允许所有其他合法爬虫
+User-agent: *
+Disallow: /assets/zip-packages/

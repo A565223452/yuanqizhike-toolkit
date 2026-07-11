@@ -1,0 +1,525 @@
+{
+  "page": {
+    "title": "YuanqiZhiKe Toolkit - グローバルクリエイターのための無料オフラインツール",
+    "description": "世界中のクリエイターや実務者向けに、複数の垂直業界をカバーする無料のオフラインフロントエンドツールを提供するワンストッププラットフォーム。"
+  },
+  "brand": {
+    "name": "YuanqiZhiKe Toolkit"
+  },
+  "nav": {
+    "home": "ホーム",
+    "tools": "ツール",
+    "customDev": "カスタム開発",
+    "feedback": "フィードバック",
+    "license": "ライセンス"
+  },
+  "dropdown": {
+    "tools": "ツール",
+    "contentWriting": "コンテンツ・ライティング",
+    "designMedia": "デザイン・メディア",
+    "developerTools": "開発者ツール",
+    "businessProductivity": "ビジネス・生産性",
+    "educationResearch": "教育・研究",
+    "healthFitness": "ヘルス・フィットネス",
+    "financeCrypto": "金融・暗号通貨",
+    "seoMarketing": "SEO・マーケティング",
+    "socialMedia": "ソーシャルメディア",
+    "lifestyleUtilities": "ライフスタイル・ユーティリティ",
+    "securityPrivacy": "セキュリティ・プライバシー",
+    "mathScience": "数学・科学",
+    "aiMlUtilities": "AI・機械学習",
+    "travelTools": "旅行ツール",
+    "cookingFood": "料理・フード",
+    "carsVehicles": "自動車・車両",
+    "colorDesignUtilities": "カラー・デザインユーティリティ",
+    "formsGenerators": "フォーム・ジェネレーター",
+    "weatherClimate": "天気・気候",
+    "audioMusicTools": "オーディオ・音楽",
+    "videoTools": "ビデオツール",
+    "photographyTools": "写真・カメラ",
+    "gamingTools": "ゲームツール",
+    "hobbiesCrafts": "趣味・クラフト",
+    "petsAnimals": "ペット・動物",
+    "realEstateTools": "不動産ツール",
+    "religionSpirituality": "宗教・スピリチュアル"
+  },
+  "hero": {
+    "title": "すべての業界に対応する無料オフラインツール",
+    "description": "YuanqiZhiKe Toolkit は、世界中のクリエイターやプロフェッショナルのために、無料でプライバシーを重視したフロントエンドツールを提供するワンストッププラットフォームです。ダウンロードしてローカルで開き、オフラインで作業——登録不要、データ収集なし、妥換なし。",
+    "exploreBtn": "すべてのツールを見る",
+    "cta": "すべてのツールを見る"
+  },
+  "positioning": {
+    "title": "私たちの提供",
+    "multiIndustry": {
+      "title": "多業界対応",
+      "desc": "コンテンツライティングからウェブ開発まで、当社のツールは主要な垂直業界すべてをカバーしています。必要なものを、必要な時に正確に見つけましょう。"
+    },
+    "offlinePrivate": {
+      "title": "100% オフライン＆プライバシー保護",
+      "desc": "すべてのツールはブラウザ上で完全に動作します。データはあなたのデバイスから決して外出力ません。サーバーなし、追跡なし、プライバシーの心配なし。"
+    },
+    "openSource": {
+      "title": "オープンソース＆無料",
+      "desc": "すべてのツールには完全なソースコードが付属しています。本番環境対応のコードを勉強、修正、学習——完全に無料。"
+    },
+    "zeroBarriers": {
+      "title": "ハードルゼロ",
+      "desc": "サインアップ不要、ログイン不要、有料機能なし。ZIP をダウンロードして解凍し、ブラウザで開くだけ。それだけ簡単。"
+    }
+  },
+  "howItWorks": {
+    "title": "使い方",
+    "steps": [
+      {
+        "number": 1,
+        "title": "ツールを探す",
+        "desc": "ツールカタログを訪れ、カテゴリでフィルタリングして、あなたのワークフローに最適なツールを見つけましょう。"
+      },
+      {
+        "number": 2,
+        "title": "ライセンスに同意",
+        "desc": "ダウンロードをクリックし、ソースコードライセンス契約を確認して同意します。"
+      },
+      {
+        "number": 3,
+        "title": "ダウンロードして使用",
+        "desc": "ZIP ファイルを取得し、解凍して、任意のブラウザで index.html を開きます。すぐにオフラインでの作業を開始できます。"
+      }
+    ]
+  },
+  "categories": {
+    "title": "ツールカテゴリ",
+    "contentWriting": {
+      "title": "コンテンツ・ライティング",
+      "desc": "記事書き換え、パラフレーズ、文法チェックなど。"
+    },
+    "designMedia": {
+      "title": "デザイン・メディア",
+      "desc": "画像処理、カラーピッカー、SVG ツール、デザインユーティリティ。"
+    },
+    "developerTools": {
+      "title": "開発者ツール",
+      "desc": "コードフォーマッター、JSON バリデーター、ハッシュジェネレーター、デバッグヘルパー。"
+    },
+    "businessProductivity": {
+      "title": "ビジネス・生産性",
+      "desc": "PDF コンバーター、スプレッドシートツール、請求書ジェネレーターなど。"
+    },
+    "educationResearch": {
+      "title": "教育・研究",
+      "desc": "引用ジェネレーター、フラッシュカードメーカー、プラギアチェッカー、学習支援。"
+    },
+    "healthFitness": {
+      "title": "ヘルス・フィットネス",
+      "desc": "BMI 計算機、カロリートラッカー、体脂肪推定、ウェルネスツール。"
+    },
+    "financeCrypto": {
+      "title": "金融・暗号通貨",
+      "desc": "ローン計算機、複利、暗号通貨コンバーター、税務推定。"
+    },
+    "seoMarketing": {
+      "title": "SEO・マーケティング",
+      "desc": "キーワード分析、メタタグジェネレーター、SERP プレビュー、SEO 最適化。"
+    },
+    "socialMedia": {
+      "title": "ソーシャルメディア",
+      "desc": "文字カウンター、ハッシュタグジェネレーター、Instagram、TikTok、YouTube、X 用プラットフォーム固有ツール。"
+    },
+    "lifestyleUtilities": {
+      "title": "ライフスタイル・ユーティリティ",
+      "desc": "タイムゾーンコンバーター、単位変換、日付計算機、年齢計算機、カウントダウンタイマー。"
+    },
+    "securityPrivacy": {
+      "title": "セキュリティ・プライバシー",
+      "desc": "パスワードジェネレーター、AES 暗号化、ハッシュジェネレーター、暗号化ユーティリティ。"
+    },
+    "mathScience": {
+      "title": "数学・科学",
+      "desc": "科学計算機、方程式ソルバー、単位変換、統計ツール。"
+    },
+    "aiMlUtilities": {
+      "title": "AI・機械学習",
+      "desc": "プロンプトジェネレーター、トークンカウンター、モデル計算機、データセットユーティリティ。"
+    },
+    "travelTools": {
+      "title": "旅行ツール",
+      "desc": "距離計算機、通貨コンバーター、旅行プランナー、タイムゾーンツール。"
+    },
+    "cookingFood": {
+      "title": "料理・フード",
+      "desc": "レシピコンバーター、調理タイマー、単位変換、栄養計算機。"
+    },
+    "carsVehicles": {
+      "title": "自動車・車両",
+      "desc": "燃料計算機、走行距離トラッカー、タイヤ空気圧コンバーター、車両ツール。"
+    },
+    "colorDesignUtilities": {
+      "title": "カラー・デザインユーティリティ",
+      "desc": "カラーピッカー、パレットジェネレーター、グラデーションメーカー、デザインユーティリティ。"
+    },
+    "formsGenerators": {
+      "title": "フォーム・ジェネレーター",
+      "desc": "フォームビルダー、テンプレートジェネレーター、ドキュメントクリエーター、コードジェネレーター。"
+    },
+    "weatherClimate": {
+      "title": "天気・気候",
+      "desc": "温度変換、暑さ指数計算機、風冷指数、気候ツール。"
+    },
+    "audioMusicTools": {
+      "title": "オーディオ・音楽",
+      "desc": "オーディオコンバーター、BPM デテクター、周波数計算機、音楽ユーティリティ。"
+    },
+    "videoTools": {
+      "title": "ビデオツール",
+      "desc": "ビデオフォーマットコンバーター、解像度計算機、ビットレートツール、ビデオユーティリティ。"
+    },
+    "photographyTools": {
+      "title": "写真・カメラ",
+      "desc": "EXIF ビューアー、焦点距離計算機、露出ツール、写真ユーティリティ。"
+    },
+    "gamingTools": {
+      "title": "ゲームツール",
+      "desc": "サイコロ、ステータス計算機、ビルドプランナー、ゲームユーティリティ。"
+    },
+    "hobbiesCrafts": {
+      "title": "趣味・クラフト",
+      "desc": "パターンジェネレーター、糸計算機、クラフトプランナー、趣味ユーティリティ。"
+    },
+    "petsAnimals": {
+      "title": "ペット・動物",
+      "desc": "ペット年齢計算機、給餌ガイド、投与量計算機、動物ツール。"
+    },
+    "realEstateTools": {
+      "title": "不動産ツール",
+      "desc": "住宅ローンを計算機、物件推定、ROI 計算機、不動産ツール。"
+    },
+    "religionSpirituality": {
+      "title": "宗教・スピリチュアル",
+      "desc": "祈り時間計算機、宗教カレンダー、瞑想タイマー、スピリチュアルツール。"
+    }
+  },
+  "cta": {
+    "title": "カスタムツールや SaaS 製品が必要ですか？",
+    "desc": "世界中の企業に対して、専門的なフロントエンドツールおよび Web アプリケーション開発サービスを提供しています。コンセプトからデプロイメントまで、当社のチームが本番環境対応のソリューションを提供します。",
+    "btn": "カスタム開発を依頼"
+  },
+  "comments": {
+    "title": "コメント"
+  },
+  "footer": {
+    "privacy": "プライバシーポリシー",
+    "cookie": "Cookie 通知",
+    "license": "ソースライセンス",
+    "customDev": "カスタム開発サービス",
+    "copyright": "全著作権所有。"
+  },
+  "download": {
+    "modalTitle": "ソースコードライセンス契約",
+    "modalDesc": "ダウンロードすることで、以下の条項に同意したことになります：",
+    "term1": "ソースコードは教育および個人利用のみを提供します。",
+    "term2": "自己使用のためにコードを変更することができますが、オリジナルの著作権表示を残す必要があります。",
+    "term3": "再配布または商業利用には明示的な許可が必要です。",
+    "checkbox": "利用規約を読み、同意します",
+    "cancel": "キャンセル",
+    "confirm": "確認してダウンロード"
+  },
+  "tool": {
+    "download": "ダウンロード",
+    "backToTools": "ツール一覧に戻る",
+    "category": "カテゴリ",
+    "comingSoon": "近日公開",
+    "pageTitle": "すべてのツール",
+    "pageDesc": "成長する無料オフラインフロントエンドツールのコレクションをご覧ください。ツールをクリックして詳細を表示し、ソースコードをダウンロードしてください。",
+    "viewDetails": "詳細を表示",
+    "downloadZip": "ZIPをダウンロード",
+    "stayTuned": "お楽しみに",
+    "comingSoonDesc": "このカテゴリのツールは現在開発中です。"
+  },
+  "languageSwitcher": {
+    "title": "言語",
+    "en": "English",
+    "zh": "中文",
+    "es": "Español",
+    "ja": "日本語"
+  },
+  "staticPages": {
+    "about": {
+      "title": "私たちについて - YuanqiZhiKe Toolkit",
+      "heading": "私たちについて",
+      "subtitle": "無料でプライバシーを重視したツールでグローバルクリエイターを支援。",
+      "ourMission": "私たちのミッション",
+      "missionDesc": "YuanqiZhiKe Toolkit は、単純な信念のもとに設立されました。場所、収入、技術的バックグラウンドに関係なく、すべての人が強力でプロフェッショナルなツールにアクセスできるべきです。私たちは、あなたのプライバシーを尊重する無料のオフラインフロントエンドツールを作成しています。",
+      "whatMakesUsDifferent": "他社との違い",
+      "featurePrivacyFirst": "🔒 プライバシーファースト",
+      "featurePrivacyFirstDesc": "すべてのツールはブラウザ上で完全に動作します。あなたのデータがデバイスから出ることはありません。サーバーなし、追跡なし、妥協なし。",
+      "featureCompletelyFree": "💰 完全無料",
+      "featureCompletelyFreeDesc": "登録不要、ペイウォールなし、隠れた料金なし。すべてのツールは完全なソースコード付きで無料で使用およびダウンロードできます。",
+      "featureGlobalCommunity": "🌍 グローバルコミュニティ",
+      "featureGlobalCommunityDesc": "当社のツールは、個人の開発者からエンタープライズチームまで、世界中のクリエイター向けに設計されています。",
+      "featureOpenSource": "📦 オープンソース",
+      "featureOpenSourceDesc": "すべてのツールには、寛容なライセンスの下で完全なソースコードが含まれています。学習、修正、活用してください。",
+      "ourStory": "私たちのストーリー",
+      "storyPart1": "YuanqiZhiKe は、中国のクリエイターが欧米の開発者が当然のように持っているツールにアクセスできるようにする小さなプロジェクトとして始まりました。",
+      "storyPart2": "現在、当社のツールキットは毎日何千人ものユーザーに利用され、数十カ国に広がっています。私たちは無料、プライベート、オープンという創業の原則に引き続き取り組んでいます。",
+      "ourValues": "私たちの価値観",
+      "valueAccessibility": "アクセシビリティ：ツールはすべての人がどこでも利用できるべきです",
+      "valuePrivacy": "プライバシー：あなたのデータはあなたのものであり、デバイスに残ります",
+      "valueTransparency": "透明性：完全なソースコード、明確なライセンス、誠実なコミュニケーション",
+      "valueQuality": "品質：確実に動作するプロフェッショナルなコード",
+      "valueCommunity": "コミュニティ：共に構築し、知識を共有し、クリエイターを支援",
+      "getInvolved": "参加する",
+      "getInvolvedDesc": "コミュニティからの貢献を歓迎します！バグ報告、ツール提案、コード改善、翻訳など。",
+      "involveReportIssues": "問題を報告：バグを見つけましたか？お知らせください",
+      "involveSuggestTools": "ツールを提案：アイデアがありますか？共有してください",
+      "involveTranslate": "翻訳：ツールを翻訳して、より多くのユーザーに届けるのを助けてください",
+      "involveCustomDev": "カスタム開発：カスタムソリューションが必要ですか？お問い合わせください",
+      "contact": "お問い合わせ",
+      "contactDesc": "ご質問やフィードバックがありますか？ぜひお聞かせください。",
+      "contactEmail": "メール: 260330663@qq.com"
+    },
+    "privacy": {
+      "title": "プライバシーポリシー - YuanqiZhiKe Toolkit",
+      "heading": "プライバシーポリシー",
+      "lastUpdated": "最終更新日",
+      "section1Title": "1. はじめに",
+      "section1Text": "YuanqiZhiKe Toolkit（「当社」または「弊社」）へようこそ。このプライバシーポリシーは、お客様が当社のウェブサイトおよびツールにアクセスして使用する際のデータの取り扱いについて説明します。当社はお客様のプライバシーを保護し、GDPR、CCPA、その他のグローバルプライバシー規制を遵守することに努めています。",
+      "section2Title": "2. 当社が収集しない情報",
+      "section2Intro": "YuanqiZhiKe Toolkitは、プライバシーを基本原則として設計されています。具体的には：",
+      "section2Item1": "氏名、メールアドレス、電話番号などの個人情報は収集しません。",
+      "section2Item2": "ユーザー登録やログインは必要ありません。",
+      "section2Item3": "ツールに入力されたデータを当社のサーバーに保存することはありません。",
+      "section2Item4": "すべてのツール処理はお客様のデバイス上でローカルに実行され、データがリモートサーバーに送信されることはありません。",
+      "section3Title": "3. 匿名分析",
+      "section3Intro": "当社は、サードパーティの分析サービス（Google Analytics 4やCloudflare Analyticsなど）を使用して、匿名の集計されたウェブサイト利用統計を収集することがあります。これらのデータには以下が含まれます：",
+      "section3Item1": "訪問したページと各ページで費やした時間",
+      "section3Item2": "参照元ウェブサイトと検索語句",
+      "section3Item3": "大まかな地理的地域（国レベルのみ）",
+      "section3Item4": "ブラウザの種類とオペレーティングシステム（特定不可）",
+      "section3Note": "この情報を使用して個人を特定することはできません。分析データを個人情報と組み合わせることはありません。",
+      "section4Title": "4. Cookie",
+      "section4Intro": "当社のウェブサイトは、以下の目的でCookieを使用します：",
+      "section4Essential": "必須Cookie：",
+      "section4EssentialDesc": "ウェブサイトの基本的な機能（セッション管理、設定の保存）に必要です。これらは同意を必要としません。",
+      "section4Analytics": "分析Cookie：",
+      "section4AnalyticsDesc": "Google Analytics 4 / Cloudflare Analyticsが匿名の利用統計を収集するために使用します。IPアドレスは匿名化されています。",
+      "section4Advertising": "広告Cookie：",
+      "section4AdvertisingDesc": "当社のウェブページにGoogle AdSense広告を表示しています。Google AdSenseは、訪問者の閲覧行動に基づいてパーソナライズド広告を提供するために広告Cookieを使用する場合があります。訪問者は",
+      "googleAdSettings": "Googleの広告プライバシー設定",
+      "section4AdvertisingDesc2": "すべての広告関連データ収集は、Googleのプライバシールールおよびグローバルデータコンプライアンス規制に従います。",
+      "section4CookieNotice": "詳細なCookieカテゴリーと管理オプションについては、当社の",
+      "section5Title": "5. サードパーティサービス",
+      "section5Intro": "当社のツールは、スタンドアロンのHTML/CSS/JavaScriptを含むダウンロード可能なZIPファイルとして提供されます。ダウンロード後、これらのツールは完全にオフラインで動作します。お客様がソースコードの使用に統合することを選択したサードパーティサービスについては、当社は責任を負いません。",
+      "section5AdSense": "5.1 Google AdSense",
+      "section5AdSenseText": "このウェブサイトはGoogle AdSenseが提供する広告を表示します。GoogleはCookieや類似技術を使用して、お客様の本サイトおよび他のサイトへの訪問に基づいてパーソナライズド広告を提供することがあります。Google広告設定にアクセスして、パーソナライズド広告をオプトアウトできます。Googleがパートナーサイトやアプリを使用する際にデータをどのように使用するかの詳細については、Googleによるデータ使用をご覧ください。",
+      "section5AnalyticsTitle": "5.2 分析プロバイダー",
+      "section5AnalyticsText": "当社は、ウェブサイトの使用状況を把握するためにGoogle Analytics 4やCloudflare Web Analyticsを使用することがあります。これらのサービスは匿名化されたデータのみを収集します。各社のプライバシーポリシーをご確認ください：Googleプライバシーポリシー、Cloudflareプライバシーポリシー。",
+      "section6Title": "6. データセキュリティ",
+      "section6Text": "当社のウェブサイトはHTTPSを介して提供され、すべてのダウンロード可能なファイルの安全な転送を確保しています。ホスティングインフラストラクチャを保護するために、業界標準のセキュリティ対策を採用しています。",
+      "section7Title": "7. お客様の権利（GDPR）",
+      "section7Intro": "欧州経済領域（EEA）にお住まいの場合、以下の権利があります：",
+      "section7Right1Title": "アクセス権：",
+      "section7Right1Desc": "当社が保有するお客様の個人データのコピーを請求する権利。",
+      "section7Right2Title": "訂正権：",
+      "section7Right2Desc": "不正確なデータの訂正を請求する権利。",
+      "section7Right3Title": "削除権：",
+      "section7Right3Desc": "お客様の個人データの削除を請求する権利。",
+      "section7Right4Title": "処理制限権：",
+      "section7Right4Desc": "当社によるデータの使用を制限するよう請求する権利。",
+      "section7Right5Title": "データポータビリティ権：",
+      "section7Right5Desc": "機械可読形式でデータを受け取る権利。",
+      "section7Right6Title": "異議権：",
+      "section7Right6Desc": "当社によるデータ処理に異議を唱える権利。",
+      "section7Contact": "これらの権利を行使するには、以下までご連絡ください",
+      "section8Title": "8. 子どものプライバシー",
+      "section8Text": "当社のサービスは16歳未満の個人を対象としていません。子どもから故意に個人データを収集することはありません。そのような収集が判明した場合、情報を削除する措置を講じます。",
+      "section9Title": "9. 本ポリシーの変更",
+      "section9Text": "当社は随時このプライバシーポリシーを更新することがあります。変更はこのページに「最終更新日」を更新して掲載されます。定期的に本ポリシーをご確認いただくことをお勧めします。",
+      "section10Title": "10. お問い合わせ",
+      "section10Text": "このプライバシーポリシーに関するご質問は、以下までお問い合わせください："
+    },
+    "cookie": {
+      "title": "クッキー通知 - ユアンチーク ツールキット",
+      "heading": "クッキー通知",
+      "lastUpdated": "最終更新日",
+      "section1Title": "1. クッキーとは",
+      "section1Text": "クッキーは、Webサイトにアクセスした際にデバイス（コンピュータ、タブレット、スマートフォン）に保存される小さなテキストファイルです。Webサイトの適切な機能とより良いユーザー体験を提供します。",
+      "section2Title": "2. 使用するクッキー",
+      "section2Intro": "ユアンチーク ツールキットは以下のカテゴリのクッキーを使用します：",
+      "section2EssHeading": "2.1 必須クッキー（厳格に必要なもの）",
+      "section2EssPurpose": "訪問中の基本的なWebサイト機能を維持します（セッション状態、言語設定、クッキー同意の選択）。",
+      "section2EssDuration": "セッション中、または同意設定の場合は最大365日。",
+      "section2EssLegal": "正当な利益 / 厳格な必要性。",
+      "section2EssData": "なし（完全に匿名）。",
+      "section2AnalyticsHeading": "2.2 分析クッキー（オプション）",
+      "section2AnalyticsPurpose": "Google Analytics 4またはCloudflare Analyticsを介して匿名の集計されたWebサイト利用統計を収集します。",
+      "section2AnalyticsDuration": "最大2年 (_ga) / 24時間 (_gid)。",
+      "section2AnalyticsLegal": "同意（GDPR第6条(1)(a)）。",
+      "section2AnalyticsData": "訪問したページ、滞在時間、参照元、国レベルの地域、ブラウザ/OS（非特定）。IPは匿名化。",
+      "section2AdHeading": "2.3 広告クッキー（オプション - Google AdSense）",
+      "section2AdPurpose": "閲覧行動に基づいてGoogle AdSense経由でパーソナライズ広告を配信します。",
+      "section2AdDuration": "Googleにより異なる（通常IDEは13ヶ月、ANIDは2年）。",
+      "section2AdLegal": "同意（GDPR第6条(1)(a)）/ 非パーソナライズ広告の正当な利益。",
+      "section2AdData": "仮名識別子、サイト間の閲覧履歴、広告インタラクションデータ。",
+      "section2AdOptOut": "こちら",
+      "section2AdOptOut2": "でパーソナライズ広告を無効にできます。",
+      "purpose": "目的：",
+      "duration": "期間：",
+      "legalBasis": "法的根拠：",
+      "dataCollected": "収集データ：",
+      "optOut": "オプトアウト：",
+      "section3Title": "3. サードパーティクッキー",
+      "section3Intro": "以下のサードパーティが、お客様が当サイトを訪問した際にクッキーを設定する可能性があります：",
+      "section3AdSense": "パーソナライズ/非パーソナライズ広告を配信します。",
+      "section3AdSenseLink": "Google広告クッキーポリシー",
+      "section3GA": "匿名の利用分析。",
+      "section3GALink": "Googleクッキーポリシー",
+      "section3CF": "プライバシー重視の分析。",
+      "section3CFLink": "Cloudflareプライバシーポリシー",
+      "section4Title": "4. 使用しないクッキー",
+      "section4Intro": "以下の種類のクッキーは明示的に直接使用しません：",
+      "section4Item1": "ソーシャルメディア埋め込みクッキー",
+      "section4Item2": "自社マーケティング目的で個人データを収集するクッキー",
+      "section4Item3": "上記分析/広告以外のファーストパーティトラッキングクッキー",
+      "section4Note": "注：サードパーティ広告クッキー（Google AdSense）はセクション2.3で開示されている通り使用され、Googleのポリシーに準拠します。",
+      "section5Title": "5. クッキーの管理方法",
+      "section5Intro": "ブラウザの設定でクッキーを制御および管理できます。ほとんどのブラウザでは以下が可能です：",
+      "section5Item1": "保存されているクッキーを表示し、個別または一括で削除",
+      "section5Item2": "サードパーティクッキーをブロック",
+      "section5Item3": "特定のサイトからのクッキーをブロック",
+      "section5Item4": "すべてのクッキーをブロック",
+      "section5Item5": "ブラウザを閉じる際にすべてのクッキーを削除",
+      "section5Note": "すべてのクッキーをブロックすると、このWebサイトの機能に影響を与える可能性があります。",
+      "section6Title": "6. 同意管理",
+      "section6Intro": "初回訪問時に、クッキー同意バナーが表示され、選択できます：",
+      "section6AcceptAll": "すべてのクッキーを受け入れる：",
+      "section6AcceptAllDesc": "必須、分析、広告クッキーを許可。",
+      "section6EssentialOnly": "必須クッキーのみ：",
+      "section6EssentialOnlyDesc": "厳格に必要なクッキーのみ許可。分析および広告クッキーをブロック。",
+      "section6Storage": "選択はブラウザにローカルで365日間保存されます。サイトデータの消去やブラウザ設定の調整でいつでも変更できます。",
+      "section6Consent": "選択後も当サイトを継続して使用することで、選択したクッキーカテゴリに同意したことになります。",
+      "section7Title": "7. 本通知の更新",
+      "section7Text": "本クッキー通知は随時更新されることがあります。変更はこのページに掲載され、「最終更新日」が更新されます。",
+      "section8Title": "8. お問い合わせ",
+      "section8Text": "クッキーの使用に関するご質問は、以下までお問い合わせください："
+    },
+    "license": {
+      "title": "ソースコードライセンス - YuanqiZhiKe Toolkit",
+      "heading": "ソースコードライセンス契約",
+      "lastUpdated": "最終更新日",
+      "section1Title": "1. ライセンスの付与",
+      "section1Text": "YuanqiZhiKe Toolkit（以下「当社」）は、本ウェブサイトで提供されるソースコードパッケージ（以下「ツール」）を使用するための、限定的で非排他的かつ譲渡不能なライセンスを您に付与します。ツールをダウンロード、インストール、または使用することにより、您は本契約の条項に拘束されることに同意したものとみなされます。",
+      "section2Title": "2. 許可される使用",
+      "section2PermittedIntro": "您には以下のことが許可されています：",
+      "section2Permitted1": "個人的な非営利の学習および教育目的でツールをダウンロードして使用すること。",
+      "section2Permitted2": "自己の個人的な使用のためにソースコードを変更すること。",
+      "section2Permitted3": "自身のデバイスでツールをローカルに実行すること。",
+      "section3Title": "3. 禁止される使用",
+      "section3ProhibitedIntro": "您には以下のことが厳格に禁止されています：",
+      "section3ProhibitedItem1Title": "再パッケージ化および再販：",
+      "section3ProhibitedItem1Desc": "ツールまたはその派生作品をスタンドアロン製品として再パッケージ化、再配布、または再販すること。",
+      "section3ProhibitedItem2Title": "所有権の主張：",
+      "section3ProhibitedItem2Desc": "ソースコードから著作権表示、商標記号、または帰属表示を削除または変更すること。",
+      "section3ProhibitedItem3Title": "テクニカルサポート：",
+      "section3ProhibitedItem3Desc": "YuanqiZhiKe Toolkit にテクニカルサポート、バグ修正、または更新を要求すること。",
+      "section4Title": "4. 商用および広告利用",
+      "section4Text": "すべての元の著作権表示とYuanqiZhiKe Toolkitのソース帰属表示を保持し、ソースコードを独立して再販しない限り、商用ウェブサイトやGoogle AdSenseなどの広告収益化サイトにこれらのツールを展開することができます。",
+      "section4SubTitle": "4.1 個人利用と商用利用",
+      "section4PersonalTitle": "個人・教育目的：",
+      "section4PersonalDesc": "個人学習、非営利プロジェクト、教育目的で無料で使用できます。帰属は必須ではありませんが、歓迎します。",
+      "section4CommercialTitle": "商用・広告支援サイト：",
+      "section4CommercialDesc": "広告（Google AdSenseを含む）を表示するウェブサイトでのツール使用が許可されます。ただし、以下の条件があります：",
+      "section4CommercialCond1": "すべての元の著作権表示と帰属表示がソースコードに保持されていること",
+      "section4CommercialCond2": "ツールがスタンドアロン製品として再販、サブライセンス、または配布されないこと",
+      "section4CommercialCond3": "元のソースコードに対する所有権の主張が行われないこと",
+      "section4ProhibitedTitle": "禁止：",
+      "section4ProhibitedDesc": "ソースコードを自身の製品として販売用に再パッケージ化すること、著作権表示を削除すること、または実質的な変更なしにツールを有料サービスとして提供すること。",
+      "section5Title": "5. 保証の免責",
+      "section5Text": "ツールは「現状のまま」および「利用可能な状態」で提供され、明示または黙示を問わずいかなる種類の保証もありません。YUANQI TECH TOOLKITは、非侵害、商品性、または特定目的への適合性について一切の表明または保証を行いません。ツールの品質およびパフォーマンスに関するすべてのリスクは您にあります。",
+      "section6Title": "6. 責任の制限",
+      "section6Text": "いかなる場合においても、YUANQI TECH TOOLKITは、ツールの使用または使用不能に起因または関連して生じた直接的、間接的、付随的、特別、懲罰的、または結果的な損害について、たとえそのような損害の可能性について通知されていたとしても、責任を負いません。",
+      "section7Title": "7. ユーザーの責任",
+      "section7Text": "您は、ソースコードに行った変更、およびツールの使用から生じる結果について単独で責任を負います。これには以下が含まれますが、これらに限定されません：",
+      "section7Item1": "ツールの誤動作によるデータ損失または破損",
+      "section7Item2": "ツールの出力の不正確さによる事業損失",
+      "section7Item3": "ツールの誤用から生じる法的問題",
+      "section8Title": "8. 知的財産権",
+      "section8Text": "ツールに関するすべての知的財産権（著作権、商標権、営業秘密を含むがこれらに限定されない）は、YuanqiZhiKe Toolkitの排他的財産であり続けます。本契約は您にいかなる所有権も譲渡しません。",
+      "section9Title": "9. 契約の終了",
+      "section9Text": "本ライセンスは終了されるまで有効です。本契約の条項に違反した場合、本ライセンスに基づく権利は通知なく自動的に終了します。終了後、您はすべての使用を停止し、保有するすべてのツールのコピーを破棄しなければなりません。",
+      "section10Title": "10. 準拠法",
+      "section10Text": "本契約は、抵触法の原則に関係なく、YuanqiZhiKe Toolkitが事業を運営する管轄区域の法律に従って解釈および適用されます。",
+      "section11Title": "11. お問い合わせ",
+      "section11Text": "本契約の範囲を超えるライセンスに関するお問い合わせは、以下までご連絡ください："
+    },
+    "customize": {
+      "title": "カスタム開発サービス - YuanqiZhiKe Toolkit",
+      "heading": "カスタム開発サービス",
+      "description": "カスタムソリューションが必要ですか？当社のチームは、高品質のフロントエンドツール、Webアプリケーション、SaaS製品の作成を専門としています。",
+      "ourServices": "当社のサービス",
+      "serviceFrontendTools": "フロントエンドツール",
+      "serviceFrontendToolsDesc": "カスタムテキストプロセッサ、コンバーター、ジェネレーター、生産性ツール。完全オフライン。",
+      "serviceSaaS": "SaaS アプリケーション",
+      "serviceSaaSDesc": "レスポンシブデザイン、認証、支払い、クラウドデプロイを備えたフルスタックWebアプリケーション開発。",
+      "serviceLandingPages": "ランディングページ",
+      "serviceLandingPagesDesc": "速度、SEO、モバイルエクスペリエンスに最適化された、美しくデザインされた高コンバージョンのランディングページ。",
+      "serviceApiIntegration": "API 統合",
+      "serviceApiIntegrationDesc": "ツールを支払いゲートウェイ、AI API、クラウドストレージなどの外部サービスと接続。",
+      "whyChooseUs": "選ばれる理由",
+      "reasonCleanCode": "クリーンなコード：構造化、保守可能、文書化されたコード",
+      "reasonResponsive": "レスポンシブデザイン：デスクトップ、タブレット、モバイルでシームレスな体験",
+      "reasonFastDelivery": "迅速な納品：定期的な更新によるアジャイルプロセス",
+      "reasonSupport": "納品後サポート：30日間の無料バグ修正",
+      "getInTouch": "お問い合わせ",
+      "getInTouchDesc": "プロジェクトの要件を説明してください。24時間以内に詳細な見積もりを返信します。",
+      "formName": "お名前 *",
+      "formEmail": "メールアドレス *",
+      "formProjectType": "プロジェクトタイプ",
+      "formSelectCategory": "カテゴリを選択",
+      "formFrontendTool": "フロントエンドツール",
+      "formSaaS": "SaaS アプリケーション",
+      "formLandingPage": "ランディングページ",
+      "formApiIntegration": "API 統合",
+      "formOther": "その他",
+      "formDescription": "プロジェクトの説明 *",
+      "formSubmit": "お問い合わせを送信",
+      "orEmail": "または直接メールをお送りください"
+    },
+    "guestbook": {
+      "title": "ゲストブック - YuanqiZhiKe Toolkit",
+      "heading": "足跡を残す",
+      "subtitle": "フィードバック、提案、協業アイデア、または単なる挨拶 — すべて歓迎します。",
+      "shareThoughts": "あなたの考えを共有",
+      "formNickname": "ニックネーム（オプション）",
+      "formNicknamePlaceholder": "匿名",
+      "formType": "タイプ",
+      "formFeedback": "フィードバック",
+      "formSuggestion": "提案",
+      "formCooperation": "協業",
+      "formOther": "その他",
+      "formMessage": "メッセージ *",
+      "formMessagePlaceholder": "ここにメッセージを入力（5-1000文字）...",
+      "formSubmit": "メッセージを投稿",
+      "communityWall": "コミュニティウォール",
+      "filterAll": "すべて",
+      "filterFeedback": "フィードバック",
+      "filterSuggestion": "提案",
+      "filterCooperation": "協業",
+      "filterOther": "その他",
+      "loading": "読み込み中...",
+      "loadMore": "もっと読み込む",
+      "noMessages": "まだメッセージはありません。最初にあなたの考えを共有しましょう！",
+      "loadFailed": "メッセージの読み込みに失敗しました。ページを更新してください。",
+      "messageTooShort": "メッセージが短すぎます（最低5文字）。",
+      "messageTooLong": "メッセージが長すぎます（最大1000文字）。",
+      "posting": "投稿中...",
+      "flaggedMessage": "あなたのメッセージはフラグが立てられました。誤りだと思われる場合はお問い合わせください。",
+      "submittedMessage": "ありがとうございます！メッセージは審査され、24時間以内に表示されます。",
+      "submitFailed": "送信に失敗しました。もう一度お試しください。",
+      "justNow": "たった今",
+      "minAgo": "分前",
+      "hourAgo": "時間前",
+      "dayAgo": "日前"
+    }
+  }
+}
