@@ -112,27 +112,33 @@ const YQZ_STATS = {
    * - 页面加载时自动统计 PV
    * - 监听语言切换事件
    */
-  init() {
+init() {
     this.pageView();
     
-    const originalSwitchTo = window.I18N ? window.I18N.switchTo : null;
-    if (originalSwitchTo) {
-      window.I18N.switchTo = async function(lang) {
-        const fromLang = window.I18N.currentLang || 'en';
-        await originalSwitchTo.call(window.I18N, lang);
-        setTimeout(() => {
+    // 等待 i18n 加载完成
+    const checkI18N = setInterval(() => {
+      if (window.I18N && typeof window.I18N.switchTo === 'function') {
+        clearInterval(checkI18N);
+        const originalSwitchTo = window.I18N.switchTo;
+        window.I18N.switchTo = async function(lang) {
+          const fromLang = window.I18N.currentLang || 'en';
+          await originalSwitchTo.call(window.I18N, lang);
           YQZ_STATS.languageSwitch(fromLang, lang);
-        }, 100);
-      };
-    }
+        };
+      }
+    }, 100);
+  }
   }
 };
 
 // 页面加载完成后自动初始化
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => YQZ_STATS.init());
+  document.addEventListener('DOMContentLoaded', () => {
+    // 等待 i18n 加载完成后再初始化
+    setTimeout(() => YQZ_STATS.init(), 0);
+  });
 } else {
-  YQZ_STATS.init();
+  setTimeout(() => YQZ_STATS.init(), 0);
 }
 
 // 导出到全局
