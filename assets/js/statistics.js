@@ -18,7 +18,7 @@ const YQZ_STATS = {
    * 统计接口基础路径
    * 使用相对路径，适配 Cloudflare Pages Functions
    */
-  apiBase: 'https://www.yuanqizhike.com/api/stat',
+  apiBase: '/api/stat',
   
   /**
    * 获取当前语言
