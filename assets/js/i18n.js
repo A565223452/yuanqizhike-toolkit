@@ -69,24 +69,27 @@ const I18N = {
   // Load translations for a language
   async loadTranslations(lang) {
     try {
-      // Use XMLHttpRequest for local file:// protocol support
-      const isLocal = window.location.protocol === 'file:';
       let data;
       
+      // Use absolute path to prevent issues with subdirectory pages
+      const localePath = `/locales/${lang}.json`;
+      
+      // Use XMLHttpRequest for local file:// protocol support
+      const isLocal = window.location.protocol === 'file:';
+      
       if (isLocal) {
-        // Local file mode - use synchronous XMLHttpRequest
         const xhr = new XMLHttpRequest();
-        xhr.open('GET', `locales/${lang}.json`, false);
+        xhr.open('GET', localePath, false);
         xhr.send();
         if (xhr.status === 0 || xhr.status === 200) {
           data = JSON.parse(xhr.responseText);
         }
       } else {
-        // HTTP mode - use fetch
-        const response = await fetch(`locales/${lang}.json`);
+        const response = await fetch(localePath);
         if (response.ok) {
           data = await response.json();
         }
+      }
       }
       
       this.translations[lang] = data || {};
