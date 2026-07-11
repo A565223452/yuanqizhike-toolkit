@@ -461,9 +461,10 @@ var categoryMap = {
                 }
             }
 
-            // Override download button click handler to track downloads
+            // Override download button click handler to track downloads and navigate
             document.querySelectorAll('.btn-download').forEach(function(btn) {
-                btn.addEventListener('click', function () {
+                btn.addEventListener('click', function (e) {
+                    e.stopPropagation();
                     var card = this.closest('.tool-card');
                     var toolTitle = card ? card.querySelector('h3')?.textContent || 'Unknown' : 'Unknown';
                     if (window.YQZ_STATS) {
