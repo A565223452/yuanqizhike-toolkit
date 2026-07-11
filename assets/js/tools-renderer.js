@@ -36,9 +36,8 @@ function createToolCard(tool, t) {
 
     var downloadHtml = '';
     if (tool.zipUrl) {
-        downloadHtml = '<button class="btn btn-download-zip btn-download" data-download="' + 
-            escapeHtml(tool.zipUrl) + '">' + 
-            (t ? t('tool.downloadZip', 'Download ZIP') : 'Download ZIP') + '</button>';
+        downloadHtml = '<a href="' + escapeHtml(tool.zipUrl) + '" class="btn btn-download-zip" target="_blank">' + 
+            (t ? t('tool.downloadZip', 'Download ZIP') : 'Download ZIP') + '</a>';
     }
 
     var iconPath = tool.icon;
@@ -75,83 +74,20 @@ function createToolCard(tool, t) {
     return card;
 }
 
-// 初始化下载弹窗
-function initDownloadModal() {
-    var downloadBtns = document.querySelectorAll('.btn-download-zip');
-    var modalOverlay = document.getElementById('licenseModal');
-    var modalClose = document.getElementById('modalClose');
-    var checkbox = document.getElementById('licenseAgree');
-    var confirmBtn = document.getElementById('confirmDownload');
-    var cancelBtn = document.getElementById('cancelDownload');
+// 初始化下载统计
+function initDownloadTracking() {
+    var downloadLinks = document.querySelectorAll('.btn-download-zip');
+    if (!downloadLinks.length) return;
 
-    if (!downloadBtns.length || !modalOverlay) return;
-
-    downloadBtns.forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            var downloadUrl = this.getAttribute('data-download') || '';
-            var downloadAttribute = document.querySelector('.btn-download:not(.btn-download-zip)');
-            if (downloadAttribute) {
-                downloadAttribute.setAttribute('data-download', downloadUrl);
-            }
-            resetModal();
-            modalOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-    });
-
-    function closeModal() {
-        modalOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-        resetModal();
-    }
-
-    function resetModal() {
-        if (checkbox) checkbox.checked = false;
-        if (confirmBtn) {
-            confirmBtn.classList.add('btn-disabled');
-        }
-    }
-
-    if (modalClose) modalClose.addEventListener('click', closeModal);
-    if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
-
-    modalOverlay.addEventListener('click', function(e) {
-        if (e.target === modalOverlay) {
-            closeModal();
-        }
-    });
-
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
-            closeModal();
-        }
-    });
-
-    if (checkbox && confirmBtn) {
-        var currentDownloadUrl = '';
-        checkbox.addEventListener('change', function() {
-            if (this.checked) {
-                confirmBtn.classList.remove('btn-disabled');
-            } else {
-                confirmBtn.classList.add('btn-disabled');
+    downloadLinks.forEach(function(link) {
+        link.addEventListener('click', function () {
+            var card = this.closest('.tool-card');
+            var toolTitle = card ? card.querySelector('h3')?.textContent || 'Unknown' : 'Unknown';
+            if (window.YQZ_STATS) {
+                YQZ_STATS.download(toolTitle, this.href);
             }
         });
-
-        confirmBtn.addEventListener('click', function() {
-            var downloadBtn = document.querySelector('.btn-download:not(.btn-download-zip)');
-            var url = downloadBtn ? downloadBtn.getAttribute('data-download') : '';
-            if (checkbox.checked && url) {
-                var link = document.createElement('a');
-                link.href = url;
-                link.download = '';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-                closeModal();
-            }
-        });
-    }
+    });
 }
 
 // 渲染工具网格
@@ -190,5 +126,5 @@ function renderToolsGrid(tools, containerId, categoryName) {
             '</div>';
     }
 
-    initDownloadModal();
+    initDownloadTracking();
 }
