@@ -15,64 +15,66 @@
   },
   {
     "category": "Developer Tools",
-    "icon": "assets/icons/dev-1.svg",
-    "title": "JSON Formatter / Validator",
-    "desc": "Format, validate, and beautify JSON data instantly in your browser. Features tree view, import/export, and one-click copy.",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "JSON Formatter & Validator",
+    "desc": "Free online JSON formatter to beautify, minify, and validate JSON data. Interactive tree view, import/export, and copy features. Works offline with no data sent to servers.",
     "features": [
-      "Format JSON",
-      "Minify JSON",
-      "Tree View",
-      "Import File",
-      "Export File",
-      "Copy Node"
+      "Beautify and indent JSON",
+      "Minify to compact JSON",
+      "Validate syntax errors",
+      "Interactive collapsible tree view",
+      "Import and export files",
+      "Copy to clipboard"
     ],
-    "detailUrl": "/tools/json-formatter/index.html",
+    "detailUrl": "",
     "zipUrl": "/assets/zip-packages/dev/json-formatter.zip"
   },
   {
     "category": "Developer Tools",
-    "icon": "assets/icons/dev-1.svg",
+    "icon": "/assets/icons/dev-1.svg",
     "title": "Color Code Converter",
-    "desc": "Convert between HEX, RGB, and HSL color formats. Features palette generation, WCAG contrast checker, and CSS variable export.",
+    "desc": "Convert colors between HEX, RGB, and HSL formats instantly. Generate palettes, check WCAG contrast, extract colors from images, and simulate color blindness.",
     "features": [
-      "HEX to RGB",
-      "RGB to HSL",
-      "Palette Generator",
-      "WCAG Contrast Checker",
-      "Export CSS Variables"
+      "HEX, RGB, HSL conversion",
+      "Visual color picker",
+      "Palette generator",
+      "WCAG contrast checker",
+      "Image color extraction",
+      "Color blindness simulator"
     ],
-    "detailUrl": "/tools/color-converter/index.html",
+    "detailUrl": "",
     "zipUrl": "/assets/zip-packages/dev/color-converter.zip"
   },
   {
     "category": "Developer Tools",
-    "icon": "assets/icons/dev-1.svg",
-    "title": "Base64 / URL Encoder & Decoder",
-    "desc": "Encode and decode text using Base64 or URL encoding. Features JWT parser, batch processing, and hash generator (MD5, SHA-1, SHA-256, SHA-512).",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Base64 URL Encoder Decoder & JWT Parser",
+    "desc": "A free browser-based tool for encoding and decoding Base64 and URL strings, parsing JWT tokens, batch processing, and generating cryptographic hashes. All processing is local and private.",
     "features": [
-      "Base64 Encode",
-      "Base64 Decode",
-      "URL Encode",
-      "URL Decode",
-      "JWT Parser",
-      "Batch Processing",
-      "Hash Generator"
+      "Base64 encode and decode",
+      "URL encode and decode",
+      "JWT token parser",
+      "Batch processing",
+      "SHA-256/384/512 hash generation",
+      "Base64 image preview"
     ],
-    "detailUrl": "/tools/base64-url-tool/index.html",
+    "detailUrl": "",
     "zipUrl": "/assets/zip-packages/dev/base64-url-tool.zip"
   },
   {
     "category": "Design & Media",
-    "icon": "assets/icons/design-2.svg",
+    "icon": "/assets/icons/design-1.svg",
     "title": "Batch Image Resizer & Format Converter",
-    "desc": "Resize and convert multiple images at once. Features preset sizes, format conversion, and quality control.",
+    "desc": "Free online batch image resizer and format converter that runs entirely in your browser. Resize, compress, and convert images to popular formats with social media presets, no file uploads required for instant results.",
     "features": [
-      "Batch Processing",
-      "9 Preset Sizes",
-      "JPG/PNG/WebP/BMP",
-      "Quality Control"
+      "Batch image processing",
+      "Multi-format conversion support",
+      "Social media size presets",
+      "Adjustable output quality",
+      "Drag-and-drop file upload",
+      "Local private processing"
     ],
-    "detailUrl": "/tools/image-converter/index.html",
+    "detailUrl": "",
     "zipUrl": "/assets/zip-packages/design/image-converter.zip"
   },
   {
@@ -274,28 +276,31 @@
   },
   {
     "category": "Content & Writing",
-    "icon": "assets/icons/content-21.svg",
+    "icon": "",
     "title": "Text Case Converter",
-    "desc": "Instantly convert text between multiple casing formats including camelCase, snake_case, kebab-case, and more. Fast, private, and runs entirely in your browser.",
+    "desc": "Convert text to UPPERCASE, lowercase, Title Case, camelCase, snake_case, and kebab-case instantly. Free online case converter tool for writers and developers.",
     "features": [
-      "Batch Convert",
-      "Multiple Formats",
-      "Local Processing",
-      "One-Click Copy",
-      "Dark Mode Support",
-      "Privacy Focused"
+      "Multiple text case formats",
+      "Instant copy to clipboard",
+      "Chain conversions with swap",
+      "Supports camelCase and snake_case",
+      "Free for writers and developers"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/writing/text-case-converter.zip"
   },
   {
     "category": "Content & Writing",
-    "icon": "assets/icons/content-1.svg",
+    "icon": "",
     "title": "Email Extractor",
-    "desc": "Email Extractor - a handy browser-based tool.",
+    "desc": "Free online email extractor to find, validate, and deduplicate email addresses from text or HTML. Process locally in your browser with no data upload.",
     "features": [
-      "Easy to use",
-      "Works offline"
+      "Extract from text and HTML",
+      "Deduplicate and validate emails",
+      "Sort by domain or alphabet",
+      "Multiple export separators",
+      "Filter out test emails",
+      "100% local and private"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/writing/email-extractor.zip"
@@ -317,12 +322,16 @@
   },
   {
     "category": "Content & Writing",
-    "icon": "assets/icons/content-1.svg",
-    "title": "Line Sorter",
-    "desc": "Line Sorter - a handy browser-based tool.",
+    "icon": "",
+    "title": "Multi-Line Text Sorter",
+    "desc": "Free online multi-line text sorter. Sort lines alphabetically, numerically, by length, reverse, or shuffle. Remove duplicates and empty lines easily. All processing is local.",
     "features": [
-      "Easy to use",
-      "Works offline"
+      "Alphabetical and numerical sort",
+      "Remove duplicate lines",
+      "Shuffle or reverse text",
+      "Natural sort support",
+      "Local and private",
+      "Copy and download results"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/writing/line-sorter.zip"
@@ -345,44 +354,48 @@
   },
   {
     "category": "Content & Writing",
-    "icon": "assets/icons/content-1.svg",
+    "icon": "",
     "title": "Whitespace Cleaner",
-    "desc": "Whitespace Cleaner - a handy browser-based tool.",
+    "desc": "Free online whitespace cleaner to remove extra spaces, blank lines, and trailing spaces. Normalize line breaks and clean up text formatting instantly in your browser.",
     "features": [
-      "Easy to use",
-      "Works offline"
+      "Remove extra spaces",
+      "Trim leading and trailing spaces",
+      "Remove or collapse blank lines",
+      "Normalize line breaks",
+      "Convert tabs to spaces",
+      "Remove zero-width characters"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/writing/whitespace-cleaner.zip"
   },
   {
     "category": "Content & Writing",
-    "icon": "assets/icons/content-37.svg",
+    "icon": "",
     "title": "Word Counter",
-    "desc": "Count words, characters, sentences, and reading time instantly with real-time frequency analysis and local privacy.",
+    "desc": "Instantly count words, characters, sentences, and paragraphs with our free online word counter. Perfect for writers, students, and SEO content creators.",
     "features": [
-      "Word Count",
-      "Character Count",
-      "Reading Time",
-      "Sentence Count",
-      "Word Frequency",
-      "Local Processing"
+      "Real-time word count",
+      "Character and sentence stats",
+      "Reading time estimate",
+      "Word frequency analysis",
+      "Detailed character breakdown",
+      "Local and private"
     ],
-    "detailUrl": "/tools/word-counter/index.html",
+    "detailUrl": "",
     "zipUrl": "/assets/zip-packages/writing/word-counter.zip"
   },
   {
     "category": "Content & Writing",
-    "icon": "assets/icons/content-11.svg",
+    "icon": "",
     "title": "Word Frequency Analyzer",
-    "desc": "Analyze text to find word frequencies, unique counts, and keyword density. Perfect for SEO, linguistics, and content strategy optimization.",
+    "desc": "Analyze word frequency in text. Find most common words, keyword density, and word distribution. Free online text analysis tool for SEO and writing.",
     "features": [
-      "Count Word Frequencies",
-      "Filter Stop Words",
-      "Export CSV or JSON",
-      "Visualize Top Keywords",
-      "Detect Unique Words",
-      "Local Browser Processing"
+      "Instant word frequency analysis",
+      "Keyword density calculation",
+      "Stop word filtering options",
+      "Visual word cloud display",
+      "Lexical diversity metrics",
+      "Top 20 words table"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/writing/word-frequency-analyzer.zip"
@@ -420,16 +433,16 @@
   },
   {
     "category": "Developer Tools",
-    "icon": "assets/icons/dev-2.svg",
+    "icon": "/assets/icons/dev-1.svg",
     "title": "API Request Tester",
-    "desc": "Test REST APIs with custom headers, body, and params. Supports GET, POST, PUT, DELETE. View response status, headers, and body.",
+    "desc": "Test REST APIs directly in your browser with custom headers, body, and parameters. Supports GET, POST, PUT, DELETE, and PATCH. View response status, headers, and body instantly.",
     "features": [
-      "Send HTTP Requests",
-      "Custom Headers Support",
-      "Request Body Editing",
-      "Response Inspection",
-      "Client-Side Processing",
-      "History Tracking"
+      "Send HTTP requests easily",
+      "Custom headers and body",
+      "View response status and headers",
+      "Supports multiple HTTP methods",
+      "No installation required",
+      "Works offline in browser"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/dev/api-request-tester.zip"
@@ -564,27 +577,32 @@
   },
   {
     "category": "Developer Tools",
-    "icon": "assets/icons/dev-6.svg",
-    "title": "Css Formatter",
-    "desc": "Css Formatter - a handy browser-based tool.",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "CSS Formatter / Minifier",
+    "desc": "Free online CSS formatter and minifier to beautify or compress stylesheets. Sort properties, merge duplicates, and remove comments with instant local processing.",
     "features": [
-      "Easy to use",
-      "Works offline"
+      "Beautify or minify CSS",
+      "Sort properties alphabetically",
+      "Merge duplicate selectors",
+      "Keep or remove comments",
+      "Configurable indentation",
+      "Local browser processing"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/dev/css-formatter.zip"
   },
   {
     "category": "Developer Tools",
-    "icon": "assets/icons/dev-19.svg",
-    "title": "Duplicate File Comparator",
-    "desc": "Compare two lists of filenames to instantly identify duplicates, resolve sync conflicts, and clean up redundant data efficiently.",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Duplicate File Name Comparator",
+    "desc": "Easily compare two file name lists to identify duplicates, unique entries, and conflicts. Ideal for folder synchronization, data cleanup, and managing file collections. Supports case-sensitive and extension-ignoring comparison.",
     "features": [
-      "Compare Filename Lists",
-      "Detect Sync Conflicts",
-      "Identify Redundant Files",
-      "Clean Up Duplicates",
-      "Export Comparison Report"
+      "Compare two file name lists",
+      "Detect duplicates and unique files",
+      "Case-sensitive matching option",
+      "Ignore file extensions option",
+      "Instant results with summary",
+      "No upload, fully private"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/dev/duplicate-file-comparator.zip"
@@ -623,12 +641,16 @@
   },
   {
     "category": "Developer Tools",
-    "icon": "assets/icons/dev-8.svg",
-    "title": "Gitignore Generator",
-    "desc": "Gitignore Generator - a handy browser-based tool.",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": ".gitignore Generator",
+    "desc": "Generate .gitignore files for any project with templates for Node.js, Python, Java, Go, Rust, and more. Combine multiple templates and add custom rules.",
     "features": [
-      "Easy to use",
-      "Works offline"
+      "Multiple project templates",
+      "Custom ignore patterns",
+      "One-click generation",
+      "Copy to clipboard",
+      "Download as file",
+      "Combine multiple templates"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/dev/gitignore-generator.zip"
@@ -666,16 +688,16 @@
   },
   {
     "category": "Developer Tools",
-    "icon": "assets/icons/dev-12.svg",
-    "title": "Htaccess Generator",
-    "desc": "Visually generate Apache .htaccess configurations including redirects, security headers, caching rules, and password protection directly in your browser.",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": ".htaccess Generator",
+    "desc": "Generate Apache .htaccess files with ease. Configure URL redirects, rewrites, security headers, caching, and more. No server required, all processing is done locally in your browser.",
     "features": [
-      "Generate Redirects",
-      "Add Security Headers",
-      "Configure Caching Rules",
-      "Set Password Protection",
-      "Block Bots And IPs",
-      "Custom Error Pages"
+      "Force HTTPS and www redirects",
+      "Custom error pages setup",
+      "Security headers configuration",
+      "Gzip compression and caching",
+      "Hotlink protection rules",
+      "Disable directory listing"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/dev/htaccess-generator.zip"
@@ -729,32 +751,31 @@
   },
   {
     "category": "Developer Tools",
-    "icon": "assets/icons/dev-18.svg",
-    "title": "Json Data Masker",
-    "desc": "Securely mask sensitive PII fields in JSON data locally. Preserves structure while replacing passwords, emails, and keys with asterisks or fake values.",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "JSON Sensitive Data Masker",
+    "desc": "Mask sensitive fields in JSON data like passwords, emails, phone numbers, and API keys. Replace values with asterisks for safe logging and sharing. Free online tool with auto-detection.",
     "features": [
-      "Mask Sensitive PII",
-      "Preserve JSON Structure",
-      "Local Browser Processing",
-      "Custom Masking Rules",
-      "Faker Integration",
-      "Regex Pattern Support"
+      "Mask PII fields",
+      "Custom masking rules",
+      "Auto-detect emails and phones",
+      "Preserve JSON structure",
+      "Copy masked result",
+      "No data sent to server"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/dev/json-data-masker.zip"
   },
   {
     "category": "Developer Tools",
-    "icon": "assets/icons/dev-20.svg",
-    "title": "Json File Splitter",
-    "desc": "Effortlessly split large JSON arrays into manageable chunks directly in your browser. Ensures valid JSON output while keeping your data private and secure.",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "JSON File Splitter",
+    "desc": "Split large JSON arrays into smaller files by record count or file size. Process locally in your browser with no uploads. Download each part instantly.",
     "features": [
-      "Stream Processing",
-      "Memory Efficient",
-      "Valid JSON Output",
-      "Custom Chunk Naming",
-      "Local Data Privacy",
-      "Merge Back Support"
+      "Split by record count",
+      "Split by file size",
+      "Nested array path support",
+      "Download as separate files",
+      "100% client-side processing"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/dev/json-file-splitter.zip"
@@ -776,31 +797,32 @@
   },
   {
     "category": "Developer Tools",
-    "icon": "assets/icons/dev-22.svg",
+    "icon": "/assets/icons/dev-1.svg",
     "title": "JSON Minifier",
-    "desc": "Compress JSON by stripping whitespace and comments locally. Validate syntax, benchmark size reduction, and optimize payloads without uploading data.",
+    "desc": "Compress and minify JSON online instantly. Remove whitespace, strip comments, deduplicate keys, and reduce file size. Free, private, and no upload required.",
     "features": [
-      "Minify JSON",
-      "Remove Whitespace",
-      "Validate Syntax",
-      "Benchmark Compression",
-      "Local Processing",
-      "Strip Comments"
+      "Remove whitespace and comments",
+      "Strip trailing commas",
+      "Deduplicate object keys",
+      "Sort keys alphabetically",
+      "Compact numbers and non-ASCII",
+      "Copy or download minified JSON"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/dev/json-minifier.zip"
   },
   {
     "category": "Developer Tools",
-    "icon": "assets/icons/dev-23.svg",
-    "title": "Json Path Extractor",
-    "desc": "Extract specific data from JSON structures using powerful JSONPath expressions directly in your browser.",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "JSON Path Extractor",
+    "desc": "Extract specific data from JSON using JSONPath expressions. Navigate complex JSON structures with simple path queries. Free online tool for developers and data analysts.",
     "features": [
-      "Query JSON Data",
-      "Support Multiple Queries",
-      "Export As JSON Or CSV",
-      "Local Browser Processing",
-      "Syntax Validation"
+      "JSONPath query evaluation",
+      "Wildcards and filter support",
+      "Recursive descent search",
+      "Format and clear JSON",
+      "Instant browser-based extraction",
+      "No data sent to server"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/dev/json-path-extractor.zip"
@@ -870,16 +892,16 @@
   },
   {
     "category": "Developer Tools",
-    "icon": "assets/icons/dev-26.svg",
-    "title": "Mock Data Generator",
-    "desc": "Generate realistic test data for APIs and databases with customizable schemas, supporting JSON, CSV, and SQL exports directly in your browser.",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Mock JSON Data Generator",
+    "desc": "Generate realistic mock JSON data for testing APIs and databases. Create fake users, products, orders and more with customizable schemas and adjustable record counts.",
     "features": [
-      "Realistic Test Data",
-      "Customizable Schemas",
-      "Multiple Export Formats",
-      "50+ Data Types",
-      "Relational Data Support",
-      "100% Private Processing"
+      "Custom JSON schema input",
+      "Multiple data types supported",
+      "Adjustable record count",
+      "Copy and download JSON",
+      "Template presets available",
+      "Local browser processing"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/dev/mock-data-generator.zip"
@@ -918,32 +940,32 @@
   },
   {
     "category": "Developer Tools",
-    "icon": "assets/icons/dev-33.svg",
+    "icon": "/assets/icons/dev-1.svg",
     "title": "QR Code Generator",
-    "desc": "Create QR codes for URLs, text, and contacts locally. Supports custom colors, error correction, and PNG or SVG export.",
+    "desc": "Generate custom QR codes for URLs, text, emails, WiFi, and more. Adjust size, colors, and error correction. Download as PNG or SVG. All processing happens locally in your browser.",
     "features": [
-      "Text and URL Encoding",
-      "vCard Support",
-      "Custom Color Options",
-      "Error Correction Levels",
-      "PNG and SVG Export",
-      "Batch Generation"
+      "Text, URL, email, WiFi, vCard",
+      "Custom colors and size",
+      "Error correction levels",
+      "Download PNG or SVG",
+      "Copy data URL",
+      "Auto-generate as you type"
     ],
-    "detailUrl": "/tools/qr-code-generator/index.html",
+    "detailUrl": "",
     "zipUrl": "/assets/zip-packages/dev/qr-code-generator.zip"
   },
   {
     "category": "Developer Tools",
-    "icon": "assets/icons/dev-35.svg",
+    "icon": "/assets/icons/dev-1.svg",
     "title": "Random Port Generator",
-    "desc": "Generate random network ports locally in your browser. Supports range filtering, batch creation, and conflict detection for developers.",
+    "desc": "Generate random port numbers in batches for development, testing, and DevOps. Choose from well-known, registered, or dynamic ranges. All processing is local and private.",
     "features": [
-      "Batch Port Generation",
-      "Range Filtering",
-      "Conflict Detection",
-      "Local Privacy",
-      "Ephemeral Port Support",
-      "One-Click Copy"
+      "Batch port generation",
+      "Range presets and custom range",
+      "Unique and sorted output",
+      "Port type classification badges",
+      "Copy all or CSV output",
+      "Local processing, no upload"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/dev/random-port-generator.zip"
@@ -998,47 +1020,47 @@
   },
   {
     "category": "Developer Tools",
-    "icon": "assets/icons/dev-40.svg",
-    "title": "Sql Formatter",
-    "desc": "Instantly format and beautify SQL queries for MySQL, PostgreSQL, and SQLite directly in your browser with local privacy.",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "SQL Formatter",
+    "desc": "Free online SQL formatter and beautifier for MySQL, PostgreSQL, SQLite, and SQL Server. Format queries with customizable indentation, keyword casing, and syntax highlighting.",
     "features": [
-      "Multi-Dialect Support",
-      "Keyword Highlighting",
-      "Custom Indentation",
-      "Minify Option",
-      "Local Processing",
-      "Zero Data Upload"
+      "Format messy SQL queries",
+      "Uppercase SQL keywords",
+      "Adjustable indentation (2/4/tab)",
+      "Syntax highlighting output",
+      "Copy formatted SQL instantly",
+      "Supports multiple SQL dialects"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/dev/sql-formatter.zip"
   },
   {
     "category": "Developer Tools",
-    "icon": "assets/icons/dev-41.svg",
-    "title": "Svg Optimizer",
-    "desc": "Minify and compress SVG code locally by removing metadata, comments, and redundant attributes to reduce file size instantly.",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "SVG Optimizer",
+    "desc": "Minify and optimize SVG code by removing comments, metadata, editor data, and whitespace. Reduce file size instantly with a live preview and download option.",
     "features": [
-      "Remove Metadata",
-      "Minify Paths",
-      "Merge Shapes",
-      "Remove Unused IDs",
-      "Reduce File Size",
-      "Preserve Quality"
+      "Remove comments and metadata",
+      "Strip editor-specific attributes",
+      "Collapse excessive whitespace",
+      "Remove unused defs",
+      "Live preview of optimized SVG",
+      "Download optimized SVG file"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/dev/svg-optimizer.zip"
   },
   {
     "category": "Developer Tools",
-    "icon": "assets/icons/dev-42.svg",
-    "title": "Test Address Generator",
-    "desc": "Generate realistic fake addresses and phone numbers for multiple countries to streamline form testing and database population workflows.",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Test Address & Phone Generator",
+    "desc": "Generate realistic test addresses, phone numbers, names, and emails for multiple countries. Ideal for form testing, database seeding, and e-commerce checkout simulations. Export as JSON or CSV.",
     "features": [
-      "Multi-country Support",
-      "Realistic Data Format",
-      "Bulk Export Options",
-      "Geo-coordinate Generation",
-      "Privacy-Focused Local Processing"
+      "Multi-country address generation",
+      "Random names and phone numbers",
+      "Customizable output fields",
+      "JSON and CSV export",
+      "Bulk generation up to 100 records"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/dev/test-address-generator.zip"
@@ -1061,49 +1083,49 @@
   },
   {
     "category": "Developer Tools",
-    "icon": "assets/icons/dev-43.svg",
+    "icon": "/assets/icons/dev-1.svg",
     "title": "Unicode Converter",
-    "desc": "Convert text to Unicode escapes, code points, and hex values instantly. Supports bidirectional conversion with full privacy.",
+    "desc": "Convert text to Unicode escape sequences and back with support for JS, HTML, CSS, and UTF-8 formats. All processing happens locally in your browser for privacy.",
     "features": [
-      "Text to Unicode Escape",
-      "Code Point Conversion",
-      "Hex Value Encoding",
-      "Bidirectional Decoding",
-      "Local Browser Processing",
-      "Privacy Safe"
+      "Encode text to Unicode escapes",
+      "Decode \\uXXXX sequences",
+      "Multiple output formats",
+      "Keep ASCII as-is option",
+      "Per-character breakdown",
+      "No data upload"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/dev/unicode-converter.zip"
   },
   {
     "category": "Developer Tools",
-    "icon": "assets/icons/dev-44.svg",
-    "title": "Unit Converter",
-    "desc": "Convert length, weight, area, volume, and more with precision. Fast, private, and fully client-side.",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "All-in-One Unit Converter",
+    "desc": "Convert length, weight, area, volume, temperature, speed, data size, time, pressure, and energy instantly. Free online tool with local processing, no upload required.",
     "features": [
-      "Multi-category Support",
-      "Instant Conversion",
-      "Formula Display",
-      "Privacy Focused",
-      "Custom Units"
+      "Multiple unit categories",
+      "Instant live conversion",
+      "Formula display",
+      "Dark mode support",
+      "No data upload"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/dev/unit-converter.zip"
   },
   {
     "category": "Developer Tools",
-    "icon": "assets/icons/dev-45.svg",
+    "icon": "/assets/icons/dev-1.svg",
     "title": "Unix Timestamp Converter",
-    "desc": "Instantly convert between Unix timestamps and human-readable dates with millisecond precision and timezone support.",
+    "desc": "Convert Unix timestamps to human-readable dates and vice versa. Supports seconds, milliseconds, microseconds, and nanoseconds. All processing happens locally in your browser for privacy. Ideal for developers, log analysis, and API debugging.",
     "features": [
-      "Timestamp to Date",
-      "Date to Timestamp",
-      "Millisecond Precision",
-      "Timezone Support",
-      "Batch Conversion",
-      "Local Processing"
+      "Timestamp to date conversion",
+      "Date to timestamp conversion",
+      "Multiple precision levels",
+      "Timezone support",
+      "Relative time display",
+      "Copy results easily"
     ],
-    "detailUrl": "/tools/unix-timestamp-converter/index.html",
+    "detailUrl": "",
     "zipUrl": "/assets/zip-packages/dev/unix-timestamp-converter.zip"
   },
   {
@@ -1123,32 +1145,24 @@
   },
   {
     "category": "Developer Tools",
-    "icon": "assets/icons/dev-48.svg",
-    "title": "UUID Generator",
-    "desc": "Generate UUID v1, v4, v5, and v7 in bulk locally. Copy, export, and ensure RFC4122 compliance without installation.",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Uuid Generator",
+    "desc": "A free offline tool for uuid generator calculations. Works in your browser.",
     "features": [
-      "Batch Generate UUIDs",
-      "Supports v1 v4 v5 v7",
-      "Local Browser Processing",
-      "Copy and Export Options",
-      "RFC4122 Compliant",
-      "No Installation Required"
+      "Easy to use",
+      "Works offline"
     ],
-    "detailUrl": "/tools/uuid-generator/index.html",
+    "detailUrl": "",
     "zipUrl": "/assets/zip-packages/dev/uuid-generator.zip"
   },
   {
     "category": "Design & Media",
-    "icon": "assets/icons/design-4.svg",
+    "icon": "/assets/icons/design-1.svg",
     "title": "Background Remover",
-    "desc": "Instantly remove image backgrounds directly in your browser. Supports color similarity selection, batch processing, and preserves fine details like hair.",
+    "desc": "A free offline tool for background remover calculations. Works in your browser.",
     "features": [
-      "Remove Backgrounds",
-      "Color Similarity Selection",
-      "Batch Processing",
-      "Transparent PNG Output",
-      "Local Privacy Protection",
-      "Hair Detail Preservation"
+      "Easy to use",
+      "Works offline"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/design/background-remover.zip"
@@ -1167,9 +1181,9 @@
   },
   {
     "category": "Design & Media",
-    "icon": "assets/icons/design-1.svg",
+    "icon": "/assets/icons/design-1.svg",
     "title": "Exif Remover",
-    "desc": "Exif Remover - a handy browser-based tool.",
+    "desc": "A free offline tool for exif remover calculations. Works in your browser.",
     "features": [
       "Easy to use",
       "Works offline"
@@ -1257,16 +1271,15 @@
   },
   {
     "category": "Design & Media",
-    "icon": "assets/icons/design-13.svg",
+    "icon": "/assets/icons/design-1.svg",
     "title": "Image Pixelator",
-    "desc": "Pixelate images to create retro art or blur sensitive data. Adjust block size and shape for custom effects.",
+    "desc": "Free online image pixelator to blur sensitive content, censor private details, or create retro pixel art effects. Adjust pixel size, select custom regions, and process files locally to protect your privacy.",
     "features": [
-      "Adjustable Pixel Size",
-      "Custom Pixel Shapes",
-      "Face Anonymization",
-      "Batch Processing Support",
-      "Retro Art Styles",
-      "Local Browser Processing"
+      "Adjustable pixel size",
+      "Full or region pixelation",
+      "Local in-browser processing",
+      "One-click PNG download",
+      "No signup required"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/design/image-pixelator.zip"
@@ -1336,16 +1349,16 @@
   },
   {
     "category": "Developer Tools",
-    "icon": "assets/icons/dev-17.svg",
-    "title": "Password Strength Checker",
-    "desc": "Analyze password security locally with entropy calculation, breach detection, and visual feedback for enhanced privacy.",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Password Strength Checker & Generator",
+    "desc": "Test password strength, estimate crack time, and generate strong passwords. Local analysis with entropy, pattern detection, and common password warnings. No data upload.",
     "features": [
-      "Local Processing",
-      "Entropy Calculation",
-      "Breach Database Check",
-      "Visual Feedback",
-      "Pattern Analysis",
-      "Offline Operation"
+      "Real-time strength scoring",
+      "Entropy and crack time estimation",
+      "Common password detection",
+      "Pattern and repetition analysis",
+      "Built-in password generator",
+      "Local processing, no upload"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/dev/password-strength-checker.zip"
@@ -1766,32 +1779,32 @@
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/education-37.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Academic Citation Generator",
-    "desc": "Generate accurate citations in APA, MLA, Chicago, Harvard, IEEE, and AMA formats locally without installation.",
+    "desc": "Generate accurate academic citations in APA, MLA, Chicago, Harvard, IEEE, and AMA formats. Supports books, journals, websites, and more with one-click copy and BibTeX export.",
     "features": [
-      "Six Citation Styles",
-      "Multiple Document Types",
-      "One-Click Copy",
-      "Local History Storage",
-      "Offline Privacy Protection",
-      "Dynamic Form Fields"
+      "Six major citation styles",
+      "Multiple document types supported",
+      "One-click copy and BibTeX export",
+      "Save and manage citation history",
+      "Dynamic form fields",
+      "Works offline and private"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/citation-generator.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/education-5.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Final Grade Calculator",
-    "desc": "Calculate weighted course grades and reverse-calculate required final exam scores to achieve your target academic performance.",
+    "desc": "Calculate your final course grade from weighted components like assignments and exams. Reverse-calculate the score needed on your final exam to reach your target overall grade.",
     "features": [
-      "Weighted Grade Calculation",
-      "Target Score Solver",
-      "Component Management",
-      "Dark Mode Support",
-      "Responsive Design",
-      "Export Results"
+      "Weighted grade calculation",
+      "Target final exam score",
+      "Multiple grade components",
+      "Letter grade reference",
+      "Real-time overall updates",
+      "Dark mode support"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/final-grade-calculator.zip"
@@ -1799,15 +1812,11 @@
   {
     "category": "Education & Research",
     "icon": "/assets/icons/education-1.svg",
-    "title": "GPA Calculator",
-    "desc": "Calculate weighted and unweighted GPA on 4.0 or 5.0 scales. Reverse-engineer grades needed for target GPA with instant results.",
+    "title": "Gpa Calculator",
+    "desc": "A free offline tool for gpa calculator calculations. Works in your browser.",
     "features": [
-      "Weighted GPA",
-      "Unweighted GPA",
-      "Target Grade",
-      "4.0 Scale",
-      "5.0 Scale",
-      "Instant Results"
+      "Easy to use",
+      "Works offline"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/gpa-calculator.zip"
@@ -1844,16 +1853,12 @@
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/education-2.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Roman Numeral Converter",
-    "desc": "Instantly convert between Arabic and Roman numerals with validation, reference tables, and batch processing support.",
+    "desc": "A free offline tool for roman numeral converter calculations. Works in your browser.",
     "features": [
-      "Arabic to Roman",
-      "Roman to Arabic",
-      "Batch Conversion",
-      "Validation Check",
-      "Reference Table",
-      "Dark Mode Support"
+      "Easy to use",
+      "Works offline"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/roman-numeral-converter.zip"
@@ -2779,190 +2784,210 @@
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-1.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Average Calculator",
-    "desc": "Calculate the arithmetic mean, median, variance, and standard deviation of any number set. Get instant statistical summaries including sum, min, max, and range for data analysis.",
+    "desc": "Calculate the average of any set of numbers instantly. Our free online average calculator also finds the sum, median, variance, and standard deviation for your statistical data analysis.",
     "features": [
-      "Calculate mean and median",
-      "Compute variance and std dev",
-      "Find min, max, and range",
-      "Supports multiple number formats"
+      "Instant average calculation",
+      "Calculates sum and count",
+      "Finds median and range",
+      "Computes variance and standard deviation",
+      "Supports multiple input formats"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/average-calculator.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-2.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Basic Calculator",
-    "desc": "Basic Calculator - a handy browser-based tool.",
+    "desc": "Perform quick arithmetic with our free basic online calculator. Features a clean interface, large buttons, and full keyboard support for addition, subtraction, multiplication, and division.",
     "features": [
-      "Easy to use",
-      "Works offline"
+      "Basic arithmetic operations",
+      "Full keyboard support",
+      "Calculate percentages easily",
+      "Clean responsive interface",
+      "Dark mode support"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/basic-calculator.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-3.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Binomial Distribution Calculator",
-    "desc": "Compute binomial distribution probabilities including PMF, CDF, mean, variance, and standard deviation. Visualize data with interactive charts and detailed tables for statistical analysis.",
+    "desc": "Calculate binomial distribution probabilities instantly. Compute mean, variance, PMF, CDF, and standard deviation for any number of trials and success probability.",
     "features": [
-      "Calculate PMF and CDF values",
-      "Display mean and variance stats",
-      "Generate probability distribution table",
-      "Visualize results with interactive chart",
-      "Support large trial numbers efficiently"
+      "Instant probability calculation",
+      "Mean and variance output",
+      "PMF and CDF results",
+      "Interactive distribution chart",
+      "Probability table view",
+      "Normal approximation support"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/binomial-distribution-calculator.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-4.svg",
-    "title": "Chi Square Test Calculator",
-    "desc": "Chi Square Test Calculator - a handy browser-based tool.",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Chi-Square Test Calculator",
+    "desc": "Calculate chi-square statistic, p-value, and degrees of freedom for goodness-of-fit and independence tests. Free online statistics calculator for hypothesis testing.",
     "features": [
-      "Easy to use",
-      "Works offline"
+      "Goodness-of-fit test",
+      "Independence test support",
+      "Accurate p-value calculation",
+      "Degrees of freedom output",
+      "Contingency table input",
+      "Adjustable significance level"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/chi-square-test-calculator.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-5.svg",
-    "title": "Circle Geometry Calculator",
-    "desc": "Instantly calculate circle area, circumference, diameter, and radius from any single input. Includes bonus sphere volume and surface area calculations with visual diagrams.",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Circle Calculator",
+    "desc": "Calculate circle area, circumference, diameter, and radius from any single value. Includes bonus sphere volume and surface area calculations with visual diagrams.",
     "features": [
-      "Calculate area and circumference",
-      "Determine radius and diameter",
-      "Sphere volume and surface area",
-      "Visual SVG diagram included",
-      "Supports all unit inputs"
+      "Instant circle property calculation",
+      "Radius, diameter, circumference, area",
+      "Bonus sphere volume and surface",
+      "Visual circle diagram",
+      "Step-by-step formula breakdown",
+      "Free online geometry tool"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/circle-calculator.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-6.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Complex Number Calculator",
-    "desc": "Complex Number Calculator - a handy browser-based tool.",
+    "desc": "Calculate complex numbers instantly with our free online tool. Perform addition, subtraction, multiplication, division, and advanced operations like powers and roots. Get results in rectangular and polar forms.",
     "features": [
-      "Easy to use",
-      "Works offline"
+      "Add, subtract, multiply, divide",
+      "Power and conjugate operations",
+      "Magnitude and argument calculation",
+      "Rectangular and polar forms",
+      "Square root and exponential",
+      "Free online math tool"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/complex-number-calculator.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-7.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Cone Calculator",
-    "desc": "Calculate cone volume, surface area, and slant height instantly. Solve for missing dimensions using radius, height, or lateral area with detailed geometric formulas.",
+    "desc": "Calculate cone volume, surface area, slant height, and missing dimensions instantly. Free online cone geometry calculator for students and engineers.",
     "features": [
-      "Calculate volume and surface area",
-      "Determine slant height and angles",
-      "Solve for missing dimensions",
-      "Display step-by-step formulas",
-      "Supports metric and imperial units"
+      "Instant volume calculation",
+      "Surface area and slant height",
+      "Solve missing dimensions",
+      "Detailed formula breakdown",
+      "Free online geometry tool"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/cone-calculator.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-8.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Cube Calculator",
-    "desc": "Calculate cube volume, surface area, diagonals, and edge length instantly. Solve for side length using volume or space diagonal with precise geometric formulas.",
+    "desc": "Calculate cube volume, surface area, face diagonal, and space diagonal instantly. Free online cube geometry calculator for students and professionals.",
     "features": [
-      "Volume and surface area",
-      "Face and space diagonals",
-      "Reverse side calculation",
-      "Precise geometric formulas"
+      "Calculate volume and surface",
+      "Find face and space diagonals",
+      "Solve side from properties",
+      "Detailed formula breakdown",
+      "Dark mode support"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/cube-calculator.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-9.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Cylinder Calculator",
-    "desc": "Compute cylinder volume, surface area, and dimensions instantly. Solve for missing radius or height using standard geometric formulas. Perfect for students and engineers.",
+    "desc": "Calculate cylinder volume, surface area, and lateral area instantly. Find missing radius or height with our free online geometry calculator.",
     "features": [
-      "Calculate volume and surface area",
-      "Solve for missing dimensions",
-      "Supports radius and height inputs",
-      "Geometric formula display"
+      "Calculate volume and area",
+      "Solve missing dimensions",
+      "Detailed formula breakdown",
+      "Instant calculation results",
+      "Free and easy to use"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/cylinder-calculator.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-10.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Derivative Calculator",
-    "desc": "Compute numerical derivatives for any function instantly. Supports first, second, and third-order calculations with customizable step sizes and visual plotting for calculus students.",
+    "desc": "Calculate numerical derivatives of functions instantly. Supports first, second, and third order derivatives with adjustable step sizes for accurate results.",
     "features": [
-      "First second third order derivatives",
-      "Customizable step size accuracy",
-      "Visual function chart plotting",
-      "Detailed result interpretation"
+      "First to third order derivatives",
+      "Central difference method",
+      "Adjustable step size",
+      "Function plot visualization",
+      "Supports trigonometric functions"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/derivative-calculator.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-11.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Exponent Calculator",
-    "desc": "Calculate powers and exponents instantly with step-by-step solutions. Supports negative, fractional, and large exponents with detailed mathematical breakdowns and reciprocal values.",
+    "desc": "Calculate exponents and powers instantly. Raise any base to any power, including negative and fractional exponents, with step-by-step results. Free online power calculator.",
     "features": [
-      "Instant power calculation",
-      "Step-by-step explanations",
-      "Supports fractional exponents",
-      "Handles negative bases",
-      "Reciprocal value display",
-      "Quick preset buttons"
+      "Supports negative exponents",
+      "Handles fractional exponents",
+      "Step-by-step solution",
+      "Quick power presets",
+      "Powers table generation"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/exponent-calculator.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-12.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Factorial Calculator",
-    "desc": "Calculate factorial n! for any non-negative integer up to 1000!. View exact results, digit counts, trailing zeros, and Stirling approximations instantly.",
+    "desc": "Calculate factorial n! for any non-negative integer up to 1000. View step-by-step calculations, digit counts, trailing zeros, and Stirling approximations instantly.",
     "features": [
-      "Large number support",
-      "Exact factorial results",
-      "Digit and zero counting",
-      "Stirling approximation"
+      "Supports large numbers up to 1000!",
+      "Step-by-step calculation view",
+      "Count digits and trailing zeros",
+      "Stirling approximation included",
+      "Related factorials table",
+      "Free online math tool"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/factorial-calculator.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-1.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Fraction Calculator",
-    "desc": "Perform addition, subtraction, multiplication, and division of fractions instantly. Simplifies results, converts to decimals and percentages, and shows step-by-step calculations for educational clarity.",
+    "desc": "Add, subtract, multiply, and divide fractions with our free online fraction calculator. Simplify fractions and convert them to decimals instantly with step-by-step solutions.",
     "features": [
-      "Add subtract multiply divide fractions",
-      "Auto-simplify results using GCD",
-      "Convert to decimal and percentage",
-      "Show step-by-step calculation process"
+      "Add subtract multiply divide",
+      "Simplify fractions instantly",
+      "Convert to decimal percentage",
+      "Step-by-step calculation guide",
+      "Mixed number conversion",
+      "Free online tool"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/fraction-calculator.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-2.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Linear Equation Solver",
-    "desc": "Linear Equation Solver - a handy browser-based tool.",
+    "desc": "A free offline tool for linear equation solver calculations. Works in your browser.",
     "features": [
       "Easy to use",
       "Works offline"
@@ -2972,38 +2997,33 @@
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-3.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Logarithm Calculator",
-    "desc": "Calculate logarithms with any base including natural, common, and binary. Supports antilog operations and displays results across multiple bases instantly.",
+    "desc": "A free offline tool for logarithm calculator calculations. Works in your browser.",
     "features": [
-      "Calculate logs with any base",
-      "Support natural and common logs",
-      "Compute antilog values",
-      "Display multi-base results"
+      "Easy to use",
+      "Works offline"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/logarithm-calculator.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-4.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Logarithm Calculator Extended",
-    "desc": "Calculate logarithms with any base including common, natural, and binary. Solve for unknown variables and explore log properties with instant verification and detailed results.",
+    "desc": "A free offline tool for logarithm calculator extended calculations. Works in your browser.",
     "features": [
-      "Calculate logs with any base",
-      "Solve for unknown x, b, or result",
-      "Show other base conversions",
-      "Verify calculations automatically",
-      "Display log rules and properties"
+      "Easy to use",
+      "Works offline"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/logarithm-calculator-extended.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-5.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Math Formula Reference",
-    "desc": "Math Formula Reference - a handy browser-based tool.",
+    "desc": "A free offline tool for math formula reference calculations. Works in your browser.",
     "features": [
       "Easy to use",
       "Works offline"
@@ -3013,14 +3033,12 @@
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-6.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Matrix Calculator",
-    "desc": "Perform essential linear algebra operations including addition, subtraction, multiplication, determinant, inverse, transpose, and rank calculation for matrices up to 4x4.",
+    "desc": "A free offline tool for matrix calculator calculations. Works in your browser.",
     "features": [
-      "Add subtract multiply matrices",
-      "Calculate determinant easily",
-      "Find matrix inverse",
-      "Transpose and rank tools"
+      "Easy to use",
+      "Works offline"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/matrix-calculator.zip"
@@ -3039,9 +3057,9 @@
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-7.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Mode Calculator",
-    "desc": "Mode Calculator - a handy browser-based tool.",
+    "desc": "A free offline tool for mode calculator calculations. Works in your browser.",
     "features": [
       "Easy to use",
       "Works offline"
@@ -3051,23 +3069,21 @@
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-8.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Normal Distribution Calculator",
-    "desc": "Calculate normal distribution probabilities, z-scores, PDF, and CDF instantly. Visualize Gaussian curves with interactive charts and reference tables for statistics.",
+    "desc": "A free offline tool for normal distribution calculator calculations. Works in your browser.",
     "features": [
-      "Calculate z-scores and probabilities",
-      "Interactive distribution chart",
-      "PDF and CDF computation",
-      "Supports multiple calculation types"
+      "Easy to use",
+      "Works offline"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/normal-distribution-calculator.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-9.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Percentage Calculator Math",
-    "desc": "Percentage Calculator Math - a handy browser-based tool.",
+    "desc": "A free offline tool for percentage calculator math calculations. Works in your browser.",
     "features": [
       "Easy to use",
       "Works offline"
@@ -3077,158 +3093,132 @@
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-10.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Percentage Change Calculator",
-    "desc": "Instantly calculate percentage increase or decrease between two values. Includes tools for finding percentages, ratios, and multipliers with real-time results and clear visual indicators.",
+    "desc": "A free offline tool for percentage change calculator calculations. Works in your browser.",
     "features": [
-      "Calculate percent change",
-      "Find percentage of value",
-      "Determine ratio multiplier",
-      "Real-time instant results"
+      "Easy to use",
+      "Works offline"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/percentage-change-calculator.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-11.svg",
-    "title": "Permutation and Combination Calculator",
-    "desc": "Calculate permutations (nPr) and combinations (nCr) with or without repetition. Get instant results, formulas, factorials, and common use cases for math and statistics.",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Permutation Combination Calculator",
+    "desc": "A free offline tool for permutation combination calculator calculations. Works in your browser.",
     "features": [
-      "Calculate nPr and nCr",
-      "Supports repetition options",
-      "Shows formulas used",
-      "Displays factorials",
-      "Common use examples"
+      "Easy to use",
+      "Works offline"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/permutation-combination-calculator.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-12.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Poisson Distribution Calculator",
-    "desc": "Calculate Poisson distribution probabilities including PMF, CDF, mean, variance, and standard deviation. Visualize data with interactive charts and comprehensive probability tables for statistical analysis.",
+    "desc": "A free offline tool for poisson distribution calculator calculations. Works in your browser.",
     "features": [
-      "Compute PMF and CDF values",
-      "Generate probability distribution table",
-      "Visualize distribution with charts",
-      "Calculate mean and variance instantly"
+      "Easy to use",
+      "Works offline"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/poisson-distribution-calculator.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-1.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Prime Number Checker",
-    "desc": "Instantly verify if a number is prime, perform prime factorization, find adjacent primes, and generate lists. A comprehensive number theory tool for students and math enthusiasts.",
+    "desc": "A free offline tool for prime number checker calculations. Works in your browser.",
     "features": [
-      "Verify primality instantly",
-      "Prime factorization display",
-      "Find next and previous primes",
-      "List primes up to limit"
+      "Easy to use",
+      "Works offline"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/prime-number-checker.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-2.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Probability Calculator",
-    "desc": "Calculate single event probabilities, combined AND/OR events, and conditional dependencies. Supports independent and dependent scenarios with detailed odds and formulas.",
+    "desc": "A free offline tool for probability calculator calculations. Works in your browser.",
     "features": [
-      "Single event calculation",
-      "AND OR probability logic",
-      "Conditional dependency support",
-      "Odds and formula display"
+      "Easy to use",
+      "Works offline"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/probability-calculator.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-3.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Proportion Calculator",
-    "desc": "Solve proportions A:B = C:D instantly using cross-multiplication. Find missing values, verify ratios, and simplify fractions with this free online math tool.",
+    "desc": "A free offline tool for proportion calculator calculations. Works in your browser.",
     "features": [
-      "Solve missing proportion values",
-      "Cross-multiplication verification",
-      "Simplify ratio fractions",
-      "Quick recipe examples"
+      "Easy to use",
+      "Works offline"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/proportion-calculator.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-4.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Pythagorean Theorem Calculator",
-    "desc": "Solve right triangles instantly using the Pythagorean theorem. Calculate hypotenuse or legs with step-by-step solutions, angle measurements, area, perimeter, and visual diagrams.",
+    "desc": "A free offline tool for pythagorean theorem calculator calculations. Works in your browser.",
     "features": [
-      "Calculate hypotenuse or legs",
-      "Step-by-step solution display",
-      "Triangle area and perimeter",
-      "Visual SVG diagram generation",
-      "Angle measurement calculation",
-      "Input validation and verification"
+      "Easy to use",
+      "Works offline"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/pythagorean-theorem-calculator.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-5.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Quadratic Equation Solver",
-    "desc": "Solve quadratic equations ax² + bx + c = 0 instantly. Calculate real and complex roots, discriminant, and view detailed step-by-step solutions for algebra problems.",
+    "desc": "A free offline tool for quadratic equation solver calculations. Works in your browser.",
     "features": [
-      "Find real and complex roots",
-      "Calculate discriminant value",
-      "Step-by-step solution guide",
-      "Supports linear equations"
+      "Easy to use",
+      "Works offline"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/quadratic-equation-solver.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-6.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Range Calculator",
-    "desc": "Compute statistical range, midrange, IQR, and quartiles for any dataset. Visualize data spread with an interactive number line and get detailed statistical breakdowns instantly.",
+    "desc": "A free offline tool for range calculator calculations. Works in your browser.",
     "features": [
-      "Calculate range and midrange",
-      "Compute IQR and quartiles",
-      "Interactive number line visualization",
-      "Detailed statistical summary"
+      "Easy to use",
+      "Works offline"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/range-calculator.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-7.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Ratio Calculator",
-    "desc": "Simplify, scale, and solve ratios instantly with step-by-step calculations. Convert ratios to fractions and percentages for math homework and engineering tasks.",
+    "desc": "A free offline tool for ratio calculator calculations. Works in your browser.",
     "features": [
-      "Simplify ratios using GCD",
-      "Scale ratios by any factor",
-      "Solve missing ratio terms",
-      "Convert to fractions and percentages"
+      "Easy to use",
+      "Works offline"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/ratio-calculator.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-8.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Scientific Calculator",
-    "desc": "Perform complex mathematical calculations with this free online scientific calculator. Supports trigonometry, logarithms, exponents, factorials, and constants like pi and e for precise results.",
+    "desc": "A free offline tool for scientific calculator calculations. Works in your browser.",
     "features": [
-      "Trigonometric functions support",
-      "Logarithm and exponent tools",
-      "Factorial and square root",
-      "Degree and radian toggle",
-      "Calculation history tracking"
+      "Easy to use",
+      "Works offline"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/scientific-calculator.zip"
@@ -3250,55 +3240,45 @@
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-9.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Sphere Calculator",
-    "desc": "Calculate sphere volume, surface area, radius, and circumference instantly. Solve for dimensions using known values. Free online geometry tool with detailed formulas and hemisphere calculations.",
+    "desc": "A free offline tool for sphere calculator calculations. Works in your browser.",
     "features": [
-      "Calculate volume and surface area",
-      "Solve radius from volume or area",
-      "Compute circumference and diameter",
-      "Supports hemisphere calculations",
-      "Detailed formula explanations"
+      "Easy to use",
+      "Works offline"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/sphere-calculator.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-10.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Standard Deviation Calculator",
-    "desc": "Compute standard deviation, variance, mean, median, and quartiles instantly. Supports sample and population data with detailed statistical dispersion analysis.",
+    "desc": "A free offline tool for standard deviation calculator calculations. Works in your browser.",
     "features": [
-      "Calculate standard deviation",
-      "Compute variance and mean",
-      "Sample vs population mode",
-      "Find median and quartiles",
-      "Display min and max values",
-      "Supports decimal rounding"
+      "Easy to use",
+      "Works offline"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/standard-deviation-calculator.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-11.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Statistics Calculator",
-    "desc": "Compute comprehensive descriptive statistics including mean, median, mode, variance, standard deviation, quartiles, and skewness. Analyze data distributions and identify outliers instantly with this free online tool.",
+    "desc": "A free offline tool for statistics calculator calculations. Works in your browser.",
     "features": [
-      "Calculate mean and median",
-      "Compute variance and std dev",
-      "Find quartiles and IQR",
-      "Identify data outliers",
-      "Analyze skewness distribution"
+      "Easy to use",
+      "Works offline"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/statistics-calculator.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-12.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "T Test Calculator",
-    "desc": "T Test Calculator - a handy browser-based tool.",
+    "desc": "A free offline tool for t test calculator calculations. Works in your browser.",
     "features": [
       "Easy to use",
       "Works offline"
@@ -3308,39 +3288,33 @@
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-1.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Triangle Calculator",
-    "desc": "Solve any triangle instantly using SSS, SAS, ASA, or SSA methods. Calculate area, perimeter, angles, and side lengths with precision and ease.",
+    "desc": "A free offline tool for triangle calculator calculations. Works in your browser.",
     "features": [
-      "Solve triangles SSS SAS ASA SSA",
-      "Calculate area and perimeter",
-      "Find all angles and sides",
-      "Detect triangle types"
+      "Easy to use",
+      "Works offline"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/triangle-calculator.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-2.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Trigonometry Calculator",
-    "desc": "Compute sine, cosine, tangent, and inverse trigonometric functions instantly. Supports degrees and radians with hyperbolic options and a comprehensive reference table for all common angles.",
+    "desc": "A free offline tool for trigonometry calculator calculations. Works in your browser.",
     "features": [
-      "Calculate sin cos tan functions",
-      "Support inverse trigonometric operations",
-      "Hyperbolic sinh cosh tanh support",
-      "Degree and radian unit conversion",
-      "Display all trig values simultaneously",
-      "Common angles reference table included"
+      "Easy to use",
+      "Works offline"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/trigonometry-calculator.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-3.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Unit Converter",
-    "desc": "Unit Converter - a handy browser-based tool.",
+    "desc": "A free offline tool for unit converter calculations. Works in your browser.",
     "features": [
       "Easy to use",
       "Works offline"
@@ -3350,43 +3324,36 @@
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-4.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Unit Rate Calculator",
-    "desc": "Compare prices per ounce, pound, or liter to find the best value. Calculate unit rates instantly and determine savings between products for smarter shopping decisions.",
+    "desc": "A free offline tool for unit rate calculator calculations. Works in your browser.",
     "features": [
-      "Best buy comparison",
-      "Unit price calculation",
-      "Multiple item support",
-      "Savings percentage display"
+      "Easy to use",
+      "Works offline"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/unit-rate-calculator.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-5.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Variance Calculator",
-    "desc": "Compute sample and population variance with detailed statistical analysis. Instantly calculate mean, standard deviation, and view step-by-step formulas for accurate data spread measurement.",
+    "desc": "A free offline tool for variance calculator calculations. Works in your browser.",
     "features": [
-      "Sample and population variance",
-      "Standard deviation calculation",
-      "Step-by-step formulas",
-      "Detailed calculation table"
+      "Easy to use",
+      "Works offline"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/variance-calculator.zip"
   },
   {
     "category": "Education & Research",
-    "icon": "/assets/icons/math-6.svg",
+    "icon": "/assets/icons/education-1.svg",
     "title": "Vector Calculator",
-    "desc": "Perform essential 2D and 3D vector calculations instantly. Compute magnitude, dot and cross products, angles, projections, and unit vectors with precise results.",
+    "desc": "A free offline tool for vector calculator calculations. Works in your browser.",
     "features": [
-      "2D and 3D vector support",
-      "Magnitude and unit vectors",
-      "Dot and cross products",
-      "Angle calculation",
-      "Vector projection"
+      "Easy to use",
+      "Works offline"
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/vector-calculator.zip"
@@ -5293,5 +5260,2322 @@
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/business/timezone-meeting-planner.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Article Rewriter & Similarity Checker",
+    "desc": "Rewrite articles instantly with our free online tool. Check content similarity and avoid plagiarism using a built-in synonym dictionary for unique variations.",
+    "features": [
+      "Instant article rewriting",
+      "Built-in synonym dictionary",
+      "Content similarity checker",
+      "One-click copy result",
+      "Rewrite history saving",
+      "Dark mode support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/article-rewriter.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Case Converter",
+    "desc": "Free online case converter to instantly transform text into UPPERCASE, lowercase, Title Case, camelCase, snake_case, and more. Batch convert text locally without uploading.",
+    "features": [
+      "11 conversion formats",
+      "Real-time batch conversion",
+      "Copy individual or all",
+      "Download as txt file",
+      "Local and private processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/case-converter.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Case Converter",
+    "desc": "Easily convert text between UPPERCASE, lowercase, Title Case, camelCase, snake_case, kebab-case, and more with our free online case converter tool.",
+    "features": [
+      "14 conversion types",
+      "Instant text transformation",
+      "Copy to clipboard",
+      "Character and word count",
+      "Dark mode support",
+      "Chain multiple conversions"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/case-converter-all.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Character Counter",
+    "desc": "Count characters, words, sentences, and paragraphs instantly. Check text limits for Twitter, SMS, and SEO meta descriptions with our free online character counter.",
+    "features": [
+      "Live character and word count",
+      "Sentence and paragraph tracking",
+      "Reading time estimation",
+      "Social media limit checker",
+      "SEO meta description limits",
+      "Dark mode support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/char-counter.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Character Encoding Fixer",
+    "desc": "Fix garbled text and mojibake caused by wrong character encoding. Easily convert between UTF-8, Latin-1, and Windows-1252 to restore readable text instantly in your browser.",
+    "features": [
+      "Fix mojibake and garbled text",
+      "Supports UTF-8 and Latin-1",
+      "Windows-1252 conversion support",
+      "Instant text encoding repair",
+      "Private local browser processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/encoding-fixer.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Fancy Text Generator",
+    "desc": "Convert plain text into fancy Unicode fonts instantly. Choose from cursive, bold, script, gothic, and more for your social media bios and posts.",
+    "features": [
+      "14 unique font styles",
+      "Instant text conversion",
+      "One-click copy feature",
+      "Social media ready"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/fancy-text-generator.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Headline Analyzer",
+    "desc": "Analyze your headline strength with our free online headline analyzer. Get an SEO score, check for emotional words, and optimize your titles for maximum click-through rates and engagement.",
+    "features": [
+      "Instant SEO score calculation",
+      "Detects power and emotional words",
+      "Optimal length and word count",
+      "Headline structure analysis",
+      "Actionable improvement suggestions"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/headline-analyzer.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Lorem Ipsum Generator",
+    "desc": "Generate Lorem Ipsum placeholder text instantly. Create paragraphs, sentences, words, or lists for your design and typesetting needs. Free dummy text generator.",
+    "features": [
+      "Generate paragraphs and sentences",
+      "Create word lists",
+      "Classic Lorem Ipsum start",
+      "Wrap in HTML tags",
+      "One-click copy to clipboard",
+      "Word and character count"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/lorem-ipsum-generator.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Markdown to HTML Converter",
+    "desc": "Convert Markdown to clean HTML instantly with live preview. Supports GitHub Flavored Markdown, tables, code blocks, and lists. Local processing, no upload required.",
+    "features": [
+      "Live Markdown preview",
+      "GitHub Flavored Markdown",
+      "Copy and download HTML",
+      "Tables and code blocks",
+      "Local private processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/markdown-to-html.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Reading Time Calculator",
+    "desc": "Estimate reading and speaking time from any text instantly. Count words, characters, sentences, and paragraphs with adjustable WPM settings. Perfect for bloggers and content marketers.",
+    "features": [
+      "Instant word count",
+      "Character and paragraph stats",
+      "Adjustable reading speed",
+      "Speaking time estimation",
+      "Live text analysis",
+      "No signup required"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/reading-time-calculator.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Slogan Generator",
+    "desc": "Generate catchy business slogans and taglines for your brand. Customize by industry, keyword, and tone to create the perfect marketing message.",
+    "features": [
+      "Multiple industry templates",
+      "Custom keyword integration",
+      "Adjustable tone options",
+      "Instant slogan generation",
+      "Copy and paste results",
+      "Free and easy to use"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/slogan-generator.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Speech to Text",
+    "desc": "Convert your voice to text in real time with our free Speech to Text tool. Supports multiple languages, instant transcription, and easy copying for your writing needs.",
+    "features": [
+      "Real-time voice transcription",
+      "Multiple language support",
+      "Instant text copying",
+      "Continuous listening mode",
+      "No signup required"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/speech-to-text.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Strikethrough Text Generator",
+    "desc": "Generate strikethrough text instantly using Unicode combining characters. Copy and paste crossed-out text on Facebook, Twitter, Instagram, Discord, and any platform that supports Unicode.",
+    "features": [
+      "Instant strikethrough generation",
+      "Unicode combining characters",
+      "Copy and paste anywhere",
+      "Works on social media",
+      "No signup required"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/strikethrough-text.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Text Deduplication Tool",
+    "desc": "Remove duplicate lines from text instantly with our free online Text Deduplication Tool. Compare two lists, count occurrences, and extract unique values with case-sensitive or fuzzy matching options.",
+    "features": [
+      "Remove duplicate lines",
+      "Compare two text lists",
+      "Count line occurrences",
+      "Case-sensitive and fuzzy matching",
+      "Extract unique values",
+      "Copy and download results"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/text-deduplication.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Text Diff Checker",
+    "desc": "Compare two text blocks instantly and highlight differences with our free online Text Diff Checker. View additions, deletions, and changes side-by-side or inline for easy text comparison.",
+    "features": [
+      "Side-by-side text comparison",
+      "Inline diff highlighting",
+      "Ignore case and whitespace",
+      "Similarity percentage stats",
+      "Swap text inputs quickly"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/text-diff-checker.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Text Reverser",
+    "desc": "Reverse text by characters, words, or lines instantly. Flip text upside down and create mirrored text with our free online text reverser tool.",
+    "features": [
+      "Reverse characters and words",
+      "Flip text upside down",
+      "Create mirrored text",
+      "Multiple reversal modes",
+      "Instant copy to clipboard",
+      "Free online text tool"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/text-reverser.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Text to Speech",
+    "desc": "Convert text to natural speech directly in your browser. Choose from available system voices, adjust the rate and pitch, and listen to your text instantly.",
+    "features": [
+      "Multiple system voice options",
+      "Adjustable rate and pitch",
+      "Play pause and stop controls",
+      "Powered by Web Speech API",
+      "No audio upload required",
+      "Light and dark mode"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/text-to-speech.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Typing Speed Test",
+    "desc": "Test your typing speed in words per minute (WPM) with our free online typing test. Measure your accuracy, track live WPM, and improve your keyboard skills instantly.",
+    "features": [
+      "Live WPM tracking",
+      "Real-time accuracy calculation",
+      "60-second timed test",
+      "Random text passages",
+      "Instant error highlighting",
+      "No signup required"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/typing-speed-test.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Word Density Analyzer",
+    "desc": "Analyze word frequency, density, and keyword distribution to optimize your SEO strategy. Find most used words, n-grams, and reading level metrics. Perfect for content creators and webmasters.",
+    "features": [
+      "Word frequency and density calculation",
+      "N-gram phrase analysis",
+      "Stop word removal options",
+      "Reading time and level metrics",
+      "Visual keyword distribution chart"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/word-density-analyzer.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Baking Ingredient Converter",
+    "desc": "Convert baking measurements accurately with our free online baking ingredient converter. Easily switch between cups, tablespoons, grams, and ounces for perfect recipes.",
+    "features": [
+      "Cups to grams conversion",
+      "Multiple baking ingredients",
+      "Volume to weight support",
+      "Accurate density calculations",
+      "Free and easy to use"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cooking & food/baking-converter.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "BBQ Cooking Time Calculator",
+    "desc": "Calculate BBQ and smoker cooking times for brisket, ribs, pork butt, chicken and more. Free BBQ time and temperature calculator.",
+    "features": [
+      "Multiple meat types supported",
+      "Adjustable smoker temperature",
+      "Doneness level selection",
+      "Estimated cook time range",
+      "Suggested cooking timeline",
+      "Stall phase estimation"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cooking & food/bbq-cooking-time-calc.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Butter Converter",
+    "desc": "Convert butter measurements easily between cups, tablespoons, grams, ounces, and US sticks. Perfect for precise baking and cooking recipe conversions.",
+    "features": [
+      "Cups to grams conversion",
+      "Tablespoons and ounces support",
+      "US butter sticks measurement",
+      "Quick common measure presets",
+      "Accurate baking calculations"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cooking & food/butter-converter.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Cheese Pairing Finder",
+    "desc": "Discover perfect pairings for your favorite cheeses. Find complementary wines, fruits, crackers, nuts, and jams to build the ultimate cheese board effortlessly.",
+    "features": [
+      "16 popular cheese varieties",
+      "Wine and beverage pairings",
+      "Fruit and nut suggestions",
+      "Cracker and jam matches",
+      "Expert serving tips included",
+      "Free cheese pairing guide"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cooking & food/cheese-pairing-finder.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Cocktail Recipe Finder",
+    "desc": "Find the perfect cocktail recipe by base spirit, style, or difficulty. Discover classic and modern mixed drink recipes with full ingredients and step-by-step instructions.",
+    "features": [
+      "Filter by base spirit",
+      "Search by style",
+      "Detailed ingredients list",
+      "Step-by-step mixing instructions",
+      "Includes mocktail options"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cooking & food/cocktail-recipe-finder.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Coffee Brew Ratio Calculator",
+    "desc": "Calculate coffee to water ratio for perfect brew. Supports pour over, French press, espresso, AeroPress, drip, and cold brew methods. Get exact grams and water volume instantly.",
+    "features": [
+      "Multiple brewing methods",
+      "Precise coffee water ratio",
+      "Grams and cups conversion",
+      "Grind and time tips",
+      "Instant recipe generation"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cooking & food/coffee-brew-ratio-calculator.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Cooking Time Calculator",
+    "desc": "Calculate perfect cooking times for meats and dishes with our free online calculator. Get accurate time, temperature, and rest time for beef, chicken, pork, and more based on weight and doneness.",
+    "features": [
+      "Multiple meat types",
+      "Doneness level selection",
+      "Oven temperature guidance",
+      "Rest time calculation",
+      "Cooking method adjustments",
+      "Metric and imperial units"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cooking & food/cooking-time-calculator.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Cooking Time Converter",
+    "desc": "Convert cooking times between different methods including air fryer, slow cooker, and pressure cooker. Adjust your recipes easily for perfect results every time.",
+    "features": [
+      "Multiple cooking methods supported",
+      "Air fryer and slow cooker",
+      "Food type specific adjustments",
+      "Helpful cooking tips included",
+      "Instant time calculation"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cooking & food/cooking-time-conv.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Cooking Timer",
+    "desc": "Set and track multiple cooking timers simultaneously for different dishes. Get audio alerts when your food is ready with this free online kitchen timer.",
+    "features": [
+      "Multiple simultaneous timers",
+      "Quick recipe presets",
+      "Audio alarm alerts",
+      "Pause and reset options",
+      "Custom timer names"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cooking & food/cooking-timer.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Cups to Milliliters Converter",
+    "desc": "Convert cups to milliliters and liters instantly. Supports US, metric, UK, and Japanese cup standards for accurate cooking and baking measurements.",
+    "features": [
+      "Multiple cup standards",
+      "Instant two-way conversion",
+      "Liters and tablespoons output",
+      "Common amounts reference",
+      "Cross-standard comparison",
+      "Free for cooking and baking"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cooking & food/cups-to-ml.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Fahrenheit to Celsius Cooking Converter",
+    "desc": "Convert Fahrenheit to Celsius for cooking and baking with ease. Includes oven temperature reference, Gas Mark conversion, and quick tips for international recipes.",
+    "features": [
+      "Instant F to C conversion",
+      "Oven temperature reference table",
+      "Gas Mark conversion included",
+      "Cooking heat level indicator",
+      "Bidirectional temperature converter",
+      "Free and mobile friendly"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cooking & food/fahrenheit-to-celsius-cooking.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Gluten-Free Flour Blend Calculator",
+    "desc": "Create your perfect gluten-free flour blend with our free online calculator. Easily calculate ratios for rice, almond, and tapioca flours for all your celiac baking needs.",
+    "features": [
+      "Multiple blend type presets",
+      "Accurate ingredient ratio calculation",
+      "Custom total amount input",
+      "Common substitution suggestions",
+      "Helpful celiac baking tips"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cooking & food/gluten-free-flour-blend.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Grams to Cups Converter",
+    "desc": "Convert grams to cups accurately for baking with our free ingredient-based converter. Supports flour, sugar, butter, and more for perfect recipes.",
+    "features": [
+      "Ingredient-specific conversion",
+      "Supports 20+ baking ingredients",
+      "Converts grams, ounces, and cups",
+      "Includes tablespoons and teaspoons",
+      "Common measurement reference",
+      "Real-time conversion updates"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cooking & food/grams-to-cups.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Cooking Measurement Converter",
+    "desc": "Convert cooking measurements easily with our free online tool. Switch between cups, tablespoons, teaspoons, fluid ounces, milliliters, and grams for perfect recipes every time.",
+    "features": [
+      "Cups to grams conversion",
+      "Tablespoons and teaspoons support",
+      "Multiple ingredient densities",
+      "Volume and weight units",
+      "Accurate recipe scaling"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cooking & food/measurement-converter-cooking.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Nutrition Calculator",
+    "desc": "Calculate nutrition facts and track daily calorie intake with our free nutrition calculator. Easily monitor protein, carbs, and fat for a balanced diet.",
+    "features": [
+      "Track daily calorie intake",
+      "Calculate macronutrient breakdown",
+      "Add multiple food items",
+      "Set daily calorie target",
+      "Monitor protein, carbs, fat"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cooking & food/nutrition-calculator.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Ounces to Grams Converter",
+    "desc": "Convert ounces to grams and vice versa with our free online tool. Includes fluid ounces to milliliters conversion for cooking, baking, and shipping needs.",
+    "features": [
+      "Instant oz to g conversion",
+      "Fluid ounces to milliliters",
+      "US and UK volume support",
+      "Common weight reference table",
+      "Bidirectional real-time input",
+      "Free and no signup required"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cooking & food/ounces-to-grams.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Oven Temperature Converter",
+    "desc": "Convert oven temperatures between Celsius, Fahrenheit, gas mark, and fan convection instantly. An essential free tool for adapting international baking recipes accurately.",
+    "features": [
+      "Celsius to Fahrenheit conversion",
+      "Gas mark temperature support",
+      "Fan oven convection mode",
+      "Common baking reference table",
+      "Instant multi-unit conversion"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cooking & food/oven-temperature-converter.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Pizza Dough Calculator",
+    "desc": "Calculate precise pizza dough ingredients by weight and hydration. Free baker-style recipe calculator for any pizza count, size, and style.",
+    "features": [
+      "Baker's percentage calculations",
+      "Multiple pizza styles supported",
+      "Adjustable hydration levels",
+      "Ingredient weight in grams",
+      "Fermentation time options"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cooking & food/pizza-dough-calculator.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Pounds to Grams Converter",
+    "desc": "Convert pounds to grams, ounces, and kilograms instantly. Perfect weight conversion tool for cooking and baking recipes. Free online lb to g converter.",
+    "features": [
+      "Instant pounds to grams conversion",
+      "Supports ounces and kilograms",
+      "Quick common weight reference",
+      "Ingredient volume estimates",
+      "Common recipe weight examples"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cooking & food/pounds-to-grams.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Recipe Scaler",
+    "desc": "Scale your recipes up or down effortlessly for any serving size. Convert ingredient measurements with fractions easily using this free online recipe scaler and converter.",
+    "features": [
+      "Scale recipes up or down",
+      "Convert fractional measurements",
+      "Adjust serving sizes instantly",
+      "Supports various cooking units",
+      "Automatic fraction simplification"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cooking & food/recipe-scaler.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Serving Size Calculator",
+    "desc": "Calculate food servings per person and total portions for any group size. Scale recipes accurately with our free serving size calculator.",
+    "features": [
+      "Calculate servings per person",
+      "Scale recipes for groups",
+      "Adjust for appetite levels",
+      "Supports multiple meal types",
+      "Shopping quantity estimates"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cooking & food/serving-size-calculator.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Sourdough Hydration Calculator",
+    "desc": "Calculate sourdough hydration, starter feeding ratios, and baker percentages with our free online tool. Perfect your sourdough recipes and achieve the ideal dough consistency for delicious loaves.",
+    "features": [
+      "Instant hydration calculation",
+      "Starter feeding ratio guide",
+      "Baker percentage formula support",
+      "Multiple loaf count scaling",
+      "Recommended baking schedule"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cooking & food/sourdough-hydration-calc.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Sugar Substitute Calculator",
+    "desc": "Convert sugar amounts to natural and keto-friendly substitutes like stevia, monk fruit, and honey. Perfect for baking and healthy cooking conversions.",
+    "features": [
+      "Multiple sugar substitute options",
+      "Supports various measurement units",
+      "Keto-friendly and GI indicators",
+      "Baking tips and notes included",
+      "Instant conversion results"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cooking & food/sugar-substitute-calculator.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Tablespoon to Cup Converter",
+    "desc": "Convert tablespoons to cups instantly with our free cooking measurement converter. Supports US, Metric, UK, and Australian standards for accurate baking and recipe scaling.",
+    "features": [
+      "Instant tbsp to cup conversion",
+      "Supports US and Metric standards",
+      "Detailed measurement breakdown",
+      "Common conversions reference table",
+      "Free online baking tool"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cooking & food/tablespoon-to-cup.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Wine Pairing Finder",
+    "desc": "Find the perfect wine for any food with our free wine pairing guide. Discover ideal matches for meat, fish, cheese, pasta and dessert dishes.",
+    "features": [
+      "Food category selection",
+      "Cooking method filter",
+      "Wine preference options",
+      "Budget-based recommendations",
+      "Detailed pairing notes"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cooking & food/wine-pairing-finder.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "CSS Border Radius Generator",
+    "desc": "Free online CSS border radius generator with precise individual corner controls. Easily create circles, pills, leaves, and organic blob shapes, then copy production-ready CSS code for your web projects instantly.",
+    "features": [
+      "Individual corner radius control",
+      "Px and percent unit support",
+      "Ready-to-use shape presets",
+      "Real-time visual preview",
+      "One-click CSS code copy"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/border-radius-generator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "CSS Box Shadow Generator",
+    "desc": "Free online CSS box shadow generator for web designers and developers. Visually adjust offset, blur, spread, color, opacity and inset with live preview, then copy ready-to-use CSS code instantly.",
+    "features": [
+      "Live visual shadow preview",
+      "Custom offset, blur, spread settings",
+      "Inset shadow support",
+      "Custom color and opacity",
+      "One-click CSS code copy",
+      "Dark/light mode support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/box-shadow-generator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "CMYK to RGB Converter",
+    "desc": "Instantly convert CMYK print color values to RGB, HEX, and HSL formats for digital design projects. This free, accurate tool helps graphic and web designers match colors across print and screen.",
+    "features": [
+      "Instant CMYK to RGB conversion",
+      "HEX and HSL value output",
+      "Live color preview swatch",
+      "Copy-ready CSS color snippets",
+      "Common color reference chart"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/cmyk-to-rgb.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Color Blind Simulator",
+    "desc": "Free online color blind simulator that replicates how colors appear to users with color vision deficiency. Test design accessibility across protanopia, deuteranopia, tritanopia and more for inclusive UI design.",
+    "features": [
+      "Color picker and hex input",
+      "Multiple CVD simulation modes",
+      "Side-by-side color comparison",
+      "RGB and HEX value display",
+      "Perceptual difference scoring"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/color-blind-simulator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Color Palette Extractor",
+    "desc": "Free online color palette extractor that identifies dominant colors from any uploaded image. Get precise hex codes and RGB values to build cohesive color schemes for design work.",
+    "features": [
+      "Extract dominant colors from images",
+      "Adjustable color count slider",
+      "Hex and RGB color support",
+      "One-click hex code copying",
+      "Light and dark mode toggle"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/color-palette-extractor.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Free Online Color Picker",
+    "desc": "Free online color picker for designers to select colors, convert between HEX, RGB, HSL, HSV, and CMYK values, and generate tints, shades, and harmonious palettes for web and graphic design projects.",
+    "features": [
+      "Multi-format color value conversion",
+      "One-click color code copying",
+      "Harmonious color palette generation",
+      "Tints and shades creation",
+      "Light and dark mode support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/color-picker-tool.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Color Scheme Generator",
+    "desc": "Instantly generate beautiful, harmonious color palettes for web and design projects with our free online tool. Supports multiple color harmony rules and exports to CSS, Tailwind, SCSS, and JSON formats.",
+    "features": [
+      "Multiple color harmony modes",
+      "Customizable palette color count",
+      "One-click HEX code copying",
+      "Multi-format export options",
+      "Random palette generation"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/color-scheme-generator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Interactive Color Wheel",
+    "desc": "Generate harmonious, cohesive color palettes with our free interactive online color wheel. Explore complementary, analogous, triadic, tetradic and split-complementary schemes for all your creative design projects.",
+    "features": [
+      "Multiple color harmony schemes",
+      "Interactive clickable color wheel",
+      "One-click HEX code copying",
+      "Adjustable hue slider control",
+      "Light and dark theme support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/color-wheel.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "CSS Filter Generator",
+    "desc": "Visually create custom CSS filter effects for your web projects with our free online tool. Adjust blur, brightness, contrast, hue and more, preview changes in real time, and copy ready-to-use code instantly.",
+    "features": [
+      "Real-time side-by-side preview",
+      "Custom image upload support",
+      "Adjustable filter parameter sliders",
+      "One-click CSS code copy",
+      "No registration required"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/css-filter-generator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "CSS Gradient Generator",
+    "desc": "Free online CSS gradient generator for building custom linear, radial, and conic gradients. Preview results instantly and copy ready-to-use CSS or Tailwind code for web design projects.",
+    "features": [
+      "Multiple gradient type support",
+      "Custom color stop controls",
+      "Live gradient preview",
+      "CSS and Tailwind export",
+      "Built-in gradient presets",
+      "Adjustable angle settings"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/css-gradient-generator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "CSS Grid Generator",
+    "desc": "Visually build custom responsive CSS grid layouts with our free online generator. Adjust columns, rows, gaps, and item alignment, then copy production-ready CSS code for modern web projects.",
+    "features": [
+      "Live visual grid preview",
+      "Customizable rows and columns",
+      "Adjustable row and column gaps",
+      "Multiple sizing unit options",
+      "Item alignment controls",
+      "One-click CSS code copy"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/css-grid-generator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "CSS Transform Generator",
+    "desc": "Visually generate custom CSS transform code for free with our online tool. Combine rotate, scale, skew, translate effects with live preview, then copy ready-to-use code for web projects.",
+    "features": [
+      "Live visual transform preview",
+      "Rotate, scale, skew, translate controls",
+      "One-click CSS code copy",
+      "Quick reset to defaults",
+      "Dark and light mode support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/css-transform-generator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "CSS Transition Generator",
+    "desc": "Free online tool to generate production-ready CSS transition code with custom duration, delay, and easing curves including cubic-bezier. Preview animations live and copy clean CSS for your web projects instantly.",
+    "features": [
+      "Custom cubic-bezier curve support",
+      "Live transition effect preview",
+      "One-click CSS code copy",
+      "Built-in easing curve presets",
+      "Adjustable duration and delay",
+      "Light and dark theme support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/css-transition-generator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Favicon Generator",
+    "desc": "A free offline tool for favicon generator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/favicon-generator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Favicon Multi-Size Generator",
+    "desc": "Free online multi-size favicon generator for webmasters. Create standard 16x16 to 256x256 website icons from one source image, download individual PNGs or full sets instantly with secure local processing.",
+    "features": [
+      "Multiple standard favicon sizes",
+      "Single source image upload",
+      "Individual PNG downloads",
+      "Full set batch download",
+      "No server upload required"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/favicon-multi-size.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "CSS Flexbox Playground",
+    "desc": "Free interactive online CSS Flexbox playground for testing and learning flex layout properties. Adjust alignment, direction, gap and more, with live preview and ready-to-copy generated CSS code.",
+    "features": [
+      "Live flex layout preview",
+      "All flex property adjustments",
+      "Adjustable gap and item count",
+      "Multiple item height presets",
+      "One-click CSS code copy",
+      "Dark and light theme support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/flexbox-playground.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Web Font Format Converter",
+    "desc": "Free browser-based web font converter supporting TTF, OTF, WOFF, and WOFF2 formats. Preview fonts locally with no server uploads, and generate ready-to-use CSS @font-face rules for seamless web design integration.",
+    "features": [
+      "Multiple web font format support",
+      "Instant live font preview",
+      "Automatic @font-face CSS generation",
+      "One-click CSS copy function",
+      "Local private file processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/font-converter.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Font Pairing Finder",
+    "desc": "Discover curated Google Font pairings for headings and body text with our free online design tool. Preview custom text, mix font combinations, and copy ready-to-use CSS for your projects.",
+    "features": [
+      "Curated Google Font combinations",
+      "Live custom text preview",
+      "Heading and body font selectors",
+      "Copyable CSS code snippets",
+      "Dark/light theme toggle"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/font-pairing-finder.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Font Previewer",
+    "desc": "Free online font preview tool for designers and developers. Preview Google Fonts and web safe fonts, adjust typography settings, and copy ready-to-use CSS snippets for web projects instantly.",
+    "features": [
+      "Google & web safe font support",
+      "Adjustable font styling controls",
+      "Live custom text preview",
+      "One-click CSS snippet copy",
+      "Light and dark theme support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/font-previewer.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "CSS Gradient Generator",
+    "desc": "Free online CSS gradient generator for web designers. Create custom linear, radial, and conic gradients with adjustable color stops, angles, and live preview, then copy ready-to-use CSS code instantly.",
+    "features": [
+      "Supports linear, radial, conic gradients",
+      "Customizable color stop controls",
+      "Real-time gradient preview",
+      "Adjustable angle, shape, and position",
+      "One-click CSS code copy"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/gradient-generator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Ico Generator",
+    "desc": "A free offline tool for ico generator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/ico-generator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Image Color Picker",
+    "desc": "Free online image color picker to sample colors from any uploaded image directly in your browser. Instantly get HEX, RGB, and HSL values with one-click copy, no server upload required.",
+    "features": [
+      "Local image upload support",
+      "Click-to-sample color picking",
+      "HEX/RGB/HSL value display",
+      "One-click color code copy",
+      "Stores up to 12 colors",
+      "Dark mode support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/image-color-picker.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Image Compressor",
+    "desc": "Compress PNG, JPG, and WebP images online for free without visible quality loss. Adjust compression levels, preview results, and download optimized files instantly with no uploads or signup required.",
+    "features": [
+      "Adjustable quality slider",
+      "Multi-format image support",
+      "Before/after preview comparison",
+      "Custom max width resizing",
+      "100% local private processing",
+      "One-click compressed download"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/image-compressor.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Image Cropper",
+    "desc": "Free online image cropper that runs entirely in your web browser. Trim photos to custom sizes or social media aspect ratios, adjust output quality, and download results instantly with no server uploads.",
+    "features": [
+      "Drag to select crop area",
+      "Social media size presets",
+      "Custom aspect ratio support",
+      "Multi-format export options",
+      "Adjustable output quality",
+      "Client-side only processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/image-cropper.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Image Filter & Color Adjuster",
+    "desc": "Apply custom filters and fine-tune image colors right in your browser. Adjust brightness, contrast, saturation and more with real-time preview, all processing happens locally to protect your privacy.",
+    "features": [
+      "Real-time effect preview",
+      "Custom color adjustment sliders",
+      "Multiple built-in filter presets",
+      "Local private processing",
+      "One-click result download"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/image-filter.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Image Flipper",
+    "desc": "Flip images horizontally or vertically with our free online image flipper. All processing runs locally in your browser—no file uploads, no signup required, with instant preview and multi-format download options.",
+    "features": [
+      "Horizontal and vertical flip",
+      "Instant real-time preview",
+      "PNG/JPEG/WebP format support",
+      "Local in-browser processing",
+      "One-click result download",
+      "No signup or upload required"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/image-flipper.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Image Metadata Viewer",
+    "desc": "Free online image metadata viewer to extract EXIF data from your photos. View camera settings, capture date, GPS location, and technical image details instantly in your browser with no signup required.",
+    "features": [
+      "Instant image preview",
+      "Basic file details display",
+      "Full EXIF data extraction",
+      "Camera settings viewing",
+      "Capture date display",
+      "Client-side processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/image-metadata-viewer.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Image Resizer & Cropper",
+    "desc": "Free browser-based image resizer and cropper that requires no server uploads. Batch process images, set custom dimensions, keep aspect ratio, adjust quality, convert formats, and download processed files instantly with full privacy protection.",
+    "features": [
+      "Batch image resizing support",
+      "Maintain aspect ratio option",
+      "Adjustable output quality",
+      "Multi-format output support",
+      "No file upload required",
+      "Bulk ZIP download available"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/image-resizer.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Image Rotator",
+    "desc": "Free online image rotator that lets you rotate photos by 90, 180, 270 degrees or any custom angle. Runs entirely in your browser with no signup, supports PNG, JPEG and WebP export.",
+    "features": [
+      "Quick preset rotation options",
+      "Custom angle rotation support",
+      "Multiple export format options",
+      "Local in-browser processing",
+      "No signup required",
+      "Instant rotation preview"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/image-rotator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Image To Base64",
+    "desc": "A free offline tool for image to base64 calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/image-to-base64.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Image Watermark Tool",
+    "desc": "Free online tool to add custom text or logo watermarks to your images. Batch process multiple files with adjustable position, opacity, and styling, with all processing done locally in your browser.",
+    "features": [
+      "Text and logo watermark support",
+      "Batch image processing",
+      "Custom opacity and styling",
+      "Multiple position options",
+      "Tile repeat pattern option",
+      "Local private processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/image-watermark.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "QR Code Designer",
+    "desc": "Design custom, highly scannable QR codes for free with our online QR Code Designer. Adjust colors, sizes, margins, error correction, and download high-quality codes for URLs, WiFi, text, and vCards.",
+    "features": [
+      "Custom foreground and background colors",
+      "Adjustable size and margin settings",
+      "Multiple error correction levels",
+      "PNG and SVG download options",
+      "Supports multiple content types"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/qr-code-designer.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "SVG Icon Editor",
+    "desc": "Free online SVG icon editor to view, edit and customize vector icons directly in your browser. Adjust colors, stroke and size with live preview, optimize code, and export finished assets instantly.",
+    "features": [
+      "Live SVG code preview",
+      "Fill and stroke color pickers",
+      "Adjustable size and stroke width",
+      "One-click SVG optimization",
+      "Instant SVG file download",
+      "Quick code copy support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/svg-icon-editor.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Svg Optimizer",
+    "desc": "A free offline tool for svg optimizer calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/svg-optimizer.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "SVG to PNG Converter",
+    "desc": "Free browser-based SVG to PNG converter that processes files locally. Upload files or paste SVG code, set custom dimensions and backgrounds, then download crisp high-resolution PNGs instantly with no signup required.",
+    "features": [
+      "SVG code and file upload",
+      "Custom resolution settings",
+      "Transparent background option",
+      "Custom background color picker",
+      "Local in-browser processing",
+      "One-click PNG download"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/svg-to-png.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "CSS Text Shadow Generator",
+    "desc": "Free online CSS text shadow generator for creating custom multi-layer text effects. Build glow, neon, 3D, and letterpress styles with live preview, no signup required, and instant CSS export.",
+    "features": [
+      "Adjustable shadow parameters",
+      "Built-in style presets",
+      "Live effect preview",
+      "Custom color controls",
+      "One-click CSS copy"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/text-shadow-generator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "WebP Converter",
+    "desc": "Free online WebP converter to switch between WebP, PNG, and JPG formats. Adjust output quality, shrink file sizes, and process images privately in your browser with no server uploads required.",
+    "features": [
+      "Convert between WebP, PNG, JPG",
+      "Adjustable output quality slider",
+      "Real-time file size comparison",
+      "Private local browser processing",
+      "One-click converted file download"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/webp-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "API Mock Data Generator",
+    "desc": "Generate realistic fake JSON data for API testing and prototyping. Customize fields, choose output formats, and use quick templates. All processing is local and private.",
+    "features": [
+      "Generate fake JSON data",
+      "Custom field types",
+      "Multiple output formats",
+      "Quick templates",
+      "Local processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/api-mock-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Number Base Converter",
+    "desc": "Free online number base converter supporting binary, octal, decimal, hexadecimal, and custom bases up to 36. Instant local conversion with digit grouping and prefix options.",
+    "features": [
+      "Binary, octal, decimal, hex conversion",
+      "Custom base support (2-36)",
+      "Digit grouping and prefix display",
+      "One-click copy to clipboard",
+      "Dark mode and keyboard shortcut"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/base-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Base64 Batch Encoder / Decoder",
+    "desc": "Free online Base64 batch encoder and decoder. Process multiple strings at once with UTF-8 and URL-safe options. All processing happens locally in your browser, no data upload.",
+    "features": [
+      "Batch encode or decode multiple lines",
+      "URL-safe Base64 support",
+      "UTF-8 encoding support",
+      "Copy all results at once",
+      "Download results as .txt file",
+      "Swap input and output instantly"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/base64-batch.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Base64 Image Converter",
+    "desc": "Convert images to Base64 data URIs for inline embedding in HTML/CSS. Also decode Base64 back to image. Optimize web performance by reducing HTTP requests. Free online tool.",
+    "features": [
+      "Image to Base64 encoding",
+      "Base64 to image decoding",
+      "Copy as CSS background",
+      "Copy as HTML img tag",
+      "File size comparison",
+      "No server upload"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/base64-image-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Byte Converter",
+    "desc": "Free online byte converter to convert between bits, bytes, KB, MB, GB, TB, PB and binary units. Supports decimal and binary modes, precision control, and instant copy. No upload required.",
+    "features": [
+      "Convert bits, bytes, KB, MB",
+      "Decimal and binary modes",
+      "Precision control",
+      "Copy results instantly",
+      "No data upload",
+      "Supports KiB, MiB, GiB"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/byte-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Color Contrast Checker",
+    "desc": "Check color contrast for WCAG AA and AAA compliance. Pick foreground and background colors to see the contrast ratio and whether your text meets accessibility standards for normal and large text.",
+    "features": [
+      "Live contrast ratio calculation",
+      "WCAG AA/AAA pass/fail badges",
+      "Color picker and hex input",
+      "Swap foreground and background",
+      "Preview text sample",
+      "Dark mode support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/color-contrast-checker.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Color Palette Generator",
+    "desc": "Create beautiful color palettes instantly with our free online tool. Choose from complementary, analogous, triadic, and more. Copy HEX, RGB, and HSL values for your design projects.",
+    "features": [
+      "Multiple palette types",
+      "HEX, RGB, HSL conversion",
+      "Click to copy color codes",
+      "Random color generator",
+      "Dark mode support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/color-palette-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Command Line Cheat Sheet",
+    "desc": "Quickly find and copy Linux, macOS, and Windows command line commands. Search by task or category with instant results. Perfect for developers, sysadmins, and CLI users.",
+    "features": [
+      "Multi-OS command reference",
+      "Category and keyword search",
+      "One-click copy to clipboard",
+      "Dark mode support",
+      "Offline access ready"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/command-cheat-sheet.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Cron Expression Generator",
+    "desc": "Generate cron expressions visually with our free online tool. Build schedules using a friendly UI, see plain-English descriptions, and preview next execution times. Perfect for developers and sysadmins.",
+    "features": [
+      "Visual cron field editing",
+      "Quick preset templates",
+      "Plain-English description",
+      "Next 5 execution times",
+      "Copy cron expression",
+      "Dark mode support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/cron-expression-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Cron Expression Parser",
+    "desc": "Parse and validate cron expressions instantly. View human-readable schedule descriptions and upcoming execution times. Supports standard 5-field and 6-field cron formats with special characters.",
+    "features": [
+      "Parse cron expressions instantly",
+      "View next 10 execution times",
+      "Human-readable schedule description",
+      "Quick template buttons",
+      "Supports special characters",
+      "100% client-side processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/cron-parser.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Cron to Human Reader",
+    "desc": "Convert cron expressions to human readable text instantly. Understand cron schedules with field breakdown and next run predictions. Free online cron translator.",
+    "features": [
+      "Instant cron translation",
+      "Field-by-field breakdown",
+      "Next 5 run predictions",
+      "Example presets",
+      "Supports all cron syntax"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/cron-to-human-reader.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Crontab Generator",
+    "desc": "Generate cron schedule expressions visually with our free online crontab generator. Build crontab entries easily and get human-readable descriptions. Perfect for Linux cron jobs.",
+    "features": [
+      "Visual cron expression builder",
+      "Preset schedules for quick setup",
+      "Human-readable schedule description",
+      "One-click copy to clipboard",
+      "Supports step, range, and list values",
+      "Free and no signup required"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/crontab-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "CRUD Code Template Generator",
+    "desc": "Generate boilerplate CRUD code for REST APIs and databases. Supports Node.js, Python, PHP, Java, and more. Save development time with instant code templates.",
+    "features": [
+      "Multiple language support",
+      "Custom entity and fields",
+      "SQL and MongoDB options",
+      "Copy and download code",
+      "100% local processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/crud-template-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "CSS Gradient Generator",
+    "desc": "Create beautiful CSS gradients visually with our free online gradient generator. Choose linear, radial, or conic types, adjust colors and angles, and copy ready-to-use CSS code instantly.",
+    "features": [
+      "Real-time gradient preview",
+      "Linear, radial, and conic types",
+      "Multi-color stop control",
+      "12 built-in presets",
+      "One-click CSS code copy",
+      "Dark mode support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/css-gradient-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "CSS Shadow Generator",
+    "desc": "Generate CSS box-shadow and text-shadow with live preview. Add multiple layered shadows, adjust offset, blur, spread, and color. Copy production-ready CSS code instantly. Perfect for buttons, cards, and neon text effects.",
+    "features": [
+      "Choose box or text shadow",
+      "Adjust offset, blur, spread",
+      "Add multiple shadow layers",
+      "Live preview updates",
+      "Copy CSS code instantly",
+      "Inset shadow support"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/css-shadow-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "CSV to JSON Converter",
+    "desc": "Convert CSV data to JSON array of objects instantly in your browser. Auto-detects delimiters, handles quoted fields, and supports typed value parsing for numbers, booleans, and null.",
+    "features": [
+      "Auto-detect delimiter",
+      "Parse typed values",
+      "Handle quoted fields",
+      "Copy or download JSON",
+      "100% client-side"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/csv-to-json.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "ENV File Parser",
+    "desc": "Parse and convert .env files to JSON, YAML, or table format. Free online environment variable editor for developers working with Node.js, Docker, and CI/CD configurations.",
+    "features": [
+      "Convert .env to JSON",
+      "Convert .env to YAML",
+      "View variables in table",
+      "Auto-detect value types",
+      "Copy output to clipboard",
+      "Download parsed .env file"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/env-file-parser.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Excel/CSV to JSON Converter",
+    "desc": "Convert Excel (XLSX) and CSV files to JSON instantly. Choose delimiter, output format, and download the result. All processing happens locally in your browser.",
+    "features": [
+      "Drag and drop file upload",
+      "CSV delimiter selection",
+      "Multiple output formats",
+      "Local browser processing",
+      "Copy or download JSON",
+      "First row as header option"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/excel-to-json.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Spreadsheet Formula Converter",
+    "desc": "Convert Excel and Google Sheets formulas into JavaScript, Python, or SQL code instantly. Supports SUM, VLOOKUP, IF, and more. Free online tool for developers and analysts.",
+    "features": [
+      "Convert formulas to JavaScript, Python, SQL",
+      "Supports SUM, VLOOKUP, IF, and more",
+      "Resolves cell references automatically",
+      "No signup or installation required",
+      "Copy generated code with one click"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/formula-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Git Cheat Sheet",
+    "desc": "Complete Git command cheat sheet for developers. Search, browse, and copy 60+ Git commands for setup, staging, commits, branches, merging, rebasing, remotes, stashing, logs, undo, and advanced workflows.",
+    "features": [
+      "Search and filter commands",
+      "Copy commands to clipboard",
+      "Grouped by category",
+      "60+ everyday Git commands",
+      "Advanced workflow examples",
+      "Light and dark mode"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/git-cheat-sheet.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Hex to Text Converter",
+    "desc": "Convert hexadecimal strings to readable text and vice versa. Supports UTF-8, ASCII, and multiple hex formats. Ideal for debugging, data analysis, and encoding tasks.",
+    "features": [
+      "Hex to text conversion",
+      "Text to hex encoding",
+      "UTF-8 and ASCII support",
+      "Multiple separator formats",
+      "Copy result to clipboard",
+      "Swap input/output"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/hex-text-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "HTML Encoder / Decoder",
+    "desc": "Encode text to HTML entities or decode entities back to readable text. Supports named and numeric entities. Free online tool for web developers and content creators.",
+    "features": [
+      "Encode special characters to entities",
+      "Decode HTML entities to text",
+      "Swap input and output",
+      "Copy result to clipboard",
+      "Common entity reference table"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/html-encoder-decoder.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "HTML Entities Encoder/Decoder",
+    "desc": "Encode text to HTML entities (named, decimal, hex) or decode entities back to plain text. Protect against XSS and safely display special characters in HTML.",
+    "features": [
+      "Encode to named entities",
+      "Encode to decimal entities",
+      "Encode to hex entities",
+      "Decode HTML entities",
+      "Swap input and output",
+      "Copy output instantly"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/html-entities-encoder.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "HTML Formatter",
+    "desc": "Format messy or minified HTML into clean, readable code with our free online HTML formatter. Fix indentation, normalize tags, and beautify your markup instantly in your browser.",
+    "features": [
+      "Instant HTML beautification",
+      "Customizable indent size",
+      "Copy formatted code",
+      "Browser-based, no upload",
+      "Handles void tags correctly"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/html-formatter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "HTML Minifier",
+    "desc": "Compress and minify HTML online. Remove comments, collapse whitespace, and strip optional closing tags to shrink page size and speed up load times. Free, no upload, no signup.",
+    "features": [
+      "Remove HTML comments",
+      "Collapse whitespace",
+      "Strip optional closing tags",
+      "Show saved bytes and percentage",
+      "Copy minified result"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/html-minifier.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "HTML Table Generator",
+    "desc": "Visually build and edit HTML tables with our free online generator. Set rows and columns, toggle header row, and export clean HTML or Markdown table code instantly.",
+    "features": [
+      "Visual table builder",
+      "Editable cell content",
+      "Header row toggle",
+      "Export HTML and Markdown",
+      "Add or remove rows/cols",
+      "Copy code to clipboard"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/html-table-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "HTTP Status Code Reference",
+    "desc": "Quickly look up HTTP status codes with our free reference tool. Search and filter 60+ official codes across 1xx to 5xx categories, complete with descriptions and usage examples.",
+    "features": [
+      "Search by code or name",
+      "Filter by category",
+      "Color-coded status groups",
+      "60+ official codes",
+      "Descriptions and examples"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/http-status-code-reference.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "JavaScript Minifier",
+    "desc": "Minify JavaScript code to reduce file size and improve load times. Remove comments, whitespace, and unnecessary characters instantly. Supports variable mangling and beautification for reverse operations.",
+    "features": [
+      "Minify JavaScript code",
+      "Remove comments and whitespace",
+      "Mangle variable names",
+      "Beautify minified code",
+      "Copy result to clipboard",
+      "Show size reduction stats"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/js-minifier.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "JSON Cleaner",
+    "desc": "Clean and sanitize JSON data instantly in your browser. Remove null values, deduplicate keys, flatten nested objects, and sort keys with a single click.",
+    "features": [
+      "Deduplicate identical objects",
+      "Remove null and empty values",
+      "Flatten nested JSON objects",
+      "Sort keys alphabetically",
+      "Trim string values",
+      "Pretty print output"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/json-cleaner.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "JSON to CSV / XML / YAML Converter",
+    "desc": "Convert JSON data to CSV, XML, YAML, TSV, Properties, and JSON Lines instantly. Free online tool with local processing, no upload required. Supports flattening nested objects and custom delimiters.",
+    "features": [
+      "Convert JSON to multiple formats",
+      "Flatten nested objects",
+      "Custom CSV delimiters",
+      "Download or copy results",
+      "No data upload",
+      "Supports JSON Lines"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/json-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "JSON Path Evaluator",
+    "desc": "Query and extract values from JSON data using JSONPath expressions. Supports dot notation, wildcards, recursive descent, and filters. Free online JSONPath evaluator for developers.",
+    "features": [
+      "Evaluate JSONPath expressions",
+      "Support dot notation and filters",
+      "Wildcard and recursive descent",
+      "Interactive example buttons",
+      "Format JSON input",
+      "Instant result display"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/json-path-evaluator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "JSON Data Sorter",
+    "desc": "Sort JSON arrays by any field with nested path support. Choose ascending or descending order, auto-detect types, and apply options like case-insensitive, nulls last, and duplicate removal.",
+    "features": [
+      "Sort by nested fields",
+      "Ascending or descending order",
+      "Auto type detection",
+      "Case-insensitive sorting",
+      "Nulls last handling",
+      "Remove duplicates"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/json-sorter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "JSON to CSV Converter",
+    "desc": "Convert JSON array of objects to CSV format with custom delimiters and nested object flattening. Instant client-side conversion ensures your data stays private. Free online tool.",
+    "features": [
+      "Convert JSON array to CSV",
+      "Custom delimiter support",
+      "Flatten nested objects",
+      "Copy to clipboard",
+      "Download as CSV file",
+      "No data upload"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/json-to-csv.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "JSON to TypeScript Types",
+    "desc": "Convert JSON objects into TypeScript interfaces and types instantly. Supports nested objects, arrays, optional fields, and union types from multiple samples. Pure client-side tool.",
+    "features": [
+      "Generate TypeScript interfaces",
+      "Handle nested objects and arrays",
+      "Optional readonly and export",
+      "Union types from samples",
+      "Copy output instantly"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/json-to-typescript.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "JSON to YAML Converter",
+    "desc": "Convert JSON to YAML and YAML to JSON instantly with our free online bidirectional converter. Supports nested objects, arrays, and proper indentation. No server required.",
+    "features": [
+      "Bidirectional JSON ↔ YAML conversion",
+      "Supports nested objects and arrays",
+      "Inline array handling",
+      "Copy output to clipboard",
+      "Pure client-side processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/json-to-yaml.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Batch JSON Validator",
+    "desc": "Validate multiple JSON documents at once with our free online batch JSON validator. Find syntax errors instantly, supports custom separators and strict mode. All processing is local and private.",
+    "features": [
+      "Validate multiple JSON documents",
+      "Customizable separators",
+      "Strict mode for comments",
+      "Copy valid or invalid results",
+      "Local processing, no upload"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/json-validator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "JWT Token Decoder",
+    "desc": "Decode and inspect JWT tokens instantly in your browser. View header, payload, and signature, verify structure, and check expiration status with this free online tool.",
+    "features": [
+      "Decode header, payload, signature",
+      "Verify JWT structure",
+      "Check token expiration",
+      "Display registered claims",
+      "Auto-decode on paste",
+      "Local processing only"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/jwt-decoder.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Log File Formatter",
+    "desc": "Format and clean messy log files. Parse timestamps, levels, and messages. Filter by log level, search, and export cleaned logs. Ideal for developers and DevOps engineers to quickly analyze application logs.",
+    "features": [
+      "Parse timestamps and levels",
+      "Filter by log level",
+      "Search log messages",
+      "Export as JSON",
+      "Color-coded output",
+      "100% local processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/log-formatter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Markdown Cheatsheet",
+    "desc": "Quick reference for Markdown syntax with live previews. Copy headings, bold, italic, lists, links, images, code blocks, tables, and GitHub Flavored Markdown snippets instantly.",
+    "features": [
+      "Search and filter syntax",
+      "Live preview of Markdown",
+      "One-click copy snippets",
+      "Covers GFM extensions",
+      "Light and dark mode",
+      "No signup required"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/markdown-cheatsheet.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Markdown Table Generator",
+    "desc": "Create clean GFM-compatible Markdown tables with a visual editor. Add rows and columns, edit cell content, and copy the formatted table syntax instantly. Free online tool, no signup required.",
+    "features": [
+      "Visual table editor",
+      "Add/remove rows and columns",
+      "Copy Markdown syntax",
+      "GFM-compatible output",
+      "No signup required"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/markdown-table-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Regex Tester",
+    "desc": "Test and debug regular expressions instantly with our free online regex tester. Supports flags, match highlighting, and pattern breakdown for JavaScript regex.",
+    "features": [
+      "Real-time regex matching",
+      "Flag support (g, i, m, s, u, y)",
+      "Match highlighting and index",
+      "Pattern token breakdown"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/regex-tester.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Regex Tester Live",
+    "desc": "Test JavaScript regular expressions instantly with live highlighting, capture groups, and detailed match info. Supports all flags and replacement with backreferences. Free online regex debugger.",
+    "features": [
+      "Real-time regex testing",
+      "Capture groups and flags",
+      "Match highlighting",
+      "Replace with backreferences",
+      "Detailed match info",
+      "Supports all JS flags"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/regex-tester-live.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "API Signature Validator",
+    "desc": "Generate and validate API request signatures with HMAC-SHA256, MD5, and custom algorithms. Perfect for testing API authentication and request signing workflows.",
+    "features": [
+      "HMAC-SHA256, SHA512, MD5, SHA256",
+      "Sorted key-value signature string",
+      "Custom format with placeholders",
+      "Signature verification",
+      "Copy signature to clipboard",
+      "No server-side processing"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/signature-validator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Slug Generator",
+    "desc": "Convert any text into clean, SEO-friendly URL slugs with our free online slug generator. Customize separators, case, and remove stop words for optimal permalinks. No signup required.",
+    "features": [
+      "Custom separator options",
+      "Lowercase/uppercase/preserve case",
+      "Strict mode for alphanumeric",
+      "Trim common stop words",
+      "Live preview and copy",
+      "Unicode transliteration"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/slug-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "URL to JSON Converter",
+    "desc": "Convert URL query strings to structured JSON instantly. Supports nested objects, arrays, and automatic type conversion. All processing happens locally in your browser.",
+    "features": [
+      "Parse URL query strings",
+      "Support nested objects and arrays",
+      "Auto-convert numbers and booleans",
+      "Pretty print JSON output",
+      "Reverse JSON to URL",
+      "Local processing, no upload"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/url-to-json.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "User Agent Parser",
+    "desc": "A free offline tool for user agent parser calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/user-agent-parser.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "CGPA Calculator",
+    "desc": "Calculate your Cumulative Grade Point Average (CGPA) across multiple semesters. Track your GPA, total credits, and academic performance easily with our free online tool.",
+    "features": [
+      "Multiple semester tracking",
+      "Supports 4.0 and 10.0 scales",
+      "Automatic CGPA calculation",
+      "Semester breakdown table",
+      "Class and honors indicator"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/cgpa-calculator.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Country Facts Lookup",
+    "desc": "Discover quick facts about world countries including capitals, populations, areas, currencies, and languages. Free online country information lookup tool.",
+    "features": [
+      "Quick country facts lookup",
+      "Capital and population data",
+      "Currency and language info",
+      "Area and density metrics",
+      "Search and filter countries"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/country-facts-lookup.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Flashcard Creator",
+    "desc": "Create and study digital flashcards for any subject. Add front and back text, flip through your deck, and shuffle cards for effective memorization. Save, load, and export your study decks easily.",
+    "features": [
+      "Create custom flashcards",
+      "Flip and shuffle decks",
+      "Save and load decks",
+      "Export deck as JSON",
+      "Study any subject"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/flashcard-creator.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Geography Quiz",
+    "desc": "A free offline tool for geography quiz calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/geography-quiz.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Grade Calculator",
+    "desc": "A free offline tool for grade calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/grade-calculator.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Grammar Checker Basic",
+    "desc": "A free offline tool for grammar checker basic calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/grammar-checker-basic.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Language Learning Tracker",
+    "desc": "A free offline tool for language learning tracker calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/language-learning-tracker.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Language Translation Helper",
+    "desc": "A free offline tool for language translation helper calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/language-translation-helper.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Math Practice Generator",
+    "desc": "A free offline tool for math practice generator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/math-practice-generator.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Median Calculator",
+    "desc": "A free offline tool for median calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/median-calculator.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Mole Calculator",
+    "desc": "A free offline tool for mole calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/mole-calculator.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Password Generator",
+    "desc": "A free offline tool for password generator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/password-generator.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Percentage Calculator",
+    "desc": "A free offline tool for percentage calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/percentage-calculator.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Periodic Table Reference",
+    "desc": "A free offline tool for periodic table reference calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/periodic-table-reference.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Pomodoro Timer",
+    "desc": "A free offline tool for pomodoro timer calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/pomodoro-timer.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Quiz Grade Calculator",
+    "desc": "A free offline tool for quiz grade calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/quiz-grade-calculator.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Reading Speed Test",
+    "desc": "A free offline tool for reading speed test calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/reading-speed-test.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Reading Time Calculator",
+    "desc": "A free offline tool for reading time calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/reading-time-calculator.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Research Paper Organizer",
+    "desc": "A free offline tool for research paper organizer calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/research-paper-organizer.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Science Fair Idea Gen",
+    "desc": "A free offline tool for science fair idea gen calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/science-fair-idea-gen.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Solar Panel Calculator",
+    "desc": "A free offline tool for solar panel calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/solar-panel-calculator.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Spelling Bee Practice",
+    "desc": "A free offline tool for spelling bee practice calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/spelling-bee-practice.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Spelling Quiz",
+    "desc": "A free offline tool for spelling quiz calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/spelling-quiz.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "State Capital Quiz",
+    "desc": "A free offline tool for state capital quiz calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/state-capital-quiz.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Student Loan Calculator",
+    "desc": "A free offline tool for student loan calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/student-loan-calculator.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Study Schedule Planner",
+    "desc": "A free offline tool for study schedule planner calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/study-schedule-planner.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Study Time Tracker",
+    "desc": "A free offline tool for study time tracker calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/study-time-tracker.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Study Timer",
+    "desc": "A free offline tool for study timer calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/study-timer.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Vocabulary Builder",
+    "desc": "A free offline tool for vocabulary builder calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/vocabulary-builder.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Vocabulary Quiz",
+    "desc": "A free offline tool for vocabulary quiz calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/vocabulary-quiz.zip"
   }
 ]
