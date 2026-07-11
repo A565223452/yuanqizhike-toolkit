@@ -366,7 +366,13 @@ async function handleListGuestbook(request, env, url) {
     `SELECT COUNT(*) as total FROM guestbook ${where}`
   ).bind(...binds);
 
-  const [listResult, countResult] = await Promise.all([listStmt.all(), countStmt.first()]);
+  let listResult, countResult;
+  try {
+    [listResult, countResult] = await Promise.all([listStmt.all(), countStmt.first()]);
+  } catch (err) {
+    console.error('[DB] Guestbook query failed:', err.message);
+    return json({ ok: true, entries: [], total: 0, page, limit, pages: 0 });
+  }
   return json({
     ok: true,
     entries: listResult.results || [],
@@ -473,17 +479,23 @@ async function handlePostGuestbook(request, env, ctx) {
   }
 
   const userAgent = request.headers.get('user-agent') || '';
-  const insertResult = await env.DB.prepare(
-    `INSERT INTO guestbook (nickname, category, content, ip, user_agent, status)
-     VALUES (?, ?, ?, ?, ?, ?)`
-  ).bind(
-    String(nickname || 'Anonymous').slice(0, 50),
-    String(category || 'feedback').slice(0, 20),
-    String(content).slice(0, 1000),
-    ip,
-    userAgent.slice(0, 500),
-    status
-  ).run();
+  let insertResult;
+  try {
+    insertResult = await env.DB.prepare(
+      `INSERT INTO guestbook (nickname, category, content, ip, user_agent, status)
+       VALUES (?, ?, ?, ?, ?, ?)`
+    ).bind(
+      String(nickname || 'Anonymous').slice(0, 50),
+      String(category || 'feedback').slice(0, 20),
+      String(content).slice(0, 1000),
+      ip,
+      userAgent.slice(0, 500),
+      status
+    ).run();
+  } catch (err) {
+    console.error('[DB] Guestbook insert failed:', err.message);
+    return json({ error: 'Database error, please try again' }, 500);
+  }
 
   return json({
     ok: true,
