@@ -25,7 +25,9 @@ const I18N = {
     this.currentLang = (langFromUrl && this.supportedLangs.find(l => l.code === langFromUrl)) ? langFromUrl : 'en';
     
     // Load translations
+    console.log('[I18N] Loading translations for:', this.currentLang);
     await this.loadTranslations(this.currentLang);
+    console.log('[I18N] Translations loaded, keys:', Object.keys(this.translations[this.currentLang] || {}).length);
     
     // Apply translations to page
     this.applyTranslations();
