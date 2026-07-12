@@ -30,22 +30,6 @@
     "zipUrl": "/assets/zip-packages/dev/json-formatter.zip"
   },
   {
-    "category": "Color & Design Utilities",
-    "icon": "/assets/icons/dev-1.svg",
-    "title": "Color Code Converter",
-    "desc": "Convert colors between HEX, RGB, and HSL formats instantly. Generate palettes, check WCAG contrast, extract colors from images, and simulate color blindness.",
-    "features": [
-      "HEX, RGB, HSL conversion",
-      "Visual color picker",
-      "Palette generator",
-      "WCAG contrast checker",
-      "Image color extraction",
-      "Color blindness simulator"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/color-converter.zip"
-  },
-  {
     "category": "Developer Tools",
     "icon": "/assets/icons/dev-1.svg",
     "title": "Base64 URL Encoder Decoder & JWT Parser",
@@ -91,7 +75,7 @@
       "100% Private Local Processing"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/business/amazon-keyword-miner.zip"
+    "zipUrl": "/assets/zip-packages/seo/amazon-keyword-miner.zip"
   },
   {
     "category": "Finance & Crypto",
@@ -103,7 +87,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/business/budget-calculator.zip"
+    "zipUrl": "/assets/zip-packages/finance/budget-calculator.zip"
   },
   {
     "category": "Finance & Crypto",
@@ -115,7 +99,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/business/inventory-turnover-calculator.zip"
+    "zipUrl": "/assets/zip-packages/finance/inventory-turnover-calculator.zip"
   },
   {
     "category": "Business & Productivity",
@@ -171,7 +155,7 @@
       "A/B Testing Support"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/business/amazon-title-optimizer.zip"
+    "zipUrl": "/assets/zip-packages/seo/amazon-title-optimizer.zip"
   },
   {
     "category": "Business & Productivity",
@@ -214,7 +198,7 @@
       "Currency Charts"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/business/currency-converter.zip"
+    "zipUrl": "/assets/zip-packages/finance/currency-converter.zip"
   },
   {
     "category": "Business & Productivity",
@@ -272,7 +256,7 @@
       "Multi-Item Shipments"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/business/tariff-calculator.zip"
+    "zipUrl": "/assets/zip-packages/finance/tariff-calculator.zip"
   },
   {
     "category": "Content & Writing",
@@ -1392,7 +1376,7 @@
       "Protect SEO Health"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/business/backlink-spam-checker.zip"
+    "zipUrl": "/assets/zip-packages/seo/backlink-spam-checker.zip"
   },
   {
     "category": "Business & Productivity",
@@ -1846,7 +1830,7 @@
       "Flexible loan terms"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/finance/auto-loan-calculator.zip"
+    "zipUrl": "/assets/zip-packages/cars/auto-loan-calculator.zip"
   },
   {
     "category": "Finance & Crypto",
@@ -2239,7 +2223,7 @@
       "Fun life statistics"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/age-calculator.zip"
+    "zipUrl": "/assets/zip-packages/time/age-calculator.zip"
   },
   {
     "category": "Time & Date",
@@ -2251,7 +2235,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/countdown-timer.zip"
+    "zipUrl": "/assets/zip-packages/time/countdown-timer.zip"
   },
   {
     "category": "Time & Date",
@@ -2266,7 +2250,7 @@
       "Instant real-time calculation"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/date-calculator.zip"
+    "zipUrl": "/assets/zip-packages/time/date-calculator.zip"
   },
   {
     "category": "Time & Date",
@@ -2281,65 +2265,7 @@
       "Generation history log"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/random-number-generator.zip"
-  },
-  {
-    "category": "Time & Date",
-    "icon": "/assets/icons/lifestyle-6.svg",
-    "title": "Unit Converter",
-    "desc": "Convert length, weight, temperature, volume, area, speed, time, and digital storage units instantly. Switch between metric and imperial systems with a simple, fast, and responsive interface.",
-    "features": [
-      "Multi-category conversion support",
-      "Metric to imperial switching",
-      "Real-time result calculation",
-      "Quick reference table display"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/math/unit-converter.zip"
-  },
-  {
-    "category": "Security & Privacy",
-    "icon": "/assets/icons/security-1.svg",
-    "title": "AES Encrypt & Decrypt",
-    "desc": "Securely encrypt and decrypt text using AES-GCM 256-bit directly in your browser. All processing happens locally via Web Crypto API, ensuring complete privacy and zero data transmission.",
-    "features": [
-      "AES-GCM 256-bit encryption",
-      "Local browser processing",
-      "PBKDF2 key derivation",
-      "Instant text decryption"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/security/aes-encryptor.zip"
-  },
-  {
-    "category": "Security & Privacy",
-    "icon": "/assets/icons/security-3.svg",
-    "title": "Batch Password Generator",
-    "desc": "Generate cryptographically secure passwords in bulk with customizable character sets, length, and exclusion rules. Features local processing, strength indicators, and easy copy or download options for enhanced security.",
-    "features": [
-      "Cryptographically secure generation",
-      "Batch password creation",
-      "Custom character sets",
-      "Strength indicator badges",
-      "Local offline processing"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/security/password-generator.zip"
-  },
-  {
-    "category": "Security & Privacy",
-    "icon": "/assets/icons/security-4.svg",
-    "title": "Password Strength Checker",
-    "desc": "Evaluate password security instantly with real-time entropy calculation and crack time estimation. Get actionable tips to strengthen your passwords while ensuring 100% local privacy.",
-    "features": [
-      "Real-time entropy calculation",
-      "Crack time estimation",
-      "Security checklist analysis",
-      "Actionable improvement tips",
-      "100% private local processing"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/security/password-strength-checker.zip"
+    "zipUrl": "/assets/zip-packages/time/random-number-generator.zip"
   },
   {
     "category": "Social Media",
@@ -2420,7 +2346,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/budget-tracker.zip"
+    "zipUrl": "/assets/zip-packages/time/budget-tracker.zip"
   },
   {
     "category": "Time & Date",
@@ -2434,7 +2360,7 @@
       "Reset counter option"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/coin-flipper.zip"
+    "zipUrl": "/assets/zip-packages/time/coin-flipper.zip"
   },
   {
     "category": "Business & Productivity",
@@ -2466,7 +2392,7 @@
       "Age and duration calculator"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/date-difference-calculator.zip"
+    "zipUrl": "/assets/zip-packages/time/date-difference-calculator.zip"
   },
   {
     "category": "Games & Entertainment",
@@ -2494,7 +2420,7 @@
       "Instant personalized suggestions"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/gift-idea-generator.zip"
+    "zipUrl": "/assets/zip-packages/time/gift-idea-generator.zip"
   },
   {
     "category": "Business & Productivity",
@@ -2520,7 +2446,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/habit-tracker.zip"
+    "zipUrl": "/assets/zip-packages/time/habit-tracker.zip"
   },
   {
     "category": "Time & Date",
@@ -2534,7 +2460,7 @@
       "Guided breathing exercise"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/meditation-timer.zip"
+    "zipUrl": "/assets/zip-packages/time/meditation-timer.zip"
   },
   {
     "category": "Time & Date",
@@ -2549,7 +2475,7 @@
       "Visual score breakdown and progress bar"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/productivity-score-calculator.zip"
+    "zipUrl": "/assets/zip-packages/time/productivity-score-calculator.zip"
   },
   {
     "category": "Time & Date",
@@ -2565,7 +2491,7 @@
       "Mobile friendly interface"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/sleep-cycle-calculator.zip"
+    "zipUrl": "/assets/zip-packages/time/sleep-cycle-calculator.zip"
   },
   {
     "category": "Time & Date",
@@ -2579,7 +2505,7 @@
       "Dark mode available"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/stopwatch.zip"
+    "zipUrl": "/assets/zip-packages/time/stopwatch.zip"
   },
   {
     "category": "Time & Date",
@@ -2593,7 +2519,7 @@
       "Dark mode and responsive design"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/to-do-list-online.zip"
+    "zipUrl": "/assets/zip-packages/time/to-do-list-online.zip"
   },
   {
     "category": "Time & Date",
@@ -2607,7 +2533,7 @@
       "Random decision maker"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/wheel-spinner.zip"
+    "zipUrl": "/assets/zip-packages/time/wheel-spinner.zip"
   },
   {
     "category": "Time & Date",
@@ -2621,7 +2547,7 @@
       "Searchable city list"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/world-clock.zip"
+    "zipUrl": "/assets/zip-packages/time/world-clock.zip"
   },
   {
     "category": "Security & Privacy",
@@ -3278,7 +3204,7 @@
     "desc": "A free offline tool for ai agent workflow planner calculations. Works in your browser.",
     "features": [],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/health/ai-agent-workflow-planner.zip"
+    "zipUrl": "/assets/zip-packages/ai-ml/ai-agent-workflow-planner.zip"
   },
   {
     "category": "AI & ML Utilities",
@@ -3287,7 +3213,7 @@
     "desc": "A free offline tool for ai content detector lite calculations. Works in your browser.",
     "features": [],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/health/ai-content-detector-lite.zip"
+    "zipUrl": "/assets/zip-packages/ai-ml/ai-content-detector-lite.zip"
   },
   {
     "category": "AI & ML Utilities",
@@ -3296,7 +3222,7 @@
     "desc": "A free offline tool for ai detection score tool calculations. Works in your browser.",
     "features": [],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/health/ai-detection-score-tool.zip"
+    "zipUrl": "/assets/zip-packages/ai-ml/ai-detection-score-tool.zip"
   },
   {
     "category": "AI & ML Utilities",
@@ -3305,7 +3231,7 @@
     "desc": "A free offline tool for ai model comparison table calculations. Works in your browser.",
     "features": [],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/health/ai-model-comparison-table.zip"
+    "zipUrl": "/assets/zip-packages/ai-ml/ai-model-comparison-table.zip"
   },
   {
     "category": "AI & ML Utilities",
@@ -3314,7 +3240,7 @@
     "desc": "A free offline tool for ai prompt generator calculations. Works in your browser.",
     "features": [],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/health/ai-prompt-generator.zip"
+    "zipUrl": "/assets/zip-packages/ai-ml/ai-prompt-generator.zip"
   },
   {
     "category": "AI & ML Utilities",
@@ -3323,7 +3249,7 @@
     "desc": "A free offline tool for ai writing style detector calculations. Works in your browser.",
     "features": [],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/health/ai-writing-style-detector.zip"
+    "zipUrl": "/assets/zip-packages/ai-ml/ai-writing-style-detector.zip"
   },
   {
     "category": "Health & Fitness",
@@ -3350,7 +3276,7 @@
     "desc": "A free offline tool for dalle prompt builder calculations. Works in your browser.",
     "features": [],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/health/dalle-prompt-builder.zip"
+    "zipUrl": "/assets/zip-packages/ai-ml/dalle-prompt-builder.zip"
   },
   {
     "category": "Health & Fitness",
@@ -3377,7 +3303,7 @@
     "desc": "A free offline tool for image prompt builder calculations. Works in your browser.",
     "features": [],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/health/image-prompt-builder.zip"
+    "zipUrl": "/assets/zip-packages/ai-ml/image-prompt-builder.zip"
   },
   {
     "category": "Health & Fitness",
@@ -3395,7 +3321,7 @@
     "desc": "A free offline tool for midjourney prompt builder calculations. Works in your browser.",
     "features": [],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/health/midjourney-prompt-builder.zip"
+    "zipUrl": "/assets/zip-packages/ai-ml/midjourney-prompt-builder.zip"
   },
   {
     "category": "AI & ML Utilities",
@@ -3404,7 +3330,7 @@
     "desc": "A free offline tool for negative prompt generator calculations. Works in your browser.",
     "features": [],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/health/negative-prompt-generator.zip"
+    "zipUrl": "/assets/zip-packages/ai-ml/negative-prompt-generator.zip"
   },
   {
     "category": "AI & ML Utilities",
@@ -3413,7 +3339,7 @@
     "desc": "A free offline tool for prompt engineering cheat sheet calculations. Works in your browser.",
     "features": [],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/health/prompt-engineering-cheat-sheet.zip"
+    "zipUrl": "/assets/zip-packages/ai-ml/prompt-engineering-cheat-sheet.zip"
   },
   {
     "category": "AI & ML Utilities",
@@ -3422,7 +3348,7 @@
     "desc": "A free offline tool for prompt template library calculations. Works in your browser.",
     "features": [],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/health/prompt-template-library.zip"
+    "zipUrl": "/assets/zip-packages/ai-ml/prompt-template-library.zip"
   },
   {
     "category": "Health & Fitness",
@@ -3440,7 +3366,7 @@
     "desc": "A free offline tool for stable diffusion prompt builder calculations. Works in your browser.",
     "features": [],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/health/stable-diffusion-prompt-builder.zip"
+    "zipUrl": "/assets/zip-packages/ai-ml/stable-diffusion-prompt-builder.zip"
   },
   {
     "category": "Health & Fitness",
@@ -3458,7 +3384,7 @@
     "desc": "A free offline tool for brake pad wear estimator calculations. Works in your browser.",
     "features": [],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/audio/brake-pad-wear-estimator.zip"
+    "zipUrl": "/assets/zip-packages/cars/brake-pad-wear-estimator.zip"
   },
   {
     "category": "Auto & Vehicles",
@@ -3467,7 +3393,7 @@
     "desc": "A free offline tool for car loan payoff calculator calculations. Works in your browser.",
     "features": [],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/audio/car-loan-payoff-calculator.zip"
+    "zipUrl": "/assets/zip-packages/cars/car-loan-payoff-calculator.zip"
   },
   {
     "category": "Auto & Vehicles",
@@ -3476,7 +3402,7 @@
     "desc": "A free offline tool for car maintenance schedule calculations. Works in your browser.",
     "features": [],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/audio/car-maintenance-schedule.zip"
+    "zipUrl": "/assets/zip-packages/cars/car-maintenance-schedule.zip"
   },
   {
     "category": "Auto & Vehicles",
@@ -3485,7 +3411,7 @@
     "desc": "A free offline tool for car payment calculator calculations. Works in your browser.",
     "features": [],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/audio/car-payment-calculator.zip"
+    "zipUrl": "/assets/zip-packages/cars/car-payment-calculator.zip"
   },
   {
     "category": "Auto & Vehicles",
@@ -3494,16 +3420,7 @@
     "desc": "A free offline tool for car resale value calculator calculations. Works in your browser.",
     "features": [],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/audio/car-resale-value-calculator.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/audio-1.svg",
-    "title": "Driving Cost Per Mile",
-    "desc": "A free offline tool for driving cost per mile calculations. Works in your browser.",
-    "features": [],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/audio/driving-cost-per-mile.zip"
+    "zipUrl": "/assets/zip-packages/cars/car-resale-value-calculator.zip"
   },
   {
     "category": "Auto & Vehicles",
@@ -3512,7 +3429,7 @@
     "desc": "A free offline tool for ev charging cost calculator calculations. Works in your browser.",
     "features": [],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/audio/ev-charging-cost-calculator.zip"
+    "zipUrl": "/assets/zip-packages/cars/ev-charging-cost-calculator.zip"
   },
   {
     "category": "Auto & Vehicles",
@@ -3521,7 +3438,7 @@
     "desc": "A free offline tool for fuel cost calculator calculations. Works in your browser.",
     "features": [],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/audio/fuel-cost-calculator.zip"
+    "zipUrl": "/assets/zip-packages/cars/fuel-cost-calculator.zip"
   },
   {
     "category": "Auto & Vehicles",
@@ -3530,7 +3447,7 @@
     "desc": "A free offline tool for fuel cost comparison calculations. Works in your browser.",
     "features": [],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/audio/fuel-cost-comparison.zip"
+    "zipUrl": "/assets/zip-packages/cars/fuel-cost-comparison.zip"
   },
   {
     "category": "Auto & Vehicles",
@@ -3539,7 +3456,7 @@
     "desc": "A free offline tool for mpg calculator calculations. Works in your browser.",
     "features": [],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/audio/mpg-calculator.zip"
+    "zipUrl": "/assets/zip-packages/cars/mpg-calculator.zip"
   },
   {
     "category": "Travel & Transportation",
@@ -3548,7 +3465,7 @@
     "desc": "A free offline tool for road trip planner calculations. Works in your browser.",
     "features": [],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/audio/road-trip-planner.zip"
+    "zipUrl": "/assets/zip-packages/travel/road-trip-planner.zip"
   },
   {
     "category": "Auto & Vehicles",
@@ -3557,7 +3474,7 @@
     "desc": "A free offline tool for tire pressure calculator calculations. Works in your browser.",
     "features": [],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/audio/tire-pressure-calculator.zip"
+    "zipUrl": "/assets/zip-packages/cars/tire-pressure-calculator.zip"
   },
   {
     "category": "Auto & Vehicles",
@@ -3566,7 +3483,7 @@
     "desc": "A free offline tool for tire size calculator calculations. Works in your browser.",
     "features": [],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/audio/tire-size-calculator.zip"
+    "zipUrl": "/assets/zip-packages/cars/tire-size-calculator.zip"
   },
   {
     "category": "Auto & Vehicles",
@@ -3575,16 +3492,7 @@
     "desc": "A free offline tool for trip mileage log calculations. Works in your browser.",
     "features": [],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/audio/trip-mileage-log.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/audio-1.svg",
-    "title": "Vehicle Depreciation",
-    "desc": "A free offline tool for vehicle depreciation calculations. Works in your browser.",
-    "features": [],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/audio/vehicle-depreciation.zip"
+    "zipUrl": "/assets/zip-packages/cars/trip-mileage-log.zip"
   },
   {
     "category": "Auto & Vehicles",
@@ -3612,21 +3520,6 @@
     "features": [],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/cars/tire-size-converter.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/ai-11.svg",
-    "title": "RAG Text Chunker",
-    "desc": "Split long documents into optimal chunks for Retrieval-Augmented Generation pipelines. Customize chunk size, overlap, and strategies like words or sentences to improve AI context retrieval accuracy.",
-    "features": [
-      "Configurable chunk sizes and overlaps",
-      "Multiple splitting strategies supported",
-      "Optimized for RAG pipelines",
-      "Instant text segmentation output",
-      "Clean whitespace trimming options"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/rag-chunker.zip"
   },
   {
     "category": "Auto & Vehicles",
@@ -3671,7 +3564,7 @@
       "Compare dimensions and specs"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/battery-size-selector.zip"
+    "zipUrl": "/assets/zip-packages/cars/battery-size-selector.zip"
   },
   {
     "category": "Auto & Vehicles",
@@ -3686,22 +3579,7 @@
       "Break-even year estimate"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/car-depreciation-calculator.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
-    "title": "Car Maintenance Schedule Calculator",
-    "desc": "Plan your vehicle's maintenance schedule based on mileage, vehicle type, and driving conditions. Get service intervals for oil changes, tire rotation, brake inspection, and more. Free online tool.",
-    "features": [
-      "Mileage-based service intervals",
-      "Supports gas, diesel, hybrid, electric",
-      "Normal and severe driving conditions",
-      "Upcoming and past due services",
-      "Cost estimates for each service"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/car-maintenance-schedule.zip"
+    "zipUrl": "/assets/zip-packages/cars/car-depreciation-calculator.zip"
   },
   {
     "category": "Auto & Vehicles",
@@ -3717,22 +3595,7 @@
       "Carbon footprint calculation"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/fuel-cost-calculator-car.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
-    "title": "Fuel Cost Comparison: Gas vs EV vs Hybrid",
-    "desc": "Compare fuel costs between gas, electric, and hybrid vehicles over years of ownership. Enter annual mileage, fuel prices, and efficiency to calculate total cost, cost per mile, and lifetime savings. Free online vehicle fuel comparison tool.",
-    "features": [
-      "Gas vs EV vs Hybrid comparison",
-      "Lifetime cost calculation",
-      "Cost per mile breakdown",
-      "Customizable charging mix",
-      "No signup required"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/fuel-cost-comparison.zip"
+    "zipUrl": "/assets/zip-packages/cars/fuel-cost-calculator-car.zip"
   },
   {
     "category": "Auto & Vehicles",
@@ -3747,7 +3610,7 @@
       "Common distance references"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/km-to-miles.zip"
+    "zipUrl": "/assets/zip-packages/cars/km-to-miles.zip"
   },
   {
     "category": "Auto & Vehicles",
@@ -3761,7 +3624,7 @@
       "Reference table for common values"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/l-100km-to-mpg.zip"
+    "zipUrl": "/assets/zip-packages/cars/l-100km-to-mpg.zip"
   },
   {
     "category": "Auto & Vehicles",
@@ -3776,7 +3639,7 @@
       "No signup required"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/miles-to-km.zip"
+    "zipUrl": "/assets/zip-packages/cars/miles-to-km.zip"
   },
   {
     "category": "Auto & Vehicles",
@@ -3791,7 +3654,7 @@
       "Dark mode support"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/speed-converter.zip"
+    "zipUrl": "/assets/zip-packages/cars/speed-converter.zip"
   },
   {
     "category": "Auto & Vehicles",
@@ -3805,7 +3668,7 @@
       "Free to use online"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/tire-pressure-converter.zip"
+    "zipUrl": "/assets/zip-packages/cars/tire-pressure-converter.zip"
   },
   {
     "category": "Auto & Vehicles",
@@ -3820,22 +3683,7 @@
       "IRS mileage rate reference"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/trip-cost-estimator.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
-    "title": "Trip Mileage Log Calculator",
-    "desc": "Track mileage for tax deductions with our free IRS mileage log. Record business, personal, and medical trips, and calculate your total deduction instantly.",
-    "features": [
-      "Record trip details",
-      "Calculate tax deduction",
-      "Support multiple trip types",
-      "Clear and remove trips",
-      "Total mileage summary"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/trip-mileage-log.zip"
+    "zipUrl": "/assets/zip-packages/cars/trip-cost-estimator.zip"
   },
   {
     "category": "Beauty & Fashion",
@@ -3850,7 +3698,7 @@
       "Local data storage"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/beauty & fashion/body-measurement-tracker.zip"
+    "zipUrl": "/assets/zip-packages/beauty/body-measurement-tracker.zip"
   },
   {
     "category": "Beauty & Fashion",
@@ -3865,7 +3713,7 @@
       "Capsule wardrobe support"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/beauty & fashion/closet-organizer.zip"
+    "zipUrl": "/assets/zip-packages/beauty/closet-organizer.zip"
   },
   {
     "category": "Beauty & Fashion",
@@ -3880,7 +3728,7 @@
       "Free and easy to use"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/beauty & fashion/clothing-size-converter.zip"
+    "zipUrl": "/assets/zip-packages/beauty/clothing-size-converter.zip"
   },
   {
     "category": "Beauty & Fashion",
@@ -3895,7 +3743,7 @@
       "Quilt and curtain support"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/beauty & fashion/fabric-yardage-calc.zip"
+    "zipUrl": "/assets/zip-packages/beauty/fabric-yardage-calc.zip"
   },
   {
     "category": "Beauty & Fashion",
@@ -3911,7 +3759,7 @@
       "Natural to target level input"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/beauty & fashion/hair-color-developer.zip"
+    "zipUrl": "/assets/zip-packages/beauty/hair-color-developer.zip"
   },
   {
     "category": "Beauty & Fashion",
@@ -3927,7 +3775,7 @@
       "Color journey visualization"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/beauty & fashion/hair-color-predictor.zip"
+    "zipUrl": "/assets/zip-packages/beauty/hair-color-predictor.zip"
   },
   {
     "category": "Beauty & Fashion",
@@ -3941,7 +3789,7 @@
       "Instant hair type identification"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/beauty & fashion/hair-type-identifier.zip"
+    "zipUrl": "/assets/zip-packages/beauty/hair-type-identifier.zip"
   },
   {
     "category": "Beauty & Fashion",
@@ -3956,7 +3804,7 @@
       "Styling tips for each face shape"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/beauty & fashion/hairstyle-length-calculator.zip"
+    "zipUrl": "/assets/zip-packages/beauty/hairstyle-length-calculator.zip"
   },
   {
     "category": "Beauty & Fashion",
@@ -3971,7 +3819,7 @@
       "Easy measurement input"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/beauty & fashion/jewelry-size-calculator.zip"
+    "zipUrl": "/assets/zip-packages/beauty/jewelry-size-calculator.zip"
   },
   {
     "category": "Beauty & Fashion",
@@ -3987,7 +3835,7 @@
       "Free online reference"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/beauty & fashion/laundry-symbol-guide.zip"
+    "zipUrl": "/assets/zip-packages/beauty/laundry-symbol-guide.zip"
   },
   {
     "category": "Beauty & Fashion",
@@ -4002,7 +3850,7 @@
       "Free online tool"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/beauty & fashion/makeup-shade-matcher.zip"
+    "zipUrl": "/assets/zip-packages/beauty/makeup-shade-matcher.zip"
   },
   {
     "category": "Beauty & Fashion",
@@ -4017,7 +3865,7 @@
       "Free and easy to use"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/beauty & fashion/nail-art-ideas.zip"
+    "zipUrl": "/assets/zip-packages/beauty/nail-art-ideas.zip"
   },
   {
     "category": "Beauty & Fashion",
@@ -4029,7 +3877,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/beauty & fashion/nail-polish-mixer.zip"
+    "zipUrl": "/assets/zip-packages/beauty/nail-polish-mixer.zip"
   },
   {
     "category": "Beauty & Fashion",
@@ -4041,7 +3889,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/beauty & fashion/outfit-color-matcher.zip"
+    "zipUrl": "/assets/zip-packages/beauty/outfit-color-matcher.zip"
   },
   {
     "category": "Beauty & Fashion",
@@ -4053,7 +3901,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/beauty & fashion/outfit-planner.zip"
+    "zipUrl": "/assets/zip-packages/beauty/outfit-planner.zip"
   },
   {
     "category": "Beauty & Fashion",
@@ -4065,7 +3913,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/beauty & fashion/perfume-dilution-calculator.zip"
+    "zipUrl": "/assets/zip-packages/beauty/perfume-dilution-calculator.zip"
   },
   {
     "category": "Beauty & Fashion",
@@ -4077,7 +3925,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/beauty & fashion/perfume-finder.zip"
+    "zipUrl": "/assets/zip-packages/beauty/perfume-finder.zip"
   },
   {
     "category": "Beauty & Fashion",
@@ -4089,7 +3937,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/beauty & fashion/skincare-routine-builder.zip"
+    "zipUrl": "/assets/zip-packages/beauty/skincare-routine-builder.zip"
   },
   {
     "category": "Business & Productivity",
@@ -4245,22 +4093,6 @@
   {
     "category": "Business & Productivity",
     "icon": "/assets/icons/business-1.svg",
-    "title": "Cross-Border Tariff Calculator",
-    "desc": "Calculate import tariffs, duties, and taxes for cross-border e-commerce. Estimate total landed cost including CIF value, duty, VAT, and processing fees for international shipping.",
-    "features": [
-      "Import duty calculation",
-      "Landed cost estimation",
-      "Country-specific rates",
-      "VAT/GST inclusion",
-      "Product category support",
-      "Custom rate option"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/business/tariff-calculator.zip"
-  },
-  {
-    "category": "Business & Productivity",
-    "icon": "/assets/icons/business-1.svg",
     "title": "Time Tracker",
     "desc": "Track time spent on tasks and projects with our free online time tracker. Start and stop timers, log sessions, and view totals by project. Ideal for freelancers and teams to boost productivity.",
     "features": [
@@ -4287,22 +4119,6 @@
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/business/timezone-meeting-planner.zip"
-  },
-  {
-    "category": "Content & Writing",
-    "icon": "",
-    "title": "Article Rewriter & Similarity Checker",
-    "desc": "Rewrite articles instantly with our free online tool. Check content similarity and avoid plagiarism using a built-in synonym dictionary for unique variations.",
-    "features": [
-      "Instant article rewriting",
-      "Built-in synonym dictionary",
-      "Content similarity checker",
-      "One-click copy result",
-      "Rewrite history saving",
-      "Dark mode support"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/writing/article-rewriter.zip"
   },
   {
     "category": "Content & Writing",
@@ -4334,21 +4150,6 @@
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/writing/char-counter.zip"
-  },
-  {
-    "category": "Content & Writing",
-    "icon": "",
-    "title": "Character Encoding Fixer",
-    "desc": "Fix garbled text and mojibake caused by wrong character encoding. Easily convert between UTF-8, Latin-1, and Windows-1252 to restore readable text instantly in your browser.",
-    "features": [
-      "Fix mojibake and garbled text",
-      "Supports UTF-8 and Latin-1",
-      "Windows-1252 conversion support",
-      "Instant text encoding repair",
-      "Private local browser processing"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/encoding-fixer.zip"
   },
   {
     "category": "Content & Writing",
@@ -4548,7 +4349,7 @@
       "Free and easy to use"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/cooking & food/baking-converter.zip"
+    "zipUrl": "/assets/zip-packages/cooking/baking-converter.zip"
   },
   {
     "category": "Cooking & Food",
@@ -4564,7 +4365,7 @@
       "Stall phase estimation"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/cooking & food/bbq-cooking-time-calc.zip"
+    "zipUrl": "/assets/zip-packages/cooking/bbq-cooking-time-calc.zip"
   },
   {
     "category": "Cooking & Food",
@@ -4579,7 +4380,7 @@
       "Accurate baking calculations"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/cooking & food/butter-converter.zip"
+    "zipUrl": "/assets/zip-packages/cooking/butter-converter.zip"
   },
   {
     "category": "Cooking & Food",
@@ -4595,7 +4396,7 @@
       "Free cheese pairing guide"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/cooking & food/cheese-pairing-finder.zip"
+    "zipUrl": "/assets/zip-packages/cooking/cheese-pairing-finder.zip"
   },
   {
     "category": "Cooking & Food",
@@ -4610,7 +4411,7 @@
       "Includes mocktail options"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/cooking & food/cocktail-recipe-finder.zip"
+    "zipUrl": "/assets/zip-packages/cooking/cocktail-recipe-finder.zip"
   },
   {
     "category": "Cooking & Food",
@@ -4625,7 +4426,7 @@
       "Instant recipe generation"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/cooking & food/coffee-brew-ratio-calculator.zip"
+    "zipUrl": "/assets/zip-packages/cooking/coffee-brew-ratio-calculator.zip"
   },
   {
     "category": "Cooking & Food",
@@ -4641,7 +4442,7 @@
       "Metric and imperial units"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/cooking & food/cooking-time-calculator.zip"
+    "zipUrl": "/assets/zip-packages/cooking/cooking-time-calculator.zip"
   },
   {
     "category": "Cooking & Food",
@@ -4656,7 +4457,7 @@
       "Instant time calculation"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/cooking & food/cooking-time-conv.zip"
+    "zipUrl": "/assets/zip-packages/cooking/cooking-time-conv.zip"
   },
   {
     "category": "Cooking & Food",
@@ -4671,7 +4472,7 @@
       "Custom timer names"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/cooking & food/cooking-timer.zip"
+    "zipUrl": "/assets/zip-packages/cooking/cooking-timer.zip"
   },
   {
     "category": "Cooking & Food",
@@ -4687,7 +4488,7 @@
       "Free for cooking and baking"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/cooking & food/cups-to-ml.zip"
+    "zipUrl": "/assets/zip-packages/cooking/cups-to-ml.zip"
   },
   {
     "category": "Cooking & Food",
@@ -4703,7 +4504,7 @@
       "Free and mobile friendly"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/cooking & food/fahrenheit-to-celsius-cooking.zip"
+    "zipUrl": "/assets/zip-packages/cooking/fahrenheit-to-celsius-cooking.zip"
   },
   {
     "category": "Cooking & Food",
@@ -4718,7 +4519,7 @@
       "Helpful celiac baking tips"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/cooking & food/gluten-free-flour-blend.zip"
+    "zipUrl": "/assets/zip-packages/cooking/gluten-free-flour-blend.zip"
   },
   {
     "category": "Cooking & Food",
@@ -4734,7 +4535,7 @@
       "Real-time conversion updates"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/cooking & food/grams-to-cups.zip"
+    "zipUrl": "/assets/zip-packages/cooking/grams-to-cups.zip"
   },
   {
     "category": "Cooking & Food",
@@ -4749,7 +4550,7 @@
       "Accurate recipe scaling"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/cooking & food/measurement-converter-cooking.zip"
+    "zipUrl": "/assets/zip-packages/cooking/measurement-converter-cooking.zip"
   },
   {
     "category": "Cooking & Food",
@@ -4764,7 +4565,7 @@
       "Monitor protein, carbs, fat"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/cooking & food/nutrition-calculator.zip"
+    "zipUrl": "/assets/zip-packages/cooking/nutrition-calculator.zip"
   },
   {
     "category": "Cooking & Food",
@@ -4780,7 +4581,7 @@
       "Free and no signup required"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/cooking & food/ounces-to-grams.zip"
+    "zipUrl": "/assets/zip-packages/cooking/ounces-to-grams.zip"
   },
   {
     "category": "Cooking & Food",
@@ -4795,7 +4596,7 @@
       "Instant multi-unit conversion"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/cooking & food/oven-temperature-converter.zip"
+    "zipUrl": "/assets/zip-packages/cooking/oven-temperature-converter.zip"
   },
   {
     "category": "Cooking & Food",
@@ -4810,7 +4611,7 @@
       "Fermentation time options"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/cooking & food/pizza-dough-calculator.zip"
+    "zipUrl": "/assets/zip-packages/cooking/pizza-dough-calculator.zip"
   },
   {
     "category": "Cooking & Food",
@@ -4825,7 +4626,7 @@
       "Common recipe weight examples"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/cooking & food/pounds-to-grams.zip"
+    "zipUrl": "/assets/zip-packages/cooking/pounds-to-grams.zip"
   },
   {
     "category": "Cooking & Food",
@@ -4840,7 +4641,7 @@
       "Automatic fraction simplification"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/cooking & food/recipe-scaler.zip"
+    "zipUrl": "/assets/zip-packages/cooking/recipe-scaler.zip"
   },
   {
     "category": "Cooking & Food",
@@ -4855,7 +4656,7 @@
       "Shopping quantity estimates"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/cooking & food/serving-size-calculator.zip"
+    "zipUrl": "/assets/zip-packages/cooking/serving-size-calculator.zip"
   },
   {
     "category": "Cooking & Food",
@@ -4870,7 +4671,7 @@
       "Recommended baking schedule"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/cooking & food/sourdough-hydration-calc.zip"
+    "zipUrl": "/assets/zip-packages/cooking/sourdough-hydration-calc.zip"
   },
   {
     "category": "Cooking & Food",
@@ -4885,7 +4686,7 @@
       "Instant conversion results"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/cooking & food/sugar-substitute-calculator.zip"
+    "zipUrl": "/assets/zip-packages/cooking/sugar-substitute-calculator.zip"
   },
   {
     "category": "Cooking & Food",
@@ -4900,7 +4701,7 @@
       "Free online baking tool"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/cooking & food/tablespoon-to-cup.zip"
+    "zipUrl": "/assets/zip-packages/cooking/tablespoon-to-cup.zip"
   },
   {
     "category": "Cooking & Food",
@@ -4915,7 +4716,7 @@
       "Detailed pairing notes"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/cooking & food/wine-pairing-finder.zip"
+    "zipUrl": "/assets/zip-packages/cooking/wine-pairing-finder.zip"
   },
   {
     "category": "Design & Media",
@@ -5447,7 +5248,7 @@
       "Dark mode support"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/color-contrast-checker.zip"
+    "zipUrl": "/assets/zip-packages/design/color-contrast-checker.zip"
   },
   {
     "category": "Color & Design Utilities",
@@ -5462,7 +5263,7 @@
       "Dark mode support"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/color-palette-generator.zip"
+    "zipUrl": "/assets/zip-packages/design/color-palette-generator.zip"
   },
   {
     "category": "Developer Tools",
@@ -5982,7 +5783,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/math-practice-generator.zip"
+    "zipUrl": "/assets/zip-packages/math/math-practice-generator.zip"
   },
   {
     "category": "Education & Research",
@@ -5997,18 +5798,6 @@
     "zipUrl": "/assets/zip-packages/education/mole-calculator.zip"
   },
   {
-    "category": "Education & Research",
-    "icon": "/assets/icons/education-1.svg",
-    "title": "Password Generator",
-    "desc": "A free offline tool for password generator calculations. Works in your browser.",
-    "features": [
-      "Easy to use",
-      "Works offline"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/security/password-generator.zip"
-  },
-  {
     "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Percentage Calculator",
@@ -6018,7 +5807,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/percentage-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/percentage-calculator.zip"
   },
   {
     "category": "Education & Research",
@@ -6492,7 +6281,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/forms & generators/birthday-invitation-generator.zip"
+    "zipUrl": "/assets/zip-packages/forms/birthday-invitation-generator.zip"
   },
   {
     "category": "Forms & Generators",
@@ -6507,7 +6296,7 @@
       "No signup required"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/forms & generators/business-plan-template.zip"
+    "zipUrl": "/assets/zip-packages/forms/business-plan-template.zip"
   },
   {
     "category": "Forms & Generators",
@@ -6519,7 +6308,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/forms & generators/certificate-maker.zip"
+    "zipUrl": "/assets/zip-packages/forms/certificate-maker.zip"
   },
   {
     "category": "Forms & Generators",
@@ -6535,7 +6324,7 @@
       "No signup required"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/forms & generators/contract-template-maker.zip"
+    "zipUrl": "/assets/zip-packages/forms/contract-template-maker.zip"
   },
   {
     "category": "Forms & Generators",
@@ -6550,7 +6339,7 @@
       "No signup required"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/forms & generators/cover-letter-generator.zip"
+    "zipUrl": "/assets/zip-packages/forms/cover-letter-generator.zip"
   },
   {
     "category": "Forms & Generators",
@@ -6609,7 +6398,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/forms & generators/gift-certificate-template.zip"
+    "zipUrl": "/assets/zip-packages/forms/gift-certificate-template.zip"
   },
   {
     "category": "Forms & Generators",
@@ -6621,7 +6410,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/forms & generators/invoice-pdf-template.zip"
+    "zipUrl": "/assets/zip-packages/forms/invoice-pdf-template.zip"
   },
   {
     "category": "Forms & Generators",
@@ -6633,7 +6422,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/forms & generators/login-form-builder.zip"
+    "zipUrl": "/assets/zip-packages/forms/login-form-builder.zip"
   },
   {
     "category": "Forms & Generators",
@@ -6645,7 +6434,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/forms & generators/meeting-agenda-generator.zip"
+    "zipUrl": "/assets/zip-packages/forms/meeting-agenda-generator.zip"
   },
   {
     "category": "Forms & Generators",
@@ -6657,7 +6446,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/forms & generators/meeting-minutes-template.zip"
+    "zipUrl": "/assets/zip-packages/forms/meeting-minutes-template.zip"
   },
   {
     "category": "Forms & Generators",
@@ -6669,7 +6458,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/forms & generators/nda-template-generator.zip"
+    "zipUrl": "/assets/zip-packages/forms/nda-template-generator.zip"
   },
   {
     "category": "Forms & Generators",
@@ -6681,7 +6470,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/forms & generators/payslip-maker.zip"
+    "zipUrl": "/assets/zip-packages/forms/payslip-maker.zip"
   },
   {
     "category": "Forms & Generators",
@@ -6693,7 +6482,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/forms & generators/quiz-form-builder.zip"
+    "zipUrl": "/assets/zip-packages/forms/quiz-form-builder.zip"
   },
   {
     "category": "Forms & Generators",
@@ -6705,7 +6494,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/forms & generators/receipt-maker.zip"
+    "zipUrl": "/assets/zip-packages/forms/receipt-maker.zip"
   },
   {
     "category": "Forms & Generators",
@@ -6717,7 +6506,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/forms & generators/receipt-template-generator.zip"
+    "zipUrl": "/assets/zip-packages/forms/receipt-template-generator.zip"
   },
   {
     "category": "Forms & Generators",
@@ -6729,7 +6518,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/forms & generators/reference-letter-generator.zip"
+    "zipUrl": "/assets/zip-packages/forms/reference-letter-generator.zip"
   },
   {
     "category": "Forms & Generators",
@@ -6741,7 +6530,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/forms & generators/registration-form-builder.zip"
+    "zipUrl": "/assets/zip-packages/forms/registration-form-builder.zip"
   },
   {
     "category": "Forms & Generators",
@@ -6753,7 +6542,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/forms & generators/rental-agreement-template.zip"
+    "zipUrl": "/assets/zip-packages/forms/rental-agreement-template.zip"
   },
   {
     "category": "Forms & Generators",
@@ -6765,7 +6554,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/forms & generators/resignation-letter-generator.zip"
+    "zipUrl": "/assets/zip-packages/forms/resignation-letter-generator.zip"
   },
   {
     "category": "Forms & Generators",
@@ -6777,7 +6566,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/forms & generators/resume-builder.zip"
+    "zipUrl": "/assets/zip-packages/forms/resume-builder.zip"
   },
   {
     "category": "Forms & Generators",
@@ -6789,7 +6578,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/forms & generators/resume-builder-online.zip"
+    "zipUrl": "/assets/zip-packages/forms/resume-builder-online.zip"
   },
   {
     "category": "Forms & Generators",
@@ -6801,7 +6590,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/forms & generators/survey-template-builder.zip"
+    "zipUrl": "/assets/zip-packages/forms/survey-template-builder.zip"
   },
   {
     "category": "Forms & Generators",
@@ -6813,7 +6602,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/forms & generators/thank-you-note-generator.zip"
+    "zipUrl": "/assets/zip-packages/forms/thank-you-note-generator.zip"
   },
   {
     "category": "Forms & Generators",
@@ -6825,6 +6614,6 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/forms & generators/wedding-invitation-generator.zip"
+    "zipUrl": "/assets/zip-packages/forms/wedding-invitation-generator.zip"
   }
 ]
