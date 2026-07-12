@@ -421,39 +421,6 @@ img {
     font-size: 0.95rem;
 }
 
-/* --- CTA Section --- */
-.cta-section {
-    padding: 80px 0;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-    color: #fff;
-    text-align: center;
-}
-
-.cta-section h2 {
-    font-size: 2rem;
-    margin-bottom: 12px;
-}
-
-.cta-section p {
-    font-size: 1.1rem;
-    opacity: 0.9;
-    margin-bottom: 28px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.cta-section .btn {
-    background: #fff;
-    color: var(--primary-color);
-}
-
-.cta-section .btn:hover {
-    background: var(--bg-light);
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-lg);
-}
-
 /* --- Footer --- */
 .site-footer {
     background: var(--bg-dark);
