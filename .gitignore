@@ -33,8 +33,10 @@ Thumbs.db
 # Project backup (local use only, not for repository)
 backup/
 
-# Large archive/backup files (cause Cloudflare Pages deployment failure)
+# Large archive/backup files (exclude stray zips, but allow tool packages)
+# 工具 zip 包总共约 5MB，不会导致部署失败；备份/临时 zip 仍然排除
 *.zip
+!assets/zip-packages/**/*.zip
 *.tar.gz
 *.gz
 

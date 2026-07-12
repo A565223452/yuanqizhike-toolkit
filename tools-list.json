@@ -11,7 +11,7 @@
       "One-Click Copy"
     ],
     "detailUrl": "/tools/article-rewrite/index.html",
-    "zipUrl": "/assets/zip-packages/writing/article-rewrite.zip"
+    "zipUrl": "/assets/zip-packages/writing/article-rewriter.zip"
   },
   {
     "category": "Developer Tools",
@@ -91,7 +91,7 @@
       "100% Private Local Processing"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/seo/amazon-keyword-miner.zip"
+    "zipUrl": "/assets/zip-packages/business/amazon-keyword-miner.zip"
   },
   {
     "category": "Finance & Crypto",
@@ -103,7 +103,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/finance/budget-calculator.zip"
+    "zipUrl": "/assets/zip-packages/business/budget-calculator.zip"
   },
   {
     "category": "Finance & Crypto",
@@ -115,7 +115,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/finance/inventory-turnover-calculator.zip"
+    "zipUrl": "/assets/zip-packages/business/inventory-turnover-calculator.zip"
   },
   {
     "category": "Business & Productivity",
@@ -171,7 +171,7 @@
       "A/B Testing Support"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/seo/amazon-title-optimizer.zip"
+    "zipUrl": "/assets/zip-packages/business/amazon-title-optimizer.zip"
   },
   {
     "category": "Business & Productivity",
@@ -214,7 +214,7 @@
       "Currency Charts"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/finance/currency-converter.zip"
+    "zipUrl": "/assets/zip-packages/business/currency-converter.zip"
   },
   {
     "category": "Business & Productivity",
@@ -272,7 +272,7 @@
       "Multi-Item Shipments"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/finance/tariff-calculator.zip"
+    "zipUrl": "/assets/zip-packages/business/tariff-calculator.zip"
   },
   {
     "category": "Content & Writing",
@@ -1392,7 +1392,7 @@
       "Protect SEO Health"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/seo/backlink-spam-checker.zip"
+    "zipUrl": "/assets/zip-packages/business/backlink-spam-checker.zip"
   },
   {
     "category": "Business & Productivity",
@@ -2239,7 +2239,7 @@
       "Fun life statistics"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/time/age-calculator.zip"
+    "zipUrl": "/assets/zip-packages/lifestyle/age-calculator.zip"
   },
   {
     "category": "Time & Date",
@@ -2251,7 +2251,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/time/countdown-timer.zip"
+    "zipUrl": "/assets/zip-packages/lifestyle/countdown-timer.zip"
   },
   {
     "category": "Time & Date",
@@ -2266,7 +2266,7 @@
       "Instant real-time calculation"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/time/date-calculator.zip"
+    "zipUrl": "/assets/zip-packages/lifestyle/date-calculator.zip"
   },
   {
     "category": "Time & Date",
@@ -2281,7 +2281,7 @@
       "Generation history log"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/time/random-number-generator.zip"
+    "zipUrl": "/assets/zip-packages/lifestyle/random-number-generator.zip"
   },
   {
     "category": "Time & Date",
@@ -2295,7 +2295,7 @@
       "Quick reference table display"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/time/unit-converter.zip"
+    "zipUrl": "/assets/zip-packages/math/unit-converter.zip"
   },
   {
     "category": "Security & Privacy",
@@ -2420,7 +2420,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/time/budget-tracker.zip"
+    "zipUrl": "/assets/zip-packages/lifestyle/budget-tracker.zip"
   },
   {
     "category": "Time & Date",
@@ -2434,7 +2434,7 @@
       "Reset counter option"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/time/coin-flipper.zip"
+    "zipUrl": "/assets/zip-packages/lifestyle/coin-flipper.zip"
   },
   {
     "category": "Business & Productivity",
@@ -2466,7 +2466,7 @@
       "Age and duration calculator"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/time/date-difference-calculator.zip"
+    "zipUrl": "/assets/zip-packages/lifestyle/date-difference-calculator.zip"
   },
   {
     "category": "Games & Entertainment",
@@ -2494,7 +2494,7 @@
       "Instant personalized suggestions"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/time/gift-idea-generator.zip"
+    "zipUrl": "/assets/zip-packages/lifestyle/gift-idea-generator.zip"
   },
   {
     "category": "Business & Productivity",
@@ -2520,7 +2520,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/time/habit-tracker.zip"
+    "zipUrl": "/assets/zip-packages/lifestyle/habit-tracker.zip"
   },
   {
     "category": "Time & Date",
@@ -2534,7 +2534,7 @@
       "Guided breathing exercise"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/time/meditation-timer.zip"
+    "zipUrl": "/assets/zip-packages/lifestyle/meditation-timer.zip"
   },
   {
     "category": "Time & Date",
@@ -2549,7 +2549,7 @@
       "Visual score breakdown and progress bar"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/time/productivity-score-calculator.zip"
+    "zipUrl": "/assets/zip-packages/lifestyle/productivity-score-calculator.zip"
   },
   {
     "category": "Time & Date",
@@ -2565,7 +2565,7 @@
       "Mobile friendly interface"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/time/sleep-cycle-calculator.zip"
+    "zipUrl": "/assets/zip-packages/lifestyle/sleep-cycle-calculator.zip"
   },
   {
     "category": "Time & Date",
@@ -2579,7 +2579,7 @@
       "Dark mode available"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/time/stopwatch.zip"
+    "zipUrl": "/assets/zip-packages/lifestyle/stopwatch.zip"
   },
   {
     "category": "Time & Date",
@@ -2593,7 +2593,7 @@
       "Dark mode and responsive design"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/time/to-do-list-online.zip"
+    "zipUrl": "/assets/zip-packages/lifestyle/to-do-list-online.zip"
   },
   {
     "category": "Time & Date",
@@ -2607,7 +2607,7 @@
       "Random decision maker"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/time/wheel-spinner.zip"
+    "zipUrl": "/assets/zip-packages/lifestyle/wheel-spinner.zip"
   },
   {
     "category": "Time & Date",
@@ -2621,7 +2621,7 @@
       "Searchable city list"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/time/world-clock.zip"
+    "zipUrl": "/assets/zip-packages/lifestyle/world-clock.zip"
   },
   {
     "category": "Security & Privacy",
@@ -2720,7 +2720,7 @@
       "Supports multiple input formats"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/average-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/average-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -2735,7 +2735,7 @@
       "Dark mode support"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/basic-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/basic-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -2751,7 +2751,7 @@
       "Normal approximation support"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/binomial-distribution-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/binomial-distribution-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -2767,7 +2767,7 @@
       "Adjustable significance level"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/chi-square-test-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/chi-square-test-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -2783,7 +2783,7 @@
       "Free online geometry tool"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/circle-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/circle-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -2799,7 +2799,7 @@
       "Free online math tool"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/complex-number-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/complex-number-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -2814,7 +2814,7 @@
       "Free online geometry tool"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/cone-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/cone-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -2829,7 +2829,7 @@
       "Dark mode support"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/cube-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/cube-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -2844,7 +2844,7 @@
       "Free and easy to use"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/cylinder-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/cylinder-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -2859,7 +2859,7 @@
       "Supports trigonometric functions"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/derivative-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/derivative-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -2874,7 +2874,7 @@
       "Powers table generation"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/exponent-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/exponent-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -2890,7 +2890,7 @@
       "Free online math tool"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/factorial-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/factorial-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -2906,7 +2906,7 @@
       "Free online tool"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/fraction-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/fraction-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -2918,7 +2918,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/linear-equation-solver.zip"
+    "zipUrl": "/assets/zip-packages/math/linear-equation-solver.zip"
   },
   {
     "category": "Math & Science",
@@ -2930,7 +2930,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/logarithm-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/logarithm-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -2942,7 +2942,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/logarithm-calculator-extended.zip"
+    "zipUrl": "/assets/zip-packages/math/logarithm-calculator-extended.zip"
   },
   {
     "category": "Math & Science",
@@ -2954,7 +2954,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/math-formula-reference.zip"
+    "zipUrl": "/assets/zip-packages/math/math-formula-reference.zip"
   },
   {
     "category": "Math & Science",
@@ -2966,7 +2966,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/matrix-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/matrix-calculator.zip"
   },
   {
     "category": "Developer Tools",
@@ -2990,7 +2990,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/mode-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/mode-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -3002,7 +3002,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/normal-distribution-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/normal-distribution-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -3014,7 +3014,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/percentage-calculator-math.zip"
+    "zipUrl": "/assets/zip-packages/math/percentage-calculator-math.zip"
   },
   {
     "category": "Math & Science",
@@ -3026,7 +3026,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/percentage-change-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/percentage-change-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -3038,7 +3038,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/permutation-combination-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/permutation-combination-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -3050,7 +3050,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/poisson-distribution-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/poisson-distribution-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -3062,7 +3062,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/prime-number-checker.zip"
+    "zipUrl": "/assets/zip-packages/math/prime-number-checker.zip"
   },
   {
     "category": "Math & Science",
@@ -3074,7 +3074,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/probability-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/probability-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -3086,7 +3086,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/proportion-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/proportion-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -3098,7 +3098,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/pythagorean-theorem-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/pythagorean-theorem-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -3110,7 +3110,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/quadratic-equation-solver.zip"
+    "zipUrl": "/assets/zip-packages/math/quadratic-equation-solver.zip"
   },
   {
     "category": "Math & Science",
@@ -3122,7 +3122,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/range-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/range-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -3134,7 +3134,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/ratio-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/ratio-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -3146,7 +3146,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/scientific-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/scientific-calculator.zip"
   },
   {
     "category": "Real Estate Tools",
@@ -3173,7 +3173,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/sphere-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/sphere-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -3185,7 +3185,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/standard-deviation-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/standard-deviation-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -3197,7 +3197,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/statistics-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/statistics-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -3209,7 +3209,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/t-test-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/t-test-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -3221,7 +3221,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/triangle-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/triangle-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -3233,7 +3233,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/trigonometry-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/trigonometry-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -3245,7 +3245,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/unit-rate-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/unit-rate-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -3257,7 +3257,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/variance-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/variance-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -3269,7 +3269,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/vector-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/vector-calculator.zip"
   },
   {
     "category": "AI & ML Utilities",
@@ -3592,8 +3592,7 @@
     "title": "Ev Range Calculator",
     "desc": "A free offline tool for ev range calculator calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/cars/ev-range-calculator.zip"
+    "detailUrl": ""
   },
   {
     "category": "Auto & Vehicles",
@@ -3601,8 +3600,7 @@
     "title": "Oil Change Interval",
     "desc": "A free offline tool for oil change interval calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/cars/oil-change-interval.zip"
+    "detailUrl": ""
   },
   {
     "category": "Auto & Vehicles",
@@ -4348,7 +4346,7 @@
       "Private local browser processing"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/writing/encoding-fixer.zip"
+    "zipUrl": "/assets/zip-packages/dev/encoding-fixer.zip"
   },
   {
     "category": "Content & Writing",
@@ -6006,7 +6004,7 @@
       "Works offline"
     ],
     "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/password-generator.zip"
+    "zipUrl": "/assets/zip-packages/security/password-generator.zip"
   },
   {
     "category": "Math & Science",
