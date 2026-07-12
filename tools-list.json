@@ -3592,7 +3592,8 @@
     "title": "Ev Range Calculator",
     "desc": "A free offline tool for ev range calculator calculations. Works in your browser.",
     "features": [],
-    "detailUrl": ""
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cars/ev-range-calculator.zip"
   },
   {
     "category": "Auto & Vehicles",
@@ -3600,7 +3601,8 @@
     "title": "Oil Change Interval",
     "desc": "A free offline tool for oil change interval calculations. Works in your browser.",
     "features": [],
-    "detailUrl": ""
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/cars/oil-change-interval.zip"
   },
   {
     "category": "Auto & Vehicles",
