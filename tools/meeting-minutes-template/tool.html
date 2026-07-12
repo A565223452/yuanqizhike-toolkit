@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meeting Minutes Template | YuanQiZhiLe Toolkit</title>
+<meta name="description" content="Generate professional meeting minutes. Agenda, attendees, decisions, action items. Export to HTML or print. Free meeting notes generator.">
+<meta name="keywords" content="meeting minutes, meeting notes, agenda template, action items, meeting record, minutes of meeting">
+<meta property="og:title" content="Meeting Minutes Template - Free Online Tool">
+<meta property="og:description" content="Generate professional meeting minutes. Agenda, attendees, decisions, action items. Export to HTML or print. Free meeting notes generator.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Meeting Minutes Template</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Generate professional meeting minutes. Agenda, attendees, decisions, action items. Export to HTML or print. Free meeting notes generator.</div>
+    <div class="row">
+        <div class="group"><label>Meeting title</label><input type="text" id="title" value="Weekly Team Sync" style="width:100%;padding:8px"></div>
+        <div class="group"><label>Date</label><input type="date" id="date" style="width:100%;padding:8px"></div>
+        <div class="group"><label>Time</label><input type="text" id="time" value="10:00 AM" style="width:100%;padding:8px"></div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Location</label><input type="text" id="location" value="Zoom" style="width:100%;padding:8px"></div>
+        <div class="group"><label>Facilitator</label><input type="text" id="facilitator" value="Jane Doe" style="width:100%;padding:8px"></div>
+        <div class="group"><label>Note taker</label><input type="text" id="noteTaker" value="John Smith" style="width:100%;padding:8px"></div>
+    </div>
+    <div class="group"><label>Attendees (one per line)</label><textarea id="attendees" style="width:100%;min-height:80px;padding:8px;font-size:13px">Jane Doe
+John Smith
+Alice Johnson
+Bob Wilson</textarea></div>
+    <div class="group"><label>Agenda items (one per line)</label><textarea id="agenda" style="width:100%;min-height:80px;padding:8px;font-size:13px">Project status review
+Budget discussion
+Next sprint planning</textarea></div>
+    <div class="group"><label>Discussion &amp; decisions (one per line, use ; to separate decision)</label><textarea id="discussion" style="width:100%;min-height:100px;padding:8px;font-size:13px">Project is on track;Continue current approach
+Budget approved for Q3;Allocate $50k to marketing
+Sprint planning next Tuesday;Prepare backlog</textarea></div>
+    <div class="group"><label>Action items (format: Task | Owner | Due date)</label><textarea id="actions" style="width:100%;min-height:80px;padding:8px;font-size:13px">Finalize budget doc|Jane Doe|2026-07-10
+Update sprint backlog|John Smith|2026-07-09
+Send client update|Alice Johnson|2026-07-08</textarea></div>
+    <div class="group"><label>Next meeting</label><input type="text" id="nextMeeting" value="2026-07-14 10:00 AM" style="width:100%;padding:8px"></div>
+    <button id="genBtn" style="width:100%;background:#6366f1;color:#fff;border:none;padding:12px;border-radius:6px;cursor:pointer;font-weight:bold;margin:8px 0">Generate Minutes</button>
+    <button id="printBtn" style="width:100%;background:#10b981;color:#fff;border:none;padding:12px;border-radius:6px;cursor:pointer;font-weight:bold;margin-bottom:8px">Print / Save as PDF</button>
+    <div class="group"><label>Preview</label><div id="preview" style="border:1px solid #e5e7eb;border-radius:8px;padding:24px;margin-top:8px;background:#fff;min-height:300px"></div></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">260330663@qq.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">— or describe your need below —</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit →</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Fill in <b>meeting title</b>, date, time, location.</li>
+<li>Enter <b>attendees</b> (one per line).</li>
+<li>List <b>agenda items</b>.</li>
+<li>For <b>discussion</b>, use format: <code>Discussion point; Decision made</code>.</li>
+<li>For <b>action items</b>, use format: <code>Task | Owner | Due date</code>.</li>
+<li>Click <b>Generate</b> to preview, <b>Print</b> to save as PDF.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">Tip: meeting minutes should be circulated within 24 hours. Always assign clear owners and deadlines for action items. For recurring meetings, save a template to reuse the structure.</p>
+    </div>
+    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'☀️':'🌙';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('260330663@qq.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:260330663@qq.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+    function gen(){
+        var title = document.getElementById('title').value || 'Meeting Minutes';
+        var date = document.getElementById('date').value || '—';
+        var time = document.getElementById('time').value;
+        var location = document.getElementById('location').value;
+        var facilitator = document.getElementById('facilitator').value;
+        var noteTaker = document.getElementById('noteTaker').value;
+        var attendees = document.getElementById('attendees').value.split('\n').filter(function(l){ return l.trim(); });
+        var agenda = document.getElementById('agenda').value.split('\n').filter(function(l){ return l.trim(); });
+        var discussion = document.getElementById('discussion').value.split('\n').filter(function(l){ return l.trim(); });
+        var actions = document.getElementById('actions').value.split('\n').filter(function(l){ return l.trim(); });
+        var nextMeeting = document.getElementById('nextMeeting').value;
+        var html = '<div style="font-family:Arial,sans-serif;max-width:800px;margin:0 auto;color:#222;line-height:1.6">';
+        html += '<h1 style="color:#6366f1;text-align:center;margin-bottom:6px">' + esc(title) + '</h1>';
+        html += '<div style="text-align:center;color:#666;font-size:13px;margin-bottom:18px">Meeting Minutes</div>';
+        // Info table
+        html += '<table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:18px">';
+        html += '<tr><td style="padding:6px;border:1px solid #e5e7eb;background:#f9fafb;width:20%"><b>Date</b></td><td style="padding:6px;border:1px solid #e5e7eb">' + esc(date) + (time ? ' ' + esc(time) : '') + '</td>';
+        html += '<td style="padding:6px;border:1px solid #e5e7eb;background:#f9fafb;width:20%"><b>Location</b></td><td style="padding:6px;border:1px solid #e5e7eb">' + esc(location) + '</td></tr>';
+        html += '<tr><td style="padding:6px;border:1px solid #e5e7eb;background:#f9fafb"><b>Facilitator</b></td><td style="padding:6px;border:1px solid #e5e7eb">' + esc(facilitator) + '</td>';
+        html += '<td style="padding:6px;border:1px solid #e5e7eb;background:#f9fafb"><b>Note Taker</b></td><td style="padding:6px;border:1px solid #e5e7eb">' + esc(noteTaker) + '</td></tr>';
+        html += '</table>';
+        // Attendees
+        if(attendees.length){
+            html += '<h3 style="color:#6366f1;border-bottom:2px solid #6366f1;padding-bottom:4px;margin:18px 0 10px">Attendees</h3>';
+            html += '<ul style="margin-left:20px;font-size:13px">';
+            attendees.forEach(function(a){ html += '<li>' + esc(a) + '</li>'; });
+            html += '</ul>';
+        }
+        // Agenda
+        if(agenda.length){
+            html += '<h3 style="color:#6366f1;border-bottom:2px solid #6366f1;padding-bottom:4px;margin:18px 0 10px">Agenda</h3>';
+            html += '<ol style="margin-left:20px;font-size:13px">';
+            agenda.forEach(function(a){ html += '<li>' + esc(a) + '</li>'; });
+            html += '</ol>';
+        }
+        // Discussion
+        if(discussion.length){
+            html += '<h3 style="color:#6366f1;border-bottom:2px solid #6366f1;padding-bottom:4px;margin:18px 0 10px">Discussion &amp; Decisions</h3>';
+            html += '<table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:12px">';
+            html += '<thead><tr style="background:#6366f1;color:#fff"><th style="padding:8px;text-align:left;border:1px solid #6366f1">#</th><th style="padding:8px;text-align:left;border:1px solid #6366f1">Discussion</th><th style="padding:8px;text-align:left;border:1px solid #6366f1;width:40%">Decision</th></tr></thead><tbody>';
+            discussion.forEach(function(d, i){
+                var parts = d.split(';');
+                var disc = parts[0] ? parts[0].trim() : '';
+                var dec = parts[1] ? parts[1].trim() : '';
+                html += '<tr><td style="padding:6px;border:1px solid #e5e7eb;text-align:center">' + (i+1) + '</td><td style="padding:6px;border:1px solid #e5e7eb">' + esc(disc) + '</td><td style="padding:6px;border:1px solid #e5e7eb">' + esc(dec) + '</td></tr>';
+            });
+            html += '</tbody></table>';
+        }
+        // Action items
+        if(actions.length){
+            html += '<h3 style="color:#6366f1;border-bottom:2px solid #6366f1;padding-bottom:4px;margin:18px 0 10px">Action Items</h3>';
+            html += '<table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:12px">';
+            html += '<thead><tr style="background:#6366f1;color:#fff"><th style="padding:8px;text-align:left;border:1px solid #6366f1">#</th><th style="padding:8px;text-align:left;border:1px solid #6366f1">Task</th><th style="padding:8px;text-align:left;border:1px solid #6366f1;width:25%">Owner</th><th style="padding:8px;text-align:left;border:1px solid #6366f1;width:120px">Due</th></tr></thead><tbody>';
+            actions.forEach(function(a, i){
+                var p = a.split('|').map(function(s){ return s.trim(); });
+                html += '<tr><td style="padding:6px;border:1px solid #e5e7eb;text-align:center">' + (i+1) + '</td><td style="padding:6px;border:1px solid #e5e7eb">' + esc(p[0]||'') + '</td><td style="padding:6px;border:1px solid #e5e7eb">' + esc(p[1]||'') + '</td><td style="padding:6px;border:1px solid #e5e7eb">' + esc(p[2]||'') + '</td></tr>';
+            });
+            html += '</tbody></table>';
+        }
+        // Next meeting
+        if(nextMeeting){
+            html += '<div style="margin-top:18px;padding:10px;background:#eef2ff;border-left:4px solid #6366f1;border-radius:4px;font-size:13px"><b>Next meeting:</b> ' + esc(nextMeeting) + '</div>';
+        }
+        html += '<div style="margin-top:30px;font-size:11px;color:#999;text-align:center">Minutes prepared by ' + esc(noteTaker) + ' · ' + esc(date) + '</div>';
+        html += '</div>';
+        return html;
+    }
+    function update(){
+        document.getElementById('preview').innerHTML = gen();
+    }
+    document.getElementById('genBtn').addEventListener('click', update);
+    document.getElementById('printBtn').addEventListener('click', function(){
+        var html = gen();
+        var w = window.open('', '_blank');
+        if(!w){ alert('Please allow popups'); return; }
+        w.document.write('<html><head><title>Meeting Minutes</title><style>body{margin:20px;font-family:Arial,sans-serif}@media print{body{margin:0}}</style></head><body>' + html + '    <script src="/assets/js/date-utils.js"></script>
+</body></html>');
+        w.document.close();
+        setTimeout(function(){ w.print(); }, 300);
+    });
+    ['title','date','time','location','facilitator','noteTaker','attendees','agenda','discussion','actions','nextMeeting'].forEach(function(id){
+        document.getElementById(id).addEventListener('input', update);
+    });
+    document.getElementById('date').valueAsDate = new Date();
+    update();
+})();
+</script>
+</body>
+</html>

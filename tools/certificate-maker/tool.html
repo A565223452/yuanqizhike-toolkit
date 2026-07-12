@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certificate Maker | YuanQiZhiLe Toolkit</title>
+<meta name="description" content="Create custom certificates online for free. Design award, completion, achievement, and appreciation certificates. Download as PDF.">
+<meta name="keywords" content="certificate maker, certificate generator, award certificate, completion certificate, achievement certificate, free certificate, printable certificate">
+<meta property="og:title" content="Certificate Maker - Free Online Tool">
+<meta property="og:description" content="Create custom certificates online for free. Design award, completion, achievement, and appreciation certificates. Download as PDF.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Certificate Maker</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Create custom certificates online for free. Design award, completion, achievement, and appreciation certificates. Download as PDF.</div>
+    <div class="row">
+        <div class="group"><label>Certificate type</label>
+            <select id="certType" style="width:100%;padding:8px">
+                <option value="achievement" selected>Certificate of Achievement</option>
+                <option value="completion">Certificate of Completion</option>
+                <option value="appreciation">Certificate of Appreciation</option>
+                <option value="excellence">Certificate of Excellence</option>
+                <option value="participation">Certificate of Participation</option>
+            </select>
+        </div>
+        <div class="group"><label>Theme</label>
+            <select id="theme" style="width:100%;padding:8px">
+                <option value="classic" selected>Classic (blue/gold)</option>
+                <option value="modern">Modern (purple)</option>
+                <option value="elegant">Elegant (black/gold)</option>
+                <option value="minimal">Minimal (black/white)</option>
+                <option value="nature">Nature (green)</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="group" style="grid-column:span 2"><label>Recipient name</label>
+            <input type="text" id="recipient" placeholder="John Doe" style="width:100%;padding:8px">
+        </div>
+    </div>
+    <div class="row">
+        <div class="group" style="grid-column:span 2"><label>Awarded for / Description</label>
+            <textarea id="description" placeholder="For outstanding achievement in..." style="width:100%;padding:8px;height:60px"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Issued by (organization)</label><input type="text" id="issuer" placeholder="Acme Inc." style="width:100%;padding:8px"></div>
+        <div class="group"><label>Date</label><input type="date" id="certDate" style="width:100%;padding:8px"></div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Signer name</label><input type="text" id="signerName" placeholder="Jane Smith" style="width:100%;padding:8px"></div>
+        <div class="group"><label>Signer title</label><input type="text" id="signerTitle" placeholder="Director" style="width:100%;padding:8px"></div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Orientation</label>
+            <select id="orientation" style="width:100%;padding:8px">
+                <option value="landscape" selected>Landscape (recommended)</option>
+                <option value="portrait">Portrait</option>
+            </select>
+        </div>
+        <div class="group"><label>Border style</label>
+            <select id="border" style="width:100%;padding:8px">
+                <option value="double" selected>Double border</option>
+                <option value="single">Single border</option>
+                <option value="none">No border</option>
+            </select>
+        </div>
+    </div>
+    <button id="preview" style="padding:10px 20px;background:#3b82f6;color:#fff;border:none;border-radius:6px;cursor:pointer;margin-top:10px">Preview</button>
+    <button id="print" style="padding:10px 20px;background:#10b981;color:#fff;border:none;border-radius:6px;cursor:pointer;margin-top:10px;margin-left:6px">Print / Save as PDF</button>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">260330663@qq.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">— or describe your need below —</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit →</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Choose <b>Certificate type</b> (Achievement, Completion, Appreciation, etc.) and <b>Theme</b>.</li>
+<li>Enter the <b>Recipient name</b>.</li>
+<li>Write a <b>description</b> of what the certificate is for.</li>
+<li>Enter the <b>issuing organization</b>, <b>date</b>, and <b>signer info</b>.</li>
+<li>Choose orientation (landscape recommended) and border style.</li>
+<li>Click <b>Preview</b> or <b>Print / Save as PDF</b>.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">A4 size, print-ready. Use "Save as PDF" in print dialog. For best results, set margins to "None" in the browser print dialog.</p>
+    </div>
+    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'☀️':'🌙';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('260330663@qq.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:260330663@qq.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    function buildHtml(){
+        var theme = document.getElementById('theme').value;
+        var type = document.getElementById('certType').value;
+        var orientation = document.getElementById('orientation').value;
+        var border = document.getElementById('border').value;
+        var themes = {
+            classic: { primary: '#1e40af', accent: '#ca8a04', bg: '#fefce8', text: '#1e293b' },
+            modern: { primary: '#7c3aed', accent: '#ec4899', bg: '#faf5ff', text: '#1e293b' },
+            elegant: { primary: '#000', accent: '#ca8a04', bg: '#fffbeb', text: '#1e293b' },
+            minimal: { primary: '#000', accent: '#666', bg: '#fff', text: '#1e293b' },
+            nature: { primary: '#15803d', accent: '#65a30d', bg: '#f0fdf4', text: '#1e293b' }
+        };
+        var t = themes[theme];
+        var typeLabels = {
+            achievement: 'Certificate of Achievement',
+            completion: 'Certificate of Completion',
+            appreciation: 'Certificate of Appreciation',
+            excellence: 'Certificate of Excellence',
+            participation: 'Certificate of Participation'
+        };
+        var pageStyle = orientation === 'landscape'
+            ? 'width:297mm;height:210mm'
+            : 'width:210mm;height:297mm';
+        var borderStyle = '';
+        if(border === 'double'){
+            borderStyle = 'border:3px double ' + t.primary + ';padding:8px;';
+        } else if(border === 'single'){
+            borderStyle = 'border:2px solid ' + t.primary + ';padding:8px;';
+        }
+        var innerBorder = border !== 'none' ? 'border:1px solid ' + t.accent + ';padding:30px;' : 'padding:30px;';
+        var html = '<!doctype html><html><head><title>Certificate - ' + escHtml(document.getElementById('recipient').value || 'Recipient') + '</title><meta charset="utf-8">'
+            + '<style>@page{size:' + (orientation === 'landscape' ? 'A4 landscape' : 'A4 portrait') + ';margin:0}body{font-family:Georgia,serif;margin:0;padding:0;color:' + t.text + '}.cert{box-sizing:border-box;' + pageStyle + ';background:' + t.bg + ';display:flex;align-items:center;justify-content:center}.inner{' + borderStyle + 'width:100%;height:100%;box-sizing:border-box}.content{' + innerBorder + 'width:100%;height:100%;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}h1{color:' + t.primary + ';font-size:42px;margin:0 0 10px;letter-spacing:2px;font-variant:small-caps}h2{color:' + t.accent + ';font-size:18px;margin:0 0 30px;letter-spacing:3px;text-transform:uppercase;font-weight:normal}.recipient{font-size:48px;color:' + t.primary + ';font-style:italic;margin:20px 0;border-bottom:2px solid ' + t.accent + ';padding:0 40px 10px;min-width:300px}.desc{font-size:16px;color:' + t.text + ';max-width:600px;line-height:1.6;margin:20px 0}.signature{position:absolute;bottom:50px;width:100%;display:flex;justify-content:space-around}.sign{text-align:center}.sign-line{border-top:1px solid ' + t.text + ';width:200px;margin:30px auto 6px;font-size:14px}.sign-name{font-weight:bold;color:' + t.primary + '}.sign-title{font-size:12px;color:' + t.accent + '}.seal{width:90px;height:90px;border:3px solid ' + t.accent + ';border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:' + t.accent + ';font-size:11px;font-weight:bold;text-align:center;margin-top:20px}.date-org{margin-top:20px;font-size:13px;color:' + t.accent + '}</style>'
+            + '</head><body>';
+        html += '<div class="cert"><div class="inner"><div class="content" style="position:relative">';
+        html += '<div style="font-size:11px;color:' + t.accent + ';letter-spacing:4px;text-transform:uppercase">This certifies that</div>';
+        html += '<h1>' + typeLabels[type] + '</h1>';
+        html += '<h2>This certificate is proudly presented to</h2>';
+        html += '<div class="recipient">' + escHtml(document.getElementById('recipient').value || '________________') + '</div>';
+        if(document.getElementById('description').value){
+            html += '<div class="desc">' + escHtml(document.getElementById('description').value) + '</div>';
+        } else {
+            html += '<div class="desc">In recognition of outstanding accomplishment and dedication</div>';
+        }
+        html += '<div class="seal">OFFICIAL<br>SEAL</div>';
+        // Signature line
+        html += '<div class="signature">';
+        html += '<div class="sign"><div class="sign-line"></div><div class="sign-name">' + escHtml(document.getElementById('signerName').value || '________________') + '</div><div class="sign-title">' + escHtml(document.getElementById('signerTitle').value || '') + '</div></div>';
+        html += '<div class="sign"><div class="sign-line"></div><div class="sign-name">' + escHtml(document.getElementById('issuer').value || '________________') + '</div><div class="sign-title">Issuing Organization</div></div>';
+        html += '</div>';
+        html += '<div class="date-org">Date: ' + (document.getElementById('certDate').value ? new Date(document.getElementById('certDate').value).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : '_____________') + '</div>';
+        html += '</div></div></div>';
+        html += '    <script src="/assets/js/date-utils.js"></script>
+</body></html>';
+        return html;
+    }
+    function escHtml(s){ return String(s||'').replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+    document.getElementById('preview').addEventListener('click', function(){
+        var html = buildHtml();
+        var w = window.open('', '_blank');
+        w.document.write(html);
+        w.document.close();
+    });
+    document.getElementById('print').addEventListener('click', function(){
+        var html = buildHtml();
+        var w = window.open('', '_blank');
+        w.document.write(html);
+        w.document.close();
+        setTimeout(function(){ w.print(); }, 400);
+    });
+    document.getElementById('certDate').value = new Date().toISOString().slice(0,10);
+})();
+</script>
+</body>
+</html>

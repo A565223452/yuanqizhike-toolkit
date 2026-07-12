@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Basic Calculator | YuanQiZhiLe Toolkit</title>
+<meta name="description" content="Simple online calculator for addition, subtraction, multiplication, and division. Clean interface, large buttons, keyboard support. Free online basic calculator.">
+<meta name="keywords" content="basic calculator, simple calculator, online calculator, addition, subtraction, multiplication, division">
+<meta property="og:title" content="Basic Calculator - Free Online Tool">
+<meta property="og:description" content="Simple online calculator for addition, subtraction, multiplication, and division. Clean interface, large buttons, keyboard support. Free online basic calculator.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+.calc-key{padding:20px;font-size:20px;border:1px solid #d1d5db;background:#fff;border-radius:8px;cursor:pointer;font-family:inherit;transition:all 0.15s}
+    .calc-key:hover{background:#f3f4f6;transform:translateY(-1px)}
+    .calc-key:active{transform:translateY(0);background:#dbeafe}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Basic Calculator</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Simple online calculator for addition, subtraction, multiplication, and division. Clean interface, large buttons, keyboard support. Free online basic calculator.</div>
+    <div class="group">
+        <input type="text" id="display" value="0" readonly style="width:100%;padding:16px;font-size:32px;text-align:right;font-family:monospace;border:2px solid #6366f1;border-radius:6px;background:#1e293b;color:#fff">
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px">
+        <button class="calc-key" data-k="C" style="background:#fca5a5;color:#fff">C</button>
+        <button class="calc-key" data-k="back" style="background:#fcd34d;color:#fff">⌫</button>
+        <button class="calc-key" data-k="%" style="background:#c7d2fe">%</button>
+        <button class="calc-key" data-k="/" style="background:#c7d2fe">÷</button>
+
+        <button class="calc-key" data-k="7">7</button>
+        <button class="calc-key" data-k="8">8</button>
+        <button class="calc-key" data-k="9">9</button>
+        <button class="calc-key" data-k="*" style="background:#c7d2fe">×</button>
+
+        <button class="calc-key" data-k="4">4</button>
+        <button class="calc-key" data-k="5">5</button>
+        <button class="calc-key" data-k="6">6</button>
+        <button class="calc-key" data-k="-" style="background:#c7d2fe">−</button>
+
+        <button class="calc-key" data-k="1">1</button>
+        <button class="calc-key" data-k="2">2</button>
+        <button class="calc-key" data-k="3">3</button>
+        <button class="calc-key" data-k="+" style="background:#c7d2fe">+</button>
+
+        <button class="calc-key" data-k="0" style="grid-column:span 2">0</button>
+        <button class="calc-key" data-k=".">.</button>
+        <button class="calc-key" data-k="=" style="background:#6366f1;color:#fff">=</button>
+    </div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">260330663@qq.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">— or describe your need below —</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit →</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Click number buttons or type on your keyboard.</li>
+<li>Use <b>+ − × ÷</b> for arithmetic, <b>%</b> for percentage.</li>
+<li>Press <b>=</b> or Enter to compute.</li>
+<li><b>C</b> clears all, <b>⌫</b> deletes the last digit.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">Keyboard shortcuts: 0-9, +, -, *, /, Enter (=), Backspace, Esc (clear). The calculator handles chained operations like 5 + 3 × 2 in left-to-right order.</p>
+    </div>
+    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'☀️':'🌙';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('260330663@qq.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:260330663@qq.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    var current = '0';
+    var prev = null;
+    var op = null;
+    var justEvaluated = false;
+    function update(){
+        document.getElementById('display').value = current;
+    }
+    function inputDigit(d){
+        if(current === '0' || justEvaluated){ current = d; justEvaluated = false; }
+        else current += d;
+        update();
+    }
+    function inputDot(){
+        if(justEvaluated){ current = '0.'; justEvaluated = false; }
+        else if(current.indexOf('.') === -1) current += '.';
+        update();
+    }
+    function clearAll(){
+        current = '0'; prev = null; op = null; justEvaluated = false; update();
+    }
+    function backspace(){
+        if(justEvaluated){ clearAll(); return; }
+        current = current.length > 1 ? current.slice(0, -1) : '0';
+        update();
+    }
+    function compute(a, b, op){
+        a = parseFloat(a); b = parseFloat(b);
+        if(isNaN(a) || isNaN(b)) return 'Error';
+        switch(op){
+            case '+': return a + b;
+            case '-': return a - b;
+            case '*': return a * b;
+            case '/': return b === 0 ? 'Error: divide by 0' : a / b;
+            case '%': return a * (b / 100);
+        }
+        return b;
+    }
+    function setOp(newOp){
+        if(op && !justEvaluated){
+            var result = compute(prev, current, op);
+            current = String(result);
+            update();
+        }
+        prev = current;
+        op = newOp;
+        justEvaluated = true;
+    }
+    function evaluate(){
+        if(op && prev !== null){
+            var result = compute(prev, current, op);
+            current = String(result);
+            op = null;
+            prev = null;
+            justEvaluated = true;
+            update();
+        }
+    }
+    document.querySelectorAll('.calc-key').forEach(function(btn){
+        btn.addEventListener('click', function(){
+            var k = this.getAttribute('data-k');
+            if(/[0-9]/.test(k)) inputDigit(k);
+            else if(k === '.') inputDot();
+            else if(k === 'C') clearAll();
+            else if(k === 'back') backspace();
+            else if(k === '=') evaluate();
+            else if(k === '%'){
+                if(current !== '0'){ current = String(parseFloat(current) / 100); update(); }
+            }
+            else setOp(k);
+        });
+    });
+    document.addEventListener('keydown', function(e){
+        if(e.target.tagName === 'INPUT' && e.target.id !== 'display') return;
+        var k = e.key;
+        if(/[0-9]/.test(k)){ inputDigit(k); e.preventDefault(); }
+        else if(k === '.'){ inputDot(); e.preventDefault(); }
+        else if(k === '+' || k === '-' || k === '*' || k === '/'){ setOp(k); e.preventDefault(); }
+        else if(k === 'Enter' || k === '='){ evaluate(); e.preventDefault(); }
+        else if(k === 'Backspace'){ backspace(); e.preventDefault(); }
+        else if(k === 'Escape'){ clearAll(); e.preventDefault(); }
+    });
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

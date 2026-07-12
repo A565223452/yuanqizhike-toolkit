@@ -24,7 +24,6 @@
         h1{margin-bottom:16px;color:#222}
         .top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px}
         .btns{display:flex;gap:8px;flex-wrap:wrap}
-        .btns-secondary{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;padding-top:8px;border-top:1px solid #ddd}
         button{padding:8px 16px;cursor:pointer;border:none;border-radius:4px;background:#007bff;color:#fff;transition:opacity 0.2s}
         button:hover{opacity:0.85}
         button.secondary{background:#6c757d}
@@ -57,33 +56,81 @@
         .tree-actions{margin-left:auto;display:none;gap:4px}
         .tree-header:hover .tree-actions{display:flex}
         .tree-copy-btn{padding:2px 6px;font-size:11px;background:#6c757d;border-radius:2px}
-        .view-toggle{margin-bottom:12px;display:flex;gap:8px}
+        .view-toggle{margin-bottom:12px;display:flex;gap:8px;flex-wrap:wrap}
         .view-toggle button.active{background:#0056b3}
         .file-input-hidden{display:none}
         footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center}
         .bookmark-btn{position:fixed;top:20px;right:20px;padding:8px 14px;background:#fff;border:1px solid #ccc;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#555;z-index:100;transition:all 0.2s;box-shadow:0 1px 3px rgba(0,0,0,0.1)}
-        .convert-section{margin-top:12px;padding:16px;background:#f8f9fa;border-radius:8px;border:1px solid #ddd}
-        .convert-section.hidden{display:none}
-        .convert-label{font-size:13px;font-weight:500;color:#555;margin-bottom:4px;display:block}
         .bookmark-btn:hover{background:#f0f0f0;color:#333;border-color:#aaa}
+        /* Diff & Schema styles */
+        .diff-section{margin-top:12px;padding:16px;background:#fff8f0;border-radius:8px;border:1px solid #ffd699}
+        .diff-section.hidden{display:none}
+        .diff-output{width:100%;min-height:150px;padding:12px;font-family:monospace;font-size:13px;border:1px solid #ddd;border-radius:4px;background:#fff;margin:12px 0;white-space:pre-wrap;line-height:1.6;max-height:400px;overflow:auto}
+        .diff-added{color:#16a34a;background:#dcfce7;padding:1px 4px;border-radius:2px}
+        .diff-removed{color:#dc2626;background:#fee2e2;padding:1px 4px;border-radius:2px}
+        .schema-output{width:100%;min-height:150px;padding:12px;font-family:monospace;font-size:13px;border:1px solid #ddd;border-radius:4px;background:#fff;margin:12px 0}
+        .schema-section.hidden{display:none}
         @media(max-width:768px){
             .btns{flex-direction:column}
             .btns button{text-align:center}
             textarea,.tree-view{height:250px}
             .bookmark-btn{top:auto;bottom:10px;right:10px;padding:6px 10px;font-size:12px}
+            .view-toggle{flex-direction:column}
+            .view-toggle button{width:100%}
         }
-    </style>
+    
+/* === Common: contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+body.dark .lead{color:#a0a0a0}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}.instructions li{margin:4px 0;font-size:13px;line-height:1.6}body.dark .instructions{background:#1e2a3a;border-color:#2c4a6e}body.dark .instructions h2{color:#5ba3f5}
+</style>
 </head>
 <body>
-<button class="bookmark-btn" id="bookmarkBtn" title="Add to bookmarks">? Bookmark</button>
+<div style="display:flex;gap:8px;align-items:center"><button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn" title="Add to bookmarks">⭐ Bookmark</button></div>
 <div class="container">
     <div class="top-bar">
         <h1>Online JSON Formatter / Validator</h1>
         <div class="btns">
             <button id="format">Format</button>
             <button id="minify">Minify</button>
-            <button id="importBtn">?? Import</button>
-            <button id="exportBtn">?? Export</button>
+            <button id="importBtn">📂 Import</button>
+            <button id="exportBtn">💾 Export</button>
             <button id="clear">Clear</button>
             <button id="copy">Copy</button>
         </div>
@@ -92,9 +139,11 @@
         <button id="toggleCode" class="active">Code View</button>
         <button id="toggleTree">Tree View</button>
         <button id="toggleConvert">Code Convert</button>
+        <button id="toggleDiff">Diff & Schema</button>
     </div>
     
     <div class="convert-section hidden" id="convertSection">
+        <h3 style="margin-bottom:12px">Code Conversion</h3>
         <div class="convert-tabs">
             <button class="convert-tab active" data-lang="typescript">TypeScript</button>
             <button class="convert-tab" data-lang="java">Java</button>
@@ -107,15 +156,124 @@
             <button id="copyConvert" class="secondary">Copy Code</button>
         </div>
     </div>
+    
+    <div class="diff-section hidden" id="diffSection">
+        <h3 style="margin-bottom:12px">JSON Diff & Schema</h3>
+        <label class="convert-label">Original JSON (First Input):</label>
+        <textarea id="diffInput1" placeholder="Paste first JSON here..." style="margin-bottom:12px;height:150px"></textarea>
+        <label class="convert-label">Compare JSON (Second Input):</label>
+        <textarea id="diffInput2" placeholder="Paste second JSON to compare..." style="margin-bottom:12px;height:150px"></textarea>
+        <div class="btns">
+            <button id="diffBtn" class="success">Compare JSONs (Diff)</button>
+            <button id="generateSchemaBtn">Generate JSON Schema</button>
+            <button id="validateSchemaBtn">Validate with Schema</button>
+            <button id="copyDiff" class="secondary">Copy Diff</button>
+        </div>
+        <label class="convert-label" style="margin-top:12px">Diff Result:</label>
+        <div class="diff-output" id="diffOutput"></div>
+        <label class="convert-label">Generated Schema:</label>
+        <textarea class="schema-output hidden" id="schemaOutput" readonly placeholder="Generated JSON Schema will appear here..."></textarea>
+    </div>
+    
     <textarea id="jsonInput" placeholder="Paste your JSON here..."></textarea>
     <div class="tree-view" id="treeView"></div>
     <div class="tip" id="errTip"></div>
-    <footer>
-        YuanQiZhiLe Toolkit �� Developer Free Utility Tools
+        
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol><li>Paste JSON into the input area</li><li>Choose indentation (2, 4 spaces, or minified)</li><li>Click <strong>Format</strong> to beautify</li><li>View syntax errors if any</li><li>Use tree view to explore the structure</li></ol>
+    </div>
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">260330663@qq.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">— or describe your need below —</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit →</button>
+            </form>
+        </div>
+    </div>
+<footer>
+        YuanQiZhiLe Toolkit — Developer Free Utility Tools
     </footer>
 </div>
 <input type="file" id="fileInput" class="file-input-hidden" accept=".json,.txt">
 <script>
+// === Common: contact modal ===
+(function(){
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('260330663@qq.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:260330663@qq.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',__setupContactModal);
+    } else {
+        __setupContactModal();
+    }
+})();
+
+// === Common: theme toggle ===
+(function(){
+    var btn=document.getElementById('themeToggle');
+    if(!btn)return;
+    function apply(t){
+        document.body.classList.toggle('dark',t==='dark');
+        btn.textContent=(t==='dark')?'☀️':'🌙';
+    }
+    var saved=localStorage.getItem('theme');
+    if(saved){apply(saved);}
+    else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+    else{apply('light');}
+    btn.addEventListener('click',function(){
+        var next=document.body.classList.contains('dark')?'light':'dark';
+        apply(next);localStorage.setItem('theme',next);
+    });
+})();
+
 const input=document.getElementById('jsonInput');
 const errTip=document.getElementById('errTip');
 const treeView=document.getElementById('treeView');
@@ -150,7 +308,9 @@ document.getElementById('clear').onclick=()=>{
 // Copy
 document.getElementById('copy').onclick=async()=>{
     await navigator.clipboard.writeText(input.value);
-    alert('Copied!');
+    const btn=document.getElementById('copy');
+    btn.textContent='✓ Copied!';
+    setTimeout(()=>{btn.textContent='Copy'},2000);
 };
 
 // Import file
@@ -182,18 +342,22 @@ document.getElementById('exportBtn').onclick=()=>{
 document.getElementById('toggleCode').onclick=()=>{
     currentView='code';
     input.style.display='';treeView.style.display='none';
-    document.querySelector('.convert-section').style.display='none';
+    document.getElementById('convertSection').style.display='none';
+    document.getElementById('diffSection').style.display='none';
     document.getElementById('toggleCode').classList.add('active');
     document.getElementById('toggleTree').classList.remove('active');
     document.getElementById('toggleConvert').classList.remove('active');
+    document.getElementById('toggleDiff').classList.remove('active');
 };
 document.getElementById('toggleTree').onclick=()=>{
     currentView='tree';
     input.style.display='none';treeView.style.display='';
-    document.querySelector('.convert-section').style.display='none';
+    document.getElementById('convertSection').style.display='none';
+    document.getElementById('diffSection').style.display='none';
     document.getElementById('toggleTree').classList.add('active');
     document.getElementById('toggleCode').classList.remove('active');
     document.getElementById('toggleConvert').classList.remove('active');
+    document.getElementById('toggleDiff').classList.remove('active');
     var trimmed=input.value.trim();
     if(!trimmed){errTip.textContent='Please paste JSON first';return}
     try{buildTree(JSON.parse(trimmed))}catch(e){errTip.textContent='Invalid JSON: '+e.message}
@@ -201,10 +365,22 @@ document.getElementById('toggleTree').onclick=()=>{
 document.getElementById('toggleConvert').onclick=()=>{
     currentView='convert';
     input.style.display='none';treeView.style.display='none';
-    document.querySelector('.convert-section').style.display='block';
+    document.getElementById('convertSection').style.display='block';
+    document.getElementById('diffSection').style.display='none';
     document.getElementById('toggleConvert').classList.add('active');
     document.getElementById('toggleCode').classList.remove('active');
     document.getElementById('toggleTree').classList.remove('active');
+    document.getElementById('toggleDiff').classList.remove('active');
+};
+document.getElementById('toggleDiff').onclick=()=>{
+    currentView='diff';
+    input.style.display='none';treeView.style.display='none';
+    document.getElementById('convertSection').style.display='none';
+    document.getElementById('diffSection').style.display='block';
+    document.getElementById('toggleDiff').classList.add('active');
+    document.getElementById('toggleCode').classList.remove('active');
+    document.getElementById('toggleTree').classList.remove('active');
+    document.getElementById('toggleConvert').classList.remove('active');
 };
 
 // Convert tabs
@@ -248,10 +424,10 @@ function genTS(obj,indent){
     return s;
 }
 function genTSType(arr){
-    const types=[...new Set(arr.map(function(v){if(v===null)return'null';if(Array.isArray(v))return'array';return typeof v}))];
+    const types=[...new Set(arr.map(v=>{if(v===null)return'null';if(Array.isArray(v))return'array';return typeof v}))];
     const typeMap={'null':'null','boolean':'boolean','number':'number','string':'string','array':'array'};
     if(types.length===1)return typeMap[types[0]];
-    return types.map(function(t){if(t==='null')return'null';if(t==='array')return'any[]';return t}).join('|');
+    return types.map(t=>{if(t==='null')return'null';if(t==='array')return'any[]';return t}).join('|');
 }
 function getType(v){return v===null?'null':Array.isArray(v)?'array':typeof v}
 function toPascalCase(s){return s.charAt(0).toUpperCase()+s.slice(1).replace(/[_\-\s]([a-z])/g,(_,c)=>c.toUpperCase())}
@@ -324,28 +500,23 @@ function buildTree(obj){
 function buildNode(value,key,name,level){
     const node=document.createElement('div');
     node.className='tree-node level-'+level;
-    
     const header=document.createElement('div');
     header.className='tree-header';
-    
     const toggle=document.createElement('span');
     toggle.className='tree-toggle';
     toggle.textContent='';
-    
     const keySpan=document.createElement('span');
     if(name!=='root'){
         keySpan.innerHTML='<span class="tree-key">"'+escHtml(name)+'"</span><span class="tree-separator">: </span>';
     }
-    
     const valSpan=document.createElement('span');
     valSpan.className='tree-val';
-    
     const actions=document.createElement('div');
     actions.className='tree-actions';
     if(name!=='root'){
         const copyBtn=document.createElement('button');
         copyBtn.className='tree-copy-btn';
-        copyBtn.textContent='??';
+        copyBtn.textContent='📋';
         copyBtn.title='Copy this value';
         copyBtn.onclick=(e)=>{
             e.stopPropagation();
@@ -353,17 +524,15 @@ function buildNode(value,key,name,level){
         };
         actions.appendChild(copyBtn);
     }
-    
     header.appendChild(toggle);
     header.appendChild(keySpan);
     header.appendChild(valSpan);
     header.appendChild(actions);
     node.appendChild(header);
-    
     if(value===null){
         valSpan.innerHTML='<span class="null-val">null</span>';
     }else if(Array.isArray(value)){
-        toggle.textContent='��';
+        toggle.textContent='▼';
         if(value.length===0){
             valSpan.innerHTML='<span class="tree-bracket">[]</span>';
         }else{
@@ -376,11 +545,11 @@ function buildNode(value,key,name,level){
             node.appendChild(children);
             toggle.onclick=()=>{
                 children.classList.toggle('collapsed');
-                toggle.textContent=children.classList.contains('collapsed')?'?':'��';
+                toggle.textContent=children.classList.contains('collapsed')?'▶':'▼';
             };
         }
     }else if(typeof value==='object'){
-        toggle.textContent='��';
+        toggle.textContent='▼';
         const keys=Object.keys(value);
         if(keys.length===0){
             valSpan.innerHTML='<span class="tree-bracket">{}</span>';
@@ -394,7 +563,7 @@ function buildNode(value,key,name,level){
             node.appendChild(children);
             toggle.onclick=()=>{
                 children.classList.toggle('collapsed');
-                toggle.textContent=children.classList.contains('collapsed')?'?':'��';
+                toggle.textContent=children.classList.contains('collapsed')?'▶':'▼';
             };
         }
     }else if(typeof value==='string'){
@@ -404,13 +573,199 @@ function buildNode(value,key,name,level){
     }else if(typeof value==='boolean'){
         valSpan.innerHTML='<span class="bool-val">'+value+'</span>';
     }
-    
     return node;
 }
 
 function escHtml(str){
     return str.replace(/&/g,'&').replace(/</g,'<').replace(/>/g,'>').replace(/"/g,'"');
 }
+
+// ========== JSON Diff Function ==========
+function computeDiff(obj1,obj2,path=''){
+    let diffs=[];
+    if(typeof obj1!==typeof obj2){
+        diffs.push({path,type:'type_changed',from:typeof obj1,to:typeof obj2});
+        return diffs;
+    }
+    if(Array.isArray(obj1)&&Array.isArray(obj2)){
+        const maxLen=Math.max(obj1.length,obj2.length);
+        for(let i=0;i<maxLen;i++){
+            const p=path?path+'['+i+']':'['+i+']';
+            if(i>=obj1.length)diffs.push({path:p,type:'added',value:obj2[i]});
+            else if(i>=obj2.length)diffs.push({path:p,type:'removed',value:obj1[i]});
+            else if(obj1[i]!==obj2[i]){
+                if(typeof obj1[i]==='object'&&obj1[i]!==null&&typeof obj2[i]==='object'&&obj2[i]!==null&&!Array.isArray(obj1[i])&&!Array.isArray(obj2[i])){
+                    diffs=diffs.concat(computeDiff(obj1[i],obj2[i],p));
+                }else if(Array.isArray(obj1[i])&&Array.isArray(obj2[i])){
+                    diffs=diffs.concat(computeDiff(obj1[i],obj2[i],p));
+                }else{
+                    diffs.push({path:p,type:'changed',from:obj1[i],to:obj2[i]});
+                }
+            }
+        }
+    }else if(typeof obj1==='object'&&obj1!==null&&typeof obj2==='object'&&obj2!==null){
+        const keys=new Set([...Object.keys(obj1),...Object.keys(obj2)]);
+        for(const k of keys){
+            const p=path?path+'.'+k:(k in obj1?'[missing]':'[missing]');
+            const fullPath=path?(path===''?k:path+'.'+k):k;
+            if(!(k in obj1))diffs.push({path:fullPath,type:'added',value:obj2[k]});
+            else if(!(k in obj2))diffs.push({path:fullPath,type:'removed',value:obj1[k]});
+            else if(obj1[k]!==obj2[k]){
+                if(typeof obj1[k]==='object'&&obj1[k]!==null&&typeof obj2[k]==='object'&&obj2[k]!==null&&!Array.isArray(obj1[k])&&!Array.isArray(obj2[k])){
+                    diffs=diffs.concat(computeDiff(obj1[k],obj2[k],fullPath));
+                }else if(Array.isArray(obj1[k])&&Array.isArray(obj2[k])){
+                    diffs=diffs.concat(computeDiff(obj1[k],obj2[k],fullPath));
+                }else{
+                    diffs.push({path:fullPath,type:'changed',from:obj1[k],to:obj2[k]});
+                }
+            }
+        }
+    }else if(obj1!==obj2){
+        diffs.push({path:path||'root',type:'changed',from:obj1,to:obj2});
+    }
+    return diffs;
+}
+
+function renderDiff(diffs){
+    if(diffs.length===0)return'<div style="color:#16a34a">✅ No differences found. JSON objects are identical.</div>';
+    let html='<div style="margin-bottom:8px;font-size:13px;color:#666">Found '+diffs.length+' difference(s):</div>';
+    diffs.forEach(d=>{
+        if(d.type==='added')html+='<div class="diff-added">+ ['+d.path+']: '+escapeJson(d.value)+'</div>';
+        else if(d.type==='removed')html+='<div class="diff-removed">- ['+d.path+']: '+escapeJson(d.from)+'</div>';
+        else if(d.type==='changed')html+='<div class="diff-removed">- ['+d.path+']: '+escapeJson(d.from)+'</div><div class="diff-added">+ ['+d.path+']: '+escapeJson(d.to)+'</div>';
+        else if(d.type==='type_changed')html+='<div style="color:#f59e0b;background:#fef3c7;padding:2px 6px;border-radius:3px">⚠ ['+d.path+']: '+d.from+' → '+d.to+'</div>';
+    });
+    return html;
+}
+
+function escapeJson(val){
+    if(val===null||val===undefined)return'null';
+    if(typeof val==='object')return JSON.stringify(val);
+    return String(val);
+}
+
+document.getElementById('diffBtn').onclick=()=>{
+    const j1=document.getElementById('diffInput1').value.trim();
+    const j2=document.getElementById('diffInput2').value.trim();
+    if(!j1||!j2){alert('Please paste both JSON inputs');return}
+    try{
+        const obj1=JSON.parse(j1);
+        const obj2=JSON.parse(j2);
+        const diffs=computeDiff(obj1,obj2);
+        document.getElementById('diffOutput').innerHTML=renderDiff(diffs);
+    }catch(e){alert('Invalid JSON: '+e.message)}
+};
+
+// ========== JSON Schema Generator ==========
+function generateSchema(obj,schemaName='Root'){
+    let schema={
+        '$schema':'http://json-schema.org/draft-07/schema#',
+        'title':schemaName,
+        'type':''
+    };
+    
+    if(obj===null)schema.type='null';
+    else if(Array.isArray(obj)){
+        schema.type='array';
+        if(obj.length>0)schema.items=generateSchema(obj[0],'Item');
+        else schema.items={};
+    }else if(typeof obj==='object'){
+        schema.type='object';
+        schema.properties={};
+        schema.required=[];
+        for(const k in obj){
+            schema.properties[k]=generateSchema(obj[k],k);
+            schema.required.push(k);
+        }
+    }else{
+        schema.type=typeof obj;
+    }
+    return schema;
+}
+
+document.getElementById('generateSchemaBtn').onclick=()=>{
+    const j1=document.getElementById('diffInput1').value.trim();
+    if(!j1){alert('Please paste JSON in the first input');return}
+    try{
+        const obj=JSON.parse(j1);
+        const schema=generateSchema(obj,'MySchema');
+        document.getElementById('schemaOutput').value=JSON.stringify(schema,null,2);
+        document.getElementById('schemaOutput').classList.remove('hidden');
+    }catch(e){alert('Invalid JSON: '+e.message)}
+};
+
+// ========== JSON Schema Validator ==========
+function validateWithSchema(data,schema,path=''){
+    let errors=[];
+    if(!schema||!schema.type)return errors;
+    
+    const actualType=data===null?'null':Array.isArray(data)?'array':typeof data;
+    
+    if(schema.type==='array'&&Array.isArray(data)){
+        if(schema.items){
+            data.forEach((item,i)=>{
+                errors=errors.concat(validateWithSchema(item,schema.items,path+'['+i+']'));
+            });
+        }
+    }else if(schema.type==='object'&&typeof data==='object'&&data!==null){
+        if(schema.required){
+            schema.required.forEach(prop=>{
+                if(!(prop in data))errors.push({path:path?'.'+prop:prop,message:'Missing required property'});
+            });
+        }
+        if(schema.properties){
+            for(const key in data){
+                if(schema.properties[key]){
+                    errors=errors.concat(validateWithSchema(data[key],schema.properties[key],path?'.'+key:key));
+                }
+            }
+        }
+    }else if(actualType!==schema.type){
+        errors.push({path:path||'root',message:'Expected '+schema.type+' but got '+actualType});
+    }
+    return errors;
+}
+
+document.getElementById('validateSchemaBtn').onclick=()=>{
+    const j1=document.getElementById('diffInput1').value.trim();
+    const schema=document.getElementById('schemaOutput').value.trim();
+    if(!j1){alert('Please paste JSON in the first input');return}
+    if(!schema){alert('Please generate a schema first');return}
+    try{
+        const data=JSON.parse(j1);
+        const schemaObj=JSON.parse(schema);
+        const errors=validateWithSchema(data,schemaObj);
+        if(errors.length===0){
+            document.getElementById('diffOutput').innerHTML='<div style="color:#16a34a">✅ JSON is valid according to the schema!</div>';
+        }else{
+            let html='<div style="color:#dc2626;margin-bottom:8px">❌ Found '+errors.length+' validation error(s):</div>';
+            errors.forEach(e=>{
+                html+='<div style="padding:4px 8px;background:#fee2e2;border-radius:3px;margin:4px 0">⚠ ['+e.path+']: '+e.message+'</div>';
+            });
+            document.getElementById('diffOutput').innerHTML=html;
+        }
+    }catch(e){alert('Error: '+e.message)}
+};
+
+// Copy diff
+document.getElementById('copyDiff').onclick=async()=>{
+    const content=document.getElementById('diffOutput').textContent;
+    if(!content){alert('Nothing to copy');return}
+    await navigator.clipboard.writeText(content);
+    const btn=document.getElementById('copyDiff');
+    btn.textContent='✓ Copied!';
+    setTimeout(()=>{btn.textContent='Copy Diff'},2000);
+};
+
+// Copy converted code
+document.getElementById('copyConvert').onclick=async()=>{
+    const output=document.getElementById('convertOutput');
+    if(!output.value){alert('Nothing to copy');return}
+    await navigator.clipboard.writeText(output.value);
+    const btn=document.getElementById('copyConvert');
+    btn.textContent='✓ Copied!';
+    setTimeout(()=>{btn.textContent='Copy Code'},2000);
+};
 
 // Bookmark
 document.getElementById('bookmarkBtn').onclick=()=>{
@@ -422,16 +777,7 @@ document.getElementById('bookmarkBtn').onclick=()=>{
         alert('Press Ctrl+D (or Cmd+D on Mac) to bookmark this page!');
     }
 };
-
-// Copy converted code
-document.getElementById('copyConvert').onclick=async()=>{
-    const output=document.getElementById('convertOutput');
-    if(!output.value){alert('Nothing to copy');return}
-    await navigator.clipboard.writeText(output.value);
-    alert('Code copied!');
-};
 </script>
-
     <script src="/assets/js/date-utils.js"></script>
 </body>
 </html>

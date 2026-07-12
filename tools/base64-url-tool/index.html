@@ -1,15 +1,16 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base64 / URL Encoder & Decoder | YuanqiZhiKe Toolkit</title>
-    <meta name="description" content="Encode and decode text using Base64 or URL encoding. Features JWT parser, batch processing, and hash generator.">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Base64 URL Encoder Decoder &amp; JWT Parser - Free Online Tool | YuanqiZhiKe Toolkit</title>
+    <meta name="description" content="A free browser-based tool for encoding and decoding Base64 and URL strings, parsing JWT tokens, batch processing, and generating cryptographic hashes. All processing is local and private.">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <!-- GDPR Cookie Consent - Controls AdSense loading based on user consent -->
-    <script src="./assets/js/cookie-consent.js"></script>
+    <script src="/assets/js/cookie-consent.js"></script>
 </head>
-<body><header class="site-header">
+<body>
+    <header class="site-header">
     <div class="container header-inner">
         <a href="/index.html" class="brand">
             <span class="brand-icon">&#9670;</span>
@@ -52,28 +53,30 @@
             <a href="/customize.html" data-i18n="nav.customDev">Custom Dev</a>
             <a href="/guestbook.html" data-i18n="nav.feedback">Feedback</a>
         </nav>
-        <div class="global-earth-icon" id="globalEarthIcon" title="Switch Language">馃寪</div>
+        <div class="global-earth-icon" id="globalEarthIcon" title="Switch Language">🌍</div>
         <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
     </div>
 </header>
 
+    <!-- Tool Hero -->
     <section class="tool-hero">
         <div class="container">
-            <h1>Base64 / URL Encoder & Decoder</h1>
-            <p>Encode and decode text using Base64 or URL encoding. Features JWT parser, batch processing, and hash generator.</p>
+            <h1>Base64 URL Encoder Decoder &amp; JWT Parser</h1>
+            <p>A free browser-based tool for encoding and decoding Base64 and URL strings, parsing JWT tokens, batch processing, and generating cryptographic hashes. All processing runs locally in your browser.</p>
         </div>
     </section>
 
+    <!-- Tool Content -->
     <main class="page-content">
         <div class="container">
             <div class="tool-info-grid">
                 <div class="tool-main">
                     <h2>Use Online (Free)</h2>
-                    <p style="margin-bottom:16px;color:var(--text-light);">The tool below is fully functional. No data leaves your browser.</p>
-                    <iframe src="tool.html" style="width:100%;height:780px;border:1px solid var(--border-color);border-radius:var(--radius);background:#f7f7f7;" title="Base64 / URL Encoder & Decoder"></iframe>
+                    <p style="margin-bottom:16px;color:var(--text-light);">The tool below is fully functional. All processing runs locally in your browser. No data leaves your device.</p>
+                    <iframe src="tool.html" style="width:100%;height:780px;border:1px solid var(--border-color);border-radius:var(--radius);background:#f7f7f7;" title="Base64 URL Encoder Decoder &amp; JWT Parser Tool"></iframe>
 
                     <h2 style="margin-top:32px;">About This Tool</h2>
-                    <p>The Base64 / URL Encoder & Decoder handles all your encoding needs. Encode and decode Base64 and URL strings, parse JWT tokens, and generate cryptographic hashes. Everything runs locally.</p>
+                    <p>A free browser-based tool for encoding and decoding Base64 and URL strings, parsing JWT tokens, batch processing, and generating cryptographic hashes. All processing is local and private. This tool runs entirely in your browser — no data is uploaded to any server. You can also download the source code and use it offline.</p>
 
                     <h2>Core Features</h2>
                     <ul>
@@ -81,8 +84,17 @@
                         <li><strong>URL encode and decode</strong></li>
                         <li><strong>JWT token parser</strong></li>
                         <li><strong>Batch processing</strong></li>
-                        <li><strong>Hash generator (MD5, SHA-1, SHA-256, SHA-512)</strong></li>
-                        <li><strong>Local processing only</strong></li>
+                        <li><strong>SHA-256/384/512 hash generation</strong></li>
+                        <li><strong>Base64 image preview</strong></li>
+                    </ul>
+
+                    <h2>Who Uses This Tool?</h2>
+                    <ul>
+                        <li>Software developers encoding and decoding data</li>
+                        <li>DevOps engineers formatting configurations</li>
+                        <li>QA testers generating test data</li>
+                        <li>Students learning programming concepts</li>
+                        <li>Technical writers documenting APIs</li>
                     </ul>
                 </div>
 
@@ -91,8 +103,9 @@
                     <div class="download-info">
                         <p><strong>File:</strong> base64-url-tool.zip</p>
                         <p><strong>Category:</strong> Developer Tools</p>
+                        <p><strong>Size:</strong> ~30 KB</p>
                     </div>
-                    <p style="font-size:0.85rem;color:var(--text-light);margin:12px 0;">Prefer offline use? Download the ZIP and open index.html anytime.</p>
+                    <p style="font-size:0.85rem;color:var(--text-light);margin:12px 0;">Prefer offline use? Download the ZIP and open index.html anytime. No internet connection required.</p>
                     <button class="btn btn-primary btn-download" data-download="/assets/zip-packages/dev/base64-url-tool.zip" style="width: 100%; margin-top: 10px;">Download ZIP</button>
                     <p style="margin-top: 16px; font-size: 0.85rem; color: var(--text-light);">
                         By downloading, you agree to our <a href="/license.html" target="_blank">Source License Agreement</a>.
@@ -102,6 +115,7 @@
         </div>
     </main>
 
+    <!-- License Modal -->
     <div class="modal-overlay" id="licenseModal">
         <div class="modal">
             <div class="modal-header">
@@ -133,6 +147,7 @@
         </div>
     </div>
 
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-links">
@@ -146,14 +161,12 @@
     </footer>
 
     
-    <script src="./assets/js/i18n.js"></script>`n    <script src="./assets/js/statistics.js"></script>`n    <script src="./assets/js/main.js"></script>
-    <script src="./assets/js/date-utils.js"></script>
+    <script src="/assets/js/i18n.js"></script>
+    <script src="/assets/js/statistics.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/date-utils.js"></script>
     <script>
         trackPageView('base64-url-tool');
     </script>
 </body>
 </html>
-
-
-
-

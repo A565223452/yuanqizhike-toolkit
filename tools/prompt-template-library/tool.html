@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prompt Template Library | YuanQiZhiLe Toolkit</title>
+<meta name="description" content="Browse curated prompt templates by category. Copy prompts for ChatGPT, Claude, Midjourney. Free prompt library.">
+<meta name="keywords" content="prompt library, prompt templates, chatgpt prompts, claude prompts, ai prompts, prompt collection">
+<meta property="og:title" content="Prompt Template Library - Free Online Tool">
+<meta property="og:description" content="Browse curated prompt templates by category. Copy prompts for ChatGPT, Claude, Midjourney. Free prompt library.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Prompt Template Library</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Browse curated prompt templates by category. Copy prompts for ChatGPT, Claude, Midjourney. Free prompt library.</div>
+    <div class="row">
+        <div class="group" style="grid-column:span 2"><label>Search prompts</label><input type="text" id="search" placeholder="e.g. write, code, summarize, marketing..." style="width:100%;padding:8px"></div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Category</label>
+            <select id="category" style="width:100%;padding:8px">
+                <option value="" selected>All categories</option>
+                <option value="writing">Writing</option>
+                <option value="coding">Coding</option>
+                <option value="marketing">Marketing</option>
+                <option value="business">Business</option>
+                <option value="education">Education</option>
+                <option value="creative">Creative</option>
+                <option value="productivity">Productivity</option>
+                <option value="analysis">Analysis</option>
+            </select>
+        </div>
+        <div class="group"><label>Tool</label>
+            <select id="tool" style="width:100%;padding:8px">
+                <option value="" selected>All tools</option>
+                <option value="chatgpt">ChatGPT</option>
+                <option value="claude">Claude</option>
+                <option value="midjourney">Midjourney</option>
+                <option value="stable-diffusion">Stable Diffusion</option>
+            </select>
+        </div>
+    </div>
+    <div id="result" style="margin-top:12px"></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">260330663@qq.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">— or describe your need below —</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit →</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Use <b>search box</b> to find prompts by keyword.</li>
+<li>Filter by <b>category</b> (writing, coding, marketing, etc).</li>
+<li>Filter by <b>AI tool</b> (ChatGPT, Claude, Midjourney, Stable Diffusion).</li>
+<li>Click <b>Copy</b> to copy raw prompt to clipboard.</li>
+<li>Click <b>Use Template</b> to fill in [BRACKETS] interactively.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">40+ curated prompts across 8 categories. Templates use [BRACKETS] for variables - the tool will prompt you to fill them in. Customize freely after copying.</p>
+    </div>
+    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'☀️':'🌙';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('260330663@qq.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:260330663@qq.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    var prompts = [
+        // Writing
+        { cat: 'writing', tool: 'chatgpt', title: 'Blog Post Outline', prompt: 'Create a detailed outline for a blog post about [TOPIC]. Include: 1) catchy title options, 2) introduction hook, 3) 5-7 main sections with bullet points, 4) conclusion with CTA, 5) suggested SEO keywords. Target audience: [AUDIENCE]. Tone: [TONE].' },
+        { cat: 'writing', tool: 'chatgpt', title: 'Email Newsletter', prompt: 'Write a 200-word email newsletter about [TOPIC]. Structure: 1) subject line (3 options), 2) greeting, 3) main message with 2-3 key points, 4) call-to-action, 5) P.S. line. Tone: friendly and engaging. Audience: [AUDIENCE].' },
+        { cat: 'writing', tool: 'claude', title: 'Story Continuation', prompt: 'Continue this story in 300 words, maintaining the same tone and style:\n\n[PASTE YOUR STORY HERE]\n\nKeep the same: 1) point of view, 2) tense, 3) character voice, 4) setting details. End with a hook for the next chapter.' },
+        { cat: 'writing', tool: 'chatgpt', title: 'Product Description', prompt: 'Write a compelling product description for [PRODUCT NAME]. Include: 1) attention-grabbing headline, 2) 3-5 key benefits (not features), 3) social proof elements, 4) specifications list, 5) call-to-action. Target customer: [AUDIENCE]. Word count: 150-200.' },
+        { cat: 'writing', tool: 'chatgpt', title: 'Press Release', prompt: 'Write a professional press release for [ANNOUNCEMENT]. Format: FOR IMMEDIATE RELEASE, headline, dateline, introduction (who/what/when/where/why), 2-3 body paragraphs with quotes, about section, media contact. Length: 400-500 words.' },
+        // Coding
+        { cat: 'coding', tool: 'chatgpt', title: 'Code Review', prompt: 'Review this code and provide feedback on: 1) bugs or potential issues, 2) performance optimizations, 3) readability improvements, 4) security concerns, 5) best practices violations. Suggest specific fixes with code examples.\n\n[PASTE CODE HERE]' },
+        { cat: 'coding', tool: 'claude', title: 'Function Generator', prompt: 'Write a [LANGUAGE] function that [DESCRIPTION]. Requirements: 1) handle edge cases, 2) include input validation, 3) add docstring/comments, 4) follow clean code principles, 5) provide 3 test cases. Function signature: [SIGNATURE].' },
+        { cat: 'coding', tool: 'chatgpt', title: 'Refactor Code', prompt: 'Refactor this code to improve: 1) readability, 2) performance, 3) maintainability. Keep the same functionality. Explain each change.\n\n[PASTE CODE HERE]\n\nConstraints: [ANY CONSTRAINTS]' },
+        { cat: 'coding', tool: 'chatgpt', title: 'SQL Query Builder', prompt: 'Write a SQL query to [DESCRIPTION]. Database schema:\n[SCHEMA]\n\nRequirements: 1) efficient joins, 2) proper indexing hints, 3) handle NULLs, 4) add comments, 5) provide EXPLAIN output expectation. Database: [MySQL/PostgreSQL/etc].' },
+        { cat: 'coding', tool: 'claude', title: 'Bug Debugger', prompt: 'Debug this code. Error: [ERROR MESSAGE]. Expected: [EXPECTED BEHAVIOR]. Actual: [ACTUAL BEHAVIOR].\n\nCode:\n[PASTE CODE HERE]\n\nProvide: 1) root cause, 2) fix with explanation, 3) prevention tips.' },
+        // Marketing
+        { cat: 'marketing', tool: 'chatgpt', title: 'Social Media Calendar', prompt: 'Create a 30-day social media content calendar for [BRAND]. Platforms: [Instagram/Twitter/LinkedIn/etc]. Mix of: 1) educational posts (30%), 2) promotional (20%), 3) engaging/interactive (30%), 4) user-generated (10%), 5) behind-the-scenes (10%). Include hashtags and best posting times.' },
+        { cat: 'marketing', tool: 'chatgpt', title: 'Ad Copy Variations', prompt: 'Write 10 variations of ad copy for [PRODUCT/SERVICE] targeting [AUDIENCE]. For each: 1) headline (max 40 chars), 2) primary text (max 125 chars), 3) CTA, 4) emotional trigger. Test different angles: fear, aspiration, social proof, urgency, curiosity.' },
+        { cat: 'marketing', tool: 'chatgpt', title: 'Brand Voice Guide', prompt: 'Define the brand voice for [BRAND NAME] in [INDUSTRY]. Include: 1) brand personality (3-5 traits), 2) tone examples (formal/casual/funny), 3) vocabulary do\'s and don\'ts, 4) sample social posts, 5) email templates, 6) customer service responses.' },
+        { cat: 'marketing', tool: 'chatgpt', title: 'SEO Content Brief', prompt: 'Create a content brief for an article targeting keyword: [KEYWORD]. Include: 1) target audience, 2) search intent, 3) title options (5), 4) suggested H2/H3 structure, 5) word count, 6) internal/external link suggestions, 7) featured snippet opportunity, 8) related keywords (LSI).' },
+        { cat: 'marketing', tool: 'claude', title: 'Customer Persona', prompt: 'Create 3 detailed customer personas for [PRODUCT/SERVICE]. For each: 1) name and demographics, 2) job and income, 3) goals and challenges, 4) pain points, 5) buying behavior, 6) preferred channels, 7) objections, 8) quote in their voice.' },
+        // Business
+        { cat: 'business', tool: 'chatgpt', title: 'Business Plan Summary', prompt: 'Create a one-page business plan summary for [BUSINESS IDEA]. Sections: 1) Problem, 2) Solution, 3) Target Market (TAM/SAM/SOM), 4) Business Model, 5) Go-to-Market, 6) Competition, 7) Team, 8) Financial Projections (3-year), 9) Funding Ask.' },
+        { cat: 'business', tool: 'chatgpt', title: 'SWOT Analysis', prompt: 'Conduct a SWOT analysis for [COMPANY/PRODUCT]. For each quadrant (Strengths, Weaknesses, Opportunities, Threats), list 5 specific items with brief explanations. End with 3 strategic recommendations based on the analysis.' },
+        { cat: 'business', tool: 'claude', title: 'Meeting Agenda', prompt: 'Create a meeting agenda for [MEETING TYPE] about [TOPIC]. Duration: [X MINUTES]. Attendees: [LIST]. Include: 1) objectives (3 max), 2) timed agenda items, 3) discussion topics, 4) decision points, 5) action items template, 6) pre-read materials.' },
+        { cat: 'business', tool: 'chatgpt', title: 'Investor Pitch', prompt: 'Create a 10-slide investor pitch deck outline for [STARTUP]. Slides: 1) Title, 2) Problem, 3) Solution, 4) Market Size, 5) Product Demo, 6) Business Model, 7) Go-to-Market, 8) Competition, 9) Team, 10) Financials & Ask. For each: title, key points, speaker notes.' },
+        { cat: 'business', tool: 'chatgpt', title: 'OKR Generator', prompt: 'Generate 3 OKRs (Objectives and Key Results) for [ROLE/TEAM] for [QUARTER]. Each Objective should be inspiring and qualitative. Each should have 3-4 measurable Key Results with target numbers. Format: O: [objective] | KR1: [metric] | KR2: [metric] | KR3: [metric].' },
+        // Education
+        { cat: 'education', tool: 'chatgpt', title: 'Lesson Plan', prompt: 'Create a lesson plan for [SUBJECT] - [TOPIC]. Grade: [LEVEL]. Duration: [X MIN]. Include: 1) learning objectives (3), 2) materials needed, 3) hook/intro, 4) main activity with steps, 5) differentiation (advanced/struggling), 6) assessment, 7) homework, 8) standards alignment.' },
+        { cat: 'education', tool: 'chatgpt', title: 'Quiz Generator', prompt: 'Generate a 10-question quiz on [TOPIC]. Mix: 3 multiple choice, 3 true/false, 2 short answer, 1 matching, 1 essay. Include answer key with explanations. Difficulty: [EASY/MEDIUM/HARD]. Include 2 bonus questions.' },
+        { cat: 'education', tool: 'claude', title: 'Concept Explainer', prompt: 'Explain [CONCEPT] at 3 levels: 1) explain like I\'m 5 (simple analogy), 2) explain like I\'m a high schooler (clear with examples), 3) explain like I\'m a college student (technical with depth). Use vivid analogies and real-world examples at each level.' },
+        { cat: 'education', tool: 'chatgpt', title: 'Study Guide', prompt: 'Create a comprehensive study guide for [EXAM/SUBJECT]. Include: 1) key concepts (10), 2) formulas/definitions, 3) common mistakes, 4) practice questions (15) with answers, 5) memory tricks/mnemonics, 6) recommended study schedule (1 week).' },
+        { cat: 'education', tool: 'chatgpt', title: 'Flashcard Set', prompt: 'Generate 20 flashcards for [TOPIC]. Format each as:\nQ: [question or term]\nA: [concise answer or definition]\nInclude mix of: definitions, formulas, examples, applications. Add difficulty rating (1-3 stars) for each.' },
+        // Creative
+        { cat: 'creative', tool: 'midjourney', title: 'Photorealistic Portrait', prompt: 'photorealistic portrait of [SUBJECT], [AGE] years old, [ETHNICITY], [EXPRESSION], [HAIR], [CLOTHING], [BACKGROUND], shot on Canon EOS R5, 85mm lens, f/1.8, golden hour lighting, ultra detailed, 8k, sharp focus, depth of field --ar 2:3 --s 750 --q 2 --v 5.2' },
+        { cat: 'creative', tool: 'midjourney', title: 'Fantasy Landscape', prompt: 'epic fantasy landscape, [SETTING], [TIME OF DAY], [WEATHER], [ARCHITECTURE STYLE], [COLOR PALETTE], dramatic lighting, atmospheric, highly detailed, concept art, matte painting, trending on artstation, by Greg Rutkowski --ar 16:9 --s 800 --q 2 --v 5.2' },
+        { cat: 'creative', tool: 'midjourney', title: 'Logo Concept', prompt: 'minimalist logo design for [BRAND], [INDUSTRY], [SYMBOL/SHAPE], [COLOR SCHEME], vector style, flat design, white background, professional, geometric, simple, modern, dribbble --ar 1:1 --s 200 --q 2 --v 5.2' },
+        { cat: 'creative', tool: 'chatgpt', title: 'Story Premises', prompt: 'Generate 10 unique story premises for [GENRE]. For each: 1) logline (1 sentence), 2) main character, 3) inciting incident, 4) central conflict, 5) theme, 6) why it would appeal to [AUDIENCE]. Mix tropes with fresh twists.' },
+        { cat: 'creative', tool: 'claude', title: 'Poem Generator', prompt: 'Write a [STYLE] poem about [TOPIC]. Style: [haiku/sonnet/free verse/limerick/etc]. Include: 1) vivid imagery, 2) emotional resonance, 3) [RHYME SCHEME] if applicable, 4) metaphor or simile, 5) a memorable closing line. Mood: [MOOD].' },
+        // Productivity
+        { cat: 'productivity', tool: 'chatgpt', title: 'Daily Plan', prompt: 'Plan my day. Wake up: [TIME]. Sleep: [TIME]. Tasks: [LIST WITH ESTIMATED MIN]. Breaks: every [X MIN]. Energy peaks: [MORNING/AFTERNOON/EVENING]. Include: 1) time blocks, 2) deep work sessions, 3) break activities, 4) meal times, 5) buffer time, 6) reflection time.' },
+        { cat: 'productivity', tool: 'chatgpt', title: 'Email Triage', prompt: 'Categorize these emails and suggest responses:\n[PASTE EMAILS]\n\nFor each: 1) priority (Urgent/Today/This Week/Later), 2) category (Action/Info/FYI/Spam), 3) suggested response (1-2 sentences), 4) time needed. Output as a table.' },
+        { cat: 'productivity', tool: 'claude', title: 'Decision Matrix', prompt: 'Help me decide between [OPTIONS]. Create a weighted decision matrix: 1) criteria (5-7), 2) weights (1-5), 3) score each option (1-5), 4) calculate weighted scores, 5) recommendation with reasoning. Also list pros/cons and risks for top 2.' },
+        { cat: 'productivity', tool: 'chatgpt', title: 'Project Breakdown', prompt: 'Break down this project into actionable tasks: [PROJECT]. Output as a checklist with: 1) phases (3-5), 2) tasks per phase (5-10), 3) estimated time per task, 4) dependencies, 5) milestones, 6) risk flags. Format for easy copy to project management tool.' },
+        { cat: 'productivity', tool: 'chatgpt', title: 'Learning Roadmap', prompt: 'Create a 30-day learning roadmap for [SKILL]. Current level: [BEGINNER/INTERMEDIATE]. Daily time: [X HOURS]. Include: 1) week-by-week goals, 2) daily activities (30-60 min), 3) resources (free preferred), 4) project milestones, 5) self-assessment checkpoints, 6) community engagement.' },
+        // Analysis
+        { cat: 'analysis', tool: 'chatgpt', title: 'Data Insights', prompt: 'Analyze this data and provide insights:\n[PASTE DATA]\n\nProvide: 1) summary statistics, 2) top 5 trends, 3) anomalies/outliers, 4) correlations, 5) actionable recommendations (3), 6) visualization suggestions, 7) questions for further investigation.' },
+        { cat: 'analysis', tool: 'claude', title: 'Document Summary', prompt: 'Summarize this document in 3 formats: 1) TL;DR (1 sentence), 2) Executive Summary (1 paragraph, 100 words), 3) Detailed Summary (5 bullet points with sub-points). Document:\n\n[PASTE DOCUMENT]\n\nAudience: [TECHNICAL/EXECUTIVE/GENERAL].' },
+        { cat: 'analysis', tool: 'chatgpt', title: 'Competitor Analysis', prompt: 'Analyze [COMPETITOR] vs [MY COMPANY]. Compare: 1) product features, 2) pricing, 3) target market, 4) marketing strategy, 5) strengths, 6) weaknesses, 7) opportunities for us. Output as table + 3 strategic recommendations.' },
+        { cat: 'analysis', tool: 'chatgpt', title: 'Sentiment Analysis', prompt: 'Analyze the sentiment of these reviews:\n[PASTE REVIEWS]\n\nFor each: 1) sentiment (positive/neutral/negative), 2) confidence (0-100%), 3) key phrases, 4) topics mentioned, 5) suggested response. Aggregate: overall sentiment, common themes, action items.' },
+        { cat: 'analysis', tool: 'claude', title: 'Risk Assessment', prompt: 'Conduct a risk assessment for [PROJECT/DECISION]. Identify: 1) risks (10) categorized (financial/operational/strategic/compliance/technical), 2) probability (1-5), 3) impact (1-5), 4) risk score, 5) mitigation strategies, 6) contingency plans. Output as table sorted by risk score.' }
+    ];
+    function escapeHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+    function render(){
+        var search = document.getElementById('search').value.toLowerCase();
+        var cat = document.getElementById('category').value;
+        var tool = document.getElementById('tool').value;
+        var filtered = prompts.filter(function(p){
+            if(cat && p.cat !== cat) return false;
+            if(tool && p.tool !== tool) return false;
+            if(search && (p.title.toLowerCase().indexOf(search) < 0 && p.prompt.toLowerCase().indexOf(search) < 0)) return false;
+            return true;
+        });
+        var html = '<div style="margin-bottom:8px;font-size:13px;color:#666">' + filtered.length + ' prompts found</div>';
+        if(filtered.length === 0){
+            html += '<div style="padding:20px;text-align:center;color:#999">No prompts match your filters.</div>';
+        } else {
+            filtered.forEach(function(p, idx){
+                var toolColor = p.tool === 'midjourney' ? '#8b5cf6' : (p.tool === 'claude' ? '#f59e0b' : '#10b981');
+                var catColor = { writing:'#3b82f6', coding:'#10b981', marketing:'#ec4899', business:'#f59e0b', education:'#8b5cf6', creative:'#dc2626', productivity:'#06b6d4', analysis:'#84cc16' }[p.cat] || '#666';
+                html += '<div style="background:#fff;border:1px solid #ddd;border-radius:6px;padding:12px;margin-bottom:8px">';
+                html += '<div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:6px;gap:8px;flex-wrap:wrap">';
+                html += '<b style="font-size:15px">' + escapeHtml(p.title) + '</b>';
+                html += '<div style="display:flex;gap:4px"><span style="background:' + catColor + ';color:#fff;padding:2px 8px;border-radius:10px;font-size:11px;text-transform:capitalize">' + p.cat + '</span><span style="background:' + toolColor + ';color:#fff;padding:2px 8px;border-radius:10px;font-size:11px;text-transform:capitalize">' + p.tool + '</span></div>';
+                html += '</div>';
+                html += '<div style="background:#f9f9f9;padding:10px;border-radius:4px;font-family:monospace;font-size:12px;white-space:pre-wrap;max-height:200px;overflow-y:auto;color:#444">' + escapeHtml(p.prompt) + '</div>';
+                html += '<div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap">';
+                html += '<button data-copy="' + idx + '" style="padding:4px 10px;background:#3b82f6;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px">Copy</button>';
+                html += '<button data-edit="' + idx + '" style="padding:4px 10px;background:#10b981;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px">Use Template</button>';
+                html += '</div>';
+                html += '</div>';
+            });
+        }
+        document.getElementById('result').innerHTML = html;
+        document.getElementById('result').querySelectorAll('[data-copy]').forEach(function(btn){
+            btn.addEventListener('click', function(){
+                var idx = parseInt(this.getAttribute('data-copy'));
+                navigator.clipboard.writeText(filtered[idx].prompt).then(function(){
+                    btn.textContent = 'Copied!';
+                    setTimeout(function(){ btn.textContent = 'Copy'; }, 1500);
+                });
+            });
+        });
+        document.getElementById('result').querySelectorAll('[data-edit]').forEach(function(btn){
+            btn.addEventListener('click', function(){
+                var idx = parseInt(this.getAttribute('data-edit'));
+                var p = filtered[idx];
+                var edited = p.prompt.replace(/\[([^\]]+)\]/g, function(m, key){
+                    var val = prompt('Enter value for: ' + key, key);
+                    return val !== null ? val : m;
+                });
+                navigator.clipboard.writeText(edited).then(function(){
+                    btn.textContent = 'Filled & Copied!';
+                    setTimeout(function(){ btn.textContent = 'Use Template'; }, 1500);
+                });
+            });
+        });
+    }
+    document.getElementById('search').addEventListener('input', render);
+    document.getElementById('category').addEventListener('change', render);
+    document.getElementById('tool').addEventListener('change', render);
+    render();
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

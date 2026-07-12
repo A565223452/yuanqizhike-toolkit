@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brake Pad Wear Estimator | YuanQiZhiLe Toolkit</title>
+<meta name="description" content="Estimate brake pad wear and replacement timing. Calculate brake pad lifespan. Free brake pad wear calculator.">
+<meta name="keywords" content="brake pad wear, brake replacement, pad life, brake calculator, car maintenance, brake wear estimator">
+<meta property="og:title" content="Brake Pad Wear Estimator - Free Online Tool">
+<meta property="og:description" content="Estimate brake pad wear and replacement timing. Calculate brake pad lifespan. Free brake pad wear calculator.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Brake Pad Wear Estimator</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Estimate brake pad wear and replacement timing. Calculate brake pad lifespan. Free brake pad wear calculator.</div>
+    <div class="row">
+        <div class="group"><label>Current pad thickness (mm)</label><input type="number" id="current" value="6" min="0" max="20" step="0.5" style="width:100%;padding:8px"></div>
+        <div class="group"><label>Original pad thickness (mm)</label><input type="number" id="original" value="12" min="1" max="20" style="width:100%;padding:8px"></div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Current mileage</label><input type="number" id="mileage" value="35000" min="0" style="width:100%;padding:8px"></div>
+        <div class="group"><label>Mileage at last replacement</label><input type="number" id="lastReplace" value="0" min="0" style="width:100%;padding:8px"></div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Driving style</label>
+            <select id="style" style="width:100%;padding:8px">
+                <option value="gentle" selected>Gentle (highway)</option>
+                <option value="normal">Normal (mixed)</option>
+                <option value="aggressive">Aggressive (city, sport)</option>
+                <option value="track">Track/Hard braking</option>
+            </select>
+        </div>
+        <div class="group"><label>Vehicle type</label>
+            <select id="vehicle" style="width:100%;padding:8px">
+                <option value="sedan" selected>Sedan/Compact</option>
+                <option value="suv">SUV/Truck</option>
+                <option value="sports">Sports car</option>
+                <option value="ev">EV (regen braking)</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Pad type</label>
+            <select id="padType" style="width:100%;padding:8px">
+                <option value="organic" selected>Organic</option>
+                <option value="ceramic">Ceramic</option>
+                <option value="semi-metallic">Semi-metallic</option>
+                <option value="performance">Performance</option>
+            </select>
+        </div>
+        <div class="group"><label>Annual mileage</label><input type="number" id="annual" value="12000" min="0" style="width:100%;padding:8px"></div>
+    </div>
+    <button id="calc" style="padding:10px 20px;background:#10b981;color:#fff;border:none;border-radius:6px;cursor:pointer;margin-top:10px">Estimate Wear</button>
+    <div id="result" style="margin-top:12px"></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">260330663@qq.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">— or describe your need below —</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit →</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Enter <b>current</b> and <b>original</b> pad thickness (mm).</li>
+<li>Enter <b>current mileage</b> and mileage at last replacement.</li>
+<li>Select <b>driving style</b>, <b>vehicle type</b>, and <b>pad type</b>.</li>
+<li>Enter <b>annual mileage</b> for time estimate.</li>
+<li>Click <b>Estimate Wear</b> for replacement timing.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">Replace pads at 3mm thickness. Typical lifespan: 30-70k miles (city), 60-100k miles (highway). Ceramic pads last longer and produce less dust. EVs with regen braking can exceed 100k miles per pad set.</p>
+    </div>
+    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'☀️':'🌙';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('260330663@qq.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:260330663@qq.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    var styleMultiplier = {
+        gentle: 1.3, normal: 1.0, aggressive: 0.6, track: 0.3
+    };
+    var vehicleMultiplier = {
+        sedan: 1.0, suv: 0.8, sports: 0.7, ev: 1.8
+    };
+    var padTypeMultiplier = {
+        organic: 0.8, ceramic: 1.2, 'semi-metallic': 1.0, performance: 0.5
+    };
+    function calc(){
+        var current = +document.getElementById('current').value;
+        var original = +document.getElementById('original').value;
+        var mileage = +document.getElementById('mileage').value;
+        var lastReplace = +document.getElementById('lastReplace').value;
+        var style = document.getElementById('style').value;
+        var vehicle = document.getElementById('vehicle').value;
+        var padType = document.getElementById('padType').value;
+        var annual = +document.getElementById('annual').value;
+        if(current >= original){ document.getElementById('result').innerHTML = '<div style="color:#dc2626;padding:8px">Current thickness cannot exceed original.</div>'; return; }
+        if(!annual){ document.getElementById('result').innerHTML = '<div style="color:#dc2626;padding:8px">Enter annual mileage.</div>'; return; }
+        var milesOnPads = mileage - lastReplace;
+        var wearPerMile = (original - current) / milesOnPads;
+        var baseAdjust = styleMultiplier[style] * vehicleMultiplier[vehicle] * padTypeMultiplier[padType];
+        var adjustedWearPerMile = wearPerMile / baseAdjust;
+        var minThickness = 3;
+        var remainingMm = current - minThickness;
+        var remainingMiles = remainingMm / adjustedWearPerMile;
+        var remainingMonths = remainingMiles / annual * 12;
+        var status, statusColor, statusBg;
+        if(current <= 3){
+            status = 'Replace immediately';
+            statusColor = '#dc2626';
+            statusBg = '#fee2e2';
+        } else if(current <= 4){
+            status = 'Replace soon (within 1 month)';
+            statusColor = '#f59e0b';
+            statusBg = '#fef3c7';
+        } else if(current <= 6){
+            status = 'Monitor - replace in 3-6 months';
+            statusColor = '#f59e0b';
+            statusBg = '#fef3c7';
+        } else {
+            status = 'Good condition';
+            statusColor = '#10b981';
+            statusBg = '#d1fae5';
+        }
+        var html = '<div style="background:' + statusBg + ';padding:14px;border-radius:8px;border-left:4px solid ' + statusColor + '">';
+        html += '<div style="text-align:center;margin-bottom:14px">';
+        html += '<div style="font-size:13px;color:#666">Brake Pad Status</div>';
+        html += '<div style="font-size:24px;font-weight:bold;color:' + statusColor + '">' + status + '</div>';
+        html += '<div style="font-size:14px;color:#666;margin-top:4px">' + current + 'mm remaining (' + ((current / original) * 100).toFixed(0) + '% of original)</div>';
+        html += '</div>';
+        if(current > 3){
+            html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+            html += '<div style="font-size:13px;font-weight:bold;color:#1e40af;margin-bottom:6px">Replacement Estimate</div>';
+            html += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;font-size:12px;text-align:center">';
+            html += '<div style="background:#dbeafe;padding:8px;border-radius:4px"><div style="color:#666">Miles left</div><div style="font-size:18px;font-weight:bold;color:#1e40af">' + remainingMiles.toLocaleString() + '</div></div>';
+            html += '<div style="background:#d1fae5;padding:8px;border-radius:4px"><div style="color:#666">Months left</div><div style="font-size:18px;font-weight:bold;color:#10b981">' + Math.round(remainingMonths) + '</div></div>';
+            html += '<div style="background:#fef3c7;padding:8px;border-radius:4px"><div style="color:#666">Wear rate</div><div style="font-size:14px;font-weight:bold;color:#f59e0b">' + (adjustedWearPerMile * 1000).toFixed(3) + ' mm/1k mi</div></div>';
+            html += '</div>';
+            html += '</div>';
+        }
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+        html += '<div style="font-size:13px;font-weight:bold;color:#1e40af;margin-bottom:6px">Wear Progress</div>';
+        var wearPct = ((original - current) / original * 100).toFixed(0);
+        html += '<div style="background:#f3f4f6;height:24px;border-radius:4px;overflow:hidden;position:relative">';
+        html += '<div style="background:linear-gradient(90deg, #10b981 0%, #f59e0b 70%, #dc2626 100%);height:100%;width:' + wearPct + '%"></div>';
+        html += '<div style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:bold;font-size:11px">' + wearPct + '% worn</div>';
+        html += '</div>';
+        html += '<div style="display:flex;justify-content:space-between;font-size:10px;color:#999;margin-top:4px"><span>Original (' + original + 'mm)</span><span>Replace (' + minThickness + 'mm)</span></div>';
+        html += '</div>';
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+        html += '<div style="font-size:13px;font-weight:bold;color:#1e40af;margin-bottom:6px">Wear Factors</div>';
+        html += '<table style="width:100%;font-size:12px;border-collapse:collapse">';
+        html += '<tr style="border-bottom:1px solid #eee"><td style="padding:6px">Driving style</td><td style="text-align:right;padding:6px">' + style.charAt(0).toUpperCase() + style.slice(1) + ' (x' + styleMultiplier[style].toFixed(1) + ')</td></tr>';
+        html += '<tr style="border-bottom:1px solid #eee"><td style="padding:6px">Vehicle type</td><td style="text-align:right;padding:6px">' + vehicle.toUpperCase() + ' (x' + vehicleMultiplier[vehicle].toFixed(1) + ')</td></tr>';
+        html += '<tr style="border-bottom:1px solid #eee"><td style="padding:6px">Pad type</td><td style="text-align:right;padding:6px">' + padType.charAt(0).toUpperCase() + padType.replace('-', ' ').slice(1) + ' (x' + padTypeMultiplier[padType].toFixed(1) + ')</td></tr>';
+        html += '<tr style="background:#dbeafe;font-weight:bold"><td style="padding:6px">Combined factor</td><td style="text-align:right;padding:6px;color:#1e40af">x' + baseAdjust.toFixed(2) + '</td></tr>';
+        html += '</table>';
+        html += '</div>';
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+        html += '<div style="font-size:13px;font-weight:bold;color:#1e40af;margin-bottom:6px">Replacement Cost Estimate</div>';
+        var costPerAxle = {
+            organic: 100, ceramic: 180, 'semi-metallic': 140, performance: 300
+        }[padType];
+        var laborCost = 150;
+        var totalPerAxle = costPerAxle + laborCost;
+        var totalBothAxles = totalPerAxle * 2;
+        html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px">';
+        html += '<div><b>Parts (per axle):</b> $' + costPerAxle + '</div>';
+        html += '<div><b>Labor (per axle):</b> $' + laborCost + '</div>';
+        html += '<div><b>Total (1 axle):</b> $' + totalPerAxle + '</div>';
+        html += '<div><b>Total (both axles):</b> $' + totalBothAxles + '</div>';
+        html += '</div>';
+        html += '<div style="font-size:11px;color:#999;margin-top:4px">Rotors extra: $200-$400/axle if needed</div>';
+        html += '</div>';
+        html += '<div style="background:#d1fae5;padding:10px;border-radius:6px">';
+        html += '<div style="font-size:13px;font-weight:bold;color:#065f46;margin-bottom:4px">Brake Care Tips</div>';
+        html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Inspect brakes every 10k miles or 6 months</div>';
+        html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Listen for squealing (wear indicators)</div>';
+        html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Feel for vibration (warped rotors)</div>';
+        html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Replace pads at 3mm, rotors if scored</div>';
+        html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Flush brake fluid every 2 years</div>';
+        html += '</div>';
+        html += '<div style="font-size:11px;color:#999;margin-top:8px">Estimates based on typical wear rates. Actual wear varies with driving conditions. City driving wears pads 2-3x faster than highway. EVs with regen braking last 2-3x longer.</div>';
+        html += '</div>';
+        document.getElementById('result').innerHTML = html;
+    }
+    document.getElementById('calc').addEventListener('click', calc);
+    calc();
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

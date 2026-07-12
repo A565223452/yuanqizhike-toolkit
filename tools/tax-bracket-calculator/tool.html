@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tax Bracket Calculator | YuanQiZhiLe Toolkit</title>
+<meta name="description" content="Calculate US federal income tax based on 2024 tax brackets. See marginal vs effective tax rate. Free online tax bracket calculator.">
+<meta name="keywords" content="tax bracket, income tax, marginal rate, effective rate, federal tax, us tax brackets, tax calculator">
+<meta property="og:title" content="Tax Bracket Calculator - Free Online Tool">
+<meta property="og:description" content="Calculate US federal income tax based on 2024 tax brackets. See marginal vs effective tax rate. Free online tax bracket calculator.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Tax Bracket Calculator</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Calculate US federal income tax based on 2024 tax brackets. See marginal vs effective tax rate. Free online tax bracket calculator.</div>
+    <div class="group">
+        <label>Filing status</label>
+        <select id="status" style="width:100%;padding:8px">
+            <option value="single">Single</option>
+            <option value="married">Married filing jointly</option>
+            <option value="head">Head of household</option>
+            <option value="married_separate">Married filing separately</option>
+        </select>
+    </div>
+    <div class="group">
+        <label>Taxable income ($)</label>
+        <input type="number" id="income" value="75000" min="0" style="width:100%;padding:8px">
+    </div>
+    <div class="group">
+        <label>Standard deduction</label>
+        <input type="number" id="deduction" value="14600" min="0" style="width:100%;padding:8px">
+        <small style="color:#666">2024 standard deduction: $14,600 single, $29,200 married, $21,900 head of household</small>
+    </div>
+    <div class="result-box" id="result" style="margin-top:12px"></div>
+    <div class="group">
+        <label>2024 federal tax brackets</label>
+        <div id="brackets" style="margin-top:8px"></div>
+    </div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">260330663@qq.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">— or describe your need below —</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit →</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Select your <b>filing status</b>.</li>
+<li>Enter your <b>gross income</b> (annual).</li>
+<li>Standard deduction auto-fills; override if you itemize.</li>
+<li>See your <b>tax owed</b>, marginal rate, and effective rate.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">US federal taxes are progressive — only income in each bracket is taxed at that rate. So a single person making $75k pays 10% on the first $11,600, 12% on income from $11,600-$47,150, and 22% on income from $47,150-$75,000. Your "marginal rate" is your top bracket; your "effective rate" is your average. This is federal only — add state tax and 7.65% FICA.</p>
+    </div>
+    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'☀️':'🌙';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('260330663@qq.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:260330663@qq.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    var brackets2024 = {
+        single: [
+            {min: 0, max: 11600, rate: 10},
+            {min: 11600, max: 47150, rate: 12},
+            {min: 47150, max: 100525, rate: 22},
+            {min: 100525, max: 191950, rate: 24},
+            {min: 191950, max: 243725, rate: 32},
+            {min: 243725, max: 609350, rate: 35},
+            {min: 609350, max: Infinity, rate: 37}
+        ],
+        married: [
+            {min: 0, max: 23200, rate: 10},
+            {min: 23200, max: 94300, rate: 12},
+            {min: 94300, max: 201050, rate: 22},
+            {min: 201050, max: 383900, rate: 24},
+            {min: 383900, max: 487450, rate: 32},
+            {min: 487450, max: 731200, rate: 35},
+            {min: 731200, max: Infinity, rate: 37}
+        ],
+        head: [
+            {min: 0, max: 16550, rate: 10},
+            {min: 16550, max: 63100, rate: 12},
+            {min: 63100, max: 100500, rate: 22},
+            {min: 100500, max: 191950, rate: 24},
+            {min: 191950, max: 243700, rate: 32},
+            {min: 243700, max: 609350, rate: 35},
+            {min: 609350, max: Infinity, rate: 37}
+        ],
+        married_separate: [
+            {min: 0, max: 11600, rate: 10},
+            {min: 11600, max: 47150, rate: 12},
+            {min: 47150, max: 100525, rate: 22},
+            {min: 100525, max: 191950, rate: 24},
+            {min: 191950, max: 243725, rate: 32},
+            {min: 243725, max: 365600, rate: 35},
+            {min: 365600, max: Infinity, rate: 37}
+        ]
+    };
+    function formatMoney(n){
+        return '$' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
+    function calcTax(taxableIncome, brackets){
+        var totalTax = 0;
+        var breakdown = [];
+        brackets.forEach(function(b){
+            if(taxableIncome > b.min){
+                var taxableAtThisRate = Math.min(taxableIncome, b.max) - b.min;
+                var tax = taxableAtThisRate * b.rate / 100;
+                totalTax += tax;
+                breakdown.push({
+                    rate: b.rate,
+                    range: '$' + b.min.toLocaleString() + ' - ' + (b.max === Infinity ? '∞' : '$' + b.max.toLocaleString()),
+                    taxableAmount: taxableAtThisRate,
+                    tax: tax
+                });
+            }
+        });
+        return {totalTax: totalTax, breakdown: breakdown};
+    }
+    function calc(){
+        var status = document.getElementById('status').value;
+        var grossIncome = +document.getElementById('income').value || 0;
+        var deduction = +document.getElementById('deduction').value || 0;
+        var taxableIncome = Math.max(0, grossIncome - deduction);
+        var brackets = brackets2024[status];
+        var result = calcTax(taxableIncome, brackets);
+        var effectiveRate = grossIncome > 0 ? (result.totalTax / grossIncome * 100) : 0;
+        var marginalRate = 0;
+        brackets.forEach(function(b){
+            if(taxableIncome > b.min) marginalRate = b.rate;
+        });
+        var afterTax = grossIncome - result.totalTax;
+        var html = '<div style="background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;padding:20px;border-radius:8px;text-align:center;margin-bottom:12px">';
+        html += '<div style="font-size:14px;opacity:0.9">Federal income tax</div>';
+        html += '<div style="font-size:48px;font-weight:bold">' + formatMoney(result.totalTax) + '</div>';
+        html += '<div style="font-size:13px;opacity:0.9;margin-top:4px">After-tax income: ' + formatMoney(afterTax) + '</div>';
+        html += '</div>';
+        html += '<table style="width:100%;border-collapse:collapse;font-size:14px">';
+        html += '<tr><td style="padding:8px;border-bottom:1px solid #eee">Gross income</td><td style="padding:8px;border-bottom:1px solid #eee;text-align:right">' + formatMoney(grossIncome) + '</td></tr>';
+        html += '<tr><td style="padding:8px;border-bottom:1px solid #eee">Standard deduction</td><td style="padding:8px;border-bottom:1px solid #eee;text-align:right">-' + formatMoney(deduction) + '</td></tr>';
+        html += '<tr><td style="padding:8px;border-bottom:1px solid #eee"><b>Taxable income</b></td><td style="padding:8px;border-bottom:1px solid #eee;text-align:right"><b>' + formatMoney(taxableIncome) + '</b></td></tr>';
+        html += '<tr><td style="padding:8px;border-bottom:1px solid #eee;color:#ef4444">Federal tax owed</td><td style="padding:8px;border-bottom:1px solid #eee;text-align:right;color:#ef4444;font-weight:bold">-' + formatMoney(result.totalTax) + '</td></tr>';
+        html += '<tr style="background:#10b981;color:#fff"><td style="padding:12px"><b>After-tax income</b></td><td style="padding:12px;text-align:right"><b>' + formatMoney(afterTax) + '</b></td></tr>';
+        html += '</table>';
+        // Rates
+        html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px">';
+        html += '<div style="background:#fef3c7;padding:12px;border-radius:8px;text-align:center"><div style="font-size:11px;color:#666">Marginal rate</div><div style="font-size:24px;font-weight:bold;color:#f59e0b">' + marginalRate + '%</div><div style="font-size:11px;color:#666">Your top bracket</div></div>';
+        html += '<div style="background:#dbeafe;padding:12px;border-radius:8px;text-align:center"><div style="font-size:11px;color:#666">Effective rate</div><div style="font-size:24px;font-weight:bold;color:#3b82f6">' + effectiveRate.toFixed(2) + '%</div><div style="font-size:11px;color:#666">Of gross income</div></div>';
+        html += '</div>';
+        // Breakdown by bracket
+        if(result.breakdown.length > 0){
+            html += '<h3 style="margin-top:16px">Tax by bracket</h3>';
+            html += '<table style="width:100%;border-collapse:collapse;font-size:13px">';
+            html += '<tr style="background:#f3f4f6"><th style="padding:6px;text-align:left">Rate</th><th style="padding:6px;text-align:left">Bracket range</th><th style="padding:6px;text-align:left">Taxed at this rate</th><th style="padding:6px;text-align:left">Tax</th></tr>';
+            result.breakdown.forEach(function(b){
+                html += '<tr><td style="padding:6px;border-bottom:1px solid #eee"><b>' + b.rate + '%</b></td><td style="padding:6px;border-bottom:1px solid #eee;font-size:11px">' + b.range + '</td><td style="padding:6px;border-bottom:1px solid #eee">' + formatMoney(b.taxableAmount) + '</td><td style="padding:6px;border-bottom:1px solid #eee">' + formatMoney(b.tax) + '</td></tr>';
+            });
+            html += '</table>';
+        }
+        html += '<div style="margin-top:12px;padding:12px;background:#fef3c7;border-radius:6px;font-size:13px;line-height:1.6">';
+        html += '<b>💡 Key concepts:</b><br>';
+        html += '• <b>Marginal rate:</b> The rate on your next dollar earned<br>';
+        html += '• <b>Effective rate:</b> Your average tax rate (total tax / income)<br>';
+        html += '• US has progressive taxes — only income in each bracket is taxed at that rate<br>';
+        html += '• This is federal only — add state taxes (0-13.3%) and FICA (7.65% employee)';
+        html += '</div>';
+        document.getElementById('result').innerHTML = html;
+    }
+    function renderBrackets(){
+        var status = document.getElementById('status').value;
+        var brackets = brackets2024[status];
+        var html = '<table style="width:100%;border-collapse:collapse;font-size:13px">';
+        html += '<tr style="background:#f3f4f6"><th style="padding:6px;text-align:left">Rate</th><th style="padding:6px;text-align:left">Income range</th></tr>';
+        brackets.forEach(function(b){
+            html += '<tr><td style="padding:6px;border-bottom:1px solid #eee"><b>' + b.rate + '%</b></td><td style="padding:6px;border-bottom:1px solid #eee">$' + b.min.toLocaleString() + ' — ' + (b.max === Infinity ? 'and up' : '$' + b.max.toLocaleString()) + '</td></tr>';
+        });
+        html += '</table>';
+        document.getElementById('brackets').innerHTML = html;
+    }
+    document.getElementById('status').addEventListener('change', function(){
+        // Auto-update deduction
+        var deductions = {single: 14600, married: 29200, head: 21900, married_separate: 14600};
+        document.getElementById('deduction').value = deductions[this.value];
+        calc();
+        renderBrackets();
+    });
+    ['income','deduction'].forEach(function(id){
+        document.getElementById(id).addEventListener('input', calc);
+    });
+    calc();
+    renderBrackets();
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

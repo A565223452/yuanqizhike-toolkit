@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Plan Template Generator | YuanQiZhiLe Toolkit</title>
+<meta name="description" content="Generate professional business plan template. Executive summary, market analysis, financials, strategy. Customizable sections. Free business plan maker.">
+<meta name="keywords" content="business plan, business plan template, startup plan, executive summary, business strategy, financial projection">
+<meta property="og:title" content="Business Plan Template Generator - Free Online Tool">
+<meta property="og:description" content="Generate professional business plan template. Executive summary, market analysis, financials, strategy. Customizable sections. Free business plan maker.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Business Plan Template Generator</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Generate professional business plan template. Executive summary, market analysis, financials, strategy. Customizable sections. Free business plan maker.</div>
+    <div class="row">
+        <div class="group"><label>Company name</label><input type="text" id="company" value="My Startup Inc." style="width:100%;padding:8px"></div>
+        <div class="group"><label>Industry</label><input type="text" id="industry" value="SaaS / Technology" style="width:100%;padding:8px"></div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Founded</label><input type="text" id="founded" value="2026" style="width:100%;padding:8px"></div>
+        <div class="group"><label>Founder</label><input type="text" id="founder" value="Jane Doe" style="width:100%;padding:8px"></div>
+        <div class="group"><label>Location</label><input type="text" id="location" value="San Francisco, CA" style="width:100%;padding:8px"></div>
+    </div>
+    <div class="group"><label>Sections to include</label>
+        <div style="font-size:13px;line-height:1.9;column-count:2">
+            <label><input type="checkbox" class="sec" data-s="exec" checked> Executive Summary</label><br>
+            <label><input type="checkbox" class="sec" data-s="company" checked> Company Description</label><br>
+            <label><input type="checkbox" class="sec" data-s="market" checked> Market Analysis</label><br>
+            <label><input type="checkbox" class="sec" data-s="comp" checked> Competitive Analysis</label><br>
+            <label><input type="checkbox" class="sec" data-s="strategy" checked> Strategy & Implementation</label><br>
+            <label><input type="checkbox" class="sec" data-s="product" checked> Product/Service Line</label><br>
+            <label><input type="checkbox" class="sec" data-s="marketing" checked> Marketing Plan</label><br>
+            <label><input type="checkbox" class="sec" data-s="ops" checked> Operations Plan</label><br>
+            <label><input type="checkbox" class="sec" data-s="team" checked> Management Team</label><br>
+            <label><input type="checkbox" class="sec" data-s="financial" checked> Financial Projections</label><br>
+            <label><input type="checkbox" class="sec" data-s="funding" checked> Funding Request</label><br>
+            <label><input type="checkbox" class="sec" data-s="risk" checked> Risk Analysis</label><br>
+            <label><input type="checkbox" class="sec" data-s="appendix"> Appendix</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Plan length</label>
+            <select id="length" style="width:100%;padding:8px">
+                <option value="short">Short (1-page summary)</option>
+                <option value="medium" selected>Standard (5-10 pages)</option>
+                <option value="long">Detailed (15+ pages)</option>
+            </select>
+        </div>
+        <div class="group"><label>Format</label>
+            <select id="format" style="width:100%;padding:8px">
+                <option value="html" selected>HTML (printable)</option>
+                <option value="markdown">Markdown</option>
+            </select>
+        </div>
+    </div>
+    <button id="gen" style="width:100%;padding:12px;background:#3b82f6;color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:bold;margin:8px 0">Generate Business Plan</button>
+    <button id="print" style="width:100%;padding:12px;background:#10b981;color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:bold;margin-bottom:8px">Print / Save as PDF</button>
+    <div class="group"><label>Preview</label><div id="preview" style="border:1px solid #e5e7eb;border-radius:8px;padding:24px;margin-top:8px;background:#fff;min-height:300px"></div></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">260330663@qq.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">— or describe your need below —</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit →</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Fill in <b>company info</b>.</li>
+<li>Select <b>sections</b> to include.</li>
+<li>Choose <b>length</b> (short / standard / detailed).</li>
+<li>Click <b>Generate</b> to preview, <b>Print</b> to save as PDF.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">Standard business plan covers 10-12 sections. Investors (VCs/angels) expect: market size, competitive moat, financial projections, team, and funding ask. Keep Executive Summary concise (1-2 pages). Update regularly — a stale plan signals lack of execution.</p>
+    </div>
+    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'☀️':'🌙';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('260330663@qq.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:260330663@qq.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    var SECTIONS = {
+        exec: { title: 'Executive Summary', short: 'Brief overview of the company, mission, and key financials.', medium: 'The Executive Summary provides a concise overview of the entire business plan. It should highlight the company mission, the problem being solved, the target market, competitive advantage, financial highlights, and funding requirements. Although it appears first, write it last after all other sections are complete. Keep it to 1-2 pages maximum. Investors often decide whether to read further based on this section alone.' },
+        company: { title: 'Company Description', short: 'Company overview, mission, vision, and legal structure.', medium: 'Provide a detailed description of the company. Include: legal structure (LLC, C-Corp, S-Corp, etc.), mission statement, vision statement, brief history, location(s), and the core problem the company solves. Describe what makes the company unique and why now is the right time to launch. Mention any patents, trademarks, or IP.' },
+        market: { title: 'Market Analysis', short: 'Industry overview, target market size, and trends.', medium: 'Demonstrate deep understanding of the industry and target market. Include: TAM/SAM/SOM (Total/Serviceable/Obtainable Market), industry growth rate, key trends, customer demographics, buying behavior, and pain points. Cite reputable sources (IBISWorld, Statista, Gartner). Show that the market is large enough to support the business and growing.' },
+        comp: { title: 'Competitive Analysis', short: 'Key competitors, their strengths/weaknesses, and differentiation.', medium: 'Identify direct and indirect competitors. Create a comparison matrix covering: features, pricing, target audience, market share, strengths, weaknesses. Explain the company\'s sustainable competitive advantage (moat): network effects, switching costs, proprietary tech, brand, regulatory, etc. Avoid claiming "we have no competition" — every business has alternatives.' },
+        strategy: { title: 'Strategy & Implementation', short: 'Go-to-market strategy, milestones, and timeline.', medium: 'Outline the strategic plan: positioning (cost leader, differentiator, niche), go-to-market approach, sales channels, key partnerships, pricing strategy. Provide a quarterly milestone timeline for the next 12-24 months. Include KPIs that will measure success (CAC, LTV, churn, MRR, etc.).' },
+        product: { title: 'Product/Service Line', short: 'Description of products/services and pricing.', medium: 'Describe products/services in detail. For each: features, benefits (not just features), pricing, development stage (concept, MVP, launched), IP status. Include product roadmap showing future enhancements. Explain how products are manufactured/delivered. If physical, include supply chain details.' },
+        marketing: { title: 'Marketing Plan', short: 'Customer acquisition channels and tactics.', medium: 'Detail the marketing strategy: target customer personas, brand positioning, content strategy, SEO/SEM, social media, email marketing, partnerships, PR, events. Include CAC (Customer Acquisition Cost) by channel, conversion funnel, and projected marketing spend. Show how marketing supports sales targets.' },
+        ops: { title: 'Operations Plan', short: 'Daily operations, facilities, suppliers, and processes.', medium: 'Describe day-to-day operations: production process, quality control, suppliers and vendor relationships, inventory management, facilities, equipment, technology stack, key personnel needs. Include operational KPIs and any regulatory compliance requirements.' },
+        team: { title: 'Management Team', short: 'Key team members and their backgrounds.', medium: 'List founders and key executives with brief bios emphasizing relevant experience. Include org chart, board of directors/advisors, and any gaps in the team that need to be filled. Investors invest in people as much as ideas — show why this team can execute the plan.' },
+        financial: { title: 'Financial Projections', short: '3-5 year revenue, expenses, and profitability.', medium: 'Provide 3-5 year financial projections: P&L (income statement), cash flow statement, balance sheet. Include key assumptions (growth rate, pricing, CAC, churn, gross margin). Show break-even point and runway. Use monthly projections for year 1, quarterly for years 2-3. Be realistic — hockey-stick growth without justification hurts credibility.' },
+        funding: { title: 'Funding Request', short: 'Amount needed, use of funds, and valuation.', medium: 'Specify funding amount sought, instrument (equity, convertible note, SAFE, debt), use of funds breakdown (product, marketing, hiring, ops), expected runway, milestones to be achieved with this round, and proposed valuation or valuation cap. Include future funding needs and exit strategy (acquisition, IPO).' },
+        risk: { title: 'Risk Analysis', short: 'Key risks and mitigation strategies.', medium: 'Identify key risks: market risk (competition, demand shifts), execution risk (hiring, delivery), financial risk (runway, cash flow), regulatory risk, technology risk, key-person risk. For each, provide mitigation strategy. Shows investors you\'ve thought through what could go wrong.' },
+        appendix: { title: 'Appendix', short: 'Supporting documents and additional data.', medium: 'Include supporting materials: full resumes of key team, detailed market research data, patent/trademark filings, letters of intent from customers, product screenshots/demos, detailed financial models, legal documents.' }
+    };
+    function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+    function gen(){
+        var company = document.getElementById('company').value || 'Company';
+        var industry = document.getElementById('industry').value;
+        var founded = document.getElementById('founded').value;
+        var founder = document.getElementById('founder').value;
+        var location = document.getElementById('location').value;
+        var length = document.getElementById('length').value;
+        var format = document.getElementById('format').value;
+        var selected = [];
+        document.querySelectorAll('.sec:checked').forEach(function(cb){ selected.push(cb.dataset.s); });
+        var contentKey = length === 'short' ? 'short' : 'medium';
+        var html = '<div style="font-family:Georgia,serif;max-width:800px;margin:0 auto;color:#222;line-height:1.7">';
+        // Cover
+        html += '<div style="text-align:center;padding:60px 0;border-bottom:3px double #3b82f6;margin-bottom:30px">';
+        html += '<h1 style="font-size:36px;color:#3b82f6;margin-bottom:8px">' + esc(company) + '</h1>';
+        html += '<div style="font-size:18px;color:#666;font-style:italic">Business Plan</div>';
+        html += '<div style="font-size:13px;color:#999;margin-top:20px">' + esc(industry) + ' · Founded ' + esc(founded) + ' · ' + esc(location) + '</div>';
+        html += '<div style="font-size:13px;color:#999">Prepared by ' + esc(founder) + '</div>';
+        html += '</div>';
+        // TOC
+        html += '<h2 style="color:#3b82f6;border-bottom:2px solid #3b82f6;padding-bottom:4px">Table of Contents</h2>';
+        html += '<ol style="margin:14px 0 24px 20px;font-size:13px">';
+        selected.forEach(function(s, i){
+            html += '<li style="margin:4px 0"><a href="#sec' + i + '" style="color:#3b82f6;text-decoration:none">' + SECTIONS[s].title + '</a></li>';
+        });
+        html += '</ol>';
+        // Sections
+        selected.forEach(function(s, i){
+            var sec = SECTIONS[s];
+            html += '<div id="sec' + i + '" style="margin-top:30px;page-break-after:always">';
+            html += '<h2 style="color:#3b82f6;border-bottom:2px solid #3b82f6;padding-bottom:4px">' + (i+1) + '. ' + sec.title + '</h2>';
+            if(s === 'exec' && length !== 'short'){
+                html += '<p style="font-size:14px;color:#444">' + sec[contentKey] + '</p>';
+                html += '<div style="background:#f0f7ff;padding:12px;border-left:4px solid #3b82f6;margin:12px 0;font-size:13px">';
+                html += '<b>Company:</b> ' + esc(company) + '<br><b>Industry:</b> ' + esc(industry) + '<br><b>Founded:</b> ' + esc(founded) + '<br><b>Founder:</b> ' + esc(founder) + '<br><b>Location:</b> ' + esc(location);
+                html += '</div>';
+                html += '<p style="font-size:14px;color:#666;font-style:italic">[Insert mission statement, key highlights, and funding ask here.]</p>';
+            } else {
+                html += '<p style="font-size:14px;color:#444">' + sec[contentKey] + '</p>';
+                if(length !== 'short'){
+                    html += '<p style="font-size:13px;color:#999;font-style:italic;margin-top:10px">[Add company-specific details, research data, and projections here.]</p>';
+                }
+            }
+            html += '</div>';
+        });
+        html += '<div style="text-align:center;margin-top:40px;font-size:11px;color:#999">— End of Business Plan —</div>';
+        html += '</div>';
+        return html;
+    }
+    function update(){
+        var html = gen();
+        document.getElementById('preview').innerHTML = html;
+    }
+    document.getElementById('gen').addEventListener('click', update);
+    document.getElementById('print').addEventListener('click', function(){
+        var html = gen();
+        var w = window.open('', '_blank');
+        if(!w){ alert('Allow popups'); return; }
+        w.document.write('<html><head><title>Business Plan - ' + document.getElementById('company').value + '</title><style>body{margin:30px;font-family:Georgia,serif}@media print{body{margin:20mm}}</style></head><body>' + html + '    <script src="/assets/js/date-utils.js"></script>
+</body></html>');
+        w.document.close();
+        setTimeout(function(){ w.print(); }, 300);
+    });
+    ['company','industry','founded','founder','location','length','format'].forEach(function(id){
+        document.getElementById(id).addEventListener('input', update);
+    });
+    document.querySelectorAll('.sec').forEach(function(cb){ cb.addEventListener('change', update); });
+    update();
+})();
+</script>
+</body>
+</html>

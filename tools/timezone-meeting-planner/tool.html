@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Timezone Meeting Planner | YuanQiZhiLe Toolkit</title>
+<meta name="description" content="Find the best meeting time across multiple timezones. Visualize work hours overlap and avoid scheduling conflicts. Free timezone meeting planner.">
+<meta name="keywords" content="timezone planner, meeting planner, world clock, timezone converter, meeting scheduler, team timezone, global meeting time">
+<meta property="og:title" content="Timezone Meeting Planner - Free Online Tool">
+<meta property="og:description" content="Find the best meeting time across multiple timezones. Visualize work hours overlap and avoid scheduling conflicts. Free timezone meeting planner.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Timezone Meeting Planner</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Find the best meeting time across multiple timezones. Visualize work hours overlap and avoid scheduling conflicts. Free timezone meeting planner.</div>
+    <div class="group">
+        <label>Add participant timezone</label>
+        <select id="tzSelect" style="width:100%;padding:8px">
+            <option value="">Select a timezone...</option>
+        </select>
+    </div>
+    <button id="addTz" style="padding:8px 16px;background:#3b82f6;color:#fff;border:none;border-radius:4px;cursor:pointer;margin-bottom:12px">Add timezone</button>
+    <div id="participants" style="margin-bottom:12px"></div>
+    <div class="row">
+        <div class="group">
+            <label>Meeting duration (min)</label>
+            <input type="number" id="duration" value="60" min="15" max="480" step="15" style="width:100%;padding:8px">
+        </div>
+        <div class="group">
+            <label>Working hours</label>
+            <select id="workHours" style="width:100%;padding:8px">
+                <option value="9-17">9 AM - 5 PM</option>
+                <option value="8-18">8 AM - 6 PM</option>
+                <option value="7-19">7 AM - 7 PM</option>
+                <option value="0-24">Any time</option>
+            </select>
+        </div>
+        <div class="group">
+            <label>Date</label>
+            <input type="date" id="date" style="width:100%;padding:8px">
+        </div>
+    </div>
+    <button id="findBest" style="padding:8px 16px;background:#10b981;color:#fff;border:none;border-radius:4px;cursor:pointer;margin-bottom:12px">Find best times</button>
+    <div id="results" style="margin-bottom:12px"></div>
+    <div id="timeline" style="margin-bottom:12px"></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">260330663@qq.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">— or describe your need below —</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit →</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Add participant timezones from the dropdown.</li>
+<li>Set <b>working hours</b> and meeting <b>duration</b>.</li>
+<li>Click <b>Find best times</b> to see top 5 options.</li>
+<li>Review the <b>24-hour timeline</b> for visual overlap.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">Uses UTC offsets (no DST adjustment). For precise scheduling, verify with each participant. Best meeting times typically fall in overlap of all working hours.</p>
+    </div>
+    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'☀️':'🌙';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('260330663@qq.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:260330663@qq.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    var commonTzs = [
+        {name:'UTC', offset:0},
+        {name:'New York (EST/EDT)', offset:-5},
+        {name:'Chicago (CST/CDT)', offset:-6},
+        {name:'Denver (MST/MDT)', offset:-7},
+        {name:'Los Angeles (PST/PDT)', offset:-8},
+        {name:'London (GMT/BST)', offset:0},
+        {name:'Paris (CET/CEST)', offset:1},
+        {name:'Berlin (CET/CEST)', offset:1},
+        {name:'Moscow (MSK)', offset:3},
+        {name:'Dubai (GST)', offset:4},
+        {name:'Mumbai (IST)', offset:5.5},
+        {name:'Bangkok (ICT)', offset:7},
+        {name:'Singapore (SGT)', offset:8},
+        {name:'Shanghai (CST)', offset:8},
+        {name:'Tokyo (JST)', offset:9},
+        {name:'Sydney (AEST/AEDT)', offset:10},
+        {name:'Auckland (NZST/NZDT)', offset:12}
+    ];
+    var participants = [
+        {name:'New York', offset:-5, color:'#3b82f6'},
+        {name:'London', offset:0, color:'#10b981'},
+        {name:'Tokyo', offset:9, color:'#f59e0b'}
+    ];
+    var colorIdx = 0;
+    var colors = ['#3b82f6','#10b981','#f59e0b','#8b5cf6','#ec4899','#06b6d4','#84cc16','#f97316'];
+    function populateSelect(){
+        var html = '';
+        commonTzs.forEach(function(tz){
+            html += '<option value="' + tz.offset + '">' + tz.name + ' (UTC' + (tz.offset >= 0 ? '+' : '') + tz.offset + ')</option>';
+        });
+        document.getElementById('tzSelect').innerHTML = '<option value="">Select a timezone...</option>' + html;
+    }
+    function renderParticipants(){
+        if(participants.length === 0){
+            document.getElementById('participants').innerHTML = '<div style="color:#666;text-align:center;padding:8px">No participants added</div>';
+            return;
+        }
+        var html = '<table style="width:100%;border-collapse:collapse;font-size:13px">';
+        html += '<tr style="background:#f3f4f6"><th style="padding:8px;text-align:left">Color</th><th style="padding:8px;text-align:left">Location</th><th style="padding:8px">UTC offset</th><th style="padding:8px">Local time</th><th style="padding:8px"></th></tr>';
+        participants.forEach(function(p, idx){
+            var now = new Date();
+            var utc = now.getTime() + now.getTimezoneOffset() * 60000;
+            var local = new Date(utc + p.offset * 3600000);
+            html += '<tr>';
+            html += '<td style="padding:8px"><div style="width:20px;height:20px;background:' + p.color + ';border-radius:3px"></div></td>';
+            html += '<td style="padding:8px"><input type="text" value="' + p.name + '" data-idx="' + idx + '" data-prop="name" style="width:100%;padding:4px;border:1px solid #ccc;border-radius:3px"></td>';
+            html += '<td style="padding:8px;text-align:center">UTC' + (p.offset >= 0 ? '+' : '') + p.offset + '</td>';
+            html += '<td style="padding:8px;text-align:center;font-family:monospace">' + local.toLocaleTimeString() + '</td>';
+            html += '<td style="padding:8px"><button data-remove="' + idx + '" style="padding:4px 8px;background:#dc2626;color:#fff;border:none;border-radius:3px;cursor:pointer">×</button></td>';
+            html += '</tr>';
+        });
+        html += '</table>';
+        document.getElementById('participants').innerHTML = html;
+        document.querySelectorAll('[data-remove]').forEach(function(btn){
+            btn.onclick = function(){
+                participants.splice(+btn.getAttribute('data-remove'), 1);
+                renderParticipants();
+            };
+        });
+        document.querySelectorAll('[data-prop="name"]').forEach(function(el){
+            el.addEventListener('input', function(){
+                participants[+el.getAttribute('data-idx')].name = el.value;
+            });
+        });
+    }
+    function findBestTimes(){
+        if(participants.length < 2){
+            document.getElementById('results').innerHTML = '<div style="background:#fee2e2;border:1px solid #fecaca;padding:12px;border-radius:6px">Add at least 2 participants</div>';
+            return;
+        }
+        var workH = document.getElementById('workHours').value.split('-');
+        var workStart = +workH[0];
+        var workEnd = +workH[1];
+        var date = document.getElementById('date').value || new Date().toISOString().split('T')[0];
+        var duration = +document.getElementById('duration').value;
+        var scores = [];
+        for(var h = 0; h < 24; h++){
+            for(var m = 0; m < 60; m += 30){
+                var utcHour = h;
+                var utcMin = m;
+                var inWorkHours = true;
+                var localTimes = [];
+                var allInWorkHours = true;
+                participants.forEach(function(p){
+                    var totalMin = utcHour * 60 + utcMin + p.offset * 60;
+                    while(totalMin < 0) totalMin += 1440;
+                    while(totalMin >= 1440) totalMin -= 1440;
+                    var localH = Math.floor(totalMin / 60);
+                    var localM = totalMin % 60;
+                    localTimes.push({h:localH, m:localM});
+                    if(localH < workStart || localH >= workEnd) allInWorkHours = false;
+                });
+                var endTotalMin = utcHour * 60 + utcMin + duration;
+                var endHour = Math.floor(endTotalMin / 60) % 24;
+                var overlapsDayBoundary = endTotalMin > 1440;
+                var score = 0;
+                if(allInWorkHours) score += 100;
+                participants.forEach(function(p, idx){
+                    var totalMin = utcHour * 60 + utcMin + p.offset * 60;
+                    while(totalMin < 0) totalMin += 1440;
+                    while(totalMin >= 1440) totalMin -= 1440;
+                    var localH = Math.floor(totalMin / 60);
+                    if(localH >= workStart && localH < workEnd) score += 10;
+                    if(localH >= 10 && localH < 16) score += 5;
+                });
+                scores.push({utcH:utcHour, utcM:utcMin, score:score, localTimes:localTimes, allInWorkHours:allInWorkHours});
+            }
+        }
+        scores.sort(function(a,b){ return b.score - a.score; });
+        var top = scores.slice(0, 5).filter(function(s){ return s.score > 0; });
+        if(top.length === 0){
+            document.getElementById('results').innerHTML = '<div style="background:#fef3c7;border:1px solid #fcd34d;padding:12px;border-radius:6px">No good times found. Try expanding working hours.</div>';
+            return;
+        }
+        var html = '<h3 style="margin:0 0 12px">Top 5 meeting times</h3>';
+        top.forEach(function(s, idx){
+            var utcTime = String(s.utcH).padStart(2,'0') + ':' + String(s.utcM).padStart(2,'0');
+            var label = s.allInWorkHours ? 'All in work hours' : 'Some outside work hours';
+            var color = s.allInWorkHours ? '#10b981' : '#f59e0b';
+            html += '<div style="border:1px solid #e5e7eb;border-radius:6px;padding:12px;margin-bottom:8px;background:' + color + '11">';
+            html += '<div style="display:flex;justify-content:space-between;margin-bottom:8px">';
+            html += '<strong style="color:' + color + '">Option ' + (idx+1) + ': ' + utcTime + ' UTC</strong>';
+            html += '<span style="font-size:12px;color:#666">' + label + ' (score: ' + s.score + ')</span>';
+            html += '</div>';
+            html += '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:6px">';
+            participants.forEach(function(p, i){
+                var lt = s.localTimes[i];
+                var timeStr = String(lt.h).padStart(2,'0') + ':' + String(lt.m).padStart(2,'0');
+                var inWH = lt.h >= workStart && lt.h < workEnd;
+                html += '<div style="background:#fff;padding:6px;border-radius:4px;border-left:3px solid ' + p.color + '">';
+                html += '<div style="font-size:11px;color:#666">' + p.name + '</div>';
+                html += '<div style="font-weight:bold;font-family:monospace">' + timeStr + '</div>';
+                html += '<div style="font-size:10px;color:' + (inWH ? '#10b981' : '#dc2626') + '">' + (inWH ? '✓ Work hours' : '✗ Outside') + '</div>';
+                html += '</div>';
+            });
+            html += '</div>';
+            html += '</div>';
+        });
+        document.getElementById('results').innerHTML = html;
+        renderTimeline();
+    }
+    function renderTimeline(){
+        var workH = document.getElementById('workHours').value.split('-');
+        var workStart = +workH[0];
+        var workEnd = +workH[1];
+        var html = '<h3 style="margin:12px 0 6px">24-hour timeline (today)</h3>';
+        html += '<div style="overflow-x:auto"><table style="border-collapse:collapse;font-size:11px;min-width:800px">';
+        html += '<tr><th style="padding:4px;position:sticky;left:0;background:#fff">Hour</th>';
+        for(var h = 0; h < 24; h++){
+            html += '<th style="padding:4px;min-width:30px">' + h + '</th>';
+        }
+        html += '</tr>';
+        participants.forEach(function(p){
+            html += '<tr>';
+            html += '<td style="padding:4px;font-weight:bold;position:sticky;left:0;background:#fff"><div style="display:flex;align-items:center;gap:4px"><div style="width:8px;height:8px;background:' + p.color + ';border-radius:2px"></div>' + p.name + '</div></td>';
+            for(var u = 0; u < 24; u++){
+                var totalMin = u * 60 + p.offset * 60;
+                while(totalMin < 0) totalMin += 1440;
+                while(totalMin >= 1440) totalMin -= 1440;
+                var localH = Math.floor(totalMin / 60);
+                var inWH = localH >= workStart && localH < workEnd;
+                html += '<td style="padding:2px;text-align:center;background:' + (inWH ? p.color : '#f3f4f6') + ';color:' + (inWH ? '#fff' : '#999') + '">' + localH + '</td>';
+            }
+            html += '</tr>';
+        });
+        html += '</table></div>';
+        html += '<div style="font-size:11px;color:#666;margin-top:4px">Numbers show local hour for each timezone. Colored = working hours.</div>';
+        document.getElementById('timeline').innerHTML = html;
+    }
+    document.getElementById('addTz').addEventListener('click', function(){
+        var sel = document.getElementById('tzSelect');
+        if(!sel.value) return;
+        var tz = commonTzs[sel.selectedIndex - 1];
+        participants.push({
+            name: tz.name.split(' ')[0],
+            offset: +tz.offset,
+            color: colors[colorIdx % colors.length]
+        });
+        colorIdx++;
+        renderParticipants();
+        renderTimeline();
+    });
+    document.getElementById('findBest').addEventListener('click', findBestTimes);
+    ['duration','workHours','date'].forEach(function(id){
+        document.getElementById(id).addEventListener('change', function(){
+            if(document.getElementById('results').innerHTML) findBestTimes();
+            renderTimeline();
+        });
+    });
+    document.getElementById('date').value = new Date().toISOString().split('T')[0];
+    populateSelect();
+    renderParticipants();
+    renderTimeline();
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prime Number Checker | YuanQiZhiLe Toolkit</title>
+<meta name="description" content="Check if a number is prime. Find all primes up to a limit, get the next prime, and factorize composite numbers. Free online prime number calculator.">
+<meta name="keywords" content="prime number checker, is prime, prime factorization, prime numbers, next prime, number theory">
+<meta property="og:title" content="Prime Number Checker - Free Online Tool">
+<meta property="og:description" content="Check if a number is prime. Find all primes up to a limit, get the next prime, and factorize composite numbers. Free online prime number calculator.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Prime Number Checker</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Check if a number is prime. Find all primes up to a limit, get the next prime, and factorize composite numbers. Free online prime number calculator.</div>
+    <div class="group">
+        <label>Enter a positive integer</label>
+        <input type="number" id="n" value="97" min="1" max="1000000" style="width:100%;padding:8px;font-size:18px">
+    </div>
+    <div class="result-box" id="result" style="margin-top:12px"></div>
+    <hr style="margin:16px 0;border:none;border-top:1px solid #ddd">
+    <div class="group">
+        <label>Find primes up to:</label>
+        <input type="number" id="limit" value="50" min="2" max="10000" style="width:100%;padding:8px">
+        <button id="list" class="btn-primary" style="margin-top:8px">List Primes</button>
+    </div>
+    <div class="result-box" id="listResult" style="margin-top:12px"></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">260330663@qq.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">— or describe your need below —</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit →</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Enter a number to check if it's prime.</li>
+<li>For composites, see <b>prime factorization</b> and all factors.</li>
+<li>For primes, see the next and previous primes.</li>
+<li>Use the second box to <b>list all primes</b> up to a limit.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">A prime number has exactly two divisors: 1 and itself. 2 is the only even prime. Prime factorization expresses a number as a product of primes, e.g., 12 = 2² × 3.</p>
+    </div>
+    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'☀️':'🌙';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('260330663@qq.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:260330663@qq.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    function isPrime(n){
+        if(n < 2) return false;
+        if(n === 2) return true;
+        if(n % 2 === 0) return false;
+        if(n < 9) return true;
+        for(var i = 3; i * i <= n; i += 2){
+            if(n % i === 0) return false;
+        }
+        return true;
+    }
+    function factorize(n){
+        var factors = [];
+        var d = 2;
+        while(n > 1){
+            while(n % d === 0){
+                factors.push(d);
+                n = n / d;
+            }
+            d++;
+            if(d * d > n){
+                if(n > 1) factors.push(n);
+                break;
+            }
+        }
+        return factors;
+    }
+    function nextPrime(n){
+        var c = n + 1;
+        while(!isPrime(c)) c++;
+        return c;
+    }
+    function prevPrime(n){
+        if(n <= 2) return null;
+        var c = n - 1;
+        while(c >= 2 && !isPrime(c)) c--;
+        return c >= 2 ? c : null;
+    }
+    function calc(){
+        var n = parseInt(document.getElementById('n').value, 10);
+        if(isNaN(n) || n < 1){
+            document.getElementById('result').innerHTML = '<div class="error">Enter a positive integer.</div>';
+            return;
+        }
+        var prime = isPrime(n);
+        var color = prime ? '#10b981' : '#ef4444';
+        var html = '<div style="background:linear-gradient(135deg,' + color + ',#8b5cf6);color:#fff;padding:24px;border-radius:8px;text-align:center;margin-bottom:16px">';
+        html += '<div style="font-size:18px;opacity:0.9">' + n + ' is</div>';
+        html += '<div style="font-size:42px;font-weight:bold">' + (prime ? 'PRIME' : 'NOT PRIME') + '</div>';
+        html += '</div>';
+        if(prime){
+            html += '<div style="padding:12px;background:#f0fdf4;border-radius:6px;font-size:14px;line-height:1.6">';
+            html += '<b>Properties:</b><br>';
+            html += '• ' + n + ' is a prime number (divisible only by 1 and itself)<br>';
+            var prev = prevPrime(n);
+            var next = nextPrime(n);
+            if(prev) html += '• Previous prime: <b>' + prev + '</b><br>';
+            html += '• Next prime: <b>' + next + '</b><br>';
+            // Find position
+            var pos = 0;
+            for(var k = 2; k <= n; k++) if(isPrime(k)) pos++;
+            html += '• Position: the ' + pos + ordinal(pos) + ' prime number';
+            html += '</div>';
+        } else {
+            var factors = factorize(n);
+            html += '<div style="padding:12px;background:#fef2f2;border-radius:6px;font-size:14px;line-height:1.6">';
+            html += '<b>Why not prime?</b><br>';
+            // Find smallest divisor
+            var smallest = factors[0];
+            html += '• ' + n + ' is divisible by ' + smallest + '<br>';
+            html += '• ' + n + ' ÷ ' + smallest + ' = ' + (n / smallest) + '<br>';
+            html += '<br><b>Prime factorization:</b><br>';
+            // Group factors
+            var groups = {};
+            factors.forEach(function(f){ groups[f] = (groups[f] || 0) + 1; });
+            var parts = Object.keys(groups).map(function(f){
+                return groups[f] > 1 ? f + '^' + groups[f] : f;
+            });
+            html += n + ' = ' + parts.join(' × ') + '<br>';
+            html += '<br><b>All factors of ' + n + ':</b><br>';
+            var allFactors = [];
+            for(var d = 1; d <= Math.sqrt(n); d++){
+                if(n % d === 0){
+                    allFactors.push(d);
+                    if(d !== n / d) allFactors.push(n / d);
+                }
+            }
+            allFactors.sort(function(a,b){return a-b;});
+            html += allFactors.join(', ');
+            html += '</div>';
+        }
+        document.getElementById('result').innerHTML = html;
+    }
+    function ordinal(n){
+        var s = ['th','st','nd','rd'];
+        var v = n % 100;
+        return s[(v - 20) % 10] || s[v] || s[0];
+    }
+    function listPrimes(){
+        var limit = parseInt(document.getElementById('limit').value, 10);
+        if(isNaN(limit) || limit < 2 || limit > 10000){
+            document.getElementById('listResult').innerHTML = '<div class="error">Enter a number between 2 and 10000.</div>';
+            return;
+        }
+        var primes = [];
+        for(var i = 2; i <= limit; i++) if(isPrime(i)) primes.push(i);
+        var html = '<div style="padding:12px;background:#f0f9ff;border-radius:6px">';
+        html += '<b>' + primes.length + ' primes</b> up to ' + limit + ':<br>';
+        html += '<div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px">';
+        primes.forEach(function(p){
+            html += '<span style="background:#6366f1;color:#fff;padding:4px 8px;border-radius:4px;font-size:13px">' + p + '</span>';
+        });
+        html += '</div>';
+        // Prime number theorem
+        var ratio = primes.length / limit;
+        html += '<div style="margin-top:12px;font-size:13px;color:#666">Density: ' + primes.length + '/' + limit + ' = ' + (ratio * 100).toFixed(2) + '%<br>';
+        html += 'Prime number theorem predicts ~' + Math.round(limit / Math.log(limit)) + ' primes (actual: ' + primes.length + ')</div>';
+        html += '</div>';
+        document.getElementById('listResult').innerHTML = html;
+    }
+    document.getElementById('n').addEventListener('input', calc);
+    document.getElementById('list').addEventListener('click', listPrimes);
+    calc();
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

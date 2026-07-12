@@ -68,13 +68,54 @@ footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;tex
     .bookmark-btn{position:static;margin-top:8px}
     .palette-grid{grid-template-columns:repeat(auto-fill,minmax(100px,1fr))}
 }
+
+/* === Common: contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+body.dark .lead{color:#a0a0a0}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}.instructions li{margin:4px 0;font-size:13px;line-height:1.6}body.dark .instructions{background:#1e2a3a;border-color:#2c4a6e}body.dark .instructions h2{color:#5ba3f5}
 </style>
 </head>
 <body>
 <div class="wrap">
 <div class="top-bar">
     <h1>Color Code Converter</h1>
-    <button class="bookmark-btn" id="bookmarkBtn">Bookmark</button>
+    <div style="display:flex;gap:8px;align-items:center"><button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">Bookmark</button></div>
 </div>
 
 <div class="tabs">
@@ -140,10 +181,100 @@ footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;tex
 
 <button id="exportCss" class="export-btn" style="display:none">Export as CSS Variables</button>
 
-<footer>YuanQiZhiLe Toolkit �� Developer Free Utility Tools</footer>
+    
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol><li>Enter a color value (HEX, RGB, HSL, or HSV)</li><li>The tool auto-converts to all formats</li><li>Adjust using the color picker</li><li>Copy any format you need</li></ol>
+    </div>
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">260330663@qq.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">— or describe your need below —</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit →</button>
+            </form>
+        </div>
+    </div>
+<footer>YuanQiZhiLe Toolkit — Developer Free Utility Tools</footer>
 </div>
 
 <script>
+// === Common: contact modal ===
+(function(){
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('260330663@qq.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:260330663@qq.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',__setupContactModal);
+    } else {
+        __setupContactModal();
+    }
+})();
+
+// === Common: theme toggle ===
+(function(){
+    var btn=document.getElementById('themeToggle');
+    if(!btn)return;
+    function apply(t){
+        document.body.classList.toggle('dark',t==='dark');
+        btn.textContent=(t==='dark')?'☀️':'🌙';
+    }
+    var saved=localStorage.getItem('theme');
+    if(saved){apply(saved);}
+    else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+    else{apply('light');}
+    btn.addEventListener('click',function(){
+        var next=document.body.classList.contains('dark')?'light':'dark';
+        apply(next);localStorage.setItem('theme',next);
+    });
+})();
+
 const pick=document.getElementById('colorPick');
 const hexIn=document.getElementById('hexIn');
 const hexOut=document.getElementById('hexOut');
@@ -407,6 +538,15 @@ function simulateColor(hex,mat){
     return'#'+pad(Math.max(0,Math.min(255,r)))+pad(Math.max(0,Math.min(255,g)))+pad(Math.max(0,Math.min(255,b)));
 }
 
+function hexToRgba(hex){
+    const rgb=hexToRgb(hex);
+    return{r:rgb.r,g:rgb.g,b:rgb.b,a:1};
+}
+
+function rgbaToHex(r,g,b){
+    return'#'+pad(Math.round(r))+pad(Math.round(g))+pad(Math.round(b));
+}
+
 function renderSimulator(){
     simulatorGrid.innerHTML='';
     simTypes.forEach(function(sim){
@@ -427,7 +567,6 @@ bookmarkBtn.onclick=function(){
     alert('Press Ctrl+D (or Cmd+D on Mac) to bookmark this page!');
 };
 </script>
-
     <script src="/assets/js/date-utils.js"></script>
 </body>
 </html>

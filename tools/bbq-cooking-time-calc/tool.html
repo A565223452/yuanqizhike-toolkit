@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BBQ Cooking Time Calculator | YuanQiZhiLe Toolkit</title>
+<meta name="description" content="Calculate BBQ and smoker cooking times for brisket, ribs, pork butt, chicken and more. Free BBQ time and temperature calculator.">
+<meta name="keywords" content="bbq cooking time, smoker calculator, brisket time, pulled pork time, rib cooking time, bbq temperature, low and slow">
+<meta property="og:title" content="BBQ Cooking Time Calculator - Free Online Tool">
+<meta property="og:description" content="Calculate BBQ and smoker cooking times for brisket, ribs, pork butt, chicken and more. Free BBQ time and temperature calculator.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>BBQ Cooking Time Calculator</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Calculate BBQ and smoker cooking times for brisket, ribs, pork butt, chicken and more. Free BBQ time and temperature calculator.</div>
+    <div class="row">
+        <div class="group"><label>Meat type</label>
+            <select id="meat" style="width:100%;padding:8px">
+                <option value="brisket" selected>Beef brisket</option>
+                <option value="pork-butt">Pork butt (shoulder)</option>
+                <option value="ribs-beef">Beef ribs</option>
+                <option value="ribs-pork">Pork ribs</option>
+                <option value="chicken-whole">Whole chicken</option>
+                <option value="chicken-parts">Chicken parts</option>
+                <option value="turkey">Whole turkey</option>
+                <option value="pork-loin">Pork loin</option>
+                <option value="beef-roast">Beef roast</option>
+                <option value="salmon">Salmon</option>
+            </select>
+        </div>
+        <div class="group"><label>Weight (lb)</label>
+            <input type="number" id="weight" value="12" min="0.5" step="0.5" style="width:100%;padding:8px">
+        </div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Smoker temp</label>
+            <select id="temp" style="width:100%;padding:8px">
+                <option value="225" selected>225F (107C) - low and slow</option>
+                <option value="250">250F (121C) - faster</option>
+                <option value="275">275F (135C) - hot and fast</option>
+                <option value="300">300F (149C) - very hot</option>
+            </select>
+        </div>
+        <div class="group"><label>Doneness</label>
+            <select id="done" style="width:100%;padding:8px">
+                <option value="slice" selected>Slice (195-205F internal)</option>
+                <option value="pull">Pull/shred (200-205F)</option>
+                <option value="medium">Medium (160F)</option>
+                <option value="well">Well done (170F)</option>
+            </select>
+        </div>
+    </div>
+    <button id="calc" style="padding:8px 16px;background:#10b981;color:#fff;border:none;border-radius:6px;cursor:pointer;margin:8px 0">Calculate BBQ Time</button>
+    <div id="result" style="margin-top:12px;background:#fef3c7;padding:14px;border-radius:6px;border-left:4px solid #f59e0b"></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">260330663@qq.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">— or describe your need below —</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit →</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Select the <b>Meat type</b> you are smoking.</li>
+<li>Enter the <b>Weight</b> in pounds.</li>
+<li>Choose your <b>Smoker temperature</b> (225F is classic low & slow).</li>
+<li>Select <b>Doneness</b> target.</li>
+<li>Click <b>Calculate BBQ Time</b> for estimated time, timeline, and wood pairing.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">Estimates account for the "stall" (evaporative cooling at 150-170F) on brisket and pork butt. Always verify with a meat thermometer - times can vary 25% based on weather, equipment, and meat thickness.</p>
+    </div>
+    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'☀️':'🌙';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('260330663@qq.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:260330663@qq.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    var meatData = {
+        'brisket': { perLb: 1.5, tempAdj: { 225:1.0, 250:0.85, 275:0.7, 300:0.55 }, targetTemp: 200, doneness: { slice:200, pull:203, medium:160, well:170 }, name: 'Beef Brisket' },
+        'pork-butt': { perLb: 1.5, tempAdj: { 225:1.0, 250:0.85, 275:0.7, 300:0.55 }, targetTemp: 203, doneness: { slice:195, pull:203, medium:160, well:170 }, name: 'Pork Butt' },
+        'ribs-beef': { perLb: 1.0, tempAdj: { 225:1.0, 250:0.85, 275:0.7, 300:0.55 }, targetTemp: 203, doneness: { slice:203, pull:203, medium:160, well:170 }, name: 'Beef Ribs' },
+        'ribs-pork': { perLb: 1.0, tempAdj: { 225:1.0, 250:0.85, 275:0.7, 300:0.55 }, targetTemp: 195, doneness: { slice:190, pull:203, medium:160, well:170 }, name: 'Pork Ribs' },
+        'chicken-whole': { perLb: 0.75, tempAdj: { 225:1.0, 250:0.85, 275:0.7, 300:0.55 }, targetTemp: 165, doneness: { slice:165, pull:165, medium:160, well:170 }, name: 'Whole Chicken' },
+        'chicken-parts': { perLb: 0.75, tempAdj: { 225:1.0, 250:0.85, 275:0.7, 300:0.55 }, targetTemp: 165, doneness: { slice:165, pull:165, medium:160, well:170 }, name: 'Chicken Parts' },
+        'turkey': { perLb: 0.6, tempAdj: { 225:1.0, 250:0.85, 275:0.7, 300:0.55 }, targetTemp: 165, doneness: { slice:165, pull:165, medium:160, well:170 }, name: 'Whole Turkey' },
+        'pork-loin': { perLb: 0.75, tempAdj: { 225:1.0, 250:0.85, 275:0.7, 300:0.55 }, targetTemp: 145, doneness: { slice:145, pull:160, medium:145, well:160 }, name: 'Pork Loin' },
+        'beef-roast': { perLb: 0.75, tempAdj: { 225:1.0, 250:0.85, 275:0.7, 300:0.55 }, targetTemp: 135, doneness: { slice:135, pull:160, medium:140, well:160 }, name: 'Beef Roast' },
+        'salmon': { perLb: 0.5, tempAdj: { 225:1.0, 250:0.85, 275:0.7, 300:0.55 }, targetTemp: 145, doneness: { slice:145, pull:145, medium:140, well:150 }, name: 'Salmon' }
+    };
+    function calc(){
+        var meat = document.getElementById('meat').value;
+        var weight = +document.getElementById('weight').value;
+        var temp = +document.getElementById('temp').value;
+        var done = document.getElementById('done').value;
+        var data = meatData[meat];
+        var baseHrs = weight * data.perLb * data.tempAdj[temp];
+        var hrs = baseHrs;
+        var targetTemp = data.doneness[done] || data.targetTemp;
+        // Add stall for brisket/pork butt at 160-170F
+        var hasStall = (meat === 'brisket' || meat === 'pork-butt' || meat === 'ribs-beef' || meat === 'ribs-pork');
+        var stallHrs = hasStall ? 1.5 : 0;
+        var totalHrs = hrs + stallHrs;
+        var html = '<div style="font-size:16px;font-weight:bold;margin-bottom:10px;color:#92400e">' + data.name + ' BBQ Plan</div>';
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:8px;font-size:13px">';
+        html += '<b>Weight:</b> ' + weight + ' lb<br>';
+        html += '<b>Smoker temp:</b> ' + temp + 'F (' + Math.round((temp-32)*5/9) + 'C)<br>';
+        html += '<b>Target internal:</b> ' + targetTemp + 'F';
+        html += '</div>';
+        // Time estimate
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:8px;font-size:14px;font-weight:bold;color:#dc2626">';
+        html += 'Estimated cook time: ' + formatTime(totalHrs);
+        html += '<div style="font-size:12px;color:#666;font-weight:normal;margin-top:4px">Range: ' + formatTime(totalHrs * 0.85) + ' - ' + formatTime(totalHrs * 1.15) + '</div>';
+        html += '</div>';
+        // Timeline
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:8px;font-size:12px;line-height:1.7">';
+        html += '<b>Suggested timeline:</b><br>';
+        html += '- T-' + formatTime(totalHrs + 1) + ': Light smoker, preheat<br>';
+        html += '- T-' + formatTime(totalHrs) + ': Apply rub, put meat on<br>';
+        if (hasStall) {
+            html += '- T-' + formatTime(stallHrs + 1) + ': Watch for stall (150-170F)<br>';
+            html += '- T-' + formatTime(stallHrs) + ': Wrap in butcher paper (optional)<br>';
+        }
+        html += '- T-1h: Start checking temp every 30 min<br>';
+        html += '- T-0: Target temp reached - rest 30-60 min';
+        html += '</div>';
+        // Wood suggestions
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;font-size:12px;line-height:1.7">';
+        html += '<b>Wood pairing:</b><br>';
+        if (meat === 'brisket' || meat === 'beef-roast' || meat === 'ribs-beef') {
+            html += '- Oak (strong, classic with beef)<br>';
+            html += '- Hickory (bold, hearty)<br>';
+            html += '- Mesquite (very strong - use sparingly)';
+        } else if (meat === 'pork-butt' || meat === 'ribs-pork' || meat === 'pork-loin') {
+            html += '- Hickory (classic pork pairing)<br>';
+            html += '- Apple (sweet, mild)<br>';
+            html += '- Cherry (fruity, beautiful color)';
+        } else if (meat === 'chicken-whole' || meat === 'chicken-parts' || meat === 'turkey') {
+            html += '- Apple (sweet, mild - perfect for poultry)<br>';
+            html += '- Cherry (fruity)<br>';
+            html += '- Pecan (nutty, mild)';
+        } else if (meat === 'salmon') {
+            html += '- Alder (traditional, delicate)<br>';
+            html += '- Apple (mild and sweet)<br>';
+            html += '- Cherry (subtle fruit)';
+        } else {
+            html += '- Oak or hickory for traditional smoke';
+        }
+        html += '</div>';
+        html += '<div style="font-size:11px;color:#666;margin-top:6px">Always cook to internal temp, not just time. Use a meat thermometer!</div>';
+        document.getElementById('result').innerHTML = html;
+    }
+    function formatTime(hrs){
+        var h = Math.floor(hrs);
+        var m = Math.round((hrs - h) * 60);
+        if (h === 0) return m + ' min';
+        if (m === 0) return h + ' hr';
+        return h + ' hr ' + m + ' min';
+    }
+    document.getElementById('calc').addEventListener('click', calc);
+    document.getElementById('meat').addEventListener('change', function(){
+        // Update doneness options based on meat
+        var meat = this.value;
+        var done = document.getElementById('done');
+        if (meat === 'pork-loin' || meat === 'beef-roast' || meat === 'salmon') {
+            done.options[0].text = 'Medium-rare (135-145F)';
+        } else {
+            done.options[0].text = 'Slice (195-205F internal)';
+        }
+    });
+    calc();
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

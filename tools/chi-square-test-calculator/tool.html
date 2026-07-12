@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chi-Square Test Calculator | YuanQiZhiLe Toolkit</title>
+<meta name="description" content="Calculate chi-square statistic, p-value, degrees of freedom. Goodness-of-fit and independence tests. Free statistics chi-square calculator.">
+<meta name="keywords" content="chi square, chi-square test, goodness of fit, contingency table, statistics, p-value, hypothesis testing">
+<meta property="og:title" content="Chi-Square Test Calculator - Free Online Tool">
+<meta property="og:description" content="Calculate chi-square statistic, p-value, degrees of freedom. Goodness-of-fit and independence tests. Free statistics chi-square calculator.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Chi-Square Test Calculator</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Calculate chi-square statistic, p-value, degrees of freedom. Goodness-of-fit and independence tests. Free statistics chi-square calculator.</div>
+    <div class="group"><label>Test type</label>
+        <select id="testType" style="width:100%;padding:8px">
+            <option value="gof" selected>Goodness-of-fit (1 variable)</option>
+            <option value="independence">Independence (2 variables, contingency table)</option>
+        </select>
+    </div>
+    <div class="group"><label>Significance level α</label>
+        <select id="alpha" style="width:100%;padding:8px">
+            <option value="0.05" selected>0.05 (5%)</option>
+            <option value="0.01">0.01 (1%)</option>
+            <option value="0.10">0.10 (10%)</option>
+            <option value="0.001">0.001 (0.1%)</option>
+        </select>
+    </div>
+    <div id="tableArea"></div>
+    <button id="calc" style="width:100%;padding:12px;background:#3b82f6;color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:bold;margin:8px 0">Calculate</button>
+    <div id="result" style="margin-top:12px"></div>
+    <div class="group"><label>Chi-square critical values</label><div id="critTable" style="margin-top:8px"></div></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">260330663@qq.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">— or describe your need below —</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit →</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Choose <b>test type</b>: goodness-of-fit or independence.</li>
+<li>For goodness-of-fit: enter "observed, expected" pairs.</li>
+<li>For independence: build contingency table, enter frequencies.</li>
+<li>Set <b>α</b> (significance level).</li>
+<li>Click <b>Calculate</b>.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666"><b>Chi-square tests:</b> Goodness-of-fit compares observed vs expected frequencies. Independence tests if two categorical variables are related. Assumptions: expected count ≥ 5 in each cell. If p < α, reject H₀ (no difference / no association).</p>
+    </div>
+    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'☀️':'🌙';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('260330663@qq.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:260330663@qq.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    function erf(x){
+        var sign = x < 0 ? -1 : 1;
+        x = Math.abs(x);
+        var a1 = 0.254829592, a2 = -0.284496736, a3 = 1.421413741;
+        var a4 = -1.453152027, a5 = 1.061405429, p = 0.3275911;
+        var t = 1 / (1 + p * x);
+        var y = 1 - (((((a5 * t + a4) * t) + a3) * t + a2) * t + a1) * t * Math.exp(-x * x);
+        return sign * y;
+    }
+    // Lower incomplete gamma function (series expansion)
+    function lowerGamma(s, x){
+        if(x < 0) return 0;
+        if(x === 0) return 0;
+        // Series: γ(s,x) = x^s · e^-x · Σ (x^n / (s·(s+1)·...·(s+n)))
+        var sum = 1 / s;
+        var term = 1 / s;
+        for(var n = 1; n < 100; n++){
+            term *= x / (s + n);
+            sum += term;
+            if(Math.abs(term) < 1e-10 * Math.abs(sum)) break;
+        }
+        return Math.pow(x, s) * Math.exp(-x) * sum;
+    }
+    function gamma(s){
+        // Lanczos approximation
+        if(s < 0.5) return Math.PI / (Math.sin(Math.PI * s) * gamma(1 - s));
+        var g = 7;
+        var c = [0.99999999999980993, 676.5203681218851, -1259.1392167224028, 771.32342877765313, -176.61502916214059, 12.507343278686905, -0.13857109526572012, 9.9843695780195716e-6, 1.5056327351493116e-7];
+        s -= 1;
+        var x = c[0];
+        for(var i = 1; i < g + 2; i++) x += c[i] / (s + i);
+        var t = s + g + 0.5;
+        return Math.sqrt(2 * Math.PI) * Math.pow(t, s + 0.5) * Math.exp(-t) * x;
+    }
+    function chiSquareCdf(x, df){
+        if(x <= 0) return 0;
+        // P(X < x) for chi-square with df = lowerGamma(df/2, x/2) / gamma(df/2)
+        var s = df / 2;
+        return lowerGamma(s, x / 2) / gamma(s);
+    }
+    function chiSquarePValue(stat, df){
+        return 1 - chiSquareCdf(stat, df);
+    }
+    function renderTable(){
+        var type = document.getElementById('testType').value;
+        var html = '';
+        if(type === 'gof'){
+            html = '<div class="group"><label>Observed vs Expected (one per line: "observed, expected")</label>';
+            html += '<textarea id="data" style="width:100%;min-height:120px;padding:8px;font-family:monospace;font-size:12px">30, 25\n45, 50\n25, 30\n20, 25\n30, 20</textarea>';
+            html += '<div style="font-size:11px;color:#999;margin-top:4px">5 categories. Test if observed frequencies match expected.</div>';
+            html += '</div>';
+        } else {
+            html = '<div class="group"><label>Rows: <input type="number" id="rows" value="3" min="2" max="10" style="width:60px;padding:4px"> Cols: <input type="number" id="cols" value="3" min="2" max="10" style="width:60px;padding:4px"></label>';
+            html += '<button id="genTable" style="margin-left:8px;padding:4px 8px;background:#6366f1;color:#fff;border:none;border-radius:4px;cursor:pointer">Build Table</button></div>';
+            html += '<div id="contTable"></div>';
+        }
+        document.getElementById('tableArea').innerHTML = html;
+        if(type === 'independence'){
+            document.getElementById('genTable').addEventListener('click', function(){ buildContingency(); });
+            buildContingency();
+        }
+    }
+    function buildContingency(){
+        var rows = parseInt(document.getElementById('rows').value);
+        var cols = parseInt(document.getElementById('cols').value);
+        var html = '<table id="cont" style="border-collapse:collapse;margin-top:8px"><thead><tr><th style="border:1px solid #999;padding:4px;background:#f0f7ff"></th>';
+        for(var j = 0; j < cols; j++) html += '<th style="border:1px solid #999;padding:4px;background:#f0f7ff">Col ' + (j+1) + '</th>';
+        html += '<th style="border:1px solid #999;padding:4px;background:#fef3c7">Total</th></tr></thead><tbody>';
+        for(var i = 0; i < rows; i++){
+            html += '<tr><th style="border:1px solid #999;padding:4px;background:#f0f7ff">Row ' + (i+1) + '</th>';
+            for(var j = 0; j < cols; j++) html += '<td><input type="number" class="cell" data-r="' + i + '" data-c="' + j + '" value="' + Math.floor(Math.random() * 50 + 10) + '" style="width:60px;padding:4px;border:1px solid #ccc"></td>';
+            html += '<td class="rowTotal" style="border:1px solid #999;padding:4px;background:#fef3c7;text-align:right;font-weight:bold">-</td></tr>';
+        }
+        html += '<tr><th style="border:1px solid #999;padding:4px;background:#fef3c7">Total</th>';
+        for(var j = 0; j < cols; j++) html += '<td class="colTotal" style="border:1px solid #999;padding:4px;background:#fef3c7;text-align:right;font-weight:bold">-</td>';
+        html += '<td class="grandTotal" style="border:1px solid #999;padding:4px;background:#fef3c7;text-align:right;font-weight:bold">-</td></tr>';
+        html += '</tbody></table>';
+        document.getElementById('contTable').innerHTML = html;
+        document.querySelectorAll('.cell').forEach(function(input){
+            input.addEventListener('input', updateTotals);
+        });
+        updateTotals();
+    }
+    function updateTotals(){
+        var rows = parseInt(document.getElementById('rows').value);
+        var cols = parseInt(document.getElementById('cols').value);
+        var rowTotals = new Array(rows).fill(0);
+        var colTotals = new Array(cols).fill(0);
+        var grand = 0;
+        document.querySelectorAll('.cell').forEach(function(input){
+            var r = parseInt(input.dataset.r);
+            var c = parseInt(input.dataset.c);
+            var v = parseFloat(input.value) || 0;
+            rowTotals[r] += v;
+            colTotals[c] += v;
+            grand += v;
+        });
+        var rowEls = document.querySelectorAll('.rowTotal');
+        rowEls.forEach(function(el, i){ el.textContent = rowTotals[i]; });
+        var colEls = document.querySelectorAll('.colTotal');
+        colEls.forEach(function(el, i){ el.textContent = colTotals[i]; });
+        document.querySelector('.grandTotal').textContent = grand;
+    }
+    function calc(){
+        var type = document.getElementById('testType').value;
+        var alpha = parseFloat(document.getElementById('alpha').value);
+        var stat, df, pValue, contributions;
+        if(type === 'gof'){
+            var data = document.getElementById('data').value;
+            var lines = data.split('\n').map(function(l){ return l.trim(); }).filter(Boolean);
+            var observed = [], expected = [];
+            lines.forEach(function(l){
+                var parts = l.split(',').map(function(s){ return parseFloat(s.trim()); });
+                if(parts.length === 2 && !isNaN(parts[0]) && !isNaN(parts[1])){
+                    observed.push(parts[0]);
+                    expected.push(parts[1]);
+                }
+            });
+            if(observed.length < 2){ alert('Need at least 2 categories'); return; }
+            var sumObs = observed.reduce(function(s,v){ return s + v; }, 0);
+            var sumExp = expected.reduce(function(s,v){ return s + v; }, 0);
+            // If expected are ratios, scale them
+            if(Math.abs(sumExp - sumObs) > 0.001 * sumObs){
+                expected = expected.map(function(v){ return v * sumObs / sumExp; });
+            }
+            stat = 0;
+            contributions = [];
+            for(var i = 0; i < observed.length; i++){
+                var c = Math.pow(observed[i] - expected[i], 2) / expected[i];
+                stat += c;
+                contributions.push({ obs: observed[i], exp: expected[i], contrib: c });
+            }
+            df = observed.length - 1;
+        } else {
+            var rows = parseInt(document.getElementById('rows').value);
+            var cols = parseInt(document.getElementById('cols').value);
+            var cells = document.querySelectorAll('.cell');
+            var matrix = [];
+            for(var i = 0; i < rows; i++){
+                matrix[i] = [];
+                for(var j = 0; j < cols; j++){
+                    matrix[i][j] = 0;
+                }
+            }
+            var rowTotals = new Array(rows).fill(0);
+            var colTotals = new Array(cols).fill(0);
+            var grand = 0;
+            cells.forEach(function(input){
+                var r = parseInt(input.dataset.r);
+                var c = parseInt(input.dataset.c);
+                var v = parseFloat(input.value) || 0;
+                matrix[r][c] = v;
+                rowTotals[r] += v;
+                colTotals[c] += v;
+                grand += v;
+            });
+            stat = 0;
+            contributions = [];
+            for(var i = 0; i < rows; i++){
+                for(var j = 0; j < cols; j++){
+                    var exp = rowTotals[i] * colTotals[j] / grand;
+                    if(exp > 0){
+                        var c = Math.pow(matrix[i][j] - exp, 2) / exp;
+                        stat += c;
+                        contributions.push({ row: i+1, col: j+1, obs: matrix[i][j], exp: exp, contrib: c });
+                    }
+                }
+            }
+            df = (rows - 1) * (cols - 1);
+        }
+        pValue = chiSquarePValue(stat, df);
+        var reject = pValue < alpha;
+        var html = '<div style="background:#f0f7ff;padding:14px;border-radius:8px;border-left:4px solid #3b82f6">';
+        html += '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">';
+        html += '<div style="background:#fff;padding:10px;border-radius:6px"><div style="font-size:11px;color:#999">Chi-square (χ²)</div><div style="font-size:20px;font-weight:bold;color:#3b82f6">' + stat.toFixed(4) + '</div></div>';
+        html += '<div style="background:#fff;padding:10px;border-radius:6px"><div style="font-size:11px;color:#999">Degrees of freedom</div><div style="font-size:20px;font-weight:bold;color:#3b82f6">' + df + '</div></div>';
+        html += '<div style="background:#fff;padding:10px;border-radius:6px"><div style="font-size:11px;color:#999">p-value</div><div style="font-size:20px;font-weight:bold;color:' + (reject ? '#dc2626' : '#10b981') + '">' + (pValue < 0.0001 ? pValue.toExponential(2) : pValue.toFixed(4)) + '</div></div>';
+        html += '</div>';
+        // Verdict
+        html += '<div style="background:' + (reject ? '#fef2f2' : '#f0fdf4') + ';padding:10px;border-radius:6px;margin-top:8px">';
+        html += '<div style="font-size:13px;font-weight:bold;color:' + (reject ? '#dc2626' : '#16a34a') + '">' + (reject ? 'REJECT H₀' : 'FAIL TO REJECT H₀') + '</div>';
+        html += '<div style="font-size:12px;color:#666;margin-top:4px">';
+        if(reject) html += 'p < α (' + alpha + '). Significant evidence against the null hypothesis.';
+        else html += 'p ≥ α (' + alpha + '). Insufficient evidence against the null hypothesis.';
+        html += '</div></div>';
+        // Contributions table
+        if(contributions.length <= 30){
+            html += '<div style="margin-top:10px;font-size:12px"><b>Contributions to χ²:</b></div>';
+            html += '<table style="width:100%;border-collapse:collapse;font-size:11px;margin-top:4px"><thead><tr style="background:#3b82f6;color:#fff">';
+            if(type === 'gof'){
+                html += '<th style="padding:4px;border:1px solid #2563eb">Cat</th><th style="padding:4px;border:1px solid #2563eb">Obs</th><th style="padding:4px;border:1px solid #2563eb">Exp</th><th style="padding:4px;border:1px solid #2563eb">(O-E)²/E</th>';
+            } else {
+                html += '<th style="padding:4px;border:1px solid #2563eb">Cell</th><th style="padding:4px;border:1px solid #2563eb">Obs</th><th style="padding:4px;border:1px solid #2563eb">Exp</th><th style="padding:4px;border:1px solid #2563eb">(O-E)²/E</th>';
+            }
+            html += '</tr></thead><tbody>';
+            contributions.forEach(function(c, i){
+                var bg = i % 2 === 0 ? '#fff' : '#f9fafb';
+                html += '<tr style="background:' + bg + '">';
+                if(type === 'gof') html += '<td style="padding:3px;border:1px solid #e5e7eb;text-align:center">' + (i+1) + '</td>';
+                else html += '<td style="padding:3px;border:1px solid #e5e7eb;text-align:center">R' + c.row + 'C' + c.col + '</td>';
+                html += '<td style="padding:3px;border:1px solid #e5e7eb;text-align:right">' + c.obs + '</td>';
+                html += '<td style="padding:3px;border:1px solid #e5e7eb;text-align:right">' + c.exp.toFixed(2) + '</td>';
+                html += '<td style="padding:3px;border:1px solid #e5e7eb;text-align:right">' + c.contrib.toFixed(4) + '</td>';
+                html += '</tr>';
+            });
+            html += '</tbody></table>';
+        }
+        html += '</div>';
+        document.getElementById('result').innerHTML = html;
+    }
+    function critTable(){
+        var dfs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        var alphas = [0.10, 0.05, 0.01, 0.001];
+        var html = '<table style="width:100%;border-collapse:collapse;font-size:11px"><thead><tr style="background:#3b82f6;color:#fff"><th style="padding:4px;border:1px solid #2563eb">df \ α</th>';
+        alphas.forEach(function(a){ html += '<th style="padding:4px;border:1px solid #2563eb">' + a + '</th>'; });
+        html += '</tr></thead><tbody>';
+        dfs.forEach(function(df, i){
+            var bg = i % 2 === 0 ? '#fff' : '#f9fafb';
+            html += '<tr style="background:' + bg + '"><td style="padding:3px;border:1px solid #e5e7eb;text-align:center;font-weight:bold">' + df + '</td>';
+            alphas.forEach(function(a){
+                // Find x such that chiSquareCdf(x, df) = 1 - a (inverse)
+                var lo = 0, hi = 100;
+                for(var iter = 0; iter < 50; iter++){
+                    var mid = (lo + hi) / 2;
+                    if(chiSquareCdf(mid, df) < 1 - a) lo = mid; else hi = mid;
+                }
+                html += '<td style="padding:3px;border:1px solid #e5e7eb;text-align:right;font-family:monospace">' + lo.toFixed(3) + '</td>';
+            });
+            html += '</tr>';
+        });
+        html += '</tbody></table>';
+        document.getElementById('critTable').innerHTML = html;
+    }
+    document.getElementById('testType').addEventListener('change', function(){ renderTable(); });
+    document.getElementById('alpha').addEventListener('change', calc);
+    document.getElementById('calc').addEventListener('click', calc);
+    renderTable();
+    critTable();
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

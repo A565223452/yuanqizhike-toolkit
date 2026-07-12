@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Text Chunker | YuanQiZhiLe Toolkit</title>
+<meta name="description" content="Split long text into chunks for RAG (Retrieval Augmented Generation). Configurable chunk size and overlap. Free RAG chunker.">
+<meta name="keywords" content="rag chunker, text splitter, chunking, rag, retrieval augmented, text segmentation">
+<meta property="og:title" content="RAG Text Chunker - Free Online Tool">
+<meta property="og:description" content="Split long text into chunks for RAG (Retrieval Augmented Generation). Configurable chunk size and overlap. Free RAG chunker.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>RAG Text Chunker</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Split long text into chunks for RAG (Retrieval Augmented Generation). Configurable chunk size and overlap. Free RAG chunker.</div>
+    <div class="group"><label>Paste your text</label><textarea id="input" style="width:100%;padding:8px;min-height:200px" placeholder="Paste long text, documents, articles...">Artificial intelligence is the simulation of human intelligence processes by machines. Specific applications include expert systems, natural language processing, speech recognition and machine vision.
+
+As the hype around AI has accelerated, vendors have been promoting how their products and services use it. AI requires a foundation of specialized hardware and software for writing and training machine learning algorithms.</textarea></div>
+    <div class="row">
+        <div class="group"><label>Chunking strategy</label>
+            <select id="strategy" style="width:100%;padding:8px">
+                <option value="chars" selected>By character count</option>
+                <option value="words">By word count</option>
+                <option value="sentences">By sentences</option>
+                <option value="paragraphs">By paragraphs</option>
+                <option value="tokens">By tokens (~4 chars)</option>
+            </select>
+        </div>
+        <div class="group"><label>Chunk size</label><input type="number" id="size" value="500" min="50" style="width:100%;padding:8px"></div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Overlap</label><input type="number" id="overlap" value="50" min="0" style="width:100%;padding:8px"></div>
+        <div class="group"><label>Separator preference</label>
+            <select id="separator" style="width:100%;padding:8px">
+                <option value="space" selected>Space</option>
+                <option value="newline">Newline</option>
+                <option value="sentence">Sentence end (. ! ?)</option>
+                <option value="paragraph">Double newline</option>
+            </select>
+        </div>
+    </div>
+    <div class="group"><label>Trim whitespace?</label>
+        <select id="trim" style="width:100%;padding:8px">
+            <option value="1" selected>Yes</option>
+            <option value="0">No</option>
+        </select>
+    </div>
+    <button id="chunk" style="padding:10px 20px;background:#3b82f6;color:#fff;border:none;border-radius:6px;cursor:pointer;margin-top:10px">Chunk Text</button>
+    <div id="result" style="margin-top:12px"></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">260330663@qq.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">— or describe your need below —</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit →</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Paste your <b>text</b> (article, document, transcript).</li>
+<li>Choose <b>chunking strategy</b> (chars/words/sentences/paragraphs/tokens).</li>
+<li>Set <b>chunk size</b> (200-1000 tokens typical for RAG).</li>
+<li>Set <b>overlap</b> (10-20% of chunk size recommended).</li>
+<li>Choose <b>separator preference</b> for clean breaks.</li>
+<li>Click <b>Chunk Text</b> to see results.</li>
+<li>Download as JSON or TXT.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">For RAG: chunk size 200-500 tokens, overlap 10-20%. Smaller chunks = more precise retrieval. Break at semantic boundaries when possible.</p>
+    </div>
+    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'☀️':'🌙';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('260330663@qq.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:260330663@qq.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    function escapeHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+    function chunk(){
+        var text = document.getElementById('input').value;
+        var strategy = document.getElementById('strategy').value;
+        var size = parseInt(document.getElementById('size').value) || 500;
+        var overlap = parseInt(document.getElementById('overlap').value) || 0;
+        var sep = document.getElementById('separator').value;
+        var trim = document.getElementById('trim').value === '1';
+        if(!text.trim()){ alert('Enter some text'); return; }
+        if(overlap >= size){ alert('Overlap must be less than chunk size'); return; }
+        var chunks = [];
+        if(strategy === 'chars'){
+            var pos = 0;
+            while(pos < text.length){
+                var end = Math.min(pos + size, text.length);
+                if(end < text.length){
+                    var searchStart = Math.max(pos, end - 100);
+                    var breakAt = -1;
+                    if(sep === 'sentence'){
+                        for(var i = end; i > searchStart; i--){
+                            if('.!?'.indexOf(text[i]) >= 0){ breakAt = i + 1; break; }
+                        }
+                    } else if(sep === 'newline'){
+                        var nl = text.lastIndexOf('\n', end);
+                        if(nl > searchStart) breakAt = nl + 1;
+                    } else if(sep === 'paragraph'){
+                        var pp = text.lastIndexOf('\n\n', end);
+                        if(pp > searchStart) breakAt = pp;
+                    } else if(sep === 'space'){
+                        var sp = text.lastIndexOf(' ', end);
+                        if(sp > searchStart) breakAt = sp + 1;
+                    }
+                    if(breakAt > pos) end = breakAt;
+                }
+                var chunkStr = text.substring(pos, end);
+                if(trim) chunkStr = chunkStr.trim();
+                if(chunkStr) chunks.push(chunkStr);
+                if(end >= text.length) break;
+                pos = end - overlap;
+                if(pos <= 0) pos = end;
+            }
+        } else if(strategy === 'words'){
+            var words = text.split(/\s+/);
+            var i = 0;
+            while(i < words.length){
+                var endI = Math.min(i + size, words.length);
+                var c = words.slice(i, endI).join(' ');
+                if(trim) c = c.trim();
+                if(c) chunks.push(c);
+                if(endI >= words.length) break;
+                i = endI - overlap;
+                if(i < 0) i = endI;
+            }
+        } else if(strategy === 'sentences'){
+            var sentences = text.match(/[^.!?]+[.!?]+\s*/g) || [text];
+            var cur = '';
+            var curSize = 0;
+            sentences.forEach(function(s){
+                if(curSize + s.length > size && cur){
+                    chunks.push(trim ? cur.trim() : cur);
+                    if(overlap > 0){
+                        var overlapText = cur.substring(cur.length - overlap);
+                        cur = overlapText + s;
+                    } else { cur = s; }
+                    curSize = cur.length;
+                } else { cur += s; curSize += s.length; }
+            });
+            if(cur.trim()) chunks.push(trim ? cur.trim() : cur);
+        } else if(strategy === 'paragraphs'){
+            var paragraphs = text.split(/\n\n+/);
+            var curP = '';
+            var curPSize = 0;
+            paragraphs.forEach(function(p){
+                if(curPSize + p.length > size && curP){
+                    chunks.push(trim ? curP.trim() : curP);
+                    curP = p;
+                    curPSize = p.length;
+                } else {
+                    curP += (curP ? '\n\n' : '') + p;
+                    curPSize += p.length + 2;
+                }
+            });
+            if(curP.trim()) chunks.push(trim ? curP.trim() : curP);
+        } else if(strategy === 'tokens'){
+            var charSize = size * 4;
+            var overlapChars = overlap * 4;
+            var posT = 0;
+            while(posT < text.length){
+                var endT = Math.min(posT + charSize, text.length);
+                if(endT < text.length){
+                    var spT = text.lastIndexOf(' ', endT);
+                    if(spT > posT) endT = spT;
+                }
+                var cT = text.substring(posT, endT);
+                if(trim) cT = cT.trim();
+                if(cT) chunks.push(cT);
+                if(endT >= text.length) break;
+                posT = endT - overlapChars;
+                if(posT <= 0) posT = endT;
+            }
+        }
+        var totalLen = text.length;
+        var totalTokens = Math.ceil(totalLen / 4);
+        var avgChunkLen = chunks.length > 0 ? Math.round(chunks.reduce(function(a,c){ return a + c.length; }, 0) / chunks.length) : 0;
+        var html = '<div style="background:#dbeafe;padding:14px;border-radius:8px;border-left:4px solid #3b82f6">';
+        html += '<div style="text-align:center;margin-bottom:14px">';
+        html += '<div style="font-size:13px;color:#666">Chunking Result</div>';
+        html += '<div style="font-size:24px;font-weight:bold;color:#3b82f6">' + chunks.length + ' chunks</div>';
+        html += '</div>';
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+        html += '<table style="width:100%;font-size:12px;border-collapse:collapse">';
+        html += '<tr style="background:#f3f4f6;border-bottom:1px solid #ddd"><th style="padding:6px;text-align:left">Metric</th><th>Value</th></tr>';
+        html += '<tr style="border-bottom:1px solid #eee"><td style="padding:6px">Total text length</td><td style="text-align:center;font-weight:bold">' + totalLen + ' chars</td></tr>';
+        html += '<tr style="border-bottom:1px solid #eee"><td style="padding:6px">Estimated tokens</td><td style="text-align:center;font-weight:bold">~' + totalTokens + '</td></tr>';
+        html += '<tr style="border-bottom:1px solid #eee"><td style="padding:6px">Number of chunks</td><td style="text-align:center;font-weight:bold">' + chunks.length + '</td></tr>';
+        html += '<tr><td style="padding:6px">Avg chunk size</td><td style="text-align:center;font-weight:bold">' + avgChunkLen + ' chars</td></tr>';
+        html += '</table>';
+        html += '</div>';
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+        html += '<div style="font-size:13px;font-weight:bold;color:#3b82f6;margin-bottom:6px">Chunks Preview (first 5)</div>';
+        chunks.slice(0, 5).forEach(function(c, i){
+            html += '<div style="border:1px solid #ddd;border-radius:4px;padding:8px;margin-bottom:6px">';
+            html += '<div style="font-size:11px;color:#666;margin-bottom:4px">Chunk ' + (i+1) + ' · ' + c.length + ' chars · ~' + Math.ceil(c.length/4) + ' tokens</div>';
+            html += '<div style="font-size:12px;line-height:1.5;max-height:120px;overflow-y:auto;font-family:Georgia,serif">' + escapeHtml(c.substring(0, 300)) + (c.length > 300 ? '...' : '') + '</div>';
+            html += '</div>';
+        });
+        if(chunks.length > 5) html += '<div style="font-size:11px;color:#999;padding:4px">' + (chunks.length - 5) + ' more chunks not shown</div>';
+        html += '</div>';
+        var jsonStr = JSON.stringify({ chunks: chunks, count: chunks.length, totalChars: totalLen, avgChunkSize: avgChunkLen }, null, 2);
+        html += '<div style="display:flex;gap:8px;flex-wrap:wrap">';
+        html += '<button id="copyAll" style="flex:1;padding:10px;background:#3b82f6;color:#fff;border:none;border-radius:6px;cursor:pointer">Copy All</button>';
+        html += '<button id="downloadJson" style="flex:1;padding:10px;background:#10b981;color:#fff;border:none;border-radius:6px;cursor:pointer">Download JSON</button>';
+        html += '<button id="downloadTxt" style="flex:1;padding:10px;background:#8b5cf6;color:#fff;border:none;border-radius:6px;cursor:pointer">Download TXT</button>';
+        html += '</div>';
+        html += '<div style="background:#d1fae5;padding:10px;border-radius:6px;margin-top:10px">';
+        html += '<div style="font-size:13px;font-weight:bold;color:#065f46;margin-bottom:4px">RAG Chunking Best Practices</div>';
+        html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Typical chunk size: 200-1000 tokens</div>';
+        html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Overlap 10-20% prevents context loss at boundaries</div>';
+        html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Smaller chunks = more precise retrieval</div>';
+        html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Larger chunks = more context per match</div>';
+        html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Break at sentence/paragraph boundaries for cleaner chunks</div>';
+        html += '</div>';
+        html += '<div style="font-size:11px;color:#999;margin-top:8px">Token estimate is approximate (1 token = 4 chars). For exact counts use tiktoken.</div>';
+        html += '</div>';
+        document.getElementById('result').innerHTML = html;
+        document.getElementById('copyAll').addEventListener('click', function(){ navigator.clipboard.writeText(chunks.join('\n---\n')).then(function(){ alert('Copied!'); }); });
+        document.getElementById('downloadJson').addEventListener('click', function(){
+            var blob = new Blob([jsonStr], { type: 'application/json' });
+            var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'chunks.json'; a.click();
+        });
+        document.getElementById('downloadTxt').addEventListener('click', function(){
+            var blob = new Blob([chunks.join('\n---\n')], { type: 'text/plain' });
+            var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'chunks.txt'; a.click();
+        });
+    }
+    document.getElementById('chunk').addEventListener('click', chunk);
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

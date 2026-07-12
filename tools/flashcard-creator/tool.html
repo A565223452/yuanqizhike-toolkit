@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flashcard Creator | YuanQiZhiLe Toolkit</title>
+<meta name="description" content="Create and study digital flashcards. Add front/back, flip cards, shuffle deck. Free flashcard maker for any subject.">
+<meta name="keywords" content="flashcard maker, flashcards, study cards, quiz cards, memorize, flashcard creator, study tool">
+<meta property="og:title" content="Flashcard Creator - Free Online Tool">
+<meta property="og:description" content="Create and study digital flashcards. Add front/back, flip cards, shuffle deck. Free flashcard maker for any subject.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Flashcard Creator</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Create and study digital flashcards. Add front/back, flip cards, shuffle deck. Free flashcard maker for any subject.</div>
+    <div class="row">
+        <div class="group"><label>Deck name</label><input type="text" id="deckName" value="My Deck" style="width:100%;padding:8px"></div>
+        <button id="saveDeck" style="padding:8px 16px;background:#6c757d;color:#fff;border:none;border-radius:4px;cursor:pointer;flex:0 0 auto">Save deck</button>
+        <button id="loadDeck" style="padding:8px 16px;background:#6c757d;color:#fff;border:none;border-radius:4px;cursor:pointer;flex:0 0 auto">Load deck</button>
+    </div>
+    <div class="row">
+        <div class="group"><label>Front (question)</label><input type="text" id="front" placeholder="e.g. Capital of France" style="width:100%;padding:8px"></div>
+        <div class="group"><label>Back (answer)</label><input type="text" id="back" placeholder="e.g. Paris" style="width:100%;padding:8px"></div>
+        <button id="addCard" style="padding:8px 16px;background:#10b981;color:#fff;border:none;border-radius:4px;cursor:pointer;flex:0 0 auto">Add card</button>
+    </div>
+    <div id="studyBox" style="display:none;margin-top:12px;padding:16px;background:#f0f7ff;border-radius:6px;text-align:center">
+        <div style="font-size:13px;color:#666;margin-bottom:8px">Card <span id="curIdx">0</span> of <span id="totalCards">0</span></div>
+        <div id="cardFront" style="font-size:24px;font-weight:bold;min-height:80px;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:16px;background:#fff;border:2px solid #3b82f6;border-radius:8px"></div>
+        <div id="cardBack" style="display:none;font-size:24px;color:#10b981;margin-top:12px;font-weight:bold"></div>
+        <div class="row" style="margin-top:12px;justify-content:center">
+            <button id="prev" style="padding:8px 16px;background:#6c757d;color:#fff;border:none;border-radius:4px;cursor:pointer">Prev</button>
+            <button id="flip" style="padding:8px 16px;background:#3b82f6;color:#fff;border:none;border-radius:4px;cursor:pointer">Flip</button>
+            <button id="shuffle" style="padding:8px 16px;background:#f59e0b;color:#fff;border:none;border-radius:4px;cursor:pointer">Shuffle</button>
+            <button id="next" style="padding:8px 16px;background:#6c757d;color:#fff;border:none;border-radius:4px;cursor:pointer">Next</button>
+        </div>
+    </div>
+    <h3 style="margin-top:16px;font-size:15px">Cards (<span id="cardCount">0</span>)</h3>
+    <div id="cardList" style="margin-top:8px;max-height:300px;overflow:auto"></div>
+    <button id="exportDeck" style="margin-top:8px;padding:6px 12px;background:#3b82f6;color:#fff;border:none;border-radius:4px;cursor:pointer">Export JSON</button>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">260330663@qq.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">— or describe your need below —</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit →</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Name your <b>deck</b> (e.g. Spanish verbs, Anatomy terms).</li>
+<li>Type <b>Front (question)</b> and <b>Back (answer)</b>.</li>
+<li>Click <b>Add card</b>.</li>
+<li>Use <b>Prev / Flip / Next</b> to study. Click card to flip.</li>
+<li>Click <b>Shuffle</b> to randomize order.</li>
+<li>Click <b>Save deck</b> to store locally; <b>Load deck</b> to retrieve.</li>
+<li>Click <b>Export JSON</b> to download your deck.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">Perfect for memorization: vocabulary, definitions, history dates, medical terms, and more.</p>
+    </div>
+    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'☀️':'🌙';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('260330663@qq.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:260330663@qq.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    var cards = [];
+    var curIdx = 0;
+    function escapeHtml(s){ return String(s).replace(/[<>&"']/g, function(c){ return {'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&#39;'}[c]; }); }
+    function render(){
+        document.getElementById('cardCount').textContent = cards.length;
+        var list = document.getElementById('cardList');
+        if(cards.length === 0){
+            list.innerHTML = '<div style="color:#999;padding:8px">No cards yet. Add front/back above.</div>';
+            document.getElementById('studyBox').style.display = 'none';
+            return;
+        }
+        document.getElementById('studyBox').style.display = 'block';
+        var html = '<table style="width:100%;border-collapse:collapse;font-size:13px"><tr style="background:#f0f0f0"><th style="padding:6px;text-align:left">#</th><th style="padding:6px;text-align:left">Front</th><th style="padding:6px;text-align:left">Back</th><th style="padding:6px">Action</th></tr>';
+        cards.forEach(function(c, i){
+            html += '<tr><td style="padding:6px">' + (i+1) + '</td>';
+            html += '<td style="padding:6px">' + escapeHtml(c.front) + '</td>';
+            html += '<td style="padding:6px;color:#10b981">' + escapeHtml(c.back) + '</td>';
+            html += '<td style="padding:6px;text-align:center"><button onclick="window.__delCard(' + i + ')" style="padding:4px 8px;background:#dc2626;color:#fff;border:none;border-radius:3px;cursor:pointer;font-size:11px">Del</button></td></tr>';
+        });
+        html += '</table>';
+        list.innerHTML = html;
+        showCard();
+    }
+    window.__delCard = function(i){ cards.splice(i, 1); if(curIdx >= cards.length) curIdx = Math.max(0, cards.length - 1); render(); };
+    function showCard(){
+        if(cards.length === 0) return;
+        document.getElementById('curIdx').textContent = curIdx + 1;
+        document.getElementById('totalCards').textContent = cards.length;
+        document.getElementById('cardFront').textContent = cards[curIdx].front;
+        document.getElementById('cardBack').textContent = cards[curIdx].back;
+        document.getElementById('cardBack').style.display = 'none';
+    }
+    document.getElementById('addCard').addEventListener('click', function(){
+        var f = document.getElementById('front').value.trim();
+        var b = document.getElementById('back').value.trim();
+        if(!f || !b){ alert('Fill both front and back.'); return; }
+        cards.push({ front: f, back: b });
+        document.getElementById('front').value = '';
+        document.getElementById('back').value = '';
+        render();
+    });
+    document.getElementById('flip').addEventListener('click', function(){
+        var b = document.getElementById('cardBack');
+        b.style.display = b.style.display === 'none' ? 'block' : 'none';
+    });
+    document.getElementById('cardFront').addEventListener('click', function(){
+        var b = document.getElementById('cardBack');
+        b.style.display = b.style.display === 'none' ? 'block' : 'none';
+    });
+    document.getElementById('prev').addEventListener('click', function(){
+        curIdx = (curIdx - 1 + cards.length) % cards.length;
+        showCard();
+    });
+    document.getElementById('next').addEventListener('click', function(){
+        curIdx = (curIdx + 1) % cards.length;
+        showCard();
+    });
+    document.getElementById('shuffle').addEventListener('click', function(){
+        for(var i = cards.length - 1; i > 0; i--){
+            var j = Math.floor(Math.random() * (i + 1));
+            var t = cards[i]; cards[i] = cards[j]; cards[j] = t;
+        }
+        curIdx = 0; showCard();
+    });
+    document.getElementById('saveDeck').addEventListener('click', function(){
+        var name = document.getElementById('deckName').value.trim() || 'MyDeck';
+        localStorage.setItem('flashdeck_' + name, JSON.stringify(cards));
+        alert('Saved as "' + name + '".');
+    });
+    document.getElementById('loadDeck').addEventListener('click', function(){
+        var name = document.getElementById('deckName').value.trim() || 'MyDeck';
+        var data = localStorage.getItem('flashdeck_' + name);
+        if(!data){ alert('No deck named "' + name + '" found.'); return; }
+        cards = JSON.parse(data);
+        curIdx = 0; render();
+    });
+    document.getElementById('exportDeck').addEventListener('click', function(){
+        if(cards.length === 0){ alert('No cards to export.'); return; }
+        var name = document.getElementById('deckName').value.trim() || 'deck';
+        var blob = new Blob([JSON.stringify(cards, null, 2)], { type: 'application/json' });
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = name + '.json';
+        a.click();
+    });
+    render();
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

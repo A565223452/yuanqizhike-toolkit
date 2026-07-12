@@ -10,7 +10,7 @@
       "Synonym Dictionary",
       "One-Click Copy"
     ],
-    "detailUrl": "/tools/article-rewrite/index.html",
+    "detailUrl": "/tools/article-rewriter/index.html",
     "zipUrl": "/assets/zip-packages/writing/article-rewriter.zip"
   },
   {
@@ -26,7 +26,7 @@
       "Import and export files",
       "Copy to clipboard"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/json-formatter/index.html",
     "zipUrl": "/assets/zip-packages/dev/json-formatter.zip"
   },
   {
@@ -42,7 +42,7 @@
       "SHA-256/384/512 hash generation",
       "Base64 image preview"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/base64-url-tool/index.html",
     "zipUrl": "/assets/zip-packages/dev/base64-url-tool.zip"
   },
   {
@@ -58,7 +58,7 @@
       "Drag-and-drop file upload",
       "Local private processing"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/image-converter/index.html",
     "zipUrl": "/assets/zip-packages/design/image-converter.zip"
   },
   {
@@ -74,7 +74,7 @@
       "Filter By Relevance",
       "100% Private Local Processing"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/amazon-keyword-miner/index.html",
     "zipUrl": "/assets/zip-packages/seo/amazon-keyword-miner.zip"
   },
   {
@@ -86,7 +86,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/budget-calculator/index.html",
     "zipUrl": "/assets/zip-packages/finance/budget-calculator.zip"
   },
   {
@@ -98,7 +98,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/inventory-turnover-calculator/index.html",
     "zipUrl": "/assets/zip-packages/finance/inventory-turnover-calculator.zip"
   },
   {
@@ -110,7 +110,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/invoice-generator/index.html",
     "zipUrl": "/assets/zip-packages/business/invoice-generator.zip"
   },
   {
@@ -124,7 +124,7 @@
       "Apply discounts and taxes",
       "Print or save as PDF"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/quotation-generator/index.html",
     "zipUrl": "/assets/zip-packages/business/quotation-generator.zip"
   },
   {
@@ -139,7 +139,7 @@
       "Insurance and value options",
       "Detailed cost breakdown"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/shipping-cost-estimator/index.html",
     "zipUrl": "/assets/zip-packages/business/shipping-cost-estimator.zip"
   },
   {
@@ -154,7 +154,7 @@
       "Readability Analysis",
       "A/B Testing Support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/amazon-title-optimizer/index.html",
     "zipUrl": "/assets/zip-packages/seo/amazon-title-optimizer.zip"
   },
   {
@@ -166,7 +166,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/batch-file-renamer/index.html",
     "zipUrl": "/assets/zip-packages/business/batch-file-renamer.zip"
   },
   {
@@ -197,7 +197,7 @@
       "Batch Conversion",
       "Currency Charts"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/currency-converter/index.html",
     "zipUrl": "/assets/zip-packages/finance/currency-converter.zip"
   },
   {
@@ -209,7 +209,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/ean-barcode-generator/index.html",
     "zipUrl": "/assets/zip-packages/business/ean-barcode-generator.zip"
   },
   {
@@ -224,7 +224,7 @@
       "No Data Upload",
       "Export Results"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/random-name-picker/index.html",
     "zipUrl": "/assets/zip-packages/business/random-name-picker.zip"
   },
   {
@@ -239,7 +239,7 @@
       "Copy and download results",
       "Local no-upload processing"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/sku-generator/index.html",
     "zipUrl": "/assets/zip-packages/business/sku-generator.zip"
   },
   {
@@ -255,7 +255,7 @@
       "Trade Agreement Checks",
       "Multi-Item Shipments"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/tariff-calculator/index.html",
     "zipUrl": "/assets/zip-packages/finance/tariff-calculator.zip"
   },
   {
@@ -270,7 +270,7 @@
       "Supports camelCase and snake_case",
       "Free for writers and developers"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/text-case-converter/index.html",
     "zipUrl": "/assets/zip-packages/writing/text-case-converter.zip"
   },
   {
@@ -286,7 +286,7 @@
       "Filter out test emails",
       "100% local and private"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/email-extractor/index.html",
     "zipUrl": "/assets/zip-packages/writing/email-extractor.zip"
   },
   {
@@ -301,7 +301,7 @@
       "BOM Handling",
       "Local Privacy"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/encoding-fixer/index.html",
     "zipUrl": "/assets/zip-packages/dev/encoding-fixer.zip"
   },
   {
@@ -317,7 +317,7 @@
       "Local and private",
       "Copy and download results"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/line-sorter/index.html",
     "zipUrl": "/assets/zip-packages/writing/line-sorter.zip"
   },
   {
@@ -333,7 +333,7 @@
       "Case-Sensitive Options",
       "Local Privacy Protection"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/text-deduplication-tool/index.html",
     "zipUrl": "/assets/zip-packages/writing/text-deduplication-tool.zip"
   },
   {
@@ -349,7 +349,7 @@
       "Convert tabs to spaces",
       "Remove zero-width characters"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/whitespace-cleaner/index.html",
     "zipUrl": "/assets/zip-packages/writing/whitespace-cleaner.zip"
   },
   {
@@ -365,7 +365,7 @@
       "Detailed character breakdown",
       "Local and private"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/word-counter/index.html",
     "zipUrl": "/assets/zip-packages/writing/word-counter.zip"
   },
   {
@@ -381,7 +381,7 @@
       "Lexical diversity metrics",
       "Top 20 words table"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/word-frequency-analyzer/index.html",
     "zipUrl": "/assets/zip-packages/writing/word-frequency-analyzer.zip"
   },
   {
@@ -397,7 +397,7 @@
       "Offline Capable",
       "GCM Mode Support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/aes-encryptor/index.html",
     "zipUrl": "/assets/zip-packages/dev/aes-encryptor.zip"
   },
   {
@@ -412,7 +412,7 @@
       "Privacy Focused",
       "No Server Upload"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/api-mock-data-generator/index.html",
     "zipUrl": "/assets/zip-packages/dev/api-mock-data-generator.zip"
   },
   {
@@ -428,7 +428,7 @@
       "No installation required",
       "Works offline in browser"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/api-request-tester/index.html",
     "zipUrl": "/assets/zip-packages/dev/api-request-tester.zip"
   },
   {
@@ -444,7 +444,7 @@
       "Batch Conversion Mode",
       "Local Privacy Protection"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/number-base-converter/index.html",
     "zipUrl": "/assets/zip-packages/dev/number-base-converter.zip"
   },
   {
@@ -492,7 +492,7 @@
       "Adjust Precision",
       "Private Local Processing"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/byte-unit-converter/index.html",
     "zipUrl": "/assets/zip-packages/dev/byte-unit-converter.zip"
   },
   {
@@ -572,7 +572,7 @@
       "Configurable indentation",
       "Local browser processing"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/css-formatter/index.html",
     "zipUrl": "/assets/zip-packages/dev/css-formatter.zip"
   },
   {
@@ -588,7 +588,7 @@
       "Instant results with summary",
       "No upload, fully private"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/duplicate-file-comparator/index.html",
     "zipUrl": "/assets/zip-packages/dev/duplicate-file-comparator.zip"
   },
   {
@@ -604,7 +604,7 @@
       "Nested Object Creation",
       "Automatic Type Inference"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/excel-to-json-converter/index.html",
     "zipUrl": "/assets/zip-packages/dev/excel-to-json-converter.zip"
   },
   {
@@ -620,7 +620,7 @@
       "Cell Reference Resolution",
       "Batch Processing"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/spreadsheet-formula-converter/index.html",
     "zipUrl": "/assets/zip-packages/dev/spreadsheet-formula-converter.zip"
   },
   {
@@ -636,7 +636,7 @@
       "Download as file",
       "Combine multiple templates"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/gitignore-generator/index.html",
     "zipUrl": "/assets/zip-packages/dev/gitignore-generator.zip"
   },
   {
@@ -683,7 +683,7 @@
       "Hotlink protection rules",
       "Disable directory listing"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/htaccess-generator/index.html",
     "zipUrl": "/assets/zip-packages/dev/htaccess-generator.zip"
   },
   {
@@ -746,7 +746,7 @@
       "Copy masked result",
       "No data sent to server"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/json-data-masker/index.html",
     "zipUrl": "/assets/zip-packages/dev/json-data-masker.zip"
   },
   {
@@ -761,7 +761,7 @@
       "Download as separate files",
       "100% client-side processing"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/json-file-splitter/index.html",
     "zipUrl": "/assets/zip-packages/dev/json-file-splitter.zip"
   },
   {
@@ -777,7 +777,7 @@
       "Compact numbers and non-ASCII",
       "Copy or download minified JSON"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/json-minifier/index.html",
     "zipUrl": "/assets/zip-packages/dev/json-minifier.zip"
   },
   {
@@ -793,7 +793,7 @@
       "Instant browser-based extraction",
       "No data sent to server"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/json-path-extractor/index.html",
     "zipUrl": "/assets/zip-packages/dev/json-path-extractor.zip"
   },
   {
@@ -825,7 +825,7 @@
       "Error Reporting",
       "Dark Mode"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/batch-json-validator/index.html",
     "zipUrl": "/assets/zip-packages/dev/batch-json-validator.zip"
   },
   {
@@ -872,7 +872,7 @@
       "Template presets available",
       "Local browser processing"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/mock-data-generator/index.html",
     "zipUrl": "/assets/zip-packages/dev/mock-data-generator.zip"
   },
   {
@@ -888,7 +888,7 @@
       "Strength Meter",
       "Offline Ready"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/secure-batch-password-generator/index.html",
     "zipUrl": "/assets/zip-packages/dev/secure-batch-password-generator.zip"
   },
   {
@@ -920,7 +920,7 @@
       "Copy data URL",
       "Auto-generate as you type"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/qr-code-generator/index.html",
     "zipUrl": "/assets/zip-packages/dev/qr-code-generator.zip"
   },
   {
@@ -936,7 +936,7 @@
       "Copy all or CSV output",
       "Local processing, no upload"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/random-port-generator/index.html",
     "zipUrl": "/assets/zip-packages/dev/random-port-generator.zip"
   },
   {
@@ -952,7 +952,7 @@
       "Error Handling",
       "Offline Support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/regex-tester-2/index.html",
     "zipUrl": "/assets/zip-packages/dev/regex-tester-2.zip"
   },
   {
@@ -968,7 +968,7 @@
       "Local Browser Processing",
       "Secure Authentication"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/api-signature-validator/index.html",
     "zipUrl": "/assets/zip-packages/dev/api-signature-validator.zip"
   },
   {
@@ -1000,7 +1000,7 @@
       "Copy formatted SQL instantly",
       "Supports multiple SQL dialects"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/sql-formatter/index.html",
     "zipUrl": "/assets/zip-packages/dev/sql-formatter.zip"
   },
   {
@@ -1016,7 +1016,7 @@
       "Live preview of optimized SVG",
       "Download optimized SVG file"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/svg-optimizer/index.html",
     "zipUrl": "/assets/zip-packages/dev/svg-optimizer.zip"
   },
   {
@@ -1031,7 +1031,7 @@
       "JSON and CSV export",
       "Bulk generation up to 100 records"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/test-address-generator/index.html",
     "zipUrl": "/assets/zip-packages/dev/test-address-generator.zip"
   },
   {
@@ -1047,7 +1047,7 @@
       "Real-Time Results",
       "Offline Privacy"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/global-time-zone-converter/index.html",
     "zipUrl": "/assets/zip-packages/business/global-time-zone-converter.zip"
   },
   {
@@ -1063,7 +1063,7 @@
       "Per-character breakdown",
       "No data upload"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/unicode-converter/index.html",
     "zipUrl": "/assets/zip-packages/dev/unicode-converter.zip"
   },
   {
@@ -1078,7 +1078,7 @@
       "Dark mode support",
       "No data upload"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/unit-converter/index.html",
     "zipUrl": "/assets/zip-packages/dev/unit-converter.zip"
   },
   {
@@ -1094,7 +1094,7 @@
       "Relative time display",
       "Copy results easily"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/unix-timestamp-converter/index.html",
     "zipUrl": "/assets/zip-packages/dev/unix-timestamp-converter.zip"
   },
   {
@@ -1109,7 +1109,7 @@
       "Local Secure Processing",
       "Pretty Print Output"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/url-to-json-converter/index.html",
     "zipUrl": "/assets/zip-packages/dev/url-to-json-converter.zip"
   },
   {
@@ -1121,7 +1121,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/uuid-generator/index.html",
     "zipUrl": "/assets/zip-packages/dev/uuid-generator.zip"
   },
   {
@@ -1133,7 +1133,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/background-remover/index.html",
     "zipUrl": "/assets/zip-packages/design/background-remover.zip"
   },
   {
@@ -1145,7 +1145,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/css-gradient-generator-2/index.html",
     "zipUrl": "/assets/zip-packages/design/css-gradient-generator-2.zip"
   },
   {
@@ -1157,7 +1157,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/exif-remover/index.html",
     "zipUrl": "/assets/zip-packages/design/exif-remover.zip"
   },
   {
@@ -1203,7 +1203,7 @@
       "Quality Control",
       "Privacy Safe"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/batch-image-compressor/index.html",
     "zipUrl": "/assets/zip-packages/design/batch-image-compressor.zip"
   },
   {
@@ -1219,7 +1219,7 @@
       "Quality Control",
       "Instant Download"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/batch-image-converter/index.html",
     "zipUrl": "/assets/zip-packages/design/batch-image-converter.zip"
   },
   {
@@ -1235,7 +1235,7 @@
       "Batch Apply",
       "Download Results"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/image-filter-color-adjust/index.html",
     "zipUrl": "/assets/zip-packages/design/image-filter-color-adjust.zip"
   },
   {
@@ -1250,7 +1250,7 @@
       "One-click PNG download",
       "No signup required"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/image-pixelator/index.html",
     "zipUrl": "/assets/zip-packages/design/image-pixelator.zip"
   },
   {
@@ -1266,7 +1266,7 @@
       "Privacy-Focused Local Processing",
       "Preset Social Sizes"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/image-resizer-cropper/index.html",
     "zipUrl": "/assets/zip-packages/design/image-resizer-cropper.zip"
   },
   {
@@ -1282,7 +1282,7 @@
       "Local Browser Processing",
       "EXIF Data Preservation"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/image-watermark-tool/index.html",
     "zipUrl": "/assets/zip-packages/design/image-watermark-tool.zip"
   },
   {
@@ -1298,7 +1298,7 @@
       "Local Privacy",
       "Offline Support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/academic-citation-generator/index.html",
     "zipUrl": "/assets/zip-packages/education/academic-citation-generator.zip"
   },
   {
@@ -1329,7 +1329,7 @@
       "Built-in password generator",
       "Local processing, no upload"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/password-strength-checker/index.html",
     "zipUrl": "/assets/zip-packages/dev/password-strength-checker.zip"
   },
   {
@@ -1344,7 +1344,7 @@
       "100% Client-Side Privacy",
       "Export Metadata Data"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/pdf-metadata-viewer/index.html",
     "zipUrl": "/assets/zip-packages/business/pdf-metadata-viewer.zip"
   },
   {
@@ -1360,7 +1360,7 @@
       "Batch Processing Support",
       "Local Browser Privacy"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/pdf-split-merge/index.html",
     "zipUrl": "/assets/zip-packages/business/pdf-split-merge.zip"
   },
   {
@@ -1391,7 +1391,7 @@
       "Date Range Count",
       "Half-Day Support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/business-day-calculator/index.html",
     "zipUrl": "/assets/zip-packages/business/business-day-calculator.zip"
   },
   {
@@ -1407,7 +1407,7 @@
       "Dark Mode Theme",
       "Local Processing"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/calendar-generator/index.html",
     "zipUrl": "/assets/zip-packages/business/calendar-generator.zip"
   },
   {
@@ -1423,7 +1423,7 @@
       "Paragraph Statistics",
       "Local Privacy Protection"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/chinese-english-word-counter/index.html",
     "zipUrl": "/assets/zip-packages/writing/chinese-english-word-counter.zip"
   },
   {
@@ -1454,7 +1454,7 @@
       "Responsive Design Support",
       "Dark Mode Compatible"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/countdown-timer-generator/index.html",
     "zipUrl": "/assets/zip-packages/business/countdown-timer-generator.zip"
   },
   {
@@ -1500,7 +1500,7 @@
       "Historical Date Lookup",
       "Privacy-Focused Local Processing"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/dst-timezone-converter/index.html",
     "zipUrl": "/assets/zip-packages/business/dst-timezone-converter.zip"
   },
   {
@@ -1516,7 +1516,7 @@
       "Archive.org Snapshots",
       "Local Privacy Processing"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/expired-domain-finder/index.html",
     "zipUrl": "/assets/zip-packages/dev/expired-domain-finder.zip"
   },
   {
@@ -1532,7 +1532,7 @@
       "Get Server Information",
       "Calculate Security Score"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/http-header-checker/index.html",
     "zipUrl": "/assets/zip-packages/dev/http-header-checker.zip"
   },
   {
@@ -1547,7 +1547,7 @@
       "Proxy detection",
       "100% private local processing"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/ip-geolocation-lookup/index.html",
     "zipUrl": "/assets/zip-packages/dev/ip-geolocation-lookup.zip"
   },
   {
@@ -1578,7 +1578,7 @@
       "Copy HTML Output",
       "Dark Mode"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/markdown-to-html-converter/index.html",
     "zipUrl": "/assets/zip-packages/dev/markdown-to-html-converter.zip"
   },
   {
@@ -1609,7 +1609,7 @@
       "Export Results",
       "Secure And Private"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/browser-port-scanner/index.html",
     "zipUrl": "/assets/zip-packages/dev/browser-port-scanner.zip"
   },
   {
@@ -1624,7 +1624,7 @@
       "Competitor Analysis",
       "Local Browser Processing"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/reverse-ip-lookup/index.html",
     "zipUrl": "/assets/zip-packages/dev/reverse-ip-lookup.zip"
   },
   {
@@ -1640,7 +1640,7 @@
       "Local Processing",
       "SEO Optimization"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/robots-txt-generator/index.html",
     "zipUrl": "/assets/zip-packages/dev/robots-txt-generator.zip"
   },
   {
@@ -1656,7 +1656,7 @@
       "Real-time Preview",
       "Local Processing"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/seo-meta-tag-generator/index.html",
     "zipUrl": "/assets/zip-packages/dev/seo-meta-tag-generator.zip"
   },
   {
@@ -1672,7 +1672,7 @@
       "Respect Robots.txt",
       "No Data Upload"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/xml-sitemap-generator/index.html",
     "zipUrl": "/assets/zip-packages/dev/xml-sitemap-generator.zip"
   },
   {
@@ -1687,7 +1687,7 @@
       "Performance Insights",
       "Privacy Focused"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/website-speed-test/index.html",
     "zipUrl": "/assets/zip-packages/dev/website-speed-test.zip"
   },
   {
@@ -1719,7 +1719,7 @@
       "Batch Processing",
       "Local Privacy Protection"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/week-number-converter/index.html",
     "zipUrl": "/assets/zip-packages/business/week-number-converter.zip"
   },
   {
@@ -1731,7 +1731,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/whois-lookup/index.html",
     "zipUrl": "/assets/zip-packages/dev/whois-lookup.zip"
   },
   {
@@ -1743,7 +1743,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/work-hours-calculator/index.html",
     "zipUrl": "/assets/zip-packages/business/work-hours-calculator.zip"
   },
   {
@@ -1759,7 +1759,7 @@
       "Real-time overall updates",
       "Dark mode support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/final-grade-calculator/index.html",
     "zipUrl": "/assets/zip-packages/education/final-grade-calculator.zip"
   },
   {
@@ -1771,7 +1771,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/gpa-calculator/index.html",
     "zipUrl": "/assets/zip-packages/education/gpa-calculator.zip"
   },
   {
@@ -1801,7 +1801,7 @@
       "Sound notifications",
       "Today's focus stats"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/pomodoro-timer/index.html",
     "zipUrl": "/assets/zip-packages/business/pomodoro-timer.zip"
   },
   {
@@ -1813,7 +1813,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/roman-numeral-converter/index.html",
     "zipUrl": "/assets/zip-packages/education/roman-numeral-converter.zip"
   },
   {
@@ -1829,7 +1829,7 @@
       "Sales tax integration",
       "Flexible loan terms"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/auto-loan-calculator/index.html",
     "zipUrl": "/assets/zip-packages/cars/auto-loan-calculator.zip"
   },
   {
@@ -1844,7 +1844,7 @@
       "Detailed financial breakdown",
       "Dark mode support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/compound-interest-calculator/index.html",
     "zipUrl": "/assets/zip-packages/finance/compound-interest-calculator.zip"
   },
   {
@@ -1860,7 +1860,7 @@
       "Interest savings calculation",
       "Debt payoff strategy tips"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/credit-card-payoff-calculator/index.html",
     "zipUrl": "/assets/zip-packages/finance/credit-card-payoff-calculator.zip"
   },
   {
@@ -1876,7 +1876,7 @@
       "Custom token support",
       "Dark mode available"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/crypto-profit-calculator/index.html",
     "zipUrl": "/assets/zip-packages/finance/crypto-profit-calculator.zip"
   },
   {
@@ -1892,7 +1892,7 @@
       "Down payment input",
       "Customizable loan terms"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/mortgage-calculator/index.html",
     "zipUrl": "/assets/zip-packages/finance/mortgage-calculator.zip"
   },
   {
@@ -1908,7 +1908,7 @@
       "Detailed financial breakdown",
       "Dark mode support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/retirement-calculator/index.html",
     "zipUrl": "/assets/zip-packages/finance/retirement-calculator.zip"
   },
   {
@@ -1924,7 +1924,7 @@
       "Additional cost support",
       "Built-in benchmark comparison"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/roi-calculator/index.html",
     "zipUrl": "/assets/zip-packages/finance/roi-calculator.zip"
   },
   {
@@ -1940,7 +1940,7 @@
       "Marginal tax rate info",
       "Detailed bracket breakdown"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/tax-calculator/index.html",
     "zipUrl": "/assets/zip-packages/finance/tax-calculator.zip"
   },
   {
@@ -1954,7 +1954,7 @@
       "Healthy weight range",
       "Weight category indicator"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/bmi-calculator/index.html",
     "zipUrl": "/assets/zip-packages/health/bmi-calculator.zip"
   },
   {
@@ -1968,7 +1968,7 @@
       "Fitness level categorization",
       "Supports male and female"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/body-fat-calculator/index.html",
     "zipUrl": "/assets/zip-packages/health/body-fat-calculator.zip"
   },
   {
@@ -1983,7 +1983,7 @@
       "Muscle gain recommendations",
       "Dark mode support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/calorie-calculator/index.html",
     "zipUrl": "/assets/zip-packages/health/calorie-calculator.zip"
   },
   {
@@ -1997,7 +1997,7 @@
       "Fat burn to VO2 max",
       "Instant bpm calculations"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/heart-rate-zone-calculator/index.html",
     "zipUrl": "/assets/zip-packages/health/heart-rate-zone-calculator.zip"
   },
   {
@@ -2011,7 +2011,7 @@
       "Healthy BMI range display",
       "Dark mode support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/ideal-weight-calculator/index.html",
     "zipUrl": "/assets/zip-packages/health/ideal-weight-calculator.zip"
   },
   {
@@ -2025,7 +2025,7 @@
       "Multiple diet presets",
       "Instant gram conversion"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/macro-calculator/index.html",
     "zipUrl": "/assets/zip-packages/health/macro-calculator.zip"
   },
   {
@@ -2039,7 +2039,7 @@
       "Supports 5K to marathon distances",
       "Converts km and miles automatically"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/pace-calculator/index.html",
     "zipUrl": "/assets/zip-packages/health/pace-calculator.zip"
   },
   {
@@ -2053,7 +2053,7 @@
       "Liters and cups output",
       "Instant daily calculation"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/water-intake-calculator/index.html",
     "zipUrl": "/assets/zip-packages/health/water-intake-calculator.zip"
   },
   {
@@ -2067,7 +2067,7 @@
       "SEO optimization tips",
       "Word frequency count"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/keyword-density-checker/index.html",
     "zipUrl": "/assets/zip-packages/seo/keyword-density-checker.zip"
   },
   {
@@ -2079,7 +2079,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/meta-tag-generator/index.html",
     "zipUrl": "/assets/zip-packages/dev/meta-tag-generator.zip"
   },
   {
@@ -2093,7 +2093,7 @@
       "Multi-platform support",
       "Image dimension tips"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/open-graph-generator/index.html",
     "zipUrl": "/assets/zip-packages/seo/open-graph-generator.zip"
   },
   {
@@ -2107,7 +2107,7 @@
       "Rich results ready",
       "Easy copy output"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/schema-markup-generator/index.html",
     "zipUrl": "/assets/zip-packages/seo/schema-markup-generator.zip"
   },
   {
@@ -2123,7 +2123,7 @@
       "Visual truncation indicators",
       "Optimization tips included"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/serp-snippet-preview/index.html",
     "zipUrl": "/assets/zip-packages/seo/serp-snippet-preview.zip"
   },
   {
@@ -2135,7 +2135,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/emoji-character-counter/index.html",
     "zipUrl": "/assets/zip-packages/social/emoji-character-counter.zip"
   },
   {
@@ -2149,7 +2149,7 @@
       "Hashtag counter included",
       "Word and line count"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/instagram-character-counter/index.html",
     "zipUrl": "/assets/zip-packages/social/instagram-character-counter.zip"
   },
   {
@@ -2163,7 +2163,7 @@
       "Post and story ratios",
       "Updated 2024 guidelines"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/social-media-image-size-guide/index.html",
     "zipUrl": "/assets/zip-packages/social/social-media-image-size-guide.zip"
   },
   {
@@ -2179,7 +2179,7 @@
       "Mix broad and niche tags",
       "Free online tool"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/tiktok-hashtag-generator/index.html",
     "zipUrl": "/assets/zip-packages/social/tiktok-hashtag-generator.zip"
   },
   {
@@ -2194,7 +2194,7 @@
       "Visual progress indicator",
       "Dark mode support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/x-character-counter/index.html",
     "zipUrl": "/assets/zip-packages/social/x-character-counter.zip"
   },
   {
@@ -2208,7 +2208,7 @@
       "Multiple style templates",
       "Character count indicator"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/youtube-title-generator/index.html",
     "zipUrl": "/assets/zip-packages/social/youtube-title-generator.zip"
   },
   {
@@ -2222,7 +2222,7 @@
       "Birthday countdown timer",
       "Fun life statistics"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/age-calculator/index.html",
     "zipUrl": "/assets/zip-packages/time/age-calculator.zip"
   },
   {
@@ -2234,7 +2234,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/countdown-timer/index.html",
     "zipUrl": "/assets/zip-packages/time/countdown-timer.zip"
   },
   {
@@ -2249,7 +2249,7 @@
       "Supports months and years",
       "Instant real-time calculation"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/date-calculator/index.html",
     "zipUrl": "/assets/zip-packages/time/date-calculator.zip"
   },
   {
@@ -2264,7 +2264,7 @@
       "Copy to clipboard",
       "Generation history log"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/random-number-generator/index.html",
     "zipUrl": "/assets/zip-packages/time/random-number-generator.zip"
   },
   {
@@ -2276,7 +2276,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/instagram-bio-generator/index.html",
     "zipUrl": "/assets/zip-packages/social/instagram-bio-generator.zip"
   },
   {
@@ -2291,7 +2291,7 @@
       "One-click copy to clipboard",
       "Optimized for engagement"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/instagram-caption-generator/index.html",
     "zipUrl": "/assets/zip-packages/social/instagram-caption-generator.zip"
   },
   {
@@ -2305,7 +2305,7 @@
       "Word and emoji statistics",
       "Optimization tips included"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/linkedin-character-counter/index.html",
     "zipUrl": "/assets/zip-packages/social/linkedin-character-counter.zip"
   },
   {
@@ -2319,7 +2319,7 @@
       "Emoji hashtag mention tracking",
       "Dark mode support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/social-media-character-counter-all/index.html",
     "zipUrl": "/assets/zip-packages/social/social-media-character-counter-all.zip"
   },
   {
@@ -2333,7 +2333,7 @@
       "Copy comma-separated tags",
       "Optimize for YouTube SEO"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/youtube-tag-generator/index.html",
     "zipUrl": "/assets/zip-packages/seo/youtube-tag-generator.zip"
   },
   {
@@ -2345,7 +2345,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/budget-tracker/index.html",
     "zipUrl": "/assets/zip-packages/time/budget-tracker.zip"
   },
   {
@@ -2359,7 +2359,7 @@
       "Flip history log",
       "Reset counter option"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/coin-flipper/index.html",
     "zipUrl": "/assets/zip-packages/time/coin-flipper.zip"
   },
   {
@@ -2375,7 +2375,7 @@
       "Dark mode support",
       "Productivity tips included"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/daily-planner/index.html",
     "zipUrl": "/assets/zip-packages/business/daily-planner.zip"
   },
   {
@@ -2391,7 +2391,7 @@
       "Project deadline planner",
       "Age and duration calculator"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/date-difference-calculator/index.html",
     "zipUrl": "/assets/zip-packages/time/date-difference-calculator.zip"
   },
   {
@@ -2405,7 +2405,7 @@
       "View individual roll results",
       "Track roll history log"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/dice-roller/index.html",
     "zipUrl": "/assets/zip-packages/gaming/dice-roller.zip"
   },
   {
@@ -2419,7 +2419,7 @@
       "Interest-specific recommendations",
       "Instant personalized suggestions"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/gift-idea-generator/index.html",
     "zipUrl": "/assets/zip-packages/time/gift-idea-generator.zip"
   },
   {
@@ -2433,7 +2433,7 @@
       "Local data persistence",
       "Dark mode support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/habit-streak-tracker/index.html",
     "zipUrl": "/assets/zip-packages/business/habit-streak-tracker.zip"
   },
   {
@@ -2445,7 +2445,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/habit-tracker/index.html",
     "zipUrl": "/assets/zip-packages/time/habit-tracker.zip"
   },
   {
@@ -2459,7 +2459,7 @@
       "Soothing bell sound options",
       "Guided breathing exercise"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/meditation-timer/index.html",
     "zipUrl": "/assets/zip-packages/time/meditation-timer.zip"
   },
   {
@@ -2474,7 +2474,7 @@
       "Get personalized improvement tips",
       "Visual score breakdown and progress bar"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/productivity-score-calculator/index.html",
     "zipUrl": "/assets/zip-packages/time/productivity-score-calculator.zip"
   },
   {
@@ -2490,7 +2490,7 @@
       "Includes sleep stage info",
       "Mobile friendly interface"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/sleep-cycle-calculator/index.html",
     "zipUrl": "/assets/zip-packages/time/sleep-cycle-calculator.zip"
   },
   {
@@ -2504,7 +2504,7 @@
       "Keyboard shortcut support",
       "Dark mode available"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/stopwatch/index.html",
     "zipUrl": "/assets/zip-packages/time/stopwatch.zip"
   },
   {
@@ -2518,7 +2518,7 @@
       "Persistent local storage saving",
       "Dark mode and responsive design"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/to-do-list-online/index.html",
     "zipUrl": "/assets/zip-packages/time/to-do-list-online.zip"
   },
   {
@@ -2532,7 +2532,7 @@
       "Winner history tracking",
       "Random decision maker"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/wheel-spinner/index.html",
     "zipUrl": "/assets/zip-packages/time/wheel-spinner.zip"
   },
   {
@@ -2546,7 +2546,7 @@
       "Day and night indicators",
       "Searchable city list"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/world-clock/index.html",
     "zipUrl": "/assets/zip-packages/time/world-clock.zip"
   },
   {
@@ -2560,7 +2560,7 @@
       "Local entropy calculation",
       "Bulk key generation"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/api-key-generator/index.html",
     "zipUrl": "/assets/zip-packages/security/api-key-generator.zip"
   },
   {
@@ -2574,7 +2574,7 @@
       "UTF-8 and Unicode handling",
       "Local client-side processing"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/base64-encode-decode/index.html",
     "zipUrl": "/assets/zip-packages/security/base64-encode-decode.zip"
   },
   {
@@ -2588,7 +2588,7 @@
       "Anonymize IP addresses",
       "Custom masking styles"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/data-masker/index.html",
     "zipUrl": "/assets/zip-packages/security/data-masker.zip"
   },
   {
@@ -2602,7 +2602,7 @@
       "View standard claims",
       "Expiration status check"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/jwt-decoder/index.html",
     "zipUrl": "/assets/zip-packages/security/jwt-decoder.zip"
   },
   {
@@ -2616,7 +2616,7 @@
       "Real-time entropy calculation",
       "Batch token generation"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/random-token-generator/index.html",
     "zipUrl": "/assets/zip-packages/security/random-token-generator.zip"
   },
   {
@@ -2630,7 +2630,7 @@
       "Component encoding support",
       "Real-time conversion"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/url-encode-decode/index.html",
     "zipUrl": "/assets/zip-packages/security/url-encode-decode.zip"
   },
   {
@@ -2645,7 +2645,7 @@
       "Computes variance and standard deviation",
       "Supports multiple input formats"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/average-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/average-calculator.zip"
   },
   {
@@ -2660,7 +2660,7 @@
       "Clean responsive interface",
       "Dark mode support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/basic-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/basic-calculator.zip"
   },
   {
@@ -2676,7 +2676,7 @@
       "Probability table view",
       "Normal approximation support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/binomial-distribution-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/binomial-distribution-calculator.zip"
   },
   {
@@ -2692,7 +2692,7 @@
       "Contingency table input",
       "Adjustable significance level"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/chi-square-test-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/chi-square-test-calculator.zip"
   },
   {
@@ -2708,7 +2708,7 @@
       "Step-by-step formula breakdown",
       "Free online geometry tool"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/circle-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/circle-calculator.zip"
   },
   {
@@ -2724,7 +2724,7 @@
       "Square root and exponential",
       "Free online math tool"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/complex-number-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/complex-number-calculator.zip"
   },
   {
@@ -2739,7 +2739,7 @@
       "Detailed formula breakdown",
       "Free online geometry tool"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/cone-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/cone-calculator.zip"
   },
   {
@@ -2754,7 +2754,7 @@
       "Detailed formula breakdown",
       "Dark mode support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/cube-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/cube-calculator.zip"
   },
   {
@@ -2769,7 +2769,7 @@
       "Instant calculation results",
       "Free and easy to use"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/cylinder-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/cylinder-calculator.zip"
   },
   {
@@ -2784,7 +2784,7 @@
       "Function plot visualization",
       "Supports trigonometric functions"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/derivative-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/derivative-calculator.zip"
   },
   {
@@ -2799,7 +2799,7 @@
       "Quick power presets",
       "Powers table generation"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/exponent-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/exponent-calculator.zip"
   },
   {
@@ -2815,7 +2815,7 @@
       "Related factorials table",
       "Free online math tool"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/factorial-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/factorial-calculator.zip"
   },
   {
@@ -2831,7 +2831,7 @@
       "Mixed number conversion",
       "Free online tool"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/fraction-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/fraction-calculator.zip"
   },
   {
@@ -2843,7 +2843,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/linear-equation-solver/index.html",
     "zipUrl": "/assets/zip-packages/math/linear-equation-solver.zip"
   },
   {
@@ -2855,7 +2855,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/logarithm-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/logarithm-calculator.zip"
   },
   {
@@ -2867,7 +2867,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/logarithm-calculator-extended/index.html",
     "zipUrl": "/assets/zip-packages/math/logarithm-calculator-extended.zip"
   },
   {
@@ -2879,7 +2879,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/math-formula-reference/index.html",
     "zipUrl": "/assets/zip-packages/math/math-formula-reference.zip"
   },
   {
@@ -2891,7 +2891,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/matrix-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/matrix-calculator.zip"
   },
   {
@@ -2903,7 +2903,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/median-calculator/index.html",
     "zipUrl": "/assets/zip-packages/dev/median-calculator.zip"
   },
   {
@@ -2915,7 +2915,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/mode-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/mode-calculator.zip"
   },
   {
@@ -2927,7 +2927,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/normal-distribution-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/normal-distribution-calculator.zip"
   },
   {
@@ -2939,7 +2939,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/percentage-calculator-math/index.html",
     "zipUrl": "/assets/zip-packages/math/percentage-calculator-math.zip"
   },
   {
@@ -2951,7 +2951,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/percentage-change-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/percentage-change-calculator.zip"
   },
   {
@@ -2963,7 +2963,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/permutation-combination-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/permutation-combination-calculator.zip"
   },
   {
@@ -2975,7 +2975,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/poisson-distribution-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/poisson-distribution-calculator.zip"
   },
   {
@@ -2987,7 +2987,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/prime-number-checker/index.html",
     "zipUrl": "/assets/zip-packages/math/prime-number-checker.zip"
   },
   {
@@ -2999,7 +2999,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/probability-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/probability-calculator.zip"
   },
   {
@@ -3011,7 +3011,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/proportion-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/proportion-calculator.zip"
   },
   {
@@ -3023,7 +3023,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/pythagorean-theorem-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/pythagorean-theorem-calculator.zip"
   },
   {
@@ -3035,7 +3035,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/quadratic-equation-solver/index.html",
     "zipUrl": "/assets/zip-packages/math/quadratic-equation-solver.zip"
   },
   {
@@ -3047,7 +3047,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/range-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/range-calculator.zip"
   },
   {
@@ -3059,7 +3059,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/ratio-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/ratio-calculator.zip"
   },
   {
@@ -3071,7 +3071,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/scientific-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/scientific-calculator.zip"
   },
   {
@@ -3086,7 +3086,7 @@
       "System cost analysis",
       "Customize sun hours and efficiency"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/solar-panel-calculator/index.html",
     "zipUrl": "/assets/zip-packages/real-estate/solar-panel-calculator.zip"
   },
   {
@@ -3098,7 +3098,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/sphere-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/sphere-calculator.zip"
   },
   {
@@ -3110,7 +3110,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/standard-deviation-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/standard-deviation-calculator.zip"
   },
   {
@@ -3122,7 +3122,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/statistics-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/statistics-calculator.zip"
   },
   {
@@ -3134,7 +3134,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/t-test-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/t-test-calculator.zip"
   },
   {
@@ -3146,7 +3146,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/triangle-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/triangle-calculator.zip"
   },
   {
@@ -3158,7 +3158,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/trigonometry-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/trigonometry-calculator.zip"
   },
   {
@@ -3170,7 +3170,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/unit-rate-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/unit-rate-calculator.zip"
   },
   {
@@ -3182,7 +3182,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/variance-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/variance-calculator.zip"
   },
   {
@@ -3194,7 +3194,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/vector-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/vector-calculator.zip"
   },
   {
@@ -3203,7 +3203,7 @@
     "title": "Ai Agent Workflow Planner",
     "desc": "A free offline tool for ai agent workflow planner calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/ai-agent-workflow-planner/index.html",
     "zipUrl": "/assets/zip-packages/ai-ml/ai-agent-workflow-planner.zip"
   },
   {
@@ -3212,7 +3212,7 @@
     "title": "Ai Content Detector Lite",
     "desc": "A free offline tool for ai content detector lite calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/ai-content-detector-lite/index.html",
     "zipUrl": "/assets/zip-packages/ai-ml/ai-content-detector-lite.zip"
   },
   {
@@ -3221,7 +3221,7 @@
     "title": "Ai Detection Score Tool",
     "desc": "A free offline tool for ai detection score tool calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/ai-detection-score-tool/index.html",
     "zipUrl": "/assets/zip-packages/ai-ml/ai-detection-score-tool.zip"
   },
   {
@@ -3230,7 +3230,7 @@
     "title": "Ai Model Comparison Table",
     "desc": "A free offline tool for ai model comparison table calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/ai-model-comparison-table/index.html",
     "zipUrl": "/assets/zip-packages/ai-ml/ai-model-comparison-table.zip"
   },
   {
@@ -3239,7 +3239,7 @@
     "title": "Ai Prompt Generator",
     "desc": "A free offline tool for ai prompt generator calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/ai-prompt-generator/index.html",
     "zipUrl": "/assets/zip-packages/ai-ml/ai-prompt-generator.zip"
   },
   {
@@ -3248,7 +3248,7 @@
     "title": "Ai Writing Style Detector",
     "desc": "A free offline tool for ai writing style detector calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/ai-writing-style-detector/index.html",
     "zipUrl": "/assets/zip-packages/ai-ml/ai-writing-style-detector.zip"
   },
   {
@@ -3257,7 +3257,7 @@
     "title": "Chatgpt System Message Builder",
     "desc": "A free offline tool for chatgpt system message builder calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/chatgpt-system-message-builder/index.html",
     "zipUrl": "/assets/zip-packages/health/chatgpt-system-message-builder.zip"
   },
   {
@@ -3266,7 +3266,7 @@
     "title": "Conversation Token Trimmer",
     "desc": "A free offline tool for conversation token trimmer calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/conversation-token-trimmer/index.html",
     "zipUrl": "/assets/zip-packages/health/conversation-token-trimmer.zip"
   },
   {
@@ -3275,7 +3275,7 @@
     "title": "Dalle Prompt Builder",
     "desc": "A free offline tool for dalle prompt builder calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/dalle-prompt-builder/index.html",
     "zipUrl": "/assets/zip-packages/ai-ml/dalle-prompt-builder.zip"
   },
   {
@@ -3284,7 +3284,7 @@
     "title": "Embedding Cost Estimator",
     "desc": "A free offline tool for embedding cost estimator calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/embedding-cost-estimator/index.html",
     "zipUrl": "/assets/zip-packages/health/embedding-cost-estimator.zip"
   },
   {
@@ -3293,7 +3293,7 @@
     "title": "Fine Tune Data Formatter",
     "desc": "A free offline tool for fine tune data formatter calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/fine-tune-data-formatter/index.html",
     "zipUrl": "/assets/zip-packages/health/fine-tune-data-formatter.zip"
   },
   {
@@ -3302,7 +3302,7 @@
     "title": "Image Prompt Builder",
     "desc": "A free offline tool for image prompt builder calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/image-prompt-builder/index.html",
     "zipUrl": "/assets/zip-packages/ai-ml/image-prompt-builder.zip"
   },
   {
@@ -3311,7 +3311,7 @@
     "title": "Llm Cost Estimator",
     "desc": "A free offline tool for llm cost estimator calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/llm-cost-estimator/index.html",
     "zipUrl": "/assets/zip-packages/health/llm-cost-estimator.zip"
   },
   {
@@ -3320,7 +3320,7 @@
     "title": "Midjourney Prompt Builder",
     "desc": "A free offline tool for midjourney prompt builder calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/midjourney-prompt-builder/index.html",
     "zipUrl": "/assets/zip-packages/ai-ml/midjourney-prompt-builder.zip"
   },
   {
@@ -3329,7 +3329,7 @@
     "title": "Negative Prompt Generator",
     "desc": "A free offline tool for negative prompt generator calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/negative-prompt-generator/index.html",
     "zipUrl": "/assets/zip-packages/ai-ml/negative-prompt-generator.zip"
   },
   {
@@ -3338,7 +3338,7 @@
     "title": "Prompt Engineering Cheat Sheet",
     "desc": "A free offline tool for prompt engineering cheat sheet calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/prompt-engineering-cheat-sheet/index.html",
     "zipUrl": "/assets/zip-packages/ai-ml/prompt-engineering-cheat-sheet.zip"
   },
   {
@@ -3347,7 +3347,7 @@
     "title": "Prompt Template Library",
     "desc": "A free offline tool for prompt template library calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/prompt-template-library/index.html",
     "zipUrl": "/assets/zip-packages/ai-ml/prompt-template-library.zip"
   },
   {
@@ -3356,7 +3356,7 @@
     "title": "Rag Chunker",
     "desc": "A free offline tool for rag chunker calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/rag-chunker/index.html",
     "zipUrl": "/assets/zip-packages/health/rag-chunker.zip"
   },
   {
@@ -3365,7 +3365,7 @@
     "title": "Stable Diffusion Prompt Builder",
     "desc": "A free offline tool for stable diffusion prompt builder calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/stable-diffusion-prompt-builder/index.html",
     "zipUrl": "/assets/zip-packages/ai-ml/stable-diffusion-prompt-builder.zip"
   },
   {
@@ -3374,7 +3374,7 @@
     "title": "Text Token Counter",
     "desc": "A free offline tool for text token counter calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/text-token-counter/index.html",
     "zipUrl": "/assets/zip-packages/health/text-token-counter.zip"
   },
   {
@@ -3383,7 +3383,7 @@
     "title": "Brake Pad Wear Estimator",
     "desc": "A free offline tool for brake pad wear estimator calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/brake-pad-wear-estimator/index.html",
     "zipUrl": "/assets/zip-packages/cars/brake-pad-wear-estimator.zip"
   },
   {
@@ -3392,7 +3392,7 @@
     "title": "Car Loan Payoff Calculator",
     "desc": "A free offline tool for car loan payoff calculator calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/car-loan-payoff-calculator/index.html",
     "zipUrl": "/assets/zip-packages/cars/car-loan-payoff-calculator.zip"
   },
   {
@@ -3401,7 +3401,7 @@
     "title": "Car Maintenance Schedule",
     "desc": "A free offline tool for car maintenance schedule calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/car-maintenance-schedule/index.html",
     "zipUrl": "/assets/zip-packages/cars/car-maintenance-schedule.zip"
   },
   {
@@ -3410,7 +3410,7 @@
     "title": "Car Payment Calculator",
     "desc": "A free offline tool for car payment calculator calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/car-payment-calculator/index.html",
     "zipUrl": "/assets/zip-packages/cars/car-payment-calculator.zip"
   },
   {
@@ -3419,7 +3419,7 @@
     "title": "Car Resale Value Calculator",
     "desc": "A free offline tool for car resale value calculator calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/car-resale-value-calculator/index.html",
     "zipUrl": "/assets/zip-packages/cars/car-resale-value-calculator.zip"
   },
   {
@@ -3428,7 +3428,7 @@
     "title": "Ev Charging Cost Calculator",
     "desc": "A free offline tool for ev charging cost calculator calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/ev-charging-cost-calculator/index.html",
     "zipUrl": "/assets/zip-packages/cars/ev-charging-cost-calculator.zip"
   },
   {
@@ -3437,7 +3437,7 @@
     "title": "Fuel Cost Calculator",
     "desc": "A free offline tool for fuel cost calculator calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/fuel-cost-calculator/index.html",
     "zipUrl": "/assets/zip-packages/cars/fuel-cost-calculator.zip"
   },
   {
@@ -3446,7 +3446,7 @@
     "title": "Fuel Cost Comparison",
     "desc": "A free offline tool for fuel cost comparison calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/fuel-cost-comparison/index.html",
     "zipUrl": "/assets/zip-packages/cars/fuel-cost-comparison.zip"
   },
   {
@@ -3455,7 +3455,7 @@
     "title": "Mpg Calculator",
     "desc": "A free offline tool for mpg calculator calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/mpg-calculator/index.html",
     "zipUrl": "/assets/zip-packages/cars/mpg-calculator.zip"
   },
   {
@@ -3464,7 +3464,7 @@
     "title": "Road Trip Planner",
     "desc": "A free offline tool for road trip planner calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/road-trip-planner/index.html",
     "zipUrl": "/assets/zip-packages/travel/road-trip-planner.zip"
   },
   {
@@ -3473,7 +3473,7 @@
     "title": "Tire Pressure Calculator",
     "desc": "A free offline tool for tire pressure calculator calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/tire-pressure-calculator/index.html",
     "zipUrl": "/assets/zip-packages/cars/tire-pressure-calculator.zip"
   },
   {
@@ -3482,7 +3482,7 @@
     "title": "Tire Size Calculator",
     "desc": "A free offline tool for tire size calculator calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/tire-size-calculator/index.html",
     "zipUrl": "/assets/zip-packages/cars/tire-size-calculator.zip"
   },
   {
@@ -3491,7 +3491,7 @@
     "title": "Trip Mileage Log",
     "desc": "A free offline tool for trip mileage log calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/trip-mileage-log/index.html",
     "zipUrl": "/assets/zip-packages/cars/trip-mileage-log.zip"
   },
   {
@@ -3500,7 +3500,7 @@
     "title": "Ev Range Calculator",
     "desc": "A free offline tool for ev range calculator calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/ev-range-calculator/index.html",
     "zipUrl": "/assets/zip-packages/cars/ev-range-calculator.zip"
   },
   {
@@ -3509,7 +3509,7 @@
     "title": "Oil Change Interval",
     "desc": "A free offline tool for oil change interval calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/oil-change-interval/index.html",
     "zipUrl": "/assets/zip-packages/cars/oil-change-interval.zip"
   },
   {
@@ -3518,7 +3518,7 @@
     "title": "Tire Size Converter",
     "desc": "A free offline tool for tire size converter calculations. Works in your browser.",
     "features": [],
-    "detailUrl": "",
+    "detailUrl": "/tools/tire-size-converter/index.html",
     "zipUrl": "/assets/zip-packages/cars/tire-size-converter.zip"
   },
   {
@@ -3533,7 +3533,7 @@
       "Instant real-time cost analysis",
       "Comprehensive expense category breakdown"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/driving-cost-per-mile/index.html",
     "zipUrl": "/assets/zip-packages/cars/driving-cost-per-mile.zip"
   },
   {
@@ -3548,7 +3548,7 @@
       "Optimal selling time insights",
       "Detailed financial breakdown table"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/vehicle-depreciation/index.html",
     "zipUrl": "/assets/zip-packages/cars/vehicle-depreciation.zip"
   },
   {
@@ -3563,7 +3563,7 @@
       "Instant battery recommendations",
       "Compare dimensions and specs"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/battery-size-selector/index.html",
     "zipUrl": "/assets/zip-packages/cars/battery-size-selector.zip"
   },
   {
@@ -3578,7 +3578,7 @@
       "Total value loss calculation",
       "Break-even year estimate"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/car-depreciation-calculator/index.html",
     "zipUrl": "/assets/zip-packages/cars/car-depreciation-calculator.zip"
   },
   {
@@ -3594,7 +3594,7 @@
       "Driving time estimate",
       "Carbon footprint calculation"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/fuel-cost-calculator-car/index.html",
     "zipUrl": "/assets/zip-packages/cars/fuel-cost-calculator-car.zip"
   },
   {
@@ -3609,7 +3609,7 @@
       "Driving time estimates",
       "Common distance references"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/km-to-miles/index.html",
     "zipUrl": "/assets/zip-packages/cars/km-to-miles.zip"
   },
   {
@@ -3623,7 +3623,7 @@
       "Instant conversion results",
       "Reference table for common values"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/l-100km-to-mpg/index.html",
     "zipUrl": "/assets/zip-packages/cars/l-100km-to-mpg.zip"
   },
   {
@@ -3638,7 +3638,7 @@
       "Multiple unit display",
       "No signup required"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/miles-to-km/index.html",
     "zipUrl": "/assets/zip-packages/cars/miles-to-km.zip"
   },
   {
@@ -3653,7 +3653,7 @@
       "Reference speed table",
       "Dark mode support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/speed-converter/index.html",
     "zipUrl": "/assets/zip-packages/cars/speed-converter.zip"
   },
   {
@@ -3667,7 +3667,7 @@
       "Reference pressure guide",
       "Free to use online"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/tire-pressure-converter/index.html",
     "zipUrl": "/assets/zip-packages/cars/tire-pressure-converter.zip"
   },
   {
@@ -3682,7 +3682,7 @@
       "Cost per mile breakdown",
       "IRS mileage rate reference"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/trip-cost-estimator/index.html",
     "zipUrl": "/assets/zip-packages/cars/trip-cost-estimator.zip"
   },
   {
@@ -3697,7 +3697,7 @@
       "Track multiple body parts",
       "Local data storage"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/body-measurement-tracker/index.html",
     "zipUrl": "/assets/zip-packages/beauty/body-measurement-tracker.zip"
   },
   {
@@ -3712,7 +3712,7 @@
       "Local storage persistence",
       "Capsule wardrobe support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/closet-organizer/index.html",
     "zipUrl": "/assets/zip-packages/beauty/closet-organizer.zip"
   },
   {
@@ -3727,7 +3727,7 @@
       "Supports US, EU, UK, AU, JP",
       "Free and easy to use"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/clothing-size-converter/index.html",
     "zipUrl": "/assets/zip-packages/beauty/clothing-size-converter.zip"
   },
   {
@@ -3742,7 +3742,7 @@
       "Extra fabric allowance",
       "Quilt and curtain support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/fabric-yardage-calc/index.html",
     "zipUrl": "/assets/zip-packages/beauty/fabric-yardage-calc.zip"
   },
   {
@@ -3758,7 +3758,7 @@
       "Multiple ratio support",
       "Natural to target level input"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/hair-color-developer/index.html",
     "zipUrl": "/assets/zip-packages/beauty/hair-color-developer.zip"
   },
   {
@@ -3774,7 +3774,7 @@
       "Processing time estimate",
       "Color journey visualization"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/hair-color-predictor/index.html",
     "zipUrl": "/assets/zip-packages/beauty/hair-color-predictor.zip"
   },
   {
@@ -3788,7 +3788,7 @@
       "Personalized care routine",
       "Instant hair type identification"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/hair-type-identifier/index.html",
     "zipUrl": "/assets/zip-packages/beauty/hair-type-identifier.zip"
   },
   {
@@ -3803,7 +3803,7 @@
       "Trim frequency calculation",
       "Styling tips for each face shape"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/hairstyle-length-calculator/index.html",
     "zipUrl": "/assets/zip-packages/beauty/hairstyle-length-calculator.zip"
   },
   {
@@ -3818,7 +3818,7 @@
       "International size charts",
       "Easy measurement input"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/jewelry-size-calculator/index.html",
     "zipUrl": "/assets/zip-packages/beauty/jewelry-size-calculator.zip"
   },
   {
@@ -3834,7 +3834,7 @@
       "Avoid fabric damage",
       "Free online reference"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/laundry-symbol-guide/index.html",
     "zipUrl": "/assets/zip-packages/beauty/laundry-symbol-guide.zip"
   },
   {
@@ -3849,7 +3849,7 @@
       "Instant shade conversion",
       "Free online tool"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/makeup-shade-matcher/index.html",
     "zipUrl": "/assets/zip-packages/beauty/makeup-shade-matcher.zip"
   },
   {
@@ -3864,7 +3864,7 @@
       "Explore various nail lengths",
       "Free and easy to use"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/nail-art-ideas/index.html",
     "zipUrl": "/assets/zip-packages/beauty/nail-art-ideas.zip"
   },
   {
@@ -3876,7 +3876,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/nail-polish-mixer/index.html",
     "zipUrl": "/assets/zip-packages/beauty/nail-polish-mixer.zip"
   },
   {
@@ -3888,7 +3888,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/outfit-color-matcher/index.html",
     "zipUrl": "/assets/zip-packages/beauty/outfit-color-matcher.zip"
   },
   {
@@ -3900,7 +3900,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/outfit-planner/index.html",
     "zipUrl": "/assets/zip-packages/beauty/outfit-planner.zip"
   },
   {
@@ -3912,7 +3912,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/perfume-dilution-calculator/index.html",
     "zipUrl": "/assets/zip-packages/beauty/perfume-dilution-calculator.zip"
   },
   {
@@ -3924,7 +3924,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/perfume-finder/index.html",
     "zipUrl": "/assets/zip-packages/beauty/perfume-finder.zip"
   },
   {
@@ -3936,7 +3936,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/skincare-routine-builder/index.html",
     "zipUrl": "/assets/zip-packages/beauty/skincare-routine-builder.zip"
   },
   {
@@ -3948,7 +3948,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/contract-template-builder/index.html",
     "zipUrl": "/assets/zip-packages/business/contract-template-builder.zip"
   },
   {
@@ -3960,7 +3960,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/csv-cleaner/index.html",
     "zipUrl": "/assets/zip-packages/business/csv-cleaner.zip"
   },
   {
@@ -3972,7 +3972,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/discount-calculator/index.html",
     "zipUrl": "/assets/zip-packages/business/discount-calculator.zip"
   },
   {
@@ -3984,7 +3984,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/hourly-rate-calculator/index.html",
     "zipUrl": "/assets/zip-packages/business/hourly-rate-calculator.zip"
   },
   {
@@ -3996,7 +3996,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/invoice-generator-simple/index.html",
     "zipUrl": "/assets/zip-packages/business/invoice-generator-simple.zip"
   },
   {
@@ -4011,7 +4011,7 @@
       "Total cost display",
       "Productivity insights"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/meeting-cost-calculator/index.html",
     "zipUrl": "/assets/zip-packages/business/meeting-cost-calculator.zip"
   },
   {
@@ -4026,7 +4026,7 @@
       "Export to Markdown/HTML",
       "Free online tool"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/meeting-notes-template/index.html",
     "zipUrl": "/assets/zip-packages/business/meeting-notes-template.zip"
   },
   {
@@ -4042,7 +4042,7 @@
       "Copy to clipboard",
       "Customizable objectives"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/okr-template-generator/index.html",
     "zipUrl": "/assets/zip-packages/business/okr-template-generator.zip"
   },
   {
@@ -4057,7 +4057,7 @@
       "Live formula breakdown",
       "Dark mode support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/profit-margin-calculator/index.html",
     "zipUrl": "/assets/zip-packages/business/profit-margin-calculator.zip"
   },
   {
@@ -4072,7 +4072,7 @@
       "Calculate profit margin",
       "Generate detailed quote breakdown"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/project-estimate-calculator/index.html",
     "zipUrl": "/assets/zip-packages/business/project-estimate-calculator.zip"
   },
   {
@@ -4087,7 +4087,7 @@
       "Custom rate support",
       "No signup required"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/sales-tax-calculator/index.html",
     "zipUrl": "/assets/zip-packages/business/sales-tax-calculator.zip"
   },
   {
@@ -4102,7 +4102,7 @@
       "Session history logging",
       "Project-based time breakdown"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/time-tracker/index.html",
     "zipUrl": "/assets/zip-packages/business/time-tracker.zip"
   },
   {
@@ -4117,7 +4117,7 @@
       "Visual 24-hour timeline",
       "Adjustable meeting duration"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/timezone-meeting-planner/index.html",
     "zipUrl": "/assets/zip-packages/business/timezone-meeting-planner.zip"
   },
   {
@@ -4132,7 +4132,7 @@
       "Download as txt file",
       "Local and private processing"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/case-converter/index.html",
     "zipUrl": "/assets/zip-packages/writing/case-converter.zip"
   },
   {
@@ -4148,7 +4148,7 @@
       "SEO meta description limits",
       "Dark mode support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/char-counter/index.html",
     "zipUrl": "/assets/zip-packages/writing/char-counter.zip"
   },
   {
@@ -4162,7 +4162,7 @@
       "One-click copy feature",
       "Social media ready"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/fancy-text-generator/index.html",
     "zipUrl": "/assets/zip-packages/writing/fancy-text-generator.zip"
   },
   {
@@ -4177,7 +4177,7 @@
       "Headline structure analysis",
       "Actionable improvement suggestions"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/headline-analyzer/index.html",
     "zipUrl": "/assets/zip-packages/writing/headline-analyzer.zip"
   },
   {
@@ -4193,7 +4193,7 @@
       "One-click copy to clipboard",
       "Word and character count"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/lorem-ipsum-generator/index.html",
     "zipUrl": "/assets/zip-packages/writing/lorem-ipsum-generator.zip"
   },
   {
@@ -4209,7 +4209,7 @@
       "Live text analysis",
       "No signup required"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/reading-time-calculator/index.html",
     "zipUrl": "/assets/zip-packages/writing/reading-time-calculator.zip"
   },
   {
@@ -4225,7 +4225,7 @@
       "Copy and paste results",
       "Free and easy to use"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/slogan-generator/index.html",
     "zipUrl": "/assets/zip-packages/writing/slogan-generator.zip"
   },
   {
@@ -4240,7 +4240,7 @@
       "Continuous listening mode",
       "No signup required"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/speech-to-text/index.html",
     "zipUrl": "/assets/zip-packages/writing/speech-to-text.zip"
   },
   {
@@ -4255,7 +4255,7 @@
       "Works on social media",
       "No signup required"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/strikethrough-text/index.html",
     "zipUrl": "/assets/zip-packages/writing/strikethrough-text.zip"
   },
   {
@@ -4270,7 +4270,7 @@
       "Similarity percentage stats",
       "Swap text inputs quickly"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/text-diff-checker/index.html",
     "zipUrl": "/assets/zip-packages/writing/text-diff-checker.zip"
   },
   {
@@ -4286,7 +4286,7 @@
       "Instant copy to clipboard",
       "Free online text tool"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/text-reverser/index.html",
     "zipUrl": "/assets/zip-packages/writing/text-reverser.zip"
   },
   {
@@ -4302,7 +4302,7 @@
       "No audio upload required",
       "Light and dark mode"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/text-to-speech/index.html",
     "zipUrl": "/assets/zip-packages/writing/text-to-speech.zip"
   },
   {
@@ -4318,7 +4318,7 @@
       "Instant error highlighting",
       "No signup required"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/typing-speed-test/index.html",
     "zipUrl": "/assets/zip-packages/writing/typing-speed-test.zip"
   },
   {
@@ -4333,7 +4333,7 @@
       "Reading time and level metrics",
       "Visual keyword distribution chart"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/word-density-analyzer/index.html",
     "zipUrl": "/assets/zip-packages/writing/word-density-analyzer.zip"
   },
   {
@@ -4348,7 +4348,7 @@
       "Accurate density calculations",
       "Free and easy to use"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/baking-converter/index.html",
     "zipUrl": "/assets/zip-packages/cooking/baking-converter.zip"
   },
   {
@@ -4364,7 +4364,7 @@
       "Suggested cooking timeline",
       "Stall phase estimation"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/bbq-cooking-time-calc/index.html",
     "zipUrl": "/assets/zip-packages/cooking/bbq-cooking-time-calc.zip"
   },
   {
@@ -4379,7 +4379,7 @@
       "Quick common measure presets",
       "Accurate baking calculations"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/butter-converter/index.html",
     "zipUrl": "/assets/zip-packages/cooking/butter-converter.zip"
   },
   {
@@ -4395,7 +4395,7 @@
       "Expert serving tips included",
       "Free cheese pairing guide"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/cheese-pairing-finder/index.html",
     "zipUrl": "/assets/zip-packages/cooking/cheese-pairing-finder.zip"
   },
   {
@@ -4410,7 +4410,7 @@
       "Step-by-step mixing instructions",
       "Includes mocktail options"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/cocktail-recipe-finder/index.html",
     "zipUrl": "/assets/zip-packages/cooking/cocktail-recipe-finder.zip"
   },
   {
@@ -4425,7 +4425,7 @@
       "Grind and time tips",
       "Instant recipe generation"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/coffee-brew-ratio-calculator/index.html",
     "zipUrl": "/assets/zip-packages/cooking/coffee-brew-ratio-calculator.zip"
   },
   {
@@ -4441,7 +4441,7 @@
       "Cooking method adjustments",
       "Metric and imperial units"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/cooking-time-calculator/index.html",
     "zipUrl": "/assets/zip-packages/cooking/cooking-time-calculator.zip"
   },
   {
@@ -4456,7 +4456,7 @@
       "Helpful cooking tips included",
       "Instant time calculation"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/cooking-time-conv/index.html",
     "zipUrl": "/assets/zip-packages/cooking/cooking-time-conv.zip"
   },
   {
@@ -4471,7 +4471,7 @@
       "Pause and reset options",
       "Custom timer names"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/cooking-timer/index.html",
     "zipUrl": "/assets/zip-packages/cooking/cooking-timer.zip"
   },
   {
@@ -4487,7 +4487,7 @@
       "Cross-standard comparison",
       "Free for cooking and baking"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/cups-to-ml/index.html",
     "zipUrl": "/assets/zip-packages/cooking/cups-to-ml.zip"
   },
   {
@@ -4503,7 +4503,7 @@
       "Bidirectional temperature converter",
       "Free and mobile friendly"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/fahrenheit-to-celsius-cooking/index.html",
     "zipUrl": "/assets/zip-packages/cooking/fahrenheit-to-celsius-cooking.zip"
   },
   {
@@ -4518,7 +4518,7 @@
       "Common substitution suggestions",
       "Helpful celiac baking tips"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/gluten-free-flour-blend/index.html",
     "zipUrl": "/assets/zip-packages/cooking/gluten-free-flour-blend.zip"
   },
   {
@@ -4534,7 +4534,7 @@
       "Common measurement reference",
       "Real-time conversion updates"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/grams-to-cups/index.html",
     "zipUrl": "/assets/zip-packages/cooking/grams-to-cups.zip"
   },
   {
@@ -4549,7 +4549,7 @@
       "Volume and weight units",
       "Accurate recipe scaling"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/measurement-converter-cooking/index.html",
     "zipUrl": "/assets/zip-packages/cooking/measurement-converter-cooking.zip"
   },
   {
@@ -4564,7 +4564,7 @@
       "Set daily calorie target",
       "Monitor protein, carbs, fat"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/nutrition-calculator/index.html",
     "zipUrl": "/assets/zip-packages/cooking/nutrition-calculator.zip"
   },
   {
@@ -4580,7 +4580,7 @@
       "Bidirectional real-time input",
       "Free and no signup required"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/ounces-to-grams/index.html",
     "zipUrl": "/assets/zip-packages/cooking/ounces-to-grams.zip"
   },
   {
@@ -4595,7 +4595,7 @@
       "Common baking reference table",
       "Instant multi-unit conversion"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/oven-temperature-converter/index.html",
     "zipUrl": "/assets/zip-packages/cooking/oven-temperature-converter.zip"
   },
   {
@@ -4610,7 +4610,7 @@
       "Ingredient weight in grams",
       "Fermentation time options"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/pizza-dough-calculator/index.html",
     "zipUrl": "/assets/zip-packages/cooking/pizza-dough-calculator.zip"
   },
   {
@@ -4625,7 +4625,7 @@
       "Ingredient volume estimates",
       "Common recipe weight examples"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/pounds-to-grams/index.html",
     "zipUrl": "/assets/zip-packages/cooking/pounds-to-grams.zip"
   },
   {
@@ -4640,7 +4640,7 @@
       "Supports various cooking units",
       "Automatic fraction simplification"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/recipe-scaler/index.html",
     "zipUrl": "/assets/zip-packages/cooking/recipe-scaler.zip"
   },
   {
@@ -4655,7 +4655,7 @@
       "Supports multiple meal types",
       "Shopping quantity estimates"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/serving-size-calculator/index.html",
     "zipUrl": "/assets/zip-packages/cooking/serving-size-calculator.zip"
   },
   {
@@ -4670,7 +4670,7 @@
       "Multiple loaf count scaling",
       "Recommended baking schedule"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/sourdough-hydration-calc/index.html",
     "zipUrl": "/assets/zip-packages/cooking/sourdough-hydration-calc.zip"
   },
   {
@@ -4685,7 +4685,7 @@
       "Baking tips and notes included",
       "Instant conversion results"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/sugar-substitute-calculator/index.html",
     "zipUrl": "/assets/zip-packages/cooking/sugar-substitute-calculator.zip"
   },
   {
@@ -4700,7 +4700,7 @@
       "Common conversions reference table",
       "Free online baking tool"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/tablespoon-to-cup/index.html",
     "zipUrl": "/assets/zip-packages/cooking/tablespoon-to-cup.zip"
   },
   {
@@ -4715,7 +4715,7 @@
       "Budget-based recommendations",
       "Detailed pairing notes"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/wine-pairing-finder/index.html",
     "zipUrl": "/assets/zip-packages/cooking/wine-pairing-finder.zip"
   },
   {
@@ -4730,7 +4730,7 @@
       "Real-time visual preview",
       "One-click CSS code copy"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/border-radius-generator/index.html",
     "zipUrl": "/assets/zip-packages/design/border-radius-generator.zip"
   },
   {
@@ -4746,7 +4746,7 @@
       "One-click CSS code copy",
       "Dark/light mode support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/box-shadow-generator/index.html",
     "zipUrl": "/assets/zip-packages/design/box-shadow-generator.zip"
   },
   {
@@ -4761,7 +4761,7 @@
       "Copy-ready CSS color snippets",
       "Common color reference chart"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/cmyk-to-rgb/index.html",
     "zipUrl": "/assets/zip-packages/design/cmyk-to-rgb.zip"
   },
   {
@@ -4776,7 +4776,7 @@
       "RGB and HEX value display",
       "Perceptual difference scoring"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/color-blind-simulator/index.html",
     "zipUrl": "/assets/zip-packages/design/color-blind-simulator.zip"
   },
   {
@@ -4791,7 +4791,7 @@
       "One-click hex code copying",
       "Light and dark mode toggle"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/color-palette-extractor/index.html",
     "zipUrl": "/assets/zip-packages/design/color-palette-extractor.zip"
   },
   {
@@ -4806,7 +4806,7 @@
       "Tints and shades creation",
       "Light and dark mode support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/color-picker-tool/index.html",
     "zipUrl": "/assets/zip-packages/design/color-picker-tool.zip"
   },
   {
@@ -4821,7 +4821,7 @@
       "Multi-format export options",
       "Random palette generation"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/color-scheme-generator/index.html",
     "zipUrl": "/assets/zip-packages/design/color-scheme-generator.zip"
   },
   {
@@ -4836,7 +4836,7 @@
       "Adjustable hue slider control",
       "Light and dark theme support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/color-wheel/index.html",
     "zipUrl": "/assets/zip-packages/design/color-wheel.zip"
   },
   {
@@ -4851,7 +4851,7 @@
       "One-click CSS code copy",
       "No registration required"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/css-filter-generator/index.html",
     "zipUrl": "/assets/zip-packages/design/css-filter-generator.zip"
   },
   {
@@ -4867,7 +4867,7 @@
       "Item alignment controls",
       "One-click CSS code copy"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/css-grid-generator/index.html",
     "zipUrl": "/assets/zip-packages/design/css-grid-generator.zip"
   },
   {
@@ -4882,7 +4882,7 @@
       "Quick reset to defaults",
       "Dark and light mode support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/css-transform-generator/index.html",
     "zipUrl": "/assets/zip-packages/design/css-transform-generator.zip"
   },
   {
@@ -4898,7 +4898,7 @@
       "Adjustable duration and delay",
       "Light and dark theme support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/css-transition-generator/index.html",
     "zipUrl": "/assets/zip-packages/design/css-transition-generator.zip"
   },
   {
@@ -4910,7 +4910,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/favicon-generator/index.html",
     "zipUrl": "/assets/zip-packages/design/favicon-generator.zip"
   },
   {
@@ -4925,7 +4925,7 @@
       "Full set batch download",
       "No server upload required"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/favicon-multi-size/index.html",
     "zipUrl": "/assets/zip-packages/design/favicon-multi-size.zip"
   },
   {
@@ -4941,7 +4941,7 @@
       "One-click CSS code copy",
       "Dark and light theme support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/flexbox-playground/index.html",
     "zipUrl": "/assets/zip-packages/design/flexbox-playground.zip"
   },
   {
@@ -4956,7 +4956,7 @@
       "Copyable CSS code snippets",
       "Dark/light theme toggle"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/font-pairing-finder/index.html",
     "zipUrl": "/assets/zip-packages/design/font-pairing-finder.zip"
   },
   {
@@ -4971,7 +4971,7 @@
       "One-click CSS snippet copy",
       "Light and dark theme support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/font-previewer/index.html",
     "zipUrl": "/assets/zip-packages/design/font-previewer.zip"
   },
   {
@@ -4983,7 +4983,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/ico-generator/index.html",
     "zipUrl": "/assets/zip-packages/design/ico-generator.zip"
   },
   {
@@ -4999,7 +4999,7 @@
       "Stores up to 12 colors",
       "Dark mode support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/image-color-picker/index.html",
     "zipUrl": "/assets/zip-packages/design/image-color-picker.zip"
   },
   {
@@ -5015,7 +5015,7 @@
       "100% local private processing",
       "One-click compressed download"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/image-compressor/index.html",
     "zipUrl": "/assets/zip-packages/design/image-compressor.zip"
   },
   {
@@ -5031,7 +5031,7 @@
       "Adjustable output quality",
       "Client-side only processing"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/image-cropper/index.html",
     "zipUrl": "/assets/zip-packages/design/image-cropper.zip"
   },
   {
@@ -5046,7 +5046,7 @@
       "Local private processing",
       "One-click result download"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/image-filter/index.html",
     "zipUrl": "/assets/zip-packages/design/image-filter.zip"
   },
   {
@@ -5062,7 +5062,7 @@
       "One-click result download",
       "No signup or upload required"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/image-flipper/index.html",
     "zipUrl": "/assets/zip-packages/design/image-flipper.zip"
   },
   {
@@ -5078,7 +5078,7 @@
       "Capture date display",
       "Client-side processing"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/image-metadata-viewer/index.html",
     "zipUrl": "/assets/zip-packages/design/image-metadata-viewer.zip"
   },
   {
@@ -5094,7 +5094,7 @@
       "No signup required",
       "Instant rotation preview"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/image-rotator/index.html",
     "zipUrl": "/assets/zip-packages/design/image-rotator.zip"
   },
   {
@@ -5106,7 +5106,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/image-to-base64/index.html",
     "zipUrl": "/assets/zip-packages/design/image-to-base64.zip"
   },
   {
@@ -5121,7 +5121,7 @@
       "PNG and SVG download options",
       "Supports multiple content types"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/qr-code-designer/index.html",
     "zipUrl": "/assets/zip-packages/design/qr-code-designer.zip"
   },
   {
@@ -5137,7 +5137,7 @@
       "Instant SVG file download",
       "Quick code copy support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/svg-icon-editor/index.html",
     "zipUrl": "/assets/zip-packages/design/svg-icon-editor.zip"
   },
   {
@@ -5153,7 +5153,7 @@
       "Local in-browser processing",
       "One-click PNG download"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/svg-to-png/index.html",
     "zipUrl": "/assets/zip-packages/design/svg-to-png.zip"
   },
   {
@@ -5168,7 +5168,7 @@
       "Custom color controls",
       "One-click CSS copy"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/text-shadow-generator/index.html",
     "zipUrl": "/assets/zip-packages/design/text-shadow-generator.zip"
   },
   {
@@ -5183,7 +5183,7 @@
       "Private local browser processing",
       "One-click converted file download"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/webp-converter/index.html",
     "zipUrl": "/assets/zip-packages/design/webp-converter.zip"
   },
   {
@@ -5199,7 +5199,7 @@
       "Download results as .txt file",
       "Swap input and output instantly"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/base64-batch/index.html",
     "zipUrl": "/assets/zip-packages/dev/base64-batch.zip"
   },
   {
@@ -5215,7 +5215,7 @@
       "File size comparison",
       "No server upload"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/base64-image-converter/index.html",
     "zipUrl": "/assets/zip-packages/dev/base64-image-converter.zip"
   },
   {
@@ -5231,7 +5231,7 @@
       "No data upload",
       "Supports KiB, MiB, GiB"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/byte-converter/index.html",
     "zipUrl": "/assets/zip-packages/dev/byte-converter.zip"
   },
   {
@@ -5247,7 +5247,7 @@
       "Preview text sample",
       "Dark mode support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/color-contrast-checker/index.html",
     "zipUrl": "/assets/zip-packages/design/color-contrast-checker.zip"
   },
   {
@@ -5262,7 +5262,7 @@
       "Random color generator",
       "Dark mode support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/color-palette-generator/index.html",
     "zipUrl": "/assets/zip-packages/design/color-palette-generator.zip"
   },
   {
@@ -5278,7 +5278,7 @@
       "Copy cron expression",
       "Dark mode support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/cron-expression-generator/index.html",
     "zipUrl": "/assets/zip-packages/dev/cron-expression-generator.zip"
   },
   {
@@ -5293,7 +5293,7 @@
       "Example presets",
       "Supports all cron syntax"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/cron-to-human-reader/index.html",
     "zipUrl": "/assets/zip-packages/dev/cron-to-human-reader.zip"
   },
   {
@@ -5309,7 +5309,7 @@
       "Supports step, range, and list values",
       "Free and no signup required"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/crontab-generator/index.html",
     "zipUrl": "/assets/zip-packages/dev/crontab-generator.zip"
   },
   {
@@ -5325,7 +5325,7 @@
       "Copy CSS code instantly",
       "Inset shadow support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/css-shadow-generator/index.html",
     "zipUrl": "/assets/zip-packages/dev/css-shadow-generator.zip"
   },
   {
@@ -5340,7 +5340,7 @@
       "Copy or download JSON",
       "100% client-side"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/csv-to-json/index.html",
     "zipUrl": "/assets/zip-packages/dev/csv-to-json.zip"
   },
   {
@@ -5356,7 +5356,7 @@
       "Copy output to clipboard",
       "Download parsed .env file"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/env-file-parser/index.html",
     "zipUrl": "/assets/zip-packages/dev/env-file-parser.zip"
   },
   {
@@ -5372,7 +5372,7 @@
       "Copy or download JSON",
       "First row as header option"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/excel-to-json/index.html",
     "zipUrl": "/assets/zip-packages/dev/excel-to-json.zip"
   },
   {
@@ -5388,7 +5388,7 @@
       "Advanced workflow examples",
       "Light and dark mode"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/git-cheat-sheet/index.html",
     "zipUrl": "/assets/zip-packages/dev/git-cheat-sheet.zip"
   },
   {
@@ -5403,7 +5403,7 @@
       "Copy result to clipboard",
       "Common entity reference table"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/html-encoder-decoder/index.html",
     "zipUrl": "/assets/zip-packages/dev/html-encoder-decoder.zip"
   },
   {
@@ -5419,7 +5419,7 @@
       "Swap input and output",
       "Copy output instantly"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/html-entities-encoder/index.html",
     "zipUrl": "/assets/zip-packages/dev/html-entities-encoder.zip"
   },
   {
@@ -5434,7 +5434,7 @@
       "Browser-based, no upload",
       "Handles void tags correctly"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/html-formatter/index.html",
     "zipUrl": "/assets/zip-packages/dev/html-formatter.zip"
   },
   {
@@ -5449,7 +5449,7 @@
       "Show saved bytes and percentage",
       "Copy minified result"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/html-minifier/index.html",
     "zipUrl": "/assets/zip-packages/dev/html-minifier.zip"
   },
   {
@@ -5465,7 +5465,7 @@
       "Add or remove rows/cols",
       "Copy code to clipboard"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/html-table-generator/index.html",
     "zipUrl": "/assets/zip-packages/dev/html-table-generator.zip"
   },
   {
@@ -5480,7 +5480,7 @@
       "60+ official codes",
       "Descriptions and examples"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/http-status-code-reference/index.html",
     "zipUrl": "/assets/zip-packages/dev/http-status-code-reference.zip"
   },
   {
@@ -5496,7 +5496,7 @@
       "Trim string values",
       "Pretty print output"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/json-cleaner/index.html",
     "zipUrl": "/assets/zip-packages/dev/json-cleaner.zip"
   },
   {
@@ -5512,7 +5512,7 @@
       "No data upload",
       "Supports JSON Lines"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/json-converter/index.html",
     "zipUrl": "/assets/zip-packages/dev/json-converter.zip"
   },
   {
@@ -5528,7 +5528,7 @@
       "Format JSON input",
       "Instant result display"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/json-path-evaluator/index.html",
     "zipUrl": "/assets/zip-packages/dev/json-path-evaluator.zip"
   },
   {
@@ -5544,7 +5544,7 @@
       "Nulls last handling",
       "Remove duplicates"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/json-sorter/index.html",
     "zipUrl": "/assets/zip-packages/dev/json-sorter.zip"
   },
   {
@@ -5560,7 +5560,7 @@
       "Download as CSV file",
       "No data upload"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/json-to-csv/index.html",
     "zipUrl": "/assets/zip-packages/dev/json-to-csv.zip"
   },
   {
@@ -5575,7 +5575,7 @@
       "Union types from samples",
       "Copy output instantly"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/json-to-typescript/index.html",
     "zipUrl": "/assets/zip-packages/dev/json-to-typescript.zip"
   },
   {
@@ -5590,7 +5590,7 @@
       "Copy output to clipboard",
       "Pure client-side processing"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/json-to-yaml/index.html",
     "zipUrl": "/assets/zip-packages/dev/json-to-yaml.zip"
   },
   {
@@ -5606,7 +5606,7 @@
       "Light and dark mode",
       "No signup required"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/markdown-cheatsheet/index.html",
     "zipUrl": "/assets/zip-packages/dev/markdown-cheatsheet.zip"
   },
   {
@@ -5621,7 +5621,7 @@
       "GFM-compatible output",
       "No signup required"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/markdown-table-generator/index.html",
     "zipUrl": "/assets/zip-packages/dev/markdown-table-generator.zip"
   },
   {
@@ -5637,7 +5637,7 @@
       "Detailed match info",
       "Supports all JS flags"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/regex-tester-live/index.html",
     "zipUrl": "/assets/zip-packages/dev/regex-tester-live.zip"
   },
   {
@@ -5653,7 +5653,7 @@
       "Live preview and copy",
       "Unicode transliteration"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/slug-generator/index.html",
     "zipUrl": "/assets/zip-packages/dev/slug-generator.zip"
   },
   {
@@ -5665,7 +5665,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/user-agent-parser/index.html",
     "zipUrl": "/assets/zip-packages/dev/user-agent-parser.zip"
   },
   {
@@ -5680,7 +5680,7 @@
       "Semester breakdown table",
       "Class and honors indicator"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/cgpa-calculator/index.html",
     "zipUrl": "/assets/zip-packages/education/cgpa-calculator.zip"
   },
   {
@@ -5695,7 +5695,7 @@
       "Area and density metrics",
       "Search and filter countries"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/country-facts-lookup/index.html",
     "zipUrl": "/assets/zip-packages/education/country-facts-lookup.zip"
   },
   {
@@ -5710,7 +5710,7 @@
       "Export deck as JSON",
       "Study any subject"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/flashcard-creator/index.html",
     "zipUrl": "/assets/zip-packages/education/flashcard-creator.zip"
   },
   {
@@ -5722,7 +5722,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/geography-quiz/index.html",
     "zipUrl": "/assets/zip-packages/education/geography-quiz.zip"
   },
   {
@@ -5734,7 +5734,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/grade-calculator/index.html",
     "zipUrl": "/assets/zip-packages/education/grade-calculator.zip"
   },
   {
@@ -5746,7 +5746,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/grammar-checker-basic/index.html",
     "zipUrl": "/assets/zip-packages/education/grammar-checker-basic.zip"
   },
   {
@@ -5758,7 +5758,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/language-learning-tracker/index.html",
     "zipUrl": "/assets/zip-packages/education/language-learning-tracker.zip"
   },
   {
@@ -5770,7 +5770,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/language-translation-helper/index.html",
     "zipUrl": "/assets/zip-packages/education/language-translation-helper.zip"
   },
   {
@@ -5782,7 +5782,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/math-practice-generator/index.html",
     "zipUrl": "/assets/zip-packages/math/math-practice-generator.zip"
   },
   {
@@ -5794,7 +5794,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/mole-calculator/index.html",
     "zipUrl": "/assets/zip-packages/education/mole-calculator.zip"
   },
   {
@@ -5806,7 +5806,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/percentage-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/percentage-calculator.zip"
   },
   {
@@ -5818,7 +5818,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/periodic-table-reference/index.html",
     "zipUrl": "/assets/zip-packages/education/periodic-table-reference.zip"
   },
   {
@@ -5830,7 +5830,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/quiz-grade-calculator/index.html",
     "zipUrl": "/assets/zip-packages/education/quiz-grade-calculator.zip"
   },
   {
@@ -5842,7 +5842,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/reading-speed-test/index.html",
     "zipUrl": "/assets/zip-packages/education/reading-speed-test.zip"
   },
   {
@@ -5854,7 +5854,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/research-paper-organizer/index.html",
     "zipUrl": "/assets/zip-packages/education/research-paper-organizer.zip"
   },
   {
@@ -5866,7 +5866,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/science-fair-idea-gen/index.html",
     "zipUrl": "/assets/zip-packages/education/science-fair-idea-gen.zip"
   },
   {
@@ -5878,7 +5878,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/spelling-bee-practice/index.html",
     "zipUrl": "/assets/zip-packages/education/spelling-bee-practice.zip"
   },
   {
@@ -5890,7 +5890,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/spelling-quiz/index.html",
     "zipUrl": "/assets/zip-packages/education/spelling-quiz.zip"
   },
   {
@@ -5902,7 +5902,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/state-capital-quiz/index.html",
     "zipUrl": "/assets/zip-packages/education/state-capital-quiz.zip"
   },
   {
@@ -5914,7 +5914,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/student-loan-calculator/index.html",
     "zipUrl": "/assets/zip-packages/education/student-loan-calculator.zip"
   },
   {
@@ -5926,7 +5926,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/study-schedule-planner/index.html",
     "zipUrl": "/assets/zip-packages/education/study-schedule-planner.zip"
   },
   {
@@ -5938,7 +5938,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/study-time-tracker/index.html",
     "zipUrl": "/assets/zip-packages/education/study-time-tracker.zip"
   },
   {
@@ -5950,7 +5950,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/study-timer/index.html",
     "zipUrl": "/assets/zip-packages/education/study-timer.zip"
   },
   {
@@ -5962,7 +5962,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/vocabulary-builder/index.html",
     "zipUrl": "/assets/zip-packages/education/vocabulary-builder.zip"
   },
   {
@@ -5974,7 +5974,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/vocabulary-quiz/index.html",
     "zipUrl": "/assets/zip-packages/education/vocabulary-quiz.zip"
   },
   {
@@ -5990,7 +5990,7 @@
       "Real-time calculation",
       "Dark mode support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/401k-calculator/index.html",
     "zipUrl": "/assets/zip-packages/finance/401k-calculator.zip"
   },
   {
@@ -6006,7 +6006,7 @@
       "Custom loan parameters",
       "Dark mode support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/amortization-schedule-generator/index.html",
     "zipUrl": "/assets/zip-packages/finance/amortization-schedule-generator.zip"
   },
   {
@@ -6022,7 +6022,7 @@
       "Dark mode support",
       "No signup required"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/apy-calculator/index.html",
     "zipUrl": "/assets/zip-packages/finance/apy-calculator.zip"
   },
   {
@@ -6037,7 +6037,7 @@
       "Accurate tax estimates",
       "Dark mode available"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/capital-gains-calculator/index.html",
     "zipUrl": "/assets/zip-packages/finance/capital-gains-calculator.zip"
   },
   {
@@ -6053,7 +6053,7 @@
       "Top crypto price table",
       "Dark mode support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/crypto-converter/index.html",
     "zipUrl": "/assets/zip-packages/finance/crypto-converter.zip"
   },
   {
@@ -6068,7 +6068,7 @@
       "Supports multiple debt types",
       "Dark mode support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/debt-to-income-calculator/index.html",
     "zipUrl": "/assets/zip-packages/finance/debt-to-income-calculator.zip"
   },
   {
@@ -6083,7 +6083,7 @@
       "Year-by-year growth breakdown",
       "Growth multiple calculation"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/future-value-calculator/index.html",
     "zipUrl": "/assets/zip-packages/finance/future-value-calculator.zip"
   },
   {
@@ -6099,7 +6099,7 @@
       "Average annual inflation rate",
       "Dark mode support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/inflation-calculator/index.html",
     "zipUrl": "/assets/zip-packages/finance/inflation-calculator.zip"
   },
   {
@@ -6115,7 +6115,7 @@
       "Balance timeline visualization",
       "Dark mode support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/mortgage-payoff-calculator/index.html",
     "zipUrl": "/assets/zip-packages/finance/mortgage-payoff-calculator.zip"
   },
   {
@@ -6130,7 +6130,7 @@
       "Refinance recommendation indicator",
       "Closing cost accounting"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/mortgage-refinance-calculator/index.html",
     "zipUrl": "/assets/zip-packages/finance/mortgage-refinance-calculator.zip"
   },
   {
@@ -6146,7 +6146,7 @@
       "Mobile responsive design",
       "No signup required"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/net-worth-calculator/index.html",
     "zipUrl": "/assets/zip-packages/finance/net-worth-calculator.zip"
   },
   {
@@ -6162,7 +6162,7 @@
       "Dark mode support",
       "No signup required"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/present-value-calculator/index.html",
     "zipUrl": "/assets/zip-packages/finance/present-value-calculator.zip"
   },
   {
@@ -6178,7 +6178,7 @@
       "Rent increase projection",
       "Instant buy/rent verdict"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/rent-vs-buy-calculator/index.html",
     "zipUrl": "/assets/zip-packages/finance/rent-vs-buy-calculator.zip"
   },
   {
@@ -6193,7 +6193,7 @@
       "Traditional IRA comparison",
       "Yearly growth breakdown"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/roth-ira-calculator/index.html",
     "zipUrl": "/assets/zip-packages/finance/roth-ira-calculator.zip"
   },
   {
@@ -6209,7 +6209,7 @@
       "Dark mode support",
       "No signup required"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/simple-interest-calculator/index.html",
     "zipUrl": "/assets/zip-packages/finance/simple-interest-calculator.zip"
   },
   {
@@ -6225,7 +6225,7 @@
       "After-tax income estimate",
       "Detailed tax breakdown"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/tax-bracket-calculator/index.html",
     "zipUrl": "/assets/zip-packages/finance/tax-bracket-calculator.zip"
   },
   {
@@ -6241,7 +6241,7 @@
       "Take-home pay estimate",
       "Dark mode support"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/tax-estimator/index.html",
     "zipUrl": "/assets/zip-packages/finance/tax-estimator.zip"
   },
   {
@@ -6253,7 +6253,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/tip-calculator/index.html",
     "zipUrl": "/assets/zip-packages/finance/tip-calculator.zip"
   },
   {
@@ -6268,7 +6268,7 @@
       "No upload required",
       "Adjustable margin and text"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/barcode-generator/index.html",
     "zipUrl": "/assets/zip-packages/forms/barcode-generator.zip"
   },
   {
@@ -6280,7 +6280,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/birthday-invitation-generator/index.html",
     "zipUrl": "/assets/zip-packages/forms/birthday-invitation-generator.zip"
   },
   {
@@ -6295,7 +6295,7 @@
       "Print / PDF support",
       "No signup required"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/business-plan-template/index.html",
     "zipUrl": "/assets/zip-packages/forms/business-plan-template.zip"
   },
   {
@@ -6307,7 +6307,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/certificate-maker/index.html",
     "zipUrl": "/assets/zip-packages/forms/certificate-maker.zip"
   },
   {
@@ -6323,7 +6323,7 @@
       "Dark mode support",
       "No signup required"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/contract-template-maker/index.html",
     "zipUrl": "/assets/zip-packages/forms/contract-template-maker.zip"
   },
   {
@@ -6338,7 +6338,7 @@
       "Professionally formatted output",
       "No signup required"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/cover-letter-generator/index.html",
     "zipUrl": "/assets/zip-packages/forms/cover-letter-generator.zip"
   },
   {
@@ -6354,7 +6354,7 @@
       "Customizable form content",
       "No coding required"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/feedback-form-builder/index.html",
     "zipUrl": "/assets/zip-packages/forms/feedback-form-builder.zip"
   },
   {
@@ -6370,7 +6370,7 @@
       "Dark mode support",
       "Required field toggle"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/form-builder/index.html",
     "zipUrl": "/assets/zip-packages/forms/form-builder.zip"
   },
   {
@@ -6385,7 +6385,7 @@
       "One-click code copy",
       "Customizable field settings"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/form-template-generator/index.html",
     "zipUrl": "/assets/zip-packages/forms/form-template-generator.zip"
   },
   {
@@ -6397,7 +6397,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/gift-certificate-template/index.html",
     "zipUrl": "/assets/zip-packages/forms/gift-certificate-template.zip"
   },
   {
@@ -6409,7 +6409,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/invoice-pdf-template/index.html",
     "zipUrl": "/assets/zip-packages/forms/invoice-pdf-template.zip"
   },
   {
@@ -6421,7 +6421,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/login-form-builder/index.html",
     "zipUrl": "/assets/zip-packages/forms/login-form-builder.zip"
   },
   {
@@ -6433,7 +6433,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/meeting-agenda-generator/index.html",
     "zipUrl": "/assets/zip-packages/forms/meeting-agenda-generator.zip"
   },
   {
@@ -6445,7 +6445,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/meeting-minutes-template/index.html",
     "zipUrl": "/assets/zip-packages/forms/meeting-minutes-template.zip"
   },
   {
@@ -6457,7 +6457,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/nda-template-generator/index.html",
     "zipUrl": "/assets/zip-packages/forms/nda-template-generator.zip"
   },
   {
@@ -6469,7 +6469,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/payslip-maker/index.html",
     "zipUrl": "/assets/zip-packages/forms/payslip-maker.zip"
   },
   {
@@ -6481,7 +6481,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/quiz-form-builder/index.html",
     "zipUrl": "/assets/zip-packages/forms/quiz-form-builder.zip"
   },
   {
@@ -6493,7 +6493,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/receipt-maker/index.html",
     "zipUrl": "/assets/zip-packages/forms/receipt-maker.zip"
   },
   {
@@ -6505,7 +6505,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/receipt-template-generator/index.html",
     "zipUrl": "/assets/zip-packages/forms/receipt-template-generator.zip"
   },
   {
@@ -6517,7 +6517,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/reference-letter-generator/index.html",
     "zipUrl": "/assets/zip-packages/forms/reference-letter-generator.zip"
   },
   {
@@ -6529,7 +6529,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/registration-form-builder/index.html",
     "zipUrl": "/assets/zip-packages/forms/registration-form-builder.zip"
   },
   {
@@ -6541,7 +6541,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/rental-agreement-template/index.html",
     "zipUrl": "/assets/zip-packages/forms/rental-agreement-template.zip"
   },
   {
@@ -6553,7 +6553,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/resignation-letter-generator/index.html",
     "zipUrl": "/assets/zip-packages/forms/resignation-letter-generator.zip"
   },
   {
@@ -6565,7 +6565,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/resume-builder/index.html",
     "zipUrl": "/assets/zip-packages/forms/resume-builder.zip"
   },
   {
@@ -6577,7 +6577,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/resume-builder-online/index.html",
     "zipUrl": "/assets/zip-packages/forms/resume-builder-online.zip"
   },
   {
@@ -6589,7 +6589,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/survey-template-builder/index.html",
     "zipUrl": "/assets/zip-packages/forms/survey-template-builder.zip"
   },
   {
@@ -6601,7 +6601,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/thank-you-note-generator/index.html",
     "zipUrl": "/assets/zip-packages/forms/thank-you-note-generator.zip"
   },
   {
@@ -6613,7 +6613,7 @@
       "Easy to use",
       "Works offline"
     ],
-    "detailUrl": "",
+    "detailUrl": "/tools/wedding-invitation-generator/index.html",
     "zipUrl": "/assets/zip-packages/forms/wedding-invitation-generator.zip"
   }
 ]

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jewelry Size Calculator | YuanQiZhiLe Toolkit</title>
+<meta name="description" content="Find your ring, bracelet, and necklace size. Convert between US, UK, EU, and Asian ring sizes. Free jewelry size calculator.">
+<meta name="keywords" content="ring size, jewelry size, bracelet size, necklace length, ring size converter, jewelry measurement">
+<meta property="og:title" content="Jewelry Size Calculator - Free Online Tool">
+<meta property="og:description" content="Find your ring, bracelet, and necklace size. Convert between US, UK, EU, and Asian ring sizes. Free jewelry size calculator.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Jewelry Size Calculator</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Find your ring, bracelet, and necklace size. Convert between US, UK, EU, and Asian ring sizes. Free jewelry size calculator.</div>
+    <div class="row">
+        <div class="group"><label>Jewelry type</label>
+            <select id="jewelryType" style="width:100%;padding:8px">
+                <option value="ring" selected>Ring</option>
+                <option value="bracelet">Bracelet</option>
+                <option value="necklace">Necklace</option>
+                <option value="bangle">Bangle (rigid)</option>
+            </select>
+        </div>
+        <div class="group"><label>Measurement method</label>
+            <select id="method" style="width:100%;padding:8px">
+                <option value="circumference" selected>Circumference (mm)</option>
+                <option value="diameter">Diameter (mm)</option>
+                <option value="us">US ring size</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Value</label><input type="number" id="value" placeholder="e.g. 54 (mm) or 7 (US)" style="width:100%;padding:8px" step="0.1"></div>
+        <div class="group"><label>Knuckle adjustment</label>
+            <select id="knuckle" style="width:100%;padding:8px">
+                <option value="0" selected>Normal knuckle</option>
+                <option value="0.5">Slightly large (+0.5 size)</option>
+                <option value="1">Large knuckle (+1 size)</option>
+                <option value="1.5">Very large (+1.5 size)</option>
+            </select>
+        </div>
+    </div>
+    <button id="calc" style="padding:10px 20px;background:#f59e0b;color:#fff;border:none;border-radius:6px;cursor:pointer;margin-top:10px">Calculate Size</button>
+    <div id="result" style="margin-top:12px"></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">260330663@qq.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">— or describe your need below —</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit →</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Choose <b>jewelry type</b> (ring, bracelet, necklace, bangle).</li>
+<li>Select <b>measurement method</b> (circumference, diameter, or US size).</li>
+<li>Enter your <b>measurement value</b>.</li>
+<li>Adjust for <b>knuckle size</b> if needed.</li>
+<li>Click <b>Calculate Size</b> for international size conversion.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">Measure at end of day when fingers are largest. Use paper strip method: wrap paper around finger, mark overlap, measure with ruler. Convert mm to inches by dividing by 25.4.</p>
+    </div>
+    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'☀️':'🌙';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('260330663@qq.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:260330663@qq.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    // US ring size = circumference(mm) - 0.8, divided by 0.8 (approx formula)
+    // More accurate: US size N has circumference 50mm, then +1 US = +2.55mm
+    // We use lookup table for accuracy
+    var ringTable = [
+        { us: 0,    circ: 39.5, dia: 12.37, uk: 'A', eu: 39, jp: 1 },
+        { us: 0.5,  circ: 40.0, dia: 12.53, uk: 'A1/2', eu: 40, jp: 1 },
+        { us: 1,    circ: 40.4, dia: 12.66, uk: 'B', eu: 41, jp: 2 },
+        { us: 1.5,  circ: 41.0, dia: 12.85, uk: 'B1/2', eu: 42, jp: 2 },
+        { us: 2,    circ: 41.5, dia: 13.0,  uk: 'C', eu: 42, jp: 3 },
+        { us: 2.5,  circ: 42.0, dia: 13.2,  uk: 'C1/2', eu: 43, jp: 3 },
+        { us: 3,    circ: 42.6, dia: 13.5,  uk: 'D', eu: 44, jp: 4 },
+        { us: 3.5,  circ: 43.1, dia: 13.7,  uk: 'D1/2', eu: 44, jp: 4 },
+        { us: 4,    circ: 43.6, dia: 13.87, uk: 'E', eu: 45, jp: 5 },
+        { us: 4.5,  circ: 44.1, dia: 14.05, uk: 'E1/2', eu: 46, jp: 5 },
+        { us: 5,    circ: 44.7, dia: 14.25, uk: 'F', eu: 47, jp: 6 },
+        { us: 5.5,  circ: 45.2, dia: 14.4,  uk: 'F1/2', eu: 47, jp: 6 },
+        { us: 6,    circ: 45.7, dia: 14.55, uk: 'G', eu: 48, jp: 7 },
+        { us: 6.5,  circ: 46.2, dia: 14.7,  uk: 'G1/2', eu: 49, jp: 7 },
+        { us: 7,    circ: 46.7, dia: 14.87, uk: 'H1/2', eu: 50, jp: 8 },
+        { us: 7.5,  circ: 47.3, dia: 15.05, uk: 'I', eu: 50, jp: 8 },
+        { us: 8,    circ: 47.8, dia: 15.2,  uk: 'J', eu: 51, jp: 9 },
+        { us: 8.5,  circ: 48.4, dia: 15.4,  uk: 'J1/2', eu: 52, jp: 9 },
+        { us: 9,    circ: 48.9, dia: 15.55, uk: 'K', eu: 52, jp: 10 },
+        { us: 9.5,  circ: 49.4, dia: 15.7,  uk: 'K1/2', eu: 53, jp: 10 },
+        { us: 10,   circ: 50.0, dia: 15.9,  uk: 'L', eu: 54, jp: 11 },
+        { us: 10.5, circ: 50.5, dia: 16.05, uk: 'L1/2', eu: 54, jp: 11 },
+        { us: 11,   circ: 51.0, dia: 16.2,  uk: 'M', eu: 55, jp: 12 },
+        { us: 11.5, circ: 51.5, dia: 16.4,  uk: 'M1/2', eu: 56, jp: 12 },
+        { us: 12,   circ: 52.1, dia: 16.55, uk: 'N', eu: 56, jp: 13 },
+        { us: 12.5, circ: 52.6, dia: 16.7,  uk: 'N1/2', eu: 57, jp: 13 },
+        { us: 13,   circ: 53.1, dia: 16.87, uk: 'O', eu: 58, jp: 14 },
+        { us: 13.5, circ: 53.7, dia: 17.05, uk: 'O1/2', eu: 59, jp: 14 },
+        { us: 14,   circ: 54.2, dia: 17.2,  uk: 'P', eu: 59, jp: 15 },
+        { us: 14.5, circ: 54.8, dia: 17.4,  uk: 'P1/2', eu: 60, jp: 15 },
+        { us: 15,   circ: 55.3, dia: 17.55, uk: 'Q', eu: 61, jp: 16 },
+        { us: 15.5, circ: 55.8, dia: 17.7,  uk: 'Q1/2', eu: 61, jp: 16 },
+        { us: 16,   circ: 56.3, dia: 17.87, uk: 'R', eu: 62, jp: 17 }
+    ];
+    var necklaceStyles = [
+        { length: 14, name: 'Collar', desc: 'Sits snug around middle of neck. Pairs with V-neck or off-shoulder tops.' },
+        { length: 16, name: 'Choker', desc: 'Sits at base of neck. Classic for most necklines.' },
+        { length: 18, name: 'Princess', desc: 'Hangs just below collarbone. Most popular length, suits all necklines.' },
+        { length: 20, name: 'Matinee', desc: 'Hangs at cleavage. Good for business or casual wear.' },
+        { length: 24, name: 'Opera', desc: 'Hangs below bust. Versatile - wear single or doubled.' },
+        { length: 30, name: 'Rope', desc: 'Hangs at/below waist. Wear long, doubled, or knotted.' },
+        { length: 36, name: 'Lariat', desc: 'Long necklace, wraps or ties in various styles.' }
+    ];
+    function findClosestByCirc(circ){
+        var bestIdx = 0, bestDiff = 999;
+        for(var i = 0; i < ringTable.length; i++){
+            var diff = Math.abs(ringTable[i].circ - circ);
+            if(diff < bestDiff){ bestDiff = diff; bestIdx = i; }
+        }
+        return bestIdx;
+    }
+    function findClosestByDia(dia){
+        var bestIdx = 0, bestDiff = 999;
+        for(var i = 0; i < ringTable.length; i++){
+            var diff = Math.abs(ringTable[i].dia - dia);
+            if(diff < bestDiff){ bestDiff = diff; bestIdx = i; }
+        }
+        return bestIdx;
+    }
+    function findClosestByUS(us){
+        var bestIdx = 0, bestDiff = 999;
+        for(var i = 0; i < ringTable.length; i++){
+            var diff = Math.abs(ringTable[i].us - us);
+            if(diff < bestDiff){ bestDiff = diff; bestIdx = i; }
+        }
+        return bestIdx;
+    }
+    function calc(){
+        var type = document.getElementById('jewelryType').value;
+        var method = document.getElementById('method').value;
+        var val = parseFloat(document.getElementById('value').value);
+        var knuckle = parseFloat(document.getElementById('knuckle').value);
+        if(!val){ document.getElementById('result').innerHTML = '<div style="color:#dc2626;padding:8px">Enter a value.</div>'; return; }
+        if(type === 'ring' || type === 'bangle'){
+            var idx;
+            if(method === 'circumference') idx = findClosestByCirc(val);
+            else if(method === 'diameter') idx = findClosestByDia(val);
+            else idx = findClosestByUS(val);
+            // apply knuckle adjustment
+            idx = Math.min(ringTable.length - 1, Math.max(0, idx + Math.round(knuckle * 2)));
+            var r = ringTable[idx];
+            var html = '<div style="background:#fef3c7;padding:14px;border-radius:8px;border-left:4px solid #f59e0b">';
+            html += '<div style="text-align:center;margin-bottom:14px">';
+            html += '<div style="font-size:13px;color:#666">' + (type === 'bangle' ? 'Bangle' : 'Ring') + ' Size</div>';
+            html += '<div style="font-size:32px;font-weight:bold;color:#f59e0b">US ' + r.us + '</div>';
+            html += '<div style="font-size:14px;color:#666">UK ' + r.uk + ' · EU ' + r.eu + ' · JP ' + r.jp + '</div>';
+            html += '</div>';
+            html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+            html += '<div style="font-size:13px;font-weight:bold;color:#f59e0b;margin-bottom:6px">All Ring Size Systems</div>';
+            html += '<table style="width:100%;font-size:12px;border-collapse:collapse">';
+            html += '<tr style="background:#f3f4f6;border-bottom:1px solid #ddd"><th style="padding:6px;text-align:left">System</th><th>Size</th></tr>';
+            html += '<tr style="border-bottom:1px solid #eee"><td style="padding:6px">US</td><td style="text-align:center;font-weight:bold;color:#f59e0b">' + r.us + '</td></tr>';
+            html += '<tr style="border-bottom:1px solid #eee"><td style="padding:6px">UK / Australia</td><td style="text-align:center">' + r.uk + '</td></tr>';
+            html += '<tr style="border-bottom:1px solid #eee"><td style="padding:6px">EU / France / Germany</td><td style="text-align:center">' + r.eu + '</td></tr>';
+            html += '<tr style="border-bottom:1px solid #eee"><td style="padding:6px">Japan / China</td><td style="text-align:center">' + r.jp + '</td></tr>';
+            html += '<tr style="border-bottom:1px solid #eee"><td style="padding:6px">Swiss</td><td style="text-align:center">' + (r.eu - 28) + '</td></tr>';
+            html += '</table>';
+            html += '</div>';
+            html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+            html += '<div style="font-size:13px;font-weight:bold;color:#f59e0b;margin-bottom:6px">Measurements</div>';
+            html += '<div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #eee;font-size:12px"><span>Circumference</span><span style="font-weight:bold">' + r.circ + ' mm (' + (r.circ / 25.4).toFixed(2) + ' in)</span></div>';
+            html += '<div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #eee;font-size:12px"><span>Diameter</span><span style="font-weight:bold">' + r.dia + ' mm (' + (r.dia / 25.4).toFixed(2) + ' in)</span></div>';
+            if(type === 'bangle'){
+                var handCirc = r.circ + 5;
+                html += '<div style="display:flex;justify-content:space-between;padding:4px 0;font-size:12px;color:#666"><span>Hand circumference (to fit through)</span><span>' + handCirc.toFixed(0) + ' mm</span></div>';
+            }
+            html += '</div>';
+            html += '<div style="background:#d1fae5;padding:10px;border-radius:6px">';
+            html += '<div style="font-size:13px;font-weight:bold;color:#065f46;margin-bottom:4px">Measuring Tips</div>';
+            html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Measure at end of day (fingers swell)</div>';
+            html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Cold fingers shrink, hot fingers swell</div>';
+            html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Use a strip of paper or string for circumference</div>';
+            html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Mark where it overlaps, then measure length</div>';
+            html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Average US women\'s ring size: 6 (5.5-6.5)</div>';
+            html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Average US men\'s ring size: 9 (8.5-10)</div>';
+            html += '</div>';
+            html += '<div style="font-size:11px;color:#999;margin-top:8px">Ring sizes are based on ISO 8653 standard. Variations of ±0.25 between brands are common. Always confirm with jeweler for expensive rings.</div>';
+            html += '</div>';
+            document.getElementById('result').innerHTML = html;
+        } else if(type === 'bracelet'){
+            var wrist = val;
+            var braceletLength = wrist + 1.5; // 1.5cm slack
+            var inch = braceletLength / 2.54;
+            var bangleCirc = wrist * 3.2; // hand through estimate
+            var html = '<div style="background:#fef3c7;padding:14px;border-radius:8px;border-left:4px solid #f59e0b">';
+            html += '<div style="text-align:center;margin-bottom:14px">';
+            html += '<div style="font-size:13px;color:#666">Bracelet Length</div>';
+            html += '<div style="font-size:32px;font-weight:bold;color:#f59e0b">' + braceletLength.toFixed(1) + ' cm</div>';
+            html += '<div style="font-size:14px;color:#666">' + inch.toFixed(2) + ' inches</div>';
+            html += '</div>';
+            html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+            html += '<div style="font-size:13px;font-weight:bold;color:#f59e0b;margin-bottom:6px">By Style</div>';
+            html += '<table style="width:100%;font-size:12px;border-collapse:collapse">';
+            html += '<tr style="background:#f3f4f6;border-bottom:1px solid #ddd"><th style="padding:6px;text-align:left">Style</th><th>Length</th><th>Fit</th></tr>';
+            html += '<tr style="border-bottom:1px solid #eee"><td style="padding:6px">Snug</td><td style="text-align:center">' + (wrist + 0.5).toFixed(1) + ' cm</td><td style="font-size:11px;color:#666">Tight against wrist</td></tr>';
+            html += '<tr style="border-bottom:1px solid #eee"><td style="padding:6px">Standard</td><td style="text-align:center">' + (wrist + 1.5).toFixed(1) + ' cm</td><td style="font-size:11px;color:#666">Comfortable, slight movement</td></tr>';
+            html += '<tr style="border-bottom:1px solid #eee"><td style="padding:6px">Loose</td><td style="text-align:center">' + (wrist + 2.5).toFixed(1) + ' cm</td><td style="font-size:11px;color:#666">Drapes on hand</td></tr>';
+            html += '<tr style="border-bottom:1px solid #eee"><td style="padding:6px">Charm bracelet</td><td style="text-align:center">' + (wrist + 2.0).toFixed(1) + ' cm</td><td style="font-size:11px;color:#666">Room for charms</td></tr>';
+            html += '</table>';
+            html += '</div>';
+            html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+            html += '<div style="font-size:13px;font-weight:bold;color:#f59e0b;margin-bottom:6px">Bangle Size (rigid)</div>';
+            html += '<div style="font-size:12px;color:#666;margin-bottom:4px">Hand circumference to fit through: <b>' + bangleCirc.toFixed(0) + ' mm</b></div>';
+            html += '<div style="font-size:12px;color:#666">Bangle diameter needed: <b>' + (bangleCirc / Math.PI).toFixed(0) + ' mm</b></div>';
+            html += '</div>';
+            html += '<div style="background:#d1fae5;padding:10px;border-radius:6px">';
+            html += '<div style="font-size:13px;font-weight:bold;color:#065f46;margin-bottom:4px">Measuring Tips</div>';
+            html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Measure wrist just below wrist bone</div>';
+            html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Add 1.5-2cm for comfortable fit</div>';
+            html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- For bangles, measure knuckles (thumb to pinky)</div>';
+            html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Average women\'s wrist: 15-16 cm</div>';
+            html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Average men\'s wrist: 17-19 cm</div>';
+            html += '</div>';
+            html += '</div>';
+            document.getElementById('result').innerHTML = html;
+        } else { // necklace
+            var neckCirc = val;
+            var inch = neckCirc / 25.4;
+            var html = '<div style="background:#fef3c7;padding:14px;border-radius:8px;border-left:4px solid #f59e0b">';
+            html += '<div style="text-align:center;margin-bottom:14px">';
+            html += '<div style="font-size:13px;color:#666">Neck Circumference: ' + neckCirc.toFixed(0) + ' mm (' + inch.toFixed(1) + ' in)</div>';
+            html += '<div style="font-size:14px;color:#666">Recommended necklace lengths:</div>';
+            html += '</div>';
+            html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+            html += '<div style="font-size:13px;font-weight:bold;color:#f59e0b;margin-bottom:6px">Necklace Length Guide</div>';
+            html += '<table style="width:100%;font-size:12px;border-collapse:collapse">';
+            html += '<tr style="background:#f3f4f6;border-bottom:1px solid #ddd"><th style="padding:6px;text-align:left">Style</th><th>Length (in)</th><th>Length (cm)</th><th>Suits</th></tr>';
+            necklaceStyles.forEach(function(s){
+                var cm = s.length * 2.54;
+                html += '<tr style="border-bottom:1px solid #eee"><td style="padding:6px"><b>' + s.name + '</b></td><td style="text-align:center">' + s.length + '"</td><td style="text-align:center">' + cm.toFixed(0) + ' cm</td><td style="font-size:11px;color:#666">' + s.desc + '</td></tr>';
+            });
+            html += '</table>';
+            html += '</div>';
+            html += '<div style="background:#d1fae5;padding:10px;border-radius:6px">';
+            html += '<div style="font-size:13px;font-weight:bold;color:#065f46;margin-bottom:4px">Buying Tips</div>';
+            html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- 18" Princess is most popular</div>';
+            html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Add 2" if pendant is large</div>';
+            html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Consider neckline of outfit</div>';
+            html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Long necklaces flatter petite frames</div>';
+            html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Layer 16" + 18" + 20" for stacked look</div>';
+            html += '</div>';
+            html += '</div>';
+            document.getElementById('result').innerHTML = html;
+        }
+    }
+    document.getElementById('jewelryType').addEventListener('change', calc);
+    document.getElementById('method').addEventListener('change', calc);
+    document.getElementById('knuckle').addEventListener('change', calc);
+    document.getElementById('calc').addEventListener('click', calc);
+    calc();
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>API Signature Validator | YuanQiZhiLe Toolkit</title>
+<meta name="description" content="Generate and validate API request signatures. Support HMAC-SHA256, MD5, and custom signature algorithms. Perfect for testing API authentication.">
+<meta name="keywords" content="api signature, hmac sha256, signature validator, api auth, request signing, hmac generator">
+<meta property="og:title" content="API Signature Validator - Free Online Tool">
+<meta property="og:description" content="Generate and validate API request signatures. Support HMAC-SHA256, MD5, and custom signature algorithms. Perfect for testing API authentication.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>API Signature Validator</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Generate and validate API request signatures. Support HMAC-SHA256, MD5, and custom signature algorithms. Perfect for testing API authentication.</div>
+    <div class="group">
+        <label>Algorithm</label>
+        <select id="algoSelect">
+            <option value="hmac-sha256" selected>HMAC-SHA256</option>
+            <option value="hmac-sha512">HMAC-SHA512</option>
+            <option value="md5">MD5</option>
+            <option value="sha256">SHA256</option>
+        </select>
+    </div>
+    <div class="group"><label>Secret Key</label><input type="text" id="secretInput" value="my-secret-key" placeholder="Enter secret key"></div>
+    <div class="group">
+        <label>Parameters (JSON, will be sorted alphabetically)</label>
+        <textarea id="paramsInput" style="min-height:100px">{"timestamp":"1705312200","method":"POST","path":"/api/v1/users","nonce":"abc123","data":"hello"}</textarea>
+    </div>
+    <div class="group">
+        <label>Signature String Construction</label>
+        <select id="formatSelect">
+            <option value="sorted" selected>Sorted key=value&key=value</option>
+            <option value="json">Raw JSON</option>
+            <option value="custom">Custom (specify below)</option>
+        </select>
+    </div>
+    <div class="group" id="customFormatGroup" style="display:none">
+        <label>Custom Format (use {key} placeholders)</label>
+        <input type="text" id="customFormat" value="{method}{path}{timestamp}{nonce}{data}">
+    </div>
+    <button id="generateBtn">Generate Signature</button>
+    <div class="group" style="margin-top:16px">
+        <label>Signature String</label>
+        <input type="text" id="sigStringOutput" readonly style="font-family:monospace">
+    </div>
+    <div class="group">
+        <label>Signature</label>
+        <input type="text" id="sigOutput" readonly style="font-family:monospace">
+        <button class="secondary" id="copyBtn" style="margin-top:4px">Copy Signature</button>
+    </div>
+    <div class="group" style="margin-top:16px">
+        <label>Verify Signature</label>
+        <input type="text" id="verifyInput" placeholder="Paste signature to verify...">
+        <button class="secondary" id="verifyBtn" style="margin-top:4px">Verify</button>
+        <span id="verifyResult" style="margin-left:8px"></span>
+    </div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">260330663@qq.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">— or describe your need below —</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit →</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+        <ol>
+            <li>Select algorithm (HMAC-SHA256, HMAC-SHA512, MD5, SHA256)</li>
+            <li>Enter secret key</li>
+            <li>Enter parameters as JSON</li>
+            <li>Choose signature string format (sorted, JSON, or custom)</li>
+            <li>Click <strong>Generate Signature</strong> to get the hash</li>
+            <li>Use the verify section to check a signature</li>
+        </ol>
+    </div>
+    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'☀️':'🌙';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('260330663@qq.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:260330663@qq.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    function escapeHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+    async function generate(){
+        var algo = document.getElementById('algoSelect').value;
+        var secret = document.getElementById('secretInput').value;
+        var paramsText = document.getElementById('paramsInput').value;
+        var format = document.getElementById('formatSelect').value;
+        var params;
+        try { params = JSON.parse(paramsText); } catch(e){ alert('Invalid JSON params'); return; }
+        // Build signature string
+        var sigStr;
+        if(format === 'sorted'){
+            var keys = Object.keys(params).sort();
+            sigStr = keys.map(function(k){ return k + '=' + params[k]; }).join('&');
+        } else if(format === 'json'){
+            sigStr = paramsText;
+        } else {
+            sigStr = document.getElementById('customFormat').value;
+            Object.keys(params).forEach(function(k){
+                sigStr = sigStr.replace(new RegExp('\\{' + k + '\\}', 'g'), params[k]);
+            });
+        }
+        document.getElementById('sigStringOutput').value = sigStr;
+        // Generate hash
+        var enc = new TextEncoder();
+        var data = enc.encode(sigStr);
+        var hash;
+        if(algo === 'md5'){
+            // Simple MD5 implementation (inline)
+            hash = md5(sigStr);
+            document.getElementById('sigOutput').value = hash;
+            window._lastSig = hash;
+            return;
+        } else if(algo === 'sha256'){
+            var buf = await crypto.subtle.digest('SHA-256', data);
+            hash = hexFromBuffer(buf);
+        } else {
+            var keyData = enc.encode(secret);
+            var key = await crypto.subtle.importKey('raw', keyData, { name: 'HMAC', hash: algo === 'hmac-sha512' ? 'SHA-512' : 'SHA-256' }, false, ['sign']);
+            var sig = await crypto.subtle.sign('HMAC', key, data);
+            hash = hexFromBuffer(sig);
+        }
+        document.getElementById('sigOutput').value = hash;
+        window._lastSig = hash;
+    }
+    function hexFromBuffer(buf){
+        return Array.from(new Uint8Array(buf)).map(function(b){ return b.toString(16).padStart(2, '0'); }).join('');
+    }
+    // Minimal MD5
+    function md5(str){
+        function r(n,c){ return (n+c).toString(16).slice(-4); }
+        function add(x,y){ return (x+y)&0xFFFFFFFF; }
+        function cmn(q,a,b,x,s,t){ return add(rol(add(add(a,q),add(x,t)),s),b); }
+        function ff(a,b,c,d,x,s,t){ return cmn((b&c)|((~b)&d),a,b,x,s,t); }
+        function gg(a,b,c,d,x,s,t){ return cmn((b&d)|(c&(~d)),a,b,x,s,t); }
+        function hh(a,b,c,d,x,s,t){ return cmn(b^c^d,a,b,x,s,t); }
+        function ii(a,b,c,d,x,s,t){ return cmn(c^(b|(~d)),a,b,x,s,t); }
+        function rol(num,cnt){ return (num<<cnt)|(num>>>(32-cnt)); }
+        function str2binl(str){
+            var bin = [];
+            var mask = (1 << 8) - 1;
+            for(var i = 0; i < str.length * 8; i += 8) bin[i>>5] |= (str.charCodeAt(i/8) & mask) << (i%32);
+            return bin;
+        }
+        function binl2hex(binarray){
+            var hex = '0123456789abcdef';
+            var str = '';
+            for(var i = 0; i < binarray.length * 4; i++){
+                str += hex.charAt((binarray[i>>2] >> ((i%4)*8+4)) & 0xF) + hex.charAt((binarray[i>>2] >> ((i%4)*8)) & 0xF);
+            }
+            return str;
+        }
+        var x = str2binl(str);
+        var len = str.length * 8;
+        x[len>>5] |= 0x80 << (len % 32);
+        x[(((len+64)>>>9)<<4)+14] = len;
+        var a=1732584193, b=-271733879, c=-1732584194, d=271733878;
+        for(var i = 0; i < x.length; i += 16){
+            var oa=a, ob=b, oc=c, od=d;
+            a=ff(a,b,c,d,x[i],7,-680876936); d=ff(d,a,b,c,x[i+1],12,-389564586); c=ff(c,d,a,b,x[i+2],17,606105819); b=ff(b,c,d,a,x[i+3],22,-1044525330);
+            a=ff(a,b,c,d,x[i+4],7,-176418897); d=ff(d,a,b,c,x[i+5],12,1200080426); c=ff(c,d,a,b,x[i+6],17,-1473231341); b=ff(b,c,d,a,x[i+7],22,-45705983);
+            a=ff(a,b,c,d,x[i+8],7,1770035416); d=ff(d,a,b,c,x[i+9],12,-1958414417); c=ff(c,d,a,b,x[i+10],17,-42063); b=ff(b,c,d,a,x[i+11],22,-1990404162);
+            a=ff(a,b,c,d,x[i+12],7,1804603682); d=ff(d,a,b,c,x[i+13],12,-40341101); c=ff(c,d,a,b,x[i+14],17,-1502002290); b=ff(b,c,d,a,x[i+15],22,1236535329);
+            a=gg(a,b,c,d,x[i+1],5,-165796510); d=gg(d,a,b,c,x[i+6],9,-1069501632); c=gg(c,d,a,b,x[i+11],14,643717713); b=gg(b,c,d,a,x[i],20,-373897302);
+            a=gg(a,b,c,d,x[i+5],5,-701558691); d=gg(d,a,b,c,x[i+10],9,38016083); c=gg(c,d,a,b,x[i+15],14,-660437335); b=gg(b,c,d,a,x[i+4],20,-405537848);
+            a=gg(a,b,c,d,x[i+9],5,568446438); d=gg(d,a,b,c,x[i+14],9,-1019803690); c=gg(c,d,a,b,x[i+3],14,-187363961); b=gg(b,c,d,a,x[i+8],20,1163531501);
+            a=gg(a,b,c,d,x[i+13],5,-1444681467); d=gg(d,a,b,c,x[i+2],9,-51403784); c=gg(c,d,a,b,x[i+7],14,1735328473); b=gg(b,c,d,a,x[i+12],20,-1926607734);
+            a=hh(a,b,c,d,x[i+5],4,-378558); d=hh(d,a,b,c,x[i+8],11,-2022574463); c=hh(c,d,a,b,x[i+11],16,1839030562); b=hh(b,c,d,a,x[i+14],23,-35309556);
+            a=hh(a,b,c,d,x[i+1],4,-1530992060); d=hh(d,a,b,c,x[i+4],11,1272893353); c=hh(c,d,a,b,x[i+7],16,-155497632); b=hh(b,c,d,a,x[i+10],23,-1094730640);
+            a=hh(a,b,c,d,x[i+13],4,681279174); d=hh(d,a,b,c,x[i],11,-358537222); c=hh(c,d,a,b,x[i+3],16,-722521979); b=hh(b,c,d,a,x[i+6],23,76029189);
+            a=hh(a,b,c,d,x[i+9],4,-640364487); d=hh(d,a,b,c,x[i+12],11,-421815835); c=hh(c,d,a,b,x[i+15],16,530742520); b=hh(b,c,d,a,x[i+2],23,-995338651);
+            a=ii(a,b,c,d,x[i],6,-198630844); d=ii(d,a,b,c,x[i+7],10,1126891415); c=ii(c,d,a,b,x[i+14],15,-1416354905); b=ii(b,c,d,a,x[i+5],21,-57434055);
+            a=ii(a,b,c,d,x[i+12],6,1700485571); d=ii(d,a,b,c,x[i+3],10,-1894986606); c=ii(c,d,a,b,x[i+10],15,-1051523); b=ii(b,c,d,a,x[i+1],21,-2054922799);
+            a=ii(a,b,c,d,x[i+8],6,1873313359); d=ii(d,a,b,c,x[i+15],10,-30611744); c=ii(c,d,a,b,x[i+6],15,-1560198380); b=ii(b,c,d,a,x[i+13],21,1309151649);
+            a=ii(a,b,c,d,x[i+4],6,-145523070); d=ii(d,a,b,c,x[i+11],10,-1120210379); c=ii(c,d,a,b,x[i+2],15,718787259); b=ii(b,c,d,a,x[i+9],21,-343485551);
+            a=add(a,oa); b=add(b,ob); c=add(c,oc); d=add(d,od);
+        }
+        return binl2hex([a,b,c,d]);
+    }
+    document.getElementById('formatSelect').addEventListener('change', function(){
+        document.getElementById('customFormatGroup').style.display = this.value === 'custom' ? 'block' : 'none';
+    });
+    document.getElementById('generateBtn').addEventListener('click', generate);
+    document.getElementById('copyBtn').addEventListener('click', function(){
+        var v = document.getElementById('sigOutput').value;
+        if(v) navigator.clipboard.writeText(v).then(function(){ alert('Copied!'); });
+    });
+    document.getElementById('verifyBtn').addEventListener('click', function(){
+        var v = document.getElementById('verifyInput').value.trim();
+        var result = document.getElementById('verifyResult');
+        if(!v){ result.innerHTML = '<span style="color:#dc3545">Enter a signature</span>'; return; }
+        if(v === window._lastSig){ result.innerHTML = '<span style="color:#28a745">✓ Valid</span>'; }
+        else { result.innerHTML = '<span style="color:#dc3545">✗ Invalid</span>'; }
+    });
+    setTimeout(generate, 100);
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

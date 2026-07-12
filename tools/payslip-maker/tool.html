@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payslip Maker | YuanQiZhiLe Toolkit</title>
+<meta name="description" content="Create professional payslips and pay stubs online for free. Calculate gross pay, taxes, deductions, and net pay. Download as PDF.">
+<meta name="keywords" content="payslip maker, pay stub generator, payroll calculator, free payslip, salary slip, pay stub online, paycheck calculator">
+<meta property="og:title" content="Payslip Maker - Free Online Tool">
+<meta property="og:description" content="Create professional payslips and pay stubs online for free. Calculate gross pay, taxes, deductions, and net pay. Download as PDF.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Payslip Maker</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Create professional payslips and pay stubs online for free. Calculate gross pay, taxes, deductions, and net pay. Download as PDF.</div>
+    <div class="row">
+        <div class="group"><label>Pay period</label>
+            <select id="period" style="width:100%;padding:8px">
+                <option value="weekly">Weekly</option>
+                <option value="biweekly" selected>Bi-weekly</option>
+                <option value="semimonthly">Semi-monthly</option>
+                <option value="monthly">Monthly</option>
+            </select>
+        </div>
+        <div class="group"><label>Pay date</label><input type="date" id="payDate" style="width:100%;padding:8px"></div>
+    </div>
+    <div style="background:#f9fafb;padding:10px;border-radius:6px;margin:8px 0">
+        <div style="font-weight:bold;color:#1e40af;margin-bottom:6px">Employer</div>
+        <div class="row">
+            <div class="group"><label>Company name</label><input type="text" id="empName" placeholder="Acme Inc." style="width:100%;padding:8px"></div>
+            <div class="group"><label>Company ID / EIN</label><input type="text" id="empEIN" placeholder="12-3456789" style="width:100%;padding:8px"></div>
+        </div>
+        <textarea id="empAddr" placeholder="Address" style="width:100%;padding:8px;margin-top:4px;height:50px"></textarea>
+    </div>
+    <div style="background:#f9fafb;padding:10px;border-radius:6px;margin:8px 0">
+        <div style="font-weight:bold;color:#1e40af;margin-bottom:6px">Employee</div>
+        <div class="row">
+            <div class="group"><label>Employee name</label><input type="text" id="empNameE" placeholder="John Doe" style="width:100%;padding:8px"></div>
+            <div class="group"><label>Employee ID</label><input type="text" id="empId" placeholder="EMP-001" style="width:100%;padding:8px"></div>
+        </div>
+        <div class="row">
+            <div class="group"><label>Position / Title</label><input type="text" id="empPos" placeholder="Software Engineer" style="width:100%;padding:8px"></div>
+            <div class="group"><label>Filing status</label>
+                <select id="filingStatus" style="width:100%;padding:8px">
+                    <option value="single">Single</option>
+                    <option value="married">Married</option>
+                    <option value="head">Head of household</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div style="background:#f9fafb;padding:10px;border-radius:6px;margin:8px 0">
+        <div style="font-weight:bold;color:#1e40af;margin-bottom:6px">Earnings</div>
+        <div class="row">
+            <div class="group"><label>Hourly rate ($)</label><input type="number" id="hourlyRate" value="25" min="0" step="0.01" style="width:100%;padding:8px"></div>
+            <div class="group"><label>Hours worked</label><input type="number" id="hours" value="80" min="0" step="0.1" style="width:100%;padding:8px"></div>
+        </div>
+        <div class="row">
+            <div class="group"><label>Overtime hours</label><input type="number" id="otHours" value="0" min="0" step="0.1" style="width:100%;padding:8px"></div>
+            <div class="group"><label>Overtime rate multiplier</label><input type="number" id="otMult" value="1.5" min="1" max="3" step="0.1" style="width:100%;padding:8px"></div>
+        </div>
+        <div class="row">
+            <div class="group"><label>Bonus / Other ($)</label><input type="number" id="bonus" value="0" min="0" step="0.01" style="width:100%;padding:8px"></div>
+            <div class="group"><label>YTD gross (optional)</label><input type="number" id="ytdGross" value="0" min="0" step="0.01" style="width:100%;padding:8px"></div>
+        </div>
+    </div>
+    <div style="background:#f9fafb;padding:10px;border-radius:6px;margin:8px 0">
+        <div style="font-weight:bold;color:#1e40af;margin-bottom:6px">Deductions (%)</div>
+        <div class="row">
+            <div class="group"><label>Federal tax %</label><input type="number" id="fedTax" value="12" min="0" max="50" step="0.1" style="width:100%;padding:8px"></div>
+            <div class="group"><label>State tax %</label><input type="number" id="stateTax" value="5" min="0" max="15" step="0.1" style="width:100%;padding:8px"></div>
+        </div>
+        <div class="row">
+            <div class="group"><label>Social Security %</label><input type="number" id="ssTax" value="6.2" min="0" max="10" step="0.1" style="width:100%;padding:8px"></div>
+            <div class="group"><label>Medicare %</label><input type="number" id="medTax" value="1.45" min="0" max="5" step="0.1" style="width:100%;padding:8px"></div>
+        </div>
+        <div class="row">
+            <div class="group"><label>Health insurance ($)</label><input type="number" id="healthIns" value="0" min="0" step="0.01" style="width:100%;padding:8px"></div>
+            <div class="group"><label>401(k) contribution %</label><input type="number" id="retirePct" value="0" min="0" max="50" step="0.1" style="width:100%;padding:8px"></div>
+        </div>
+    </div>
+    <button id="preview" style="padding:10px 20px;background:#3b82f6;color:#fff;border:none;border-radius:6px;cursor:pointer;margin-top:10px">Preview Payslip</button>
+    <button id="print" style="padding:10px 20px;background:#10b981;color:#fff;border:none;border-radius:6px;cursor:pointer;margin-top:10px;margin-left:6px">Print / Save as PDF</button>
+    <div id="totals" style="margin-top:8px;font-size:13px"></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">260330663@qq.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">— or describe your need below —</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit →</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Choose <b>Pay period</b> (weekly, bi-weekly, etc.) and <b>Pay date</b>.</li>
+<li>Enter <b>Employer</b> info (company name, EIN, address).</li>
+<li>Enter <b>Employee</b> info (name, ID, position, filing status).</li>
+<li>Enter <b>Earnings</b>: hourly rate, hours, overtime, bonus.</li>
+<li>Set <b>Deductions</b>: federal/state tax %, SS, Medicare, insurance, 401(k).</li>
+<li>Click <b>Preview</b> or <b>Print / Save as PDF</b>.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">Tax percentages are simplified estimates. For exact withholding, consult IRS Publication 15 (Circular E) and your state's tax tables.</p>
+    </div>
+    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'☀️':'🌙';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('260330663@qq.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:260330663@qq.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    function recalc(){
+        var hourly = +document.getElementById('hourlyRate').value || 0;
+        var hours = +document.getElementById('hours').value || 0;
+        var otHours = +document.getElementById('otHours').value || 0;
+        var otMult = +document.getElementById('otMult').value || 1.5;
+        var bonus = +document.getElementById('bonus').value || 0;
+        var regPay = hourly * hours;
+        var otPay = hourly * otMult * otHours;
+        var gross = regPay + otPay + bonus;
+        var fedTax = gross * (+document.getElementById('fedTax').value || 0) / 100;
+        var stateTax = gross * (+document.getElementById('stateTax').value || 0) / 100;
+        var ssTax = gross * (+document.getElementById('ssTax').value || 0) / 100;
+        var medTax = gross * (+document.getElementById('medTax').value || 0) / 100;
+        var healthIns = +document.getElementById('healthIns').value || 0;
+        var retire = gross * (+document.getElementById('retirePct').value || 0) / 100;
+        var totalDeductions = fedTax + stateTax + ssTax + medTax + healthIns + retire;
+        var net = gross - totalDeductions;
+        document.getElementById('totals').innerHTML =
+            '<div style="background:#f3f4f6;padding:8px;border-radius:4px">'
+            + '<div style="display:flex;justify-content:space-between"><span>Regular pay:</span><b>$' + regPay.toFixed(2) + '</b></div>'
+            + '<div style="display:flex;justify-content:space-between"><span>Overtime pay:</span><b>$' + otPay.toFixed(2) + '</b></div>'
+            + '<div style="display:flex;justify-content:space-between"><span>Bonus:</span><b>$' + bonus.toFixed(2) + '</b></div>'
+            + '<div style="display:flex;justify-content:space-between;border-top:1px solid #ddd;margin-top:6px;padding-top:6px;color:#1e40af"><span><b>Gross pay:</b></span><b>$' + gross.toFixed(2) + '</b></div>'
+            + '<div style="display:flex;justify-content:space-between;color:#dc2626;margin-top:6px"><span>Total deductions:</span><b>-$' + totalDeductions.toFixed(2) + '</b></div>'
+            + '<div style="display:flex;justify-content:space-between;border-top:2px solid #10b981;margin-top:6px;padding-top:6px;font-size:16px;color:#10b981"><span><b>Net pay:</b></span><b>$' + net.toFixed(2) + '</b></div>'
+            + '</div>';
+    }
+    function buildHtml(){
+        var hourly = +document.getElementById('hourlyRate').value || 0;
+        var hours = +document.getElementById('hours').value || 0;
+        var otHours = +document.getElementById('otHours').value || 0;
+        var otMult = +document.getElementById('otMult').value || 1.5;
+        var bonus = +document.getElementById('bonus').value || 0;
+        var regPay = hourly * hours;
+        var otPay = hourly * otMult * otHours;
+        var gross = regPay + otPay + bonus;
+        var fedTax = gross * (+document.getElementById('fedTax').value || 0) / 100;
+        var stateTax = gross * (+document.getElementById('stateTax').value || 0) / 100;
+        var ssTax = gross * (+document.getElementById('ssTax').value || 0) / 100;
+        var medTax = gross * (+document.getElementById('medTax').value || 0) / 100;
+        var healthIns = +document.getElementById('healthIns').value || 0;
+        var retire = gross * (+document.getElementById('retirePct').value || 0) / 100;
+        var totalDeductions = fedTax + stateTax + ssTax + medTax + healthIns + retire;
+        var net = gross - totalDeductions;
+        var ytdGross = +document.getElementById('ytdGross').value || 0;
+        var ytdNet = ytdGross * (net / gross);
+        var html = '<!doctype html><html><head><title>Payslip - ' + escHtml(document.getElementById('empNameE').value) + '</title><meta charset="utf-8">'
+            + '<style>body{font-family:Arial,sans-serif;padding:30px;color:#333;font-size:12px}h1{color:#1e40af;margin:0}table{width:100%;border-collapse:collapse}td,th{padding:5px 8px;text-align:left;border-bottom:1px solid #eee}.right{text-align:right}.total{font-weight:bold;background:#f3f4f6}.header{display:flex;justify-content:space-between;border-bottom:3px solid #1e40af;padding-bottom:10px;margin-bottom:14px}</style>'
+            + '</head><body>';
+        html += '<div class="header"><div><h1>PAYSLIP</h1><div style="color:#666">' + escHtml(document.getElementById('empName').value) + '</div><div style="white-space:pre-line;font-size:11px">' + escHtml(document.getElementById('empAddr').value) + '</div><div style="font-size:11px">EIN: ' + escHtml(document.getElementById('empEIN').value) + '</div></div>';
+        html += '<div style="text-align:right"><b>Pay date:</b> ' + (document.getElementById('payDate').value || '') + '<br><b>Period:</b> ' + document.getElementById('period').value + '</div></div>';
+        html += '<div style="display:flex;justify-content:space-between;margin-bottom:14px;font-size:13px"><div><b>Employee:</b> ' + escHtml(document.getElementById('empNameE').value) + '<br><b>ID:</b> ' + escHtml(document.getElementById('empId').value) + '<br><b>Position:</b> ' + escHtml(document.getElementById('empPos').value) + '</div>';
+        html += '<div style="text-align:right"><b>Filing status:</b> ' + document.getElementById('filingStatus').value + '</div></div>';
+        html += '<table><thead><tr style="background:#1e40af;color:#fff"><th>Earnings</th><th class="right">Hours</th><th class="right">Rate</th><th class="right">Amount</th></tr></thead><tbody>';
+        html += '<tr><td>Regular</td><td class="right">' + hours.toFixed(1) + '</td><td class="right">$' + hourly.toFixed(2) + '</td><td class="right">$' + regPay.toFixed(2) + '</td></tr>';
+        if(otHours > 0){
+            html += '<tr><td>Overtime (x' + otMult + ')</td><td class="right">' + otHours.toFixed(1) + '</td><td class="right">$' + (hourly * otMult).toFixed(2) + '</td><td class="right">$' + otPay.toFixed(2) + '</td></tr>';
+        }
+        if(bonus > 0){
+            html += '<tr><td>Bonus</td><td class="right">-</td><td class="right">-</td><td class="right">$' + bonus.toFixed(2) + '</td></tr>';
+        }
+        html += '<tr class="total"><td colspan="3">Gross Pay</td><td class="right">$' + gross.toFixed(2) + '</td></tr>';
+        html += '</tbody></table>';
+        html += '<table style="margin-top:14px"><thead><tr style="background:#dc2626;color:#fff"><th>Deductions</th><th class="right">Current</th><th class="right">YTD</th></tr></thead><tbody>';
+        html += '<tr><td>Federal Tax (' + (+document.getElementById('fedTax').value) + '%)</td><td class="right">$' + fedTax.toFixed(2) + '</td><td class="right">$' + (fedTax * 26).toFixed(2) + '</td></tr>';
+        html += '<tr><td>State Tax (' + (+document.getElementById('stateTax').value) + '%)</td><td class="right">$' + stateTax.toFixed(2) + '</td><td class="right">$' + (stateTax * 26).toFixed(2) + '</td></tr>';
+        html += '<tr><td>Social Security (' + (+document.getElementById('ssTax').value) + '%)</td><td class="right">$' + ssTax.toFixed(2) + '</td><td class="right">$' + (ssTax * 26).toFixed(2) + '</td></tr>';
+        html += '<tr><td>Medicare (' + (+document.getElementById('medTax').value) + '%)</td><td class="right">$' + medTax.toFixed(2) + '</td><td class="right">$' + (medTax * 26).toFixed(2) + '</td></tr>';
+        if(healthIns > 0){
+            html += '<tr><td>Health Insurance</td><td class="right">$' + healthIns.toFixed(2) + '</td><td class="right">$' + (healthIns * 26).toFixed(2) + '</td></tr>';
+        }
+        if(retire > 0){
+            html += '<tr><td>401(k) (' + (+document.getElementById('retirePct').value) + '%)</td><td class="right">$' + retire.toFixed(2) + '</td><td class="right">$' + (retire * 26).toFixed(2) + '</td></tr>';
+        }
+        html += '<tr class="total"><td>Total Deductions</td><td class="right">$' + totalDeductions.toFixed(2) + '</td><td class="right">$' + (totalDeductions * 26).toFixed(2) + '</td></tr>';
+        html += '</tbody></table>';
+        html += '<div style="margin-top:14px;padding:10px;background:#d1fae5;border-radius:6px;text-align:right;font-size:18px;color:#065f46"><b>NET PAY: $' + net.toFixed(2) + '</b></div>';
+        html += '<div style="margin-top:14px;font-size:11px;color:#999;text-align:center">This payslip was generated electronically. YTD values are estimated.</div>';
+        html += '    <script src="/assets/js/date-utils.js"></script>
+</body></html>';
+        return html;
+    }
+    function escHtml(s){ return String(s||'').replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+    ['hourlyRate','hours','otHours','otMult','bonus','fedTax','stateTax','ssTax','medTax','healthIns','retirePct','ytdGross'].forEach(function(id){
+        document.getElementById(id).addEventListener('input', recalc);
+    });
+    document.getElementById('preview').addEventListener('click', function(){
+        var html = buildHtml();
+        var w = window.open('', '_blank');
+        w.document.write(html);
+        w.document.close();
+    });
+    document.getElementById('print').addEventListener('click', function(){
+        var html = buildHtml();
+        var w = window.open('', '_blank');
+        w.document.write(html);
+        w.document.close();
+        setTimeout(function(){ w.print(); }, 250);
+    });
+    document.getElementById('payDate').value = new Date().toISOString().slice(0,10);
+    recalc();
+})();
+</script>
+</body>
+</html>

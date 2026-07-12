@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Color Palette Generator | YuanQiZhiLe Toolkit</title>
+<meta name="description" content="Generate color palettes. HEX, RGB, HSL conversion. Free color picker tool.">
+<meta name="keywords" content="color palette, color picker, hex rgb hsl, color generator, color scheme">
+<meta property="og:title" content="Color Palette Generator - Free Online Tool">
+<meta property="og:description" content="Generate color palettes. HEX, RGB, HSL conversion. Free color picker tool.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Color Palette Generator</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Generate color palettes. HEX, RGB, HSL conversion. Free color picker tool.</div>
+    <div class="group"><label>Base color</label>
+        <div class="row">
+            <input type="color" id="baseColor" value="#3b82f6" style="width:60px;height:40px;padding:0;border:none;cursor:pointer">
+            <input type="text" id="hexInput" value="#3b82f6" style="flex:1;padding:8px;font-family:monospace">
+        </div>
+    </div>
+    <div class="group"><label>Palette type</label>
+        <select id="paletteType" style="width:100%;padding:8px">
+            <option value="complementary" selected>Complementary</option>
+            <option value="analogous">Analogous</option>
+            <option value="triadic">Triadic</option>
+            <option value="tetradic">Tetradic</option>
+            <option value="monochromatic">Monochromatic</option>
+            <option value="shades">Shades</option>
+        </select>
+    </div>
+    <button id="random" style="width:100%;padding:10px;background:#7c3aed;color:#fff;border:none;border-radius:6px;cursor:pointer;margin-bottom:8px">Random Color</button>
+    <div id="palette" style="margin-top:12px"></div>
+    <div id="colorInfo" style="margin-top:12px"></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">260330663@qq.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">— or describe your need below —</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit →</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Pick base color or enter HEX.</li>
+<li>Choose palette type (complementary, analogous, etc.).</li>
+<li>Click color to copy HEX.</li>
+<li>Copy CSS variables.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">Palette types: Complementary (opposite hues), Analogous (adjacent hues), Triadic (3 colors 120° apart), Tetradic (4 colors 90° apart), Monochromatic (same hue, different lightness), Shades (darker variants). Use 60-30-10 rule: 60% dominant, 30% secondary, 10% accent.</p>
+    </div>
+    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'☀️':'🌙';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('260330663@qq.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:260330663@qq.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    function hexToRgb(hex){
+        hex = hex.replace('#', '');
+        if(hex.length === 3) hex = hex.split('').map(function(c){ return c + c; }).join('');
+        var r = parseInt(hex.substring(0, 2), 16);
+        var g = parseInt(hex.substring(2, 4), 16);
+        var b = parseInt(hex.substring(4, 6), 16);
+        return { r: r, g: g, b: b };
+    }
+    function rgbToHex(r, g, b){
+        return '#' + [r, g, b].map(function(x){
+            x = Math.max(0, Math.min(255, Math.round(x)));
+            return x.toString(16).padStart(2, '0');
+        }).join('');
+    }
+    function rgbToHsl(r, g, b){
+        r /= 255; g /= 255; b /= 255;
+        var max = Math.max(r, g, b), min = Math.min(r, g, b);
+        var h, s, l = (max + min) / 2;
+        if(max === min){
+            h = s = 0;
+        } else {
+            var d = max - min;
+            s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+            switch(max){
+                case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+                case g: h = (b - r) / d + 2; break;
+                case b: h = (r - g) / d + 4; break;
+            }
+            h /= 6;
+        }
+        return { h: Math.round(h * 360), s: Math.round(s * 100), l: Math.round(l * 100) };
+    }
+    function hslToRgb(h, s, l){
+        h /= 360; s /= 100; l /= 100;
+        var r, g, b;
+        if(s === 0){
+            r = g = b = l;
+        } else {
+            var hue2rgb = function(p, q, t){
+                if(t < 0) t += 1;
+                if(t > 1) t -= 1;
+                if(t < 1/6) return p + (q - p) * 6 * t;
+                if(t < 1/2) return q;
+                if(t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+                return p;
+            };
+            var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+            var p = 2 * l - q;
+            r = hue2rgb(p, q, h + 1/3);
+            g = hue2rgb(p, q, h);
+            b = hue2rgb(p, q, h - 1/3);
+        }
+        return { r: Math.round(r * 255), g: Math.round(g * 255), b: Math.round(b * 255) };
+    }
+    function generatePalette(){
+        var baseHex = document.getElementById('hexInput').value;
+        var type = document.getElementById('paletteType').value;
+        var rgb = hexToRgb(baseHex);
+        var hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
+        var colors = [];
+        if(type === 'complementary'){
+            // Base + opposite hue
+            var compH = (hsl.h + 180) % 360;
+            var compRgb = hslToRgb(compH, hsl.s, hsl.l);
+            colors = [
+                { hex: baseHex, hsl: hsl },
+                { hex: rgbToHex(compRgb.r, compRgb.g, compRgb.b), hsl: { h: compH, s: hsl.s, l: hsl.l } },
+                { hex: rgbToHex(rgb.r, rgb.g, rgb.b), hsl: hsl }
+            ];
+            // Add light/dark variants
+            for(var i = 1; i <= 2; i++){
+                var lighterL = Math.min(95, hsl.l + i * 15);
+                var darkerL = Math.max(5, hsl.l - i * 15);
+                colors.push({ hex: rgbToHex.apply(null, Object.values(hslToRgb(hsl.h, hsl.s, lighterL))), hsl: { h: hsl.h, s: hsl.s, l: lighterL } });
+                colors.unshift({ hex: rgbToHex.apply(null, Object.values(hslToRgb(hsl.h, hsl.s, darkerL))), hsl: { h: hsl.h, s: hsl.s, l: darkerL } });
+            }
+        } else if(type === 'analogous'){
+            for(var i = -2; i <= 2; i++){
+                var h = (hsl.h + i * 30 + 360) % 360;
+                var r = hslToRgb(h, hsl.s, hsl.l);
+                colors.push({ hex: rgbToHex(r.r, r.g, r.b), hsl: { h: h, s: hsl.s, l: hsl.l } });
+            }
+        } else if(type === 'triadic'){
+            for(var i = 0; i < 3; i++){
+                var h = (hsl.h + i * 120) % 360;
+                var r = hslToRgb(h, hsl.s, hsl.l);
+                colors.push({ hex: rgbToHex(r.r, r.g, r.b), hsl: { h: h, s: hsl.s, l: hsl.l } });
+            }
+        } else if(type === 'tetradic'){
+            for(var i = 0; i < 4; i++){
+                var h = (hsl.h + i * 90) % 360;
+                var r = hslToRgb(h, hsl.s, hsl.l);
+                colors.push({ hex: rgbToHex(r.r, r.g, r.b), hsl: { h: h, s: hsl.s, l: hsl.l } });
+            }
+        } else if(type === 'monochromatic'){
+            for(var i = 0; i < 5; i++){
+                var l = Math.max(10, Math.min(90, hsl.l - 30 + i * 15));
+                var r = hslToRgb(hsl.h, hsl.s, l);
+                colors.push({ hex: rgbToHex(r.r, r.g, r.b), hsl: { h: hsl.h, s: hsl.s, l: l } });
+            }
+        } else if(type === 'shades'){
+            for(var i = 0; i < 5; i++){
+                var l = 90 - i * 20;
+                var r = hslToRgb(hsl.h, hsl.s, l);
+                colors.push({ hex: rgbToHex(r.r, r.g, r.b), hsl: { h: hsl.h, s: hsl.s, l: l } });
+            }
+        }
+        // Display palette
+        var html = '<div style="background:#f0f7ff;padding:14px;border-radius:8px;border-left:4px solid #3b82f6">';
+        html += '<div style="font-size:12px;font-weight:bold;margin-bottom:8px">' + type.charAt(0).toUpperCase() + type.slice(1) + ' Palette:</div>';
+        html += '<div style="display:grid;grid-template-columns:repeat(' + colors.length + ', 1fr);gap:4px;height:120px">';
+        colors.forEach(function(c, idx){
+            var textColor = c.hsl.l > 60 ? '#000' : '#fff';
+            html += '<div class="colorBox" data-hex="' + c.hex + '" style="background:' + c.hex + ';color:' + textColor + ';padding:8px;cursor:pointer;display:flex;flex-direction:column;justify-content:space-between;border-radius:4px">';
+            html += '<div style="font-size:10px;font-weight:bold">' + c.hex.toUpperCase() + '</div>';
+            html += '<div style="font-size:9px">HSL ' + c.hsl.h + ',' + c.hsl.s + '%,' + c.hsl.l + '%</div>';
+            html += '</div>';
+        });
+        html += '</div>';
+        // CSS variables
+        var cssVars = ':root {\n';
+        colors.forEach(function(c, idx){
+            cssVars += '  --color-' + (idx+1) + ': ' + c.hex + ';\n';
+        });
+        cssVars += '}';
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-top:12px;margin-bottom:10px">';
+        html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">';
+        html += '<div style="font-size:12px;font-weight:bold">CSS Variables:</div>';
+        html += '<button id="copyCss" style="padding:4px 10px;background:#10b981;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:11px">Copy</button>';
+        html += '</div>';
+        html += '<pre style="background:#1a1a2e;color:#10b981;padding:10px;border-radius:4px;font-size:11px;overflow-x:auto">' + escapeHtml(cssVars) + '</pre>';
+        html += '</div>';
+        // Color info
+        var baseRgb = hexToRgb(baseHex);
+        var baseHsl = rgbToHsl(baseRgb.r, baseRgb.g, baseRgb.b);
+        html += '<div style="background:#fff;padding:10px;border-radius:6px">';
+        html += '<div style="font-size:12px;font-weight:bold;margin-bottom:6px">Base color info:</div>';
+        html += '<table style="width:100%;font-size:11px;border-collapse:collapse">';
+        html += '<tr><td style="padding:4px;border-bottom:1px solid #f0f0f0">HEX</td><td style="padding:4px;border-bottom:1px solid #f0f0f0;font-family:monospace">' + baseHex.toUpperCase() + '</td></tr>';
+        html += '<tr><td style="padding:4px;border-bottom:1px solid #f0f0f0">RGB</td><td style="padding:4px;border-bottom:1px solid #f0f0f0;font-family:monospace">rgb(' + baseRgb.r + ', ' + baseRgb.g + ', ' + baseRgb.b + ')</td></tr>';
+        html += '<tr><td style="padding:4px;border-bottom:1px solid #f0f0f0">HSL</td><td style="padding:4px;border-bottom:1px solid #f0f0f0;font-family:monospace">hsl(' + baseHsl.h + ', ' + baseHsl.s + '%, ' + baseHsl.l + '%)</td></tr>';
+        html += '<tr><td style="padding:4px">CMYK</td><td style="padding:4px;font-family:monospace">' + rgbToCmyk(baseRgb.r, baseRgb.g, baseRgb.b) + '</td></tr>';
+        html += '</table>';
+        html += '</div>';
+        html += '</div>';
+        document.getElementById('palette').innerHTML = html;
+        // Bind click to copy
+        document.querySelectorAll('.colorBox').forEach(function(box){
+            box.addEventListener('click', function(){
+                var hex = this.getAttribute('data-hex');
+                navigator.clipboard.writeText(hex);
+                var old = this.style.transform;
+                this.style.transform = 'scale(1.05)';
+                var self = this;
+                setTimeout(function(){ self.style.transform = old; }, 200);
+            });
+        });
+        document.getElementById('copyCss').addEventListener('click', function(){
+            navigator.clipboard.writeText(cssVars);
+            this.textContent = '✓ Copied!';
+            var btn = this;
+            setTimeout(function(){ btn.textContent = 'Copy'; }, 1500);
+        });
+    }
+    function rgbToCmyk(r, g, b){
+        r /= 255; g /= 255; b /= 255;
+        var k = 1 - Math.max(r, g, b);
+        if(k === 1) return 'cmyk(0%, 0%, 0%, 100%)';
+        var c = (1 - r - k) / (1 - k);
+        var m = (1 - g - k) / (1 - k);
+        var y = (1 - b - k) / (1 - k);
+        return 'cmyk(' + Math.round(c*100) + '%, ' + Math.round(m*100) + '%, ' + Math.round(y*100) + '%, ' + Math.round(k*100) + '%)';
+    }
+    function escapeHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+    document.getElementById('baseColor').addEventListener('input', function(){
+        document.getElementById('hexInput').value = this.value;
+        generatePalette();
+    });
+    document.getElementById('hexInput').addEventListener('input', function(){
+        var v = this.value;
+        if(/^#?[0-9a-fA-F]{6}$/.test(v)){
+            if(v.indexOf('#') !== 0) v = '#' + v;
+            document.getElementById('baseColor').value = v;
+            generatePalette();
+        }
+    });
+    document.getElementById('paletteType').addEventListener('change', generatePalette);
+    document.getElementById('random').addEventListener('click', function(){
+        var r = Math.floor(Math.random() * 256);
+        var g = Math.floor(Math.random() * 256);
+        var b = Math.floor(Math.random() * 256);
+        var hex = rgbToHex(r, g, b);
+        document.getElementById('hexInput').value = hex;
+        document.getElementById('baseColor').value = hex;
+        generatePalette();
+    });
+    generatePalette();
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

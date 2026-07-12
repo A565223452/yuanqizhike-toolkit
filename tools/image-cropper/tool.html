@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Cropper | YuanQiZhiLe Toolkit</title>
+<meta name="description" content="Crop images to any size or aspect ratio. Set custom dimensions or use social media presets. All processing in browser. Free image cropper online.">
+<meta name="keywords" content="image cropper, crop image, photo cropper, image editor, aspect ratio cropper, social media image size, image resizer">
+<meta property="og:title" content="Image Cropper - Free Online Tool">
+<meta property="og:description" content="Crop images to any size or aspect ratio. Set custom dimensions or use social media presets. All processing in browser. Free image cropper online.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Image Cropper</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Crop images to any size or aspect ratio. Set custom dimensions or use social media presets. All processing in browser. Free image cropper online.</div>
+    <div class="group">
+        <label>Upload image</label>
+        <input type="file" id="file" accept="image/*" style="width:100%;padding:8px">
+    </div>
+    <div class="row">
+        <div class="group">
+            <label>Aspect ratio preset</label>
+            <select id="preset" style="width:100%;padding:8px">
+                <option value="free">Free crop</option>
+                <option value="1">1:1 Square</option>
+                <option value="1.7778">16:9 Widescreen</option>
+                <option value="1.3333">4:3 Standard</option>
+                <option value="0.5625">9:16 Story/Portrait</option>
+                <option value="1.2">5:6 Portrait</option>
+                <option value="0.8">4:5 Instagram</option>
+                <option value="2">2:1 Banner</option>
+                <option value="3">3:1 Panorama</option>
+                <option value="custom">Custom...</option>
+            </select>
+        </div>
+        <div class="group" id="customAspect" style="display:none">
+            <label>Custom ratio (W:H)</label>
+            <div style="display:flex;align-items:center;gap:4px">
+                <input type="number" id="aspectW" value="16" style="flex:1;padding:8px">
+                <span>:</span>
+                <input type="number" id="aspectH" value="9" style="flex:1;padding:8px">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="group">
+            <label>Output width (px)</label>
+            <input type="number" id="outWidth" placeholder="auto" style="width:100%;padding:8px">
+        </div>
+        <div class="group">
+            <label>Output height (px)</label>
+            <input type="number" id="outHeight" placeholder="auto" style="width:100%;padding:8px">
+        </div>
+        <div class="group">
+            <label>Format</label>
+            <select id="format" style="width:100%;padding:8px">
+                <option value="image/png">PNG (lossless)</option>
+                <option value="image/jpeg" selected>JPEG (smaller)</option>
+                <option value="image/webp">WebP (best)</option>
+            </select>
+        </div>
+        <div class="group" id="qualityGroup">
+            <label>Quality (JPEG/WebP)</label>
+            <input type="range" id="quality" min="10" max="100" value="85" style="width:100%">
+        </div>
+    </div>
+    <div id="canvasWrap" style="position:relative;display:inline-block;background:#000;border:1px solid #e5e7eb;margin-bottom:12px;max-width:100%">
+        <canvas id="canvas" style="display:block;max-width:100%;cursor:crosshair"></canvas>
+        <div id="cropBox" style="position:absolute;border:2px dashed #3b82f6;background:rgba(59,130,246,0.2);pointer-events:none;display:none"></div>
+    </div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px">
+        <button id="resetBtn" style="padding:8px 16px;background:#6b7280;color:#fff;border:none;border-radius:4px;cursor:pointer">Reset crop</button>
+        <button id="cropBtn" style="padding:8px 16px;background:#3b82f6;color:#fff;border:none;border-radius:4px;cursor:pointer">Apply crop</button>
+        <button id="downloadBtn" style="padding:8px 16px;background:#10b981;color:#fff;border:none;border-radius:4px;cursor:pointer">Download result</button>
+    </div>
+    <div id="preview" style="margin-bottom:12px"></div>
+    <div class="result-box" id="result"></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">260330663@qq.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">— or describe your need below —</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit →</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Click <b>Upload image</b> to load a photo.</li>
+<li>Choose an aspect ratio preset (or set custom).</li>
+<li>Drag on the image to select crop area.</li>
+<li>Set output dimensions and format.</li>
+<li>Click <b>Apply crop</b> to preview and <b>Download</b> to save.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">All processing in your browser — image never uploaded. Presets cover common social media sizes (1:1 Instagram, 16:9 YouTube, 9:16 Story, 4:5 Facebook, etc.).</p>
+    </div>
+    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'☀️':'🌙';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('260330663@qq.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:260330663@qq.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    var img = null;
+    var crop = {x:0, y:0, w:0, h:0};
+    var dragging = false;
+    var dragStart = null;
+    var aspectRatio = null;
+    function loadImage(file){
+        var reader = new FileReader();
+        reader.onload = function(e){
+            img = new Image();
+            img.onload = function(){
+                var maxW = 800, maxH = 600;
+                var scale = Math.min(maxW / img.width, maxH / img.height, 1);
+                canvas.width = img.width * scale;
+                canvas.height = img.height * scale;
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                crop = {x:0, y:0, w:canvas.width, h:canvas.height};
+                updateCropBox();
+                showInfo();
+            };
+            img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+    function updateCropBox(){
+        var box = document.getElementById('cropBox');
+        box.style.display = 'block';
+        box.style.left = crop.x + 'px';
+        box.style.top = crop.y + 'px';
+        box.style.width = crop.w + 'px';
+        box.style.height = crop.h + 'px';
+    }
+    function applyAspect(){
+        if(!aspectRatio) return;
+        var newW = crop.w;
+        var newH = newW / aspectRatio;
+        if(newH > canvas.height - crop.y){
+            newH = canvas.height - crop.y;
+            newW = newH * aspectRatio;
+        }
+        crop.w = newW;
+        crop.h = newH;
+    }
+    function showInfo(){
+        var html = '<div style="background:#f0f9ff;border:1px solid #bae6fd;padding:10px;border-radius:6px;font-size:13px">';
+        html += '<b>Image:</b> ' + (img ? img.width + ' × ' + img.height + ' px' : 'no image') + '<br>';
+        html += '<b>Crop area:</b> ' + Math.round(crop.w) + ' × ' + Math.round(crop.h) + ' px<br>';
+        html += '<b>Crop aspect:</b> ' + (crop.h > 0 ? (crop.w / crop.h).toFixed(3) : 'N/A');
+        html += '</div>';
+        document.getElementById('result').innerHTML = html;
+    }
+    canvas.addEventListener('mousedown', function(e){
+        if(!img) return;
+        var rect = canvas.getBoundingClientRect();
+        var x = (e.clientX - rect.left) * (canvas.width / rect.width);
+        var y = (e.clientY - rect.top) * (canvas.height / rect.height);
+        dragging = true;
+        dragStart = {x:x, y:y};
+        crop = {x:x, y:y, w:0, h:0};
+    });
+    canvas.addEventListener('mousemove', function(e){
+        if(!dragging) return;
+        var rect = canvas.getBoundingClientRect();
+        var x = (e.clientX - rect.left) * (canvas.width / rect.width);
+        var y = (e.clientY - rect.top) * (canvas.height / rect.height);
+        var nx = Math.min(dragStart.x, x);
+        var ny = Math.min(dragStart.y, y);
+        var nw = Math.abs(x - dragStart.x);
+        var nh = Math.abs(y - dragStart.y);
+        if(aspectRatio){
+            nh = nw / aspectRatio;
+            if(y < dragStart.y) ny = dragStart.y - nh;
+        }
+        crop = {x:Math.max(0,nx), y:Math.max(0,ny), w:Math.min(nw,canvas.width-nx), h:Math.min(nh,canvas.height-ny)};
+        updateCropBox();
+        showInfo();
+    });
+    document.addEventListener('mouseup', function(){ dragging = false; });
+    function applyCrop(){
+        if(!img || crop.w < 1 || crop.h < 1) return;
+        var rect = canvas.getBoundingClientRect();
+        var scaleX = img.width / canvas.width;
+        var scaleY = img.height / canvas.height;
+        var srcX = crop.x * scaleX;
+        var srcY = crop.y * scaleY;
+        var srcW = crop.w * scaleX;
+        var srcH = crop.h * scaleY;
+        var outW = +document.getElementById('outWidth').value || srcW;
+        var outH = +document.getElementById('outHeight').value || srcH;
+        var outCanvas = document.createElement('canvas');
+        outCanvas.width = outW;
+        outCanvas.height = outH;
+        var outCtx = outCanvas.getContext('2d');
+        outCtx.drawImage(img, srcX, srcY, srcW, srcH, 0, 0, outW, outH);
+        var format = document.getElementById('format').value;
+        var quality = +document.getElementById('quality').value / 100;
+        var dataUrl = outCanvas.toDataURL(format, quality);
+        var preview = '<div style="background:#fafafa;padding:12px;border-radius:6px;border:1px solid #e5e7eb;text-align:center">';
+        preview += '<div style="font-size:13px;font-weight:bold;margin-bottom:8px">Cropped result</div>';
+        preview += '<img src="' + dataUrl + '" style="max-width:100%;max-height:400px;border:1px solid #e5e7eb">';
+        preview += '<div style="font-size:12px;color:#666;margin-top:8px">' + outW + ' × ' + outH + ' px • ' + format.split('/')[1].toUpperCase() + '</div>';
+        preview += '</div>';
+        document.getElementById('preview').innerHTML = preview;
+        window._croppedDataUrl = dataUrl;
+        window._croppedFormat = format;
+    }
+    document.getElementById('file').addEventListener('change', function(e){
+        if(e.target.files[0]) loadImage(e.target.files[0]);
+    });
+    document.getElementById('preset').addEventListener('change', function(){
+        var v = this.value;
+        document.getElementById('customAspect').style.display = v === 'custom' ? '' : 'none';
+        if(v === 'free') aspectRatio = null;
+        else if(v === 'custom'){
+            var w = +document.getElementById('aspectW').value;
+            var h = +document.getElementById('aspectH').value;
+            aspectRatio = w / h;
+        } else {
+            aspectRatio = +v;
+        }
+        if(img && aspectRatio){
+            crop.w = Math.min(canvas.width, canvas.height * aspectRatio);
+            crop.h = crop.w / aspectRatio;
+            crop.x = (canvas.width - crop.w) / 2;
+            crop.y = (canvas.height - crop.h) / 2;
+            updateCropBox();
+            showInfo();
+        }
+    });
+    document.getElementById('aspectW').addEventListener('input', function(){
+        if(document.getElementById('preset').value === 'custom'){
+            var w = +this.value;
+            var h = +document.getElementById('aspectH').value;
+            if(w > 0 && h > 0) aspectRatio = w / h;
+        }
+    });
+    document.getElementById('aspectH').addEventListener('input', function(){
+        if(document.getElementById('preset').value === 'custom'){
+            var w = +document.getElementById('aspectW').value;
+            var h = +this.value;
+            if(w > 0 && h > 0) aspectRatio = w / h;
+        }
+    });
+    document.getElementById('format').addEventListener('change', function(){
+        document.getElementById('qualityGroup').style.display = this.value === 'image/png' ? 'none' : '';
+    });
+    document.getElementById('resetBtn').addEventListener('click', function(){
+        if(img){
+            crop = {x:0, y:0, w:canvas.width, h:canvas.height};
+            updateCropBox();
+            showInfo();
+        }
+    });
+    document.getElementById('cropBtn').addEventListener('click', applyCrop);
+    document.getElementById('downloadBtn').addEventListener('click', function(){
+        if(!window._croppedDataUrl){ applyCrop(); }
+        if(window._croppedDataUrl){
+            var link = document.createElement('a');
+            var ext = window._croppedFormat.split('/')[1];
+            if(ext === 'jpeg') ext = 'jpg';
+            link.download = 'cropped-image.' + ext;
+            link.href = window._croppedDataUrl;
+            link.click();
+        }
+    });
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

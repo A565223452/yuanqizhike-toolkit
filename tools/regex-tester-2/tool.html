@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Regex Tester | YuanQiZhiLe Toolkit</title>
+<meta name="description" content="Test regex patterns. JavaScript regex tester with flags. Free regex pattern matcher.">
+<meta name="keywords" content="regex tester, regex, regular expression, pattern matcher, regex tester online">
+<meta property="og:title" content="Regex Tester - Free Online Tool">
+<meta property="og:description" content="Test regex patterns. JavaScript regex tester with flags. Free regex pattern matcher.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Regex Tester</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Test regex patterns. JavaScript regex tester with flags. Free regex pattern matcher.</div>
+    <div class="group"><label>Regular expression</label>
+        <div class="row">
+            <span style="padding:8px;font-family:monospace;background:#f0f0f0;border:1px solid #ddd">/</span>
+            <input type="text" id="pattern" value="\\d+" placeholder="pattern" style="flex:1;padding:8px;font-family:monospace">
+            <span style="padding:8px;font-family:monospace;background:#f0f0f0;border:1px solid #ddd">/</span>
+            <input type="text" id="flags" value="g" placeholder="flags" style="width:60px;padding:8px;font-family:monospace">
+        </div>
+    </div>
+    <div class="group"><label>Test string</label>
+        <textarea id="testStr" style="width:100%;min-height:100px;padding:8px;font-family:monospace;font-size:12px">Phone: 555-1234
+Code: 42
+Year: 2024
+ID: ABC123</textarea>
+    </div>
+    <button id="test" style="width:100%;padding:12px;background:#3b82f6;color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:bold;margin:8px 0">Test Regex</button>
+    <div id="result" style="margin-top:12px"></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">260330663@qq.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">— or describe your need below —</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit →</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Enter regex pattern (without slashes).</li>
+<li>Set flags (g, i, m, s, u, y).</li>
+<li>Enter test string.</li>
+<li>Auto-tests on input change.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">Common patterns: \d+ (numbers), \w+ (words), [a-z]+ (lowercase), ^pattern$ (full match), (group) (capture). Use g for all matches, i for case-insensitive. Test at regex101.com or here. JavaScript uses RegExp object.</p>
+    </div>
+    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'☀️':'🌙';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('260330663@qq.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:260330663@qq.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    function test(){
+        var pattern = document.getElementById('pattern').value;
+        var flags = document.getElementById('flags').value;
+        var testStr = document.getElementById('testStr').value;
+        if(!pattern){ alert('Enter pattern'); return; }
+        var html = '<div style="background:#f0f7ff;padding:14px;border-radius:8px;border-left:4px solid #3b82f6">';
+        try {
+            var regex = new RegExp(pattern, flags);
+            // Find matches
+            var matches = [];
+            var match;
+            if(flags.indexOf('g') !== -1){
+                while((match = regex.exec(testStr)) !== null){
+                    matches.push({ match: match[0], index: match.index, groups: match.slice(1) });
+                    if(match.index === regex.lastIndex) regex.lastIndex++;
+                }
+            } else {
+                match = regex.exec(testStr);
+                if(match){
+                    matches.push({ match: match[0], index: match.index, groups: match.slice(1) });
+                }
+            }
+            // Display matches
+            html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+            html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">';
+            html += '<div style="font-size:12px;font-weight:bold">Matches (' + matches.length + ')</div>';
+            html += '<div style="font-size:11px;color:#10b981">✓ Valid pattern</div>';
+            html += '</div>';
+            if(matches.length > 0){
+                html += '<table style="width:100%;font-size:11px;border-collapse:collapse">';
+                html += '<thead><tr style="background:#3b82f6;color:#fff"><th style="padding:4px">#</th><th style="padding:4px">Match</th><th style="padding:4px">Index</th><th style="padding:4px">Groups</th></tr></thead><tbody>';
+                matches.forEach(function(m, idx){
+                    html += '<tr>';
+                    html += '<td style="padding:4px;border-bottom:1px solid #f0f0f0;color:#999">' + (idx+1) + '</td>';
+                    html += '<td style="padding:4px;border-bottom:1px solid #f0f0f0;font-family:monospace;font-weight:bold">' + escapeHtml(m.match) + '</td>';
+                    html += '<td style="padding:4px;border-bottom:1px solid #f0f0f0;color:#666">' + m.index + '</td>';
+                    html += '<td style="padding:4px;border-bottom:1px solid #f0f0f0;font-family:monospace;color:#999">' + (m.groups.length > 0 ? m.groups.join(', ') : '-') + '</td>';
+                    html += '</tr>';
+                });
+                html += '</tbody></table>';
+            } else {
+                html += '<div style="text-align:center;padding:20px;color:#999">No matches found</div>';
+            }
+            html += '</div>';
+            // Highlighted test string
+            html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+            html += '<div style="font-size:12px;font-weight:bold;margin-bottom:6px">Highlighted output:</div>';
+            var highlighted = testStr;
+            // Build highlighted version
+            var regexForHighlight = new RegExp(pattern, flags.indexOf('g') === -1 ? flags + 'g' : flags);
+            var highlights = [];
+            var m;
+            while((m = regexForHighlight.exec(testStr)) !== null){
+                highlights.push({ start: m.index, end: m.index + m[0].length });
+                if(m.index === regexForHighlight.lastIndex) regexForHighlight.lastIndex++;
+            }
+            var result = '';
+            var lastEnd = 0;
+            highlights.forEach(function(h){
+                result += escapeHtml(testStr.substring(lastEnd, h.start));
+                result += '<mark style="background:#fef08a;padding:1px 2px;border-radius:2px">' + escapeHtml(testStr.substring(h.start, h.end)) + '</mark>';
+                lastEnd = h.end;
+            });
+            result += escapeHtml(testStr.substring(lastEnd));
+            html += '<pre style="background:#fafafa;padding:10px;border-radius:4px;font-size:12px;white-space:pre-wrap;max-height:200px;overflow-y:auto">' + result + '</pre>';
+            html += '</div>';
+            // Pattern explanation
+            html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+            html += '<div style="font-size:12px;font-weight:bold;margin-bottom:6px">Pattern breakdown:</div>';
+            var breakdown = explainPattern(pattern);
+            html += '<table style="width:100%;font-size:11px;border-collapse:collapse">';
+            html += '<thead><tr style="background:#10b981;color:#fff"><th style="padding:4px">Token</th><th style="padding:4px">Meaning</th></tr></thead><tbody>';
+            breakdown.forEach(function(b){
+                html += '<tr><td style="padding:4px;border-bottom:1px solid #f0f0f0;font-family:monospace;font-weight:bold">' + escapeHtml(b.token) + '</td><td style="padding:4px;border-bottom:1px solid #f0f0f0">' + b.meaning + '</td></tr>';
+            });
+            html += '</tbody></table>';
+            html += '</div>';
+            // Code snippet
+            var codeSnippet = '// Test\nvar regex = /' + pattern + '/' + flags + ';\nvar str = ' + JSON.stringify(testStr.substring(0, 50)) + (testStr.length > 50 ? ' + ...' : '') + ';\nvar matches = str.match(regex);\nconsole.log(matches);';
+            html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+            html += '<div style="font-size:12px;font-weight:bold;margin-bottom:6px">JavaScript code:</div>';
+            html += '<pre style="background:#1a1a2e;color:#10b981;padding:10px;border-radius:4px;font-size:11px;overflow-x:auto">' + escapeHtml(codeSnippet) + '</pre>';
+            html += '</div>';
+        } catch(e){
+            html += '<div style="background:#fee2e2;padding:10px;border-radius:6px;margin-bottom:10px">';
+            html += '<div style="font-size:12px;font-weight:bold;color:#ef4444">✗ Invalid pattern</div>';
+            html += '<div style="font-size:11px;color:#ef4444;margin-top:4px">' + escapeHtml(e.message) + '</div>';
+            html += '</div>';
+        }
+        // Flag reference
+        html += '<div style="background:#fef3c7;padding:8px;border-radius:4px;font-size:11px;color:#92400e">';
+        html += '<b>Flags:</b> g (global), i (case-insensitive), m (multiline), s (dotall), u (unicode), y (sticky)<br>';
+        html += '<b>Tokens:</b> \\d (digit), \\w (word), \\s (space), . (any), + (1+), * (0+), ? (0-1), {n,m} (range), ^ (start), $ (end), [] (set), () (group), | (or)';
+        html += '</div>';
+        html += '</div>';
+        document.getElementById('result').innerHTML = html;
+    }
+    function explainPattern(p){
+        var result = [];
+        var tokens = [
+            { regex: /^\\d/, meaning: 'Any digit (0-9)' },
+            { regex: /^\\D/, meaning: 'Any non-digit' },
+            { regex: /^\\w/, meaning: 'Word char (a-z, A-Z, 0-9, _)' },
+            { regex: /^\\W/, meaning: 'Non-word char' },
+            { regex: /^\\s/, meaning: 'Whitespace' },
+            { regex: /^\\S/, meaning: 'Non-whitespace' },
+            { regex: /^\\b/, meaning: 'Word boundary' },
+            { regex: /^\\./, meaning: 'Any character' },
+            { regex: /^\^/, meaning: 'Start of string' },
+            { regex: /^\$/, meaning: 'End of string' },
+            { regex: /^\+/, meaning: '1 or more (greedy)' },
+            { regex: /^\*/, meaning: '0 or more (greedy)' },
+            { regex: /^\?/, meaning: '0 or 1 (optional)' },
+            { regex: /^\[/, meaning: 'Character set start' },
+            { regex: /^\]/, meaning: 'Character set end' },
+            { regex: /^\(/, meaning: 'Group start' },
+            { regex: /^\)/, meaning: 'Group end' },
+            { regex: /^\|/, meaning: 'OR' },
+            { regex: /^\{[0-9,]+\}/, meaning: 'Quantifier {n,m}' },
+            { regex: /^[a-zA-Z0-9]/, meaning: 'Literal character' }
+        ];
+        var remaining = p;
+        while(remaining.length > 0){
+            var matched = false;
+            for(var i = 0; i < tokens.length; i++){
+                var m = remaining.match(tokens[i].regex);
+                if(m){
+                    result.push({ token: m[0], meaning: tokens[i].meaning });
+                    remaining = remaining.substring(m[0].length);
+                    matched = true;
+                    break;
+                }
+            }
+            if(!matched){
+                result.push({ token: remaining[0], meaning: 'Literal character' });
+                remaining = remaining.substring(1);
+            }
+        }
+        return result;
+    }
+    function escapeHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+    ['pattern','flags','testStr'].forEach(function(id){
+        document.getElementById(id).addEventListener('input', test);
+    });
+    document.getElementById('test').addEventListener('click', test);
+    test();
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

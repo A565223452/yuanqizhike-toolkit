@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Midjourney Prompt Builder | YuanQiZhiLe Toolkit</title>
+<meta name="description" content="Build optimized Midjourney prompts with parameters. Add style, aspect ratio, stylize, chaos. Free MJ prompt builder with examples.">
+<meta name="keywords" content="midjourney prompt, mj prompt builder, midjourney parameters, mj v5, midjourney command, ai art">
+<meta property="og:title" content="Midjourney Prompt Builder - Free Online Tool">
+<meta property="og:description" content="Build optimized Midjourney prompts with parameters. Add style, aspect ratio, stylize, chaos. Free MJ prompt builder with examples.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Midjourney Prompt Builder</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Build optimized Midjourney prompts with parameters. Add style, aspect ratio, stylize, chaos. Free MJ prompt builder with examples.</div>
+    <div class="group"><label>Subject / Main idea</label><textarea id="subject" style="width:100%;padding:8px;min-height:60px" placeholder="e.g. a futuristic samurai in neon-lit Tokyo">a majestic dragon perched on a mountain peak</textarea></div>
+    <div class="row">
+        <div class="group"><label>Preset style</label>
+            <select id="preset" style="width:100%;padding:8px">
+                <option value="" selected>None</option>
+                <option value="photorealistic, DSLR, 85mm, sharp focus, natural lighting">Photorealistic</option>
+                <option value="digital art, concept art, trending on artstation, by Greg Rutkowski">Digital Art</option>
+                <option value="anime style, studio ghibli, vibrant, detailed">Anime</option>
+                <option value="oil painting, classical, by Rembrandt, textured">Oil Painting</option>
+                <option value="watercolor, soft, dreamy, flowing">Watercolor</option>
+                <option value="cyberpunk, neon, futuristic, blade runner">Cyberpunk</option>
+                <option value="fantasy art, epic, magical, ethereal">Fantasy</option>
+                <option value="minimalist, clean, simple, flat design">Minimalist</option>
+                <option value="3D render, octane render, cinema4d, ultra detailed">3D Render</option>
+                <option value="vintage, retro, film grain, nostalgic">Vintage</option>
+                <option value="gothic, dark, moody, atmospheric">Gothic</option>
+            </select>
+        </div>
+        <div class="group"><label>Lighting</label>
+            <select id="lighting" style="width:100%;padding:8px">
+                <option value="" selected>Default</option>
+                <option value="golden hour lighting, warm">Golden hour</option>
+                <option value="blue hour, twilight">Blue hour</option>
+                <option value="soft diffused lighting">Soft diffused</option>
+                <option value="dramatic lighting, cinematic">Dramatic</option>
+                <option value="volumetric lighting, god rays">Volumetric</option>
+                <option value="neon lighting, glowing">Neon</option>
+                <option value="moonlight, nighttime">Moonlight</option>
+                <option value="studio lighting, three-point">Studio</option>
+                <option value="backlit, rim lighting">Backlit</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Composition</label>
+            <select id="composition" style="width:100%;padding:8px">
+                <option value="" selected>Default</option>
+                <option value="close-up portrait">Close-up</option>
+                <option value="wide angle, expansive">Wide angle</option>
+                <option value="aerial view, top-down">Aerial</option>
+                <option value="low angle, looking up">Low angle</option>
+                <option value="eye-level shot">Eye-level</option>
+                <option value="macro photography">Macro</option>
+                <option value="symmetrical composition">Symmetrical</option>
+                <option value="Dutch angle, tilted">Dutch angle</option>
+            </select>
+        </div>
+        <div class="group"><label>Mood</label>
+            <select id="mood" style="width:100%;padding:8px">
+                <option value="" selected>Default</option>
+                <option value="epic, grand, dramatic">Epic</option>
+                <option value="serene, peaceful, calm">Serene</option>
+                <option value="mysterious, moody">Mysterious</option>
+                <option value="joyful, vibrant, energetic">Joyful</option>
+                <option value="dark, ominous, foreboding">Dark</option>
+                <option value="whimsical, playful, fun">Whimsical</option>
+                <option value="ethereal, dreamy, otherworldly">Ethereal</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Color palette</label>
+            <select id="colors" style="width:100%;padding:8px">
+                <option value="" selected>Default</option>
+                <option value="warm tones, reds and oranges">Warm</option>
+                <option value="cool tones, blues and purples">Cool</option>
+                <option value="vibrant, saturated colors">Vibrant</option>
+                <option value="muted, desaturated, earthy">Muted</option>
+                <option value="pastel colors, soft">Pastel</option>
+                <option value="monochromatic, single hue">Mono</option>
+                <option value="black and white">B&W</option>
+                <option value="neon colors, glowing">Neon</option>
+            </select>
+        </div>
+        <div class="group"><label>Quality</label>
+            <select id="quality" style="width:100%;padding:8px">
+                <option value="" selected>Default</option>
+                <option value="8k, ultra detailed, hyperrealistic">8K</option>
+                <option value="4k, highly detailed">4K</option>
+                <option value="sharp focus, crisp">Sharp</option>
+                <option value="intricate details, ornate">Intricate</option>
+                <option value="award-winning, masterpiece, professional">Masterpiece</option>
+            </select>
+        </div>
+    </div>
+    <div class="group"><label>Artist references (optional, comma separated)</label><input type="text" id="artists" placeholder="e.g. Greg Rutkowski, Hayao Miyazaki, Banksy" style="width:100%;padding:8px"></div>
+    <div class="group"><label>Extra modifiers (optional)</label><input type="text" id="extra" placeholder="e.g. foggy, atmospheric, particles" style="width:100%;padding:8px"></div>
+    <hr style="margin:14px 0;border:none;border-top:1px solid #ddd">
+    <div style="font-size:14px;font-weight:bold;margin-bottom:8px">Midjourney Parameters</div>
+    <div class="row">
+        <div class="group"><label>Aspect ratio</label>
+            <select id="aspect" style="width:100%;padding:8px">
+                <option value="" selected>Default (1:1)</option>
+                <option value="--ar 1:1">1:1 Square</option>
+                <option value="--ar 16:9">16:9 Wide</option>
+                <option value="--ar 9:16">9:16 Tall</option>
+                <option value="--ar 4:3">4:3</option>
+                <option value="--ar 3:2">3:2 Photo</option>
+                <option value="--ar 2:3">2:3 Portrait</option>
+                <option value="--ar 21:9">21:9 Cinema</option>
+                <option value="--ar 3:1">3:1 Panorama</option>
+            </select>
+        </div>
+        <div class="group"><label>Stylize (--s 0-1000)</label>
+            <select id="stylize" style="width:100%;padding:8px">
+                <option value="" selected>Default (100)</option>
+                <option value="--s 0">0 (Off)</option>
+                <option value="--s 50">50 (Low)</option>
+                <option value="--s 100">100 (Default)</option>
+                <option value="--s 250">250 (Medium)</option>
+                <option value="--s 500">500 (High)</option>
+                <option value="--s 750">750 (Strong)</option>
+                <option value="--s 1000">1000 (Max)</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Chaos (--c 0-100)</label>
+            <select id="chaos" style="width:100%;padding:8px">
+                <option value="" selected>Default (0)</option>
+                <option value="--c 0">0 (Off)</option>
+                <option value="--c 10">10 (Low)</option>
+                <option value="--c 25">25 (Medium)</option>
+                <option value="--c 50">50 (High)</option>
+                <option value="--c 100">100 (Max)</option>
+            </select>
+        </div>
+        <div class="group"><label>Quality (--q)</label>
+            <select id="q" style="width:100%;padding:8px">
+                <option value="" selected>Default</option>
+                <option value="--q 1">1 (Standard)</option>
+                <option value="--q 2">2 (High Detail)</option>
+                <option value="--q 0.5">0.5 (Fast)</option>
+                <option value="--q 0.25">0.25 (Fastest)</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Version</label>
+            <select id="version" style="width:100%;padding:8px">
+                <option value="--v 5.2" selected>v5.2 (Latest)</option>
+                <option value="--v 5.1">v5.1</option>
+                <option value="--v 5">v5</option>
+                <option value="--v 4">v4</option>
+                <option value="--v 6">v6 (Beta)</option>
+                <option value="">Default</option>
+            </select>
+        </div>
+        <div class="group"><label>Tile (seamless)</label>
+            <select id="tile" style="width:100%;padding:8px">
+                <option value="" selected>No</option>
+                <option value="--tile">Yes (repeatable)</option>
+            </select>
+        </div>
+    </div>
+    <button id="generate" style="padding:10px 20px;background:#8b5cf6;color:#fff;border:none;border-radius:6px;cursor:pointer;margin-top:10px">Generate Midjourney Prompt</button>
+    <div id="result" style="margin-top:12px"></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">260330663@qq.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">— or describe your need below —</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit →</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Enter <b>subject</b> (main idea).</li>
+<li>Choose <b>preset style</b> (optional).</li>
+<li>Add <b>lighting</b>, <b>composition</b>, <b>mood</b>, <b>colors</b>.</li>
+<li>List <b>artist references</b> for style direction.</li>
+<li>Set <b>parameters</b>: aspect ratio, stylize, chaos, quality, version.</li>
+<li>Click <b>Generate</b> then copy to Discord.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">Subject first, modifiers second, parameters last. Use --s 750+ for stylized, --c 25-50 for variety. Add --no [thing] to exclude elements. Save winning prompts.</p>
+    </div>
+    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'☀️':'🌙';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('260330663@qq.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:260330663@qq.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    function escapeHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+    function generate(){
+        var subject = document.getElementById('subject').value.trim();
+        var preset = document.getElementById('preset').value;
+        var lighting = document.getElementById('lighting').value;
+        var composition = document.getElementById('composition').value;
+        var mood = document.getElementById('mood').value;
+        var colors = document.getElementById('colors').value;
+        var quality = document.getElementById('quality').value;
+        var artists = document.getElementById('artists').value.trim();
+        var extra = document.getElementById('extra').value.trim();
+        var aspect = document.getElementById('aspect').value;
+        var stylize = document.getElementById('stylize').value;
+        var chaos = document.getElementById('chaos').value;
+        var q = document.getElementById('q').value;
+        var version = document.getElementById('version').value;
+        var tile = document.getElementById('tile').value;
+        if(!subject){ alert('Enter a subject'); return; }
+        var parts = [subject];
+        if(preset) parts.push(preset);
+        if(lighting) parts.push(lighting);
+        if(composition) parts.push(composition);
+        if(mood) parts.push(mood);
+        if(colors) parts.push(colors);
+        if(quality) parts.push(quality);
+        if(artists){
+            var artistList = artists.split(',').map(function(s){ return s.trim(); }).filter(function(s){ return s; });
+            artistList.forEach(function(a){ parts.push('by ' + a); });
+        }
+        if(extra) parts.push(extra);
+        var promptText = parts.join(', ');
+        var params = [aspect, stylize, chaos, q, version, tile].filter(function(p){ return p; });
+        var fullPrompt = promptText + (params.length ? ' ' + params.join(' ') : '');
+        var html = '<div style="background:#ede9fe;padding:14px;border-radius:8px;border-left:4px solid #8b5cf6">';
+        html += '<div style="text-align:center;margin-bottom:14px">';
+        html += '<div style="font-size:13px;color:#666">Midjourney Prompt</div>';
+        html += '<div style="font-size:14px;color:#666">' + fullPrompt.length + ' chars · ' + (params.length) + ' params</div>';
+        html += '</div>';
+        html += '<div style="background:#fff;padding:14px;border-radius:6px;margin-bottom:10px;font-family:monospace;font-size:13px;line-height:1.6;white-space:pre-wrap">' + escapeHtml(fullPrompt) + '</div>';
+        html += '<div style="display:flex;gap:8px;flex-wrap:wrap">';
+        html += '<button id="copyBtn" style="flex:1;padding:10px;background:#8b5cf6;color:#fff;border:none;border-radius:6px;cursor:pointer">Copy Prompt</button>';
+        html += '<button id="downloadBtn" style="flex:1;padding:10px;background:#10b981;color:#fff;border:none;border-radius:6px;cursor:pointer">Download .txt</button>';
+        html += '</div>';
+        // Variations
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-top:10px">';
+        html += '<div style="font-size:13px;font-weight:bold;color:#8b5cf6;margin-bottom:6px">Style Variations</div>';
+        var variations = [
+            { label: 'Cinematic', suffix: 'cinematic, film still, anamorphic, shallow depth of field, color graded' },
+            { label: 'Photoreal', suffix: 'photorealistic, DSLR, 85mm, f/1.8, sharp focus, natural' },
+            { label: 'Painterly', suffix: 'painterly, artistic, expressive brushstrokes, impasto' },
+            { label: 'Epic', suffix: 'epic, dramatic, grand scale, hero shot, awe-inspiring' },
+            { label: 'Dreamy', suffix: 'dreamy, ethereal, soft focus, bokeh, magical' }
+        ];
+        variations.forEach(function(v, i){
+            html += '<button data-suffix="' + i + '" style="display:inline-block;margin:2px;padding:6px 10px;background:#f3e8ff;color:#8b5cf6;border:1px solid #8b5cf6;border-radius:4px;cursor:pointer;font-size:11px">' + v.label + '</button>';
+        });
+        html += '</div>';
+        // Parameter reference
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-top:10px">';
+        html += '<div style="font-size:13px;font-weight:bold;color:#8b5cf6;margin-bottom:6px">Parameter Reference</div>';
+        html += '<table style="width:100%;font-size:11px;border-collapse:collapse">';
+        html += '<tr style="background:#f3f4f6;border-bottom:1px solid #ddd"><th style="padding:4px;text-align:left">Param</th><th>Range</th><th>Effect</th></tr>';
+        html += '<tr style="border-bottom:1px solid #eee"><td style="padding:4px"><code>--ar</code></td><td>1:1 to 21:9</td><td>Aspect ratio</td></tr>';
+        html += '<tr style="border-bottom:1px solid #eee"><td style="padding:4px"><code>--s</code></td><td>0-1000</td><td>Artistic stylization</td></tr>';
+        html += '<tr style="border-bottom:1px solid #eee"><td style="padding:4px"><code>--c</code></td><td>0-100</td><td>Variety/unpredictability</td></tr>';
+        html += '<tr style="border-bottom:1px solid #eee"><td style="padding:4px"><code>--q</code></td><td>0.25-2</td><td>Detail (GPU time)</td></tr>';
+        html += '<tr style="border-bottom:1px solid #eee"><td style="padding:4px"><code>--v</code></td><td>4-6</td><td>Model version</td></tr>';
+        html += '<tr style="border-bottom:1px solid #eee"><td style="padding:4px"><code>--tile</code></td><td>-</td><td>Seamless pattern</td></tr>';
+        html += '<tr><td style="padding:4px"><code>--no</code></td><td>-</td><td>Negative prompt</td></tr>';
+        html += '</table>';
+        html += '</div>';
+        html += '<div style="background:#d1fae5;padding:10px;border-radius:6px;margin-top:10px">';
+        html += '<div style="font-size:13px;font-weight:bold;color:#065f46;margin-bottom:4px">Midjourney Tips</div>';
+        html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Subject first, then modifiers, then params</div>';
+        html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Use "by [artist]" for specific styles</div>';
+        html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Lighting > adjectives for mood</div>';
+        html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- --s 750-1000 for stylized, --s 0-100 for control</div>';
+        html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- --c 25-50 for creative exploration</div>';
+        html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Add --no [element] to exclude things</div>';
+        html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Iterate: V1-V4 to vary, U1-U4 to upscale</div>';
+        html += '</div>';
+        html += '<div style="background:#fef3c7;padding:10px;border-radius:6px;margin-top:10px;font-size:12px;color:#92400e">⚠ Midjourney v6 changes some syntax. For v6, use natural language and avoid heavy prompt engineering. Test prompts in /imagine.</div>';
+        html += '<div style="font-size:11px;color:#999;margin-top:8px">Save prompts that work for reuse. Midjourney prompts are an art - experiment with parameters and observe results.</div>';
+        html += '</div>';
+        document.getElementById('result').innerHTML = html;
+        document.getElementById('copyBtn').addEventListener('click', function(){
+            navigator.clipboard.writeText(fullPrompt).then(function(){ alert('Copied!'); });
+        });
+        document.getElementById('downloadBtn').addEventListener('click', function(){
+            var blob = new Blob([fullPrompt], { type: 'text/plain' });
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = 'midjourney_prompt.txt';
+            a.click();
+        });
+        document.querySelectorAll('[data-suffix]').forEach(function(btn){
+            btn.addEventListener('click', function(){
+                var idx = parseInt(this.getAttribute('data-suffix'));
+                var newPrompt = promptText + ', ' + variations[idx].suffix + (params.length ? ' ' + params.join(' ') : '');
+                navigator.clipboard.writeText(newPrompt).then(function(){
+                    btn.style.background = '#10b981';
+                    btn.style.color = '#fff';
+                    setTimeout(function(){ btn.style.background = '#f3e8ff'; btn.style.color = '#8b5cf6'; }, 1500);
+                });
+            });
+        });
+    }
+    document.getElementById('generate').addEventListener('click', generate);
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

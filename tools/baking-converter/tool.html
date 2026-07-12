@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baking Ingredient Converter | YuanQiZhiLe Toolkit</title>
+<meta name="description" content="Convert baking measurements. Cups to grams, volume to weight. Free baking converter.">
+<meta name="keywords" content="baking converter, cups to grams, flour weight, butter conversion, baking measurements">
+<meta property="og:title" content="Baking Ingredient Converter - Free Online Tool">
+<meta property="og:description" content="Convert baking measurements. Cups to grams, volume to weight. Free baking converter.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Baking Ingredient Converter</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Convert baking measurements. Cups to grams, volume to weight. Free baking converter.</div>
+    <div class="group"><label>Ingredient</label>
+        <select id="ingredient" style="width:100%;padding:8px">
+            <option value="flour" selected>All-purpose flour</option>
+            <option value="bread-flour">Bread flour</option>
+            <option value="cake-flour">Cake flour</option>
+            <option value="whole-wheat">Whole wheat flour</option>
+            <option value="sugar">Granulated sugar</option>
+            <option value="brown-sugar">Brown sugar (packed)</option>
+            <option value="powdered">Powdered sugar</option>
+            <option value="butter">Butter</option>
+            <option value="oil">Vegetable oil</option>
+            <option value="milk">Milk</option>
+            <option value="cream">Heavy cream</option>
+            <option value="cocoa">Cocoa powder</option>
+            <option value="honey">Honey</option>
+            <option value="oats">Oats (rolled)</option>
+            <option value="rice">Rice (uncooked)</option>
+            <option value="almond">Almond flour</option>
+            <option value="yeast">Yeast (active dry)</option>
+            <option value="salt">Salt</option>
+        </select>
+    </div>
+    <div class="row">
+        <div class="group"><label>Amount</label><input type="number" id="amount" value="1" min="0" step="0.01" style="width:100%;padding:8px"></div>
+        <div class="group"><label>From unit</label>
+            <select id="fromUnit" style="width:100%;padding:8px">
+                <option value="cup" selected>cup</option>
+                <option value="tbsp">tablespoon</option>
+                <option value="tsp">teaspoon</option>
+                <option value="g">gram</option>
+                <option value="kg">kilogram</option>
+                <option value="oz">ounce</option>
+                <option value="lb">pound</option>
+                <option value="ml">milliliter</option>
+                <option value="L">liter</option>
+            </select>
+        </div>
+    </div>
+    <button id="calc" style="width:100%;padding:12px;background:#3b82f6;color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:bold;margin:8px 0">Convert</button>
+    <div id="result" style="margin-top:12px"></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">260330663@qq.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">— or describe your need below —</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit →</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Select ingredient (density varies).</li>
+<li>Enter amount and select unit.</li>
+<li>Click <b>Convert</b>.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">Weight varies by ingredient: 1 cup flour = 120g, 1 cup sugar = 200g, 1 cup butter = 227g. Professional bakers use weight (grams) for accuracy. Spoon & level flour (don't scoop). Pack brown sugar. 1 cup = 16 tbsp = 48 tsp. 1 oz = 28.35g.</p>
+    </div>
+    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'☀️':'🌙';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('260330663@qq.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:260330663@qq.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    // Density (g per cup) for each ingredient
+    var densities = {
+        'flour': 120, 'bread-flour': 127, 'cake-flour': 114, 'whole-wheat': 120,
+        'sugar': 200, 'brown-sugar': 220, 'powdered': 120, 'butter': 227,
+        'oil': 218, 'milk': 240, 'cream': 238, 'cocoa': 85,
+        'honey': 340, 'oats': 80, 'rice': 185, 'almond': 96,
+        'yeast': 160, 'salt': 273
+    };
+    var ingredientNames = {
+        'flour': 'All-purpose flour', 'bread-flour': 'Bread flour', 'cake-flour': 'Cake flour',
+        'whole-wheat': 'Whole wheat flour', 'sugar': 'Granulated sugar', 'brown-sugar': 'Brown sugar',
+        'powdered': 'Powdered sugar', 'butter': 'Butter', 'oil': 'Vegetable oil',
+        'milk': 'Milk', 'cream': 'Heavy cream', 'cocoa': 'Cocoa powder',
+        'honey': 'Honey', 'oats': 'Rolled oats', 'rice': 'Rice',
+        'almond': 'Almond flour', 'yeast': 'Yeast', 'salt': 'Salt'
+    };
+    function calc(){
+        var ingredient = document.getElementById('ingredient').value;
+        var amount = parseFloat(document.getElementById('amount').value);
+        var fromUnit = document.getElementById('fromUnit').value;
+        if(!amount){ alert('Enter amount'); return; }
+        var gramsPerCup = densities[ingredient];
+        // Convert to grams first
+        var grams;
+        switch(fromUnit){
+            case 'cup': grams = amount * gramsPerCup; break;
+            case 'tbsp': grams = amount * gramsPerCup / 16; break;
+            case 'tsp': grams = amount * gramsPerCup / 48; break;
+            case 'g': grams = amount; break;
+            case 'kg': grams = amount * 1000; break;
+            case 'oz': grams = amount * 28.3495; break;
+            case 'lb': grams = amount * 453.592; break;
+            case 'ml': grams = amount * gramsPerCup / 240; break;
+            case 'L': grams = amount * gramsPerCup / 0.24; break;
+            default: grams = amount;
+        }
+        // Convert grams to all units
+        var results = {
+            cup: grams / gramsPerCup,
+            tbsp: grams / (gramsPerCup / 16),
+            tsp: grams / (gramsPerCup / 48),
+            g: grams,
+            kg: grams / 1000,
+            oz: grams / 28.3495,
+            lb: grams / 453.592,
+            ml: grams * 240 / gramsPerCup,
+            L: grams * 0.24 / gramsPerCup
+        };
+        var html = '<div style="background:#f0f7ff;padding:14px;border-radius:8px;border-left:4px solid #3b82f6">';
+        html += '<div style="text-align:center;margin-bottom:14px">';
+        html += '<div style="font-size:13px;color:#666">' + ingredientNames[ingredient] + '</div>';
+        html += '<div style="font-size:24px;font-weight:bold;color:#3b82f6">' + amount + ' ' + fromUnit + '</div>';
+        html += '<div style="font-size:14px;color:#666;margin-top:4px">= ' + grams.toFixed(1) + ' grams</div>';
+        html += '</div>';
+        // All conversions
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+        html += '<div style="font-size:12px;font-weight:bold;margin-bottom:6px">All conversions:</div>';
+        html += '<table style="width:100%;font-size:13px;border-collapse:collapse">';
+        var unitLabels = {
+            cup: 'cups', tbsp: 'tablespoons', tsp: 'teaspoons',
+            g: 'grams', kg: 'kilograms', oz: 'ounces',
+            lb: 'pounds', ml: 'milliliters', L: 'liters'
+        };
+        Object.keys(results).forEach(function(u){
+            if(u === fromUnit) return;
+            var val = results[u];
+            var display;
+            if(val >= 100) display = val.toFixed(0);
+            else if(val >= 1) display = val.toFixed(2);
+            else display = val.toFixed(3);
+            html += '<tr><td style="padding:6px;border-bottom:1px solid #f0f0f0">' + display + '</td><td style="padding:6px;text-align:right;border-bottom:1px solid #f0f0f0;color:#666">' + unitLabels[u] + '</td></tr>';
+        });
+        html += '</table>';
+        html += '</div>';
+        // Volume vs weight
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+        html += '<div style="font-size:12px;font-weight:bold;margin-bottom:6px">Why weight matters:</div>';
+        html += '<div style="font-size:12px;padding:4px 0">1 cup flour: <b>120g</b> (sifted: ~100g)</div>';
+        html += '<div style="font-size:12px;padding:4px 0">1 cup flour (packed): <b>~140g</b></div>';
+        html += '<div style="font-size:12px;padding:4px 0">Difference: up to <b>40g (33%)</b></div>';
+        html += '<div style="font-size:11px;color:#666;margin-top:4px">Scooping packs flour; spoon & level for accuracy</div>';
+        html += '</div>';
+        // Quick reference
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+        html += '<div style="font-size:12px;font-weight:bold;margin-bottom:6px">Quick reference:</div>';
+        html += '<table style="width:100%;font-size:11px;border-collapse:collapse">';
+        html += '<tr style="background:#3b82f6;color:#fff"><th style="padding:4px">Ingredient</th><th style="padding:4px">1 cup (g)</th><th style="padding:4px">1 tbsp (g)</th></tr>';
+        var common = ['flour', 'sugar', 'brown-sugar', 'butter', 'cocoa', 'oats'];
+        common.forEach(function(k){
+            html += '<tr><td style="padding:4px;border-bottom:1px solid #f0f0f0">' + ingredientNames[k] + '</td><td style="padding:4px;text-align:center;border-bottom:1px solid #f0f0f0">' + densities[k] + '</td><td style="padding:4px;text-align:center;border-bottom:1px solid #f0f0f0">' + (densities[k]/16).toFixed(1) + '</td></tr>';
+        });
+        html += '</table>';
+        html += '</div>';
+        html += '<div style="background:#fef3c7;padding:8px;border-radius:4px;font-size:11px;color:#92400e">';
+        html += '<b>Baking tips:</b><br>';
+        html += '• Use weight (grams) for accuracy<br>';
+        html += '• 1 cup flour ≠ 1 cup sugar (different weights)<br>';
+        html += '• Spoon & level flour; don\'t scoop<br>';
+        html += '• Brown sugar: pack firmly<br>';
+        html += '• Room temp ingredients mix better';
+        html += '</div>';
+        html += '</div>';
+        document.getElementById('result').innerHTML = html;
+    }
+    ['ingredient','fromUnit'].forEach(function(id){ document.getElementById(id).addEventListener('change', calc); });
+    document.getElementById('amount').addEventListener('input', calc);
+    document.getElementById('calc').addEventListener('click', calc);
+    calc();
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

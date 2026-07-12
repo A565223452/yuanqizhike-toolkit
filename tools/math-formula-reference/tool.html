@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Math Formula Reference | YuanQiZhiLe Toolkit</title>
+<meta name="description" content="Quick reference for common math formulas: algebra, geometry, trigonometry, calculus, and statistics. Free online math formula cheat sheet for students.">
+<meta name="keywords" content="math formulas, algebra formulas, geometry formulas, trigonometry, calculus formulas, math reference, math cheat sheet">
+<meta property="og:title" content="Math Formula Reference - Free Online Tool">
+<meta property="og:description" content="Quick reference for common math formulas: algebra, geometry, trigonometry, calculus, and statistics. Free online math formula cheat sheet for students.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Math Formula Reference</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Quick reference for common math formulas: algebra, geometry, trigonometry, calculus, and statistics. Free online math formula cheat sheet for students.</div>
+    <div class="group">
+        <label>Category</label>
+        <select id="cat" style="width:100%;padding:8px">
+            <option value="algebra">Algebra</option>
+            <option value="geometry">Geometry</option>
+            <option value="trig">Trigonometry</option>
+            <option value="calculus">Calculus</option>
+            <option value="stats">Statistics</option>
+            <option value="logexp">Logarithms & Exponents</option>
+            <option value="series">Series & Sequences</option>
+        </select>
+    </div>
+    <div class="result-box" id="result" style="margin-top:12px"></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">260330663@qq.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">— or describe your need below —</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit →</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Select a category: Algebra, Geometry, Trigonometry, Calculus, Statistics, Logs, or Series.</li>
+<li>Browse the formulas with descriptions.</li>
+<li>Use as a quick reference for homework and exams.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">This is a reference tool, not a calculator. For calculations, use the specific calculators (quadratic solver, statistics, etc.). All formulas are standard mathematical notation.</p>
+    </div>
+    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'☀️':'🌙';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('260330663@qq.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:260330663@qq.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    var formulas = {
+        algebra: [
+            {name:'Quadratic Formula', formula:'x = (-b ± √(b² - 4ac)) / 2a', desc:'Solves ax² + bx + c = 0'},
+            {name:'Discriminant', formula:'Δ = b² - 4ac', desc:'Δ > 0: 2 real roots; Δ = 0: 1 root; Δ < 0: complex roots'},
+            {name:'Linear Equation', formula:'y = mx + b', desc:'m = slope, b = y-intercept'},
+            {name:'Distance', formula:'d = √((x₂-x₁)² + (y₂-y₁)²)', desc:'Distance between two points'},
+            {name:'Midpoint', formula:'M = ((x₁+x₂)/2, (y₁+y₂)/2)', desc:'Midpoint of a line segment'},
+            {name:'Slope', formula:'m = (y₂-y₁)/(x₂-x₁)', desc:'Slope between two points'},
+            {name:'Point-Slope', formula:'y - y₁ = m(x - x₁)', desc:'Line through point with slope'},
+            {name:'Difference of Squares', formula:'a² - b² = (a+b)(a-b)', desc:'Factoring pattern'},
+            {name:'Square of Sum', formula:'(a+b)² = a² + 2ab + b²', desc:'Binomial expansion'},
+            {name:'Square of Difference', formula:'(a-b)² = a² - 2ab + b²', desc:'Binomial expansion'},
+            {name:'Cube of Sum', formula:'(a+b)³ = a³ + 3a²b + 3ab² + b³', desc:'Binomial expansion'},
+            {name:'Sum of Cubes', formula:'a³ + b³ = (a+b)(a² - ab + b²)', desc:'Factoring pattern'},
+            {name:'Difference of Cubes', formula:'a³ - b³ = (a-b)(a² + ab + b²)', desc:'Factoring pattern'}
+        ],
+        geometry: [
+            {name:'Circle Area', formula:'A = πr²', desc:'r = radius'},
+            {name:'Circle Circumference', formula:'C = 2πr = πd', desc:'d = diameter'},
+            {name:'Triangle Area', formula:'A = ½bh', desc:'b = base, h = height'},
+            {name:'Triangle (Heron)', formula:'A = √(s(s-a)(s-b)(s-c)), s = (a+b+c)/2', desc:'For three sides known'},
+            {name:'Rectangle Area', formula:'A = lw', desc:'l = length, w = width'},
+            {name:'Rectangle Perimeter', formula:'P = 2(l+w)', desc:''},
+            {name:'Parallelogram Area', formula:'A = bh', desc:''},
+            {name:'Trapezoid Area', formula:'A = ½h(b₁+b₂)', desc:''},
+            {name:'Sphere Volume', formula:'V = (4/3)πr³', desc:''},
+            {name:'Sphere Surface Area', formula:'SA = 4πr²', desc:''},
+            {name:'Cylinder Volume', formula:'V = πr²h', desc:''},
+            {name:'Cylinder Surface Area', formula:'SA = 2πr² + 2πrh', desc:''},
+            {name:'Cone Volume', formula:'V = (1/3)πr²h', desc:''},
+            {name:'Cube Volume', formula:'V = s³', desc:''},
+            {name:'Pythagorean Theorem', formula:'a² + b² = c²', desc:'Right triangles only'}
+        ],
+        trig: [
+            {name:'Sine', formula:'sin(θ) = opposite/hypotenuse', desc:'SOH'},
+            {name:'Cosine', formula:'cos(θ) = adjacent/hypotenuse', desc:'CAH'},
+            {name:'Tangent', formula:'tan(θ) = opposite/adjacent', desc:'TOA'},
+            {name:'Pythagorean Identity', formula:'sin²(θ) + cos²(θ) = 1', desc:''},
+            {name:'Other Identity', formula:'1 + tan²(θ) = sec²(θ)', desc:''},
+            {name:'Sum Formula', formula:'sin(A+B) = sinA·cosB + cosA·sinB', desc:''},
+            {name:'Sum Formula', formula:'cos(A+B) = cosA·cosB - sinA·sinB', desc:''},
+            {name:'Double Angle', formula:'sin(2θ) = 2sin(θ)cos(θ)', desc:''},
+            {name:'Double Angle', formula:'cos(2θ) = cos²(θ) - sin²(θ)', desc:''},
+            {name:'Half Angle', formula:'sin(θ/2) = ±√((1-cosθ)/2)', desc:''},
+            {name:'Law of Sines', formula:'a/sinA = b/sinB = c/sinC', desc:''},
+            {name:'Law of Cosines', formula:'c² = a² + b² - 2ab·cos(C)', desc:''},
+            {name:'Special Values', formula:'sin(30°)=½, sin(45°)=√2/2, sin(60°)=√3/2', desc:''}
+        ],
+        calculus: [
+            {name:'Power Rule', formula:'d/dx[xⁿ] = nx^(n-1)', desc:'Differentiation'},
+            {name:'Sum Rule', formula:'d/dx[f+g] = f\' + g\'', desc:''},
+            {name:'Product Rule', formula:'d/dx[fg] = f\'g + fg\'', desc:''},
+            {name:'Quotient Rule', formula:'d/dx[f/g] = (f\'g - fg\')/g²', desc:''},
+            {name:'Chain Rule', formula:'d/dx[f(g(x))] = f\'(g(x))·g\'(x)', desc:''},
+            {name:'Exponential', formula:'d/dx[eˣ] = eˣ', desc:''},
+            {name:'Natural Log', formula:'d/dx[ln(x)] = 1/x', desc:''},
+            {name:'Sine Derivative', formula:'d/dx[sin(x)] = cos(x)', desc:''},
+            {name:'Cosine Derivative', formula:'d/dx[cos(x)] = -sin(x)', desc:''},
+            {name:'Power Integral', formula:'∫xⁿdx = x^(n+1)/(n+1) + C, n ≠ -1', desc:''},
+            {name:'Exponential Integral', formula:'∫eˣdx = eˣ + C', desc:''},
+            {name:'Log Integral', formula:'∫(1/x)dx = ln|x| + C', desc:''},
+            {name:'Sin Integral', formula:'∫sin(x)dx = -cos(x) + C', desc:''},
+            {name:'Fundamental Theorem', formula:'∫[a to b] f(x)dx = F(b) - F(a)', desc:'F\'(x) = f(x)'}
+        ],
+        stats: [
+            {name:'Mean', formula:'μ = (Σx)/n', desc:'Arithmetic average'},
+            {name:'Median', formula:'middle value of sorted data', desc:''},
+            {name:'Mode', formula:'most frequent value', desc:''},
+            {name:'Range', formula:'max - min', desc:''},
+            {name:'Variance (pop)', formula:'σ² = Σ(x-μ)²/n', desc:''},
+            {name:'Standard Deviation', formula:'σ = √(σ²)', desc:''},
+            {name:'Sample Variance', formula:'s² = Σ(x-x̄)²/(n-1)', desc:''},
+            {name:'Z-Score', formula:'z = (x - μ)/σ', desc:''},
+            {name:'Quartile', formula:'Q1 = 25th percentile, Q3 = 75th', desc:''},
+            {name:'IQR', formula:'IQR = Q3 - Q1', desc:''},
+            {name:'Combination', formula:'C(n,r) = n!/(r!(n-r)!)', desc:''},
+            {name:'Permutation', formula:'P(n,r) = n!/(n-r)!', desc:''},
+            {name:'Probability', formula:'P(A) = favorable/total', desc:''},
+            {name:'Bayes Theorem', formula:'P(A|B) = P(B|A)P(A)/P(B)', desc:''}
+        ],
+        logexp: [
+            {name:'Definition', formula:'y = aˣ ⟺ logₐ(y) = x', desc:''},
+            {name:'Product Rule', formula:'logₐ(xy) = logₐ(x) + logₐ(y)', desc:''},
+            {name:'Quotient Rule', formula:'logₐ(x/y) = logₐ(x) - logₐ(y)', desc:''},
+            {name:'Power Rule', formula:'logₐ(xⁿ) = n·logₐ(x)', desc:''},
+            {name:'Change of Base', formula:'logₐ(x) = log(x)/log(a)', desc:''},
+            {name:'Natural Log', formula:'ln(x) = logₑ(x), e ≈ 2.71828', desc:''},
+            {name:'Common Log', formula:'log(x) = log₁₀(x)', desc:''},
+            {name:'Exponent Rules', formula:'aˣ · aʸ = a^(x+y)', desc:''},
+            {name:'Exponent Rules', formula:'(aˣ)ʸ = a^(xy)', desc:''},
+            {name:'Exponent Rules', formula:'a⁰ = 1', desc:''},
+            {name:'Negative Exp', formula:'a⁻ⁿ = 1/aⁿ', desc:''},
+            {name:'Fractional Exp', formula:'a^(1/n) = ⁿ√a', desc:''}
+        ],
+        series: [
+            {name:'Arithmetic Seq', formula:'aₙ = a₁ + (n-1)d', desc:'d = common difference'},
+            {name:'Arithmetic Sum', formula:'Sₙ = n/2 · (a₁ + aₙ)', desc:''},
+            {name:'Arithmetic Sum', formula:'Sₙ = n/2 · [2a₁ + (n-1)d]', desc:''},
+            {name:'Geometric Seq', formula:'aₙ = a₁ · r^(n-1)', desc:'r = common ratio'},
+            {name:'Geometric Sum', formula:'Sₙ = a₁(1-rⁿ)/(1-r), r ≠ 1', desc:''},
+            {name:'Infinite Geom', formula:'S = a₁/(1-r), |r| < 1', desc:''},
+            {name:'Fibonacci', formula:'Fₙ = Fₙ₋₁ + Fₙ₋₂, F₁=F₂=1', desc:''},
+            {name:'Factorial', formula:'n! = n·(n-1)·...·1', desc:''},
+            {name:'Sum of Integers', formula:'1+2+...+n = n(n+1)/2', desc:''},
+            {name:'Sum of Squares', formula:'1²+2²+...+n² = n(n+1)(2n+1)/6', desc:''},
+            {name:'Sum of Cubes', formula:'1³+...+n³ = [n(n+1)/2]²', desc:''},
+            {name:'Taylor Series', formula:'f(x) = Σ f⁽ⁿ⁾(a)(x-a)ⁿ/n!', desc:''},
+            {name:'e Series', formula:'e = 1 + 1/1! + 1/2! + 1/3! + ...', desc:''}
+        ]
+    };
+    function render(){
+        var cat = document.getElementById('cat').value;
+        var list = formulas[cat];
+        var html = '<div style="background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;padding:16px;border-radius:8px;margin-bottom:12px"><b style="font-size:18px">' + cat.charAt(0).toUpperCase() + cat.slice(1) + ' Formulas</b> (' + list.length + ')</div>';
+        list.forEach(function(f, i){
+            var bg = i % 2 === 0 ? '#f9fafb' : '#fff';
+            html += '<div style="background:' + bg + ';padding:12px;border-radius:6px;margin-bottom:8px;border-left:4px solid #6366f1">';
+            html += '<div style="font-weight:bold;color:#374151;font-size:15px">' + (i+1) + '. ' + f.name + '</div>';
+            html += '<div style="font-family:monospace;font-size:16px;color:#6366f1;margin:6px 0;padding:8px;background:#1e293b;color:#10b981;border-radius:4px">' + f.formula + '</div>';
+            if(f.desc) html += '<div style="font-size:13px;color:#666">' + f.desc + '</div>';
+            html += '</div>';
+        });
+        document.getElementById('result').innerHTML = html;
+    }
+    document.getElementById('cat').addEventListener('change', render);
+    render();
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

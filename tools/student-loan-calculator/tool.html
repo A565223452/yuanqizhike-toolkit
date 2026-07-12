@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Loan Calculator | YuanQiZhiLe Toolkit</title>
+<meta name="description" content="Calculate student loan monthly payments, total interest, and amortization schedule. Supports US federal and private loans. Free student loan calculator.">
+<meta name="keywords" content="student loan calculator, college loan, federal loan, fafsa, monthly payment, amortization, student debt, education loan">
+<meta property="og:title" content="Student Loan Calculator - Free Online Tool">
+<meta property="og:description" content="Calculate student loan monthly payments, total interest, and amortization schedule. Supports US federal and private loans. Free student loan calculator.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Student Loan Calculator</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Calculate student loan monthly payments, total interest, and amortization schedule. Supports US federal and private loans. Free student loan calculator.</div>
+    <div class="group">
+        <label>Loan type</label>
+        <select id="loanType" style="width:100%;padding:8px">
+            <option value="subsidized">Direct Subsidized (Undergrad)</option>
+            <option value="unsubsidized">Direct Unsubsidized (Undergrad/Grad)</option>
+            <option value="plus-grad">Grad PLUS Loan</option>
+            <option value="plus-parent">Parent PLUS Loan</option>
+            <option value="private">Private loan</option>
+            <option value="custom">Custom rate</option>
+        </select>
+    </div>
+    <div class="row">
+        <div class="group">
+            <label>Loan amount ($)</label>
+            <input type="number" id="principal" value="30000" min="0" step="100" style="width:100%;padding:8px">
+        </div>
+        <div class="group">
+            <label>Interest rate (%)</label>
+            <input type="number" id="rate" value="5.5" min="0" step="0.01" style="width:100%;padding:8px">
+        </div>
+    </div>
+    <div class="row">
+        <div class="group">
+            <label>Repayment term</label>
+            <select id="years" style="width:100%;padding:8px">
+                <option value="5">5 years (aggressive)</option>
+                <option value="10" selected>10 years (standard)</option>
+                <option value="15">15 years (extended)</option>
+                <option value="20">20 years (extended)</option>
+                <option value="25">25 years (extended grad)</option>
+            </select>
+        </div>
+        <div class="group">
+            <label>Grace period (months)</label>
+            <input type="number" id="grace" value="6" min="0" max="36" style="width:100%;padding:8px">
+        </div>
+    </div>
+    <div class="group">
+        <label>Extra monthly payment ($)</label>
+        <input type="number" id="extra" value="0" min="0" step="10" style="width:100%;padding:8px">
+    </div>
+    <div class="result-box" id="result"></div>
+    <details style="margin-top:12px"><summary style="cursor:pointer;padding:8px;background:#f3f4f6;border-radius:4px;font-weight:bold">Amortization schedule (first 24 months)</summary><div id="schedule" style="margin-top:8px"></div></details>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">260330663@qq.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">— or describe your need below —</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit →</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Select the <b>loan type</b> (auto-fills current federal rates).</li>
+<li>Enter the <b>loan amount</b>.</li>
+<li>Adjust the <b>interest rate</b> if needed.</li>
+<li>Choose the <b>repayment term</b> (5-25 years).</li>
+<li>Enter <b>extra monthly payment</b> to see savings.</li>
+<li>Expand the schedule to see month-by-month breakdown.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">US federal loan rates shown for 2024-25 academic year. Private loans vary widely. Consult your loan servicer for exact terms. This calculator provides estimates only.</p>
+    </div>
+    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'☀️':'🌙';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('260330663@qq.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:260330663@qq.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    var loanRates = {
+        'subsidized': 5.50,
+        'unsubsidized': 5.50,
+        'plus-grad': 9.08,
+        'plus-parent': 9.08,
+        'private': 7.0,
+        'custom': 5.5
+    };
+    function calc(){
+        var principal = +document.getElementById('principal').value;
+        var rate = +document.getElementById('rate').value;
+        var years = +document.getElementById('years').value;
+        var grace = +document.getElementById('grace').value;
+        var extra = +document.getElementById('extra').value || 0;
+        if(!principal || principal < 0 || !rate || rate < 0){
+            document.getElementById('result').innerHTML = '<div style="color:#666;text-align:center;padding:12px">Enter valid loan amount and rate</div>';
+            return;
+        }
+        var months = years * 12;
+        var monthlyRate = rate / 100 / 12;
+        var graceInterest = 0;
+        if(grace > 0 && monthlyRate > 0){
+            graceInterest = principal * monthlyRate * grace;
+        }
+        var balance = principal + graceInterest;
+        var payment = 0;
+        if(monthlyRate === 0){
+            payment = balance / months;
+        } else {
+            payment = balance * (monthlyRate * Math.pow(1 + monthlyRate, months)) / (Math.pow(1 + monthlyRate, months) - 1);
+        }
+        var totalPayment = payment + extra;
+        var schedule = [];
+        var bal = balance;
+        var totalInterest = 0;
+        var actualMonths = 0;
+        for(var i = 1; i <= months * 2; i++){
+            if(bal <= 0) break;
+            var interest = bal * monthlyRate;
+            var principalPart = totalPayment - interest;
+            if(principalPart > bal){
+                principalPart = bal;
+                totalPayment = principalPart + interest;
+            }
+            bal -= principalPart;
+            totalInterest += interest;
+            actualMonths = i;
+            if(i <= 24){
+                schedule.push({ month: i, payment: totalPayment, interest: interest, principal: principalPart, balance: bal > 0 ? bal : 0 });
+            }
+        }
+        var savedInterest = 0;
+        var savedMonths = months - actualMonths;
+        if(extra > 0 && savedMonths > 0){
+            var originalInterest = (payment * months) - balance;
+            savedInterest = originalInterest - totalInterest;
+        }
+        var html = '<div style="background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff;padding:20px;border-radius:8px;text-align:center;margin-bottom:12px">';
+        html += '<div style="font-size:13px;opacity:0.9">Monthly payment</div>';
+        html += '<div style="font-size:32px;font-weight:bold">$' + payment.toFixed(2) + '</div>';
+        if(extra > 0){
+            html += '<div style="font-size:13px;opacity:0.9;margin-top:4px">+$' + extra.toFixed(2) + ' extra = $' + totalPayment.toFixed(2) + '/month</div>';
+        }
+        html += '</div>';
+        html += '<table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:12px">';
+        html += '<tr style="background:#f3f4f6"><th style="padding:8px;text-align:left">Item</th><th style="padding:8px;text-align:right">Amount</th></tr>';
+        html += '<tr><td style="padding:8px;border-bottom:1px solid #f3f4f6">Loan principal</td><td style="padding:8px;border-bottom:1px solid #f3f4f6;text-align:right">$' + principal.toLocaleString() + '</td></tr>';
+        if(graceInterest > 0){
+            html += '<tr><td style="padding:8px;border-bottom:1px solid #f3f4f6">Interest during grace (' + grace + ' mo)</td><td style="padding:8px;border-bottom:1px solid #f3f4f6;text-align:right">$' + graceInterest.toFixed(2) + '</td></tr>';
+        }
+        html += '<tr><td style="padding:8px;border-bottom:1px solid #f3f4f6">Total balance at repayment</td><td style="padding:8px;border-bottom:1px solid #f3f4f6;text-align:right">$' + balance.toLocaleString() + '</td></tr>';
+        html += '<tr><td style="padding:8px;border-bottom:1px solid #f3f4f6">Total interest</td><td style="padding:8px;border-bottom:1px solid #f3f4f6;text-align:right;color:#dc2626">$' + totalInterest.toFixed(2) + '</td></tr>';
+        html += '<tr><td style="padding:8px;border-bottom:1px solid #f3f4f6">Total paid</td><td style="padding:8px;border-bottom:1px solid #f3f4f6;text-align:right">$' + (balance + totalInterest).toFixed(2) + '</td></tr>';
+        html += '<tr><td style="padding:8px;border-bottom:1px solid #f3f4f6">Actual payoff time</td><td style="padding:8px;border-bottom:1px solid #f3f4f6;text-align:right">' + Math.floor(actualMonths/12) + ' yr ' + (actualMonths%12) + ' mo</td></tr>';
+        html += '</table>';
+        if(extra > 0 && savedInterest > 0){
+            html += '<div style="background:#dcfce7;border:1px solid #86efac;padding:12px;border-radius:6px;margin-bottom:12px">';
+            html += '<b>💰 Extra payment savings</b><br>';
+            html += '• Saved ' + savedMonths + ' months ($' + (savedInterest).toFixed(2) + ' interest)<br>';
+            html += '• Pay off ' + Math.floor(actualMonths/12) + ' yr ' + (actualMonths%12) + ' mo instead of ' + years + ' years';
+            html += '</div>';
+        }
+        html += '<div style="background:#f0f9ff;border:1px solid #bae6fd;padding:12px;border-radius:6px;margin-bottom:12px">';
+        html += '<b>📚 US student loan facts</b><br>';
+        html += '• Federal direct loans: 5.50% (undergrad 2024-25)<br>';
+        html += '• Grad PLUS: 9.08% (2024-25)<br>';
+        html += '• Private loans: 4-15% based on credit<br>';
+        html += '• Standard repayment: 10 years<br>';
+        html += '• Income-driven repayment (IDR) available for federal';
+        html += '</div>';
+        html += '<div style="background:#fef3c7;border:1px solid #fcd34d;padding:12px;border-radius:6px">';
+        html += '<b>💡 Payoff strategies</b><br>';
+        html += '• Avalanche: pay highest-rate loan first<br>';
+        html += '• Snowball: pay smallest balance first<br>';
+        html += '• Refinance private loans if credit improves<br>';
+        html += '• Public Service Loan Forgiveness (PSLF) for federal';
+        html += '</div>';
+        document.getElementById('result').innerHTML = html;
+        var scheduleHtml = '<table style="width:100%;border-collapse:collapse;font-size:12px">';
+        scheduleHtml += '<tr style="background:#f3f4f6"><th style="padding:6px">Month</th><th style="padding:6px">Payment</th><th style="padding:6px">Interest</th><th style="padding:6px">Principal</th><th style="padding:6px">Balance</th></tr>';
+        schedule.forEach(function(s){
+            scheduleHtml += '<tr><td style="padding:6px;border-bottom:1px solid #f3f4f6">' + s.month + '</td><td style="padding:6px;border-bottom:1px solid #f3f4f6">$' + s.payment.toFixed(2) + '</td><td style="padding:6px;border-bottom:1px solid #f3f4f6;color:#dc2626">$' + s.interest.toFixed(2) + '</td><td style="padding:6px;border-bottom:1px solid #f3f4f6;color:#16a34a">$' + s.principal.toFixed(2) + '</td><td style="padding:6px;border-bottom:1px solid #f3f4f6">$' + s.balance.toFixed(2) + '</td></tr>';
+        });
+        scheduleHtml += '</table>';
+        document.getElementById('schedule').innerHTML = scheduleHtml;
+    }
+    document.getElementById('loanType').addEventListener('change', function(){
+        var t = this.value;
+        if(t !== 'custom'){
+            document.getElementById('rate').value = loanRates[t];
+        }
+        calc();
+    });
+    ['principal','rate','years','grace','extra'].forEach(function(id){
+        document.getElementById(id).addEventListener('input', calc);
+        document.getElementById(id).addEventListener('change', calc);
+    });
+    calc();
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChatGPT System Message Builder | YuanQiZhiLe Toolkit</title>
+<meta name="description" content="Build custom system messages for ChatGPT API. Define role, behavior, format, and constraints. Free system prompt builder.">
+<meta name="keywords" content="system message, system prompt, chatgpt api, gpt system role, custom assistant, llm configuration">
+<meta property="og:title" content="ChatGPT System Message Builder - Free Online Tool">
+<meta property="og:description" content="Build custom system messages for ChatGPT API. Define role, behavior, format, and constraints. Free system prompt builder.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>ChatGPT System Message Builder</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Build custom system messages for ChatGPT API. Define role, behavior, format, and constraints. Free system prompt builder.</div>
+    <div class="group"><label>Assistant role</label><textarea id="role" style="width:100%;padding:8px;min-height:60px" placeholder="e.g. You are a helpful customer support agent for Acme Corp">You are a professional fitness coach</textarea></div>
+    <div class="row">
+        <div class="group"><label>Behavior / Personality</label>
+            <select id="behavior" style="width:100%;padding:8px">
+                <option value="helpful" selected>Helpful & friendly</option>
+                <option value="professional">Professional</option>
+                <option value="concise">Concise & direct</option>
+                <option value="detailed">Detailed & thorough</option>
+                <option value="socratic">Socratic (asks questions)</option>
+                <option value="encouraging">Encouraging & supportive</option>
+                <option value="strict">Strict & formal</option>
+                <option value="creative">Creative & playful</option>
+            </select>
+        </div>
+        <div class="group"><label>Response format</label>
+            <select id="format" style="width:100%;padding:8px">
+                <option value="" selected>Natural language</option>
+                <option value="bullets">Bullet points</option>
+                <option value="numbered">Numbered list</option>
+                <option value="json">JSON</option>
+                <option value="markdown">Markdown</option>
+                <option value="table">Markdown table</option>
+                <option value="code">Code block</option>
+            </select>
+        </div>
+    </div>
+    <div class="group"><label>Knowledge / Expertise areas (one per line)</label><textarea id="expertise" style="width:100%;padding:8px;min-height:60px" placeholder="e.g. Strength training&#10;Nutrition&#10;Injury prevention">Exercise science
+Nutrition
+Form correction
+Injury prevention
+Mental health</textarea></div>
+    <div class="group"><label>Response rules / Constraints (one per line)</label><textarea id="rules" style="width:100%;padding:8px;min-height:80px" placeholder="e.g. Always cite sources&#10;Ask clarifying questions if unclear&#10;Don\'t provide medical advice">Always ask about the user\'s current fitness level before recommending exercises
+Provide modifications for beginners and advanced users
+Recommend consulting a doctor for medical concerns
+Keep responses under 200 words unless asked for detail
+Use encouraging, motivational language</textarea></div>
+    <div class="row">
+        <div class="group"><label>Language</label>
+            <select id="language" style="width:100%;padding:8px">
+                <option value="en" selected>English</option>
+                <option value="es">Spanish</option>
+                <option value="fr">French</option>
+                <option value="de">German</option>
+                <option value="zh">Chinese</option>
+                <option value="ja">Japanese</option>
+                <option value="custom">Custom...</option>
+            </select>
+        </div>
+        <div class="group"><label>Max response length</label>
+            <select id="maxLen" style="width:100%;padding:8px">
+                <option value="" selected>Default</option>
+                <option value="100">Short (100 words)</option>
+                <option value="300">Medium (300 words)</option>
+                <option value="600">Long (600 words)</option>
+                <option value="1500">Detailed (1500 words)</option>
+            </select>
+        </div>
+    </div>
+    <div class="group"><label>Greeting / Opening (optional)</label><input type="text" id="greeting" placeholder="e.g. Hi! I\'m Coach Fit, ready to help you crush your goals!" style="width:100%;padding:8px"></div>
+    <div class="group"><label>Fallback response (when unsure)</label><input type="text" id="fallback" placeholder="e.g. I\'m not sure about that. Could you rephrase?" style="width:100%;padding:8px"></div>
+    <button id="generate" style="padding:10px 20px;background:#10b981;color:#fff;border:none;border-radius:6px;cursor:pointer;margin-top:10px">Generate System Message</button>
+    <div id="result" style="margin-top:12px"></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">260330663@qq.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">— or describe your need below —</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit →</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Define the <b>assistant role</b> clearly.</li>
+<li>Choose <b>behavior</b> (helpful, professional, concise, etc).</li>
+<li>Set <b>response format</b> (JSON, bullets, markdown, etc).</li>
+<li>List <b>expertise areas</b> the AI should draw on.</li>
+<li>Add specific <b>rules and constraints</b>.</li>
+<li>Set <b>language</b> and <b>max length</b>.</li>
+<li>Provide optional <b>greeting</b> and <b>fallback</b>.</li>
+<li>Click <b>Generate</b> then copy as text or JSON.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">System messages shape AI behavior. Be specific, test with edge cases, iterate based on real usage. Keep under 1500 tokens for cost efficiency.</p>
+    </div>
+    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'☀️':'🌙';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('260330663@qq.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:260330663@qq.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    function escapeHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+    function generate(){
+        var role = document.getElementById('role').value.trim();
+        var behavior = document.getElementById('behavior').value;
+        var format = document.getElementById('format').value;
+        var expertise = document.getElementById('expertise').value.trim();
+        var rules = document.getElementById('rules').value.trim();
+        var language = document.getElementById('language').value;
+        var maxLen = document.getElementById('maxLen').value;
+        var greeting = document.getElementById('greeting').value.trim();
+        var fallback = document.getElementById('fallback').value.trim();
+        if(!role){ alert('Enter a role for the assistant'); return; }
+        var behaviorMap = {
+            helpful: 'Be helpful, friendly, and approachable. Use a warm tone.',
+            professional: 'Be professional and authoritative. Use formal language and proper terminology.',
+            concise: 'Be concise and direct. Provide only essential information. Avoid filler.',
+            detailed: 'Be thorough and detailed. Provide comprehensive explanations with context.',
+            socratic: 'Use the Socratic method. Ask guiding questions to help the user think through problems.',
+            encouraging: 'Be encouraging and supportive. Acknowledge efforts and celebrate progress.',
+            strict: 'Be strict and formal. Follow rules rigidly and decline off-topic requests.',
+            creative: 'Be creative and playful. Use humor and imaginative examples.'
+        };
+        var formatMap = {
+            bullets: 'Format responses as bulleted lists using - or *.',
+            numbered: 'Format responses as numbered lists (1. 2. 3.).',
+            json: 'Format responses as valid JSON. No markdown code blocks. Use proper escaping.',
+            markdown: 'Format responses in markdown with appropriate headings (#, ##), lists, and emphasis.',
+            table: 'Format responses as markdown tables with appropriate columns.',
+            code: 'Format code in fenced code blocks with language specification.'
+        };
+        var langMap = {
+            en: 'English', es: 'Spanish', fr: 'French', de: 'German', zh: 'Chinese', ja: 'Japanese'
+        };
+        var parts = [];
+        parts.push(role + '.');
+        if(behavior && behaviorMap[behavior]){
+            parts.push(behaviorMap[behavior]);
+        }
+        if(expertise){
+            var expList = expertise.split('\n').map(function(s){ return s.trim(); }).filter(function(s){ return s; });
+            parts.push('Your areas of expertise include: ' + expList.join(', ') + '. Draw on this knowledge when relevant.');
+        }
+        if(format && formatMap[format]){
+            parts.push(formatMap[format]);
+        }
+        if(language === 'custom'){
+            var customLang = prompt('Enter language name:', 'e.g. Portuguese');
+            if(customLang) parts.push('Always respond in ' + customLang + '.');
+        } else if(language !== 'en'){
+            parts.push('Always respond in ' + langMap[language] + '.');
+        }
+        if(maxLen){
+            parts.push('Keep responses under ' + maxLen + ' words unless explicitly asked for more detail.');
+        }
+        if(rules){
+            var ruleList = rules.split('\n').map(function(s){ return s.trim(); }).filter(function(s){ return s; });
+            parts.push('Follow these rules:\n' + ruleList.map(function(r){ return '- ' + r; }).join('\n'));
+        }
+        if(fallback){
+            parts.push('If you\'re unsure or don\'t know the answer, respond with: "' + fallback + '"');
+        } else {
+            parts.push('If you\'re unsure or don\'t know the answer, say so honestly rather than making up information.');
+        }
+        if(greeting){
+            parts.push('When the conversation starts, greet the user with: "' + greeting + '"');
+        }
+        parts.push('Never provide information that could cause harm. For sensitive topics (medical, legal, financial), recommend consulting a professional.');
+        var systemMessage = parts.join('\n\n');
+        var html = '<div style="background:#d1fae5;padding:14px;border-radius:8px;border-left:4px solid #10b981">';
+        html += '<div style="text-align:center;margin-bottom:14px">';
+        html += '<div style="font-size:13px;color:#666">System Message</div>';
+        html += '<div style="font-size:14px;color:#666">' + systemMessage.length + ' chars · ' + systemMessage.split('\n').length + ' lines</div>';
+        html += '</div>';
+        html += '<div style="background:#fff;padding:14px;border-radius:6px;margin-bottom:10px;font-family:monospace;font-size:13px;line-height:1.6;white-space:pre-wrap;max-height:400px;overflow-y:auto">' + escapeHtml(systemMessage) + '</div>';
+        html += '<div style="display:flex;gap:8px;flex-wrap:wrap">';
+        html += '<button id="copyBtn" style="flex:1;padding:10px;background:#10b981;color:#fff;border:none;border-radius:6px;cursor:pointer">Copy</button>';
+        html += '<button id="copyJsonBtn" style="flex:1;padding:10px;background:#3b82f6;color:#fff;border:none;border-radius:6px;cursor:pointer">Copy as JSON</button>';
+        html += '<button id="downloadBtn" style="flex:1;padding:10px;background:#8b5cf6;color:#fff;border:none;border-radius:6px;cursor:pointer">Download</button>';
+        html += '</div>';
+        // API usage example
+        var apiExample = 'const response = await openai.chat.completions.create({\n  model: "gpt-4",\n  messages: [\n    { role: "system", content: ' + JSON.stringify(systemMessage) + ' },\n    { role: "user", content: "Hello!" }\n  ]\n});';
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-top:10px">';
+        html += '<div style="font-size:13px;font-weight:bold;color:#10b981;margin-bottom:6px">API Usage Example (OpenAI Node.js)</div>';
+        html += '<pre style="background:#1a1a2e;color:#a0e0a0;padding:10px;border-radius:4px;overflow-x:auto;font-size:11px;line-height:1.5">' + escapeHtml(apiExample) + '</pre>';
+        html += '</div>';
+        // Estimated token count (rough)
+        var tokenEst = Math.ceil(systemMessage.length / 4);
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-top:10px">';
+        html += '<div style="font-size:13px;font-weight:bold;color:#10b981;margin-bottom:6px">Stats</div>';
+        html += '<div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #eee;font-size:12px"><span>Characters</span><span style="font-weight:bold">' + systemMessage.length + '</span></div>';
+        html += '<div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #eee;font-size:12px"><span>Estimated tokens</span><span style="font-weight:bold">~' + tokenEst + '</span></div>';
+        html += '<div style="display:flex;justify-content:space-between;padding:4px 0;font-size:12px"><span>Cost per 1M calls (GPT-4)</span><span style="font-weight:bold">$' + (tokenEst * 0.03 / 1000).toFixed(4) + '</span></div>';
+        html += '</div>';
+        html += '<div style="background:#dbeafe;padding:10px;border-radius:6px;margin-top:10px">';
+        html += '<div style="font-size:13px;font-weight:bold;color:#1e40af;margin-bottom:4px">Best Practices</div>';
+        html += '<div style="font-size:12px;color:#1e40af;padding:2px 0">- Be specific about role and expertise</div>';
+        html += '<div style="font-size:12px;color:#1e40af;padding:2px 0">- Set clear format expectations</div>';
+        html += '<div style="font-size:12px;color:#1e40af;padding:2px 0">- Include safety guidelines</div>';
+        html += '<div style="font-size:12px;color:#1e40af;padding:2px 0">- Test with edge cases</div>';
+        html += '<div style="font-size:12px;color:#1e40af;padding:2px 0">- Iterate based on real user inputs</div>';
+        html += '<div style="font-size:12px;color:#1e40af;padding:2px 0">- Keep under 1500 tokens for cost efficiency</div>';
+        html += '</div>';
+        html += '<div style="font-size:11px;color:#999;margin-top:8px">Token estimate is approximate (1 token ≈ 4 chars). Test with tiktoken for accuracy. Iterate system message based on real conversations.</div>';
+        html += '</div>';
+        document.getElementById('result').innerHTML = html;
+        document.getElementById('copyBtn').addEventListener('click', function(){
+            navigator.clipboard.writeText(systemMessage).then(function(){ alert('Copied!'); });
+        });
+        document.getElementById('copyJsonBtn').addEventListener('click', function(){
+            var json = JSON.stringify({ role: 'system', content: systemMessage }, null, 2);
+            navigator.clipboard.writeText(json).then(function(){ alert('Copied as JSON!'); });
+        });
+        document.getElementById('downloadBtn').addEventListener('click', function(){
+            var blob = new Blob([systemMessage], { type: 'text/plain' });
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = 'system_message.txt';
+            a.click();
+        });
+    }
+    document.getElementById('generate').addEventListener('click', generate);
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

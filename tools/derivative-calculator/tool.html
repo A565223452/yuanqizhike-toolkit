@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Derivative Calculator | YuanQiZhiLe Toolkit</title>
+<meta name="description" content="Calculate numerical derivatives of functions. First, second, third order. Multiple methods. Free online derivative calculator.">
+<meta name="keywords" content="derivative calculator, differentiation, calculus, numerical derivative, first derivative, second derivative">
+<meta property="og:title" content="Derivative Calculator - Free Online Tool">
+<meta property="og:description" content="Calculate numerical derivatives of functions. First, second, third order. Multiple methods. Free online derivative calculator.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Derivative Calculator</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Calculate numerical derivatives of functions. First, second, third order. Multiple methods. Free online derivative calculator.</div>
+    <div class="group"><label>Function f(x)</label>
+        <input type="text" id="fn" value="x^2 + 3*x - 5" style="width:100%;padding:8px;font-family:monospace">
+        <div style="font-size:11px;color:#999;margin-top:4px">Supported: + - * / ^, sin, cos, tan, exp, log, ln, sqrt, abs, pi, e</div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Point x</label><input type="number" id="x" value="2" step="any" style="width:100%;padding:8px"></div>
+        <div class="group"><label>Order</label>
+            <select id="order" style="width:100%;padding:8px">
+                <option value="1" selected>1st</option>
+                <option value="2">2nd</option>
+                <option value="3">3rd</option>
+            </select>
+        </div>
+        <div class="group"><label>Step size h</label><input type="number" id="h" value="0.0001" min="0.000001" step="any" style="width:100%;padding:8px"></div>
+    </div>
+    <button id="calc" style="width:100%;padding:12px;background:#3b82f6;color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:bold;margin:8px 0">Calculate</button>
+    <div id="result" style="margin-top:12px"></div>
+    <div class="group"><label>Function plot</label><canvas id="chart" width="700" height="280" style="margin-top:8px;width:100%;max-width:700px"></canvas></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">260330663@qq.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">— or describe your need below —</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit →</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Enter function f(x) using standard math notation.</li>
+<li>Set point x, order, step h.</li>
+<li>Click <b>Calculate</b>.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">Numerical derivatives use central difference (more accurate than forward). Smaller h = more accurate but more rounding error. Optimal h ≈ 0.0001 for double precision. f'(x) = slope, f''(x) = concavity, f'''(x) = rate of change of curvature. For exact symbolic derivatives, use Wolfram Alpha or SymPy.</p>
+    </div>
+    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'☀️':'🌙';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('260330663@qq.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:260330663@qq.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    function parseFn(expr){
+        // Replace ^ with **, pi/e with values
+        var s = expr
+            .replace(/\^/g, '**')
+            .replace(/\bpi\b/g, 'Math.PI')
+            .replace(/\be\b/g, 'Math.E')
+            .replace(/\bsin\(/g, 'Math.sin(')
+            .replace(/\bcos\(/g, 'Math.cos(')
+            .replace(/\btan\(/g, 'Math.tan(')
+            .replace(/\basin\(/g, 'Math.asin(')
+            .replace(/\bacos\(/g, 'Math.acos(')
+            .replace(/\batan\(/g, 'Math.atan(')
+            .replace(/\bexp\(/g, 'Math.exp(')
+            .replace(/\blog\(/g, 'Math.log10(')
+            .replace(/\bln\(/g, 'Math.log(')
+            .replace(/\bsqrt\(/g, 'Math.sqrt(')
+            .replace(/\babs\(/g, 'Math.abs(')
+            .replace(/\bfloor\(/g, 'Math.floor(')
+            .replace(/\bceil\(/g, 'Math.ceil(');
+        // Auto-multiply: 3x -> 3*x, 2(x) -> 2*(x), etc.
+        s = s.replace(/(\d)([a-zA-Z(])/g, '$1*$2');
+        s = s.replace(/\)([a-zA-Z(])/g, ')*$1');
+        return new Function('x', 'return ' + s + ';');
+    }
+    function f(expr, x){
+        try {
+            var fn = parseFn(expr);
+            return fn(x);
+        } catch(e){ return NaN; }
+    }
+    function firstDeriv(expr, x, h){
+        // Central difference: (f(x+h) - f(x-h)) / (2h)
+        return (f(expr, x + h) - f(expr, x - h)) / (2 * h);
+    }
+    function secondDeriv(expr, x, h){
+        // (f(x+h) - 2f(x) + f(x-h)) / h²
+        return (f(expr, x + h) - 2 * f(expr, x) + f(expr, x - h)) / (h * h);
+    }
+    function thirdDeriv(expr, x, h){
+        // (f(x+2h) - 2f(x+h) + 2f(x-h) - f(x-2h)) / (2h³)
+        return (f(expr, x + 2*h) - 2 * f(expr, x + h) + 2 * f(expr, x - h) - f(expr, x - 2*h)) / (2 * h * h * h);
+    }
+    function calc(){
+        var expr = document.getElementById('fn').value;
+        var x = parseFloat(document.getElementById('x').value);
+        var order = parseInt(document.getElementById('order').value);
+        var h = parseFloat(document.getElementById('h').value);
+        if(!expr){ alert('Enter function'); return; }
+        if(h <= 0){ alert('h must be > 0'); return; }
+        try {
+            var fn = parseFn(expr);
+            var test = fn(1);
+            if(isNaN(test)){ throw new Error('Function returns NaN'); }
+        } catch(e){
+            document.getElementById('result').innerHTML = '<div style="color:#ef4444;padding:10px">Error parsing function: ' + e.message + '</div>';
+            return;
+        }
+        var fVal = f(expr, x);
+        var deriv;
+        var derivName;
+        var formula;
+        if(order === 1){
+            deriv = firstDeriv(expr, x, h);
+            derivName = "f'(x)";
+            formula = "[f(x+h) - f(x-h)] / (2h)";
+        } else if(order === 2){
+            deriv = secondDeriv(expr, x, h);
+            derivName = "f''(x)";
+            formula = "[f(x+h) - 2f(x) + f(x-h)] / h²";
+        } else {
+            deriv = thirdDeriv(expr, x, h);
+            derivName = "f'''(x)";
+            formula = "[f(x+2h) - 2f(x+h) + 2f(x-h) - f(x-2h)] / (2h³)";
+        }
+        var html = '<div style="background:#f0f7ff;padding:14px;border-radius:8px;border-left:4px solid #3b82f6">';
+        html += '<div style="font-size:13px;color:#666">f(x) = <code>' + expr + '</code></div>';
+        html += '<div style="font-size:13px;color:#666;margin-top:4px">x = ' + x + ' · h = ' + h + '</div>';
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-top:10px;text-align:center">';
+        html += '<div style="font-size:14px;color:#999">' + derivName + ' at x = ' + x + '</div>';
+        html += '<div style="font-size:28px;font-weight:bold;color:#3b82f6">' + deriv.toFixed(6) + '</div>';
+        html += '<div style="font-size:11px;color:#999;margin-top:4px">Method: ' + formula + '</div>';
+        html += '</div>';
+        // Show f(x), and neighbors
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-top:8px">';
+        html += '<div style="font-size:12px;font-weight:bold;margin-bottom:6px">Function values:</div>';
+        html += '<table style="width:100%;font-size:12px">';
+        if(order === 3){
+            html += '<tr><td>f(x-2h)</td><td>' + f(expr, x - 2*h).toFixed(6) + '</td></tr>';
+        }
+        html += '<tr><td>f(x-h)</td><td>' + f(expr, x - h).toFixed(6) + '</td></tr>';
+        html += '<tr style="background:#fef3c7"><td><b>f(x)</b></td><td><b>' + fVal.toFixed(6) + '</b></td></tr>';
+        html += '<tr><td>f(x+h)</td><td>' + f(expr, x + h).toFixed(6) + '</td></tr>';
+        if(order === 3){
+            html += '<tr><td>f(x+2h)</td><td>' + f(expr, x + 2*h).toFixed(6) + '</td></tr>';
+        }
+        html += '</table>';
+        html += '</div>';
+        // Interpretation
+        html += '<div style="background:#fef3c7;padding:8px;border-radius:4px;margin-top:8px;font-size:11px;color:#92400e">';
+        html += '<b>Interpretation:</b><br>';
+        if(order === 1){
+            if(deriv > 0) html += 'Function is <b>increasing</b> at x = ' + x + ' (slope > 0).';
+            else if(deriv < 0) html += 'Function is <b>decreasing</b> at x = ' + x + ' (slope < 0).';
+            else html += 'Function has a <b>critical point</b> at x = ' + x + ' (slope = 0, possibly max/min).';
+        } else if(order === 2){
+            if(deriv > 0) html += 'Function is <b>concave up</b> at x = ' + x + ' (local minimum if f\'(x)=0).';
+            else if(deriv < 0) html += 'Function is <b>concave down</b> at x = ' + x + ' (local maximum if f\'(x)=0).';
+            else html += 'Possible <b>inflection point</b> at x = ' + x + '.';
+        } else {
+            html += 'Third derivative relates to rate of change of curvature (jerk in physics).';
+        }
+        html += '</div>';
+        html += '</div>';
+        document.getElementById('result').innerHTML = html;
+        drawChart(expr, x, deriv, order);
+    }
+    function drawChart(expr, xPoint, derivVal, order){
+        var canvas = document.getElementById('chart');
+        var ctx = canvas.getContext('2d');
+        var w = canvas.width, h = canvas.height;
+        ctx.clearRect(0, 0, w, h);
+        var padding = 30;
+        var chartW = w - padding * 2;
+        var chartH = h - padding * 2;
+        // Range
+        var xMin = xPoint - 4, xMax = xPoint + 4;
+        var xRange = xMax - xMin;
+        var samples = 200;
+        var ys = [];
+        for(var i = 0; i <= samples; i++){
+            var x = xMin + xRange * i / samples;
+            ys.push(f(expr, x));
+        }
+        var yMin = Math.min.apply(null, ys), yMax = Math.max.apply(null, ys);
+        if(yMin === yMax){ yMin -= 1; yMax += 1; }
+        var yRange = yMax - yMin;
+        // Axes
+        ctx.strokeStyle = '#999';
+        ctx.lineWidth = 1;
+        // X axis
+        if(yMin <= 0 && yMax >= 0){
+            var y0 = h - padding - ((0 - yMin) / yRange) * chartH;
+            ctx.beginPath();
+            ctx.moveTo(padding, y0);
+            ctx.lineTo(w - padding, y0);
+            ctx.stroke();
+        }
+        // Y axis
+        if(xMin <= 0 && xMax >= 0){
+            var x0 = padding + ((0 - xMin) / xRange) * chartW;
+            ctx.beginPath();
+            ctx.moveTo(x0, padding);
+            ctx.lineTo(x0, h - padding);
+            ctx.stroke();
+        }
+        // Function curve
+        ctx.strokeStyle = '#3b82f6';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        for(var i = 0; i <= samples; i++){
+            var x = xMin + xRange * i / samples;
+            var y = f(expr, x);
+            var px = padding + ((x - xMin) / xRange) * chartW;
+            var py = h - padding - ((y - yMin) / yRange) * chartH;
+            if(i === 0) ctx.moveTo(px, py);
+            else ctx.lineTo(px, py);
+        }
+        ctx.stroke();
+        // Tangent line
+        var fVal = f(expr, xPoint);
+        var tx1 = padding, tx2 = w - padding;
+        var slope = derivVal;
+        var yT1 = fVal + slope * (xMin - xPoint);
+        var yT2 = fVal + slope * (xMax - xPoint);
+        var ty1 = h - padding - ((yT1 - yMin) / yRange) * chartH;
+        var ty2 = h - padding - ((yT2 - yMin) / yRange) * chartH;
+        ctx.strokeStyle = '#ef4444';
+        ctx.setLineDash([5, 5]);
+        ctx.beginPath();
+        ctx.moveTo(tx1, ty1);
+        ctx.lineTo(tx2, ty2);
+        ctx.stroke();
+        ctx.setLineDash([]);
+        // Point
+        var ppx = padding + ((xPoint - xMin) / xRange) * chartW;
+        var ppy = h - padding - ((fVal - yMin) / yRange) * chartH;
+        ctx.fillStyle = '#ef4444';
+        ctx.beginPath();
+        ctx.arc(ppx, ppy, 5, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.fillStyle = '#222';
+        ctx.font = 'bold 12px Arial';
+        ctx.textAlign = 'left';
+        ctx.fillText('f(' + xPoint + ') = ' + fVal.toFixed(3), ppx + 8, ppy - 8);
+        ctx.fillStyle = '#ef4444';
+        ctx.fillText(derivName + ' = ' + derivVal.toFixed(4), ppx + 8, ppy + 16);
+        // Title
+        ctx.fillStyle = '#222';
+        ctx.font = 'bold 13px Arial';
+        ctx.textAlign = 'left';
+        ctx.fillText('f(x) = ' + expr + '  (red: tangent line)', padding, 18);
+    }
+    document.getElementById('calc').addEventListener('click', calc);
+    ['fn','x','h'].forEach(function(id){
+        document.getElementById(id).addEventListener('input', calc);
+    });
+    document.getElementById('order').addEventListener('change', calc);
+    calc();
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

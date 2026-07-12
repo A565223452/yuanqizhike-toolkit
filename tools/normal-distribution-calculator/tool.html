@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Normal Distribution Calculator | YuanQiZhiLe Toolkit</title>
+<meta name="description" content="Calculate normal distribution probabilities and z-scores. Mean, SD, PDF, CDF. Free Gaussian probability calculator with chart.">
+<meta name="keywords" content="normal distribution, z-score, gaussian, statistics, probability, cdf, pdf, standard deviation">
+<meta property="og:title" content="Normal Distribution Calculator - Free Online Tool">
+<meta property="og:description" content="Calculate normal distribution probabilities and z-scores. Mean, SD, PDF, CDF. Free Gaussian probability calculator with chart.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Normal Distribution Calculator</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Calculate normal distribution probabilities and z-scores. Mean, SD, PDF, CDF. Free Gaussian probability calculator with chart.</div>
+    <div class="row">
+        <div class="group"><label>Mean (μ)</label><input type="number" id="mean" value="100" step="any" style="width:100%;padding:8px"></div>
+        <div class="group"><label>Std deviation (σ)</label><input type="number" id="sd" value="15" min="0.0001" step="any" style="width:100%;padding:8px"></div>
+    </div>
+    <div class="group"><label>Calculation type</label>
+        <select id="type" style="width:100%;padding:8px">
+            <option value="less">P(X &lt; x) — less than</option>
+            <option value="greater">P(X &gt; x) — greater than</option>
+            <option value="between" selected>P(a &lt; X &lt; b) — between</option>
+            <option value="z">Z-score from X</option>
+            <option value="x">X from Z-score</option>
+        </select>
+    </div>
+    <div id="inputArea" class="row"></div>
+    <button id="calc" style="width:100%;padding:12px;background:#3b82f6;color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:bold;margin:8px 0">Calculate</button>
+    <div id="result" style="margin-top:12px"></div>
+    <div class="group"><label>Distribution chart</label><canvas id="chart" width="700" height="280" style="margin-top:8px;width:100%;max-width:700px"></canvas></div>
+    <div class="group"><label>Reference: Z-table (selected)</label>
+        <div id="ztable" style="font-size:11px;margin-top:8px"></div>
+    </div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">260330663@qq.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">— or describe your need below —</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit →</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Enter <b>mean (μ)</b> and <b>standard deviation (σ)</b>.</li>
+<li>Select calculation type (less than, between, etc.).</li>
+<li>Enter values, click <b>Calculate</b>.</li>
+<li>View probability, Z-score, and chart.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666"><b>Normal (Gaussian) distribution</b> is the bell curve. Z = (X−μ)/σ standardizes values. Empirical rule: 68% within ±1σ, 95% within ±2σ, 99.7% within ±3σ. Common critical Z: 1.645 (90% CI), 1.96 (95% CI), 2.576 (99% CI). Used in: IQ scores, heights, measurement errors, hypothesis testing.</p>
+    </div>
+    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'☀️':'🌙';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('260330663@qq.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:260330663@qq.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    function erf(x){
+        // Abramowitz & Stegun approximation
+        var sign = x < 0 ? -1 : 1;
+        x = Math.abs(x);
+        var a1 = 0.254829592, a2 = -0.284496736, a3 = 1.421413741;
+        var a4 = -1.453152027, a5 = 1.061405429, p = 0.3275911;
+        var t = 1 / (1 + p * x);
+        var y = 1 - (((((a5 * t + a4) * t) + a3) * t + a2) * t + a1) * t * Math.exp(-x * x);
+        return sign * y;
+    }
+    function normalCdf(x, mean, sd){
+        return 0.5 * (1 + erf((x - mean) / (sd * Math.SQRT2)));
+    }
+    function normalPdf(x, mean, sd){
+        var z = (x - mean) / sd;
+        return Math.exp(-0.5 * z * z) / (sd * Math.sqrt(2 * Math.PI));
+    }
+    function zToX(z, mean, sd){ return mean + z * sd; }
+    function xToZ(x, mean, sd){ return (x - mean) / sd; }
+    function updateInputs(){
+        var type = document.getElementById('type').value;
+        var html = '';
+        if(type === 'less' || type === 'greater' || type === 'z'){
+            html = '<div class="group"><label>Value (x)</label><input type="number" id="x" value="115" step="any" style="width:100%;padding:8px"></div>';
+        } else if(type === 'between'){
+            html = '<div class="group"><label>Lower (a)</label><input type="number" id="a" value="85" step="any" style="width:100%;padding:8px"></div>';
+            html += '<div class="group"><label>Upper (b)</label><input type="number" id="b" value="115" step="any" style="width:100%;padding:8px"></div>';
+        } else if(type === 'x'){
+            html = '<div class="group"><label>Z-score</label><input type="number" id="z" value="1.96" step="0.01" style="width:100%;padding:8px"></div>';
+        }
+        document.getElementById('inputArea').innerHTML = html;
+    }
+    function calc(){
+        var mean = parseFloat(document.getElementById('mean').value);
+        var sd = parseFloat(document.getElementById('sd').value);
+        var type = document.getElementById('type').value;
+        if(sd <= 0){ alert('SD must be > 0'); return; }
+        var html = '<div style="background:#f0f7ff;padding:14px;border-radius:8px;border-left:4px solid #3b82f6">';
+        if(type === 'less'){
+            var x = parseFloat(document.getElementById('x').value);
+            var p = normalCdf(x, mean, sd);
+            var z = xToZ(x, mean, sd);
+            html += '<div style="font-size:13px;color:#666">P(X < ' + x + '):</div>';
+            html += '<div style="font-size:24px;font-weight:bold;color:#3b82f6">' + p.toFixed(6) + '</div>';
+            html += '<div style="font-size:12px;color:#666;margin-top:8px">Z = (x - μ)/σ = (' + x + ' - ' + mean + ')/' + sd + ' = <b>' + z.toFixed(4) + '</b></div>';
+            drawChart(mean, sd, [[-Infinity, x, '#3b82f6']]);
+        } else if(type === 'greater'){
+            var x = parseFloat(document.getElementById('x').value);
+            var p = 1 - normalCdf(x, mean, sd);
+            var z = xToZ(x, mean, sd);
+            html += '<div style="font-size:13px;color:#666">P(X > ' + x + '):</div>';
+            html += '<div style="font-size:24px;font-weight:bold;color:#3b82f6">' + p.toFixed(6) + '</div>';
+            html += '<div style="font-size:12px;color:#666;margin-top:8px">Z = ' + z.toFixed(4) + '</div>';
+            drawChart(mean, sd, [[x, Infinity, '#3b82f6']]);
+        } else if(type === 'between'){
+            var a = parseFloat(document.getElementById('a').value);
+            var b = parseFloat(document.getElementById('b').value);
+            if(a > b){ var tmp = a; a = b; b = tmp; }
+            var p = normalCdf(b, mean, sd) - normalCdf(a, mean, sd);
+            var za = xToZ(a, mean, sd), zb = xToZ(b, mean, sd);
+            html += '<div style="font-size:13px;color:#666">P(' + a + ' < X < ' + b + '):</div>';
+            html += '<div style="font-size:24px;font-weight:bold;color:#3b82f6">' + p.toFixed(6) + '</div>';
+            html += '<div style="font-size:12px;color:#666;margin-top:8px">Z range: ' + za.toFixed(4) + ' to ' + zb.toFixed(4) + '</div>';
+            drawChart(mean, sd, [[a, b, '#3b82f6']]);
+        } else if(type === 'z'){
+            var x = parseFloat(document.getElementById('x').value);
+            var z = xToZ(x, mean, sd);
+            var p = normalCdf(x, mean, sd);
+            html += '<div style="font-size:13px;color:#666">Z-score for X = ' + x + ':</div>';
+            html += '<div style="font-size:24px;font-weight:bold;color:#3b82f6">' + z.toFixed(6) + '</div>';
+            html += '<div style="font-size:12px;color:#666;margin-top:8px">P(X < ' + x + ') = ' + p.toFixed(6) + ' · P(X > ' + x + ') = ' + (1-p).toFixed(6) + '</div>';
+            drawChart(mean, sd, [[-Infinity, x, '#3b82f6']]);
+        } else if(type === 'x'){
+            var z = parseFloat(document.getElementById('z').value);
+            var x = zToX(z, mean, sd);
+            html += '<div style="font-size:13px;color:#666">X for Z = ' + z + ':</div>';
+            html += '<div style="font-size:24px;font-weight:bold;color:#3b82f6">' + x.toFixed(6) + '</div>';
+            html += '<div style="font-size:12px;color:#666;margin-top:8px">X = μ + Z·σ = ' + mean + ' + ' + z + '·' + sd + ' = ' + x.toFixed(4) + '</div>';
+            drawChart(mean, sd, [[-Infinity, x, '#3b82f6']]);
+        }
+        // Add context
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-top:8px;font-size:12px">';
+        html += '<b>Common Z values:</b> ±1.96 (95% CI), ±2.576 (99% CI), ±1.645 (90% CI), ±1 (68% data), ±2 (95% data), ±3 (99.7% data).';
+        html += '</div>';
+        html += '</div>';
+        document.getElementById('result').innerHTML = html;
+    }
+    function drawChart(mean, sd, regions){
+        var canvas = document.getElementById('chart');
+        var ctx = canvas.getContext('2d');
+        var w = canvas.width, h = canvas.height;
+        ctx.clearRect(0, 0, w, h);
+        var padding = 40;
+        var chartW = w - padding * 2;
+        var chartH = h - padding * 2;
+        // X range: ±4 SD
+        var xMin = mean - 4 * sd;
+        var xMax = mean + 4 * sd;
+        var xRange = xMax - xMin;
+        // PDF samples
+        var samples = 200;
+        var maxPdf = normalPdf(mean, mean, sd);
+        // Background regions
+        regions.forEach(function(r){
+            var a = Math.max(xMin, r[0]);
+            var b = Math.min(xMax, r[1]);
+            if(b < a) return;
+            ctx.fillStyle = r[2] + '40'; // semi-transparent
+            var x1 = padding + (a - xMin) / xRange * chartW;
+            var x2 = padding + (b - xMin) / xRange * chartW;
+            // Build path under curve
+            ctx.beginPath();
+            ctx.moveTo(x1, h - padding);
+            for(var i = 0; i <= samples; i++){
+                var x = a + (b - a) * i / samples;
+                var y = normalPdf(x, mean, sd);
+                var px = padding + (x - xMin) / xRange * chartW;
+                var py = h - padding - (y / maxPdf) * chartH;
+                ctx.lineTo(px, py);
+            }
+            ctx.lineTo(x2, h - padding);
+            ctx.closePath();
+            ctx.fill();
+        });
+        // PDF curve
+        ctx.strokeStyle = '#3b82f6';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        for(var i = 0; i <= samples; i++){
+            var x = xMin + xRange * i / samples;
+            var y = normalPdf(x, mean, sd);
+            var px = padding + (x - xMin) / xRange * chartW;
+            var py = h - padding - (y / maxPdf) * chartH;
+            if(i === 0) ctx.moveTo(px, py);
+            else ctx.lineTo(px, py);
+        }
+        ctx.stroke();
+        // Axes
+        ctx.strokeStyle = '#999';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(padding, h - padding);
+        ctx.lineTo(w - padding, h - padding);
+        ctx.stroke();
+        // X labels (μ-3σ to μ+3σ)
+        ctx.fillStyle = '#666';
+        ctx.font = '10px Arial';
+        ctx.textAlign = 'center';
+        for(var i = -3; i <= 3; i++){
+            var xVal = mean + i * sd;
+            var px = padding + (xVal - xMin) / xRange * chartW;
+            ctx.fillText(xVal.toFixed(1), px, h - padding + 14);
+            if(i !== 0){
+                ctx.fillStyle = '#999';
+                ctx.fillText((i < 0 ? '' : '+') + i + 'σ', px, h - padding + 26);
+                ctx.fillStyle = '#666';
+            } else {
+                ctx.fillStyle = '#ef4444';
+                ctx.fillText('μ', px, h - padding + 26);
+                ctx.fillStyle = '#666';
+            }
+        }
+        // Title
+        ctx.fillStyle = '#222';
+        ctx.font = 'bold 13px Arial';
+        ctx.textAlign = 'left';
+        ctx.fillText('Normal(μ=' + mean + ', σ=' + sd + ')', padding, 20);
+        // Mean line
+        var meanX = padding + (mean - xMin) / xRange * chartW;
+        ctx.strokeStyle = '#ef4444';
+        ctx.setLineDash([4, 4]);
+        ctx.beginPath();
+        ctx.moveTo(meanX, padding);
+        ctx.lineTo(meanX, h - padding);
+        ctx.stroke();
+        ctx.setLineDash([]);
+    }
+    function zTable(){
+        var zs = [-3, -2.5, -2, -1.96, -1.645, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 1.645, 1.96, 2, 2.5, 3];
+        var html = '<table style="width:100%;border-collapse:collapse;font-family:monospace"><thead><tr style="background:#3b82f6;color:#fff"><th style="padding:4px;border:1px solid #2563eb">Z</th><th style="padding:4px;border:1px solid #2563eb">P(X&lt;Z)</th><th style="padding:4px;border:1px solid #2563eb">P(X&gt;Z)</th></tr></thead><tbody>';
+        zs.forEach(function(z, i){
+            var p = 0.5 * (1 + erf(z / Math.SQRT2));
+            var bg = i % 2 === 0 ? '#fff' : '#f9fafb';
+            html += '<tr style="background:' + bg + '"><td style="padding:3px;border:1px solid #e5e7eb;text-align:center">' + z + '</td><td style="padding:3px;border:1px solid #e5e7eb;text-align:right">' + p.toFixed(4) + '</td><td style="padding:3px;border:1px solid #e5e7eb;text-align:right">' + (1-p).toFixed(4) + '</td></tr>';
+        });
+        html += '</tbody></table>';
+        document.getElementById('ztable').innerHTML = html;
+    }
+    document.getElementById('type').addEventListener('change', function(){ updateInputs(); calc(); });
+    document.getElementById('calc').addEventListener('click', calc);
+    ['mean','sd'].forEach(function(id){
+        document.getElementById(id).addEventListener('input', calc);
+    });
+    updateInputs();
+    zTable();
+    calc();
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

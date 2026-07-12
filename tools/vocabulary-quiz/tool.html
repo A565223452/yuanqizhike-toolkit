@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vocabulary Quiz | YuanQiZhiLe Toolkit</title>
+<meta name="description" content="Test your vocabulary with SAT/GRE words. Free vocabulary quiz and word learning tool.">
+<meta name="keywords" content="vocabulary quiz, sat words, gre words, vocabulary test, word learning">
+<meta property="og:title" content="Vocabulary Quiz - Free Online Tool">
+<meta property="og:description" content="Test your vocabulary with SAT/GRE words. Free vocabulary quiz and word learning tool.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Vocabulary Quiz</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Test your vocabulary with SAT/GRE words. Free vocabulary quiz and word learning tool.</div>
+    <div style="background:#f0f7ff;padding:14px;border-radius:8px;margin-bottom:12px">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+            <div><div style="font-size:11px;color:#666">Question</div><div style="font-size:18px;font-weight:bold" id="qNum">1</div></div>
+            <div style="text-align:center"><div style="font-size:11px;color:#666">Score</div><div style="font-size:18px;font-weight:bold;color:#10b981" id="score">0/0</div></div>
+            <div style="text-align:right"><div style="font-size:11px;color:#666">Streak</div><div style="font-size:18px;font-weight:bold;color:#f59e0b" id="streak">0</div></div>
+        </div>
+    </div>
+    <div id="question" style="margin-top:12px"></div>
+    <div id="options" style="margin-top:12px"></div>
+    <div id="feedback" style="margin-top:12px"></div>
+    <div id="controls" style="margin-top:12px;display:flex;gap:8px">
+        <button id="next" style="flex:1;padding:12px;background:#3b82f6;color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:bold">Next Question →</button>
+        <button id="reset" style="padding:12px 16px;background:#666;color:#fff;border:none;border-radius:6px;cursor:pointer">Reset</button>
+    </div>
+    <div id="learned" style="margin-top:12px"></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">260330663@qq.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">— or describe your need below —</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit →</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Read the word shown.</li>
+<li>Select the correct definition from 4 options.</li>
+<li>See feedback with synonyms and example.</li>
+<li>Click "Next" for new question.</li>
+<li>Track accuracy and learned words.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">Vocabulary tips: Learn 5-10 words daily. Use them in sentences. Group by word roots. Practice with flashcards. Read extensively. Words are mastered after 3 correct answers (streak).</p>
+    </div>
+    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'☀️':'🌙';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('260330663@qq.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:260330663@qq.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    var words = [
+        { word: 'Ephemeral', def: 'Lasting for a very short time', syn: 'transient, fleeting', example: 'The ephemeral beauty of cherry blossoms.', level: 'GRE' },
+        { word: 'Ubiquitous', def: 'Present everywhere', syn: 'omnipresent, universal', example: 'Smartphones are ubiquitous today.', level: 'SAT' },
+        { word: 'Pragmatic', def: 'Practical, dealing with things sensibly', syn: 'practical, realistic', example: 'A pragmatic approach to problem-solving.', level: 'SAT' },
+        { word: 'Meticulous', def: 'Showing great attention to detail', syn: 'thorough, careful', example: 'She is meticulous about her work.', level: 'SAT' },
+        { word: 'Ambivalent', def: 'Having mixed feelings', syn: 'uncertain, conflicted', example: 'I am ambivalent about the new policy.', level: 'GRE' },
+        { word: 'Cacophony', def: 'Harsh, discordant mixture of sounds', syn: 'din, noise', example: 'A cacophony of car horns.', level: 'GRE' },
+        { word: 'Lugubrious', def: 'Looking or sounding sad and dismal', syn: 'mournful, gloomy', example: 'A lugubrious expression on his face.', level: 'GRE' },
+        { word: 'Quintessential', def: 'Most perfect example of a quality', syn: 'archetypal, typical', example: 'The quintessential British gentleman.', level: 'GRE' },
+        { word: 'Recalcitrant', def: 'Having an obstinately uncooperative attitude', syn: 'stubborn, defiant', example: 'A recalcitrant teenager.', level: 'GRE' },
+        { word: 'Sycophant', def: 'A person who flatters to gain favor', syn: 'flatterer, yes-man', example: 'The boss was surrounded by sycophants.', level: 'GRE' },
+        { word: 'Verbose', def: 'Using more words than needed', syn: 'wordy, long-winded', example: 'A verbose speech that bored everyone.', level: 'SAT' },
+        { word: 'Mundane', def: 'Lacking interest or excitement', syn: 'dull, ordinary', example: 'The mundane routine of daily life.', level: 'SAT' },
+        { word: 'Prolific', def: 'Producing much fruit or many works', syn: 'productive, fertile', example: 'A prolific writer of novels.', level: 'SAT' },
+        { word: 'Anomaly', def: 'Something that deviates from normal', syn: 'abnormality, irregularity', example: 'A statistical anomaly.', level: 'SAT' },
+        { word: 'Benevolent', def: 'Well meaning and kindly', syn: 'kind, charitable', example: 'A benevolent donor.', level: 'SAT' },
+        { word: 'Cryptic', def: 'Having a mysterious meaning', syn: 'mysterious, enigmatic', example: 'A cryptic message.', level: 'SAT' },
+        { word: 'Diligent', def: 'Having or showing care and effort', syn: 'hardworking, careful', example: 'A diligent student.', level: 'SAT' },
+        { word: 'Eloquent', def: 'Fluent and persuasive in speaking', syn: 'articulate, expressive', example: 'An eloquent speaker.', level: 'SAT' },
+        { word: 'Frugal', def: 'Sparing with money or food', syn: 'thrifty, economical', example: 'A frugal lifestyle.', level: 'SAT' },
+        { word: 'Hinder', def: 'To obstruct or delay', syn: 'impede, obstruct', example: 'Bad weather hindered the rescue.', level: 'SAT' },
+        { word: 'Innovate', def: 'To introduce something new', syn: 'pioneer, invent', example: 'The company innovates constantly.', level: 'SAT' },
+        { word: 'Jovial', def: 'Cheerful and friendly', syn: 'merry, jovial', example: 'A jovial host.', level: 'SAT' },
+        { word: 'Lucid', def: 'Expressed clearly and easy to understand', syn: 'clear, coherent', example: 'A lucid explanation.', level: 'SAT' },
+        { word: 'Malign', def: 'To speak ill of someone', syn: 'defame, slander', example: 'They maligned her reputation.', level: 'GRE' },
+        { word: 'Novice', def: 'A person new to an activity', syn: 'beginner, learner', example: 'A novice at chess.', level: 'SAT' },
+        { word: 'Obscure', def: 'Not known or clear', syn: 'unclear, vague', example: 'An obscure reference.', level: 'SAT' },
+        { word: 'Placid', def: 'Calm and peaceful', syn: 'tranquil, serene', example: 'A placid lake.', level: 'SAT' },
+        { word: 'Quaint', def: 'Attractively unusual or old-fashioned', syn: 'picturesque, old-fashioned', example: 'A quaint village.', level: 'SAT' },
+        { word: 'Resilient', def: 'Able to recover quickly from difficulties', syn: 'tough, flexible', example: 'A resilient economy.', level: 'SAT' },
+        { word: 'Sagacious', def: 'Having keen mental discernment', syn: 'wise, shrewd', example: 'A sagacious judge.', level: 'GRE' }
+    ];
+    var state = { current: 0, score: 0, total: 0, streak: 0, learned: [], answered: false };
+    function shuffle(arr){
+        var copy = arr.slice();
+        for(var i = copy.length - 1; i > 0; i--){
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = copy[i]; copy[i] = copy[j]; copy[j] = temp;
+        }
+        return copy;
+    }
+    function loadQuestion(){
+        state.answered = false;
+        var word = words[Math.floor(Math.random() * words.length)];
+        state.currentWord = word;
+        var options = shuffle([word.def, ...getRandomDefs(word.def, 3)]);
+        var html = '<div style="background:#fff;padding:20px;border-radius:8px;border:2px solid #3b82f6;text-align:center">';
+        html += '<div style="font-size:11px;color:#999;margin-bottom:8px">' + word.level + '</div>';
+        html += '<div style="font-size:32px;font-weight:bold;color:#3b82f6">' + word.word + '</div>';
+        html += '<div style="font-size:12px;color:#666;margin-top:8px">What does this word mean?</div>';
+        html += '</div>';
+        document.getElementById('question').innerHTML = html;
+        var optHtml = '<div style="display:grid;gap:8px">';
+        options.forEach(function(opt, idx){
+            optHtml += '<button class="opt" data-correct="' + (opt === word.def) + '" style="padding:12px;background:#fff;border:2px solid #e5e7eb;border-radius:6px;cursor:pointer;text-align:left;font-size:13px">' + String.fromCharCode(65 + idx) + '. ' + opt + '</button>';
+        });
+        optHtml += '</div>';
+        document.getElementById('options').innerHTML = optHtml;
+        document.getElementById('feedback').innerHTML = '';
+        document.querySelectorAll('.opt').forEach(function(btn){
+            btn.addEventListener('click', function(){ selectOption(this); });
+        });
+    }
+    function getRandomDefs(correctDef, count){
+        var pool = words.map(function(w){ return w.def; }).filter(function(d){ return d !== correctDef; });
+        return shuffle(pool).slice(0, count);
+    }
+    function selectOption(btn){
+        if(state.answered) return;
+        state.answered = true;
+        state.total++;
+        var isCorrect = btn.getAttribute('data-correct') === 'true';
+        if(isCorrect){
+            state.score++;
+            state.streak++;
+            if(state.streak >= 3 && state.learned.indexOf(state.currentWord.word) === -1){
+                state.learned.push(state.currentWord.word);
+            }
+            btn.style.background = '#d1fae5';
+            btn.style.borderColor = '#10b981';
+        } else {
+            state.streak = 0;
+            btn.style.background = '#fee2e2';
+            btn.style.borderColor = '#ef4444';
+            document.querySelectorAll('.opt').forEach(function(b){
+                if(b.getAttribute('data-correct') === 'true'){
+                    b.style.background = '#d1fae5';
+                    b.style.borderColor = '#10b981';
+                }
+            });
+        }
+        document.querySelectorAll('.opt').forEach(function(b){
+            b.style.cursor = 'not-allowed';
+            b.disabled = true;
+        });
+        // Show feedback
+        var w = state.currentWord;
+        var html = '<div style="background:' + (isCorrect ? '#d1fae5' : '#fee2e2') + ';padding:14px;border-radius:8px;border-left:4px solid ' + (isCorrect ? '#10b981' : '#ef4444') + '">';
+        html += '<div style="font-size:14px;font-weight:bold;margin-bottom:8px">' + (isCorrect ? '✓ Correct!' : '✗ Not quite') + '</div>';
+        html += '<div style="font-size:13px;margin-bottom:4px"><b>' + w.word + '</b> — ' + w.def + '</div>';
+        html += '<div style="font-size:12px;color:#666;margin-bottom:4px">Synonyms: ' + w.syn + '</div>';
+        html += '<div style="font-size:12px;color:#666;font-style:italic">Example: ' + w.example + '</div>';
+        html += '</div>';
+        document.getElementById('feedback').innerHTML = html;
+        updateScore();
+    }
+    function updateScore(){
+        document.getElementById('qNum').textContent = state.total + 1;
+        document.getElementById('score').textContent = state.score + '/' + state.total;
+        document.getElementById('streak').textContent = state.streak;
+        var pct = state.total > 0 ? Math.round(state.score / state.total * 100) : 0;
+        var learnedHtml = '<div style="background:#f0f7ff;padding:14px;border-radius:8px">';
+        learnedHtml += '<div style="font-size:13px;font-weight:bold;margin-bottom:8px">Progress</div>';
+        learnedHtml += '<div style="display:flex;justify-content:space-between;margin-bottom:8px"><span>Accuracy</span><span style="font-weight:bold">' + pct + '%</span></div>';
+        learnedHtml += '<div style="background:#f0f0f0;height:10px;border-radius:5px;overflow:hidden;margin-bottom:8px"><div style="background:linear-gradient(90deg,#3b82f6,#10b981);height:100%;width:' + pct + '%"></div></div>';
+        learnedHtml += '<div style="font-size:12px;color:#666">Words learned (3+ streak): ' + state.learned.length + '</div>';
+        if(state.learned.length > 0){
+            learnedHtml += '<div style="font-size:11px;color:#3b82f6;margin-top:4px">' + state.learned.slice(-5).join(', ') + '</div>';
+        }
+        learnedHtml += '</div>';
+        document.getElementById('learned').innerHTML = learnedHtml;
+    }
+    document.getElementById('next').addEventListener('click', loadQuestion);
+    document.getElementById('reset').addEventListener('click', function(){
+        state = { current: 0, score: 0, total: 0, streak: 0, learned: [], answered: false };
+        updateScore();
+        loadQuestion();
+    });
+    loadQuestion();
+    updateScore();
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>
