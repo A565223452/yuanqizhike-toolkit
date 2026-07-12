@@ -23,6 +23,9 @@ scripts/
 *.swp
 *.swo
 
+# 备份文件（本地自用，不上传）
+*.bak
+
 # OS files
 .DS_Store
 Thumbs.db

@@ -22,11 +22,27 @@ Disallow: /
 User-agent: YandexBot
 Disallow: /
 
+# 允许所有其他合法爬虫
+User-agent: *
 # 屏蔽爬虫扫描不存在的后台、测试路径
 Disallow: /admin
 Disallow: /wp-*
 Disallow: /*.env
-
-# 允许所有其他合法爬虫
-User-agent: *
+# 内部工具与备份不收录
+Disallow: /local-admin-generator.html
+Disallow: /tools-uploader/
+Disallow: /workers/
+Disallow: /backup
+Disallow: /*.bak$
+Disallow: /*.zip$
+Disallow: /*.tar.gz$
+# 不收录源码与文档
+Disallow: /build-templates.js
+Disallow: /wrangler.toml
+Disallow: /_worker.js
+Disallow: /_routes.json
+# 不收录打包资源
 Disallow: /assets/zip-packages/
+
+# 站点地图
+Sitemap: https://yuanqizhike.com/sitemap.xml

@@ -15,7 +15,7 @@ database_id = "96f4c428-3fef-478c-8057-2ddb7e3b67fa"
 # 环境变量（非敏感、可公开的放这里）
 [vars]
 TURNSTILE_SITE_KEY = "0x4AAAAAADxZ2faDF6_AjI-K"
-ALLOWED_ORIGIN = "https://yuanqizhike.com"
+ALLOWED_ORIGIN = "https://yuanqizhike.com,https://www.yuanqizhike.com,https://yuanqizhike-toolkit.pages.dev"
 CONTACT_TO_EMAIL = "260330663@qq.com"
 CONTACT_FROM_EMAIL = "noreply@yuanqizhike.com"
 

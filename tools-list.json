@@ -30,7 +30,7 @@
     "zipUrl": "/assets/zip-packages/dev/json-formatter.zip"
   },
   {
-    "category": "Developer Tools",
+    "category": "Color & Design Utilities",
     "icon": "/assets/icons/dev-1.svg",
     "title": "Color Code Converter",
     "desc": "Convert colors between HEX, RGB, and HSL formats instantly. Generate palettes, check WCAG contrast, extract colors from images, and simulate color blindness.",
@@ -512,7 +512,7 @@
     "zipUrl": "/assets/zip-packages/dev/byte-unit-converter.zip"
   },
   {
-    "category": "Design & Media",
+    "category": "Color & Design Utilities",
     "icon": "assets/icons/design-3.svg",
     "title": "Color Converter",
     "desc": "Instantly convert between HEX, RGB, and HSL formats. Includes palette generation and WCAG contrast checking for accessible design.",
@@ -779,21 +779,6 @@
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/dev/json-file-splitter.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-21.svg",
-    "title": "JSON Formatter & Validator",
-    "desc": "Instantly format, minify, and validate JSON code with an interactive tree view and local privacy protection.",
-    "features": [
-      "Format JSON",
-      "Minify Code",
-      "Validate Syntax",
-      "Interactive Tree View",
-      "Local Privacy"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/json-formatter-validator.zip"
   },
   {
     "category": "Developer Tools",
@@ -1168,7 +1153,7 @@
     "zipUrl": "/assets/zip-packages/design/background-remover.zip"
   },
   {
-    "category": "Design & Media",
+    "category": "Color & Design Utilities",
     "icon": "assets/icons/design-1.svg",
     "title": "Css Gradient Generator",
     "desc": "Css Gradient Generator - a handy browser-based tool.",
@@ -1780,22 +1765,6 @@
   {
     "category": "Education & Research",
     "icon": "/assets/icons/education-1.svg",
-    "title": "Academic Citation Generator",
-    "desc": "Generate accurate academic citations in APA, MLA, Chicago, Harvard, IEEE, and AMA formats. Supports books, journals, websites, and more with one-click copy and BibTeX export.",
-    "features": [
-      "Six major citation styles",
-      "Multiple document types supported",
-      "One-click copy and BibTeX export",
-      "Save and manage citation history",
-      "Dynamic form fields",
-      "Works offline and private"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/citation-generator.zip"
-  },
-  {
-    "category": "Education & Research",
-    "icon": "/assets/icons/education-1.svg",
     "title": "Final Grade Calculator",
     "desc": "Calculate your final course grade from weighted components like assignments and exams. Reverse-calculate the score needed on your final exam to reach your target overall grade.",
     "features": [
@@ -1864,7 +1833,7 @@
     "zipUrl": "/assets/zip-packages/education/roman-numeral-converter.zip"
   },
   {
-    "category": "Finance & Crypto",
+    "category": "Auto & Vehicles",
     "icon": "/assets/icons/finance-1.svg",
     "title": "Auto Loan Calculator",
     "desc": "Our free online auto loan calculator estimates monthly car payments, total interest, and total cost for accurate auto financing planning, factoring in down payment, trade-in value, and sales tax.",
@@ -2145,20 +2114,6 @@
   },
   {
     "category": "Webmaster & SEO Tools",
-    "icon": "/assets/icons/seo-1.svg",
-    "title": "Robots.txt Generator",
-    "desc": "Create valid robots.txt files to control search engine crawlers. Define allow and disallow rules, set crawl delays, and link your sitemap for better SEO.",
-    "features": [
-      "Custom allow and disallow rules",
-      "Set crawl delay settings",
-      "Add sitemap URL references",
-      "Instant preview and copy"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/seo/robots-txt-generator.zip"
-  },
-  {
-    "category": "Webmaster & SEO Tools",
     "icon": "/assets/icons/seo-3.svg",
     "title": "Schema Markup Generator",
     "desc": "Generate valid JSON-LD schema markup for Articles, Products, FAQs, Local Businesses, and Persons. Boost SEO with structured data and enhance Google Rich Results visibility effortlessly.",
@@ -2330,21 +2285,6 @@
   },
   {
     "category": "Time & Date",
-    "icon": "/assets/icons/lifestyle-5.svg",
-    "title": "Global Time Zone Converter",
-    "desc": "Easily convert time across multiple global time zones with this free online tool. Compare dates, find optimal meeting times, and view a live world clock with DST indicators.",
-    "features": [
-      "Convert time between time zones",
-      "Multi-timezone comparison view",
-      "Meeting time generator",
-      "Live world clock display",
-      "DST status indicator"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/time/timezone-converter.zip"
-  },
-  {
-    "category": "Time & Date",
     "icon": "/assets/icons/lifestyle-6.svg",
     "title": "Unit Converter",
     "desc": "Convert length, weight, temperature, volume, area, speed, time, and digital storage units instantly. Switch between metric and imperial systems with a simple, fast, and responsive interface.",
@@ -2370,21 +2310,6 @@
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/security/aes-encryptor.zip"
-  },
-  {
-    "category": "Security & Privacy",
-    "icon": "/assets/icons/security-2.svg",
-    "title": "Hash Generator",
-    "desc": "Generate MD5, SHA-1, SHA-256, SHA-384, and SHA-512 hashes locally in your browser. Supports text, files, and HMAC verification with complete privacy.",
-    "features": [
-      "Generate MD5 and SHA hashes",
-      "Local file and text hashing",
-      "HMAC signature support",
-      "Hash verification and compare",
-      "100% private and secure"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/security/hash-generator.zip"
   },
   {
     "category": "Security & Privacy",
@@ -2783,21 +2708,7 @@
     "zipUrl": "/assets/zip-packages/security/url-encode-decode.zip"
   },
   {
-    "category": "Security & Privacy",
-    "icon": "/assets/icons/security-11.svg",
-    "title": "UUID Generator",
-    "desc": "Generate RFC 4122 compliant UUIDs instantly. Support for v1, v4, and nil versions with bulk generation up to 1000 IDs. Customize format, copy, or download results.",
-    "features": [
-      "Generate UUID v1 and v4",
-      "Bulk create up to 1000 IDs",
-      "Customize output formatting",
-      "One-click copy and download"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/security/uuid-generator.zip"
-  },
-  {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Average Calculator",
     "desc": "Calculate the average of any set of numbers instantly. Our free online average calculator also finds the sum, median, variance, and standard deviation for your statistical data analysis.",
@@ -2812,7 +2723,7 @@
     "zipUrl": "/assets/zip-packages/education/average-calculator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Basic Calculator",
     "desc": "Perform quick arithmetic with our free basic online calculator. Features a clean interface, large buttons, and full keyboard support for addition, subtraction, multiplication, and division.",
@@ -2827,7 +2738,7 @@
     "zipUrl": "/assets/zip-packages/education/basic-calculator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Binomial Distribution Calculator",
     "desc": "Calculate binomial distribution probabilities instantly. Compute mean, variance, PMF, CDF, and standard deviation for any number of trials and success probability.",
@@ -2843,7 +2754,7 @@
     "zipUrl": "/assets/zip-packages/education/binomial-distribution-calculator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Chi-Square Test Calculator",
     "desc": "Calculate chi-square statistic, p-value, and degrees of freedom for goodness-of-fit and independence tests. Free online statistics calculator for hypothesis testing.",
@@ -2859,7 +2770,7 @@
     "zipUrl": "/assets/zip-packages/education/chi-square-test-calculator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Circle Calculator",
     "desc": "Calculate circle area, circumference, diameter, and radius from any single value. Includes bonus sphere volume and surface area calculations with visual diagrams.",
@@ -2875,7 +2786,7 @@
     "zipUrl": "/assets/zip-packages/education/circle-calculator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Complex Number Calculator",
     "desc": "Calculate complex numbers instantly with our free online tool. Perform addition, subtraction, multiplication, division, and advanced operations like powers and roots. Get results in rectangular and polar forms.",
@@ -2891,7 +2802,7 @@
     "zipUrl": "/assets/zip-packages/education/complex-number-calculator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Cone Calculator",
     "desc": "Calculate cone volume, surface area, slant height, and missing dimensions instantly. Free online cone geometry calculator for students and engineers.",
@@ -2906,7 +2817,7 @@
     "zipUrl": "/assets/zip-packages/education/cone-calculator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Cube Calculator",
     "desc": "Calculate cube volume, surface area, face diagonal, and space diagonal instantly. Free online cube geometry calculator for students and professionals.",
@@ -2921,7 +2832,7 @@
     "zipUrl": "/assets/zip-packages/education/cube-calculator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Cylinder Calculator",
     "desc": "Calculate cylinder volume, surface area, and lateral area instantly. Find missing radius or height with our free online geometry calculator.",
@@ -2936,7 +2847,7 @@
     "zipUrl": "/assets/zip-packages/education/cylinder-calculator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Derivative Calculator",
     "desc": "Calculate numerical derivatives of functions instantly. Supports first, second, and third order derivatives with adjustable step sizes for accurate results.",
@@ -2951,7 +2862,7 @@
     "zipUrl": "/assets/zip-packages/education/derivative-calculator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Exponent Calculator",
     "desc": "Calculate exponents and powers instantly. Raise any base to any power, including negative and fractional exponents, with step-by-step results. Free online power calculator.",
@@ -2966,7 +2877,7 @@
     "zipUrl": "/assets/zip-packages/education/exponent-calculator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Factorial Calculator",
     "desc": "Calculate factorial n! for any non-negative integer up to 1000. View step-by-step calculations, digit counts, trailing zeros, and Stirling approximations instantly.",
@@ -2982,7 +2893,7 @@
     "zipUrl": "/assets/zip-packages/education/factorial-calculator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Fraction Calculator",
     "desc": "Add, subtract, multiply, and divide fractions with our free online fraction calculator. Simplify fractions and convert them to decimals instantly with step-by-step solutions.",
@@ -2998,7 +2909,7 @@
     "zipUrl": "/assets/zip-packages/education/fraction-calculator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Linear Equation Solver",
     "desc": "A free offline tool for linear equation solver calculations. Works in your browser.",
@@ -3010,7 +2921,7 @@
     "zipUrl": "/assets/zip-packages/education/linear-equation-solver.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Logarithm Calculator",
     "desc": "A free offline tool for logarithm calculator calculations. Works in your browser.",
@@ -3022,7 +2933,7 @@
     "zipUrl": "/assets/zip-packages/education/logarithm-calculator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Logarithm Calculator Extended",
     "desc": "A free offline tool for logarithm calculator extended calculations. Works in your browser.",
@@ -3034,7 +2945,7 @@
     "zipUrl": "/assets/zip-packages/education/logarithm-calculator-extended.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Math Formula Reference",
     "desc": "A free offline tool for math formula reference calculations. Works in your browser.",
@@ -3046,7 +2957,7 @@
     "zipUrl": "/assets/zip-packages/education/math-formula-reference.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Matrix Calculator",
     "desc": "A free offline tool for matrix calculator calculations. Works in your browser.",
@@ -3070,7 +2981,7 @@
     "zipUrl": "/assets/zip-packages/dev/median-calculator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Mode Calculator",
     "desc": "A free offline tool for mode calculator calculations. Works in your browser.",
@@ -3082,7 +2993,7 @@
     "zipUrl": "/assets/zip-packages/education/mode-calculator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Normal Distribution Calculator",
     "desc": "A free offline tool for normal distribution calculator calculations. Works in your browser.",
@@ -3094,7 +3005,7 @@
     "zipUrl": "/assets/zip-packages/education/normal-distribution-calculator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Percentage Calculator Math",
     "desc": "A free offline tool for percentage calculator math calculations. Works in your browser.",
@@ -3106,7 +3017,7 @@
     "zipUrl": "/assets/zip-packages/education/percentage-calculator-math.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Percentage Change Calculator",
     "desc": "A free offline tool for percentage change calculator calculations. Works in your browser.",
@@ -3118,7 +3029,7 @@
     "zipUrl": "/assets/zip-packages/education/percentage-change-calculator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Permutation Combination Calculator",
     "desc": "A free offline tool for permutation combination calculator calculations. Works in your browser.",
@@ -3130,7 +3041,7 @@
     "zipUrl": "/assets/zip-packages/education/permutation-combination-calculator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Poisson Distribution Calculator",
     "desc": "A free offline tool for poisson distribution calculator calculations. Works in your browser.",
@@ -3142,7 +3053,7 @@
     "zipUrl": "/assets/zip-packages/education/poisson-distribution-calculator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Prime Number Checker",
     "desc": "A free offline tool for prime number checker calculations. Works in your browser.",
@@ -3154,7 +3065,7 @@
     "zipUrl": "/assets/zip-packages/education/prime-number-checker.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Probability Calculator",
     "desc": "A free offline tool for probability calculator calculations. Works in your browser.",
@@ -3166,7 +3077,7 @@
     "zipUrl": "/assets/zip-packages/education/probability-calculator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Proportion Calculator",
     "desc": "A free offline tool for proportion calculator calculations. Works in your browser.",
@@ -3178,7 +3089,7 @@
     "zipUrl": "/assets/zip-packages/education/proportion-calculator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Pythagorean Theorem Calculator",
     "desc": "A free offline tool for pythagorean theorem calculator calculations. Works in your browser.",
@@ -3190,7 +3101,7 @@
     "zipUrl": "/assets/zip-packages/education/pythagorean-theorem-calculator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Quadratic Equation Solver",
     "desc": "A free offline tool for quadratic equation solver calculations. Works in your browser.",
@@ -3202,7 +3113,7 @@
     "zipUrl": "/assets/zip-packages/education/quadratic-equation-solver.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Range Calculator",
     "desc": "A free offline tool for range calculator calculations. Works in your browser.",
@@ -3214,7 +3125,7 @@
     "zipUrl": "/assets/zip-packages/education/range-calculator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Ratio Calculator",
     "desc": "A free offline tool for ratio calculator calculations. Works in your browser.",
@@ -3226,7 +3137,7 @@
     "zipUrl": "/assets/zip-packages/education/ratio-calculator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Scientific Calculator",
     "desc": "A free offline tool for scientific calculator calculations. Works in your browser.",
@@ -3253,7 +3164,7 @@
     "zipUrl": "/assets/zip-packages/real-estate/solar-panel-calculator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Sphere Calculator",
     "desc": "A free offline tool for sphere calculator calculations. Works in your browser.",
@@ -3265,7 +3176,7 @@
     "zipUrl": "/assets/zip-packages/education/sphere-calculator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Standard Deviation Calculator",
     "desc": "A free offline tool for standard deviation calculator calculations. Works in your browser.",
@@ -3277,7 +3188,7 @@
     "zipUrl": "/assets/zip-packages/education/standard-deviation-calculator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Statistics Calculator",
     "desc": "A free offline tool for statistics calculator calculations. Works in your browser.",
@@ -3289,7 +3200,7 @@
     "zipUrl": "/assets/zip-packages/education/statistics-calculator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "T Test Calculator",
     "desc": "A free offline tool for t test calculator calculations. Works in your browser.",
@@ -3301,7 +3212,7 @@
     "zipUrl": "/assets/zip-packages/education/t-test-calculator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Triangle Calculator",
     "desc": "A free offline tool for triangle calculator calculations. Works in your browser.",
@@ -3313,7 +3224,7 @@
     "zipUrl": "/assets/zip-packages/education/triangle-calculator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Trigonometry Calculator",
     "desc": "A free offline tool for trigonometry calculator calculations. Works in your browser.",
@@ -3325,19 +3236,7 @@
     "zipUrl": "/assets/zip-packages/education/trigonometry-calculator.zip"
   },
   {
-    "category": "Education & Research",
-    "icon": "/assets/icons/education-1.svg",
-    "title": "Unit Converter",
-    "desc": "A free offline tool for unit converter calculations. Works in your browser.",
-    "features": [
-      "Easy to use",
-      "Works offline"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/unit-converter.zip"
-  },
-  {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Unit Rate Calculator",
     "desc": "A free offline tool for unit rate calculator calculations. Works in your browser.",
@@ -3349,7 +3248,7 @@
     "zipUrl": "/assets/zip-packages/education/unit-rate-calculator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Variance Calculator",
     "desc": "A free offline tool for variance calculator calculations. Works in your browser.",
@@ -3361,7 +3260,7 @@
     "zipUrl": "/assets/zip-packages/education/variance-calculator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Vector Calculator",
     "desc": "A free offline tool for vector calculator calculations. Works in your browser.",
@@ -3373,7 +3272,7 @@
     "zipUrl": "/assets/zip-packages/education/vector-calculator.zip"
   },
   {
-    "category": "Health & Fitness",
+    "category": "AI & ML Utilities",
     "icon": "/assets/icons/health-9.svg",
     "title": "Ai Agent Workflow Planner",
     "desc": "A free offline tool for ai agent workflow planner calculations. Works in your browser.",
@@ -3382,7 +3281,7 @@
     "zipUrl": "/assets/zip-packages/health/ai-agent-workflow-planner.zip"
   },
   {
-    "category": "Health & Fitness",
+    "category": "AI & ML Utilities",
     "icon": "/assets/icons/health-1.svg",
     "title": "Ai Content Detector Lite",
     "desc": "A free offline tool for ai content detector lite calculations. Works in your browser.",
@@ -3391,7 +3290,7 @@
     "zipUrl": "/assets/zip-packages/health/ai-content-detector-lite.zip"
   },
   {
-    "category": "Health & Fitness",
+    "category": "AI & ML Utilities",
     "icon": "/assets/icons/health-1.svg",
     "title": "Ai Detection Score Tool",
     "desc": "A free offline tool for ai detection score tool calculations. Works in your browser.",
@@ -3400,7 +3299,7 @@
     "zipUrl": "/assets/zip-packages/health/ai-detection-score-tool.zip"
   },
   {
-    "category": "Health & Fitness",
+    "category": "AI & ML Utilities",
     "icon": "/assets/icons/health-12.svg",
     "title": "Ai Model Comparison Table",
     "desc": "A free offline tool for ai model comparison table calculations. Works in your browser.",
@@ -3409,7 +3308,7 @@
     "zipUrl": "/assets/zip-packages/health/ai-model-comparison-table.zip"
   },
   {
-    "category": "Health & Fitness",
+    "category": "AI & ML Utilities",
     "icon": "/assets/icons/health-1.svg",
     "title": "Ai Prompt Generator",
     "desc": "A free offline tool for ai prompt generator calculations. Works in your browser.",
@@ -3418,7 +3317,7 @@
     "zipUrl": "/assets/zip-packages/health/ai-prompt-generator.zip"
   },
   {
-    "category": "Health & Fitness",
+    "category": "AI & ML Utilities",
     "icon": "/assets/icons/health-1.svg",
     "title": "Ai Writing Style Detector",
     "desc": "A free offline tool for ai writing style detector calculations. Works in your browser.",
@@ -3445,7 +3344,7 @@
     "zipUrl": "/assets/zip-packages/health/conversation-token-trimmer.zip"
   },
   {
-    "category": "Health & Fitness",
+    "category": "AI & ML Utilities",
     "icon": "/assets/icons/health-1.svg",
     "title": "Dalle Prompt Builder",
     "desc": "A free offline tool for dalle prompt builder calculations. Works in your browser.",
@@ -3472,7 +3371,7 @@
     "zipUrl": "/assets/zip-packages/health/fine-tune-data-formatter.zip"
   },
   {
-    "category": "Health & Fitness",
+    "category": "AI & ML Utilities",
     "icon": "/assets/icons/health-1.svg",
     "title": "Image Prompt Builder",
     "desc": "A free offline tool for image prompt builder calculations. Works in your browser.",
@@ -3490,7 +3389,7 @@
     "zipUrl": "/assets/zip-packages/health/llm-cost-estimator.zip"
   },
   {
-    "category": "Health & Fitness",
+    "category": "AI & ML Utilities",
     "icon": "/assets/icons/health-1.svg",
     "title": "Midjourney Prompt Builder",
     "desc": "A free offline tool for midjourney prompt builder calculations. Works in your browser.",
@@ -3499,7 +3398,7 @@
     "zipUrl": "/assets/zip-packages/health/midjourney-prompt-builder.zip"
   },
   {
-    "category": "Health & Fitness",
+    "category": "AI & ML Utilities",
     "icon": "/assets/icons/health-1.svg",
     "title": "Negative Prompt Generator",
     "desc": "A free offline tool for negative prompt generator calculations. Works in your browser.",
@@ -3508,7 +3407,7 @@
     "zipUrl": "/assets/zip-packages/health/negative-prompt-generator.zip"
   },
   {
-    "category": "Health & Fitness",
+    "category": "AI & ML Utilities",
     "icon": "/assets/icons/health-1.svg",
     "title": "Prompt Engineering Cheat Sheet",
     "desc": "A free offline tool for prompt engineering cheat sheet calculations. Works in your browser.",
@@ -3517,7 +3416,7 @@
     "zipUrl": "/assets/zip-packages/health/prompt-engineering-cheat-sheet.zip"
   },
   {
-    "category": "Health & Fitness",
+    "category": "AI & ML Utilities",
     "icon": "/assets/icons/health-1.svg",
     "title": "Prompt Template Library",
     "desc": "A free offline tool for prompt template library calculations. Works in your browser.",
@@ -3535,7 +3434,7 @@
     "zipUrl": "/assets/zip-packages/health/rag-chunker.zip"
   },
   {
-    "category": "Health & Fitness",
+    "category": "AI & ML Utilities",
     "icon": "/assets/icons/health-1.svg",
     "title": "Stable Diffusion Prompt Builder",
     "desc": "A free offline tool for stable diffusion prompt builder calculations. Works in your browser.",
@@ -3553,7 +3452,7 @@
     "zipUrl": "/assets/zip-packages/health/text-token-counter.zip"
   },
   {
-    "category": "Audio & Music Tools",
+    "category": "Auto & Vehicles",
     "icon": "/assets/icons/audio-1.svg",
     "title": "Brake Pad Wear Estimator",
     "desc": "A free offline tool for brake pad wear estimator calculations. Works in your browser.",
@@ -3562,7 +3461,7 @@
     "zipUrl": "/assets/zip-packages/audio/brake-pad-wear-estimator.zip"
   },
   {
-    "category": "Audio & Music Tools",
+    "category": "Auto & Vehicles",
     "icon": "/assets/icons/audio-1.svg",
     "title": "Car Loan Payoff Calculator",
     "desc": "A free offline tool for car loan payoff calculator calculations. Works in your browser.",
@@ -3571,7 +3470,7 @@
     "zipUrl": "/assets/zip-packages/audio/car-loan-payoff-calculator.zip"
   },
   {
-    "category": "Audio & Music Tools",
+    "category": "Auto & Vehicles",
     "icon": "/assets/icons/audio-1.svg",
     "title": "Car Maintenance Schedule",
     "desc": "A free offline tool for car maintenance schedule calculations. Works in your browser.",
@@ -3580,7 +3479,7 @@
     "zipUrl": "/assets/zip-packages/audio/car-maintenance-schedule.zip"
   },
   {
-    "category": "Audio & Music Tools",
+    "category": "Auto & Vehicles",
     "icon": "/assets/icons/audio-1.svg",
     "title": "Car Payment Calculator",
     "desc": "A free offline tool for car payment calculator calculations. Works in your browser.",
@@ -3589,7 +3488,7 @@
     "zipUrl": "/assets/zip-packages/audio/car-payment-calculator.zip"
   },
   {
-    "category": "Audio & Music Tools",
+    "category": "Auto & Vehicles",
     "icon": "/assets/icons/audio-1.svg",
     "title": "Car Resale Value Calculator",
     "desc": "A free offline tool for car resale value calculator calculations. Works in your browser.",
@@ -3598,7 +3497,7 @@
     "zipUrl": "/assets/zip-packages/audio/car-resale-value-calculator.zip"
   },
   {
-    "category": "Audio & Music Tools",
+    "category": "Auto & Vehicles",
     "icon": "/assets/icons/audio-1.svg",
     "title": "Driving Cost Per Mile",
     "desc": "A free offline tool for driving cost per mile calculations. Works in your browser.",
@@ -3607,7 +3506,7 @@
     "zipUrl": "/assets/zip-packages/audio/driving-cost-per-mile.zip"
   },
   {
-    "category": "Audio & Music Tools",
+    "category": "Auto & Vehicles",
     "icon": "/assets/icons/audio-1.svg",
     "title": "Ev Charging Cost Calculator",
     "desc": "A free offline tool for ev charging cost calculator calculations. Works in your browser.",
@@ -3616,7 +3515,7 @@
     "zipUrl": "/assets/zip-packages/audio/ev-charging-cost-calculator.zip"
   },
   {
-    "category": "Audio & Music Tools",
+    "category": "Auto & Vehicles",
     "icon": "/assets/icons/audio-1.svg",
     "title": "Fuel Cost Calculator",
     "desc": "A free offline tool for fuel cost calculator calculations. Works in your browser.",
@@ -3625,7 +3524,7 @@
     "zipUrl": "/assets/zip-packages/audio/fuel-cost-calculator.zip"
   },
   {
-    "category": "Audio & Music Tools",
+    "category": "Auto & Vehicles",
     "icon": "/assets/icons/audio-1.svg",
     "title": "Fuel Cost Comparison",
     "desc": "A free offline tool for fuel cost comparison calculations. Works in your browser.",
@@ -3634,7 +3533,7 @@
     "zipUrl": "/assets/zip-packages/audio/fuel-cost-comparison.zip"
   },
   {
-    "category": "Audio & Music Tools",
+    "category": "Auto & Vehicles",
     "icon": "/assets/icons/audio-1.svg",
     "title": "Mpg Calculator",
     "desc": "A free offline tool for mpg calculator calculations. Works in your browser.",
@@ -3643,7 +3542,7 @@
     "zipUrl": "/assets/zip-packages/audio/mpg-calculator.zip"
   },
   {
-    "category": "Audio & Music Tools",
+    "category": "Travel & Transportation",
     "icon": "/assets/icons/audio-1.svg",
     "title": "Road Trip Planner",
     "desc": "A free offline tool for road trip planner calculations. Works in your browser.",
@@ -3652,7 +3551,7 @@
     "zipUrl": "/assets/zip-packages/audio/road-trip-planner.zip"
   },
   {
-    "category": "Audio & Music Tools",
+    "category": "Auto & Vehicles",
     "icon": "/assets/icons/audio-1.svg",
     "title": "Tire Pressure Calculator",
     "desc": "A free offline tool for tire pressure calculator calculations. Works in your browser.",
@@ -3661,7 +3560,7 @@
     "zipUrl": "/assets/zip-packages/audio/tire-pressure-calculator.zip"
   },
   {
-    "category": "Audio & Music Tools",
+    "category": "Auto & Vehicles",
     "icon": "/assets/icons/audio-1.svg",
     "title": "Tire Size Calculator",
     "desc": "A free offline tool for tire size calculator calculations. Works in your browser.",
@@ -3670,7 +3569,7 @@
     "zipUrl": "/assets/zip-packages/audio/tire-size-calculator.zip"
   },
   {
-    "category": "Audio & Music Tools",
+    "category": "Auto & Vehicles",
     "icon": "/assets/icons/audio-1.svg",
     "title": "Trip Mileage Log",
     "desc": "A free offline tool for trip mileage log calculations. Works in your browser.",
@@ -3679,7 +3578,7 @@
     "zipUrl": "/assets/zip-packages/audio/trip-mileage-log.zip"
   },
   {
-    "category": "Audio & Music Tools",
+    "category": "Auto & Vehicles",
     "icon": "/assets/icons/audio-1.svg",
     "title": "Vehicle Depreciation",
     "desc": "A free offline tool for vehicle depreciation calculations. Works in your browser.",
@@ -3690,35 +3589,11 @@
   {
     "category": "Auto & Vehicles",
     "icon": "/assets/icons/cars-1.svg",
-    "title": "Car Payment Calculator",
-    "desc": "A free offline tool for car payment calculator calculations. Works in your browser.",
-    "features": [],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/cars/car-payment-calculator.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
     "title": "Ev Range Calculator",
     "desc": "A free offline tool for ev range calculator calculations. Works in your browser.",
     "features": [],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/cars/ev-range-calculator.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-3.svg",
-    "title": "Fuel Cost Calculator",
-    "desc": "Calculate trip fuel expenses instantly with our free online calculator. Input distance, MPG, and gas prices to estimate costs, split fares among passengers, and compare gasoline versus electric vehicle savings.",
-    "features": [
-      "Calculate trip fuel costs",
-      "Support MPG and L100km units",
-      "Split expenses among passengers",
-      "Compare gas and EV costs",
-      "Convert miles and kilometers"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/cars/fuel-cost-calculator.zip"
   },
   {
     "category": "Auto & Vehicles",
@@ -3740,171 +3615,6 @@
   },
   {
     "category": "Developer Tools",
-    "icon": "/assets/icons/ai-1.svg",
-    "title": "AI Agent Workflow Planner",
-    "desc": "Design and visualize multi-step AI agent workflows with ease. Define nodes, tools, and routing logic, then export structured JSON or Mermaid diagrams ready for LangGraph, AutoGen, or CrewAI integration.",
-    "features": [
-      "Visualize multi-step agent workflows",
-      "Define nodes, tools, and routing",
-      "Export structured JSON configurations",
-      "Generate Mermaid flowchart diagrams",
-      "Support LangGraph and CrewAI"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/ai-agent-workflow-planner.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/ai-2.svg",
-    "title": "AI Model Comparison Table",
-    "desc": "Compare top AI language models side-by-side with our comprehensive reference table. Analyze pricing, context windows, multimodal support, and key strengths to choose the perfect LLM for your projects.",
-    "features": [
-      "Compare top AI models",
-      "Filter by vendor or name",
-      "View pricing and context limits",
-      "Check multimodal support status",
-      "Get quick usage recommendations"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/ai-model-comparison-table.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/ai-3.svg",
-    "title": "AI Prompt Generator",
-    "desc": "Craft highly effective AI prompts instantly with our free prompt generator. Customize roles, formats, tones, and constraints to get precise, production-ready outputs for any language model.",
-    "features": [
-      "Customize AI personas and roles",
-      "Select output format and tone",
-      "Add context and strict constraints",
-      "Generate production-ready prompts instantly",
-      "Copy formatted text to clipboard"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/ai-prompt-generator.zip"
-  },
-  {
-    "category": "Content & Writing",
-    "icon": "/assets/icons/content-1.svg",
-    "title": "AI Writing Style Detector",
-    "desc": "Analyze writing style, tone, formality, and readability instantly. Detect AI-like patterns, track sentence complexity, and get actionable editing tips to improve your content quality.",
-    "features": [
-      "Analyze tone and formality",
-      "Detect AI writing patterns",
-      "Measure readability scores",
-      "Track sentence complexity",
-      "Identify passive voice usage"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/writing/ai-writing-style-detector.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/ai-4.svg",
-    "title": "ChatGPT System Message Builder",
-    "desc": "Generate optimized system prompts for ChatGPT and other LLMs instantly. Define roles, behaviors, output formats, and constraints to craft precise AI instructions for consistent results.",
-    "features": [
-      "Customize AI assistant roles",
-      "Define behavior and tone",
-      "Set output formatting rules",
-      "Add constraints and guidelines",
-      "Generate ready-to-use prompts"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/chatgpt-system-message-builder.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/ai-5.svg",
-    "title": "Conversation Token Trimmer",
-    "desc": "Trim your LLM conversation history to fit exact token limits while preserving system prompts and critical context. Choose smart truncation strategies for optimal AI model performance.",
-    "features": [
-      "Preserve system messages automatically",
-      "Estimate tokens by language type",
-      "Keep most recent conversation turns",
-      "Summarize dropped message history",
-      "Fit exact context window limits",
-      "Copy trimmed output instantly"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/conversation-token-trimmer.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/ai-6.svg",
-    "title": "Embedding Cost Estimator",
-    "desc": "Estimate AI embedding API costs instantly. Calculate token usage, vector dimensions, and monthly expenses for OpenAI, Cohere, and Voyage models. Optimize your RAG pipeline budget efficiently.",
-    "features": [
-      "Supports multiple AI providers",
-      "Calculates token count and API costs",
-      "Estimates vector storage requirements",
-      "Custom pricing for any model",
-      "Real-time cost breakdown per call"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/embedding-cost-estimator.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/ai-7.svg",
-    "title": "Image Prompt Builder",
-    "desc": "Create highly detailed AI image prompts for Midjourney, DALL-E, and Stable Diffusion in seconds. Easily customize subjects, art styles, lighting, and composition to generate optimized prompts for stunning visuals.",
-    "features": [
-      "Generate AI image prompts",
-      "Customize style and lighting",
-      "Support Midjourney and DALL-E",
-      "Adjust composition and mood",
-      "Copy ready-to-use prompts instantly"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/image-prompt-builder.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/ai-8.svg",
-    "title": "Midjourney Prompt Builder",
-    "desc": "Generate optimized Midjourney AI art prompts instantly. Customize styles, lighting, composition, and parameters like aspect ratio and stylization. Copy ready-to-use commands directly to Discord for stunning results.",
-    "features": [
-      "Custom style and lighting presets",
-      "Adjust aspect ratio and stylization",
-      "One-click prompt generation",
-      "Copy ready-to-use Discord commands"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/midjourney-prompt-builder.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/ai-9.svg",
-    "title": "Negative Prompt Generator",
-    "desc": "Generate optimized negative prompts for Stable Diffusion and other AI image generators. Select quality and style exclusions to eliminate artifacts, improve composition, and enhance your generated artwork instantly.",
-    "features": [
-      "Generate Stable Diffusion prompts",
-      "Exclude quality and style flaws",
-      "Add custom negative terms",
-      "One-click copy output",
-      "Optimized for AI image generation"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/negative-prompt-generator.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/ai-10.svg",
-    "title": "Prompt Engineering Cheat Sheet",
-    "desc": "Master AI interactions with this comprehensive prompt engineering cheat sheet. Explore essential techniques like few-shot learning, chain-of-thought reasoning, RAG, and role prompting to optimize LLM outputs effectively.",
-    "features": [
-      "Search and filter techniques",
-      "Step-by-step reasoning guides",
-      "RAG and system prompt tips",
-      "Zero-shot and few-shot examples",
-      "Interactive technique explorer"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/prompt-engineering-cheat-sheet.zip"
-  },
-  {
-    "category": "Developer Tools",
     "icon": "/assets/icons/ai-11.svg",
     "title": "RAG Text Chunker",
     "desc": "Split long documents into optimal chunks for Retrieval-Augmented Generation pipelines. Customize chunk size, overlap, and strategies like words or sentences to improve AI context retrieval accuracy.",
@@ -3917,57 +3627,6 @@
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/dev/rag-chunker.zip"
-  },
-  {
-    "category": "Health & Fitness",
-    "icon": "/assets/icons/health-10.svg",
-    "title": "Brake Pad Wear Estimator",
-    "desc": "A free offline tool for brake pad wear estimator calculations. Works in your browser.",
-    "features": [],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/health/brake-pad-wear-estimator.zip"
-  },
-  {
-    "category": "Health & Fitness",
-    "icon": "/assets/icons/health-11.svg",
-    "title": "Car Loan Payoff Calculator",
-    "desc": "A free offline tool for car loan payoff calculator calculations. Works in your browser.",
-    "features": [],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/health/car-loan-payoff-calculator.zip"
-  },
-  {
-    "category": "Health & Fitness",
-    "icon": "/assets/icons/health-1.svg",
-    "title": "Car Maintenance Schedule",
-    "desc": "A free offline tool for car maintenance schedule calculations. Works in your browser.",
-    "features": [],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/health/car-maintenance-schedule.zip"
-  },
-  {
-    "category": "Finance & Crypto",
-    "icon": "/assets/icons/finance-8.svg",
-    "title": "Car Payment Calculator",
-    "desc": "Calculate your exact monthly car payment and total loan cost instantly. Factor in down payments, trade-in values, interest rates, sales tax, and fees for accurate auto financing estimates.",
-    "features": [
-      "Calculate monthly auto payments",
-      "Factor in trade-in value",
-      "Include sales tax and fees",
-      "View total loan cost breakdown",
-      "Adjustable loan term options"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/finance/car-payment-calculator.zip"
-  },
-  {
-    "category": "Health & Fitness",
-    "icon": "/assets/icons/health-1.svg",
-    "title": "Car Resale Value Calculator",
-    "desc": "A free offline tool for car resale value calculator calculations. Works in your browser.",
-    "features": [],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/health/car-resale-value-calculator.zip"
   },
   {
     "category": "Auto & Vehicles",
@@ -3983,81 +3642,6 @@
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/cars/driving-cost-per-mile.zip"
-  },
-  {
-    "category": "Health & Fitness",
-    "icon": "/assets/icons/health-1.svg",
-    "title": "Ev Charging Cost Calculator",
-    "desc": "A free offline tool for ev charging cost calculator calculations. Works in your browser.",
-    "features": [],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/health/ev-charging-cost-calculator.zip"
-  },
-  {
-    "category": "Health & Fitness",
-    "icon": "/assets/icons/health-1.svg",
-    "title": "Fuel Cost Comparison",
-    "desc": "A free offline tool for fuel cost comparison calculations. Works in your browser.",
-    "features": [],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/health/fuel-cost-comparison.zip"
-  },
-  {
-    "category": "Health & Fitness",
-    "icon": "/assets/icons/health-1.svg",
-    "title": "Mpg Calculator",
-    "desc": "A free offline tool for mpg calculator calculations. Works in your browser.",
-    "features": [],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/health/mpg-calculator.zip"
-  },
-  {
-    "category": "Travel & Transportation",
-    "icon": "/assets/icons/travel-1.svg",
-    "title": "Road Trip Planner",
-    "desc": "Plan your next adventure with our free road trip planner. Calculate fuel, tolls, meals, and hotel costs while estimating drive time, rest stops, and per-person expenses for a stress-free journey.",
-    "features": [
-      "Calculate fuel and toll costs",
-      "Estimate drive time and rest stops",
-      "Budget meals and hotel expenses",
-      "Split total costs per passenger",
-      "Support metric and imperial units"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/travel/road-trip-planner.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-4.svg",
-    "title": "Tire Pressure Calculator",
-    "desc": "Calculate optimal tire pressure for your car or truck based on weight, load, and temperature. Get precise PSI recommendations, compare with door stickers, and ensure safe driving with this free online tool.",
-    "features": [
-      "Calculate optimal PSI per tire",
-      "Adjust for temperature changes",
-      "Compare with door sticker values",
-      "Support cars, trucks, and motorcycles",
-      "Instant cold and hot pressure results"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/cars/tire-pressure-calculator.zip"
-  },
-  {
-    "category": "Health & Fitness",
-    "icon": "/assets/icons/health-1.svg",
-    "title": "Tire Size Calculator",
-    "desc": "A free offline tool for tire size calculator calculations. Works in your browser.",
-    "features": [],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/health/tire-size-calculator.zip"
-  },
-  {
-    "category": "Health & Fitness",
-    "icon": "/assets/icons/health-1.svg",
-    "title": "Trip Mileage Log",
-    "desc": "A free offline tool for trip mileage log calculations. Works in your browser.",
-    "features": [],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/health/trip-mileage-log.zip"
   },
   {
     "category": "Auto & Vehicles",
@@ -4077,96 +3661,6 @@
   {
     "category": "Auto & Vehicles",
     "icon": "/assets/icons/cars-1.svg",
-    "title": "AI Agent Workflow Planner",
-    "desc": "Plan multi-step AI agent workflows with our free online planner. Define nodes, inputs, outputs, and tools. Export as JSON for LangGraph/AutoGen or as Mermaid diagrams for visual representation.",
-    "features": [
-      "Define multi-step agent nodes",
-      "Export as JSON or Mermaid",
-      "Supports LLM, Tool, Router, Human types",
-      "Configurable iterations and memory",
-      "No signup required"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/ai-agent-workflow-planner.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
-    "title": "AI Content Detector Lite",
-    "desc": "Detect AI-generated text with our free heuristic-based analyzer. Analyzes sentence length variance, vocabulary diversity, and repetitive patterns to estimate AI probability. No upload required, runs entirely in your browser.",
-    "features": [
-      "Heuristic AI detection",
-      "Sentence variance analysis",
-      "Vocabulary diversity check",
-      "Pattern repetition detection",
-      "Free and private"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/ai-content-detector-lite.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
-    "title": "AI Detection Score Tool",
-    "desc": "Free heuristic AI content detector that analyzes text for AI-generated patterns using perplexity, burstiness, common AI phrases, and vocabulary richness. Get an instant AI score and signal breakdown to assess if text is likely human-written or AI-generated.",
-    "features": [
-      "Instant AI scoring",
-      "Perplexity and burstiness metrics",
-      "AI phrase frequency detection",
-      "Vocabulary richness analysis",
-      "Signal breakdown visualization"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/ai-detection-score-tool.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
-    "title": "AI Model Comparison Table",
-    "desc": "Compare features, pricing, and capabilities of major LLMs including GPT-4, Claude, Gemini, and Llama. Free AI model comparison reference for developers to choose the best model for their needs.",
-    "features": [
-      "Search models by name",
-      "Filter by vendor",
-      "Compare context and pricing",
-      "View multimodal support",
-      "Quick recommendations"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/ai-model-comparison-table.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
-    "title": "AI Prompt Generator",
-    "desc": "Generate effective AI prompts with our free online prompt engineering tool. Add role, context, examples, and constraints to craft perfect prompts for ChatGPT and other AI models.",
-    "features": [
-      "Role and persona selection",
-      "Output format options",
-      "Tone and length control",
-      "Context and constraints input",
-      "Instant prompt generation"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/ai-prompt-generator.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
-    "title": "AI Writing Style Detector",
-    "desc": "Analyze your writing style with our free AI Writing Style Detector. Get insights on tone, formality, sentence complexity, readability, and AI-likeness. Perfect for editors and writers.",
-    "features": [
-      "Tone and formality analysis",
-      "Readability score (Flesch)",
-      "Sentence complexity metrics",
-      "AI-likeness estimation",
-      "Vocabulary richness check"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/ai-writing-style-detector.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
     "title": "Car Battery Size Selector",
     "desc": "Find the right car battery group size for your vehicle with our free online selector. Compare BCI group dimensions, CCA ratings, and get recommendations based on vehicle type and climate.",
     "features": [
@@ -4178,21 +3672,6 @@
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/auto & vehicles/battery-size-selector.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
-    "title": "Brake Pad Wear Estimator",
-    "desc": "Estimate brake pad wear and replacement timing with our free online calculator. Input current thickness, mileage, driving style, and vehicle type to get accurate lifespan predictions and maintenance alerts.",
-    "features": [
-      "Current thickness input",
-      "Driving style selection",
-      "Replacement timing estimate",
-      "Wear rate calculation",
-      "Maintenance status alerts"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/brake-pad-wear-estimator.zip"
   },
   {
     "category": "Auto & Vehicles",
@@ -4212,21 +3691,6 @@
   {
     "category": "Auto & Vehicles",
     "icon": "/assets/icons/cars-1.svg",
-    "title": "Car Loan Payoff Calculator",
-    "desc": "Calculate how extra payments can accelerate your car loan payoff. See months saved and interest reduced with our free auto loan payoff calculator. Plan your early payoff strategy.",
-    "features": [
-      "Extra payment simulation",
-      "Biweekly payment option",
-      "Lump sum calculation",
-      "Interest savings comparison",
-      "Payoff time comparison"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/car-loan-payoff-calculator.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
     "title": "Car Maintenance Schedule Calculator",
     "desc": "Plan your vehicle's maintenance schedule based on mileage, vehicle type, and driving conditions. Get service intervals for oil changes, tire rotation, brake inspection, and more. Free online tool.",
     "features": [
@@ -4238,156 +3702,6 @@
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/auto & vehicles/car-maintenance-schedule.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
-    "title": "Car Payment Calculator",
-    "desc": "Calculate monthly car payments and total loan cost with our free auto loan calculator. Enter vehicle price, down payment, trade-in value, interest rate, and loan term for instant results.",
-    "features": [
-      "Monthly payment calculation",
-      "Total loan cost breakdown",
-      "Down payment and trade-in",
-      "Interest rate and term options",
-      "Sales tax and fees included"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/car-payment-calculator.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
-    "title": "Car Resale Value Calculator",
-    "desc": "Estimate your car's resale value over time with our free depreciation calculator. Input purchase price, age, mileage, and vehicle type to get current and future worth.",
-    "features": [
-      "Purchase price input",
-      "Depreciation analysis",
-      "Future value projection",
-      "Mileage penalty calculation",
-      "Vehicle type selection",
-      "Condition adjustment"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/car-resale-value-calculator.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
-    "title": "ChatGPT System Message Builder",
-    "desc": "Build custom system messages for ChatGPT API. Define assistant role, behavior, response format, expertise areas, and constraints. Free online tool for developers and LLM users.",
-    "features": [
-      "Role and behavior configuration",
-      "Response format selection",
-      "Constraint and rule setting",
-      "One-click system message generation",
-      "Copy as text or JSON"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/chatgpt-system-message-builder.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
-    "title": "Conversation Token Trimmer",
-    "desc": "Trim conversation history to fit token limits with smart truncation. Preserve system messages and recent context. Free online LLM context trimmer for developers and AI users.",
-    "features": [
-      "Smart truncation strategies",
-      "Preserve system message",
-      "Recent context retention",
-      "Token limit estimation",
-      "Copy trimmed output"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/conversation-token-trimmer.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
-    "title": "DALL-E Prompt Builder",
-    "desc": "Build optimized DALL-E 3 prompts with natural language descriptions. Choose style, mood, lighting, composition, and more to generate detailed image prompts for OpenAI's DALL-E 3.",
-    "features": [
-      "Natural language input",
-      "Style and mood selection",
-      "Aspect ratio options",
-      "One-click prompt generation",
-      "Copy to clipboard support"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/dalle-prompt-builder.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
-    "title": "Driving Cost Per Mile Calculator",
-    "desc": "Calculate the true cost per mile of driving with our free online calculator. Includes fuel, depreciation, maintenance, insurance, registration, and parking costs. Perfect for budgeting and comparing vehicle expenses.",
-    "features": [
-      "Depreciation cost calculation",
-      "Fuel cost per mile",
-      "Annual ownership estimate",
-      "Cost breakdown by category",
-      "Supports multiple expense inputs"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/driving-cost-per-mile.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
-    "title": "Embedding Cost Estimator",
-    "desc": "Estimate embedding API costs for OpenAI, Cohere, Voyage, and custom providers. Calculate token count, dimensions, and total cost per call or per month. Free online tool for developers building RAG or vector search applications.",
-    "features": [
-      "Multi-provider support",
-      "Token and cost calculation",
-      "File upload support",
-      "Custom pricing option",
-      "Storage estimation"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/embedding-cost-estimator.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
-    "title": "EV Charging Cost Calculator",
-    "desc": "Calculate electric vehicle charging costs instantly with our free EV charging cost calculator. Estimate home and public charging expenses based on battery size, efficiency, and electricity rates.",
-    "features": [
-      "Battery size input",
-      "Charging location selection",
-      "Cost breakdown details",
-      "Monthly and annual estimates"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/ev-charging-cost-calculator.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
-    "title": "Fine-tune Data Formatter",
-    "desc": "Format data for LLM fine-tuning with our free online tool. Convert Q&A pairs to JSONL for OpenAI, Anthropic, and other providers. Prepare your fine-tune dataset easily.",
-    "features": [
-      "Multiple output formats",
-      "Custom separator support",
-      "System message integration",
-      "Dataset statistics display",
-      "One-click JSONL generation"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/fine-tune-data-formatter.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
-    "title": "Fuel Cost Calculator",
-    "desc": "Calculate trip fuel costs instantly with our free fuel cost calculator. Enter distance, vehicle efficiency, and fuel price to get accurate cost estimates. Supports MPG, L/100km, and cost per person.",
-    "features": [
-      "Trip distance input",
-      "Multiple efficiency units",
-      "Cost per person split",
-      "Round trip support",
-      "EV cost comparison"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/fuel-cost-calculator.zip"
   },
   {
     "category": "Auto & Vehicles",
@@ -4423,21 +3737,6 @@
   {
     "category": "Auto & Vehicles",
     "icon": "/assets/icons/cars-1.svg",
-    "title": "Image Prompt Builder",
-    "desc": "Build detailed image prompts for Midjourney, DALL-E, and Stable Diffusion. Customize subject, art style, lighting, composition, mood, and aspect ratio to generate optimized AI art prompts.",
-    "features": [
-      "Custom subject and style",
-      "Lighting and composition options",
-      "Mood and color palette",
-      "Aspect ratio presets",
-      "Multi-platform support"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/image-prompt-builder.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
     "title": "Kilometers to Miles Converter",
     "desc": "Convert kilometers to miles instantly with our free online distance converter. Supports meters, feet, yards, running pace, and driving time estimates. Perfect for runners, cyclists, and travelers.",
     "features": [
@@ -4467,35 +3766,6 @@
   {
     "category": "Auto & Vehicles",
     "icon": "/assets/icons/cars-1.svg",
-    "title": "LLM Cost Estimator",
-    "desc": "Estimate the cost of using large language models like GPT-4, Claude, and Gemini. Input token counts and compare pricing across models to budget your AI API usage.",
-    "features": [
-      "Multi-model cost comparison",
-      "Input and output token counts",
-      "Real-time price calculation",
-      "Supports major LLM providers"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/llm-cost-estimator.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
-    "title": "Midjourney Prompt Builder",
-    "desc": "Build optimized Midjourney prompts with parameters like style, aspect ratio, stylize, and chaos. Free online tool to craft detailed AI art prompts for stunning image generation.",
-    "features": [
-      "Preset style selection",
-      "Aspect ratio options",
-      "Stylize and chaos sliders",
-      "Artist reference input",
-      "One-click prompt copy"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/midjourney-prompt-builder.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
     "title": "Miles to Kilometers Converter",
     "desc": "Convert miles to kilometers instantly with our free online converter. Supports bidirectional conversion, common distance references, and driving time estimates for travel, running, and driving.",
     "features": [
@@ -4507,96 +3777,6 @@
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/auto & vehicles/miles-to-km.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
-    "title": "MPG Calculator",
-    "desc": "Calculate your car fuel efficiency in MPG (miles per gallon). Track gas mileage and improve fuel economy with our free online MPG calculator.",
-    "features": [
-      "Calculate MPG from distance and fuel",
-      "Convert between MPG, L/100km, km/L",
-      "Estimate fuel cost per trip",
-      "Compare to US average efficiency",
-      "Get fuel saving tips"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/mpg-calculator.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
-    "title": "Negative Prompt Generator",
-    "desc": "Generate effective negative prompts for Stable Diffusion and AI image generators. Exclude quality issues, anatomy flaws, style mismatches, and custom elements to improve image output.",
-    "features": [
-      "Select image type",
-      "Toggle quality exclusions",
-      "Add custom exclusions",
-      "Generate and copy prompt"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/negative-prompt-generator.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
-    "title": "Prompt Engineering Cheat Sheet",
-    "desc": "Master prompt engineering with this free interactive cheat sheet. Learn few-shot, chain-of-thought, RAG, and advanced techniques to improve AI interactions and output quality.",
-    "features": [
-      "Search techniques by name",
-      "Filter by category",
-      "View examples and usage",
-      "Covers basic to advanced methods",
-      "Free and easy to use"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/prompt-engineering-cheat-sheet.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
-    "title": "Prompt Template Library",
-    "desc": "Browse our curated prompt template library organized by category. Copy ready-to-use prompts for ChatGPT, Claude, Midjourney, and more. Free online tool for writers, marketers, and developers.",
-    "features": [
-      "Search by keyword",
-      "Filter by category",
-      "Filter by AI tool",
-      "Copy to clipboard",
-      "Interactive template filling"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/prompt-template-library.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
-    "title": "RAG Text Chunker",
-    "desc": "Split long text into chunks for Retrieval Augmented Generation (RAG). Configurable chunk size, overlap, and strategy. Free online tool for AI developers to prepare documents for vector databases.",
-    "features": [
-      "Multiple chunking strategies",
-      "Configurable chunk size and overlap",
-      "Separator preference for clean breaks",
-      "Download results as JSON or TXT",
-      "Trim whitespace option"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/rag-chunker.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
-    "title": "Road Trip Planner",
-    "desc": "Plan your road trip with our free online calculator. Estimate fuel, tolls, food, hotel costs, drive time, and rest stops. Get a complete budget breakdown per person for your journey.",
-    "features": [
-      "Total cost estimation",
-      "Drive time calculation",
-      "Per-person cost breakdown",
-      "Customizable inputs",
-      "Rest stop planning",
-      "Fuel cost calculator"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/road-trip-planner.zip"
   },
   {
     "category": "Auto & Vehicles",
@@ -4616,51 +3796,6 @@
   {
     "category": "Auto & Vehicles",
     "icon": "/assets/icons/cars-1.svg",
-    "title": "Stable Diffusion Prompt Builder",
-    "desc": "Build detailed Stable Diffusion prompts with positive and negative tags, sampler settings, CFG scale, and more. Free online tool for AI image generation enthusiasts.",
-    "features": [
-      "Positive and negative prompts",
-      "Sampler and CFG settings",
-      "Preset style templates",
-      "Quick copy to clipboard",
-      "Dark mode support"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/stable-diffusion-prompt-builder.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
-    "title": "Text Token Counter",
-    "desc": "Count tokens for GPT, Claude, and other LLMs with our free online token counter. Estimate API costs and context window usage before sending prompts. Perfect for AI/ML developers.",
-    "features": [
-      "Multi-model support",
-      "Token and cost estimation",
-      "Context window tracking",
-      "Character and word count",
-      "Reading time estimate"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/text-token-counter.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
-    "title": "Tire Pressure Calculator",
-    "desc": "Calculate recommended tire pressure based on vehicle weight, tire load rating, and temperature. Adjust for load conditions and compare with door sticker PSI for optimal safety and fuel efficiency.",
-    "features": [
-      "Vehicle weight input",
-      "Temperature adjustment",
-      "Load condition selection",
-      "Door sticker comparison",
-      "Cold and hot pressure"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/tire-pressure-calculator.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
     "title": "Tire Pressure Converter",
     "desc": "Convert tire pressure between PSI, bar, kPa, and kg/cm2 with our free online converter. Instantly get accurate pressure conversions for cars, bikes, and trucks.",
     "features": [
@@ -4671,37 +3806,6 @@
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/auto & vehicles/tire-pressure-converter.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
-    "title": "Tire Size Calculator",
-    "desc": "Compare tire sizes and dimensions with our free online tire size calculator. Calculate diameter, width, sidewall height, circumference, and revolutions per mile for two tire sizes.",
-    "features": [
-      "Parse standard tire size formats",
-      "Calculate overall diameter difference",
-      "Compute sidewall and width specs",
-      "Display revolutions per mile",
-      "Warn if diameter exceeds 3% difference",
-      "Speedometer error estimation"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/tire-size-calculator.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
-    "title": "Tire Size Converter",
-    "desc": "Convert tire sizes between metric and inch formats with our free online calculator. Compare tire dimensions, sidewall height, overall diameter, and speedometer impact for alternative sizes.",
-    "features": [
-      "Metric to inch conversion",
-      "Sidewall height calculation",
-      "Overall diameter comparison",
-      "Speedometer impact analysis",
-      "Alternative size suggestions"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/tire-size-converter.zip"
   },
   {
     "category": "Auto & Vehicles",
@@ -4732,21 +3836,6 @@
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/auto & vehicles/trip-mileage-log.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
-    "title": "Vehicle Depreciation Calculator",
-    "desc": "Calculate your vehicle's depreciation over time with our free online tool. Enter purchase price, vehicle type, annual mileage, and condition to see year-by-year value loss and find the best time to sell.",
-    "features": [
-      "Year-by-year depreciation schedule",
-      "Multiple vehicle types supported",
-      "Mileage and condition adjustments",
-      "Best time to sell indicator",
-      "Visual value chart"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/auto & vehicles/vehicle-depreciation.zip"
   },
   {
     "category": "Beauty & Fashion",
@@ -5005,42 +4094,6 @@
   {
     "category": "Business & Productivity",
     "icon": "/assets/icons/business-1.svg",
-    "title": "Amazon Keyword Miner",
-    "desc": "A free offline tool for amazon keyword miner calculations. Works in your browser.",
-    "features": [
-      "Easy to use",
-      "Works offline"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/business/amazon-keyword-miner.zip"
-  },
-  {
-    "category": "Business & Productivity",
-    "icon": "/assets/icons/business-1.svg",
-    "title": "Amazon Title Optimizer",
-    "desc": "A free offline tool for amazon title optimizer calculations. Works in your browser.",
-    "features": [
-      "Easy to use",
-      "Works offline"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/business/amazon-title-optimizer.zip"
-  },
-  {
-    "category": "Business & Productivity",
-    "icon": "/assets/icons/business-1.svg",
-    "title": "Budget Calculator",
-    "desc": "A free offline tool for budget calculator calculations. Works in your browser.",
-    "features": [
-      "Easy to use",
-      "Works offline"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/business/budget-calculator.zip"
-  },
-  {
-    "category": "Business & Productivity",
-    "icon": "/assets/icons/business-1.svg",
     "title": "Contract Template Builder",
     "desc": "A free offline tool for contract template builder calculations. Works in your browser.",
     "features": [
@@ -5065,18 +4118,6 @@
   {
     "category": "Business & Productivity",
     "icon": "/assets/icons/business-1.svg",
-    "title": "Currency Converter",
-    "desc": "A free offline tool for currency converter calculations. Works in your browser.",
-    "features": [
-      "Easy to use",
-      "Works offline"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/business/currency-converter.zip"
-  },
-  {
-    "category": "Business & Productivity",
-    "icon": "/assets/icons/business-1.svg",
     "title": "Discount Calculator",
     "desc": "A free offline tool for discount calculator calculations. Works in your browser.",
     "features": [
@@ -5097,18 +4138,6 @@
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/business/hourly-rate-calculator.zip"
-  },
-  {
-    "category": "Business & Productivity",
-    "icon": "/assets/icons/business-1.svg",
-    "title": "Inventory Turnover Calculator",
-    "desc": "A free offline tool for inventory turnover calculator calculations. Works in your browser.",
-    "features": [
-      "Easy to use",
-      "Works offline"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/business/inventory-turnover-calculator.zip"
   },
   {
     "category": "Business & Productivity",
@@ -5151,22 +4180,6 @@
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/business/meeting-notes-template.zip"
-  },
-  {
-    "category": "Business & Productivity",
-    "icon": "/assets/icons/business-1.svg",
-    "title": "Random Name Picker",
-    "desc": "Free online random name picker and lottery draw tool. Pick winners, split into teams, or shuffle names from any list. All processing is local and private, no data upload required.",
-    "features": [
-      "Pick random winners",
-      "Split into teams",
-      "Shuffle order",
-      "Animated draw effect",
-      "Copy results",
-      "No data upload"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/business/name-picker.zip"
   },
   {
     "category": "Business & Productivity",
@@ -5309,22 +4322,6 @@
   {
     "category": "Content & Writing",
     "icon": "",
-    "title": "Case Converter",
-    "desc": "Easily convert text between UPPERCASE, lowercase, Title Case, camelCase, snake_case, kebab-case, and more with our free online case converter tool.",
-    "features": [
-      "14 conversion types",
-      "Instant text transformation",
-      "Copy to clipboard",
-      "Character and word count",
-      "Dark mode support",
-      "Chain multiple conversions"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/writing/case-converter-all.zip"
-  },
-  {
-    "category": "Content & Writing",
-    "icon": "",
     "title": "Character Counter",
     "desc": "Count characters, words, sentences, and paragraphs instantly. Check text limits for Twitter, SMS, and SEO meta descriptions with our free online character counter.",
     "features": [
@@ -5401,21 +4398,6 @@
   {
     "category": "Content & Writing",
     "icon": "",
-    "title": "Markdown to HTML Converter",
-    "desc": "Convert Markdown to clean HTML instantly with live preview. Supports GitHub Flavored Markdown, tables, code blocks, and lists. Local processing, no upload required.",
-    "features": [
-      "Live Markdown preview",
-      "GitHub Flavored Markdown",
-      "Copy and download HTML",
-      "Tables and code blocks",
-      "Local private processing"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/writing/markdown-to-html.zip"
-  },
-  {
-    "category": "Content & Writing",
-    "icon": "",
     "title": "Reading Time Calculator",
     "desc": "Estimate reading and speaking time from any text instantly. Count words, characters, sentences, and paragraphs with adjustable WPM settings. Perfect for bloggers and content marketers.",
     "features": [
@@ -5474,22 +4456,6 @@
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/writing/strikethrough-text.zip"
-  },
-  {
-    "category": "Content & Writing",
-    "icon": "",
-    "title": "Text Deduplication Tool",
-    "desc": "Remove duplicate lines from text instantly with our free online Text Deduplication Tool. Compare two lists, count occurrences, and extract unique values with case-sensitive or fuzzy matching options.",
-    "features": [
-      "Remove duplicate lines",
-      "Compare two text lists",
-      "Count line occurrences",
-      "Case-sensitive and fuzzy matching",
-      "Extract unique values",
-      "Copy and download results"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/writing/text-deduplication.zip"
   },
   {
     "category": "Content & Writing",
@@ -5998,7 +4964,7 @@
     "zipUrl": "/assets/zip-packages/design/cmyk-to-rgb.zip"
   },
   {
-    "category": "Design & Media",
+    "category": "Color & Design Utilities",
     "icon": "/assets/icons/design-1.svg",
     "title": "Color Blind Simulator",
     "desc": "Free online color blind simulator that replicates how colors appear to users with color vision deficiency. Test design accessibility across protanopia, deuteranopia, tritanopia and more for inclusive UI design.",
@@ -6013,7 +4979,7 @@
     "zipUrl": "/assets/zip-packages/design/color-blind-simulator.zip"
   },
   {
-    "category": "Design & Media",
+    "category": "Color & Design Utilities",
     "icon": "/assets/icons/design-1.svg",
     "title": "Color Palette Extractor",
     "desc": "Free online color palette extractor that identifies dominant colors from any uploaded image. Get precise hex codes and RGB values to build cohesive color schemes for design work.",
@@ -6043,7 +5009,7 @@
     "zipUrl": "/assets/zip-packages/design/color-picker-tool.zip"
   },
   {
-    "category": "Design & Media",
+    "category": "Color & Design Utilities",
     "icon": "/assets/icons/design-1.svg",
     "title": "Color Scheme Generator",
     "desc": "Instantly generate beautiful, harmonious color palettes for web and design projects with our free online tool. Supports multiple color harmony rules and exports to CSS, Tailwind, SCSS, and JSON formats.",
@@ -6086,22 +5052,6 @@
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/design/css-filter-generator.zip"
-  },
-  {
-    "category": "Design & Media",
-    "icon": "/assets/icons/design-1.svg",
-    "title": "CSS Gradient Generator",
-    "desc": "Free online CSS gradient generator for building custom linear, radial, and conic gradients. Preview results instantly and copy ready-to-use CSS or Tailwind code for web design projects.",
-    "features": [
-      "Multiple gradient type support",
-      "Custom color stop controls",
-      "Live gradient preview",
-      "CSS and Tailwind export",
-      "Built-in gradient presets",
-      "Adjustable angle settings"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/design/css-gradient-generator.zip"
   },
   {
     "category": "Design & Media",
@@ -6196,21 +5146,6 @@
   {
     "category": "Design & Media",
     "icon": "/assets/icons/design-1.svg",
-    "title": "Web Font Format Converter",
-    "desc": "Free browser-based web font converter supporting TTF, OTF, WOFF, and WOFF2 formats. Preview fonts locally with no server uploads, and generate ready-to-use CSS @font-face rules for seamless web design integration.",
-    "features": [
-      "Multiple web font format support",
-      "Instant live font preview",
-      "Automatic @font-face CSS generation",
-      "One-click CSS copy function",
-      "Local private file processing"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/design/font-converter.zip"
-  },
-  {
-    "category": "Design & Media",
-    "icon": "/assets/icons/design-1.svg",
     "title": "Font Pairing Finder",
     "desc": "Discover curated Google Font pairings for headings and body text with our free online design tool. Preview custom text, mix font combinations, and copy ready-to-use CSS for your projects.",
     "features": [
@@ -6241,21 +5176,6 @@
   {
     "category": "Design & Media",
     "icon": "/assets/icons/design-1.svg",
-    "title": "CSS Gradient Generator",
-    "desc": "Free online CSS gradient generator for web designers. Create custom linear, radial, and conic gradients with adjustable color stops, angles, and live preview, then copy ready-to-use CSS code instantly.",
-    "features": [
-      "Supports linear, radial, conic gradients",
-      "Customizable color stop controls",
-      "Real-time gradient preview",
-      "Adjustable angle, shape, and position",
-      "One-click CSS code copy"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/design/gradient-generator.zip"
-  },
-  {
-    "category": "Design & Media",
-    "icon": "/assets/icons/design-1.svg",
     "title": "Ico Generator",
     "desc": "A free offline tool for ico generator calculations. Works in your browser.",
     "features": [
@@ -6266,7 +5186,7 @@
     "zipUrl": "/assets/zip-packages/design/ico-generator.zip"
   },
   {
-    "category": "Design & Media",
+    "category": "Color & Design Utilities",
     "icon": "/assets/icons/design-1.svg",
     "title": "Image Color Picker",
     "desc": "Free online image color picker to sample colors from any uploaded image directly in your browser. Instantly get HEX, RGB, and HSL values with one-click copy, no server upload required.",
@@ -6363,22 +5283,6 @@
   {
     "category": "Design & Media",
     "icon": "/assets/icons/design-1.svg",
-    "title": "Image Resizer & Cropper",
-    "desc": "Free browser-based image resizer and cropper that requires no server uploads. Batch process images, set custom dimensions, keep aspect ratio, adjust quality, convert formats, and download processed files instantly with full privacy protection.",
-    "features": [
-      "Batch image resizing support",
-      "Maintain aspect ratio option",
-      "Adjustable output quality",
-      "Multi-format output support",
-      "No file upload required",
-      "Bulk ZIP download available"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/design/image-resizer.zip"
-  },
-  {
-    "category": "Design & Media",
-    "icon": "/assets/icons/design-1.svg",
     "title": "Image Rotator",
     "desc": "Free online image rotator that lets you rotate photos by 90, 180, 270 degrees or any custom angle. Runs entirely in your browser with no signup, supports PNG, JPEG and WebP export.",
     "features": [
@@ -6403,22 +5307,6 @@
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/design/image-to-base64.zip"
-  },
-  {
-    "category": "Design & Media",
-    "icon": "/assets/icons/design-1.svg",
-    "title": "Image Watermark Tool",
-    "desc": "Free online tool to add custom text or logo watermarks to your images. Batch process multiple files with adjustable position, opacity, and styling, with all processing done locally in your browser.",
-    "features": [
-      "Text and logo watermark support",
-      "Batch image processing",
-      "Custom opacity and styling",
-      "Multiple position options",
-      "Tile repeat pattern option",
-      "Local private processing"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/design/image-watermark.zip"
   },
   {
     "category": "Design & Media",
@@ -6450,18 +5338,6 @@
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/design/svg-icon-editor.zip"
-  },
-  {
-    "category": "Design & Media",
-    "icon": "/assets/icons/design-1.svg",
-    "title": "Svg Optimizer",
-    "desc": "A free offline tool for svg optimizer calculations. Works in your browser.",
-    "features": [
-      "Easy to use",
-      "Works offline"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/design/svg-optimizer.zip"
   },
   {
     "category": "Design & Media",
@@ -6512,36 +5388,6 @@
   {
     "category": "Developer Tools",
     "icon": "/assets/icons/dev-1.svg",
-    "title": "API Mock Data Generator",
-    "desc": "Generate realistic fake JSON data for API testing and prototyping. Customize fields, choose output formats, and use quick templates. All processing is local and private.",
-    "features": [
-      "Generate fake JSON data",
-      "Custom field types",
-      "Multiple output formats",
-      "Quick templates",
-      "Local processing"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/api-mock-generator.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/dev-1.svg",
-    "title": "Number Base Converter",
-    "desc": "Free online number base converter supporting binary, octal, decimal, hexadecimal, and custom bases up to 36. Instant local conversion with digit grouping and prefix options.",
-    "features": [
-      "Binary, octal, decimal, hex conversion",
-      "Custom base support (2-36)",
-      "Digit grouping and prefix display",
-      "One-click copy to clipboard",
-      "Dark mode and keyboard shortcut"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/base-converter.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/dev-1.svg",
     "title": "Base64 Batch Encoder / Decoder",
     "desc": "Free online Base64 batch encoder and decoder. Process multiple strings at once with UTF-8 and URL-safe options. All processing happens locally in your browser, no data upload.",
     "features": [
@@ -6588,7 +5434,7 @@
     "zipUrl": "/assets/zip-packages/dev/byte-converter.zip"
   },
   {
-    "category": "Developer Tools",
+    "category": "Color & Design Utilities",
     "icon": "/assets/icons/dev-1.svg",
     "title": "Color Contrast Checker",
     "desc": "Check color contrast for WCAG AA and AAA compliance. Pick foreground and background colors to see the contrast ratio and whether your text meets accessibility standards for normal and large text.",
@@ -6604,7 +5450,7 @@
     "zipUrl": "/assets/zip-packages/dev/color-contrast-checker.zip"
   },
   {
-    "category": "Developer Tools",
+    "category": "Color & Design Utilities",
     "icon": "/assets/icons/dev-1.svg",
     "title": "Color Palette Generator",
     "desc": "Create beautiful color palettes instantly with our free online tool. Choose from complementary, analogous, triadic, and more. Copy HEX, RGB, and HSL values for your design projects.",
@@ -6621,21 +5467,6 @@
   {
     "category": "Developer Tools",
     "icon": "/assets/icons/dev-1.svg",
-    "title": "Command Line Cheat Sheet",
-    "desc": "Quickly find and copy Linux, macOS, and Windows command line commands. Search by task or category with instant results. Perfect for developers, sysadmins, and CLI users.",
-    "features": [
-      "Multi-OS command reference",
-      "Category and keyword search",
-      "One-click copy to clipboard",
-      "Dark mode support",
-      "Offline access ready"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/command-cheat-sheet.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/dev-1.svg",
     "title": "Cron Expression Generator",
     "desc": "Generate cron expressions visually with our free online tool. Build schedules using a friendly UI, see plain-English descriptions, and preview next execution times. Perfect for developers and sysadmins.",
     "features": [
@@ -6648,22 +5479,6 @@
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/dev/cron-expression-generator.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/dev-1.svg",
-    "title": "Cron Expression Parser",
-    "desc": "Parse and validate cron expressions instantly. View human-readable schedule descriptions and upcoming execution times. Supports standard 5-field and 6-field cron formats with special characters.",
-    "features": [
-      "Parse cron expressions instantly",
-      "View next 10 execution times",
-      "Human-readable schedule description",
-      "Quick template buttons",
-      "Supports special characters",
-      "100% client-side processing"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/cron-parser.zip"
   },
   {
     "category": "Developer Tools",
@@ -6695,37 +5510,6 @@
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/dev/crontab-generator.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/dev-1.svg",
-    "title": "CRUD Code Template Generator",
-    "desc": "Generate boilerplate CRUD code for REST APIs and databases. Supports Node.js, Python, PHP, Java, and more. Save development time with instant code templates.",
-    "features": [
-      "Multiple language support",
-      "Custom entity and fields",
-      "SQL and MongoDB options",
-      "Copy and download code",
-      "100% local processing"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/crud-template-generator.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/dev-1.svg",
-    "title": "CSS Gradient Generator",
-    "desc": "Create beautiful CSS gradients visually with our free online gradient generator. Choose linear, radial, or conic types, adjust colors and angles, and copy ready-to-use CSS code instantly.",
-    "features": [
-      "Real-time gradient preview",
-      "Linear, radial, and conic types",
-      "Multi-color stop control",
-      "12 built-in presets",
-      "One-click CSS code copy",
-      "Dark mode support"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/css-gradient-generator.zip"
   },
   {
     "category": "Developer Tools",
@@ -6793,21 +5577,6 @@
   {
     "category": "Developer Tools",
     "icon": "/assets/icons/dev-1.svg",
-    "title": "Spreadsheet Formula Converter",
-    "desc": "Convert Excel and Google Sheets formulas into JavaScript, Python, or SQL code instantly. Supports SUM, VLOOKUP, IF, and more. Free online tool for developers and analysts.",
-    "features": [
-      "Convert formulas to JavaScript, Python, SQL",
-      "Supports SUM, VLOOKUP, IF, and more",
-      "Resolves cell references automatically",
-      "No signup or installation required",
-      "Copy generated code with one click"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/formula-converter.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/dev-1.svg",
     "title": "Git Cheat Sheet",
     "desc": "Complete Git command cheat sheet for developers. Search, browse, and copy 60+ Git commands for setup, staging, commits, branches, merging, rebasing, remotes, stashing, logs, undo, and advanced workflows.",
     "features": [
@@ -6820,22 +5589,6 @@
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/dev/git-cheat-sheet.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/dev-1.svg",
-    "title": "Hex to Text Converter",
-    "desc": "Convert hexadecimal strings to readable text and vice versa. Supports UTF-8, ASCII, and multiple hex formats. Ideal for debugging, data analysis, and encoding tasks.",
-    "features": [
-      "Hex to text conversion",
-      "Text to hex encoding",
-      "UTF-8 and ASCII support",
-      "Multiple separator formats",
-      "Copy result to clipboard",
-      "Swap input/output"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/hex-text-converter.zip"
   },
   {
     "category": "Developer Tools",
@@ -6928,22 +5681,6 @@
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/dev/http-status-code-reference.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/dev-1.svg",
-    "title": "JavaScript Minifier",
-    "desc": "Minify JavaScript code to reduce file size and improve load times. Remove comments, whitespace, and unnecessary characters instantly. Supports variable mangling and beautification for reverse operations.",
-    "features": [
-      "Minify JavaScript code",
-      "Remove comments and whitespace",
-      "Mangle variable names",
-      "Beautify minified code",
-      "Copy result to clipboard",
-      "Show size reduction stats"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/js-minifier.zip"
   },
   {
     "category": "Developer Tools",
@@ -7058,53 +5795,6 @@
   {
     "category": "Developer Tools",
     "icon": "/assets/icons/dev-1.svg",
-    "title": "Batch JSON Validator",
-    "desc": "Validate multiple JSON documents at once with our free online batch JSON validator. Find syntax errors instantly, supports custom separators and strict mode. All processing is local and private.",
-    "features": [
-      "Validate multiple JSON documents",
-      "Customizable separators",
-      "Strict mode for comments",
-      "Copy valid or invalid results",
-      "Local processing, no upload"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/json-validator.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/dev-1.svg",
-    "title": "JWT Token Decoder",
-    "desc": "Decode and inspect JWT tokens instantly in your browser. View header, payload, and signature, verify structure, and check expiration status with this free online tool.",
-    "features": [
-      "Decode header, payload, signature",
-      "Verify JWT structure",
-      "Check token expiration",
-      "Display registered claims",
-      "Auto-decode on paste",
-      "Local processing only"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/jwt-decoder.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/dev-1.svg",
-    "title": "Log File Formatter",
-    "desc": "Format and clean messy log files. Parse timestamps, levels, and messages. Filter by log level, search, and export cleaned logs. Ideal for developers and DevOps engineers to quickly analyze application logs.",
-    "features": [
-      "Parse timestamps and levels",
-      "Filter by log level",
-      "Search log messages",
-      "Export as JSON",
-      "Color-coded output",
-      "100% local processing"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/log-formatter.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/dev-1.svg",
     "title": "Markdown Cheatsheet",
     "desc": "Quick reference for Markdown syntax with live previews. Copy headings, bold, italic, lists, links, images, code blocks, tables, and GitHub Flavored Markdown snippets instantly.",
     "features": [
@@ -7136,20 +5826,6 @@
   {
     "category": "Developer Tools",
     "icon": "/assets/icons/dev-1.svg",
-    "title": "Regex Tester",
-    "desc": "Test and debug regular expressions instantly with our free online regex tester. Supports flags, match highlighting, and pattern breakdown for JavaScript regex.",
-    "features": [
-      "Real-time regex matching",
-      "Flag support (g, i, m, s, u, y)",
-      "Match highlighting and index",
-      "Pattern token breakdown"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/regex-tester.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/dev-1.svg",
     "title": "Regex Tester Live",
     "desc": "Test JavaScript regular expressions instantly with live highlighting, capture groups, and detailed match info. Supports all flags and replacement with backreferences. Free online regex debugger.",
     "features": [
@@ -7166,22 +5842,6 @@
   {
     "category": "Developer Tools",
     "icon": "/assets/icons/dev-1.svg",
-    "title": "API Signature Validator",
-    "desc": "Generate and validate API request signatures with HMAC-SHA256, MD5, and custom algorithms. Perfect for testing API authentication and request signing workflows.",
-    "features": [
-      "HMAC-SHA256, SHA512, MD5, SHA256",
-      "Sorted key-value signature string",
-      "Custom format with placeholders",
-      "Signature verification",
-      "Copy signature to clipboard",
-      "No server-side processing"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/signature-validator.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/dev-1.svg",
     "title": "Slug Generator",
     "desc": "Convert any text into clean, SEO-friendly URL slugs with our free online slug generator. Customize separators, case, and remove stop words for optimal permalinks. No signup required.",
     "features": [
@@ -7194,22 +5854,6 @@
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/dev/slug-generator.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/dev-1.svg",
-    "title": "URL to JSON Converter",
-    "desc": "Convert URL query strings to structured JSON instantly. Supports nested objects, arrays, and automatic type conversion. All processing happens locally in your browser.",
-    "features": [
-      "Parse URL query strings",
-      "Support nested objects and arrays",
-      "Auto-convert numbers and booleans",
-      "Pretty print JSON output",
-      "Reverse JSON to URL",
-      "Local processing, no upload"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/url-to-json.zip"
   },
   {
     "category": "Developer Tools",
@@ -7329,7 +5973,7 @@
     "zipUrl": "/assets/zip-packages/education/language-translation-helper.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Math Practice Generator",
     "desc": "A free offline tool for math practice generator calculations. Works in your browser.",
@@ -7339,18 +5983,6 @@
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/math-practice-generator.zip"
-  },
-  {
-    "category": "Education & Research",
-    "icon": "/assets/icons/education-1.svg",
-    "title": "Median Calculator",
-    "desc": "A free offline tool for median calculator calculations. Works in your browser.",
-    "features": [
-      "Easy to use",
-      "Works offline"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/median-calculator.zip"
   },
   {
     "category": "Education & Research",
@@ -7377,7 +6009,7 @@
     "zipUrl": "/assets/zip-packages/education/password-generator.zip"
   },
   {
-    "category": "Education & Research",
+    "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
     "title": "Percentage Calculator",
     "desc": "A free offline tool for percentage calculator calculations. Works in your browser.",
@@ -7399,18 +6031,6 @@
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/periodic-table-reference.zip"
-  },
-  {
-    "category": "Education & Research",
-    "icon": "/assets/icons/education-1.svg",
-    "title": "Pomodoro Timer",
-    "desc": "A free offline tool for pomodoro timer calculations. Works in your browser.",
-    "features": [
-      "Easy to use",
-      "Works offline"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/pomodoro-timer.zip"
   },
   {
     "category": "Education & Research",
@@ -7439,18 +6059,6 @@
   {
     "category": "Education & Research",
     "icon": "/assets/icons/education-1.svg",
-    "title": "Reading Time Calculator",
-    "desc": "A free offline tool for reading time calculator calculations. Works in your browser.",
-    "features": [
-      "Easy to use",
-      "Works offline"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/reading-time-calculator.zip"
-  },
-  {
-    "category": "Education & Research",
-    "icon": "/assets/icons/education-1.svg",
     "title": "Research Paper Organizer",
     "desc": "A free offline tool for research paper organizer calculations. Works in your browser.",
     "features": [
@@ -7471,18 +6079,6 @@
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/education/science-fair-idea-gen.zip"
-  },
-  {
-    "category": "Education & Research",
-    "icon": "/assets/icons/education-1.svg",
-    "title": "Solar Panel Calculator",
-    "desc": "A free offline tool for solar panel calculator calculations. Works in your browser.",
-    "features": [
-      "Easy to use",
-      "Works offline"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/solar-panel-calculator.zip"
   },
   {
     "category": "Education & Research",
@@ -7720,22 +6316,6 @@
   {
     "category": "Finance & Crypto",
     "icon": "/assets/icons/finance-1.svg",
-    "title": "Factorial Calculator",
-    "desc": "Calculate factorial n! for any non-negative integer up to 1000. View step-by-step calculations, digit counts, trailing zeros, and Stirling approximations instantly.",
-    "features": [
-      "Supports large numbers up to 1000!",
-      "Step-by-step calculation view",
-      "Count digits and trailing zeros",
-      "Stirling approximation included",
-      "Related factorials table",
-      "Free online math tool"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/finance/loan-amortization-schedule.zip"
-  },
-  {
-    "category": "Finance & Crypto",
-    "icon": "/assets/icons/finance-1.svg",
     "title": "Mortgage Payoff Calculator",
     "desc": "Calculate your mortgage payoff with extra monthly payments to see interest savings and loan term reduction. Free online tool to compare original vs early payoff scenarios.",
     "features": [
@@ -7944,22 +6524,6 @@
   {
     "category": "Forms & Generators",
     "icon": "/assets/icons/forms-1.svg",
-    "title": "Markdown Cheatsheet",
-    "desc": "Quick reference for Markdown syntax with live previews. Copy headings, bold, italic, lists, links, images, code blocks, tables, and GitHub Flavored Markdown snippets instantly.",
-    "features": [
-      "Search and filter syntax",
-      "Live preview of Markdown",
-      "One-click copy snippets",
-      "Covers GFM extensions",
-      "Light and dark mode",
-      "No signup required"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/forms & generators/contact-form-builder.zip"
-  },
-  {
-    "category": "Forms & Generators",
-    "icon": "/assets/icons/forms-1.svg",
     "title": "Contract Template Maker",
     "desc": "Create free, customizable contract templates online for freelancers and small businesses. Generate freelance, NDA, rental, and sales agreements and download them as PDF instantly.",
     "features": [
@@ -8050,18 +6614,6 @@
   {
     "category": "Forms & Generators",
     "icon": "/assets/icons/forms-1.svg",
-    "title": "Invoice Generator",
-    "desc": "A free offline tool for invoice generator calculations. Works in your browser.",
-    "features": [
-      "Easy to use",
-      "Works offline"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/forms & generators/invoice-generator.zip"
-  },
-  {
-    "category": "Forms & Generators",
-    "icon": "/assets/icons/forms-1.svg",
     "title": "Invoice Pdf Template",
     "desc": "A free offline tool for invoice pdf template calculations. Works in your browser.",
     "features": [
@@ -8070,21 +6622,6 @@
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/forms & generators/invoice-pdf-template.zip"
-  },
-  {
-    "category": "Forms & Generators",
-    "icon": "/assets/icons/forms-1.svg",
-    "title": "Country Facts Lookup",
-    "desc": "Discover quick facts about world countries including capitals, populations, areas, currencies, and languages. Free online country information lookup tool.",
-    "features": [
-      "Quick country facts lookup",
-      "Capital and population data",
-      "Currency and language info",
-      "Area and density metrics",
-      "Search and filter countries"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/forms & generators/invoice-template-generator.zip"
   },
   {
     "category": "Forms & Generators",
@@ -8145,18 +6682,6 @@
     ],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/forms & generators/payslip-maker.zip"
-  },
-  {
-    "category": "Forms & Generators",
-    "icon": "/assets/icons/forms-1.svg",
-    "title": "Qr Code Generator",
-    "desc": "A free offline tool for qr code generator calculations. Works in your browser.",
-    "features": [
-      "Easy to use",
-      "Works offline"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/forms & generators/qr-code-generator.zip"
   },
   {
     "category": "Forms & Generators",

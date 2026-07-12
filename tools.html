@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- GDPR Cookie Consent - Controls AdSense loading based on user consent -->
     <script src="assets/js/cookie-consent.js"></script>
+    <link rel="canonical" href="https://yuanqizhike.com/tools.html">
+    <meta property="og:url" content="https://yuanqizhike.com/tools.html">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -21,12 +23,12 @@
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://yuanqizhike-toolkit.pages.dev/"
+          "item": "https://yuanqizhike.com/"
         },{
           "@type": "ListItem",
           "position": 2,
           "name": "Tools",
-          "item": "https://yuanqizhike-toolkit.pages.dev/tools.html"
+          "item": "https://yuanqizhike.com/tools.html"
         }]
       }
     }
@@ -55,12 +57,13 @@
                     <a href="tools.html#category-social">Social Media</a>
                     <a href="tools.html#category-lifestyle">Time &amp; Date</a>
                     <a href="tools.html#category-security">Security &amp; Privacy</a>
-                    <a href="tools.html#category-math">Education &amp; Research</a>
-                    <a href="tools.html#category-ai">Developer Tools</a>
+                    <a href="tools.html#category-math">Math &amp; Science</a>
+                    <a href="tools.html#category-ai">AI &amp; ML Utilities</a>
                     <a href="tools.html#category-travel">Travel &amp; Transportation</a>
                     <a href="tools.html#category-cooking">Cooking &amp; Food</a>
                     <a href="tools.html#category-cars">Auto &amp; Vehicles</a>
-                    <a href="tools.html#category-color">Design &amp; Media</a>
+                    <a href="tools.html#category-color">Color &amp; Design Utilities</a>
+                    <a href="tools.html#category-beauty">Beauty &amp; Fashion</a>
                     <a href="tools.html#category-forms">Forms &amp; Generators</a>
                     <a href="tools.html#category-weather">Weather &amp; Climate</a>
                     <a href="tools.html#category-audio">Audio &amp; Music Tools</a>
@@ -185,16 +188,16 @@
 
 <!-- Category: Math & Science -->
              <div id="category-math" class="tool-category">
-                 <h2 class="category-title" data-i18n="categories.mathScience.title">Education &amp; Research</h2>
-                 <div class="tools-grid" data-category="Education & Research">
+                <h2 class="category-title" data-i18n="categories.mathScience.title">Math &amp; Science</h2>
+                <div class="tools-grid" data-category="Math & Science">
                     <!-- Tools will be dynamically rendered here from tools-list.json -->
                 </div>
             </div>
 
 <!-- Category: AI & ML Utilities -->
              <div id="category-ai" class="tool-category">
-                 <h2 class="category-title" data-i18n="categories.aiMlUtilities.title">Developer Tools</h2>
-                 <div class="tools-grid" data-category="Developer Tools">
+                <h2 class="category-title" data-i18n="categories.aiMlUtilities.title">AI &amp; ML Utilities</h2>
+                <div class="tools-grid" data-category="AI & ML Utilities">
                     <!-- Tools will be dynamically rendered here from tools-list.json -->
                 </div>
             </div>
@@ -225,8 +228,16 @@
 
 <!-- Category: Color & Design Utilities -->
              <div id="category-color" class="tool-category">
-                 <h2 class="category-title" data-i18n="categories.colorDesignUtilities.title">Design &amp; Media</h2>
-                 <div class="tools-grid" data-category="Design & Media">
+                <h2 class="category-title" data-i18n="categories.colorDesignUtilities.title">Color &amp; Design Utilities</h2>
+                <div class="tools-grid" data-category="Color & Design Utilities">
+                    <!-- Tools will be dynamically rendered here from tools-list.json -->
+                </div>
+            </div>
+
+            <!-- Category: Beauty & Fashion -->
+            <div id="category-beauty" class="tool-category">
+                <h2 class="category-title" data-i18n="categories.beautyFashion.title">Beauty & Fashion</h2>
+                <div class="tools-grid" data-category="Beauty & Fashion">
                     <!-- Tools will be dynamically rendered here from tools-list.json -->
                 </div>
             </div>
@@ -373,7 +384,12 @@
             setTimeout(fetchTools, 2000);
         });
 
+        var _toolsRendered = false;
         function fetchTools() {
+            // 防止重复渲染：setInterval(i18n 就绪) 与 setTimeout(2秒兜底) 都会调用 fetchTools，
+            // 若不加 guard，工具卡片会 appendChild 翻倍（484→968 张）
+            if (_toolsRendered) return;
+            _toolsRendered = true;
             fetch('tools-list.json')
                 .then(function (response) {
                     return response.json();
@@ -382,6 +398,7 @@
                     renderTools(tools);
                 })
                 .catch(function (error) {
+                    _toolsRendered = false; // 失败后允许重试
                     console.error('Failed to load tools-list.json:', error);
                 });
         }
@@ -404,12 +421,13 @@ var categoryMap = {
                 'category-social': 'Social Media',
                 'category-lifestyle': 'Time & Date',
                 'category-security': 'Security & Privacy',
-                'category-math': 'Education & Research',
-                'category-ai': 'Developer Tools',
+                'category-math': 'Math & Science',
+                'category-ai': 'AI & ML Utilities',
                 'category-travel': 'Travel & Transportation',
                 'category-cooking': 'Cooking & Food',
                 'category-cars': 'Auto & Vehicles',
-                'category-color': 'Design & Media',
+                'category-color': 'Color & Design Utilities',
+                'category-beauty': 'Beauty & Fashion',
                 'category-forms': 'Forms & Generators',
                 'category-weather': 'Weather & Climate',
                 'category-audio': 'Audio & Music Tools',
@@ -515,7 +533,8 @@ var categoryMap = {
             if (isSvgIcon) {
                 iconHtml = '<img src="' + escapeHtml(tool.icon) + '" alt="' + escapeHtml(tool.title) + '">';
             } else {
-                iconHtml = tool.icon || '&#128187;';
+                // 非 SVG 路径时视为文本图标（emoji 等），同样转义防止注入
+                iconHtml = escapeHtml(tool.icon) || '&#128187;';
             }
 
             card.innerHTML =

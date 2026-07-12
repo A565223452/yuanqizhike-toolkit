@@ -8,12 +8,6 @@
     const CONSENT_KEY = 'yuanqi_cookie_consent';
     const CONSENT_EXPIRY_DAYS = 365;
 
-    // Detect Google crawlers (AdsBot-Google, Googlebot) for AdSense compliance
-    function isGoogleCrawler() {
-        const ua = navigator.userAgent || '';
-        return /AdsBot-Google|Googlebot/i.test(ua);
-    }
-
     // Check if consent already given
     function getConsent() {
         try {
@@ -172,18 +166,17 @@
     }
 
     // Initialize on DOM ready
+    // 注意：不得根据 User-Agent 自动授予同意（GDPR 要求同意由真实用户给出，
+    // UA 可伪造，且对爬虫自动同意会被合规审查视为违规）。爬虫不会与横幅交互，
+    // 广告仅在用户同意后加载，这是合规的正确行为。
     function init() {
-        if (isGoogleCrawler()) {
-            console.log('[CookieConsent] Auto-granted consent for Google crawler');
+        const consent = getConsent();
+        if (consent === 'all') {
             applyConsent('all');
-        } else {
-            const consent = getConsent();
-            if (consent === 'all') {
-                applyConsent('all');
-            } else if (consent === null) {
-                showBanner();
-            }
+        } else if (consent === null) {
+            showBanner();
         }
+        // consent === 'essential' 时不加载广告，无需处理
     }
 
     if (document.readyState === 'loading') {

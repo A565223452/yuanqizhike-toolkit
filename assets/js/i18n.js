@@ -10,7 +10,8 @@ const I18N = {
     { code: 'zh', name: 'Chinese', nativeName: '中文', flag: '🇨🇳' },
     { code: 'ko', name: 'Korean', nativeName: '한국어', flag: '🇰🇷' },
     { code: 'ja', name: 'Japanese', nativeName: '日本語', flag: '🇯🇵' },
-    { code: 'nl', name: 'Dutch', nativeName: 'Nederlands', flag: '🇳🇱' }
+    { code: 'nl', name: 'Dutch', nativeName: 'Nederlands', flag: '🇳🇱' },
+    { code: 'es', name: 'Spanish', nativeName: 'Español', flag: '🇪🇸' }
   ],
 
   // Initialize i18n system
@@ -19,11 +20,14 @@ const I18N = {
     // Do NOT auto-detect or use stored preferences for international sites
     const urlParams = new URLSearchParams(window.location.search);
     const langFromUrl = urlParams.get('lang');
-    
+
     // Hardcode English as default for international audience
     // Only override if explicit ?lang=XX parameter is present
     this.currentLang = (langFromUrl && this.supportedLangs.find(l => l.code === langFromUrl)) ? langFromUrl : 'en';
-    
+
+    // 同步写入语言 Cookie（供后端 worker 与统计脚本读取，名称统一为 yqz_lang）
+    this.setLangCookie(this.currentLang);
+
     // Load translations
     console.log('[I18N] Loading translations for:', this.currentLang);
     await this.loadTranslations(this.currentLang);
@@ -48,6 +52,15 @@ const I18N = {
     this.injectEarthIcon();
   },
 
+  // 写入语言 Cookie（统一名称 yqz_lang，供后端 worker 与 statistics.js 读取）
+  setLangCookie(lang) {
+    try {
+      document.cookie = 'yqz_lang=' + lang + ';path=/;max-age=31536000;SameSite=Lax';
+    } catch (e) {
+      // 非 HTTPS 等场景忽略写入失败
+    }
+  },
+
   // Detect browser language
   detectBrowserLanguage() {
     const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
@@ -55,6 +68,7 @@ const I18N = {
     if (browserLang.startsWith('ko')) return 'ko';
     if (browserLang.startsWith('ja')) return 'ja';
     if (browserLang.startsWith('nl')) return 'nl';
+    if (browserLang.startsWith('es')) return 'es';
     return 'en';
   },
 
@@ -212,7 +226,10 @@ const I18N = {
     if (!this.supportedLangs.find(l => l.code === lang)) return;
     
     this.currentLang = lang;
-    
+
+    // 同步写入语言 Cookie（供后端 worker 与统计脚本读取）
+    this.setLangCookie(lang);
+
     // Update URL without page reload
     const url = new URL(window.location);
     url.searchParams.set('lang', lang);

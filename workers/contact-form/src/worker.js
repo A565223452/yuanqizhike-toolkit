@@ -34,7 +34,7 @@ export default {
 
     // CORS 预检
     if (method === 'OPTIONS') {
-      return handleCORS(env);
+      return handleCORS(request, env);
     }
 
     try {
@@ -114,10 +114,26 @@ export default {
   },
 };
 
+// ============ 来源校验 ============
+// ALLOWED_ORIGIN 支持逗号分隔的多个来源，默认允许正式域名与 pages.dev 预览域名
+const DEFAULT_ALLOWED_ORIGINS = [
+  'https://yuanqizhike.com',
+  'https://www.yuanqizhike.com',
+  'https://yuanqizhike-toolkit.pages.dev'
+];
+function isOriginAllowed(env, origin) {
+  if (!origin) return false;
+  let list = DEFAULT_ALLOWED_ORIGINS;
+  if (env.ALLOWED_ORIGIN) {
+    list = env.ALLOWED_ORIGIN.split(',').map(s => s.trim()).filter(Boolean);
+  }
+  return list.includes(origin);
+}
+
 // ============ 留言提交 ============
 async function handleContact(request, env, ctx) {
   const origin = request.headers.get('origin') || '';
-  if (env.ALLOWED_ORIGIN && origin !== env.ALLOWED_ORIGIN) {
+  if (!isOriginAllowed(env, origin)) {
     return json({ error: 'Origin not allowed' }, 403);
   }
 
@@ -184,6 +200,9 @@ async function handleContact(request, env, ctx) {
   ctx.waitUntil(sendEmail(env, {
     name, email, projectType, description, ip, messageId
   }).catch(err => console.error('Email send failed:', err)));
+
+  // 后台清理 rate_limit 旧桶，防止 D1 无限膨胀
+  ctx.waitUntil(cleanupRateLimit(env));
 
   return json({ ok: true, id: messageId });
 }
@@ -274,6 +293,23 @@ async function checkRateLimit(env, ip, namespace = 'contact', maxPerHour = 5) {
     console.error('Rate limit check error:', err);
     // 限流失败不阻塞用户提交
     return { ok: true };
+  }
+}
+
+// ============ 频率限制表清理（防止 D1 无限膨胀）============
+// rate_limit 表按 IP + 小时桶累积记录，若不清理会随时间无限增长。
+// 策略：删除 2 小时之前的旧桶（保留当前桶 + 上一桶，用于跨小时限流判断）。
+// 通过 ctx.waitUntil() 后台执行，不阻塞用户响应。
+async function cleanupRateLimit(env) {
+  try {
+    const nowSec = Math.floor(Date.now() / 1000);
+    const cutoffBucket = Math.floor((nowSec - 7200) / 3600); // 2 小时前的桶
+    await env.DB.prepare(
+      `DELETE FROM rate_limit WHERE bucket < ?`
+    ).bind(cutoffBucket).run();
+  } catch (err) {
+    // 清理失败不影响主流程，仅记录日志
+    console.error('Rate limit cleanup error:', err);
   }
 }
 
@@ -403,7 +439,7 @@ const SPAM_KEYWORDS = [
 
 async function handlePostGuestbook(request, env, ctx) {
   const origin = request.headers.get('origin') || '';
-  if (env.ALLOWED_ORIGIN && origin !== env.ALLOWED_ORIGIN) {
+  if (!isOriginAllowed(env, origin)) {
     return json({ error: 'Origin not allowed' }, 403);
   }
 
@@ -496,6 +532,9 @@ async function handlePostGuestbook(request, env, ctx) {
     console.error('[DB] Guestbook insert failed:', err.message);
     return json({ error: 'Database error, please try again' }, 500);
   }
+
+  // 后台清理 rate_limit 旧桶，防止 D1 无限膨胀
+  ctx.waitUntil(cleanupRateLimit(env));
 
   return json({
     ok: true,
@@ -648,10 +687,23 @@ function requireAdmin(request, env) {
   }
   const auth = request.headers.get('authorization') || '';
   const token = auth.replace(/^Bearer\s+/i, '');
-  if (!token || token !== env.ADMIN_TOKEN) {
+  // 恒定时间比较，防止时序侧信道爆破 token
+  if (!token || !timingSafeEqual(token, env.ADMIN_TOKEN)) {
     return json({ error: 'Unauthorized' }, 401);
   }
   return null;
+}
+
+// 恒定时间字符串比较（防时序攻击）
+function timingSafeEqual(a, b) {
+  const sa = String(a);
+  const sb = String(b);
+  if (sa.length !== sb.length) return false;
+  let result = 0;
+  for (let i = 0; i < sa.length; i++) {
+    result |= sa.charCodeAt(i) ^ sb.charCodeAt(i);
+  }
+  return result === 0;
 }
 
 function json(obj, status = 200) {
@@ -666,11 +718,13 @@ function json(obj, status = 200) {
   });
 }
 
-function handleCORS(env) {
+function handleCORS(request, env) {
+  const origin = request.headers.get('origin') || '';
+  const allowed = isOriginAllowed(env, origin) ? origin : '';
   return new Response(null, {
     status: 204,
     headers: {
-      'Access-Control-Allow-Origin': env.ALLOWED_ORIGIN || '*',
+      'Access-Control-Allow-Origin': allowed,
       'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type, Authorization',
       'Access-Control-Max-Age': '86400',

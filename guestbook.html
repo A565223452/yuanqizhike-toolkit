@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- GDPR Cookie Consent - Controls AdSense loading based on user consent -->
     <script src="assets/js/cookie-consent.js"></script>
+    <link rel="canonical" href="https://yuanqizhike.com/guestbook.html">
+    <meta property="og:url" content="https://yuanqizhike.com/guestbook.html">
     <style>
         /* 留言板专用样式 */
         .gb-hero {
@@ -385,7 +387,7 @@
 
         function escapeHtml(s) {
             return String(s || '').replace(/[&<>"']/g, c => ({
-                '&': '&', '<': '<', '>': '>', '"': '"', "'": '&#39;'
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
             }[c]));
         }
 

@@ -27,12 +27,12 @@ const YQZ_STATS = {
     const cookies = document.cookie.split(';');
     for (let cookie of cookies) {
       const [name, ...valueParts] = cookie.trim().split('=');
-      if (name === 'yuanqi_lang') {
-        return valueParts.join('=');
+      if (name === 'yqz_lang') {
+        return valueParts.join('=') || 'en';
       }
     }
     try {
-      return localStorage.getItem('yuanqi_lang') || 'en';
+      return localStorage.getItem('yqz_lang') || 'en';
     } catch (_) {
       return 'en';
     }
