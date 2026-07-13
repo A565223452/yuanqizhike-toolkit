@@ -168,6 +168,12 @@ const I18N = {
       }
     });
 
+    // Translate elements with data-i18n-html attribute (innerHTML rendering for HTML-containing translations)
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const key = el.getAttribute('data-i18n-html');
+      el.innerHTML = this.t(key);
+    });
+
     // Translate elements with data-i18n-placeholder
     document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
       const key = el.getAttribute('data-i18n-placeholder');
