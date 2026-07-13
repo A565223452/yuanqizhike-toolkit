@@ -483,7 +483,7 @@
       "formOther": "Otro",
       "formDescription": "Descripción del Proyecto *",
       "formSubmit": "Enviar Consulta",
-      "orEmail": "O envíanos un correo directamente a"
+      "orEmail": "O envíanos un correo directamente a <a href=\"mailto:contact@yuanqizhike.com\">contact@yuanqizhike.com</a>"
     },
     "guestbook": {
       "title": "Comentarios - YuanqiZhiKe Toolkit",

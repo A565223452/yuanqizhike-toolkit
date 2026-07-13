@@ -483,7 +483,7 @@
       "formOther": "기타",
       "formDescription": "프로젝트 설명 *",
       "formSubmit": "문의 보내기",
-      "orEmail": "또는 다음으로 직접 이메일 보내기"
+      "orEmail": "또는 다음으로 직접 이메일 보내기 <a href=\"mailto:contact@yuanqizhike.com\">contact@yuanqizhike.com</a>"
     },
     "guestbook": {
       "title": "방명록 - YuanqiZhiKe Toolkit",

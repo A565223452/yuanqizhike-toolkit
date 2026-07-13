@@ -483,7 +483,7 @@
       "formOther": "其他",
       "formDescription": "项目描述 *",
       "formSubmit": "发送询盘",
-      "orEmail": "或直接发送邮件至"
+      "orEmail": "或直接发送邮件至 <a href=\"mailto:contact@yuanqizhike.com\">contact@yuanqizhike.com</a>"
     },
     "guestbook": {
       "title": "留言反馈 - 元气智科工具集",

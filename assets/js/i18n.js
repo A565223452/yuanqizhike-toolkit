@@ -159,7 +159,12 @@ const I18N = {
         if (attr) el.setAttribute(attr, text);
         else el.textContent = text;
       } else {
-        el.textContent = text;
+        // Use innerHTML if translation contains HTML tags (e.g. mailto links), otherwise textContent for safety
+        if (text.includes('<')) {
+          el.innerHTML = text;
+        } else {
+          el.textContent = text;
+        }
       }
     });
 
