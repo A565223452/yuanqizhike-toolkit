@@ -5,7 +5,7 @@
 ### 1. 核心阻断问题：License 协议冲突
 **文件**：`license.html` + 所有工具页面的 License Modal
 - ❌ 第3.3条 "Profit Websites" 明确禁止广告盈利网站使用源码
-- ❌ 联系邮箱错误：`license@260330663@qq.com` (双重@)
+- ❌ 联系邮箱错误：`license@contact@yuanqizhike.com` (双重@)
 - ❌ 日期写死：`January 1, 2026`
 - ❌ 所有工具详情页的下载弹窗都包含相同禁止条款
 
@@ -36,7 +36,7 @@
 - ❌ 工具详情页侧边栏 `Last Updated: January 2026`
 
 ### 6. 邮箱格式错误
-- ❌ `license.html` 第81行：`license@260330663@qq.com`
+- ❌ `license.html` 第81行：`license@contact@yuanqizhike.com`
 
 ---
 
@@ -74,7 +74,7 @@
 **修正联系邮箱**：
 ```html
 <!-- 第81行 -->
-<p><a href="mailto:260330663@qq.com">260330663@qq.com</a></p>
+<p><a href="mailto:contact@yuanqizhike.com">contact@yuanqizhike.com</a></p>
 ```
 
 **日期动态化**：
@@ -494,9 +494,9 @@
 **license.html 第81行**：
 ```html
 <!-- 修正前 -->
-<p><a href="mailto:license@260330663@qq.com">license@260330663@qq.com</a></p>
+<p><a href="mailto:license@contact@yuanqizhike.com">license@contact@yuanqizhike.com</a></p>
 <!-- 修正后 -->
-<p><a href="mailto:260330663@qq.com">260330663@qq.com</a></p>
+<p><a href="mailto:contact@yuanqizhike.com">contact@yuanqizhike.com</a></p>
 ```
 
 ---

@@ -155,10 +155,10 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
-                <span class="email" id="contactEmail">260330663@qq.com</span>
+                <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
-            <a class="mailto-btn" href="mailto:260330663@qq.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
             <div class="form-hint">— or describe your need below —</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
@@ -217,7 +217,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         var copyBtn=document.getElementById('copyEmail');
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
-                navigator.clipboard.writeText('260330663@qq.com').then(function(){
+                navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
                     var old=copyBtn.textContent;copyBtn.textContent='✓';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
@@ -232,7 +232,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
                 var desc=document.getElementById('formDesc').value.trim();
                 var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
                 var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
-                window.location.href='mailto:260330663@qq.com?subject='+subject+'&body='+body;
+                window.location.href='mailto:contact@yuanqizhike.com?subject='+subject+'&body='+body;
             });
         }
     }

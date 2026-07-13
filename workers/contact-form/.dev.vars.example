@@ -15,5 +15,5 @@ ADMIN_TOKEN=your_random_admin_token_here
 ALLOWED_ORIGIN=https://yuanqizhike.com
 
 # 收件人 / 发件人
-CONTACT_TO_EMAIL=260330663@qq.com
+CONTACT_TO_EMAIL=contact@yuanqizhike.com
 CONTACT_FROM_EMAIL=noreply@yuanqizhike.com

@@ -16,7 +16,7 @@ database_id = "96f4c428-3fef-478c-8057-2ddb7e3b67fa"
 [vars]
 TURNSTILE_SITE_KEY = "0x4AAAAAADxZ2faDF6_AjI-K"
 ALLOWED_ORIGIN = "https://yuanqizhike.com,https://www.yuanqizhike.com,https://yuanqizhike-toolkit.pages.dev"
-CONTACT_TO_EMAIL = "260330663@qq.com"
+CONTACT_TO_EMAIL = "contact@yuanqizhike.com"
 CONTACT_FROM_EMAIL = "noreply@yuanqizhike.com"
 
 # 敏感密钥用 secrets（用 `wrangler secret put` 设置，不要写在这里）
