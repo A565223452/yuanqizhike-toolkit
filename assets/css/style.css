@@ -377,6 +377,34 @@ img {
     font-size: 0.9em;
 }
 
+/* ============================================================
+   YuanqiZhiKe — 卡片高度统一 / 双按钮完整显示 强制加固补丁
+   生效范围：仅 .tools-grid 下的工具卡片，不污染其他组件
+   规范依据：
+     附录 A1 两层分离（卡片高度由外层 .tool-card + Grid auto-rows:1fr 保证）
+     附录 A4 硬教训：禁止 flex-grow:1 与 -webkit-line-clamp:3 同用
+     规范 3.4：只做增量覆盖，不删除 / 覆盖上述 .tool-card / .tool-features 基础样式
+   ============================================================ */
+.tools-grid .tool-card {
+    min-height: 420px;
+    padding-bottom: 72px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.tools-grid .tool-card .tool-features {
+    /* 保底 3 行 × 28px 行高 = 84px，内容多的卡片由 line-clamp:3 截断 */
+    min-height: 84px;
+    /* 移除 flex-grow，与 line-clamp 3 行硬性截断解耦（附录 A4 固化硬教训） */
+    flex-grow: 0;
+    margin-top: auto;
+}
+.tools-grid .tool-card .tool-actions {
+    /* 按钮区绝对定位贴底不占文档流；当 flex 拉伸卡片时，bottom:0 始终对齐卡片底沿 */
+    bottom: 0;
+    min-height: 60px;
+    z-index: 1;
+}
+
 .tool-actions {
     display: flex;
     gap: 8px;

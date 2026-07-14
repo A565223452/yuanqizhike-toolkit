@@ -188,9 +188,9 @@
                 featuresHtml += '</ul>';
                 var viewDetailsHtml = '';
                 if (tool.detailUrl) {
-                    viewDetailsHtml = '<a href="' + escapeHtml(tool.detailUrl) + '" class="btn btn-view-details">' + t('tool.viewDetails', 'View Details') + '</a>';
+                    viewDetailsHtml = '<a href="' + escapeHtml(tool.detailUrl) + '" class="btn btn-view-details" data-i18n="tool.viewDetails">' + t('tool.viewDetails', 'View Details') + '</a>';
                 } else {
-                    viewDetailsHtml = '<button type="button" class="btn btn-view-details" disabled style="opacity:0.4;cursor:not-allowed;">' + t('tool.noDetails', 'No Details') + '</button>';
+                    viewDetailsHtml = '<button type="button" class="btn btn-view-details" disabled data-i18n="tool.viewDetails" style="opacity:0.4;cursor:not-allowed;">' + t('tool.viewDetails', 'View Details') + '</button>';
                 }
                 var downloadHtml = '';
                 if (tool.zipUrl) {
