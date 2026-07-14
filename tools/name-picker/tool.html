@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Free online random name picker / lottery draw tool. Pick random winners from a list, shuffle teams, draw lots. Local, no upload.">
+<meta name="keywords" content="random name picker, lottery draw, random winner, team shuffler, draw lots, randomizer, raffle">
+<title>Random Name Picker / Lottery Draw | YuanqiZhiKe Toolkit</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:system-ui,-apple-system,sans-serif;background:#f7f7f7;transition:background 0.3s,color 0.3s}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+body.dark .wrap{background:#16213e}
+body.dark textarea,body.dark input{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark .field-label,body.dark .guide h3,body.dark .guide li{color:#c8c8c8}
+body.dark .guide{background:#0f3460;border-color:#1a1a2e}
+body.dark .guide code{background:#2a1a2a;color:#ffb3c7}
+body.dark .winner-card,body.dark .team-card{background:linear-gradient(135deg,#0f3460,#16213e);border-color:#1a1a2e}
+.wrap{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:6px;font-size:24px}
+.subtitle{color:#888;font-size:13px;margin-bottom:18px}
+.top-bar{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:14px}
+.field-label{font-size:13px;font-weight:600;color:#444;margin-bottom:6px;display:block}
+textarea{width:100%;height:260px;padding:10px;border:1px solid #ddd;border-radius:4px;font-family:monospace;font-size:13px;resize:vertical;transition:background 0.3s,color 0.3s}
+.mode-tabs{display:flex;gap:6px;margin:10px 0;flex-wrap:wrap}
+.mode-tab{padding:8px 14px;border:1px solid #ddd;border-radius:4px;background:#f8f8f8;cursor:pointer;font-size:13px;transition:all 0.2s}
+.mode-tab.active{background:#007bff;color:#fff;border-color:#007bff}
+.options{display:flex;flex-wrap:wrap;gap:12px;margin:10px 0;font-size:13px;color:#444;align-items:center}
+.options label{display:flex;align-items:center;gap:6px}
+.options input[type=number]{width:80px;padding:6px;border:1px solid #ddd;border-radius:4px;font-family:monospace}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.btns button{padding:9px 16px;border:none;border-radius:4px;background:#007bff;color:#fff;cursor:pointer;transition:opacity 0.2s;font-size:14px}
+.btns button:hover{opacity:0.85}
+.btns button.secondary{background:#6c757d}
+.btns button.success{background:#28a745}
+.winner-section{margin-top:14px}
+.winner-card{padding:24px;background:linear-gradient(135deg,#667eea,#764ba2);border-radius:10px;color:#fff;text-align:center;margin-bottom:12px}
+.winner-card .lbl{font-size:13px;opacity:0.85;margin-bottom:6px}
+.winner-card .name{font-size:32px;font-weight:bold;margin-bottom:6px}
+.winner-card .sub{font-size:13px;opacity:0.85}
+.winner-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.winner-chip{padding:6px 14px;background:#dcfce7;color:#166534;border-radius:20px;font-size:13px;font-weight:600}
+body.dark .winner-chip{background:#0a3a1f;color:#86efac}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:10px}
+.team-card{padding:14px;background:#f0f4ff;border:1px solid #c5d8ff;border-radius:8px}
+body.dark .team-card{background:#0f3460;border-color:#1a1a2e}
+.team-card .team-name{font-weight:bold;color:#0056b3;margin-bottom:8px;font-size:14px}
+body.dark .team-card .team-name{color:#5fa8ff}
+.team-card .member{padding:4px 0;font-size:13px;color:#444;border-bottom:1px solid #eee}
+body.dark .team-card .member{color:#c8c8c8;border-color:#1a1a2e}
+.team-card .member:last-child{border-bottom:none}
+.empty{text-align:center;padding:30px;color:#999;font-size:14px}
+.lead{margin-top:14px;padding:12px;background:#fff8e1;border:1px solid #ffe082;border-radius:6px;font-size:13px;color:#7a5c00;text-align:center}
+body.dark .lead{background:#3a2e00;border-color:#5c4400;color:#ffd54f}
+.guide{margin-top:18px;padding:16px;border:1px solid #e0e0e0;border-radius:8px;background:#fafafa;transition:background 0.3s}
+.guide h3{font-size:15px;margin-bottom:10px;color:#0056b3}
+.guide ol{padding-left:22px;font-size:13px;color:#444;line-height:1.7}
+.guide li{margin-bottom:4px}
+.guide code{background:#f9f2f4;padding:1px 5px;border-radius:3px;font-family:monospace;font-size:12px;color:#c7254e}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+footer a{color:#007bff;text-decoration:none}
+@media(max-width:768px){.wrap{padding:16px}.grid{grid-template-columns:1fr}.bookmark-btn{position:static;margin-top:8px}}
+
+/* === Common: theme toggle button + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+</style>
+</head>
+<body>
+<div class="wrap">
+    <div class="top-bar">
+        <div>
+            <h1>Random Name Picker / Lottery</h1>
+            <div class="subtitle">Pick random winners, shuffle teams, draw lots from a list. Local, no upload.</div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark (Ctrl+Shift+T)">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div>
+            <label class="field-label" for="inputBox">Names (one per line)</label>
+            <textarea id="inputBox" placeholder="Alice&#10;Bob&#10;Charlie&#10;David&#10;Eve"></textarea>
+        </div>
+        <div>
+            <label class="field-label">Result</label>
+            <div id="resultArea" style="height:260px;overflow:auto;padding:10px;border:1px solid #ddd;border-radius:4px;background:#fafafa;transition:background 0.3s">
+                <div class="empty">Enter names on the left and click Draw.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mode-tabs">
+        <div class="mode-tab active" data-mode="single">Pick 1 Winner</div>
+        <div class="mode-tab" data-mode="multi">Pick N Winners</div>
+        <div class="mode-tab" data-mode="teams">Split into Teams</div>
+        <div class="mode-tab" data-mode="shuffle">Shuffle Order</div>
+    </div>
+
+    <div class="options">
+        <label>Count: <input type="number" id="count" value="1" min="1"></label>
+        <label>Teams: <input type="number" id="teams" value="2" min="2"></label>
+        <label><input type="checkbox" id="opt-unique" checked> No repeats</label>
+        <label><input type="checkbox" id="opt-animate"> Animate draw</label>
+        <label><input type="checkbox" id="opt-trim" checked> Trim whitespace</label>
+        <label><input type="checkbox" id="opt-empty" checked> Skip empty lines</label>
+    </div>
+
+    <div class="btns">
+        <button id="draw" class="success">🎲 Draw</button>
+        <button id="copy" class="secondary">Copy Result</button>
+        <button id="clear" class="secondary">Clear</button>
+    </div>
+
+    <div class="guide">
+        <h3>How to Use</h3>
+        <ol>
+            <li>Type or paste names into the input box, one per line.</li>
+            <li>Choose a mode: <strong>Pick 1 Winner</strong>, <strong>Pick N Winners</strong>, <strong>Split into Teams</strong>, or <strong>Shuffle Order</strong>.</li>
+            <li>Set <strong>Count</strong> (for N winners) or <strong>Teams</strong> (number of groups).</li>
+            <li>Toggle options: <strong>No repeats</strong> prevents picking the same name twice; <strong>Animate draw</strong> shows a spinning effect; <strong>Trim whitespace</strong> and <strong>Skip empty lines</strong> clean the input.</li>
+            <li>Click <strong>🎲 Draw</strong> to run the randomizer. Click again to redraw.</li>
+        </ol>
+    </div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
+</div>
+
+<script>
+(function(){
+    // === Common: theme + contact modal ===
+    const __themeBtn = document.getElementById('themeToggle');
+    function __applyTheme(t){
+        document.body.classList.toggle('dark', t === 'dark');
+        if(__themeBtn) __themeBtn.textContent = (t === 'dark') ? '?' : '🌙';
+    }
+    const __saved = localStorage.getItem('theme');
+    if(__saved){
+        __applyTheme(__saved);
+    } else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
+        __applyTheme('dark');
+    } else {
+        __applyTheme('light');
+    }
+    if(__themeBtn){
+        __themeBtn.addEventListener('click', () => {
+            const next = document.body.classList.contains('dark') ? 'light' : 'dark';
+            __applyTheme(next);
+            localStorage.setItem('theme', next);
+        });
+    }
+    document.addEventListener('keydown', e => {
+        if(e.key === 't' && e.ctrlKey && e.shiftKey){
+            e.preventDefault();
+            const next = document.body.classList.contains('dark') ? 'light' : 'dark';
+            __applyTheme(next);
+            localStorage.setItem('theme', next);
+        }
+    });
+    document.getElementById('bookmarkBtn').addEventListener('click', () => alert('Press Ctrl/Cmd + D to bookmark this page.'));
+
+    // Contact modal
+    const __modal = document.getElementById('contactModal');
+    const __trig = document.getElementById('contactTrigger');
+    const __close = document.getElementById('contactClose');
+    function __openModal(){ if(__modal) __modal.classList.add('open'); }
+    function __closeModal(){ if(__modal) __modal.classList.remove('open'); }
+    if(__trig) __trig.addEventListener('click', __openModal);
+    if(__close) __close.addEventListener('click', __closeModal);
+    if(__modal) __modal.addEventListener('click', e => { if(e.target === __modal) __closeModal(); });
+    document.addEventListener('keydown', e => { if(e.key === 'Escape') __closeModal(); });
+    const __copyBtn = document.getElementById('copyEmail');
+    if(__copyBtn){
+        __copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText('contact@yuanqizhike.com').then(() => {
+                const old = __copyBtn.textContent;
+                __copyBtn.textContent='Copied';
+                setTimeout(() => __copyBtn.textContent = old, 1500);
+            });
+        });
+    }
+    const __form = document.getElementById('contactForm');
+    if(__form){
+        __form.addEventListener('submit', e => {
+            e.preventDefault();
+            const name = document.getElementById('formName').value.trim();
+            const email = document.getElementById('formEmail').value.trim();
+            const desc = document.getElementById('formDesc').value.trim();
+            const subject = encodeURIComponent('Bespoke Tool Development Inquiry');
+            const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nRequirement:\n' + desc);
+            window.location.href = 'mailto:contact@yuanqizhike.com?subject=' + subject + '&body=' + body;
+        });
+    }
+
+    let mode = 'single';
+    let lastResult = '';
+
+    document.querySelectorAll('.mode-tab').forEach(t => {
+        t.addEventListener('click', () => {
+            document.querySelectorAll('.mode-tab').forEach(x => x.classList.remove('active'));
+            t.classList.add('active');
+            mode = t.dataset.mode;
+            document.getElementById('count').parentElement.style.display = (mode === 'multi') ? 'flex' : 'none';
+            document.getElementById('teams').parentElement.style.display = (mode === 'teams') ? 'flex' : 'none';
+        });
+    });
+    document.getElementById('count').parentElement.style.display = 'none';
+    document.getElementById('teams').parentElement.style.display = 'none';
+
+    function getNames(){
+        let lines = document.getElementById('inputBox').value.split(/\r?\n/);
+        if(document.getElementById('opt-trim').checked) lines = lines.map(l => l.trim());
+        if(document.getElementById('opt-empty').checked) lines = lines.filter(l => l !== '');
+        return lines;
+    }
+
+    function shuffle(arr){
+        const a = [...arr];
+        for(let i = a.length - 1; i > 0; i--){
+            const j = Math.floor(Math.random() * (i + 1));
+            [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+    }
+
+    function draw(){
+        const names = getNames();
+        const area = document.getElementById('resultArea');
+        if(!names.length){
+            area.innerHTML = '<div class="empty">Enter names on the left first.</div>';
+            return;
+        }
+        const animate = document.getElementById('opt-animate').checked;
+        if(animate){
+            let spins = 0;
+            const maxSpins = 15;
+            const spinInterval = setInterval(() => {
+                const rand = names[Math.floor(Math.random() * names.length)];
+                area.innerHTML = `<div class="winner-card"><div class="lbl">Drawing...</div><div class="name">${escapeHtml(rand)}</div></div>`;
+                spins++;
+                if(spins >= maxSpins){
+                    clearInterval(spinInterval);
+                    finalDraw(names);
+                }
+            }, 80);
+        } else {
+            finalDraw(names);
+        }
+    }
+
+    function escapeHtml(s){
+        return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+
+    function finalDraw(names){
+        const area = document.getElementById('resultArea');
+        const unique = document.getElementById('opt-unique').checked;
+        if(mode === 'single'){
+            const winner = names[Math.floor(Math.random() * names.length)];
+            lastResult = winner;
+            area.innerHTML = `<div class="winner-card"><div class="lbl">🎉 Winner</div><div class="name">${escapeHtml(winner)}</div><div class="sub">From ${names.length} entries</div></div>`;
+        } else if(mode === 'multi'){
+            const count = Math.min(parseInt(document.getElementById('count').value) || 1, unique ? names.length : 9999);
+            let winners;
+            if(unique){
+                winners = shuffle(names).slice(0, count);
+            } else {
+                winners = [];
+                for(let i = 0; i < count; i++) winners.push(names[Math.floor(Math.random() * names.length)]);
+            }
+            lastResult = winners.join('\n');
+            area.innerHTML = `
+                <div class="winner-card"><div class="lbl">🎉 ${winners.length} Winners</div><div class="name">${winners.length}</div><div class="sub">From ${names.length} entries</div></div>
+                <div class="winner-list">${winners.map((w, i) => `<div class="winner-chip">${i+1}. ${escapeHtml(w)}</div>`).join('')}</div>
+            `;
+        } else if(mode === 'teams'){
+            const teamCount = parseInt(document.getElementById('teams').value) || 2;
+            const shuffled = shuffle(names);
+            const teams = Array.from({length: teamCount}, () => []);
+            shuffled.forEach((name, i) => teams[i % teamCount].push(name));
+            lastResult = teams.map((t, i) => `Team ${i+1}:\n${t.join('\n')}`).join('\n\n');
+            area.innerHTML = `
+                <div class="team-grid">${teams.map((t, i) => `
+                    <div class="team-card">
+                        <div class="team-name">Team ${i+1} (${t.length})</div>
+                        ${t.map(m => `<div class="member">${escapeHtml(m)}</div>`).join('')}
+                    </div>
+                `).join('')}</div>
+            `;
+        } else if(mode === 'shuffle'){
+            const shuffled = shuffle(names);
+            lastResult = shuffled.join('\n');
+            area.innerHTML = `
+                <div class="winner-card"><div class="lbl">🔀 Shuffled</div><div class="name">${names.length} items</div></div>
+                <div class="winner-list">${shuffled.map((w, i) => `<div class="winner-chip">${i+1}. ${escapeHtml(w)}</div>`).join('')}</div>
+            `;
+        }
+    }
+
+    document.getElementById('draw').addEventListener('click', draw);
+    document.getElementById('copy').addEventListener('click', () => {
+        if(!lastResult){ alert('Draw first.'); return; }
+        navigator.clipboard.writeText(lastResult).then(() => {
+            const b = document.getElementById('copy');
+            const old = b.textContent;
+            b.textContent = '-?Copied';
+            setTimeout(() => b.textContent = old, 1500);
+        });
+    });
+    document.getElementById('clear').addEventListener('click', () => {
+        document.getElementById('inputBox').value = '';
+        document.getElementById('resultArea').innerHTML = '<div class="empty">Enter names on the left and click Draw.</div>';
+        lastResult = '';
+    });
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

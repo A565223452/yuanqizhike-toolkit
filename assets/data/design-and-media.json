@@ -573,15 +573,6 @@
   {
     "category": "Design & Media",
     "icon": "/assets/icons/design-1.svg",
-    "title": "CSS Gradient Generator",
-    "desc": "Create beautiful CSS gradients. Linear, radial, conic gradients with multiple color stops, angles, and live preview. Free online gradient generator for web designers.",
-    "features": [],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/design/gradient-generator.zip"
-  },
-  {
-    "category": "Design & Media",
-    "icon": "/assets/icons/design-1.svg",
     "title": "Hyperfocal Distance Calculator",
     "desc": "Calculate hyperfocal distance for sharp landscapes. Lens focus, depth of field. Free hyperfocal calculator.",
     "features": [],

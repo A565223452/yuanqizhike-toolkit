@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flight Time Calculator | YuanqiZhiKe Toolkit</title>
+<meta name="description" content="Calculate flight time between airports with time zones. See arrival time and flight duration. Free flight time calculator.">
+<meta name="keywords" content="flight time, flight duration, arrival time, time zone, flight calculator, airport time difference">
+<meta property="og:title" content="Flight Time Calculator - Free Online Tool">
+<meta property="og:description" content="Calculate flight time between airports with time zones. See arrival time and flight duration. Free flight time calculator.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Flight Time Calculator</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Calculate flight time between airports with time zones. See arrival time and flight duration. Free flight time calculator.</div>
+    <div class="row">
+        <div class="group"><label>Departure airport</label>
+            <select id="dep" style="width:100%;padding:8px">
+                <option value="JFK|America/New_York|-5">JFK - New York (UTC-5)</option>
+                <option value="LAX|America/Los_Angeles|-8">LAX - Los Angeles (UTC-8)</option>
+                <option value="ORD|America/Chicago|-6">ORD - Chicago (UTC-6)</option>
+                <option value="ATL|America/New_York|-5">ATL - Atlanta (UTC-5)</option>
+                <option value="DFW|America/Chicago|-6">DFW - Dallas (UTC-6)</option>
+                <option value="SFO|America/Los_Angeles|-8">SFO - San Francisco (UTC-8)</option>
+                <option value="MIA|America/New_York|-5">MIA - Miami (UTC-5)</option>
+                <option value="SEA|America/Los_Angeles|-8">SEA - Seattle (UTC-8)</option>
+                <option value="LHR|Europe/London|0">LHR - London (UTC+0)</option>
+                <option value="CDG|Europe/Paris|1">CDG - Paris (UTC+1)</option>
+                <option value="FRA|Europe/Berlin|1">FRA - Frankfurt (UTC+1)</option>
+                <option value="AMS|Europe/Amsterdam|1">AMS - Amsterdam (UTC+1)</option>
+                <option value="MAD|Europe/Madrid|1">MAD - Madrid (UTC+1)</option>
+                <option value="FCO|Europe/Rome|1">FCO - Rome (UTC+1)</option>
+                <option value="DXB|Asia/Dubai|4">DXB - Dubai (UTC+4)</option>
+                <option value="DOH|Asia/Qatar|3">DOH - Doha (UTC+3)</option>
+                <option value="HND|Asia/Tokyo|9">HND - Tokyo Haneda (UTC+9)</option>
+                <option value="NRT|Asia/Tokyo|9">NRT - Tokyo Narita (UTC+9)</option>
+                <option value="ICN|Asia/Seoul|9">ICN - Seoul (UTC+9)</option>
+                <option value="HKG|Asia/Hong_Kong|8">HKG - Hong Kong (UTC+8)</option>
+                <option value="SIN|Asia/Singapore|8">SIN - Singapore (UTC+8)</option>
+                <option value="BKK|Asia/Bangkok|7">BKK - Bangkok (UTC+7)</option>
+                <option value="PEK|Asia/Shanghai|8">PEK - Beijing (UTC+8)</option>
+                <option value="PVG|Asia/Shanghai|8">PVG - Shanghai (UTC+8)</option>
+                <option value="SYD|Australia/Sydney|11">SYD - Sydney (UTC+11)</option>
+                <option value="MEL|Australia/Melbourne|11">MEL - Melbourne (UTC+11)</option>
+                <option value="GRU|America/Sao_Paulo|-3">GRU - Sao Paulo (UTC-3)</option>
+                <option value="EZE|America/Argentina/Buenos_Aires|-3">EZE - Buenos Aires (UTC-3)</option>
+                <option value="YYZ|America/Toronto|-5">YYZ - Toronto (UTC-5)</option>
+                <option value="YVR|America/Vancouver|-8">YVR - Vancouver (UTC-8)</option>
+                <option value="MEX|America/Mexico_City|-6">MEX - Mexico City (UTC-6)</option>
+                <option value="BOM|Asia/Kolkata|5.5">BOM - Mumbai (UTC+5:30)</option>
+                <option value="DEL|Asia/Kolkata|5.5">DEL - Delhi (UTC+5:30)</option>
+                <option value="JNB|Africa/Johannesburg|2">JNB - Johannesburg (UTC+2)</option>
+                <option value="IST|Europe/Istanbul|3">IST - Istanbul (UTC+3)</option>
+            </select>
+        </div>
+        <div class="group"><label>Arrival airport</label>
+            <select id="arr" style="width:100%;padding:8px">
+                <option value="LHR|Europe/London|0">LHR - London (UTC+0)</option>
+                <option value="JFK|America/New_York|-5" selected>JFK - New York (UTC-5)</option>
+                <option value="LAX|America/Los_Angeles|-8">LAX - Los Angeles (UTC-8)</option>
+                <option value="ORD|America/Chicago|-6">ORD - Chicago (UTC-6)</option>
+                <option value="CDG|Europe/Paris|1">CDG - Paris (UTC+1)</option>
+                <option value="FRA|Europe/Berlin|1">FRA - Frankfurt (UTC+1)</option>
+                <option value="AMS|Europe/Amsterdam|1">AMS - Amsterdam (UTC+1)</option>
+                <option value="DXB|Asia/Dubai|4">DXB - Dubai (UTC+4)</option>
+                <option value="HND|Asia/Tokyo|9">HND - Tokyo (UTC+9)</option>
+                <option value="HKG|Asia/Hong_Kong|8">HKG - Hong Kong (UTC+8)</option>
+                <option value="SIN|Asia/Singapore|8">SIN - Singapore (UTC+8)</option>
+                <option value="SYD|Australia/Sydney|11">SYD - Sydney (UTC+11)</option>
+                <option value="GRU|America/Sao_Paulo|-3">GRU - Sao Paulo (UTC-3)</option>
+                <option value="YYZ|America/Toronto|-5">YYZ - Toronto (UTC-5)</option>
+                <option value="BOM|Asia/Kolkata|5.5">BOM - Mumbai (UTC+5:30)</option>
+                <option value="ICN|Asia/Seoul|9">ICN - Seoul (UTC+9)</option>
+                <option value="BKK|Asia/Bangkok|7">BKK - Bangkok (UTC+7)</option>
+                <option value="PEK|Asia/Shanghai|8">PEK - Beijing (UTC+8)</option>
+                <option value="MEX|America/Mexico_City|-6">MEX - Mexico City (UTC-6)</option>
+                <option value="JNB|Africa/Johannesburg|2">JNB - Johannesburg (UTC+2)</option>
+                <option value="IST|Europe/Istanbul|3">IST - Istanbul (UTC+3)</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Departure date</label><input type="date" id="depDate" style="width:100%;padding:8px"></div>
+        <div class="group"><label>Departure time (24h)</label><input type="time" id="depTime" value="10:00" style="width:100%;padding:8px"></div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Flight type</label>
+            <select id="ftype" style="width:100%;padding:8px">
+                <option value="nonstop" selected>Nonstop</option>
+                <option value="1stop">1 stop (2h layover)</option>
+                <option value="2stop">2 stops (4h layover)</option>
+            </select>
+        </div>
+        <div class="group"><label>Adjust hours (delay/offset)</label><input type="number" id="adjust" value="0" step="0.5" style="width:100%;padding:8px"></div>
+    </div>
+    <button id="calc" style="padding:10px 20px;background:#10b981;color:#fff;border:none;border-radius:6px;cursor:pointer;margin-top:10px">Calculate Flight Time</button>
+    <div id="result" style="margin-top:12px"></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Select <b>departure airport</b> and <b>arrival airport</b> from the list.</li>
+<li>Set <b>departure date and time</b> (24h format).</li>
+<li>Choose <b>flight type</b>: nonstop, 1 stop, or 2 stops.</li>
+<li>Add <b>adjustment hours</b> for known delays if needed.</li>
+<li>Click <b>Calculate Flight Time</b> for duration and arrival time.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">Distance is computed using the haversine formula between airport coordinates. Cruise speed assumes 850 km/h (long-haul jet). Actual flight times vary by aircraft, routing, winds, and weather. Times shown in local airport time zones.</p>
+    </div>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:contact@yuanqizhike.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    var airportCoords = {
+        'JFK': [40.6413, -73.7781], 'LAX': [33.9416, -118.4085], 'ORD': [41.9742, -87.9073],
+        'ATL': [33.6407, -84.4277], 'DFW': [32.8998, -97.0403], 'SFO': [37.6213, -122.3790],
+        'MIA': [25.7959, -80.2870], 'SEA': [47.4502, -122.3088], 'LHR': [51.4700, -0.4543],
+        'CDG': [49.0097, 2.5479], 'FRA': [50.0379, 8.5622], 'AMS': [52.3105, 4.7683],
+        'MAD': [40.4983, -3.5676], 'FCO': [41.8003, 12.2389], 'DXB': [25.2532, 55.3657],
+        'DOH': [25.2731, 51.6080], 'HND': [35.5494, 139.7798], 'NRT': [35.7720, 140.3929],
+        'ICN': [37.4602, 126.4407], 'HKG': [22.3080, 113.9185], 'SIN': [1.3644, 103.9915],
+        'BKK': [13.6900, 100.7501], 'PEK': [40.0799, 116.6031], 'PVG': [31.1443, 121.8083],
+        'SYD': [-33.9399, 151.1753], 'MEL': [-37.6690, 144.8410], 'GRU': [-23.4356, -46.4731],
+        'EZE': [-34.8222, -58.5358], 'YYZ': [43.6777, -79.6248], 'YVR': [49.1967, -123.1815],
+        'MEX': [19.4361, -99.0719], 'BOM': [19.0896, 72.8656], 'DEL': [28.5562, 77.1000],
+        'JNB': [-26.1392, 28.2460], 'IST': [41.2753, 28.7519]
+    };
+    function haversine(lat1, lon1, lat2, lon2){
+        var R = 6371;
+        var dLat = (lat2 - lat1) * Math.PI / 180;
+        var dLon = (lon2 - lon1) * Math.PI / 180;
+        var a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * Math.sin(dLon/2) * Math.sin(dLon/2);
+        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        return R * c;
+    }
+    function parseAirport(s){
+        var parts = s.split('|');
+        return { code: parts[0], tz: parts[1], offset: parseFloat(parts[2]) };
+    }
+    function formatTime(date){
+        var h = date.getHours().toString().padStart(2, '0');
+        var m = date.getMinutes().toString().padStart(2, '0');
+        return h + ':' + m;
+    }
+    function formatDate(date){
+        var days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        return days[date.getDay()] + ' ' + months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
+    }
+    function calc(){
+        var depSel = parseAirport(document.getElementById('dep').value);
+        var arrSel = parseAirport(document.getElementById('arr').value);
+        var depDate = document.getElementById('depDate').value;
+        var depTime = document.getElementById('depTime').value;
+        var ftype = document.getElementById('ftype').value;
+        var adjust = parseFloat(document.getElementById('adjust').value) || 0;
+        if(depSel.code === arrSel.code){
+            document.getElementById('result').innerHTML = '<div style="color:#dc2626;padding:8px">Choose different airports.</div>';
+            return;
+        }
+        var coords1 = airportCoords[depSel.code];
+        var coords2 = airportCoords[arrSel.code];
+        if(!coords1 || !coords2){
+            document.getElementById('result').innerHTML = '<div style="color:#dc2626;padding:8px">Airport data missing.</div>';
+            return;
+        }
+        var distKm = haversine(coords1[0], coords1[1], coords2[0], coords2[1]);
+        var distMi = distKm * 0.621371;
+        var cruiseSpeed = 850;
+        var flightHours = distKm / cruiseSpeed;
+        var layoverHours = ftype === '1stop' ? 2 : (ftype === '2stop' ? 4 : 0);
+        var totalTravelHours = flightHours + layoverHours + adjust;
+        var depDateTime;
+        if(depDate && depTime){
+            depDateTime = new Date(depDate + 'T' + depTime + ':00');
+        } else {
+            depDateTime = new Date();
+        }
+        var depUtcMs = depDateTime.getTime();
+        var arrUtcMs = depUtcMs + totalTravelHours * 3600000;
+        var arrDateUtc = new Date(arrUtcMs);
+        var tzDiff = arrSel.offset - depSel.offset;
+        var html = '<div style="background:#dbeafe;padding:14px;border-radius:8px;border-left:4px solid #1e40af">';
+        html += '<div style="text-align:center;margin-bottom:14px">';
+        html += '<div style="font-size:13px;color:#666">Total Travel Time</div>';
+        html += '<div style="font-size:32px;font-weight:bold;color:#1e40af">';
+        var h = Math.floor(totalTravelHours);
+        var m = Math.round((totalTravelHours - h) * 60);
+        html += h + 'h ' + m + 'm';
+        html += '</div>';
+        html += '<div style="font-size:14px;color:#666">' + depSel.code + ' ?' + arrSel.code + '</div>';
+        html += '</div>';
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+        html += '<div style="font-size:13px;font-weight:bold;color:#1e40af;margin-bottom:6px">Flight Details</div>';
+        html += '<table style="width:100%;font-size:12px;border-collapse:collapse">';
+        html += '<tr style="border-bottom:1px solid #eee"><td style="padding:6px">Distance</td><td style="text-align:right;padding:6px">' + distMi.toFixed(0) + ' mi (' + distKm.toFixed(0) + ' km)</td></tr>';
+        html += '<tr style="border-bottom:1px solid #eee"><td style="padding:6px">Cruise speed</td><td style="text-align:right;padding:6px">850 km/h (528 mph)</td></tr>';
+        html += '<tr style="border-bottom:1px solid #eee"><td style="padding:6px">Flight time</td><td style="text-align:right;padding:6px">' + Math.floor(flightHours) + 'h ' + Math.round((flightHours - Math.floor(flightHours)) * 60) + 'm</td></tr>';
+        if(layoverHours > 0){
+            html += '<tr style="border-bottom:1px solid #eee"><td style="padding:6px">Layover</td><td style="text-align:right;padding:6px">' + layoverHours + 'h 0m</td></tr>';
+        }
+        if(adjust !== 0){
+            html += '<tr style="border-bottom:1px solid #eee"><td style="padding:6px">Adjustment</td><td style="text-align:right;padding:6px">' + (adjust > 0 ? '+' : '') + adjust + 'h</td></tr>';
+        }
+        html += '<tr style="background:#dbeafe;font-weight:bold"><td style="padding:6px">Total travel</td><td style="text-align:right;padding:6px;color:#1e40af">' + h + 'h ' + m + 'm</td></tr>';
+        html += '</table>';
+        html += '</div>';
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+        html += '<div style="font-size:13px;font-weight:bold;color:#1e40af;margin-bottom:6px">Schedule</div>';
+        html += '<table style="width:100%;font-size:12px;border-collapse:collapse">';
+        html += '<tr style="background:#f3f4f6;border-bottom:1px solid #ddd"><th style="padding:6px;text-align:left"></th><th>Departure</th><th>Arrival</th></tr>';
+        html += '<tr style="border-bottom:1px solid #eee"><td style="padding:6px">Airport</td><td style="text-align:center">' + depSel.code + '</td><td style="text-align:center">' + arrSel.code + '</td></tr>';
+        html += '<tr style="border-bottom:1px solid #eee"><td style="padding:6px">UTC offset</td><td style="text-align:center">UTC' + (depSel.offset >= 0 ? '+' : '') + depSel.offset + '</td><td style="text-align:center">UTC' + (arrSel.offset >= 0 ? '+' : '') + arrSel.offset + '</td></tr>';
+        html += '<tr style="border-bottom:1px solid #eee"><td style="padding:6px">Local time</td><td style="text-align:center">' + formatDate(depDateTime) + '<br>' + formatTime(depDateTime) + '</td><td style="text-align:center">' + formatDate(arrDateUtc) + '<br>' + formatTime(arrDateUtc) + '</td></tr>';
+        html += '<tr style="background:#d1fae5;font-weight:bold"><td style="padding:6px">UTC time</td><td style="text-align:center">' + formatTime(new Date(depUtcMs)) + '</td><td style="text-align:center">' + formatTime(new Date(arrUtcMs)) + '</td></tr>';
+        html += '</table>';
+        html += '<div style="font-size:11px;color:#999;margin-top:4px">Arrival shown in arrival airport local time. Day change indicated if crossing midnight.</div>';
+        html += '</div>';
+        var dateDiff = arrDateUtc.getDate() - depDateTime.getDate();
+        var dayChange = '';
+        if(dateDiff > 0) dayChange = ' (+' + dateDiff + ' day)';
+        else if(dateDiff < 0) dayChange = ' (' + dateDiff + ' day)';
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+        html += '<div style="font-size:13px;font-weight:bold;color:#1e40af;margin-bottom:6px">Time Zone Impact</div>';
+        html += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;font-size:12px;text-align:center">';
+        html += '<div style="background:#dbeafe;padding:8px;border-radius:4px"><div style="color:#666">TZ difference</div><div style="font-size:18px;font-weight:bold;color:#1e40af">' + (tzDiff >= 0 ? '+' : '') + tzDiff + 'h</div></div>';
+        html += '<div style="background:#fef3c7;padding:8px;border-radius:4px"><div style="color:#666">Day change</div><div style="font-size:18px;font-weight:bold;color:#f59e0b">' + (dateDiff === 0 ? 'Same day' : (dateDiff > 0 ? '+' + dateDiff + 'd' : dateDiff + 'd')) + '</div></div>';
+        html += '<div style="background:#d1fae5;padding:8px;border-radius:4px"><div style="color:#666">Direction</div><div style="font-size:18px;font-weight:bold;color:#10b981">' + (tzDiff > 0 ? 'East' : (tzDiff < 0 ? 'West' : 'Same')) + '</div></div>';
+        html += '</div>';
+        html += '</div>';
+        html += '<div style="background:#d1fae5;padding:10px;border-radius:6px">';
+        html += '<div style="font-size:13px;font-weight:bold;color:#065f46;margin-bottom:4px">Travel Tips</div>';
+        html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Eastbound flights cause worse jet lag</div>';
+        html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Hydrate well; avoid alcohol during flight</div>';
+        html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Adjust watch to destination time on boarding</div>';
+        html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Long-haul: stand and stretch every 2 hours</div>';
+        html += '</div>';
+        html += '<div style="font-size:11px;color:#999;margin-top:8px">Distance computed using haversine formula. Cruise speed assumes 850 km/h (long-haul jet). Actual times vary by aircraft type, routing, winds, and weather. Stop durations are estimates.</div>';
+        html += '</div>';
+        document.getElementById('result').innerHTML = html;
+    }
+    document.getElementById('calc').addEventListener('click', calc);
+    calc();
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

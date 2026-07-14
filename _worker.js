@@ -43,6 +43,10 @@ export default {
 
     if (method === 'OPTIONS') return handleCORS(request, env);
 
+    // ============ 10 条恶意访问硬拦截（节省 Workers 额度 + D1 写量）============
+    const blockResult = blockMaliciousRequest(request, path, url);
+    if (blockResult) return blockResult;
+
     try {
       // ============ API 路由 ============
       if (path.startsWith('/api/')) {
@@ -267,18 +271,24 @@ async function handleContact(request, env, ctx) {
   }
 
   const userAgent = request.headers.get('user-agent') || '';
-  const insertResult = await env.DB.prepare(
-    `INSERT INTO messages (name, email, project_type, description, ip, user_agent) VALUES (?, ?, ?, ?, ?, ?)`
-  ).bind(
-    String(name).slice(0, 100),
-    String(email).slice(0, 200),
-    String(projectType || '').slice(0, 50),
-    String(description).slice(0, 5000),
-    ip,
-    userAgent.slice(0, 500)
-  ).run();
+  let messageId;
+  try {
+    const insertResult = await env.DB.prepare(
+      `INSERT INTO messages (name, email, project_type, description, ip, user_agent) VALUES (?, ?, ?, ?, ?, ?)`
+    ).bind(
+      String(name).slice(0, 100),
+      String(email).slice(0, 200),
+      String(projectType || '').slice(0, 50),
+      String(description).slice(0, 5000),
+      ip,
+      userAgent.slice(0, 500)
+    ).run();
+    messageId = insertResult.meta?.last_row_id;
+  } catch (err) {
+    console.error('insert messages error:', err.message);
+    return json({ error: 'Database error, please retry later' }, 500);
+  }
 
-  const messageId = insertResult.meta?.last_row_id;
   ctx.waitUntil(sendEmail(env, { name, email, projectType, description, ip, messageId }).catch(err => console.error('Email fail:', err)));
   ctx.waitUntil(cleanupRateLimit(env));
   return json({ ok: true, id: messageId });
@@ -303,7 +313,12 @@ async function handleMarkRead(request, env, url) {
   if (authErr) return authErr;
   const id = parseInt(url.searchParams.get('id') || '0', 10);
   if (!id) return json({ error: 'Missing id' }, 400);
-  await env.DB.prepare(`UPDATE messages SET is_read = 1 WHERE id = ?`).bind(id).run();
+  try {
+    await env.DB.prepare(`UPDATE messages SET is_read = 1 WHERE id = ?`).bind(id).run();
+  } catch (err) {
+    console.error('update messages read error:', err.message);
+    return json({ error: 'Database error' }, 500);
+  }
   return json({ ok: true });
 }
 
@@ -523,22 +538,42 @@ async function handleAdminActionGuestbook(request, env, url) {
   if (['approve', 'reject', 'spam'].includes(action)) {
     if (!id) return json({ error: 'Missing id' }, 400);
     const s = action === 'approve' ? 'approved' : (action === 'reject' ? 'rejected' : 'spam');
-    await env.DB.prepare(`UPDATE guestbook SET status = ? WHERE id = ?`).bind(s, parseInt(id, 10)).run();
+    try {
+      await env.DB.prepare(`UPDATE guestbook SET status = ? WHERE id = ?`).bind(s, parseInt(id, 10)).run();
+    } catch (err) {
+      console.error('update guestbook status error:', err.message);
+      return json({ error: 'Database error' }, 500);
+    }
     return json({ ok: true, id: parseInt(id, 10), status: s });
   }
   if (action === 'delete') {
     if (!id) return json({ error: 'Missing id' }, 400);
-    await env.DB.prepare(`DELETE FROM guestbook WHERE id = ?`).bind(parseInt(id, 10)).run();
+    try {
+      await env.DB.prepare(`DELETE FROM guestbook WHERE id = ?`).bind(parseInt(id, 10)).run();
+    } catch (err) {
+      console.error('delete guestbook error:', err.message);
+      return json({ error: 'Database error' }, 500);
+    }
     return json({ ok: true, deleted: parseInt(id, 10) });
   }
   if (action === 'block_ip') {
     if (!ip) return json({ error: 'Missing ip' }, 400);
-    await env.DB.prepare(`INSERT OR IGNORE INTO ip_blacklist (ip, reason) VALUES (?, ?)`).bind(String(ip).slice(0, 50), String(reason || '').slice(0, 200)).run();
+    try {
+      await env.DB.prepare(`INSERT OR IGNORE INTO ip_blacklist (ip, reason) VALUES (?, ?)`).bind(String(ip).slice(0, 50), String(reason || '').slice(0, 200)).run();
+    } catch (err) {
+      console.error('insert ip_blacklist error:', err.message);
+      return json({ error: 'Database error' }, 500);
+    }
     return json({ ok: true, blocked: ip });
   }
   if (action === 'unblock_ip') {
     if (!ip) return json({ error: 'Missing ip' }, 400);
-    await env.DB.prepare(`DELETE FROM ip_blacklist WHERE ip = ?`).bind(String(ip).slice(0, 50)).run();
+    try {
+      await env.DB.prepare(`DELETE FROM ip_blacklist WHERE ip = ?`).bind(String(ip).slice(0, 50)).run();
+    } catch (err) {
+      console.error('delete ip_blacklist error:', err.message);
+      return json({ error: 'Database error' }, 500);
+    }
     return json({ ok: true, unblocked: ip });
   }
   return json({ error: 'Unknown action' }, 400);
@@ -559,6 +594,58 @@ async function handleAdminStats(request, env) {
     if (r.is_read === 0) msgs.unread = r.cnt; else msgs.read = r.cnt;
   });
   return json({ ok: true, guestbook: gb, messages: msgs });
+}
+
+// ============ 10 条恶意访问硬拦截 ============
+function blockMaliciousRequest(request, path, url) {
+  const ua = (request.headers.get('user-agent') || '').toLowerCase();
+  const fullPath = (path + url.search).toLowerCase();
+
+  // 1. 常见 CMS 漏洞路径（WordPress / phpMyAdmin / Drupal 等）
+  const BAD_PATHS_1 = ['/wp-admin', '/wp-login', '/wp-content', '/wp-includes', '/xmlrpc.php',
+    '/phpmyadmin', '/pma', '/administrator', '/administrator/index.php', '/drupal'];
+  for (const p of BAD_PATHS_1) if (fullPath.startsWith(p)) return forbidden();
+
+  // 2. 敏感配置 / 版本控制文件泄露
+  const BAD_PATHS_2 = ['/.env', '/.git', '/.svn', '/config.php', '/config.json',
+    '/.htaccess', '/.htpasswd', '/web.config', '/database.yml', '/composer.json', '/composer.lock'];
+  for (const p of BAD_PATHS_2) if (fullPath.startsWith(p) || fullPath.includes(p + '?')) return forbidden();
+
+  // 3. 备份 / SQL / 日志敏感文件后缀（根或任意子目录）
+  if (/\.(bak|backup|sql|old|orig|log|swp|tmp|zip|tar\.gz|rar)$/i.test(path)) return forbidden();
+
+  // 4. WebShell / 命令执行常见入口
+  const BAD_PATHS_4 = ['/cgi-bin', '/shell.', '/cmd.', '/eval.', '/webshell', '/backdoor', '/upload.php'];
+  for (const p of BAD_PATHS_4) if (fullPath.includes(p)) return forbidden();
+
+  // 5. SQL 注入 / LFI 路径特征（攻击流量直接挡）
+  if (/(union\s+select|or\s+1\s*=\s*1|php:\/\/|data:|expect:\/\/|file:\/\/)/i.test(fullPath)) return forbidden();
+
+  // 6. 异常深度路径（>8 层）疑似扫描器
+  const depth = path.split('/').filter(Boolean).length;
+  if (depth > 8) return forbidden();
+
+  // 7. 恶意扫描器 UA（sqlmap / nikto / nessus / acunetix / masscan 等）
+  const BAD_UA_7 = ['sqlmap', 'nikto', 'nessus', 'acunetix', 'masscan', 'nmap', 'zgrab',
+    'curl/', 'wget/', 'python-requests', 'libwww-perl', 'go-http-client', 'java/', 'dotbot'];
+  for (const u of BAD_UA_7) if (ua.includes(u)) return forbidden();
+
+  // 8. CVE 探测常见路径（log4j / Spring / ThinkPHP 等）
+  const BAD_PATHS_8 = ['/solr/', '/actuator', '/jenkins', '/manager/html', '/jmx-console',
+    '/console', '/_ignition', '/vendor/phpunit', '/thinkphp', '/sitemap.xml.gz'];
+  for (const p of BAD_PATHS_8) if (fullPath.includes(p)) return forbidden();
+
+  // 9. 路径穿越 ../ 规范化后仍存在 -> 直接挡
+  if (url.pathname !== decodeURIComponent(url.pathname) && /\.\./.test(decodeURIComponent(url.pathname))) return forbidden();
+
+  // 10. 非标准超长 URL 或 query 参数爆炸（>2000 字符 / >30 个参数）
+  if (fullPath.length > 2000) return forbidden();
+  if (url.searchParams && [...url.searchParams.keys()].length > 30) return forbidden();
+
+  return null;
+}
+function forbidden() {
+  return new Response('Forbidden', { status: 403, headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
 }
 
 // ============ 工具函数 ============

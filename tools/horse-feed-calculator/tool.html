@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horse Feed Calculator | YuanqiZhiKe Toolkit</title>
+<meta name="description" content="Calculate horse feed requirements by weight and activity. Hay, grain, and water needs. Free horse feeding calculator.">
+<meta name="keywords" content="horse feed, horse hay, horse nutrition, equine feed, horse ration, forage calculator, horse feeding">
+<meta property="og:title" content="Horse Feed Calculator - Free Online Tool">
+<meta property="og:description" content="Calculate horse feed requirements by weight and activity. Hay, grain, and water needs. Free horse feeding calculator.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Horse Feed Calculator</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Calculate horse feed requirements by weight and activity. Hay, grain, and water needs. Free horse feeding calculator.</div>
+    <div class="row">
+        <div class="group"><label>Horse weight (lbs)</label><input type="number" id="weight" value="1000" min="100" style="width:100%;padding:8px"></div>
+        <div class="group"><label>Unit</label>
+            <select id="unit" style="width:100%;padding:8px">
+                <option value="lbs" selected>lbs</option>
+                <option value="kg">kg</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Activity level</label>
+            <select id="activity" style="width:100%;padding:8px">
+                <option value="maintenance" selected>Maintenance (pasture/rest)</option>
+                <option value="light">Light (1-2 hrs riding/week)</option>
+                <option value="moderate">Moderate (3-5 hrs riding)</option>
+                <option value="heavy">Heavy (daily training)</option>
+                <option value="very-heavy">Very heavy (racing/competing)</option>
+            </select>
+        </div>
+        <div class="group"><label>Life stage</label>
+            <select id="stage" style="width:100%;padding:8px">
+                <option value="adult" selected>Adult</option>
+                <option value="senior">Senior (20+ years)</option>
+                <option value="pregnant">Pregnant mare</option>
+                <option value="lactating">Lactating mare</option>
+                <option value="growing">Growing (weanling/yearling)</option>
+                <option value="stallion">Breeding stallion</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Hay type</label>
+            <select id="hayType" style="width:100%;padding:8px">
+                <option value="grass" selected>Grass hay (timothy, bermuda)</option>
+                <option value="legume">Legume (alfalfa, clover)</option>
+                <option value="mixed">Mixed grass/legume</option>
+            </select>
+        </div>
+        <div class="group"><label>Grain/concentrate</label>
+            <select id="grain" style="width:100%;padding:8px">
+                <option value="yes" selected>Yes (working horses)</option>
+                <option value="no">No (forage only)</option>
+            </select>
+        </div>
+    </div>
+    <button id="calc" style="padding:10px 20px;background:#10b981;color:#fff;border:none;border-radius:6px;cursor:pointer;margin-top:10px">Calculate Feed</button>
+    <div id="result" style="margin-top:12px"></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Enter <b>horse weight</b> in lbs or kg.</li>
+<li>Select <b>activity level</b> and <b>life stage</b>.</li>
+<li>Choose <b>hay type</b> (grass, legume, or mixed).</li>
+<li>Choose if <b>grain/concentrate</b> is fed.</li>
+<li>Click <b>Calculate Feed</b> for daily requirements.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">Based on NRC Nutrient Requirements of Horses. Total feed: 1.5-3% body weight, with forage minimum 1% BW. Grain limited to 4 lbs per meal to prevent colic/founder. Adjust by individual metabolism and body condition score (5 = ideal).</p>
+    </div>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:contact@yuanqizhike.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    function calc(){
+        var weight = +document.getElementById('weight').value;
+        var unit = document.getElementById('unit').value;
+        var activity = document.getElementById('activity').value;
+        var stage = document.getElementById('stage').value;
+        var hayType = document.getElementById('hayType').value;
+        var grainChoice = document.getElementById('grain').value;
+        if(!weight){ document.getElementById('result').innerHTML = '<div style="color:#dc2626;padding:8px">Enter horse weight.</div>'; return; }
+        var lbs = unit === 'kg' ? weight * 2.20462 : weight;
+        var totalPct;
+        if(stage === 'growing') totalPct = 2.5;
+        else if(stage === 'lactating') totalPct = 3.0;
+        else if(stage === 'pregnant') totalPct = 2.0;
+        else if(stage === 'senior') totalPct = 2.0;
+        else if(stage === 'stallion') totalPct = 1.8;
+        else totalPct = 1.5;
+        var activityMult = {
+            maintenance: 1.0,
+            light: 1.1,
+            moderate: 1.2,
+            heavy: 1.3,
+            'very-heavy': 1.4
+        }[activity];
+        totalPct *= activityMult;
+        var totalFeed = lbs * totalPct / 100;
+        var minForage = lbs * 0.015;
+        var grainAmount = 0;
+        var forageAmount = totalFeed;
+        if(grainChoice === 'yes' && (activity !== 'maintenance' || stage === 'lactating' || stage === 'pregnant' || stage === 'growing')){
+            var grainPct = 0.2;
+            if(activity === 'heavy' || activity === 'very-heavy') grainPct = 0.3;
+            if(stage === 'lactating') grainPct = 0.3;
+            if(stage === 'growing') grainPct = 0.3;
+            grainAmount = totalFeed * grainPct;
+            forageAmount = totalFeed - grainAmount;
+            if(forageAmount < minForage){
+                forageAmount = minForage;
+                grainAmount = totalFeed - forageAmount;
+                totalFeed = forageAmount + grainAmount;
+            }
+        } else {
+            forageAmount = totalFeed;
+        }
+        var hayDigestibleEnergy;
+        if(hayType === 'legume') hayDigestibleEnergy = 1.0;
+        else if(hayType === 'mixed') hayDigestibleEnergy = 0.92;
+        else hayDigestibleEnergy = 0.85;
+        var adjustedForage = forageAmount / hayDigestibleEnergy;
+        var baseWater = lbs / 100;
+        if(stage === 'lactating') baseWater *= 2;
+        if(activity === 'heavy' || activity === 'very-heavy') baseWater *= 1.5;
+        function toKg(lbs){ return lbs * 0.453592; }
+        var grainMeals = grainAmount > 0 ? Math.min(4, Math.ceil(grainAmount / 4)) : 0;
+        var grainPerMeal = grainMeals > 0 ? grainAmount / grainMeals : 0;
+        var dePerLbHay = hayType === 'legume' ? 1.0 : hayType === 'mixed' ? 0.92 : 0.85;
+        var dePerLbGrain = 1.5;
+        var totalDE = (adjustedForage * dePerLbHay) + (grainAmount * dePerLbGrain);
+        var reqDE;
+        if(stage === 'maintenance') reqDE = lbs * 0.015;
+        else if(stage === 'growing') reqDE = lbs * 0.03;
+        else if(stage === 'lactating') reqDE = lbs * 0.04;
+        else if(stage === 'pregnant') reqDE = lbs * 0.02;
+        else reqDE = lbs * 0.018;
+        reqDE *= activityMult;
+        var html = '<div style="background:#dbeafe;padding:14px;border-radius:8px;border-left:4px solid #1e40af">';
+        html += '<div style="text-align:center;margin-bottom:14px">';
+        html += '<div style="font-size:13px;color:#666">Daily Feed Requirement</div>';
+        html += '<div style="font-size:32px;font-weight:bold;color:#1e40af">' + totalFeed.toFixed(1) + ' lbs (' + toKg(totalFeed).toFixed(1) + ' kg)</div>';
+        html += '<div style="font-size:14px;color:#666">' + (totalFeed / lbs * 100).toFixed(1) + '% of body weight</div>';
+        html += '</div>';
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+        html += '<div style="font-size:13px;font-weight:bold;color:#1e40af;margin-bottom:6px">Daily Feed Breakdown</div>';
+        html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:12px">';
+        html += '<div style="background:#d1fae5;padding:8px;border-radius:4px;text-align:center"><div style="color:#666">Forage (hay)</div><div style="font-size:18px;font-weight:bold;color:#10b981">' + adjustedForage.toFixed(1) + ' lbs</div><div style="font-size:11px;color:#666">' + toKg(adjustedForage).toFixed(1) + ' kg</div></div>';
+        if(grainAmount > 0){
+            html += '<div style="background:#fef3c7;padding:8px;border-radius:4px;text-align:center"><div style="color:#666">Grain/concentrate</div><div style="font-size:18px;font-weight:bold;color:#f59e0b">' + grainAmount.toFixed(1) + ' lbs</div><div style="font-size:11px;color:#666">' + toKg(grainAmount).toFixed(1) + ' kg</div></div>';
+        }
+        html += '</div>';
+        html += '<div style="margin-top:8px;font-size:12px;color:#666"><b>Ratio:</b> ' + (forageAmount / totalFeed * 100).toFixed(0) + '% forage / ' + (grainAmount / totalFeed * 100).toFixed(0) + '% grain</div>';
+        html += '</div>';
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+        html += '<div style="font-size:13px;font-weight:bold;color:#1e40af;margin-bottom:6px">Feeding Plan</div>';
+        html += '<div style="font-size:12px;color:#333;padding:3px 0"><b>Hay:</b> ' + adjustedForage.toFixed(1) + ' lbs split into 2-3 feedings (' + (adjustedForage / 2).toFixed(1) + ' lbs each)</div>';
+        if(grainAmount > 0){
+            html += '<div style="font-size:12px;color:#333;padding:3px 0"><b>Grain:</b> ' + grainAmount.toFixed(1) + ' lbs in ' + grainMeals + ' meals (' + grainPerMeal.toFixed(2) + ' lbs each)</div>';
+            html += '<div style="font-size:12px;color:#333;padding:3px 0"><b>Max grain/meal:</b> 4 lbs (avoid founder)</div>';
+        }
+        html += '<div style="font-size:12px;color:#333;padding:3px 0"><b>Water:</b> ' + baseWater.toFixed(1) + ' gallons (' + (baseWater * 3.785).toFixed(1) + ' L) per day</div>';
+        html += '<div style="font-size:12px;color:#333;padding:3px 0"><b>Salt:</b> 1-2 oz (28-56g) loose salt daily</div>';
+        html += '</div>';
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+        html += '<div style="font-size:13px;font-weight:bold;color:#1e40af;margin-bottom:6px">Energy Balance</div>';
+        html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px">';
+        html += '<div><b>Supplied DE:</b><br>' + totalDE.toFixed(2) + ' Mcal/day</div>';
+        html += '<div><b>Required DE:</b><br>' + reqDE.toFixed(2) + ' Mcal/day</div>';
+        html += '</div>';
+        var energyStatus = Math.abs(totalDE - reqDE) / reqDE < 0.05 ? 'Balanced' : totalDE > reqDE ? 'Excess' : 'Deficit';
+        var energyColor = energyStatus === 'Balanced' ? '#10b981' : '#f59e0b';
+        html += '<div style="margin-top:6px;text-align:center;padding:4px;background:' + (energyStatus === 'Balanced' ? '#d1fae5' : '#fef3c7') + ';color:' + energyColor + ';border-radius:4px;font-weight:bold">' + energyStatus + ' (' + ((totalDE - reqDE) / reqDE * 100).toFixed(0) + '%)</div>';
+        html += '</div>';
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+        html += '<div style="font-size:13px;font-weight:bold;color:#1e40af;margin-bottom:6px">Monthly Cost Estimate</div>';
+        var hayCostPerLb = 0.10;
+        var grainCostPerLb = 0.50;
+        var monthlyHay = adjustedForage * 30 * hayCostPerLb;
+        var monthlyGrain = grainAmount * 30 * grainCostPerLb;
+        html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px">';
+        html += '<div><b>Hay (' + (adjustedForage * 30).toFixed(0) + ' lbs):</b><br>$' + monthlyHay.toFixed(0) + '</div>';
+        html += '<div><b>Grain (' + (grainAmount * 30).toFixed(0) + ' lbs):</b><br>$' + monthlyGrain.toFixed(0) + '</div>';
+        html += '</div>';
+        html += '<div style="margin-top:6px;font-size:14px;font-weight:bold;color:#1e40af;text-align:center">Total: $' + (monthlyHay + monthlyGrain).toFixed(0) + '/month</div>';
+        html += '</div>';
+        html += '<div style="background:#fee2e2;padding:10px;border-radius:6px">';
+        html += '<div style="font-size:13px;font-weight:bold;color:#dc2626;margin-bottom:4px">Important Notes</div>';
+        html += '<div style="font-size:12px;color:#991b1b;padding:2px 0">- Make dietary changes gradually over 7-10 days</div>';
+        html += '<div style="font-size:12px;color:#991b1b;padding:2px 0">- Provide clean water at all times</div>';
+        html += '<div style="font-size:12px;color:#991b1b;padding:2px 0">- Never feed more than 4 lbs grain per meal</div>';
+        html += '<div style="font-size:12px;color:#991b1b;padding:2px 0">- Forage should be minimum 1% of body weight</div>';
+        html += '<div style="font-size:12px;color:#991b1b;padding:2px 0">- Monitor body condition score monthly</div>';
+        html += '</div>';
+        html += '<div style="font-size:11px;color:#999;margin-top:8px">Based on NRC Nutrient Requirements of Horses. Adjust for individual metabolism, weather, and body condition. Consult equine vet or nutritionist for custom plans.</div>';
+        html += '</div>';
+        document.getElementById('result').innerHTML = html;
+    }
+    document.getElementById('calc').addEventListener('click', calc);
+    calc();
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

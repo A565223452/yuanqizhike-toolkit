@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fishing License Estimator | YuanqiZhiKe Toolkit</title>
+<meta name="description" content="Estimate fishing license costs by state. Resident, non-resident, daily. Free fishing license calculator.">
+<meta name="keywords" content="fishing license, license cost, fishing permit, state fishing, resident license">
+<meta property="og:title" content="Fishing License Estimator - Free Online Tool">
+<meta property="og:description" content="Estimate fishing license costs by state. Resident, non-resident, daily. Free fishing license calculator.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Fishing License Estimator</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Estimate fishing license costs by state. Resident, non-resident, daily. Free fishing license calculator.</div>
+    <div class="group"><label>State</label>
+        <select id="state" style="width:100%;padding:8px">
+            <option value="AL">Alabama</option><option value="AK">Alaska</option><option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option><option value="CA">California</option><option value="CO">Colorado</option>
+            <option value="CT">Connecticut</option><option value="FL" selected>Florida</option><option value="GA">Georgia</option>
+            <option value="ID">Idaho</option><option value="IL">Illinois</option><option value="IN">Indiana</option>
+            <option value="ME">Maine</option><option value="MD">Maryland</option><option value="MI">Michigan</option>
+            <option value="MN">Minnesota</option><option value="MT">Montana</option><option value="NC">North Carolina</option>
+            <option value="NY">New York</option><option value="OH">Ohio</option><option value="OR">Oregon</option>
+            <option value="PA">Pennsylvania</option><option value="SC">South Carolina</option><option value="TN">Tennessee</option>
+            <option value="TX">Texas</option><option value="VA">Virginia</option><option value="WA">Washington</option>
+            <option value="WI">Wisconsin</option><option value="WY">Wyoming</option>
+        </select>
+    </div>
+    <div class="group"><label>Residency</label>
+        <select id="residency" style="width:100%;padding:8px">
+            <option value="resident" selected>Resident</option>
+            <option value="nonresident">Non-resident</option>
+        </select>
+    </div>
+    <div class="group"><label>License duration</label>
+        <select id="duration" style="width:100%;padding:8px">
+            <option value="annual" selected>Annual</option>
+            <option value="7day">7-day</option>
+            <option value="3day">3-day</option>
+            <option value="1day">1-day</option>
+        </select>
+    </div>
+    <div class="group"><label>Add-ons</label></div>
+    <div style="font-size:12px;display:grid;gap:6px">
+        <label><input type="checkbox" id="saltwater"> Saltwater permit (+$5-$30)</label>
+        <label><input type="checkbox" id="trout"> Trout stamp (+$5-$20)</label>
+        <label><input type="checkbox" id="salmon"> Salmon/Steelhead stamp (+$5-$25)</label>
+        <label><input type="checkbox" id="marine"> Marine registry (+$10-$15)</label>
+    </div>
+    <button id="calc" style="width:100%;padding:12px;background:#3b82f6;color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:bold;margin:8px 0">Estimate Cost</button>
+    <div id="result" style="margin-top:12px"></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Select your state.</li>
+<li>Choose residency and duration.</li>
+<li>Add stamps/permits if needed.</li>
+<li>Click <b>Estimate Cost</b>.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">Costs are approximate (2024). Resident: $10-60, Non-resident: $40-170. Add-ons: saltwater ($5-30), trout ($5-20), salmon ($5-25). Annual usually best value if fishing 5+ days. Seniors/kids/military often discounted. Verify on state wildlife agency website.</p>
+    </div>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:contact@yuanqizhike.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    var licenseFees = {
+        AL: { resident: 14, nonresident: 55 }, AK: { resident: 29, nonresident: 75 },
+        AZ: { resident: 37, nonresident: 160 }, AR: { resident: 10, nonresident: 50 },
+        CA: { resident: 61, nonresident: 165 }, CO: { resident: 38, nonresident: 117 },
+        CT: { resident: 28, nonresident: 55 }, FL: { resident: 17, nonresident: 47 },
+        GA: { resident: 15, nonresident: 50 }, ID: { resident: 31, nonresident: 108 },
+        IL: { resident: 15, nonresident: 31 }, IN: { resident: 17, nonresident: 60 },
+        ME: { resident: 25, nonresident: 64 }, MD: { resident: 25, nonresident: 130 },
+        MI: { resident: 26, nonresident: 76 }, MN: { resident: 25, nonresident: 51 },
+        MT: { resident: 21, nonresident: 117 }, NC: { resident: 25, nonresident: 76 },
+        NY: { resident: 25, nonresident: 50 }, OH: { resident: 25, nonresident: 76 },
+        OR: { resident: 44, nonresident: 167 }, PA: { resident: 27, nonresident: 97 },
+        SC: { resident: 11, nonresident: 40 }, TN: { resident: 34, nonresident: 50 },
+        TX: { resident: 30, nonresident: 58 }, VA: { resident: 23, nonresident: 100 },
+        WA: { resident: 30, nonresident: 84 }, WI: { resident: 20, nonresident: 65 },
+        WY: { resident: 18, nonresident: 102 }
+    };
+    function calc(){
+        var state = document.getElementById('state').value;
+        var residency = document.getElementById('residency').value;
+        var duration = document.getElementById('duration').value;
+        var saltwater = document.getElementById('saltwater').checked;
+        var trout = document.getElementById('trout').checked;
+        var salmon = document.getElementById('salmon').checked;
+        var marine = document.getElementById('marine').checked;
+        var baseAnnual = licenseFees[state][residency];
+        var baseCost;
+        if(duration === 'annual') baseCost = baseAnnual;
+        else if(duration === '7day') baseCost = baseAnnual * 0.4;
+        else if(duration === '3day') baseCost = baseAnnual * 0.25;
+        else baseCost = baseAnnual * 0.15;
+        var addons = [];
+        if(saltwater) addons.push({ name: 'Saltwater permit', cost: 10 });
+        if(trout) addons.push({ name: 'Trout stamp', cost: 10 });
+        if(salmon) addons.push({ name: 'Salmon/Steelhead stamp', cost: 15 });
+        if(marine) addons.push({ name: 'Marine registry', cost: 12 });
+        var addonsTotal = addons.reduce(function(s, a){ return s + a.cost; }, 0);
+        var total = baseCost + addonsTotal;
+        var html = '<div style="background:#f0f7ff;padding:14px;border-radius:8px;border-left:4px solid #3b82f6">';
+        html += '<div style="text-align:center;margin-bottom:14px">';
+        html += '<div style="font-size:13px;color:#666">Estimated cost (' + state + ')</div>';
+        html += '<div style="font-size:36px;font-weight:bold;color:#3b82f6">$' + total.toFixed(2) + '</div>';
+        html += '<div style="font-size:14px;color:#666;margin-top:4px">' + residency + ' - ' + duration + '</div>';
+        html += '</div>';
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+        html += '<div style="font-size:12px;font-weight:bold;margin-bottom:6px">Cost breakdown:</div>';
+        html += '<table style="width:100%;font-size:12px;border-collapse:collapse">';
+        html += '<tr><td style="padding:6px;border-bottom:1px solid #f0f0f0">Base license (' + duration + ')</td><td style="padding:6px;text-align:right;border-bottom:1px solid #f0f0f0">$' + baseCost.toFixed(2) + '</td></tr>';
+        addons.forEach(function(a){
+            html += '<tr><td style="padding:6px;border-bottom:1px solid #f0f0f0">' + a.name + '</td><td style="padding:6px;text-align:right;border-bottom:1px solid #f0f0f0">$' + a.cost.toFixed(2) + '</td></tr>';
+        });
+        html += '<tr style="font-weight:bold;background:#f0f7ff"><td style="padding:6px">Total</td><td style="padding:6px;text-align:right">$' + total.toFixed(2) + '</td></tr>';
+        html += '</table>';
+        html += '</div>';
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+        html += '<div style="font-size:12px;font-weight:bold;margin-bottom:6px">' + residency + ' license options (' + state + '):</div>';
+        html += '<table style="width:100%;font-size:12px;border-collapse:collapse">';
+        html += '<thead><tr style="background:#3b82f6;color:#fff"><th style="padding:6px">Duration</th><th style="padding:6px">Cost</th><th style="padding:6px">Per day</th></tr></thead><tbody>';
+        var durations = [
+            { name: '1-day', mult: 0.15 }, { name: '3-day', mult: 0.25 },
+            { name: '7-day', mult: 0.4 }, { name: 'Annual', mult: 1.0 }
+        ];
+        durations.forEach(function(d){
+            var cost = baseAnnual * d.mult;
+            var days = d.name === 'Annual' ? 365 : parseInt(d.name);
+            var perDay = cost / days;
+            var active = (d.name === duration) || (d.name === 'Annual' && duration === 'annual');
+            html += '<tr style="background:' + (active ? '#f0f7ff' : 'transparent') + '"><td style="padding:6px;border-bottom:1px solid #f0f0f0">' + d.name + '</td><td style="padding:6px;text-align:center;border-bottom:1px solid #f0f0f0">$' + cost.toFixed(2) + '</td><td style="padding:6px;text-align:center;border-bottom:1px solid #f0f0f0">$' + perDay.toFixed(2) + '</td></tr>';
+        });
+        html += '</tbody></table>';
+        html += '</div>';
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+        html += '<div style="font-size:12px;font-weight:bold;margin-bottom:6px">State info (' + state + '):</div>';
+        html += '<table style="width:100%;font-size:12px;border-collapse:collapse">';
+        html += '<tr><td style="padding:6px;border-bottom:1px solid #f0f0f0">Resident annual</td><td style="padding:6px;text-align:right;border-bottom:1px solid #f0f0f0">$' + licenseFees[state].resident + '</td></tr>';
+        html += '<tr><td style="padding:6px;border-bottom:1px solid #f0f0f0">Non-resident annual</td><td style="padding:6px;text-align:right;border-bottom:1px solid #f0f0f0">$' + licenseFees[state].nonresident + '</td></tr>';
+        html += '<tr><td style="padding:6px">Price difference</td><td style="padding:6px;text-align:right">' + (licenseFees[state].nonresident / licenseFees[state].resident).toFixed(1) + 'x more</td></tr>';
+        html += '</table>';
+        html += '</div>';
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+        html += '<div style="font-size:12px;font-weight:bold;margin-bottom:6px">Where to buy:</div>';
+        html += '<div style="font-size:12px;padding:4px 0">- State wildlife agency website</div>';
+        html += '<div style="font-size:12px;padding:4px 0">- Local bait and tackle shops</div>';
+        html += '<div style="font-size:12px;padding:4px 0">- Sporting goods stores (Bass Pro, Cabela)</div>';
+        html += '<div style="font-size:12px;padding:4px 0">- Walmart sporting goods</div>';
+        html += '</div>';
+        html += '<div style="background:#fef3c7;padding:8px;border-radius:4px;font-size:11px;color:#92400e">';
+        html += '<b>License tips:</b><br>';
+        html += '- Always carry license while fishing<br>';
+        html += '- Some states need federal stamps<br>';
+        html += '- Seniors often get discounts<br>';
+        html += '- Kids under 16 usually free<br>';
+        html += '- Military discounts available<br>';
+        html += '- Verify on state website';
+        html += '</div>';
+        html += '</div>';
+        document.getElementById('result').innerHTML = html;
+    }
+    ['state','residency','duration','saltwater','trout','salmon','marine'].forEach(function(id){
+        var el = document.getElementById(id);
+        el.addEventListener('change', calc);
+        el.addEventListener('input', calc);
+    });
+    document.getElementById('calc').addEventListener('click', calc);
+    calc();
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

@@ -111,7 +111,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
     <div class="top-bar">
         <h1>Text Diff Checker</h1>
         <div class="top-actions">
-            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark (Ctrl+Shift+T)">🌙</button>
             <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
@@ -185,63 +185,67 @@ This line is added.</textarea>
 
 // === Common: theme toggle + contact modal ===
 (function(){
-    function __setupTheme(){
-        var btn=document.getElementById('themeToggle');
-        if(!btn)return;
-        function apply(t){
-            document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
-        }
-        var saved=localStorage.getItem('theme');
-        if(saved){apply(saved);}
-        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
-        else{apply('light');}
-        btn.addEventListener('click',function(){
-            var next=document.body.classList.contains('dark')?'light':'dark';
-            apply(next);localStorage.setItem('theme',next);
+    const __themeBtn = document.getElementById('themeToggle');
+    function __applyTheme(t){
+        document.body.classList.toggle('dark', t === 'dark');
+        if(__themeBtn) __themeBtn.textContent = (t === 'dark') ? '☀️' : '🌙';
+    }
+    const __saved = localStorage.getItem('theme');
+    if(__saved){
+        __applyTheme(__saved);
+    } else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
+        __applyTheme('dark');
+    } else {
+        __applyTheme('light');
+    }
+    if(__themeBtn){
+        __themeBtn.addEventListener('click', () => {
+            const next = document.body.classList.contains('dark') ? 'light' : 'dark';
+            __applyTheme(next);
+            localStorage.setItem('theme', next);
         });
     }
-    function __setupContactModal(){
-        var modal=document.getElementById('contactModal');
-        if(!modal)return;
-        var trig=document.getElementById('contactTrigger');
-        var close=document.getElementById('contactClose');
-        function open(){modal.classList.add('open');}
-        function closeM(){modal.classList.remove('open');}
-        if(trig)trig.addEventListener('click',open);
-        if(close)close.addEventListener('click',closeM);
-        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
-        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
-        var copyBtn=document.getElementById('copyEmail');
-        if(copyBtn){
-            copyBtn.addEventListener('click',function(){
-                navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
-                    setTimeout(function(){copyBtn.textContent=old;},1500);
-                });
-            });
+    document.addEventListener('keydown', e => {
+        if(e.key === 't' && e.ctrlKey && e.shiftKey){
+            e.preventDefault();
+            const next = document.body.classList.contains('dark') ? 'light' : 'dark';
+            __applyTheme(next);
+            localStorage.setItem('theme', next);
         }
-        var form=document.getElementById('contactForm');
-        if(form){
-            form.addEventListener('submit',function(e){
-                e.preventDefault();
-                var name=document.getElementById('formName').value.trim();
-                var email=document.getElementById('formEmail').value.trim();
-                var desc=document.getElementById('formDesc').value.trim();
-                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
-                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
-                window.location.href='mailto:contact@yuanqizhike.com?subject='+subject+'&body='+body;
+    });
+    document.getElementById('bookmarkBtn').addEventListener('click', () => alert('Press Ctrl/Cmd + D to bookmark this page.'));
+
+    // Contact modal
+    const __modal = document.getElementById('contactModal');
+    const __trig = document.getElementById('contactTrigger');
+    const __close = document.getElementById('contactClose');
+    function __openModal(){ if(__modal) __modal.classList.add('open'); }
+    function __closeModal(){ if(__modal) __modal.classList.remove('open'); }
+    if(__trig) __trig.addEventListener('click', __openModal);
+    if(__close) __close.addEventListener('click', __closeModal);
+    if(__modal) __modal.addEventListener('click', e => { if(e.target === __modal) __closeModal(); });
+    document.addEventListener('keydown', e => { if(e.key === 'Escape') __closeModal(); });
+    const __copyBtn = document.getElementById('copyEmail');
+    if(__copyBtn){
+        __copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText('contact@yuanqizhike.com').then(() => {
+                const old = __copyBtn.textContent;
+                __copyBtn.textContent='Copied';
+                setTimeout(() => __copyBtn.textContent = old, 1500);
             });
-        }
+        });
     }
-    function __setupBookmark(){
-        var btn=document.getElementById('bookmarkBtn');
-        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
-    }
-    if(document.readyState==='loading'){
-        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
-    } else {
-        __setupTheme();__setupContactModal();__setupBookmark();
+    const __form = document.getElementById('contactForm');
+    if(__form){
+        __form.addEventListener('submit', e => {
+            e.preventDefault();
+            const name = document.getElementById('formName').value.trim();
+            const email = document.getElementById('formEmail').value.trim();
+            const desc = document.getElementById('formDesc').value.trim();
+            const subject = encodeURIComponent('Bespoke Tool Development Inquiry');
+            const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nRequirement:\n' + desc);
+            window.location.href = 'mailto:contact@yuanqizhike.com?subject=' + subject + '&body=' + body;
+        });
     }
 })();
 
@@ -253,19 +257,19 @@ This line is added.</textarea>
         return s;
     }
     function diffLines(lines1, lines2){
-        var m = lines1.length, n = lines2.length;
-        var dp = [];
-        for(var i = 0; i <= m; i++){
+        const m = lines1.length, n = lines2.length;
+        const dp = [];
+        for(let i = 0; i <= m; i++){
             dp[i] = [];
-            for(var j = 0; j <= n; j++){
+            for(let j = 0; j <= n; j++){
                 if(i === 0) dp[i][j] = j;
-                else if(j === 0) dp[i][i] = i;
+                else if(j === 0) dp[i][j] = i;
                 else if(lines1[i-1] === lines2[j-1]) dp[i][j] = dp[i-1][j-1];
                 else dp[i][j] = 1 + Math.min(dp[i-1][j-1], dp[i][j-1], dp[i-1][j]);
             }
         }
-        var result = [];
-        var i = m, j = n;
+        const result = [];
+        let i = m, j = n;
         while(i > 0 && j > 0){
             if(lines1[i-1] === lines2[j-1]){
                 result.unshift({type:'eq', text:lines1[i-1]});
@@ -283,37 +287,37 @@ This line is added.</textarea>
         return result;
     }
     function compare(){
-        var t1 = document.getElementById('text1').value;
-        var t2 = document.getElementById('text2').value;
-        var ignoreCase = document.getElementById('ignoreCase').checked;
-        var ignoreWs = document.getElementById('ignoreWhitespace').checked;
-        var lines1 = t1.split('\n');
-        var lines2 = t2.split('\n');
-        var normLines1 = lines1.map(function(l){ return normalize(l, ignoreCase, ignoreWs); });
-        var normLines2 = lines2.map(function(l){ return normalize(l, ignoreCase, ignoreWs); });
-        var diff = diffLines(normLines1, normLines2);
-        var origIdx = 0, modIdx = 0;
-        diff.forEach(function(d){
+        const t1 = document.getElementById('text1').value;
+        const t2 = document.getElementById('text2').value;
+        const ignoreCase = document.getElementById('ignoreCase').checked;
+        const ignoreWs = document.getElementById('ignoreWhitespace').checked;
+        const lines1 = t1.split('\n');
+        const lines2 = t2.split('\n');
+        const normLines1 = lines1.map(l => normalize(l, ignoreCase, ignoreWs));
+        const normLines2 = lines2.map(l => normalize(l, ignoreCase, ignoreWs));
+        const diff = diffLines(normLines1, normLines2);
+        let origIdx = 0, modIdx = 0;
+        diff.forEach(d => {
             if(d.type === 'eq'){ d.origLine = lines1[origIdx]; d.modLine = lines2[modIdx]; origIdx++; modIdx++; }
             else if(d.type === 'del'){ d.origLine = lines1[origIdx]; origIdx++; }
             else { d.modLine = lines2[modIdx]; modIdx++; }
         });
-        var eqCount = diff.filter(function(d){ return d.type === 'eq'; }).length;
-        var addCount = diff.filter(function(d){ return d.type === 'add'; }).length;
-        var delCount = diff.filter(function(d){ return d.type === 'del'; }).length;
-        var sim = diff.length > 0 ? Math.round(eqCount / diff.length * 100) : 100;
-        var stats = '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:12px">';
+        const eqCount = diff.filter(d => d.type === 'eq').length;
+        const addCount = diff.filter(d => d.type === 'add').length;
+        const delCount = diff.filter(d => d.type === 'del').length;
+        const sim = diff.length > 0 ? Math.round(eqCount / diff.length * 100) : 100;
+        let stats = '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:12px">';
         stats += '<div style="background:#dcfce7;border:1px solid #86efac;padding:10px;border-radius:6px;text-align:center"><div style="font-size:20px;font-weight:bold;color:#10b981">' + eqCount + '</div><div style="font-size:11px;color:#666">Unchanged</div></div>';
         stats += '<div style="background:#dbeafe;border:1px solid #93c5fd;padding:10px;border-radius:6px;text-align:center"><div style="font-size:20px;font-weight:bold;color:#3b82f6">' + addCount + '</div><div style="font-size:11px;color:#666">Added</div></div>';
         stats += '<div style="background:#fee2e2;border:1px solid #fecaca;padding:10px;border-radius:6px;text-align:center"><div style="font-size:20px;font-weight:bold;color:#dc2626">' + delCount + '</div><div style="font-size:11px;color:#666">Removed</div></div>';
         stats += '<div style="background:#fef3c7;border:1px solid #fcd34d;padding:10px;border-radius:6px;text-align:center"><div style="font-size:20px;font-weight:bold;color:#f59e0b">' + sim + '%</div><div style="font-size:11px;color:#666">Similarity</div></div>';
         stats += '</div>';
         document.getElementById('stats').innerHTML = stats;
-        var side1 = '<div style="background:#fffbeb;border:1px solid #fde68a;border-radius:6px;padding:8px;font-family:monospace;font-size:12px;overflow-x:auto">';
+        let side1 = '<div style="background:#fffbeb;border:1px solid #fde68a;border-radius:6px;padding:8px;font-family:monospace;font-size:12px;overflow-x:auto">';
         side1 += '<div style="font-weight:bold;margin-bottom:6px;color:#92400e">Original</div>';
-        var side2 = '<div style="background:#ecfdf5;border:1px solid #a7f3d0;border-radius:6px;padding:8px;font-family:monospace;font-size:12px;overflow-x:auto">';
+        let side2 = '<div style="background:#ecfdf5;border:1px solid #a7f3d0;border-radius:6px;padding:8px;font-family:monospace;font-size:12px;overflow-x:auto">';
         side2 += '<div style="font-weight:bold;margin-bottom:6px;color:#065f46">Modified</div>';
-        diff.forEach(function(d){
+        diff.forEach(d => {
             if(d.type === 'eq'){
                 side1 += '<div style="padding:2px 6px;color:#666">' + escapeHtml(d.origLine) + '</div>';
                 side2 += '<div style="padding:2px 6px;color:#666">' + escapeHtml(d.modLine) + '</div>';
@@ -328,8 +332,8 @@ This line is added.</textarea>
         side1 += '</div>';
         side2 += '</div>';
         document.getElementById('sideBySide').innerHTML = side1 + side2;
-        var inline = '';
-        diff.forEach(function(d){
+        let inline = '';
+        diff.forEach(d => {
             if(d.type === 'eq'){
                 inline += escapeHtml(d.origLine || '') + '\n';
             } else if(d.type === 'del'){
@@ -341,14 +345,14 @@ This line is added.</textarea>
         document.getElementById('inline').innerHTML = inline;
     }
     document.getElementById('compare').addEventListener('click', compare);
-    document.getElementById('swap').addEventListener('click', function(){
-        var t1 = document.getElementById('text1').value;
-        var t2 = document.getElementById('text2').value;
+    document.getElementById('swap').addEventListener('click', () => {
+        const t1 = document.getElementById('text1').value;
+        const t2 = document.getElementById('text2').value;
         document.getElementById('text1').value = t2;
         document.getElementById('text2').value = t1;
         compare();
     });
-    ['ignoreCase','ignoreWhitespace'].forEach(function(id){
+    ['ignoreCase','ignoreWhitespace'].forEach(id => {
         document.getElementById(id).addEventListener('change', compare);
     });
     compare();

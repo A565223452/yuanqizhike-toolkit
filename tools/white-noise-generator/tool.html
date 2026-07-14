@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>White Noise Generator | YuanqiZhiKe Toolkit</title>
+<meta name="description" content="Generate white, pink, brown noise for sleep, focus, tinnitus relief. Adjustable volume and duration. Free online noise generator.">
+<meta name="keywords" content="white noise, pink noise, brown noise, sleep sounds, focus sounds, tinnitus relief, noise generator, ambient noise">
+<meta property="og:title" content="White Noise Generator - Free Online Tool">
+<meta property="og:description" content="Generate white, pink, brown noise for sleep, focus, tinnitus relief. Adjustable volume and duration. Free online noise generator.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>White Noise Generator</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Generate white, pink, brown noise for sleep, focus, tinnitus relief. Adjustable volume and duration. Free online noise generator.</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:16px">
+        <button class="noise-btn active" data-type="white" style="padding:16px;background:#6366f1;color:#fff;border:none;border-radius:8px;cursor:pointer;text-align:center">
+            <div style="font-size:24px"></div><div>White</div>
+        </button>
+        <button class="noise-btn" data-type="pink" style="padding:16px;background:#f3f4f6;border:none;border-radius:8px;cursor:pointer;text-align:center">
+            <div style="font-size:24px">🌸</div><div>Pink</div>
+        </button>
+        <button class="noise-btn" data-type="brown" style="padding:16px;background:#f3f4f6;border:none;border-radius:8px;cursor:pointer;text-align:center">
+            <div style="font-size:24px">🟤</div><div>Brown</div>
+        </button>
+    </div>
+    <div class="group">
+        <label>Volume: <span id="volLabel">30%</span></label>
+        <input type="range" id="volSlider" min="0" max="100" value="30" style="width:100%">
+    </div>
+    <div class="group">
+        <label>Duration: <span id="durLabel"></span></label>
+        <select id="duration" style="width:100%;padding:8px">
+            <option value="0" selected>Continuous</option>
+            <option value="300">5 minutes</option>
+            <option value="600">10 minutes</option>
+            <option value="1800">30 minutes</option>
+            <option value="3600">1 hour</option>
+            <option value="28800">8 hours (sleep)</option>
+        </select>
+    </div>
+    <button id="playBtn" style="width:100%;padding:14px;background:#10b981;color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:16px;font-weight:bold;margin-bottom:8px">Note: Start</button>
+    <div id="status" style="text-align:center;padding:12px;color:#666">Stopped</div>
+    <div class="result-box" id="info" style="margin-top:12px"></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Select noise type: <b>White</b>, <b>Pink</b>, or <b>Brown</b>.</li>
+<li>Set <b>volume</b> (start at 30% to protect hearing).</li>
+<li>Choose <b>duration</b> (continuous or timed).</li>
+<li>Click <b>Start</b> to play.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">White noise: equal energy all frequencies (TV static). Pink noise: equal per octave (rain-like, more natural). Brown noise: deeper (waterfall). Uses: sleep, focus, tinnitus relief, baby calming. Volume warning: keep under 60%, take breaks every 1-2 hr. Prolonged high volume can damage hearing.</p>
+    </div>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:contact@yuanqizhike.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    var audioCtx = null;
+    var noiseSource = null;
+    var gainNode = null;
+    var isPlaying = false;
+    var stopTimer = null;
+    var currentType = 'white';
+    function initAudio(){
+        if(!audioCtx){
+            try { audioCtx = new (window.AudioContext || window.webkitAudioContext)(); } catch(e) {}
+        }
+        if(audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+    }
+    function createNoiseBuffer(type){
+        var bufferSize = audioCtx.sampleRate * 2;
+        var buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+        var data = buffer.getChannelData(0);
+        if(type === 'white'){
+            for(var i = 0; i < bufferSize; i++){
+                data[i] = Math.random() * 2 - 1;
+            }
+        } else if(type === 'pink'){
+            // Paul Kellet's pink noise algorithm
+            var b0 = 0, b1 = 0, b2 = 0, b3 = 0, b4 = 0, b5 = 0, b6 = 0;
+            for(var i = 0; i < bufferSize; i++){
+                var white = Math.random() * 2 - 1;
+                b0 = 0.99886 * b0 + white * 0.0555179;
+                b1 = 0.99332 * b1 + white * 0.0750759;
+                b2 = 0.96900 * b2 + white * 0.1538520;
+                b3 = 0.86650 * b3 + white * 0.3104856;
+                b4 = 0.55000 * b4 + white * 0.5329522;
+                b5 = -0.7616 * b5 - white * 0.0168980;
+                data[i] = (b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362) * 0.11;
+                b6 = white * 0.115926;
+            }
+        } else if(type === 'brown'){
+            // Brown noise (Brownian motion)
+            var lastOut = 0;
+            for(var i = 0; i < bufferSize; i++){
+                var white = Math.random() * 2 - 1;
+                data[i] = (lastOut + 0.02 * white) / 1.02;
+                lastOut = data[i];
+                data[i] *= 3.5;
+            }
+        }
+        return buffer;
+    }
+    function start(){
+        initAudio();
+        if(!audioCtx) return;
+        if(isPlaying) stop();
+        var buffer = createNoiseBuffer(currentType);
+        noiseSource = audioCtx.createBufferSource();
+        noiseSource.buffer = buffer;
+        noiseSource.loop = true;
+        gainNode = audioCtx.createGain();
+        noiseSource.connect(gainNode);
+        gainNode.connect(audioCtx.destination);
+        var vol = +document.getElementById('volSlider').value / 100;
+        gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
+        gainNode.gain.linearRampToValueAtTime(vol * 0.5, audioCtx.currentTime + 0.1);
+        noiseSource.start();
+        isPlaying = true;
+        document.getElementById('playBtn').textContent = '?Stop';
+        document.getElementById('playBtn').style.background = '#ef4444';
+        document.getElementById('status').textContent = 'Playing ' + currentType + ' noise...';
+        document.getElementById('status').style.color = '#10b981';
+        // Auto-stop
+        var duration = +document.getElementById('duration').value;
+        if(duration > 0){
+            stopTimer = setTimeout(stop, duration * 1000);
+            var end = new Date(Date.now() + duration * 1000);
+            document.getElementById('status').textContent = 'Playing ' + currentType + ' noise until ' + end.toLocaleTimeString();
+        }
+    }
+    function stop(){
+        if(noiseSource){
+            gainNode.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.1);
+            noiseSource.stop(audioCtx.currentTime + 0.1);
+            noiseSource = null;
+        }
+        isPlaying = false;
+        if(stopTimer){ clearTimeout(stopTimer); stopTimer = null; }
+        document.getElementById('playBtn').textContent = '?Start';
+        document.getElementById('playBtn').style.background = '#10b981';
+        document.getElementById('status').textContent = 'Stopped';
+        document.getElementById('status').style.color = '#666';
+    }
+    function updateInfo(){
+        var descriptions = {
+            white: { color: '#6366f1', desc: 'Equal energy across all frequencies. Sounds like TV static. Best for: masking background noise, concentration, tinnitus relief.' },
+            pink: { color: '#ec4899', desc: 'Equal energy per octave (decreases 3dB/octave). Sounds like rain or leaves. Best for: sleep, relaxation, focus. More natural than white.' },
+            brown: { color: '#92400e', desc: 'Deeper, energy decreases 6dB/octave. Sounds like waterfall or ocean. Best for: deep sleep, meditation, masking low-frequency noise.' }
+        };
+        var d = descriptions[currentType];
+        var html = '<div style="padding:12px;background:#f0f9ff;border-radius:6px;font-size:13px;line-height:1.6">';
+        html += '<b style="text-transform:capitalize;color:' + d.color + '">' + currentType + ' noise</b><br>';
+        html += d.desc;
+        html += '</div>';
+        html += '<div style="margin-top:8px;padding:12px;background:#fef3c7;border-radius:6px;font-size:13px;line-height:1.6">';
+        html += '<b>💡 Uses:</b><br>';
+        html += '?Sleep: helps mask disruptive sounds<br>';
+        html += '?Focus: blocks distracting conversations<br>';
+        html += '?Tinnitus: masks ringing sensation<br>';
+        html += '?Baby sleep: mimics womb sounds<br>';
+        html += '?Meditation: anchor for mindfulness';
+        html += '</div>';
+        html += '<div style="margin-top:8px;padding:12px;background:#fee2e2;color:#ef4444;border-radius:6px;font-size:13px;line-height:1.6">';
+        html += '<b>⚠️ Caution:</b> Keep volume moderate (under 60%). Prolonged exposure above 70dB can damage hearing. Take breaks every 1-2 hours.';
+        html += '</div>';
+        document.getElementById('info').innerHTML = html;
+    }
+    document.querySelectorAll('.noise-btn').forEach(function(btn){
+        btn.addEventListener('click', function(){
+            document.querySelectorAll('.noise-btn').forEach(function(b){
+                b.classList.remove('active');
+                b.style.background = '#f3f4f6';
+                b.style.color = '#000';
+            });
+            this.classList.add('active');
+            this.style.background = '#6366f1';
+            this.style.color = '#fff';
+            currentType = this.getAttribute('data-type');
+            updateInfo();
+            if(isPlaying){
+                stop();
+                start();
+            }
+        });
+    });
+    document.getElementById('volSlider').addEventListener('input', function(){
+        document.getElementById('volLabel').textContent = this.value + '%';
+        if(gainNode) gainNode.gain.setValueAtTime(+this.value / 100 * 0.5, audioCtx.currentTime);
+    });
+    document.getElementById('duration').addEventListener('change', function(){
+        var v = +this.value;
+        document.getElementById('durLabel').textContent = v === 0 ? '?' : (v / 60) + ' min';
+    });
+    document.getElementById('playBtn').addEventListener('click', function(){
+        if(isPlaying) stop();
+        else start();
+    });
+    updateInfo();
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

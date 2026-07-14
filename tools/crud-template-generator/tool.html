@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRUD Code Template Generator | YuanqiZhiKe Toolkit</title>
+<meta name="description" content="Generate CRUD (Create, Read, Update, Delete) code templates for any entity. Supports multiple languages and frameworks. Saves development time.">
+<meta name="keywords" content="crud generator, code template, scaffold, api generator, rest api, crud code">
+<meta property="og:title" content="CRUD Code Template Generator - Free Online Tool">
+<meta property="og:description" content="Generate CRUD (Create, Read, Update, Delete) code templates for any entity. Supports multiple languages and frameworks. Saves development time.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>CRUD Code Template Generator</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Generate CRUD (Create, Read, Update, Delete) code templates for any entity. Supports multiple languages and frameworks. Saves development time.</div>
+    <div class="group">
+        <label>Entity Name (e.g., User, Product)</label>
+        <input type="text" id="entityName" value="User" placeholder="Enter entity name">
+    </div>
+    <div class="group">
+        <label>Fields (one per line: name:type)</label>
+        <textarea id="fieldsInput" placeholder="id:int&#10;name:string&#10;email:string&#10;age:int" style="min-height:100px">id:int
+name:string
+email:string
+age:int</textarea>
+    </div>
+    <div class="row">
+        <div class="group" style="flex:1">
+            <label>Language/Framework</label>
+            <select id="langSelect">
+                <option value="express" selected>Node.js + Express</option>
+                <option value="flask">Python + Flask</option>
+                <option value="laravel">PHP + Laravel</option>
+                <option value="spring">Java + Spring Boot</option>
+                <option value="django">Python + Django</option>
+            </select>
+        </div>
+        <div class="group" style="flex:1">
+            <label>Database</label>
+            <select id="dbSelect">
+                <option value="sql" selected>SQL</option>
+                <option value="mongo">MongoDB</option>
+            </select>
+        </div>
+    </div>
+    <button id="generateBtn">Generate Code</button>
+    <button class="secondary" id="copyBtn">Copy Code</button>
+    <button class="secondary" id="downloadBtn">Download</button>
+    <div class="group" style="margin-top:16px">
+        <label>Generated Code</label>
+        <textarea id="resultOutput" readonly style="min-height:300px;font-family:monospace;font-size:12px"></textarea>
+    </div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+        <ol>
+            <li>Enter entity name (e.g., User, Product, Order)</li>
+            <li>Define fields (one per line, format: <code>name:type</code>)</li>
+            <li>Select language/framework (Express, Flask, Laravel, Spring Boot, Django)</li>
+            <li>Choose database type (SQL or MongoDB)</li>
+            <li>Click <strong>Generate Code</strong> to get the CRUD template</li>
+            <li>Copy or download the generated code</li>
+        </ol>
+    </div>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:contact@yuanqizhike.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    function parseFields(text){
+        return text.split('\n').filter(function(l){ return l.trim(); }).map(function(l){
+            var parts = l.split(':').map(function(s){ return s.trim(); });
+            return { name: parts[0], type: parts[1] || 'string' };
+        });
+    }
+
+    function genExpress(entity, fields, db){
+        var lower = entity.toLowerCase();
+        var route = '/' + lower + 's';
+        var code = '// ' + entity + ' Routes (Express.js)\n';
+        code += 'const express = require(\'express\');\n';
+        code += 'const router = express.Router();\n\n';
+        if(db === 'mongo'){
+            code += '// MongoDB Model\n';
+            code += 'const mongoose = require(\'mongoose\');\n';
+            code += 'const ' + lower + 'Schema = new mongoose.Schema({\n';
+            fields.forEach(function(f, i){
+                var mongoType = f.type === 'int' ? 'Number' : 'String';
+                code += '  ' + f.name + ': { type: ' + mongoType + (f.name === 'id' ? ', unique: true' : '') + ' }';
+                code += (i < fields.length-1 ? ',' : '') + '\n';
+            });
+            code += '});\n';
+            code += 'const ' + entity + ' = mongoose.model(\'' + entity + '\', ' + lower + 'Schema);\n\n';
+            code += '// CREATE\nrouter.post(\'' + route + '\', async (req, res) => {\n';
+            code += '  try {\n    const item = new ' + entity + '(req.body);\n    await item.save();\n    res.status(201).json(item);\n';
+            code += '  } catch (err) { res.status(400).json({ error: err.message }); }\n});\n\n';
+            code += '// READ ALL\nrouter.get(\'' + route + '\', async (req, res) => {\n';
+            code += '  try {\n    const items = await ' + entity + '.find();\n    res.json(items);\n';
+            code += '  } catch (err) { res.status(500).json({ error: err.message }); }\n});\n\n';
+            code += '// READ ONE\nrouter.get(\'' + route + '/:id\', async (req, res) => {\n';
+            code += '  try {\n    const item = await ' + entity + '.findById(req.params.id);\n';
+            code += '    if (!item) return res.status(404).json({ error: \'Not found\' });\n    res.json(item);\n';
+            code += '  } catch (err) { res.status(500).json({ error: err.message }); }\n});\n\n';
+            code += '// UPDATE\nrouter.put(\'' + route + '/:id\', async (req, res) => {\n';
+            code += '  try {\n    const item = await ' + entity + '.findByIdAndUpdate(req.params.id, req.body, { new: true });\n';
+            code += '    if (!item) return res.status(404).json({ error: \'Not found\' });\n    res.json(item);\n';
+            code += '  } catch (err) { res.status(400).json({ error: err.message }); }\n});\n\n';
+            code += '// DELETE\nrouter.delete(\'' + route + '/:id\', async (req, res) => {\n';
+            code += '  try {\n    const item = await ' + entity + '.findByIdAndDelete(req.params.id);\n';
+            code += '    if (!item) return res.status(404).json({ error: \'Not found\' });\n    res.json({ message: \'Deleted\' });\n';
+            code += '  } catch (err) { res.status(500).json({ error: err.message }); }\n});\n\n';
+            code += 'module.exports = router;';
+        } else {
+            code += '// SQL version - use your ORM/driver\n';
+            code += '// CREATE\nrouter.post(\'' + route + '\', async (req, res) => {\n';
+            code += '  try {\n';
+            code += '    const { ' + fields.map(function(f){ return f.name; }).join(', ') + ' } = req.body;\n';
+            code += '    const sql = \'INSERT INTO ' + lower + 's (' + fields.map(function(f){ return f.name; }).join(', ') + ') VALUES (\' + ' + fields.map(function(f){ return '?' }).join(', ') + ');\';\n';
+            code += '    // db.query(sql, [' + fields.map(function(f){ return f.name }).join(', ') + ']);\n';
+            code += '    res.status(201).json({ message: \'Created\' });\n';
+            code += '  } catch (err) { res.status(400).json({ error: err.message }); }\n});\n\n';
+            code += '// READ ALL\nrouter.get(\'' + route + '\', async (req, res) => {\n';
+            code += '  try {\n    // const items = await db.query(\'SELECT * FROM ' + lower + 's\');\n    res.json([]);\n';
+            code += '  } catch (err) { res.status(500).json({ error: err.message }); }\n});\n\n';
+            code += '// READ ONE, UPDATE, DELETE follow similar pattern...\nmodule.exports = router;';
+        }
+        return code;
+    }
+
+    function genFlask(entity, fields, db){
+        var lower = entity.toLowerCase();
+        var code = '# ' + entity + ' API (Flask)\n';
+        code += 'from flask import Flask, request, jsonify\n';
+        code += 'app = Flask(__name__)\n\n';
+        code += '# In-memory storage (replace with database)\n';
+        code += lower + 's = []\n\n';
+        code += '@app.route(\'/api/' + lower + 's\', methods=[\'GET\'])\n';
+        code += 'def get_all():\n    return jsonify(' + lower + 's)\n\n';
+        code += '@app.route(\'/api/' + lower + 's/<int:item_id>\', methods=[\'GET\'])\n';
+        code += 'def get_one(item_id):\n';
+        code += '    item = next((x for x in ' + lower + 's if x[\'id\'] == item_id), None)\n';
+        code += '    return jsonify(item) if item else (jsonify({\'error\': \'Not found\'}), 404)\n\n';
+        code += '@app.route(\'/api/' + lower + 's\', methods=[\'POST\'])\n';
+        code += 'def create():\n    data = request.json\n    ' + lower + 's.append(data)\n    return jsonify(data), 201\n\n';
+        code += '@app.route(\'/api/' + lower + 's/<int:item_id>\', methods=[\'PUT\'])\n';
+        code += 'def update(item_id):\n';
+        code += '    data = request.json\n';
+        code += '    for i, x in enumerate(' + lower + 's):\n        if x[\'id\'] == item_id:\n            ' + lower + 's[i].update(data)\n            return jsonify(' + lower + 's[i])\n';
+        code += '    return jsonify({\'error\': \'Not found\'}), 404\n\n';
+        code += '@app.route(\'/api/' + lower + 's/<int:item_id>\', methods=[\'DELETE\'])\n';
+        code += 'def delete(item_id):\n';
+        code += '    global ' + lower + 's\n';
+        code += '    ' + lower + 's = [x for x in ' + lower + 's if x[\'id\'] != item_id]\n';
+        code += '    return jsonify({\'message\': \'Deleted\'})\n\n';
+        code += 'if __name__ == \'__main__\':\n    app.run(debug=True)';
+        return code;
+    }
+
+    function genLaravel(entity, fields, db){
+        var lower = entity.toLowerCase();
+        var code = '<php\n\n';
+        code += '// routes/api.php\n';
+        code += 'use App\\Models\\\\' + entity + ';\n';
+        code += 'use Illuminate\\Support\\Facades\\Route;\n\n';
+        code += 'Route::get(\'/' + lower + 's\', function () {\n';
+        code += '    return ' + entity + '::all();\n});\n\n';
+        code += 'Route::post(\'/' + lower + 's\', function (Request $request) {\n';
+        code += '    return ' + entity + '::create($request->all());\n});\n\n';
+        code += 'Route::get(\'/' + lower + 's/{id}\', function ($id) {\n';
+        code += '    return ' + entity + '::findOrFail($id);\n});\n\n';
+        code += 'Route::put(\'/' + lower + 's/{id}\', function (Request $request, $id) {\n';
+        code += '    $item = ' + entity + '::findOrFail($id);\n    $item->update($request->all());\n    return $item;\n});\n\n';
+        code += 'Route::delete(\'/' + lower + 's/{id}\', function ($id) {\n';
+        code += '    ' + entity + '::destroy($id);\n    return response()->json([\'message\' => \'Deleted\']);\n});';
+        return code;
+    }
+
+    function genSpring(entity, fields, db){
+        var lower = entity.toLowerCase();
+        var code = '// ' + entity + 'Controller.java (Spring Boot)\n';
+        code += '@RestController\n@RequestMapping("/api/' + lower + 's")\n';
+        code += 'public class ' + entity + 'Controller {\n\n';
+        code += '    @Autowired\n    private ' + entity + 'Repository repository;\n\n';
+        code += '    @GetMapping\n';
+        code += '    public List<' + entity + '> getAll() {\n        return repository.findAll();\n    }\n\n';
+        code += '    @GetMapping("/{id}")\n';
+        code += '    public ' + entity + ' getById(@PathVariable Long id) {\n';
+        code += '        return repository.findById(id).orElseThrow(() -> new RuntimeException("Not found"));\n    }\n\n';
+        code += '    @PostMapping\n';
+        code += '    public ' + entity + ' create(@RequestBody ' + entity + ' item) {\n        return repository.save(item);\n    }\n\n';
+        code += '    @PutMapping("/{id}")\n';
+        code += '    public ' + entity + ' update(@PathVariable Long id, @RequestBody ' + entity + ' item) {\n';
+        code += '        item.setId(id);\n        return repository.save(item);\n    }\n\n';
+        code += '    @DeleteMapping("/{id}")\n';
+        code += '    public void delete(@PathVariable Long id) {\n        repository.deleteById(id);\n    }\n}';
+        return code;
+    }
+
+    function genDjango(entity, fields, db){
+        var lower = entity.toLowerCase();
+        var code = '# ' + entity + ' API (Django REST Framework)\n';
+        code += 'from rest_framework.decorators import api_view\n';
+        code += 'from rest_framework.response import Response\n';
+        code += 'from rest_framework import status\n\n';
+        code += '# In production, use serializers and ViewSets\n\n';
+        code += '@api_view([\'GET\', \'POST\'])\n';
+        code += 'def ' + lower + '_list(request):\n';
+        code += '    if request.method == \'GET\':\n';
+        code += '        # items = ' + entity + '.objects.all()\n';
+        code += '        return Response([])\n';
+        code += '    elif request.method == \'POST\':\n';
+        code += '        # item = ' + entity + '.objects.create(**request.data)\n';
+        code += '        return Response(request.data, status=status.HTTP_201_CREATED)\n\n';
+        code += '@api_view([\'GET\', \'PUT\', \'DELETE\'])\n';
+        code += 'def ' + lower + '_detail(request, pk):\n';
+        code += '    try:\n        pass  # item = ' + entity + '.objects.get(pk=pk)\n';
+        code += '    except ' + entity + '.DoesNotExist:\n        return Response(status=status.HTTP_404_NOT_FOUND)\n\n';
+        code += '    if request.method == \'GET\':\n        return Response({})\n';
+        code += '    elif request.method == \'PUT\':\n        return Response(request.data)\n';
+        code += '    elif request.method == \'DELETE\':\n        return Response(status=status.HTTP_204_NO_CONTENT)';
+        return code;
+    }
+
+    document.getElementById('generateBtn').addEventListener('click', function(){
+        var entity = document.getElementById('entityName').value.trim() || 'Entity';
+        entity = entity.charAt(0).toUpperCase() + entity.slice(1);
+        var fields = parseFields(document.getElementById('fieldsInput').value);
+        var lang = document.getElementById('langSelect').value;
+        var db = document.getElementById('dbSelect').value;
+        var code;
+        switch(lang){
+            case 'express': code = genExpress(entity, fields, db); break;
+            case 'flask': code = genFlask(entity, fields, db); break;
+            case 'laravel': code = genLaravel(entity, fields, db); break;
+            case 'spring': code = genSpring(entity, fields, db); break;
+            case 'django': code = genDjango(entity, fields, db); break;
+            default: code = '// Not implemented';
+        }
+        document.getElementById('resultOutput').value = code;
+    });
+    document.getElementById('copyBtn').addEventListener('click', function(){
+        var v = document.getElementById('resultOutput').value;
+        if(v){ navigator.clipboard.writeText(v).then(function(){alert('Copied!');}); }
+    });
+    document.getElementById('downloadBtn').addEventListener('click', function(){
+        var v = document.getElementById('resultOutput').value;
+        var lang = document.getElementById('langSelect').value;
+        var ext = { express:'js', flask:'py', laravel:'php', spring:'java', django:'py' }[lang] || 'txt';
+        if(v){
+            var blob = new Blob([v], {type:'text/plain'});
+            var a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'crud-' + document.getElementById('entityName').value.toLowerCase() + '.' + ext;
+            a.click();
+        }
+    });
+    // Auto-generate
+    setTimeout(function(){ document.getElementById('generateBtn').click(); }, 100);
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

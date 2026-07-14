@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photography Exposure Tracker | YuanqiZhiKe Toolkit</title>
+<meta name="description" content="Log and analyze photography exposure settings. Track aperture, shutter, ISO with EV calculations. Free exposure tracker for photographers.">
+<meta name="keywords" content="photography exposure, ev calculator, exposure log, aperture shutter iso, light value, exposure triangle">
+<meta property="og:title" content="Photography Exposure Tracker - Free Online Tool">
+<meta property="og:description" content="Log and analyze photography exposure settings. Track aperture, shutter, ISO with EV calculations. Free exposure tracker for photographers.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Photography Exposure Tracker</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Log and analyze photography exposure settings. Track aperture, shutter, ISO with EV calculations. Free exposure tracker for photographers.</div>
+    <div style="margin-top:8px;font-weight:bold;color:#1e40af">Add Exposure</div>
+    <div class="row" style="margin-top:6px">
+        <div class="group"><label>Aperture (f/)</label>
+            <select id="aperture" style="width:100%;padding:8px">
+                <option value="1.4">f/1.4</option>
+                <option value="2">f/2</option>
+                <option value="2.8">f/2.8</option>
+                <option value="4" selected>f/4</option>
+                <option value="5.6">f/5.6</option>
+                <option value="8">f/8</option>
+                <option value="11">f/11</option>
+                <option value="16">f/16</option>
+                <option value="22">f/22</option>
+            </select>
+        </div>
+        <div class="group"><label>Shutter speed</label>
+            <select id="shutter" style="width:100%;padding:8px">
+                <option value="1/4000">1/4000</option>
+                <option value="1/2000">1/2000</option>
+                <option value="1/1000">1/1000</option>
+                <option value="1/500">1/500</option>
+                <option value="1/250">1/250</option>
+                <option value="1/125" selected>1/125</option>
+                <option value="1/60">1/60</option>
+                <option value="1/30">1/30</option>
+                <option value="1/15">1/15</option>
+                <option value="1/8">1/8</option>
+                <option value="1/4">1/4</option>
+                <option value="1/2">1/2</option>
+                <option value="1">1s</option>
+                <option value="2">2s</option>
+                <option value="4">4s</option>
+                <option value="8">8s</option>
+                <option value="30">30s</option>
+            </select>
+        </div>
+        <div class="group"><label>ISO</label>
+            <select id="iso" style="width:100%;padding:8px">
+                <option value="50">50</option>
+                <option value="100" selected>100</option>
+                <option value="200">200</option>
+                <option value="400">400</option>
+                <option value="800">800</option>
+                <option value="1600">1600</option>
+                <option value="3200">3200</option>
+                <option value="6400">6400</option>
+                <option value="12800">12800</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Scene/lighting</label><input type="text" id="scene" placeholder="e.g. golden hour sunset" style="width:100%;padding:8px"></div>
+        <div class="group"><label>Lens</label><input type="text" id="lens" placeholder="50mm" style="width:100%;padding:8px"></div>
+    </div>
+    <button id="add" style="padding:8px 16px;background:#3b82f6;color:#fff;border:none;border-radius:4px;cursor:pointer">+ Add Entry</button>
+    <button id="calc" style="padding:10px 20px;background:#10b981;color:#fff;border:none;border-radius:6px;cursor:pointer;margin-top:10px">Analyze</button>
+    <div id="entriesList" style="margin-top:12px"></div>
+    <div id="result" style="margin-top:12px"></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Set <b>aperture</b> (f-stop), <b>shutter speed</b>, and <b>ISO</b>.</li>
+<li>Add <b>scene/lighting</b> description and <b>lens</b> used.</li>
+<li>Click <b>+ Add Entry</b> to log each exposure.</li>
+<li>Click <b>Analyze</b> for EV, equivalent exposures, and reference.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">EV (Exposure Value) = log2(N^2/t) at ISO 100. Higher EV = brighter light. Sunny 16 rule: f/16 at 1/ISO = EV 15 for bright sun. Use EV to find equivalent exposure combinations.</p>
+    </div>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:contact@yuanqizhike.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    var entries = [];
+    function parseShutter(s){
+        if(s.indexOf('/') >= 0){
+            var parts = s.split('/');
+            return +parts[0] / +parts[1];
+        }
+        return +s;
+    }
+    function calcEV(aperture, shutterStr, iso){
+        var t = parseShutter(shutterStr);
+        var ev100 = Math.log2((aperture * aperture) / t);
+        var evAdj = ev100 + Math.log2(iso / 100);
+        return { ev100: ev100, evAdj: evAdj };
+    }
+    function addEntry(){
+        var aperture = +document.getElementById('aperture').value;
+        var shutter = document.getElementById('shutter').value;
+        var iso = +document.getElementById('iso').value;
+        var scene = document.getElementById('scene').value || 'Unknown';
+        var lens = document.getElementById('lens').value || 'Standard';
+        var ev = calcEV(aperture, shutter, iso);
+        entries.push({ aperture: aperture, shutter: shutter, iso: iso, scene: scene, lens: lens, ev100: ev.ev100, evAdj: ev.evAdj });
+        renderEntries();
+    }
+    function renderEntries(){
+        if(entries.length === 0){
+            document.getElementById('entriesList').innerHTML = '<div style="color:#999;font-size:12px;padding:8px">No entries yet.</div>';
+            return;
+        }
+        var html = '<div style="background:#fff;padding:10px;border-radius:6px"><table style="width:100%;font-size:11px;border-collapse:collapse"><tr style="background:#f3f4f6;border-bottom:1px solid #ddd"><th style="padding:4px">Scene</th><th>f/</th><th>Shutter</th><th>ISO</th><th>EV100</th><th></th></tr>';
+        entries.forEach(function(e, i){
+            html += '<tr style="border-bottom:1px solid #eee"><td style="padding:4px">' + e.scene + '<br><span style="color:#999;font-size:10px">' + e.lens + '</span></td><td style="text-align:center">f/' + e.aperture + '</td><td style="text-align:center">' + e.shutter + '</td><td style="text-align:center">' + e.iso + '</td><td style="text-align:center;color:#1e40af;font-weight:bold">' + e.ev100.toFixed(1) + '</td><td><button class="removeE" data-i="' + i + '" style="background:#dc2626;color:#fff;border:none;border-radius:3px;padding:2px 6px;cursor:pointer">X</button></td></tr>';
+        });
+        html += '</table></div>';
+        document.getElementById('entriesList').innerHTML = html;
+        document.querySelectorAll('.removeE').forEach(function(btn){
+            btn.addEventListener('click', function(){ entries.splice(+this.dataset.i, 1); renderEntries(); });
+        });
+    }
+    function calc(){
+        if(entries.length === 0){ document.getElementById('result').innerHTML = '<div style="color:#999;padding:8px">Add exposures to analyze.</div>'; return; }
+        var aperture = +document.getElementById('aperture').value;
+        var shutter = document.getElementById('shutter').value;
+        var iso = +document.getElementById('iso').value;
+        var ev = calcEV(aperture, shutter, iso);
+        var evTable = [
+            { ev: -5, scene: 'Full moonlit snowscape' },
+            { ev: -4, scene: 'Aurora borealis' },
+            { ev: -2, scene: 'Milky Way stars' },
+            { ev: 0, scene: 'Candlelight close-up' },
+            { ev: 4, scene: 'Indoor low light, evening' },
+            { ev: 6, scene: 'Indoor, well-lit' },
+            { ev: 8, scene: 'Cloudy outdoor, dusk' },
+            { ev: 10, scene: 'Overcast sky, late afternoon' },
+            { ev: 12, scene: 'Open shade, cloudy bright' },
+            { ev: 13, scene: 'Cloudy bright (no shadows)' },
+            { ev: 14, scene: 'Soft sunlight, hazy' },
+            { ev: 15, scene: 'Bright sunlight (Sunny 16 rule)' },
+            { ev: 16, scene: 'Bright sunlight on snow/sand' }
+        ];
+        var closestEv = evTable.reduce(function(prev, curr){
+            return Math.abs(curr.ev - ev.ev100) < Math.abs(prev.ev - ev.ev100) ? curr : prev;
+        });
+        var html = '<div style="background:#dbeafe;padding:14px;border-radius:8px;border-left:4px solid #1e40af">';
+        html += '<div style="text-align:center;margin-bottom:14px">';
+        html += '<div style="font-size:13px;color:#666">Current Exposure</div>';
+        html += '<div style="font-size:32px;font-weight:bold;color:#1e40af">EV ' + ev.ev100.toFixed(1) + '</div>';
+        html += '<div style="font-size:14px;color:#666">f/' + aperture + ' at ' + shutter + ', ISO ' + iso + '</div>';
+        html += '<div style="font-size:13px;color:#10b981;margin-top:4px;font-weight:bold">' + closestEv.scene + '</div>';
+        html += '</div>';
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+        html += '<div style="font-size:13px;font-weight:bold;color:#1e40af;margin-bottom:6px">Equivalent Exposures (same EV ' + ev.ev100.toFixed(1) + ')</div>';
+        var fStops = [1.4, 2, 2.8, 4, 5.6, 8, 11, 16, 22];
+        var eqHtml = '<table style="width:100%;font-size:11px;border-collapse:collapse"><tr style="background:#f3f4f6"><th style="padding:4px">f/</th><th>1/X (ISO 100)</th><th>1/X (ISO 400)</th><th>1/X (ISO 1600)</th></tr>';
+        fStops.forEach(function(f){
+            if(f === aperture) return;
+            var t = (f * f) / Math.pow(2, ev.ev100);
+            var t400 = t / 4;
+            var t1600 = t / 16;
+            function fmtTime(sec){
+                if(sec < 1) return '1/' + Math.round(1 / sec);
+                return sec.toFixed(1) + 's';
+            }
+            eqHtml += '<tr style="border-bottom:1px solid #eee"><td style="padding:4px;text-align:center">f/' + f + '</td><td style="text-align:center">' + fmtTime(t) + '</td><td style="text-align:center">' + fmtTime(t400) + '</td><td style="text-align:center">' + fmtTime(t1600) + '</td></tr>';
+        });
+        eqHtml += '</table>';
+        html += eqHtml;
+        html += '</div>';
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+        html += '<div style="font-size:13px;font-weight:bold;color:#1e40af;margin-bottom:6px">Exposure Triangle Effects</div>';
+        html += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;font-size:11px;text-align:center">';
+        html += '<div style="background:#dbeafe;padding:6px;border-radius:4px"><div style="font-weight:bold;color:#1e40af">Aperture</div><div>f/' + aperture + '</div><div style="color:#666;font-size:10px">' + (aperture < 2.8 ? 'Shallow DOF' : aperture < 5.6 ? 'Medium DOF' : aperture < 11 ? 'Deep DOF' : 'Very deep DOF') + '</div></div>';
+        html += '<div style="background:#d1fae5;padding:6px;border-radius:4px"><div style="font-weight:bold;color:#10b981">Shutter</div><div>' + shutter + '</div><div style="color:#666;font-size:10px">' + (parseShutter(shutter) < 1/250 ? 'Freezes motion' : parseShutter(shutter) < 1/30 ? 'May blur motion' : 'Tripod needed') + '</div></div>';
+        html += '<div style="background:#fef3c7;padding:6px;border-radius:4px"><div style="font-weight:bold;color:#f59e0b">ISO</div><div>' + iso + '</div><div style="color:#666;font-size:10px">' + (iso <= 200 ? 'No noise' : iso <= 800 ? 'Low noise' : iso <= 3200 ? 'Moderate noise' : 'High noise') + '</div></div>';
+        html += '</div>';
+        html += '</div>';
+        if(entries.length > 0){
+            var avgEv = entries.reduce(function(s, e){ return s + e.ev100; }, 0) / entries.length;
+            var minEv = Math.min.apply(null, entries.map(function(e){ return e.ev100; }));
+            var maxEv = Math.max.apply(null, entries.map(function(e){ return e.ev100; }));
+            html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+            html += '<div style="font-size:13px;font-weight:bold;color:#1e40af;margin-bottom:6px">Session Stats (' + entries.length + ' shots)</div>';
+            html += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;font-size:12px;text-align:center">';
+            html += '<div><div style="color:#666">Avg EV</div><div style="font-weight:bold">' + avgEv.toFixed(1) + '</div></div>';
+            html += '<div><div style="color:#666">Min EV</div><div style="font-weight:bold">' + minEv.toFixed(1) + '</div></div>';
+            html += '<div><div style="color:#666">Max EV</div><div style="font-weight:bold">' + maxEv.toFixed(1) + '</div></div>';
+            html += '</div>';
+            html += '</div>';
+        }
+        html += '<div style="background:#fff;padding:10px;border-radius:6px">';
+        html += '<div style="font-size:13px;font-weight:bold;color:#1e40af;margin-bottom:6px">EV Reference Table</div>';
+        html += '<div style="font-size:11px;color:#666">';
+        evTable.forEach(function(e){
+            var highlight = e.ev === Math.round(ev.ev100);
+            html += '<div style="padding:2px 0;' + (highlight ? 'background:#dbeafe;font-weight:bold;' : '') + '">EV ' + e.ev + ': ' + e.scene + '</div>';
+        });
+        html += '</div>';
+        html += '</div>';
+        html += '<div style="font-size:11px;color:#999;margin-top:8px">EV (Exposure Value) is calculated as log2(N^2/t) at ISO 100. Each stop doubles or halves light. Use EV to find equivalent exposure combinations.</div>';
+        html += '</div>';
+        document.getElementById('result').innerHTML = html;
+    }
+    document.getElementById('add').addEventListener('click', addEntry);
+    document.getElementById('calc').addEventListener('click', calc);
+    document.getElementById('aperture').addEventListener('change', calc);
+    document.getElementById('shutter').addEventListener('change', calc);
+    document.getElementById('iso').addEventListener('change', calc);
+    entries.push({ aperture: 8, shutter: '1/125', iso: 100, scene: 'Sunny outdoor portrait', lens: '85mm f/1.8', ev100: 12.97, evAdj: 12.97 });
+    renderEntries();
+    calc();
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

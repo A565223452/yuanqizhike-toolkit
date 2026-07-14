@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Converter | YuanqiZhiKe Toolkit</title>
+<meta name="description" content="Convert text between UPPERCASE, lowercase, Title Case, camelCase, snake_case, kebab-case, CONSTANT_CASE, and more. Free online case converter.">
+<meta name="keywords" content="case converter, uppercase, lowercase, title case, camel case, snake case, kebab case, pascal case, constant case, sentence case">
+<meta property="og:title" content="Case Converter - Free Online Tool">
+<meta property="og:description" content="Convert text between UPPERCASE, lowercase, Title Case, camelCase, snake_case, kebab-case, CONSTANT_CASE, and more. Free online case converter.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Case Converter</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Convert text between UPPERCASE, lowercase, Title Case, camelCase, snake_case, kebab-case, CONSTANT_CASE, and more. Free online case converter.</div>
+    <div class="group">
+        <label>Your text</label>
+        <textarea id="input" placeholder="Type or paste text..." style="width:100%;padding:8px;min-height:120px">The quick brown fox jumps over the lazy dog</textarea>
+    </div>
+    <div id="buttons" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:6px;margin-bottom:12px"></div>
+    <div class="group">
+        <label>Result</label>
+        <textarea id="output" readonly style="width:100%;padding:8px;min-height:120px;font-family:monospace;background:#1e293b;color:#10b981;border:none;border-radius:6px"></textarea>
+    </div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px">
+        <button id="copyBtn" style="padding:8px 16px;background:#10b981;color:#fff;border:none;border-radius:4px;cursor:pointer">Copy result</button>
+        <button id="swapBtn" style="padding:8px 16px;background:#6b7280;color:#fff;border:none;border-radius:4px;cursor:pointer">↑↓ Use as input</button>
+    </div>
+    <div class="result-box" id="stats"></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Paste your text into the input box.</li>
+<li>Click any conversion button to transform the text.</li>
+<li>Click <b>Copy result</b> to copy to clipboard.</li>
+<li>Click <b>Use as input</b> to chain conversions.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">14 conversion types available. Programming naming conventions (camelCase, snake_case, kebab-case, PascalCase, CONSTANT_CASE) are useful for code refactoring and API design.</p>
+    </div>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    const __themeBtn = document.getElementById('themeToggle');
+    function __applyTheme(t){
+        document.body.classList.toggle('dark', t === 'dark');
+        if(__themeBtn) __themeBtn.textContent = (t === 'dark') ? '\u2600\uFE0F' : '\uD83C\uDF19';
+    }
+    const __saved = localStorage.getItem('theme');
+    __saved ? __applyTheme(__saved) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? __applyTheme('dark') : __applyTheme('light');
+    if(__themeBtn){
+        __themeBtn.addEventListener('click', () => {
+            const next = document.body.classList.contains('dark') ? 'light' : 'dark';
+            __applyTheme(next);
+            localStorage.setItem('theme', next);
+        });
+    }
+    document.addEventListener('keydown', e => {
+        if(e.key === 't' && e.ctrlKey && e.shiftKey){
+            e.preventDefault();
+            const next = document.body.classList.contains('dark') ? 'light' : 'dark';
+            __applyTheme(next);
+            localStorage.setItem('theme', next);
+        }
+    });
+    document.getElementById('bookmarkBtn').addEventListener('click', () => alert('Press Ctrl/Cmd + D to bookmark this page.'));
+})();
+
+(function(){
+    const __modal = document.getElementById('contactModal');
+    const __trig = document.getElementById('contactTrigger');
+    const __close = document.getElementById('contactClose');
+    function __openModal(){ if(__modal) __modal.classList.add('open'); }
+    function __closeModal(){ if(__modal) __modal.classList.remove('open'); }
+    if(__trig) __trig.addEventListener('click', __openModal);
+    if(__close) __close.addEventListener('click', __closeModal);
+    if(__modal) __modal.addEventListener('click', e => { if(e.target === __modal) __closeModal(); });
+    document.addEventListener('keydown', e => { if(e.key === 'Escape') __closeModal(); });
+    const __copyBtn = document.getElementById('copyEmail');
+    if(__copyBtn){
+        __copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText('contact@yuanqizhike.com').then(() => {
+                const old = __copyBtn.textContent;
+                __copyBtn.textContent = 'Copied';
+                setTimeout(() => __copyBtn.textContent = old, 1500);
+            });
+        });
+    }
+    const __form = document.getElementById('contactForm');
+    if(__form){
+        __form.addEventListener('submit', e => {
+            e.preventDefault();
+            const name = document.getElementById('formName').value.trim();
+            const email = document.getElementById('formEmail').value.trim();
+            const desc = document.getElementById('formDesc').value.trim();
+            const subject = encodeURIComponent('Bespoke Tool Development Inquiry');
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nRequirement:\n${desc}`);
+            window.location.href = `mailto:contact@yuanqizhike.com?subject=${subject}&body=${body}`;
+        });
+    }
+})();
+
+const CONVERSIONS = [
+    {id:'upper', name:'UPPER CASE', fn:s => s.toUpperCase()},
+    {id:'lower', name:'lower case', fn:s => s.toLowerCase()},
+    {id:'title', name:'Title Case', fn:s => s.toLowerCase().replace(/\b([a-z])/g, (_, c) => c.toUpperCase())},
+    {id:'sentence', name:'Sentence case', fn:s => s.toLowerCase().replace(/(^[a-z])|([.!?]\s+[a-z])/g, m => m.toUpperCase())},
+    {id:'camel', name:'camelCase', fn:s => s.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (_, c) => c.toUpperCase()).replace(/^([A-Z])/, c => c.toLowerCase())},
+    {id:'pascal', name:'PascalCase', fn:s => s.toLowerCase().replace(/(?:^|[^a-zA-Z0-9]+)(.)/g, (_, c) => c.toUpperCase())},
+    {id:'snake', name:'snake_case', fn:s => s.trim().toLowerCase().replace(/[^a-zA-Z0-9]+/g, '_').replace(/^_|_$/g, '')},
+    {id:'kebab', name:'kebab-case', fn:s => s.trim().toLowerCase().replace(/[^a-zA-Z0-9]+/g, '-').replace(/^-|-$/g, '')},
+    {id:'constant', name:'CONSTANT_CASE', fn:s => s.trim().toUpperCase().replace(/[^a-zA-Z0-9]+/g, '_').replace(/^_|_$/g, '')},
+    {id:'dot', name:'dot.case', fn:s => s.trim().toLowerCase().replace(/[^a-zA-Z0-9]+/g, '.').replace(/^\.|\.$/g, '')},
+    {id:'path', name:'path/case', fn:s => s.trim().toLowerCase().replace(/[^a-zA-Z0-9]+/g, '/').replace(/^\/|\/$/g, '')},
+    {id:'alternating', name:'aLtErNaTiNg', fn:s => {
+        let upper = false;
+        return s.split('').map(c => {
+            if(/[a-zA-Z]/.test(c)){
+                upper = !upper;
+                return upper ? c.toUpperCase() : c.toLowerCase();
+            }
+            return c;
+        }).join('');
+    }},
+    {id:'inverse', name:'InVeRsE', fn:s => s.split('').map(c => {
+        if(c === c.toUpperCase() && c !== c.toLowerCase()) return c.toLowerCase();
+        if(c === c.toLowerCase() && c !== c.toUpperCase()) return c.toUpperCase();
+        return c;
+    }).join('')},
+    {id:'capword', name:'Capitalize Each Word', fn:s => s.replace(/\b([a-z])/g, (_, c) => c.toUpperCase())}
+];
+
+function convert(type){
+    const input = document.getElementById('input').value;
+    const conv = CONVERSIONS.find(c => c.id === type);
+    if(!conv) return;
+    const result = conv.fn(input);
+    document.getElementById('output').value = result;
+    showStats(input, result, conv.name);
+}
+
+function showStats(input, output, name){
+    const chars = output.length;
+    const words = (output.trim().match(/\S+/g) || []).length;
+    const lines = output.split('\n').length;
+    document.getElementById('stats').innerHTML = '<div style="background:#f0f9ff;border:1px solid #bae6fd;padding:10px;border-radius:6px;font-size:13px"><b>Applied:</b> ' + name + '<br><b>Output:</b> ' + chars + ' chars, ' + words + ' words, ' + lines + ' lines</div>';
+}
+
+document.getElementById('buttons').innerHTML = CONVERSIONS.map(c => '<button data-type="' + c.id + '" style="padding:8px 10px;background:#f3f4f6;border:1px solid #d1d5db;border-radius:4px;cursor:pointer;font-size:12px">' + c.name + '</button>').join('');
+
+document.querySelectorAll('[data-type]').forEach(btn => {
+    btn.addEventListener('click', () => {
+        convert(btn.getAttribute('data-type'));
+        document.querySelectorAll('[data-type]').forEach(b => { b.style.background = '#f3f4f6'; b.style.borderColor = '#d1d5db'; });
+        btn.style.background = '#3b82f6';
+        btn.style.color = '#fff';
+        btn.style.borderColor = '#3b82f6';
+    });
+});
+
+document.getElementById('copyBtn').addEventListener('click', () => {
+    const out = document.getElementById('output');
+    out.select();
+    navigator.clipboard.writeText(out.value).then(() => {
+        document.getElementById('copyBtn').textContent = 'Copied!';
+        setTimeout(() => document.getElementById('copyBtn').textContent = 'Copy result', 1500);
+    });
+});
+
+document.getElementById('swapBtn').addEventListener('click', () => {
+    document.getElementById('input').value = document.getElementById('output').value;
+    document.getElementById('output').value = '';
+});
+
+convert('upper');
+document.querySelector('[data-type="upper"]').style.background = '#3b82f6';
+document.querySelector('[data-type="upper"]').style.color = '#fff';
+document.querySelector('[data-type="upper"]').style.borderColor = '#3b82f6';
+
+(function(){
+    var conversions = [
+        {id:'upper', name:'UPPER CASE', fn:function(s){ return s.toUpperCase(); }},
+        {id:'lower', name:'lower case', fn:function(s){ return s.toLowerCase(); }},
+        {id:'title', name:'Title Case', fn:function(s){
+            return s.toLowerCase().replace(/\b([a-z])/g, function(m, c){ return c.toUpperCase(); });
+        }},
+        {id:'sentence', name:'Sentence case', fn:function(s){
+            return s.toLowerCase().replace(/(^[a-z])|([.!?]\s+[a-z])/g, function(m){
+                return m.toUpperCase();
+            });
+        }},
+        {id:'camel', name:'camelCase', fn:function(s){
+            return s.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, function(m, c){ return c.toUpperCase(); }).replace(/^./, function(c){ return c.toLowerCase(); });
+        }},
+        {id:'pascal', name:'PascalCase', fn:function(s){
+            var camel = s.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, function(m, c){ return c.toUpperCase(); });
+            return camel.charAt(0).toUpperCase() + camel.slice(1);
+        }},
+        {id:'snake', name:'snake_case', fn:function(s){
+            return s.trim().toLowerCase().replace(/[^a-zA-Z0-9]+/g, '_').replace(/^_|_$/g, '');
+        }},
+        {id:'kebab', name:'kebab-case', fn:function(s){
+            return s.trim().toLowerCase().replace(/[^a-zA-Z0-9]+/g, '-').replace(/^-|-$/g, '');
+        }},
+        {id:'constant', name:'CONSTANT_CASE', fn:function(s){
+            return s.trim().toUpperCase().replace(/[^a-zA-Z0-9]+/g, '_').replace(/^_|_$/g, '');
+        }},
+        {id:'dot', name:'dot.case', fn:function(s){
+            return s.trim().toLowerCase().replace(/[^a-zA-Z0-9]+/g, '.').replace(/^\.|\.$/g, '');
+        }},
+        {id:'path', name:'path/case', fn:function(s){
+            return s.trim().toLowerCase().replace(/[^a-zA-Z0-9]+/g, '/').replace(/^\/|\/$/g, '');
+        }},
+        {id:'alternating', name:'aLtErNaTiNg', fn:function(s){
+            var result = '';
+            var lower = true;
+            for(var i = 0; i < s.length; i++){
+                var c = s[i];
+                if(/[a-zA-Z]/.test(c)){
+                    result += lower ? c.toLowerCase() : c.toUpperCase();
+                    lower = !lower;
+                } else {
+                    result += c;
+                }
+            }
+            return result;
+        }},
+        {id:'inverse', name:'InVeRsE', fn:function(s){
+            var result = '';
+            for(var i = 0; i < s.length; i++){
+                var c = s[i];
+                if(c === c.toUpperCase() && c !== c.toLowerCase()){
+                    result += c.toLowerCase();
+                } else if(c === c.toLowerCase() && c !== c.toUpperCase()){
+                    result += c.toUpperCase();
+                } else {
+                    result += c;
+                }
+            }
+            return result;
+        }},
+        {id:'capword', name:'Capitalize Each Word', fn:function(s){
+            return s.replace(/\b([a-z])/g, function(m, c){ return c.toUpperCase(); });
+        }}
+    ];
+    function convert(type){
+        var input = document.getElementById('input').value;
+        var conv = conversions.find(function(c){ return c.id === type; });
+        if(!conv) return;
+        var result = conv.fn(input);
+        document.getElementById('output').value = result;
+        showStats(input, result, conv.name);
+    }
+    function showStats(input, output, name){
+        var chars = output.length;
+        var words = (output.trim().match(/\S+/g) || []).length;
+        var lines = output.split('\n').length;
+        var html = '<div style="background:#f0f9ff;border:1px solid #bae6fd;padding:10px;border-radius:6px;font-size:13px">';
+        html += '<b>Applied:</b> ' + name + '<br>';
+        html += '<b>Output:</b> ' + chars + ' chars, ' + words + ' words, ' + lines + ' lines';
+        html += '</div>';
+        document.getElementById('stats').innerHTML = html;
+    }
+    var btnHtml = conversions.map(function(c){
+        return '<button data-type="' + c.id + '" style="padding:8px 10px;background:#f3f4f6;border:1px solid #d1d5db;border-radius:4px;cursor:pointer;font-size:12px">' + c.name + '</button>';
+    }).join('');
+    document.getElementById('buttons').innerHTML = btnHtml;
+    document.querySelectorAll('[data-type]').forEach(function(btn){
+        btn.addEventListener('click', function(){
+            convert(btn.getAttribute('data-type'));
+            document.querySelectorAll('[data-type]').forEach(function(b){ b.style.background = '#f3f4f6'; b.style.borderColor = '#d1d5db'; });
+            btn.style.background = '#3b82f6';
+            btn.style.color = '#fff';
+            btn.style.borderColor = '#3b82f6';
+        });
+    });
+    document.getElementById('copyBtn').addEventListener('click', function(){
+        var out = document.getElementById('output');
+        out.select();
+        navigator.clipboard.writeText(out.value).then(function(){
+            var btn = document.getElementById('copyBtn');
+            var old = btn.textContent;
+btn.textContent = 'Copied!';
+             setTimeout(function(){ btn.textContent = old; }, 1500);
+        });
+    });
+    document.getElementById('swapBtn').addEventListener('click', function(){
+        document.getElementById('input').value = document.getElementById('output').value;
+        document.getElementById('output').value = '';
+    });
+    convert('upper');
+    document.querySelector('[data-type="upper"]').style.background = '#3b82f6';
+    document.querySelector('[data-type="upper"]').style.color = '#fff';
+    document.querySelector('[data-type="upper"]').style.borderColor = '#3b82f6';
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

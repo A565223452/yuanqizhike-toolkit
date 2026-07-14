@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Temperature Converter | YuanQiZhiLe Toolkit</title>
+<title>Temperature Converter | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Convert temperature between Celsius, Fahrenheit, Kelvin, and Rankine. Free online temperature converter for weather and science.">
 <meta name="keywords" content="temperature converter, celsius to fahrenheit, fahrenheit to celsius, kelvin, rankine, temperature conversion, weather calculator">
 <meta property="og:title" content="Temperature Converter - Free Online Tool">
@@ -112,7 +112,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>Temperature Converter</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">�?Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Convert temperature between Celsius, Fahrenheit, Kelvin, and Rankine. Free online temperature converter for weather and science.</div>
@@ -139,19 +139,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business �?batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">�?or describe your need below �?/div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit �?/button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -164,7 +164,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 </ol>
 <p style="margin-top:8px;font-size:12px;color:#666">Formulas: °F = °C × 9/5 + 32; K = °C + 273.15; °R = (°C + 273.15) × 9/5. Celsius (Anders Celsius, 1742) is metric, used worldwide. Fahrenheit (Gabriel Fahrenheit, 1724) is used in US/UK. Kelvin (Lord Kelvin, 1848) starts at absolute zero, no degree symbol. Rankine is the absolute Fahrenheit scale.</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit �?Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -175,7 +175,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀�?:'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -201,7 +201,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='�?;
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -270,7 +270,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         else if(celsius === -273.15) context = 'Absolute zero 🔚';
         else if(celsius < -100) context = 'Coldest recorded: -89.2°C (Vostok Station)';
         else if(celsius < -40) context = 'Extreme cold (same in °F and °C!)';
-        else if(celsius < -17.8) context = 'Below 0°F �?freezing cold';
+        else if(celsius < -17.8) context = 'Below 0°F ?freezing cold';
         else if(celsius < 0) context = 'Below freezing ❄️';
         else if(celsius === 0) context = 'Water freezes 🧊';
         else if(celsius < 10) context = 'Cold / refrigeration temp';

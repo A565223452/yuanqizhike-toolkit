@@ -111,7 +111,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
     <div class="top-bar">
         <h1>Word Density Analyzer</h1>
         <div class="top-actions">
-            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark (Ctrl+Shift+T)">🌙</button>
             <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
@@ -193,120 +193,124 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 
 // === Common: theme toggle + contact modal ===
 (function(){
-    function __setupTheme(){
-        var btn=document.getElementById('themeToggle');
-        if(!btn)return;
-        function apply(t){
-            document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
-        }
-        var saved=localStorage.getItem('theme');
-        if(saved){apply(saved);}
-        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
-        else{apply('light');}
-        btn.addEventListener('click',function(){
-            var next=document.body.classList.contains('dark')?'light':'dark';
-            apply(next);localStorage.setItem('theme',next);
+    const __themeBtn = document.getElementById('themeToggle');
+    function __applyTheme(t){
+        document.body.classList.toggle('dark', t === 'dark');
+        if(__themeBtn) __themeBtn.textContent = (t === 'dark') ? '☀️' : '🌙';
+    }
+    const __saved = localStorage.getItem('theme');
+    if(__saved){
+        __applyTheme(__saved);
+    } else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
+        __applyTheme('dark');
+    } else {
+        __applyTheme('light');
+    }
+    if(__themeBtn){
+        __themeBtn.addEventListener('click', () => {
+            const next = document.body.classList.contains('dark') ? 'light' : 'dark';
+            __applyTheme(next);
+            localStorage.setItem('theme', next);
         });
     }
-    function __setupContactModal(){
-        var modal=document.getElementById('contactModal');
-        if(!modal)return;
-        var trig=document.getElementById('contactTrigger');
-        var close=document.getElementById('contactClose');
-        function open(){modal.classList.add('open');}
-        function closeM(){modal.classList.remove('open');}
-        if(trig)trig.addEventListener('click',open);
-        if(close)close.addEventListener('click',closeM);
-        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
-        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
-        var copyBtn=document.getElementById('copyEmail');
-        if(copyBtn){
-            copyBtn.addEventListener('click',function(){
-                navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
-                    setTimeout(function(){copyBtn.textContent=old;},1500);
-                });
-            });
+    document.addEventListener('keydown', e => {
+        if(e.key === 't' && e.ctrlKey && e.shiftKey){
+            e.preventDefault();
+            const next = document.body.classList.contains('dark') ? 'light' : 'dark';
+            __applyTheme(next);
+            localStorage.setItem('theme', next);
         }
-        var form=document.getElementById('contactForm');
-        if(form){
-            form.addEventListener('submit',function(e){
-                e.preventDefault();
-                var name=document.getElementById('formName').value.trim();
-                var email=document.getElementById('formEmail').value.trim();
-                var desc=document.getElementById('formDesc').value.trim();
-                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
-                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
-                window.location.href='mailto:contact@yuanqizhike.com?subject='+subject+'&body='+body;
+    });
+    document.getElementById('bookmarkBtn').addEventListener('click', () => alert('Press Ctrl/Cmd + D to bookmark this page.'));
+
+    // Contact modal
+    const __modal = document.getElementById('contactModal');
+    const __trig = document.getElementById('contactTrigger');
+    const __close = document.getElementById('contactClose');
+    function __openModal(){ if(__modal) __modal.classList.add('open'); }
+    function __closeModal(){ if(__modal) __modal.classList.remove('open'); }
+    if(__trig) __trig.addEventListener('click', __openModal);
+    if(__close) __close.addEventListener('click', __closeModal);
+    if(__modal) __modal.addEventListener('click', e => { if(e.target === __modal) __closeModal(); });
+    document.addEventListener('keydown', e => { if(e.key === 'Escape') __closeModal(); });
+    const __copyBtn = document.getElementById('copyEmail');
+    if(__copyBtn){
+        __copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText('contact@yuanqizhike.com').then(() => {
+                const old = __copyBtn.textContent;
+                __copyBtn.textContent='Copied';
+                setTimeout(() => __copyBtn.textContent = old, 1500);
             });
-        }
+        });
     }
-    function __setupBookmark(){
-        var btn=document.getElementById('bookmarkBtn');
-        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
-    }
-    if(document.readyState==='loading'){
-        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
-    } else {
-        __setupTheme();__setupContactModal();__setupBookmark();
+    const __form = document.getElementById('contactForm');
+    if(__form){
+        __form.addEventListener('submit', e => {
+            e.preventDefault();
+            const name = document.getElementById('formName').value.trim();
+            const email = document.getElementById('formEmail').value.trim();
+            const desc = document.getElementById('formDesc').value.trim();
+            const subject = encodeURIComponent('Bespoke Tool Development Inquiry');
+            const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nRequirement:\n' + desc);
+            window.location.href = 'mailto:contact@yuanqizhike.com?subject=' + subject + '&body=' + body;
+        });
     }
 })();
 
 (function(){
-    var stopWords = ['the','a','an','and','or','but','in','on','at','to','for','of','with','by','from','is','are','was','were','be','been','being','have','has','had','do','does','did','will','would','could','should','may','might','can','this','that','these','those','i','you','he','she','it','we','they','them','his','her','its','our','your','their','my','me','him','us','as','if','when','while','where','why','how','all','any','both','each','few','more','most','other','some','such','no','nor','not','only','own','same','so','than','too','very','just','about','above','after','again','against','because','before','below','during','further','here','into','off','out','over','then','there','up','down','through','what','which','who','whom','whose'];
+    const stopWords = ['the','a','an','and','or','but','in','on','at','to','for','of','with','by','from','is','are','was','were','be','been','being','have','has','had','do','does','did','will','would','could','should','may','might','can','this','that','these','those','i','you','he','she','it','we','they','them','his','her','its','our','your','their','my','me','him','us','as','if','when','while','where','why','how','all','any','both','each','few','more','most','other','some','such','no','nor','not','only','own','same','so','than','too','very','just','about','above','after','again','against','because','before','below','during','further','here','into','off','out','over','then','there','up','down','through','what','which','who','whom','whose'];
     function escapeHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
     function analyze(){
-        var text = document.getElementById('input').value;
-        var minLen = +document.getElementById('minLen').value;
-        var ngram = +document.getElementById('ngram').value;
-        var topN = +document.getElementById('topN').value;
-        var removeStop = document.getElementById('removeStop').checked;
-        var caseSensitive = document.getElementById('caseSensitive').checked;
-        var totalWords = (text.match(/\b\w+\b/g) || []).length;
-        var totalChars = text.length;
-        var totalSentences = (text.match(/[^.!?]+[.!?]+/g) || []).length;
-        var totalParagraphs = text.split(/\n\s*\n/).filter(function(p){ return p.trim(); }).length;
-        var readingTime = Math.max(1, Math.round(totalWords / 200));
-        var stats = '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin-bottom:12px">';
+        const text = document.getElementById('input').value;
+        const minLen = +document.getElementById('minLen').value;
+        const ngram = +document.getElementById('ngram').value;
+        const topN = +document.getElementById('topN').value;
+        const removeStop = document.getElementById('removeStop').checked;
+        const caseSensitive = document.getElementById('caseSensitive').checked;
+        const totalWords = (text.match(/\b\w+\b/g) || []).length;
+        const totalChars = text.length;
+        const totalSentences = (text.match(/[^.!?]+[.!?]+/g) || []).length;
+        const totalParagraphs = text.split(/\n\s*\n/).filter(p => p.trim()).length;
+        const readingTime = Math.max(1, Math.round(totalWords / 200));
+        let stats = '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin-bottom:12px">';
         stats += statBox('Words', totalWords, '#3b82f6');
         stats += statBox('Characters', totalChars, '#10b981');
         stats += statBox('Sentences', totalSentences, '#f59e0b');
         stats += statBox('Paragraphs', totalParagraphs, '#8b5cf6');
         stats += statBox('Reading time', readingTime + ' min', '#ec4899');
-        var avgWordLen = totalWords > 0 ? (text.match(/\b\w+\b/g) || []).reduce(function(a,w){ return a + w.length; }, 0) / totalWords : 0;
+        const avgWordLen = totalWords > 0 ? (text.match(/\b\w+\b/g) || []).reduce((a,w) => a + w.length, 0) / totalWords : 0;
         stats += statBox('Avg word length', avgWordLen.toFixed(1), '#06b6d4');
-        var avgSentLen = totalSentences > 0 ? (totalWords / totalSentences).toFixed(1) : '0';
+        const avgSentLen = totalSentences > 0 ? (totalWords / totalSentences).toFixed(1) : '0';
         stats += statBox('Avg sentence', avgSentLen, '#84cc16');
         stats += '</div>';
         document.getElementById('stats').innerHTML = stats;
-        var words = text.match(/\b[a-zA-Z']+\b/g) || [];
-        if(!caseSensitive) words = words.map(function(w){ return w.toLowerCase(); });
-        if(removeStop) words = words.filter(function(w){ return stopWords.indexOf(w.toLowerCase()) < 0; });
-        if(minLen > 1) words = words.filter(function(w){ return w.length >= minLen; });
-        var ngrams = [];
-        for(var i = 0; i <= words.length - ngram; i++){
-            var ng = words.slice(i, i + ngram).join(' ');
+        let words = text.match(/\b[a-zA-Z']+\b/g) || [];
+        if(!caseSensitive) words = words.map(w => w.toLowerCase());
+        if(removeStop) words = words.filter(w => stopWords.indexOf(w.toLowerCase()) < 0);
+        if(minLen > 1) words = words.filter(w => w.length >= minLen);
+        const ngrams = [];
+        for(let i = 0; i <= words.length - ngram; i++){
+            const ng = words.slice(i, i + ngram).join(' ');
             ngrams.push(ng);
         }
-        var counts = {};
-        ngrams.forEach(function(ng){ counts[ng] = (counts[ng] || 0) + 1; });
-        var entries = Object.keys(counts).map(function(k){ return {word:k, count:counts[k]}; });
-        entries.sort(function(a,b){ return b.count - a.count; });
-        var total = entries.reduce(function(a,e){ return a + e.count; }, 0);
-        var top = entries.slice(0, topN);
+        const counts = {};
+        ngrams.forEach(ng => { counts[ng] = (counts[ng] || 0) + 1; });
+        const entries = Object.keys(counts).map(k => ({word:k, count:counts[k]}));
+        entries.sort((a,b) => b.count - a.count);
+        const total = entries.reduce((a,e) => a + e.count, 0);
+        const top = entries.slice(0, topN);
         if(top.length === 0){
             document.getElementById('keywords').innerHTML = '<div style="color:#666;text-align:center;padding:12px">No words match your filter criteria</div>';
             document.getElementById('chart').innerHTML = '';
             return;
         }
-        var maxCount = top[0].count;
-        var kwsHtml = '<table style="width:100%;border-collapse:collapse;font-size:13px">';
+        const maxCount = top[0].count;
+        let kwsHtml = '<table style="width:100%;border-collapse:collapse;font-size:13px">';
         kwsHtml += '<tr style="background:#f3f4f6"><th style="padding:8px;text-align:left">#</th><th style="padding:8px;text-align:left">Word/Phrase</th><th style="padding:8px;text-align:right">Count</th><th style="padding:8px;text-align:right">Density</th><th style="padding:8px;text-align:left;width:30%">Bar</th></tr>';
-        top.forEach(function(e, idx){
-            var density = total > 0 ? (e.count / total * 100) : 0;
-            var pct = (e.count / maxCount * 100);
-            var barColor = density > 5 ? '#dc2626' : (density > 3 ? '#f59e0b' : '#10b981');
+        top.forEach((e, idx) => {
+            const density = total > 0 ? (e.count / total * 100) : 0;
+            const pct = (e.count / maxCount * 100);
+            const barColor = density > 5 ? '#dc2626' : (density > 3 ? '#f59e0b' : '#10b981');
             kwsHtml += '<tr>';
             kwsHtml += '<td style="padding:6px 8px;color:#666">' + (idx+1) + '</td>';
             kwsHtml += '<td style="padding:6px 8px;font-family:monospace">' + escapeHtml(e.word) + '</td>';
@@ -317,12 +321,12 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         });
         kwsHtml += '</table>';
         document.getElementById('keywords').innerHTML = kwsHtml;
-        var chartHtml = '<div style="font-size:12px;color:#666;margin-bottom:8px">Density threshold (Google guidelines suggest max 2-3% per keyword):</div>';
+        let chartHtml = '<div style="font-size:12px;color:#666;margin-bottom:8px">Density threshold (Google guidelines suggest max 2-3% per keyword):</div>';
         chartHtml += '<div style="display:flex;flex-direction:column;gap:6px">';
-        top.slice(0, 10).forEach(function(e){
-            var density = total > 0 ? (e.count / total * 100) : 0;
-            var barColor = density > 5 ? '#dc2626' : (density > 3 ? '#f59e0b' : '#10b981');
-            var status = density > 5 ? 'HIGH' : (density > 3 ? 'ELEVATED' : 'OK');
+        top.slice(0, 10).forEach(e => {
+            const density = total > 0 ? (e.count / total * 100) : 0;
+            const barColor = density > 5 ? '#dc2626' : (density > 3 ? '#f59e0b' : '#10b981');
+            const status = density > 5 ? 'HIGH' : (density > 3 ? 'ELEVATED' : 'OK');
             chartHtml += '<div style="display:flex;align-items:center;gap:8px;font-size:12px">';
             chartHtml += '<div style="width:120px;font-family:monospace;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">' + escapeHtml(e.word) + '</div>';
             chartHtml += '<div style="flex:1;background:#e5e7eb;height:16px;border-radius:2px;position:relative;overflow:hidden">';
@@ -335,10 +339,10 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         chartHtml += '</div>';
         chartHtml += '<div style="margin-top:12px;font-size:12px;background:#fef3c7;border:1px solid #fcd34d;padding:8px;border-radius:4px">';
         chartHtml += '<b>SEO tips</b><br>';
-        chartHtml += '?Aim for keyword density between 1-3%<br>';
-        chartHtml += '?Use natural variations and synonyms<br>';
-        chartHtml += '?Avoid keyword stuffing (> 5%) which can hurt rankings<br>';
-        chartHtml += '?Use related LSI keywords for semantic relevance';
+        chartHtml += '• Aim for keyword density between 1-3%<br>';
+        chartHtml += '• Use natural variations and synonyms<br>';
+        chartHtml += '• Avoid keyword stuffing (> 5%) which can hurt rankings<br>';
+        chartHtml += '• Use related LSI keywords for semantic relevance';
         chartHtml += '</div>';
         document.getElementById('chart').innerHTML = chartHtml;
     }

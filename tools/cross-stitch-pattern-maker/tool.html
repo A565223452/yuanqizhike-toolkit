@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cross Stitch Pattern Maker | YuanqiZhiKe Toolkit</title>
+<meta name="description" content="Convert images to cross stitch patterns. Choose fabric count, colors, and size. Generate a printable pattern grid. Free online.">
+<meta name="keywords" content="cross stitch pattern, image to pattern, cross stitch maker, embroidery pattern, aida cloth, stitch converter">
+<meta property="og:title" content="Cross Stitch Pattern Maker - Free Online Tool">
+<meta property="og:description" content="Convert images to cross stitch patterns. Choose fabric count, colors, and size. Generate a printable pattern grid. Free online.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Cross Stitch Pattern Maker</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Convert images to cross stitch patterns. Choose fabric count, colors, and size. Generate a printable pattern grid. Free online.</div>
+    <div class="row">
+        <div class="group" style="grid-column:span 2"><label>Upload image</label><input type="file" id="image" accept="image/*" style="width:100%;padding:8px"></div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Fabric count (CT)</label>
+            <select id="fabricCount" style="width:100%;padding:8px">
+                <option value="11">11 count Aida</option>
+                <option value="14" selected>14 count Aida</option>
+                <option value="16">16 count Aida</option>
+                <option value="18">18 count Aida</option>
+                <option value="22">22 count Hardanger</option>
+                <option value="28">28 count Evenweave</option>
+                <option value="32">32 count Evenweave</option>
+            </select>
+        </div>
+        <div class="group"><label>Max width (stitches)</label><input type="number" id="maxWidth" value="100" min="20" max="300" style="width:100%;padding:8px"></div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Number of colors</label><input type="number" id="numColors" value="15" min="2" max="50" style="width:100%;padding:8px"></div>
+        <div class="group"><label>Output</label>
+            <select id="outputMode" style="width:100%;padding:8px">
+                <option value="grid" selected>Pattern grid (printable)</option>
+                <option value="preview">Color preview only</option>
+            </select>
+        </div>
+    </div>
+    <button id="generate" style="padding:10px 20px;background:#10b981;color:#fff;border:none;border-radius:6px;cursor:pointer;margin-top:10px">Generate Pattern</button>
+    <button id="print" style="padding:10px 20px;background:#3b82f6;color:#fff;border:none;border-radius:6px;cursor:pointer;margin-top:10px;margin-left:6px">Print Pattern</button>
+    <div id="result" style="margin-top:12px"></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Upload an image (simple high-contrast images work best).</li>
+<li>Choose your <b>fabric count</b> (14 CT is most common for Aida).</li>
+<li>Set the <b>maximum width</b> in stitches (controls detail vs. size).</li>
+<li>Choose the <b>number of colors</b> (more colors = more detail but harder to stitch).</li>
+<li>Select output: <b>Pattern grid</b> (printable with symbols) or <b>Color preview</b>.</li>
+<li>Click <b>Generate Pattern</b> then <b>Print Pattern</b> if needed.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">For best results, use simple images with clear subjects. Photos with many gradients will create complex patterns. Start with 10-20 colors for your first project.</p>
+    </div>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:contact@yuanqizhike.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    var img = null;
+    document.getElementById('image').addEventListener('change', function(e){
+        var file = e.target.files[0];
+        if(!file) return;
+        var reader = new FileReader();
+        reader.onload = function(ev){
+            img = new Image();
+            img.onload = function(){ document.getElementById('result').innerHTML = '<div style="padding:10px;color:#666">Image loaded. Click Generate Pattern.</div>'; };
+            img.src = ev.target.result;
+        };
+        reader.readAsDataURL(file);
+    });
+    function quantizeColor(r, g, b, levels){
+        // Simple color quantization
+        var step = 256 / levels;
+        r = Math.floor(r / step) * step + step / 2;
+        g = Math.floor(g / step) * step + step / 2;
+        b = Math.floor(b / step) * step + step / 2;
+        return { r: Math.min(255, Math.round(r)), g: Math.min(255, Math.round(g)), b: Math.min(255, Math.round(b)) };
+    }
+    function rgbToHex(r, g, b){
+        return '#' + [r, g, b].map(function(v){ return v.toString(16).padStart(2, '0'); }).join('');
+    }
+    function generate(){
+        if(!img){ document.getElementById('result').innerHTML = '<div style="color:#dc2626;padding:8px">Please upload an image first.</div>'; return; }
+        var fabricCount = +document.getElementById('fabricCount').value;
+        var maxWidth = +document.getElementById('maxWidth').value;
+        var numColors = +document.getElementById('numColors').value;
+        var outputMode = document.getElementById('outputMode').value;
+        var canvas = document.createElement('canvas');
+        var aspectRatio = img.height / img.width;
+        var w = Math.min(maxWidth, 200);
+        var h = Math.round(w * aspectRatio);
+        canvas.width = w;
+        canvas.height = h;
+        var ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, w, h);
+        var data = ctx.getImageData(0, 0, w, h).data;
+        // Color quantization levels based on numColors
+        var levelsPerChannel = Math.max(2, Math.ceil(Math.cbrt(numColors)));
+        var colorMap = {};
+        var pixels = [];
+        for(var y = 0; y < h; y++){
+            var row = [];
+            for(var x = 0; x < w; x++){
+                var i = (y * w + x) * 4;
+                var r = data[i], g = data[i+1], b = data[i+2], a = data[i+3];
+                if(a < 128){
+                    row.push(null);
+                    continue;
+                }
+                var qc = quantizeColor(r, g, b, levelsPerChannel);
+                var hex = rgbToHex(qc.r, qc.g, qc.b);
+                if(!colorMap[hex]) colorMap[hex] = Object.keys(colorMap).length + 1;
+                row.push({ hex: hex, idx: colorMap[hex] });
+            }
+            pixels.push(row);
+        }
+        // Limit to top N colors
+        var colors = Object.keys(colorMap).map(function(hex){ return { hex: hex, count: 0 }; });
+        for(var y = 0; y < h; y++){
+            for(var x = 0; x < w; x++){
+                if(pixels[y][x]){
+                    var found = colors.find(function(c){ return c.hex === pixels[y][x].hex; });
+                    if(found) found.count++;
+                }
+            }
+        }
+        colors.sort(function(a, b){ return b.count - a.count; });
+        var topColors = colors.slice(0, numColors);
+        var colorIndex = {};
+        topColors.forEach(function(c, i){ colorIndex[c.hex] = i + 1; });
+        // Replace non-top colors with nearest top color
+        for(var y = 0; y < h; y++){
+            for(var x = 0; x < w; x++){
+                if(pixels[y][x] && !colorIndex[pixels[y][x].hex]){
+                    // Find nearest color (simple distance)
+                    var orig = pixels[y][x].hex;
+                    var r1 = parseInt(orig.substr(1, 2), 16);
+                    var g1 = parseInt(orig.substr(3, 2), 16);
+                    var b1 = parseInt(orig.substr(5, 2), 16);
+                    var bestHex = topColors[0].hex;
+                    var bestDist = Infinity;
+                    topColors.forEach(function(c){
+                        var r2 = parseInt(c.hex.substr(1, 2), 16);
+                        var g2 = parseInt(c.hex.substr(3, 2), 16);
+                        var b2 = parseInt(c.hex.substr(5, 2), 16);
+                        var d = (r1-r2)*(r1-r2) + (g1-g2)*(g1-g2) + (b1-b2)*(b1-b2);
+                        if(d < bestDist){ bestDist = d; bestHex = c.hex; }
+                    });
+                    pixels[y][x].hex = bestHex;
+                    pixels[y][x].idx = colorIndex[bestHex];
+                }
+            }
+        }
+        // Size in inches
+        var widthIn = w / fabricCount;
+        var heightIn = h / fabricCount;
+        var widthCm = widthIn * 2.54;
+        var heightCm = heightIn * 2.54;
+        var html = '<div style="background:#fef3c7;padding:14px;border-radius:8px;border-left:4px solid #92400e">';
+        html += '<div style="font-size:14px;font-weight:bold;color:#92400e;margin-bottom:10px">Pattern Generated</div>';
+        // Info
+        html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px;margin-bottom:10px">';
+        html += '<div style="background:#fff;padding:6px;border-radius:4px"><b>Size:</b> ' + w + ' x ' + h + ' stitches</div>';
+        html += '<div style="background:#fff;padding:6px;border-radius:4px"><b>Fabric:</b> ' + fabricCount + ' CT</div>';
+        html += '<div style="background:#fff;padding:6px;border-radius:4px"><b>Finished:</b> ' + widthIn.toFixed(1) + ' x ' + heightIn.toFixed(1) + ' in</div>';
+        html += '<div style="background:#fff;padding:6px;border-radius:4px"><b>Metric:</b> ' + widthCm.toFixed(1) + ' x ' + heightCm.toFixed(1) + ' cm</div>';
+        html += '<div style="background:#fff;padding:6px;border-radius:4px"><b>Colors:</b> ' + topColors.length + '</div>';
+        html += '<div style="background:#fff;padding:6px;border-radius:4px"><b>Total stitches:</b> ' + (w * h) + '</div>';
+        html += '</div>';
+        // Color palette
+        html += '<div style="background:#fff;padding:8px;border-radius:6px;margin-bottom:10px">';
+        html += '<div style="font-size:13px;font-weight:bold;color:#92400e;margin-bottom:6px">Color Palette</div>';
+        html += '<div style="display:grid;grid-template-columns:repeat(auto-fill, minmax(80px, 1fr));gap:4px;font-size:11px">';
+        topColors.forEach(function(c, i){
+            html += '<div style="display:flex;align-items:center;gap:4px"><div style="width:16px;height:16px;background:' + c.hex + ';border:1px solid #999"></div><span>' + (i+1) + '</span></div>';
+        });
+        html += '</div></div>';
+        // Pattern grid
+        if(outputMode === 'grid'){
+            html += '<div style="background:#fff;padding:8px;border-radius:6px;overflow:auto;max-height:500px">';
+            html += '<table style="border-collapse:collapse;font-size:8px;font-family:monospace">';
+            // Header row with column numbers
+            html += '<tr><td style="width:20px"></td>';
+            for(var x = 0; x < w; x++){
+                if(x % 10 === 0) html += '<td style="text-align:center;color:#999;width:14px">' + (x+1) + '</td>';
+                else html += '<td style="width:14px"></td>';
+            }
+            html += '</tr>';
+            for(var y = 0; y < h; y++){
+                html += '<tr>';
+                if(y % 10 === 0) html += '<td style="text-align:right;color:#999;padding-right:2px">' + (y+1) + '</td>';
+                else html += '<td></td>';
+                for(var x = 0; x < w; x++){
+                    var p = pixels[y][x];
+                    if(p){
+                        html += '<td style="background:' + p.hex + ';border:0.5px solid #eee;width:14px;height:14px;text-align:center;color:' + (p.hex > '#808080' ? '#fff' : '#000') + '">' + p.idx + '</td>';
+                    } else {
+                        html += '<td style="background:#fff;border:0.5px solid #eee;width:14px;height:14px"></td>';
+                    }
+                }
+                html += '</tr>';
+                if(y % 25 === 24){
+                    html += '<tr><td colspan="' + (w + 1) + '" style="height:4px"></td></tr>';
+                }
+            }
+            html += '</table>';
+            html += '</div>';
+        } else {
+            // Preview only
+            var prevCanvas = document.createElement('canvas');
+            prevCanvas.width = w * 8;
+            prevCanvas.height = h * 8;
+            var pctx = prevCanvas.getContext('2d');
+            for(var y = 0; y < h; y++){
+                for(var x = 0; x < w; x++){
+                    if(pixels[y][x]){
+                        pctx.fillStyle = pixels[y][x].hex;
+                    } else {
+                        pctx.fillStyle = '#fff';
+                    }
+                    pctx.fillRect(x * 8, y * 8, 8, 8);
+                }
+            }
+            html += '<div style="background:#fff;padding:8px;border-radius:6px;text-align:center"><img src="' + prevCanvas.toDataURL() + '" style="max-width:100%;image-rendering:pixelated"></div>';
+        }
+        html += '<div style="font-size:11px;color:#999;margin-top:10px">Pattern is approximate. For best results, use simple high-contrast images. Print in landscape for best fit.</div>';
+        html += '</div>';
+        document.getElementById('result').innerHTML = html;
+    }
+    document.getElementById('generate').addEventListener('click', generate);
+    document.getElementById('print').addEventListener('click', function(){
+        var result = document.getElementById('result');
+        if(!result.innerHTML){ generate(); }
+        var html = '<!doctype html><html><head><title>Cross Stitch Pattern</title><meta charset="utf-8"><style>body{font-family:Arial;padding:20px}@media print{body{padding:5px}}</style></head><body>' + result.innerHTML + '    <script src="/assets/js/date-utils.js"></script>
+</body></html>';
+        var w = window.open('', '_blank');
+        w.document.write(html);
+        w.document.close();
+        setTimeout(function(){ w.print(); }, 300);
+    });
+})();
+</script>
+</body>
+</html>

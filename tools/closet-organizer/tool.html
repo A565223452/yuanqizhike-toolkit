@@ -1,110 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Closet Organizer | YuanqiZhiKe Toolkit</title>
-<meta name="description" content="Organize your wardrobe digitally. Track outfits, plan weekly outfits. Free closet management tool.">
-<meta name="keywords" content="closet organizer, wardrobe tracker, outfit planner, capsule wardrobe, clothing inventory, fashion organizer">
-<meta property="og:title" content="Closet Organizer - Free Online Tool">
-<meta property="og:description" content="Organize your wardrobe digitally. Track outfits, plan weekly outfits. Free closet management tool.">
-<meta property="og:type" content="website">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
-body.dark{background:#1a1a2e;color:#e0e0e0}
-.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
-h1{margin-bottom:8px;font-size:24px}
-.subtitle{color:#666;font-size:14px;margin-bottom:16px}
-body.dark .subtitle{color:#a0a0a0}
-.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
-.top-bar h1{margin:0}
-.top-actions{display:flex;gap:8px;align-items:center}
-.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
-.bookmark-btn:hover{background:#f0f0f0}
-.group{margin-bottom:14px}
-label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
-input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
-input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
-textarea{resize:vertical;min-height:120px}
-button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
-button:hover{opacity:0.85}
-button.secondary{background:#6c757d}
-button.success{background:#28a745}
-.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
-.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
-.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
-.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.row > *{flex:1;min-width:120px}
-.row button{flex:0 0 auto}
-table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
-th,td{border:1px solid #ddd;padding:8px;text-align:left}
-th{background:#f0f0f0;font-weight:600}
-tr:nth-child(even){background:#f9f9f9}
-.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
-.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
-.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
-body.dark .instructions h3{color:#e0e0e0}
-.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
-.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
-footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
-@media(max-width:768px){
-    .container{padding:16px}
-    textarea{min-height:100px}
-    .top-bar{flex-direction:column;align-items:flex-start}
-}
-
-/* === Common: theme toggle + contact modal === */
-.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
-.theme-toggle-btn:hover{background:#f0f0f0}
-body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
-body.dark .theme-toggle-btn:hover{background:#0f3460}
-body.dark .container{background:#16213e;color:#e0e0e0}
-body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
-body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
-body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
-body.dark .bookmark-btn:hover{background:#0f3460}
-body.dark footer{border-color:#0f3460;color:#a0a0a0}
-body.dark .lead{color:#a0a0a0}
-body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
-body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
-body.dark table{background:#0f3460}
-body.dark th,body.dark td{border-color:#1a1a2e}
-body.dark tr:nth-child(even){background:#16213e}
-.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
-.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
-.lead a.contact-trigger:hover{color:#007bff}
-body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
-.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
-.contact-modal.open{display:flex}
-.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
-@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
-body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
-.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
-.contact-modal .close:hover{color:#333}
-body.dark .contact-modal .close:hover{color:#fff}
-.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
-.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
-body.dark .contact-modal .desc{color:#a0a0a0}
-.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
-body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
-.contact-modal .email-row .ico{font-size:16px}
-.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
-body.dark .contact-modal .email-row .email{color:#e0e0e0}
-.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
-.contact-modal .email-row .copy-btn:hover{background:#218838}
-.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
-.contact-modal .mailto-btn:hover{background:#0069d9}
-.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
-body.dark .contact-modal .form-hint{color:#888}
-.contact-modal form{display:flex;flex-direction:column;gap:8px}
-.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
-body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
-.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
-.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
-.contact-modal form button:hover{background:#218838}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closet Organizer - Optimized Version | YuanqiZhiKe Toolkit</title>
+    <meta name="description" content="Organize your wardrobe digitally. Track outfits, plan weekly outfits. Free closet management tool.">
+    <meta name="keywords" content="closet organizer, wardrobe tracker, outfit planner, capsule wardrobe, clothing inventory, fashion organizer">
+    <meta property="og:title" content="Closet Organizer - Free Online Tool">
+    <meta property="og:description" content="Organize your wardrobe digitally. Track outfits, plan weekly outfits. Free closet management tool.">
+    <meta property="og:type" content="website">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+        body.dark{background:#1a1a2e;color:#e0e0e0}
+        .container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+        h1{margin-bottom:8px;font-size:24px}
+        .subtitle{color:#666;font-size:14px;margin-bottom:16px}
+        body.dark .subtitle{color:#a0a0a0}
+        .top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+        .top-bar h1{margin:0}
+        .top-actions{display:flex;gap:8px;align-items:center}
+        .bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+        .bookmark-btn:hover{background:#f0f0f0}
+        .group{margin-bottom:14px}
+        label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+        input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+        input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+        textarea{resize:vertical;min-height:120px}
+        button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+        button:hover{opacity:0.85}
+        .result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+        .info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+        .tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+        .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+        .row > *{flex:1;min-width:120px}
+        .row button{flex:0 0 auto}
+        table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+        th,td{border:1px solid #ddd;padding:8px;text-align:left}
+        th{background:#f0f0f0;font-weight:600}
+        tr:nth-child(even){background:#f9f9f9}
+        .instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+        .instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+        .instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+        body.dark .instructions h3{color:#e0e0e0}
+        .instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+        .instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+        footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+        @media(max-width:768px){
+            .container{padding:16px}
+            textarea{min-height:100px}
+            .top-bar{flex-direction:column;align-items:flex-start}
+        }    
+        .theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+        .theme-toggle-btn:hover{background:#f0f0f0}
+        body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+        body.dark .theme-toggle-btn:hover{background:#0f3460}
+        body.dark .container{background:#16213e;color:#e0e0e0}
+        body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+        body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+        body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+        body.dark .bookmark-btn:hover{background:#0f3460}
+        body.dark footer{border-color:#0f3460;color:#a0a0a0}
+        body.dark .lead{color:#a0a0a0}
+        body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+        body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+        body.dark table{background:#0f3460}
+        body.dark th,body.dark td{border-color:#1a1a2e}
+        body.dark tr:nth-child(even){background:#16213e}
+        .lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+        .lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+        .lead a.contact-trigger:hover{color:#007bff}
+        body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+        .contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+        .contact-modal.open{display:flex}
+        .contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+        @keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+        body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+        .contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+        .contact-modal .close:hover{color:#333}
+        body.dark .contact-modal .close:hover{color:#fff}
+        .contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+        .contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+        body.dark .contact-modal .desc{color:#a0a0a0}
+        .contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+        body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+        .contact-modal .email-row .ico{font-size:16px}
+        .contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+        body.dark .contact-modal .email-row .email{color:#e0e0e0}
+        .contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+        .contact-modal .email-row .copy-btn:hover{background:#218838}
+        .contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+        .contact-modal .mailto-btn:hover{background:#0069d9}
+        .contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+        body.dark .contact-modal .form-hint{color:#888}
+        .contact-modal form{display:flex;flex-direction:column;gap:8px}
+        .contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+        body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+        .contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+        .contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+        .contact-modal form button:hover{background:#218838}
+    </style>
 </head>
 <body>
 <div class="container">
@@ -116,6 +111,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         </div>
     </div>
     <div class="subtitle">Organize your wardrobe digitally. Track outfits, plan weekly outfits. Free closet management tool.</div>
+    
     <div class="row">
         <div class="group">
             <label>Add item</label>
@@ -128,33 +124,39 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
                 <option value="outerwear">Outerwear</option>
             </select>
         </div>
+        
         <div class="group">
             <label>Color</label>
             <input type="text" id="color" placeholder="e.g. black, navy" style="width:100%;padding:8px">
         </div>
+        
         <div class="group">
             <label>Name</label>
             <input type="text" id="name" placeholder="e.g. white t-shirt" style="width:100%;padding:8px">
         </div>
+        
         <div class="group">
             <button id="add" style="padding:8px 16px;background:#10b981;color:#fff;border:none;border-radius:4px;cursor:pointer;margin-top:18px">Add Item</button>
         </div>
     </div>
+    
     <div class="row">
         <div class="group">
             <button id="outfit" style="padding:8px 16px;background:#3b82f6;color:#fff;border:none;border-radius:4px;cursor:pointer;width:100%">Generate Outfit</button>
         </div>
+        
         <div class="group">
             <button id="clear" style="padding:8px 16px;background:#dc2626;color:#fff;border:none;border-radius:4px;cursor:pointer;width:100%">Clear All</button>
         </div>
     </div>
+    
     <div id="outfitResult" style="background:#dbeafe;padding:12px;border-radius:6px;border-left:3px solid #3b82f6;margin-bottom:12px"></div>
     <div id="inventory" style="background:#fef3c7;padding:12px;border-radius:6px;border-left:3px solid #f59e0b"></div>
-
+    
     <div class="lead">
         Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
     </div>
-
+    
     <!-- Contact Modal -->
     <div class="contact-modal" id="contactModal">
         <div class="box">
@@ -176,120 +178,145 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             </form>
         </div>
     </div>
+    
     <div class="instructions">
         <h2>How to Use</h2>
-<ol>
-<li>Choose <b>category</b> (top, bottom, dress, shoes, etc.).</li>
-<li>Enter <b>color</b> and <b>name</b> for each item.</li>
-<li>Click <b>Add Item</b> to add to your closet.</li>
-<li>Click <b>Generate Outfit</b> for random outfit suggestion.</li>
-</ol>
-<p style="margin-top:8px;font-size:12px;color:#666">Items saved in your browser (localStorage). Use clear button to reset. Build capsule wardrobe: 30 items = mix-and-match possibilities.</p>
+        <ol>
+            <li>Choose <b>category</b> (top, bottom, dress, shoes, etc.).</li>
+            <li>Enter <b>color</b> and <b>name</b> for each item.</li>
+            <li>Click <b>Add Item</b> to add to your closet.</li>
+            <li>Click <b>Generate Outfit</b> for random outfit suggestion.</li>
+        </ol>
+        <p style="margin-top:8px;font-size:12px;color:#666">Items saved in your browser (localStorage). Use clear button to reset. Build capsule wardrobe: 30 items = mix-and-match possibilities.</p>
     </div>
     <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
+    // === Constants ===
+    const STORAGE_KEY = 'closetItems';
+    const CATEGORIES = ['top', 'bottom', 'dress', 'shoes', 'accessory', 'outerwear'];
 
-// === Common: theme toggle + contact modal ===
-(function(){
-    function __setupTheme(){
-        var btn=document.getElementById('themeToggle');
-        if(!btn)return;
-        function apply(t){
-            document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
-        }
-        var saved=localStorage.getItem('theme');
-        if(saved){apply(saved);}
-        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
-        else{apply('light');}
-        btn.addEventListener('click',function(){
-            var next=document.body.classList.contains('dark')?'light':'dark';
-            apply(next);localStorage.setItem('theme',next);
+    // === Helper Functions ===
+    function escapeHtml(s) {
+        return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    function getInputValue(id) {
+        const el = document.getElementById(id);
+        return el ? el.value.trim() : '';
+    }
+
+    // === Main Functions ===
+    function __setupTheme() {
+        const btn = document.getElementById('themeToggle');
+        if (!btn) return;
+        
+        const apply = (t) => {
+            document.body.classList.toggle('dark', t === 'dark');
+            btn.textContent = (t === 'dark') ? '\u2600\uFE0F' : '\uD83C\uDF19';
+        };
+        
+        const saved = localStorage.getItem('theme');
+        if (saved) apply(saved);
+        else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) apply('dark');
+        else apply('light');
+        
+        btn.addEventListener('click', () => {
+            const next = document.body.classList.contains('dark') ? 'light' : 'dark';
+            apply(next);
+            localStorage.setItem('theme', next);
         });
     }
-    function __setupContactModal(){
-        var modal=document.getElementById('contactModal');
-        if(!modal)return;
-        var trig=document.getElementById('contactTrigger');
-        var close=document.getElementById('contactClose');
-        function open(){modal.classList.add('open');}
-        function closeM(){modal.classList.remove('open');}
-        if(trig)trig.addEventListener('click',open);
-        if(close)close.addEventListener('click',closeM);
-        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
-        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
-        var copyBtn=document.getElementById('copyEmail');
-        if(copyBtn){
-            copyBtn.addEventListener('click',function(){
-                navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
-                    setTimeout(function(){copyBtn.textContent=old;},1500);
+
+    function __setupContactModal() {
+        const modal = document.getElementById('contactModal');
+        if (!modal) return;
+        const trig = document.getElementById('contactTrigger');
+        const closeBtn = document.getElementById('contactClose');
+
+        const openModal = () => modal.classList.add('open');
+        const closeModal = () => modal.classList.remove('open');
+
+        if (trig) trig.addEventListener('click', openModal);
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+        const copyBtn = document.getElementById('copyEmail');
+        if (copyBtn) {
+            copyBtn.addEventListener('click', () => {
+                navigator.clipboard.writeText('contact@yuanqizhike.com').then(() => {
+                    const oldText = copyBtn.textContent;
+                    copyBtn.textContent = 'Copied';
+                    setTimeout(() => { copyBtn.textContent = oldText; }, 1500);
                 });
             });
         }
-        var form=document.getElementById('contactForm');
-        if(form){
-            form.addEventListener('submit',function(e){
+
+        const form = document.getElementById('contactForm');
+        if (form) {
+            form.addEventListener('submit', (e) => {
                 e.preventDefault();
-                var name=document.getElementById('formName').value.trim();
-                var email=document.getElementById('formEmail').value.trim();
-                var desc=document.getElementById('formDesc').value.trim();
-                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
-                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
-                window.location.href='mailto:contact@yuanqizhike.com?subject='+subject+'&body='+body;
+                const name = document.getElementById('formName').value.trim();
+                const email = document.getElementById('formEmail').value.trim();
+                const desc = document.getElementById('formDesc').value.trim();
+                const subject = encodeURIComponent('Bespoke Tool Development Inquiry');
+                const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nRequirement:\n' + desc);
+                window.location.href = 'mailto:contact@yuanqizhike.com?subject=' + subject + '&body=' + body;
             });
         }
     }
-    function __setupBookmark(){
-        var btn=document.getElementById('bookmarkBtn');
-        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
-    }
-    if(document.readyState==='loading'){
-        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
-    } else {
-        __setupTheme();__setupContactModal();__setupBookmark();
-    }
-})();
 
-(function(){
-    var STORAGE_KEY = 'closetItems';
-    var items = [];
-    try { items = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); } catch(e) {}
-    function save(){ localStorage.setItem(STORAGE_KEY, JSON.stringify(items)); }
-    function escapeHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-    function addItem(){
-        var cat = document.getElementById('cat').value;
-        var color = document.getElementById('color').value.trim();
-        var name = document.getElementById('name').value.trim();
-        if(!color || !name){
+    function __setupBookmark() {
+        const btn = document.getElementById('bookmarkBtn');
+        if (btn) btn.addEventListener('click', () => { alert('Press Ctrl/Cmd + D to bookmark this page.'); });
+    }
+
+    // Closet state and functions
+    let closetItems = [];
+    try { closetItems = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); } catch (e) {}
+
+    function saveCloset() {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(closetItems));
+    }
+
+    function addItem() {
+        const cat = document.getElementById('cat').value;
+        const color = getInputValue('color');
+        const name = getInputValue('name');
+        
+        if (!color || !name) {
             alert('Please enter color and name');
             return;
         }
-        items.push({ cat:cat, color:color, name:name, id:Date.now() });
-        save();
+        
+        closetItems.push({ cat, color, name, id: Date.now() });
+        saveCloset();
         document.getElementById('color').value = '';
         document.getElementById('name').value = '';
-        render();
+        renderCloset();
     }
-    function deleteItem(id){
-        items = items.filter(function(i){ return i.id !== id; });
-        save();
-        render();
+
+    function deleteItem(id) {
+        closetItems = closetItems.filter((i) => i.id !== id);
+        saveCloset();
+        renderCloset();
     }
-    function render(){
-        var counts = {};
-        items.forEach(function(i){ counts[i.cat] = (counts[i.cat] || 0) + 1; });
-        var html = '<div style="font-size:15px;font-weight:bold;margin-bottom:6px">Closet Inventory (' + items.length + ' items)</div>';
-        if(items.length === 0){
+
+    function renderCloset() {
+        let html = '<div style="font-size:15px;font-weight:bold;margin-bottom:6px">Closet Inventory (' + closetItems.length + ' items)</div>';
+        
+        if (closetItems.length === 0) {
             html += '<div style="color:#666">No items yet. Add some above!</div>';
         } else {
-            ['top', 'bottom', 'dress', 'shoes', 'accessory', 'outerwear'].forEach(function(cat){
-                var catItems = items.filter(function(i){ return i.cat === cat; });
-                if(catItems.length === 0) return;
+            CATEGORIES.forEach((cat) => {
+                const catItems = closetItems.filter((i) => i.cat === cat);
+                if (catItems.length === 0) return;
+                
                 html += '<div style="margin-bottom:8px">';
                 html += '<div style="font-size:13px;font-weight:bold;text-transform:capitalize">' + cat + ' (' + catItems.length + ')</div>';
-                catItems.forEach(function(i){
+                
+                catItems.forEach((i) => {
                     html += '<div style="display:flex;justify-content:space-between;background:#fff;padding:4px 8px;border-radius:4px;margin:2px 0;font-size:12px">';
                     html += '<span>' + escapeHtml(i.color) + ' ' + escapeHtml(i.name) + '</span>';
                     html += '<button data-del="' + i.id + '" style="background:none;border:none;color:#dc2626;cursor:pointer">×</button>';
@@ -298,63 +325,83 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
                 html += '</div>';
             });
         }
+        
         document.getElementById('inventory').innerHTML = html;
-        document.querySelectorAll('[data-del]').forEach(function(btn){
-            btn.onclick = function(){ deleteItem(+btn.getAttribute('data-del')); };
+        document.querySelectorAll('[data-del]').forEach((btn) => {
+            btn.onclick = () => { deleteItem(+btn.getAttribute('data-del')); };
         });
     }
-    function randomItem(arr){ return arr[Math.floor(Math.random() * arr.length)]; }
-    function generateOutfit(){
-        if(items.length === 0){
+
+    function randomItem(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    function generateOutfit() {
+        if (closetItems.length === 0) {
             document.getElementById('outfitResult').innerHTML = '<div style="color:#666">Add items to your closet first!</div>';
             return;
         }
-        var dresses = items.filter(function(i){ return i.cat === 'dress'; });
-        var tops = items.filter(function(i){ return i.cat === 'top'; });
-        var bottoms = items.filter(function(i){ return i.cat === 'bottom'; });
-        var shoes = items.filter(function(i){ return i.cat === 'shoes'; });
-        var accessories = items.filter(function(i){ return i.cat === 'accessory'; });
-        var outerwears = items.filter(function(i){ return i.cat === 'outerwear'; });
-        var html = '<div style="font-size:15px;font-weight:bold;margin-bottom:6px">Today is Outfit</div>';
-        if(dresses.length > 0 && (tops.length === 0 || Math.random() < 0.4)){
-            var dress = randomItem(dresses);
+
+        const dresses = closetItems.filter((i) => i.cat === 'dress');
+        const tops = closetItems.filter((i) => i.cat === 'top');
+        const bottoms = closetItems.filter((i) => i.cat === 'bottom');
+        const shoes = closetItems.filter((i) => i.cat === 'shoes');
+        const accessories = closetItems.filter((i) => i.cat === 'accessory');
+        const outerwears = closetItems.filter((i) => i.cat === 'outerwear');
+
+        let html = '<div style="font-size:15px;font-weight:bold;margin-bottom:6px">Today Outfit</div>';
+
+        if (dresses.length > 0 && (tops.length === 0 || Math.random() < 0.4)) {
+            const dress = randomItem(dresses);
             html += '<div style="background:#fff;padding:8px;border-radius:4px;margin-bottom:4px">👗 <b>' + escapeHtml(dress.color) + ' ' + escapeHtml(dress.name) + '</b></div>';
-        } else if(tops.length > 0 && bottoms.length > 0){
-            var top = randomItem(tops);
-            var bottom = randomItem(bottoms);
+        } else if (tops.length > 0 && bottoms.length > 0) {
+            const top = randomItem(tops);
+            const bottom = randomItem(bottoms);
             html += '<div style="background:#fff;padding:8px;border-radius:4px;margin-bottom:4px">👕 <b>' + escapeHtml(top.color) + ' ' + escapeHtml(top.name) + '</b></div>';
             html += '<div style="background:#fff;padding:8px;border-radius:4px;margin-bottom:4px">👖 <b>' + escapeHtml(bottom.color) + ' ' + escapeHtml(bottom.name) + '</b></div>';
         } else {
             html += '<div style="background:#fee2e2;padding:8px;border-radius:4px">Need at least 1 top + 1 bottom, or 1 dress!</div>';
         }
-        if(shoes.length > 0){
-            var shoe = randomItem(shoes);
+
+        if (shoes.length > 0) {
+            const shoe = randomItem(shoes);
             html += '<div style="background:#fff;padding:8px;border-radius:4px;margin-bottom:4px">👟 <b>' + escapeHtml(shoe.color) + ' ' + escapeHtml(shoe.name) + '</b></div>';
         }
-        if(accessories.length > 0 && Math.random() < 0.5){
-            var acc = randomItem(accessories);
-            html += '<div style="background:#fff;padding:8px;border-radius:4px;margin-bottom:4px">?<b>' + escapeHtml(acc.color) + ' ' + escapeHtml(acc.name) + '</b></div>';
+
+        if (accessories.length > 0 && Math.random() < 0.5) {
+            const acc = randomItem(accessories);
+            html += '<div style="background:#fff;padding:8px;border-radius:4px;margin-bottom:4px">👜<b>' + escapeHtml(acc.color) + ' ' + escapeHtml(acc.name) + '</b></div>';
         }
-        if(outerwears.length > 0 && Math.random() < 0.3){
-            var outer = randomItem(outerwears);
+
+        if (outerwears.length > 0 && Math.random() < 0.3) {
+            const outer = randomItem(outerwears);
             html += '<div style="background:#fff;padding:8px;border-radius:4px;margin-bottom:4px">🧥 <b>' + escapeHtml(outer.color) + ' ' + escapeHtml(outer.name) + '</b></div>';
         }
+
         html += '<div style="font-size:11px;color:#666;margin-top:8px">Refresh by clicking Generate Outfit again</div>';
         document.getElementById('outfitResult').innerHTML = html;
     }
-    function clearAll(){
-        if(confirm('Clear all ' + items.length + ' items from closet?')){
-            items = [];
-            save();
-            render();
+
+    function clearAll() {
+        if (confirm('Clear all ' + closetItems.length + ' items from closet?')) {
+            closetItems = [];
+            saveCloset();
+            renderCloset();
             document.getElementById('outfitResult').innerHTML = '';
         }
     }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+        __setupTheme();
+        __setupContactModal();
+        __setupBookmark();
+        renderCloset();
+    });
+    
     document.getElementById('add').addEventListener('click', addItem);
     document.getElementById('outfit').addEventListener('click', generateOutfit);
     document.getElementById('clear').addEventListener('click', clearAll);
-    render();
-})();
 </script>
     <script src="/assets/js/date-utils.js"></script>
 </body>

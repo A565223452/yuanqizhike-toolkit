@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "generatedAt": "2026-07-14T17:00:06.104Z",
-  "totalTools": 666,
+  "generatedAt": "2026-07-14T19:46:13.936Z",
+  "totalTools": 664,
   "categories": [
     {
       "category": "Lifestyle & Utilities",
@@ -17,13 +17,13 @@
     },
     {
       "category": "Design & Media",
-      "count": 53,
+      "count": 52,
       "icon": "/assets/icons/design-1.svg",
       "file": "design-and-media.json"
     },
     {
       "category": "Math & Science",
-      "count": 31,
+      "count": 30,
       "icon": "/assets/icons/education-1.svg",
       "file": "math-and-science.json"
     },

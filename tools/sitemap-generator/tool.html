@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Free online XML sitemap generator. Create sitemaps for Google, Bing, and other search engines. Local, no upload.">
 <meta name="keywords" content="sitemap generator, xml sitemap, sitemap.xml, SEO sitemap, google sitemap, bing sitemap">
-<title>XML Sitemap Generator | YuanQiZhiLe Toolkit</title>
+<title>XML Sitemap Generator | YuanqiZhiKe Toolkit</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{padding:20px;font-family:system-ui,-apple-system,sans-serif;background:#f7f7f7;transition:background 0.3s,color 0.3s}
@@ -112,7 +112,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         </div>
         <div style="display:flex;gap:8px;align-items:center">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark (Ctrl+Shift+T)">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">�?Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
 
@@ -158,19 +158,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business �?batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">�?or describe your need below �?/div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit �?/button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -180,15 +180,13 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <ol>
             <li>Add URLs one by one using the form, or paste a list into the <strong>Bulk add URLs</strong> box and click <strong>+ Add Bulk</strong>.</li>
             <li>For each URL set <strong>Last modified</strong> (date), <strong>Change freq</strong> (always/hourly/daily/weekly/monthly/yearly/never), and <strong>Priority</strong> (0.0 - 1.0).</li>
-            <li>Click <strong>Generate Sitemap</strong> �?a valid XML sitemap is produced in the output box with stats.</li>
+            <li>Click <strong>Generate Sitemap</strong> -a valid XML sitemap is produced in the output box with stats.</li>
             <li>Use <strong>Copy XML</strong> or <strong>Download sitemap.xml</strong> to export.</li>
             <li>Upload the file to your site root and submit it via Google Search Console.</li>
         </ol>
     </div>
 
-    <footer>
-        <div>YuanQiZhiLe Toolkit · Process locally in your browser, no data upload.</div>
-    </footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 
 <script>
@@ -197,7 +195,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
     const __themeBtn = document.getElementById('themeToggle');
     function __applyTheme(t){
         document.body.classList.toggle('dark', t === 'dark');
-        if(__themeBtn) __themeBtn.textContent = (t === 'dark') ? '☀�? : '🌙';
+        if(__themeBtn) __themeBtn.textContent = (t === 'dark') ? '?' : '🌙';
     }
     const __saved = localStorage.getItem('theme');
     if(__saved){
@@ -239,7 +237,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         __copyBtn.addEventListener('click', () => {
             navigator.clipboard.writeText('contact@yuanqizhike.com').then(() => {
                 const old = __copyBtn.textContent;
-                __copyBtn.textContent = '�?;
+                __copyBtn.textContent='Copied';
                 setTimeout(() => __copyBtn.textContent = old, 1500);
             });
         });
@@ -291,7 +289,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
                     ${['always','hourly','daily','weekly','monthly','yearly','never'].map(f => `<option value="${f}" ${u.changefreq === f ? 'selected' : ''}>${f}</option>`).join('')}
                 </select>
                 <input type="number" class="u-priority" value="${u.priority}" min="0" max="1" step="0.1">
-                <span style="font-size:11px">${valid === null ? '' : valid ? '<span style="color:#16a34a">�?/span>' : '<span style="color:#dc2626">�?/span>'}</span>
+                <span style="font-size:11px">${valid === null ? '' : valid ? '<span style="color:#16a34a"></span>' : '<span style="color:#dc2626"></span>'}</span>
                 <button class="u-del">Delete</button>
             `;
             item.querySelector('.u-loc').addEventListener('input', e => { urls[idx].loc = e.target.value; renderUrls(); });
@@ -309,7 +307,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             alert('Add at least one valid URL.');
             return;
         }
-        let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
+        let xml = '<' + '?xml version="1.0" encoding="UTF-8"?" + ">\n';
         xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
         valid.forEach(u => {
             xml += '  <url>\n';
@@ -358,7 +356,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         navigator.clipboard.writeText(v).then(() => {
             const b = document.getElementById('copy');
             const old = b.textContent;
-            b.textContent = '�?Copied';
+            b.textContent = '?Copied';
             setTimeout(() => b.textContent = old, 1500);
         });
     });

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prayer Times Estimator | YuanqiZhiKe Toolkit</title>
+<meta name="description" content="Estimate Muslim prayer times based on location and date. Salah schedule calculator with sunrise and sunset. Free Islamic prayer times.">
+<meta name="keywords" content="prayer times, salah times, muslim prayer schedule, islamic prayer times, namaz time, fajr dhuhr asr maghrib isha, prayer calculator">
+<meta property="og:title" content="Prayer Times Estimator - Free Online Tool">
+<meta property="og:description" content="Estimate Muslim prayer times based on location and date. Salah schedule calculator with sunrise and sunset. Free Islamic prayer times.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Prayer Times Estimator</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Estimate Muslim prayer times based on location and date. Salah schedule calculator with sunrise and sunset. Free Islamic prayer times.</div>
+    <div class="row">
+        <div class="group">
+            <label>Calculation method</label>
+            <select id="method" style="width:100%;padding:8px">
+                <option value="0.15">MWL (15 angle)</option>
+                <option value="0.18" selected>ISNA (18 angle)</option>
+                <option value="0.20">Egypt (20 angle)</option>
+                <option value="0.18.5">Makkah (Umm al-Qura)</option>
+                <option value="0.19">Karachi (19 angle)</option>
+            </select>
+        </div>
+        <div class="group"><label>Latitude</label><input type="number" id="lat" value="40.7" step="0.1" style="width:100%;padding:8px"></div>
+        <div class="group"><label>Longitude</label><input type="number" id="lon" value="-74.0" step="0.1" style="width:100%;padding:8px"></div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Timezone (UTC offset)</label><input type="number" id="tz" value="-5" step="0.5" style="width:100%;padding:8px"></div>
+        <div class="group"><label>Day of year</label><input type="number" id="doy" value="180" min="1" max="365" style="width:100%;padding:8px"></div>
+    </div>
+    <button id="calc" style="padding:8px 16px;background:#10b981;color:#fff;border:none;border-radius:4px;cursor:pointer;margin-bottom:12px">Calculate</button>
+    <div id="result" style="background:#dbeafe;padding:12px;border-radius:6px;border-left:3px solid #3b82f6"></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Select <b>calculation method</b> (different Islamic schools).</li>
+<li>Enter your <b>latitude and longitude</b>.</li>
+<li>Set <b>timezone</b> and day of year.</li>
+<li>Click <b>Calculate</b> for prayer schedule.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">Five daily prayers: Fajr (dawn), Dhuhr (noon), Asr (afternoon), Maghrib (sunset), Isha (night). Times vary by location and season. Always confirm with local Islamic authority.</p>
+    </div>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:contact@yuanqizhike.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    function toTime(decimal){
+        var h = Math.floor(decimal);
+        var m = Math.round((decimal - h) * 60);
+        if(m === 60){ h++; m = 0; }
+        var period = h >= 12 ? 'PM' : 'AM';
+        var h12 = h % 12;
+        if(h12 === 0) h12 = 12;
+        return (h12 < 10 ? '0' : '') + h12 + ':' + (m < 10 ? '0' : '') + m + ' ' + period;
+    }
+    function calc(){
+        var lat = +document.getElementById('lat').value;
+        var lon = +document.getElementById('lon').value;
+        var tz = +document.getElementById('tz').value;
+        var doy = +document.getElementById('doy').value;
+        var angle = +document.getElementById('method').value;
+        var B = 2 * Math.PI * (doy - 81) / 365;
+        var eot = 9.87 * Math.sin(2 * B) - 7.53 * Math.cos(B) - 1.5 * Math.sin(B);
+        var solarNoon = 12 + tz * -1 - lon / 15 - eot / 60;
+        var declination = 23.45 * Math.sin(2 * Math.PI * (284 + doy) / 365);
+        function hourAngle(angleDeg){
+            var latRad = lat * Math.PI / 180;
+            var decRad = declination * Math.PI / 180;
+            var angleRad = angleDeg * Math.PI / 180;
+            var cosH = (-Math.sin(angleRad) - Math.sin(latRad) * Math.sin(decRad)) / (Math.cos(latRad) * Math.cos(decRad));
+            if(cosH > 1) return null;
+            if(cosH < -1) return null;
+            return Math.acos(cosH) * 180 / Math.PI / 15;
+        }
+        var fajrAngle = hourAngle(angle);
+        var ishaAngle = hourAngle(angle);
+        var sunriseAngle = hourAngle(0.833);
+        var fajr = sunriseAngle !== null ? solarNoon - fajrAngle : solarNoon - 1;
+        var sunrise = sunriseAngle !== null ? solarNoon - sunriseAngle : solarNoon - 0.5;
+        var dhuhr = solarNoon + 5/60;
+        var asrAngle = hourAngle(Math.atan(1 / (1 + Math.tan(Math.abs(lat - declination) * Math.PI / 180))) * 180 / Math.PI);
+        var asr = sunriseAngle !== null ? solarNoon + (solarNoon - sunrise) : solarNoon + 2;
+        var sunset = sunriseAngle !== null ? solarNoon + sunriseAngle : solarNoon + 0.5;
+        var maghrib = sunset + 2/60;
+        var isha = ishaAngle !== null ? solarNoon + ishaAngle : solarNoon + 5;
+        if(fajr < 0) fajr += 24;
+        if(fajr >= 24) fajr -= 24;
+        if(isha >= 24) isha -= 24;
+        var html = '<div style="font-size:15px;font-weight:bold;margin-bottom:6px">Estimated Prayer Times</div>';
+        html += '<div style="font-size:12px;color:#666;margin-bottom:8px">For lat ' + lat + ', lon ' + lon + ' (UTC' + (tz >= 0 ? '+' : '') + tz + ')</div>';
+        html += '<table style="width:100%;border-collapse:collapse;font-size:14px">';
+        var rows = [
+            {name:'Fajr (dawn)', time:fajr, color:'#1e3a8a', note:'Dawn prayer'},
+            {name:'Sunrise', time:sunrise, color:'#f59e0b', note:'Not a prayer'},
+            {name:'Dhuhr (noon)', time:dhuhr, color:'#3b82f6', note:'Midday prayer'},
+            {name:'Asr (afternoon)', time:asr, color:'#10b981', note:'Afternoon prayer'},
+            {name:'Maghrib (sunset)', time:maghrib, color:'#dc2626', note:'Sunset prayer'},
+            {name:'Isha (night)', time:isha, color:'#7c3aed', note:'Night prayer'}
+        ];
+        rows.forEach(function(r){
+            html += '<tr style="background:' + r.color + '20">';
+            html += '<td style="padding:6px"><span style="color:' + r.color + ';font-weight:bold"></span> ' + r.name + '</td>';
+            html += '<td style="padding:6px;text-align:right;font-weight:bold;font-size:16px">' + toTime(r.time) + '</td>';
+            html += '</tr>';
+        });
+        html += '</table>';
+        html += '<div style="font-size:11px;color:#666;margin-top:8px">Estimate based on astronomical calculations. For exact times, refer to local mosque or Islamic authority. Method: angle ' + angle + '° below horizon.</div>';
+        document.getElementById('result').innerHTML = html;
+    }
+    document.getElementById('calc').addEventListener('click', calc);
+    calc();
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

@@ -184,18 +184,6 @@
   {
     "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
-    "title": "Logarithm Calculator Extended",
-    "desc": "A free offline tool for logarithm calculator extended calculations. Works in your browser.",
-    "features": [
-      "Easy to use",
-      "Works offline"
-    ],
-    "detailUrl": "/tools/logarithm-calculator-extended/index.html",
-    "zipUrl": "/assets/zip-packages/math/logarithm-calculator.zip"
-  },
-  {
-    "category": "Math & Science",
-    "icon": "/assets/icons/education-1.svg",
     "title": "Normal Distribution Calculator",
     "desc": "A free offline tool for normal distribution calculator calculations. Works in your browser.",
     "features": [

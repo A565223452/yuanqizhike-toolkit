@@ -1,0 +1,8 @@
+{
+  "imports": {
+    "@yuanqi/i18n": "/assets/js/esm/i18n.module.js",
+    "@yuanqi/statistics": "/assets/js/esm/statistics.module.js",
+    "@yuanqi/main": "/assets/js/esm/main.module.js",
+    "@yuanqi/date-utils": "/assets/js/esm/date-utils.module.js"
+  }
+}

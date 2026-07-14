@@ -111,7 +111,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
     <div class="top-bar">
         <h1>Strikethrough Text Generator</h1>
         <div class="top-actions">
-            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark (Ctrl+Shift+T)">🌙</button>
             <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
@@ -166,99 +166,95 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 
 // === Common: theme toggle + contact modal ===
 (function(){
-    function __setupTheme(){
-        var btn=document.getElementById('themeToggle');
-        if(!btn)return;
-        function apply(t){
-            document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
-        }
-        var saved=localStorage.getItem('theme');
-        if(saved){apply(saved);}
-        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
-        else{apply('light');}
-        btn.addEventListener('click',function(){
-            var next=document.body.classList.contains('dark')?'light':'dark';
-            apply(next);localStorage.setItem('theme',next);
+    const __themeBtn = document.getElementById('themeToggle');
+    function __applyTheme(t){
+        document.body.classList.toggle('dark', t === 'dark');
+        if(__themeBtn) __themeBtn.textContent = (t === 'dark') ? '☀️' : '🌙';
+    }
+    const __saved = localStorage.getItem('theme');
+    if(__saved){
+        __applyTheme(__saved);
+    } else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
+        __applyTheme('dark');
+    } else {
+        __applyTheme('light');
+    }
+    if(__themeBtn){
+        __themeBtn.addEventListener('click', () => {
+            const next = document.body.classList.contains('dark') ? 'light' : 'dark';
+            __applyTheme(next);
+            localStorage.setItem('theme', next);
         });
     }
-    function __setupContactModal(){
-        var modal=document.getElementById('contactModal');
-        if(!modal)return;
-        var trig=document.getElementById('contactTrigger');
-        var close=document.getElementById('contactClose');
-        function open(){modal.classList.add('open');}
-        function closeM(){modal.classList.remove('open');}
-        if(trig)trig.addEventListener('click',open);
-        if(close)close.addEventListener('click',closeM);
-        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
-        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
-        var copyBtn=document.getElementById('copyEmail');
-        if(copyBtn){
-            copyBtn.addEventListener('click',function(){
-                navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
-                    setTimeout(function(){copyBtn.textContent=old;},1500);
-                });
-            });
+    document.addEventListener('keydown', e => {
+        if(e.key === 't' && e.ctrlKey && e.shiftKey){
+            e.preventDefault();
+            const next = document.body.classList.contains('dark') ? 'light' : 'dark';
+            __applyTheme(next);
+            localStorage.setItem('theme', next);
         }
-        var form=document.getElementById('contactForm');
-        if(form){
-            form.addEventListener('submit',function(e){
-                e.preventDefault();
-                var name=document.getElementById('formName').value.trim();
-                var email=document.getElementById('formEmail').value.trim();
-                var desc=document.getElementById('formDesc').value.trim();
-                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
-                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
-                window.location.href='mailto:contact@yuanqizhike.com?subject='+subject+'&body='+body;
+    });
+    document.getElementById('bookmarkBtn').addEventListener('click', () => alert('Press Ctrl/Cmd + D to bookmark this page.'));
+
+    // Contact modal
+    const __modal = document.getElementById('contactModal');
+    const __trig = document.getElementById('contactTrigger');
+    const __close = document.getElementById('contactClose');
+    function __openModal(){ if(__modal) __modal.classList.add('open'); }
+    function __closeModal(){ if(__modal) __modal.classList.remove('open'); }
+    if(__trig) __trig.addEventListener('click', __openModal);
+    if(__close) __close.addEventListener('click', __closeModal);
+    if(__modal) __modal.addEventListener('click', e => { if(e.target === __modal) __closeModal(); });
+    document.addEventListener('keydown', e => { if(e.key === 'Escape') __closeModal(); });
+    const __copyBtn = document.getElementById('copyEmail');
+    if(__copyBtn){
+        __copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText('contact@yuanqizhike.com').then(() => {
+                const old = __copyBtn.textContent;
+                __copyBtn.textContent='Copied';
+                setTimeout(() => __copyBtn.textContent = old, 1500);
             });
-        }
+        });
     }
-    function __setupBookmark(){
-        var btn=document.getElementById('bookmarkBtn');
-        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
-    }
-    if(document.readyState==='loading'){
-        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
-    } else {
-        __setupTheme();__setupContactModal();__setupBookmark();
+    const __form = document.getElementById('contactForm');
+    if(__form){
+        __form.addEventListener('submit', e => {
+            e.preventDefault();
+            const name = document.getElementById('formName').value.trim();
+            const email = document.getElementById('formEmail').value.trim();
+            const desc = document.getElementById('formDesc').value.trim();
+            const subject = encodeURIComponent('Bespoke Tool Development Inquiry');
+            const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nRequirement:\n' + desc);
+            window.location.href = 'mailto:contact@yuanqizhike.com?subject=' + subject + '&body=' + body;
+        });
     }
 })();
 
 (function(){
     function strike(s){
-        var out = '';
-        for(var i = 0; i < s.length; i++){
-            out += s[i] + '\u0336';
-        }
-        return out;
-    }
-    function longStrike(s){
-        // Combine with long stroke overlay for cleaner look
-        var out = '';
-        for(var i = 0; i < s.length; i++){
+        let out = '';
+        for(let i = 0; i < s.length; i++){
             out += s[i] + '\u0336';
         }
         return out;
     }
     function gen(){
-        var txt = document.getElementById('input').value;
+        const txt = document.getElementById('input').value;
         if(!txt){ document.getElementById('result').innerHTML = '<div class="error">Enter some text.</div>'; return; }
-        var result = strike(txt);
-        var escaped = result.replace(/</g,'&lt;').replace(/>/g,'&gt;');
-        var previewEsc = txt.replace(/</g,'&lt;');
+        const result = strike(txt);
+        const escaped = result.replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        const previewEsc = txt.replace(/</g,'&lt;');
         document.getElementById('result').innerHTML = '<b>Strikethrough Text:</b><div style="background:#f5f5f5;padding:12px;border-radius:6px;margin:8px 0;font-size:18px">' + escaped + '</div><textarea id="out" readonly style="width:100%;height:80px;padding:8px;font-family:monospace">' + escaped + '</textarea>';
         window._out = result;
     }
     document.getElementById('gen').addEventListener('click', gen);
-    document.getElementById('copy').addEventListener('click', function(){
+    document.getElementById('copy').addEventListener('click', () => {
         if(!window._out) return;
-        navigator.clipboard.writeText(window._out).then(function(){
-            var b = document.getElementById('copy');
-            var o = b.textContent;
+        navigator.clipboard.writeText(window._out).then(() => {
+            const b = document.getElementById('copy');
+            const o = b.textContent;
             b.textContent = 'Copied!';
-            setTimeout(function(){ b.textContent = o; }, 1500);
+            setTimeout(() => b.textContent = o, 1500);
         });
     });
     gen();

@@ -188,131 +188,123 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 
 // === Common: theme toggle + contact modal ===
 (function(){
-    function __setupTheme(){
-        var btn=document.getElementById('themeToggle');
-        if(!btn)return;
-        function apply(t){
-            document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
-        }
-        var saved=localStorage.getItem('theme');
-        if(saved){apply(saved);}
-        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
-        else{apply('light');}
-        btn.addEventListener('click',function(){
-            var next=document.body.classList.contains('dark')?'light':'dark';
-            apply(next);localStorage.setItem('theme',next);
+    const __themeBtn = document.getElementById('themeToggle');
+    function __applyTheme(t){
+        document.body.classList.toggle('dark', t === 'dark');
+        if(__themeBtn) __themeBtn.textContent = (t === 'dark') ? '\u2600\uFE0F' : '\uD83C\uDF19';
+    }
+    const __saved = localStorage.getItem('theme');
+    __saved ? __applyTheme(__saved) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? __applyTheme('dark') : __applyTheme('light');
+    if(__themeBtn){
+        __themeBtn.addEventListener('click', () => {
+            const next = document.body.classList.contains('dark') ? 'light' : 'dark';
+            __applyTheme(next);
+            localStorage.setItem('theme', next);
         });
     }
-    function __setupContactModal(){
-        var modal=document.getElementById('contactModal');
-        if(!modal)return;
-        var trig=document.getElementById('contactTrigger');
-        var close=document.getElementById('contactClose');
-        function open(){modal.classList.add('open');}
-        function closeM(){modal.classList.remove('open');}
-        if(trig)trig.addEventListener('click',open);
-        if(close)close.addEventListener('click',closeM);
-        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
-        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
-        var copyBtn=document.getElementById('copyEmail');
-        if(copyBtn){
-            copyBtn.addEventListener('click',function(){
-                navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
-                    setTimeout(function(){copyBtn.textContent=old;},1500);
-                });
-            });
+    document.addEventListener('keydown', e => {
+        if(e.key === 't' && e.ctrlKey && e.shiftKey){
+            e.preventDefault();
+            const next = document.body.classList.contains('dark') ? 'light' : 'dark';
+            __applyTheme(next);
+            localStorage.setItem('theme', next);
         }
-        var form=document.getElementById('contactForm');
-        if(form){
-            form.addEventListener('submit',function(e){
-                e.preventDefault();
-                var name=document.getElementById('formName').value.trim();
-                var email=document.getElementById('formEmail').value.trim();
-                var desc=document.getElementById('formDesc').value.trim();
-                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
-                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
-                window.location.href='mailto:contact@yuanqizhike.com?subject='+subject+'&body='+body;
+    });
+    document.getElementById('bookmarkBtn').addEventListener('click', () => alert('Press Ctrl/Cmd + D to bookmark this page.'));
+})();
+
+(function(){
+    const __modal = document.getElementById('contactModal');
+    const __trig = document.getElementById('contactTrigger');
+    const __close = document.getElementById('contactClose');
+    function __openModal(){ if(__modal) __modal.classList.add('open'); }
+    function __closeModal(){ if(__modal) __modal.classList.remove('open'); }
+    if(__trig) __trig.addEventListener('click', __openModal);
+    if(__close) __close.addEventListener('click', __closeModal);
+    if(__modal) __modal.addEventListener('click', e => { if(e.target === __modal) __closeModal(); });
+    document.addEventListener('keydown', e => { if(e.key === 'Escape') __closeModal(); });
+    const __copyBtn = document.getElementById('copyEmail');
+    if(__copyBtn){
+        __copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText('contact@yuanqizhike.com').then(() => {
+                const old = __copyBtn.textContent;
+                __copyBtn.textContent = 'Copied';
+                setTimeout(() => __copyBtn.textContent = old, 1500);
             });
-        }
+        });
     }
-    function __setupBookmark(){
-        var btn=document.getElementById('bookmarkBtn');
-        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
-    }
-    if(document.readyState==='loading'){
-        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
-    } else {
-        __setupTheme();__setupContactModal();__setupBookmark();
+    const __form = document.getElementById('contactForm');
+    if(__form){
+        __form.addEventListener('submit', e => {
+            e.preventDefault();
+            const name = document.getElementById('formName').value.trim();
+            const email = document.getElementById('formEmail').value.trim();
+            const desc = document.getElementById('formDesc').value.trim();
+            const subject = encodeURIComponent('Bespoke Tool Development Inquiry');
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nRequirement:\n${desc}`);
+            window.location.href = `mailto:contact@yuanqizhike.com?subject=${subject}&body=${body}`;
+        });
     }
 })();
 
 (function(){
-    function convert(text, type){
-        if(!text) return '';
-        switch(type){
-            case 'upper': return text.toUpperCase();
-            case 'lower': return text.toLowerCase();
-            case 'title':
-                return text.toLowerCase().replace(/\b([a-z])/g, function(m, c){ return c.toUpperCase(); });
-            case 'sentence':
-                return text.toLowerCase().replace(/(^[a-z])|(\.\s+[a-z])|(!\s+[a-z])|\?\s+[a-z]/g, function(m){ return m.toUpperCase(); });
-            case 'camel':
-                return text.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, function(m, c){ return c.toUpperCase(); }).replace(/^([A-Z])/, function(c){ return c.toLowerCase(); });
-            case 'pascal':
-                return text.toLowerCase().replace(/(?:^|[^a-zA-Z0-9]+)(.)/g, function(m, c){ return c.toUpperCase(); });
-            case 'snake':
-                return text.trim().toLowerCase().replace(/[^a-zA-Z0-9]+/g, '_').replace(/^_|_$/g, '');
-            case 'kebab':
-                return text.trim().toLowerCase().replace(/[^a-zA-Z0-9]+/g, '-').replace(/^-|-$/g, '');
-            case 'constant':
-                return text.trim().toUpperCase().replace(/[^a-zA-Z0-9]+/g, '_').replace(/^_|_$/g, '');
-            case 'dot':
-                return text.trim().toLowerCase().replace(/[^a-zA-Z0-9]+/g, '.').replace(/^\.|\.$/g, '');
-            case 'alternating':
-                var chars = text.split('');
-                var upper = false;
-                return chars.map(function(c){
-                    if(/[a-zA-Z]/.test(c)){
-                        upper = !upper;
-                        return upper ? c.toUpperCase() : c.toLowerCase();
-                    }
-                    return c;
-                }).join('');
-            case 'inverse':
-                return text.split('').map(function(c){
-                    if(c === c.toUpperCase()) return c.toLowerCase();
-                    if(c === c.toLowerCase()) return c.toUpperCase();
-                    return c;
-                }).join('');
-        }
-        return text;
-    }
-    document.querySelectorAll('.case-btn').forEach(function(btn){
-        btn.addEventListener('click', function(){
-            var input = document.getElementById('input').value;
-            var type = this.dataset.c;
-            var result = convert(input, type);
-            document.getElementById('output').value = result;
+    const CONVERTERS = {
+        upper: s => s.toUpperCase(),
+        lower: s => s.toLowerCase(),
+        title: s => s.toLowerCase().replace(/\b([a-z])/g, (_, c) => c.toUpperCase()),
+        sentence: s => s.toLowerCase().replace(/(^[a-z])|(\.\s+[a-z])|(!\s+[a-z])|\?\s+[a-z]/g, m => m.toUpperCase()),
+        camel: s => s.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (_, c) => c.toUpperCase()).replace(/^([A-Z])/, c => c.toLowerCase()),
+        pascal: s => s.toLowerCase().replace(/(?:^|[^a-zA-Z0-9]+)(.)/g, (_, c) => c.toUpperCase()),
+        snake: s => s.trim().toLowerCase().replace(/[^a-zA-Z0-9]+/g, '_').replace(/^_|_$/g, ''),
+        kebab: s => s.trim().toLowerCase().replace(/[^a-zA-Z0-9]+/g, '-').replace(/^-|-$/g, ''),
+        constant: s => s.trim().toUpperCase().replace(/[^a-zA-Z0-9]+/g, '_').replace(/^_|_$/g, ''),
+        dot: s => s.trim().toLowerCase().replace(/[^a-zA-Z0-9]+/g, '.').replace(/^\.|\.$/g, ''),
+        alternating: s => {
+            let upper = false;
+            return s.split('').map(c => {
+                if(/[a-zA-Z]/.test(c)){
+                    upper = !upper;
+                    return upper ? c.toUpperCase() : c.toLowerCase();
+                }
+                return c;
+            }).join('');
+        },
+        inverse: s => s.split('').map(c => {
+            if(c === c.toUpperCase()) return c.toLowerCase();
+            if(c === c.toLowerCase()) return c.toUpperCase();
+            return c;
+        }).join('')
+    };
+
+    document.querySelectorAll('.case-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const input = document.getElementById('input').value;
+            const type = btn.dataset.c;
+            document.getElementById('output').value = CONVERTERS[type] ? CONVERTERS[type](input) : input;
         });
     });
-    document.getElementById('copy').addEventListener('click', function(){
-        var out = document.getElementById('output');
-        out.select();
-        document.execCommand('copy');
-        this.textContent = 'Copied!';
-        setTimeout(function(){ document.getElementById('copy').textContent = 'Copy'; }, 1500);
+
+    document.getElementById('copy').addEventListener('click', () => {
+        const out = document.getElementById('output');
+        if(!out.value) return;
+        navigator.clipboard.writeText(out.value).then(() => {
+            const old = document.getElementById('copy').textContent;
+            document.getElementById('copy').textContent = 'Copied';
+            setTimeout(() => document.getElementById('copy').textContent = old, 1500);
+        });
     });
-    document.getElementById('swap').addEventListener('click', function(){
-        document.getElementById('input').value = document.getElementById('output').value;
+
+    document.getElementById('swap').addEventListener('click', () => {
+        const output = document.getElementById('output').value;
+        document.getElementById('input').value = output;
         document.getElementById('output').value = '';
     });
-    document.getElementById('clear').addEventListener('click', function(){
+
+    document.getElementById('clear').addEventListener('click', () => {
         document.getElementById('input').value = '';
         document.getElementById('output').value = '';
     });
-    // Initial
+
     document.querySelector('[data-c="title"]').click();
 })();
 </script>

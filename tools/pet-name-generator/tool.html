@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pet Name Generator | YuanqiZhiKe Toolkit</title>
+<meta name="description" content="Generate pet names by category. Dog, cat, fish, bird, exotic pet names. Free pet name ideas for any animal.">
+<meta name="keywords" content="pet name generator, dog names, cat names, pet name ideas, animal names, pet naming tool, unique pet names">
+<meta property="og:title" content="Pet Name Generator - Free Online Tool">
+<meta property="og:description" content="Generate pet names by category. Dog, cat, fish, bird, exotic pet names. Free pet name ideas for any animal.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Pet Name Generator</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Generate pet names by category. Dog, cat, fish, bird, exotic pet names. Free pet name ideas for any animal.</div>
+    <div class="row">
+        <div class="group"><label>Pet type</label>
+            <select id="petType" style="width:100%;padding:8px">
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="fish">Fish</option>
+                <option value="bird">Bird</option>
+                <option value="rabbit">Rabbit</option>
+                <option value="reptile">Reptile</option>
+                <option value="hamster">Hamster / small</option>
+                <option value="horse">Horse</option>
+            </select>
+        </div>
+        <div class="group"><label>Name style</label>
+            <select id="style" style="width:100%;padding:8px">
+                <option value="cute" selected>Cute</option>
+                <option value="cool">Cool</option>
+                <option value="funny">Funny</option>
+                <option value="human">Human names</option>
+                <option value="nature">Nature</option>
+                <option value="food">Food</option>
+                <option value="myth">Mythology</option>
+                <option value="color">Color-based</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Gender</label>
+            <select id="gender" style="width:100%;padding:8px">
+                <option value="any" selected>Any</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+        <div class="group"><label># of names</label>
+            <select id="count" style="width:100%;padding:8px">
+                <option value="5">5</option>
+                <option value="10" selected>10</option>
+                <option value="20">20</option>
+            </select>
+        </div>
+    </div>
+    <button id="gen" style="padding:8px 16px;background:#10b981;color:#fff;border:none;border-radius:4px;cursor:pointer;margin-bottom:12px">Generate names</button>
+    <div id="result" style="background:#dbeafe;padding:12px;border-radius:6px;border-left:3px solid #3b82f6"></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Select <b>Pet type</b> (dog, cat, fish, bird, rabbit, reptile, hamster, horse).</li>
+<li>Choose <b>Name style</b>: cute, cool, funny, human, nature, food, mythology, or color.</li>
+<li>Optionally filter by <b>gender</b> and choose how many names to generate.</li>
+<li>Click <b>Generate names</b> for fresh ideas.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">Each click randomizes from a curated name bank. Try different styles to find the perfect name. Short 1-2 syllable names are easier for pets to recognize.</p>
+    </div>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:contact@yuanqizhike.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    var nameBanks = {
+        dog: {
+            cute: ['Bella','Max','Lucy','Charlie','Luna','Cooper','Daisy','Buddy','Sadie','Rocky','Molly','Bear','Lola','Duke','Stella','Tucker','Maggie','Oliver','Zoey','Toby'],
+            cool: ['Koda','Maverick','Zeus','Titan','Diesel','Ranger','Sarge','Bane','King','Ace','Nova','Storm','Blaze','Hunter','Rebel','Sasha','Cairo','Tank','Rocky','Shadow'],
+            funny: ['Sir Barksalot','Wrecking Ball','Hairy Potter','Bark Obama','Chewbacca','Mary Poppins','Hambone','Wigglebottom','Sir Waggington','Mr Sniffles','Boba Fett','Chewbarka','Bark Twain','Sir Licksalot','Count Drocula','Snoop Dogg','Bark Ruffalo','Mary Puppins','Woofgang Puck','Sir Floppy'],
+            human: ['Charlie','Sophie','Jack','Olivia','Henry','Emma','Leo','Ava','Oscar','Mia','Max','Ruby','Archie','Lily','Hugo','Isla','Felix','Zoe','Milo','Ella'],
+            nature: ['River','Willow','Cedar','Sage','Aspen','Storm','Dawn','Dusk','Forest','Meadow','Canyon','Cliff','Birch','Hazel','Maple','Stone','Wolf','Hawk','Bear','Fox'],
+            food: ['Cookie','Muffin','Peanut','Biscuit','Waffles','Pancake','Brownie','Noodle','Meatball','Taco','Bagel','Donut','Cinnamon','Pepper','Olive','Pickles','Cupcake','Truffle','Nacho','Latte'],
+            myth: ['Zeus','Athena','Thor','Freya','Odin','Hera','Apollo','Artemis','Hercules','Luna','Atlas','Aurora','Phoenix','Titan','Valkyrie','Loki','Freyja','Poseidon','Hades','Nike'],
+            color: ['Shadow','Snowball','Coco','Midnight','Ivory','Rusty','Goldie','Smokey','Ebony','Pearl','Onyx','Cinnamon','Sandy','Copper','Cream','Charcoal','Slate','Hazel','Amber','Jet']
+        },
+        cat: {
+            cute: ['Luna','Simba','Milo','Nala','Oliver','Bella','Leo','Cleo','Charlie','Lucy','Jack','Lily','Sophie','Toby','Chloe','Oscar','Zoe','Felix','Lola','Jasper'],
+            cool: ['Shadow','Onyx','Jinx','Voodoo','Salem','Phantom','Raven','Mystic','Saber','Bandit','Ghost','Ninja','Samurai','Cobra','Sphinx','Mystique','Vortex','Eclipse','Zenith','Raven'],
+            funny: ['Chairman Meow','Purrfect','Sir Pounce','KitKat','Catsanova','Purrito','Meowzolini','Cleocatra','Hairy Potter','David Meowie','Cat Stevens','Jude Paw','Bilbo Baggins','Luke Skywhisker','Mr Whiskers','Boba Fett','Picatso','Rumplestiltskin','Count Catula','Anderson Pooper'],
+            human: ['Oliver','Luna','Milo','Chloe','Leo','Stella','Simba','Nala','Jasper','Willow','Felix','Pearl','Oscar','Ruby','Charlie','Hazel','Max','Ivy','Loki','Mabel'],
+            nature: ['Willow','Sage','Cedar','Aspen','Luna','Ivy','Hazel','Maple','Juniper','Daisy','Poppy','Rose','Fern','Holly','Storm','Rain','Cloud','Mist','Sky','River'],
+            food: ['Mochi','Tofu','Pepper','Ginger','Cinnamon','Bean','Biscuit','Muffin','Cookie','Noodle','Waffles','Pancake','Brownie','Caramel','Latte','Mocha','Toffee','Sesame','Wasabi','Nori'],
+            myth: ['Bastet','Luna','Freya','Apollo','Artemis','Athena','Thor','Odin','Loki','Phoenix','Aurora','Nike','Hera','Hades','Persephone','Hermes','Sekhmet','Ra','Anubis','Osiris'],
+            color: ['Smokey','Shadow','Snowball','Coco','Midnight','Pearl','Onyx','Sandy','Slate','Sooty','Ash','Ivory','Rusty','Cinnamon','Charcoal','Sapphire','Inky','Silver','Copper','Smokey']
+        },
+        fish: {
+            cute: ['Bubbles','Finley','Nemo','Splash','Goldie','Coral','Pearl','Squirt','Bloop','Marlin','Dory','Gill','Cleo','Sunny','Reef','Finn','Splash','Marina','Tide','Cove'],
+            cool: ['Sharky','Poseidon','Neptune','Triton','Kraken','Fang','Predator','Barracuda','Saber','Riptide','Undertow','Vortex','Cyclone','Typhoon','Tsunami','Maelstrom','Whirlpool','Tidal','Marlin','Reef'],
+            funny: ['Filet','Sushi','Fish & Chips','Captain Hook','Jacques Cousteau','Mr Limpet','Aquaman','Nemo','Dory','Flounder','Gill','Blinky','Wanda','Free Willy','Charlie Tuna','Mrs Paul','Gorton','Long John Silver','Nessie','Jaws'],
+            human: ['Marlin','Nemo','Dory','Charlie','Jack','Pearl','Coral','Reef','Finn','Wave','Splash','Brook','River','Lake','Ocean','Marina','Bay','Delta','Tide','Shore'],
+            nature: ['Coral','Reef','Wave','Tide','Brook','River','Marina','Ocean','Sea','Delta','Lagoon','Bay','Cove','Pearl','Shell','Fin','Splash','Aqua','Marlin','Current'],
+            food: ['Sushi','Sashimi','Filet','Fishcake','Caviar','Salmon','Tuna','Trout','Bass','Cod','Halibut','Snapper','Mackerel','Anchovy','Herring','Pollock','Catfish','Tilapia','Mahi','Grouper'],
+            myth: ['Poseidon','Neptune','Amphitrite','Triton','Nereus','Proteus','Glaukos','Ino','Palaemon','Delphin','Nerites','Glaucus','Leucothea','Halosydne','Triteia','Pallas','Benthesikyme','Kymopoleia','Nereid','Thetis'],
+            color: ['Goldie','Coral','Pearl','Silver','Ruby','Onyx','Ivory','Sandy','Sunny','Orange','Copper','Bronze','Crystal','Snowflake','Midnight','Shadow','Cream','Saffron','Apricot','Honey']
+        },
+        bird: {
+            cute: ['Sunny','Sky','Pip','Tweetie','Kiwi','Mango','Piper','Robin','Wren','Finch','Sparrow','Lark','Jay','Blue','Skye','Phoenix','Comet','Bubbles','Sunny','Pip'],
+            cool: ['Maverick','Ace','Echo','Storm','Blaze','Hunter','Scout','Falcon','Hawk','Eagle','Phoenix','Raptor','Talon','Striker','Arrow','Jet','Skye','Comet','Blaze','Storm'],
+            funny: ['Sir Chirpsalot','Captain Birdseye','Big Bird','Tweety Pie','Hedwig','Polite Parrot','Sir Pecksalot','Lord Featherbottom','Captain Beak','Squawk','Polly Want Cracker','Professor Birdbrain','Admiral Wings','Lord Chirpington','Sergeant Tweet','Mr Feathers','Lady Macaw','Sir Squawksalot','Major Wing','Penguin'],
+            human: ['Robin','Wren','Jay','Phoenix','Skye','Jack','Charlie','Ruby','Robin','Wren','Jay','Phoenix','Skye','Robin','Jack','Charlie','Ruby','Skye','Wren','Jay'],
+            nature: ['Sky','Cloud','Storm','Dawn','Dusk','Sunrise','Sunset','Willow','Cedar','Aspen','Phoenix','Robin','Wren','Sparrow','Lark','Swift','Phoenix','Robin','Wren','Swift'],
+            food: ['Kiwi','Mango','Peach','Coconut','Cinnamon','Pepper','Coco','Olive','Cherry','Berry','Plum','Apple','Peach','Apricot','Papaya','Banana','Cantaloupe','Nectarine','Pomegranate','Tangerine'],
+            myth: ['Phoenix','Thunderbird','Roc','Garuda','Simurgh','Ziz','Sirin','Alkonost','Griffin','Harpy','Siren','Caladrius','Valkyrie','Aurora','Athena','Hera','Horus','Ra','Thoth','Nekhbet'],
+            color: ['Sunny','Blue','Skye','Ruby','Pearl','Ivory','Cocoa','Sandy','Smokey','Cinnamon','Saffron','Coral','Onyx','Cream','Sapphire','Goldie','Copper','Amber','Hazel','Silver']
+        },
+        rabbit: {
+            cute: ['Bunny','Cottontail','Thumper','Hazel','Pip','Clover','Honey','Mochi','Cinnamon','Biscuit','Coco','Daisy','Peanut','Bunny','Clover','Honey','Pip','Cinnamon','Biscuit','Coco'],
+            cool: ['Hazel','Briar','Thistle','Hawk','Storm','Hunter','Cedar','Aspen','Willow','Sage','Birch','Fern','Juniper','Maple','Oak','Pine','Rowan','Thyme','Cedar','Aspen'],
+            funny: ['Sir Hopsalot','Bun Bun','Hopsalot','Captain Carrot','Lord Bunnington','Sir Flopsy','Bunnicula','Hare E. Potter','Hopzilla','Bunzilla','Mr Whiskers','Sir Thumpington','Sir Lancelot','Lord Binks','Bunnito','Carrot Top','Easter Bunny','Bugs','Peter Rabbit','Judy Hopps'],
+            human: ['Hazel','Clover','Honey','Pip','Daisy','Hazel','Clover','Honey','Pip','Daisy','Hazel','Clover','Honey','Pip','Daisy','Hazel','Clover','Honey','Pip','Daisy'],
+            nature: ['Clover','Hazel','Willow','Cedar','Aspen','Briar','Thistle','Fern','Juniper','Maple','Oak','Pine','Rowan','Sage','Thyme','Daisy','Poppy','Hazel','Clover','Willow'],
+            food: ['Mochi','Cinnamon','Biscuit','Coco','Peanut','Honey','Cookie','Muffin','Noodle','Waffles','Pancake','Brownie','Caramel','Latte','Mocha','Toffee','Sesame','Wasabi','Nori','Biscuit'],
+            myth: ['Freya','Eostre','Ostara','Brigid','Apollo','Artemis','Hermes','Athena','Luna','Aurora','Nike','Hera','Hades','Persephone','Hermes','Phoenix','Valkyrie','Bastet','Sekhmet','Maat'],
+            color: ['Coco','Honey','Cinnamon','Sandy','Pearl','Ivory','Onyx','Smokey','Coco','Cinnamon','Sandy','Pearl','Ivory','Onyx','Smokey','Coco','Cinnamon','Sandy','Pearl','Ivory']
+        }
+    };
+    ['reptile','hamster','horse'].forEach(function(p){
+        nameBanks[p] = {
+            cute: ['Pip','Squeak','Hazel','Peanut','Biscuit','Comet','Sunny','Clover','Mochi','Cinnamon','Bubbles','Pearl','Coco','Honey','Daisy','Willow','Cedar','Sage','Aspen','Juno'],
+            cool: ['Saber','Phoenix','Storm','Titan','Onyx','Rogue','Samurai','Bane','Sphinx','Vortex','Mystique','Zenith','Blaze','Hunter','Scout','Echo','Maverick','Ace','Koda','Ranger'],
+            funny: ['Sir Squeak','Lord Wiggles','Captain Whiskers','Sir Hopsalot','Baron von Squeak','Professor Fuzz','Sir Fluffington','Mr Nibbles','Lady Paws','Count Squeakula','Sir Biscuit','Baroness Bites','Captain Squeak','Lord Pounce','Sir Pawsalot','Mr Wiggles','Queenie','Sir Squeak','Lady Whiskers','Baron von Floppy'],
+            human: ['Charlie','Sophie','Max','Ruby','Leo','Lily','Oscar','Mia','Felix','Zoe','Milo','Ella','Jasper','Hazel','Hugo','Isla','Oliver','Pearl','Jack','Ivy'],
+            nature: ['Willow','Sage','Cedar','Aspen','River','Storm','Dawn','Dusk','Forest','Meadow','Canyon','Cliff','Birch','Hazel','Maple','Stone','Wolf','Hawk','Bear','Fox'],
+            food: ['Cookie','Mochi','Muffin','Peanut','Biscuit','Waffles','Pancake','Brownie','Caramel','Latte','Mocha','Toffee','Sesame','Wasabi','Nori','Biscuit','Brownie','Truffle','Nacho','Cupcake'],
+            myth: ['Zeus','Athena','Thor','Freya','Odin','Hera','Apollo','Artemis','Hercules','Luna','Atlas','Aurora','Phoenix','Titan','Valkyrie','Loki','Freyja','Poseidon','Hades','Nike'],
+            color: ['Shadow','Snowball','Coco','Midnight','Ivory','Rusty','Goldie','Smokey','Ebony','Pearl','Onyx','Cinnamon','Sandy','Copper','Cream','Charcoal','Slate','Hazel','Amber','Jet']
+        };
+    });
+    function gen(){
+        var pet = document.getElementById('petType').value;
+        var style = document.getElementById('style').value;
+        var gender = document.getElementById('gender').value;
+        var count = +document.getElementById('count').value;
+        var bank = (nameBanks[pet] && nameBanks[pet][style]) || nameBanks.dog.cute;
+        var femaleNames = ['Bella','Luna','Daisy','Lucy','Lola','Stella','Sophie','Molly','Maggie','Ruby','Lily','Zoe','Ella','Pearl','Ivy','Mia','Nala','Cleo','Chloe','Hazel','Willow','Aurora','Bella','Luna'];
+        var filtered = bank.filter(function(n){
+            if(gender === 'male') return femaleNames.indexOf(n) === -1;
+            if(gender === 'female') return femaleNames.indexOf(n) !== -1 || /a$|y$|ie$|i$/.test(n);
+            return true;
+        });
+        if(filtered.length === 0) filtered = bank;
+        var shuffled = filtered.slice().sort(function(){ return Math.random() - 0.5; });
+        var picks = [];
+        for(var i = 0; i < count && i < shuffled.length; i++){
+            if(picks.indexOf(shuffled[i]) === -1) picks.push(shuffled[i]);
+        }
+        while(picks.length < count){
+            picks.push(shuffled[Math.floor(Math.random() * shuffled.length)] + ' ' + (Math.floor(Math.random() * 99) + 1));
+        }
+        var html = '<div style="font-size:15px;font-weight:bold;margin-bottom:8px">' + pet.charAt(0).toUpperCase() + pet.slice(1) + ' names - ' + style + '</div>';
+        html += '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:6px">';
+        picks.forEach(function(name, i){
+            var colors = ['#10b981','#3b82f6','#f59e0b','#dc2626','#8b5cf6','#ec4899','#14b8a6','#f97316'];
+            var c = colors[i % colors.length];
+            html += '<div style="background:#fff;padding:10px;border-radius:6px;text-align:center;border-left:3px solid ' + c + '"><div style="font-weight:bold;font-size:14px">' + name + '</div></div>';
+        });
+        html += '</div>';
+        html += '<div style="margin-top:10px;font-size:12px;color:#666">' + picks.length + ' names generated. Click Generate again for more ideas.</div>';
+        document.getElementById('result').innerHTML = html;
+    }
+    document.getElementById('gen').addEventListener('click', gen);
+    gen();
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

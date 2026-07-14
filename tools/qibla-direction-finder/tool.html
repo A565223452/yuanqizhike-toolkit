@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qibla Direction Finder | YuanqiZhiKe Toolkit</title>
+<meta name="description" content="Find Qibla direction from any location. Calculate prayer direction to Mecca with compass bearing. Free Qibla calculator.">
+<meta name="keywords" content="qibla direction, qibla finder, mecca direction, prayer direction, islamic compass, qibla bearing">
+<meta property="og:title" content="Qibla Direction Finder - Free Online Tool">
+<meta property="og:description" content="Find Qibla direction from any location. Calculate prayer direction to Mecca with compass bearing. Free Qibla calculator.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Qibla Direction Finder</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Find Qibla direction from any location. Calculate prayer direction to Mecca with compass bearing. Free Qibla calculator.</div>
+    <div class="row">
+        <div class="group"><label>Your latitude (deg N)</label><input type="number" id="lat" value="40.7128" step="0.0001" style="width:100%;padding:8px"></div>
+        <div class="group"><label>Your longitude (deg E)</label><input type="number" id="lng" value="-74.0060" step="0.0001" style="width:100%;padding:8px"></div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Or select city</label>
+            <select id="city" style="width:100%;padding:8px">
+                <option value="">Custom location</option>
+                <option value="40.7128,-74.0060">New York, USA</option>
+                <option value="51.5074,-0.1278">London, UK</option>
+                <option value="48.8566,2.3522">Paris, France</option>
+                <option value="1.3521,103.8198">Singapore</option>
+                <option value="-33.8688,151.2093">Sydney, Australia</option>
+                <option value="55.7558,37.6173">Moscow, Russia</option>
+                <option value="39.9042,116.4074">Beijing, China</option>
+                <option value="35.6762,139.6503">Tokyo, Japan</option>
+                <option value="25.2048,55.2708">Dubai, UAE</option>
+                <option value="28.6139,77.2090">New Delhi, India</option>
+            </select>
+        </div>
+        <div class="group"><label>Use true north or magnetic?</label>
+            <select id="northType" style="width:100%;padding:8px">
+                <option value="true" selected>True north</option>
+                <option value="magnetic">Magnetic north</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Magnetic declination (deg)</label><input type="number" id="declination" value="0" step="0.1" style="width:100%;padding:8px"></div>
+        <div class="group"><label>Qibla target</label>
+            <select id="target" style="width:100%;padding:8px">
+                <option value="kaaba" selected>Kaaba, Mecca (21.4225N, 39.8262E)</option>
+                <option value="custom">Custom location</option>
+            </select>
+        </div>
+    </div>
+    <button id="calc" style="padding:10px 20px;background:#10b981;color:#fff;border:none;border-radius:6px;cursor:pointer;margin-top:10px">Find Qibla Direction</button>
+    <div id="result" style="margin-top:12px"></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Enter your <b>latitude</b> (deg N) and <b>longitude</b> (deg E), or select a city.</li>
+<li>Choose <b>true north</b> or <b>magnetic north</b>.</li>
+<li>If using magnetic compass, enter <b>magnetic declination</b> for your area.</li>
+<li>Click <b>Find Qibla Direction</b> for bearing and visual compass.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">Qibla is the direction Muslims face during prayer, pointing toward the Kaaba in Mecca, Saudi Arabia (21.4225N, 39.8262E). Magnetic declination varies by location - check NOAA for your area.</p>
+    </div>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:contact@yuanqizhike.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    var kaabaLat = 21.4225, kaabaLng = 39.8262;
+    function calc(){
+        var lat = +document.getElementById('lat').value;
+        var lng = +document.getElementById('lng').value;
+        var northType = document.getElementById('northType').value;
+        var declination = +document.getElementById('declination').value || 0;
+        if(!lat && !lng){ document.getElementById('result').innerHTML = '<div style="color:#dc2626;padding:8px">Enter location coordinates.</div>'; return; }
+        var lat1 = lat * Math.PI / 180;
+        var lat2 = kaabaLat * Math.PI / 180;
+        var dLng = (kaabaLng - lng) * Math.PI / 180;
+        var y = Math.sin(dLng) * Math.cos(lat2);
+        var x = Math.cos(lat1) * Math.sin(lat2) - Math.sin(lat1) * Math.cos(lat2) * Math.cos(dLng);
+        var bearing = Math.atan2(y, x) * 180 / Math.PI;
+        bearing = (bearing + 360) % 360;
+        var magneticBearing = bearing - declination;
+        if(magneticBearing < 0) magneticBearing += 360;
+        magneticBearing = magneticBearing % 360;
+        var R = 6371;
+        var dLat = (kaabaLat - lat) * Math.PI / 180;
+        var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLng / 2) * Math.sin(dLng / 2);
+        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        var distance = R * c;
+        function directionName(deg){
+            var dirs = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW'];
+            return dirs[Math.round(deg / 22.5) % 16];
+        }
+        var trueDir = directionName(bearing);
+        var magDir = directionName(magneticBearing);
+        var displayBearing = northType === 'magnetic' ? magneticBearing : bearing;
+        var displayDir = northType === 'magnetic' ? magDir : trueDir;
+        var html = '<div style="background:#dbeafe;padding:14px;border-radius:8px;border-left:4px solid #1e40af">';
+        html += '<div style="text-align:center;margin-bottom:14px">';
+        html += '<div style="font-size:13px;color:#666">Qibla Direction (' + northType + ')</div>';
+        html += '<div style="font-size:42px;font-weight:bold;color:#1e40af">' + displayBearing.toFixed(1) + ' deg</div>';
+        html += '<div style="font-size:18px;color:#666">' + displayDir + '</div>';
+        html += '</div>';
+        html += '<div style="background:#fff;padding:14px;border-radius:6px;margin-bottom:10px;display:flex;justify-content:center">';
+        html += '<svg width="200" height="200" viewBox="-100 -100 200 200">';
+        html += '<circle cx="0" cy="0" r="90" fill="#f0f9ff" stroke="#1e40af" stroke-width="2"/>';
+        html += '<text x="0" y="-75" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">N</text>';
+        html += '<text x="75" y="5" text-anchor="middle" font-size="12" fill="#666">E</text>';
+        html += '<text x="0" y="85" text-anchor="middle" font-size="12" fill="#666">S</text>';
+        html += '<text x="-75" y="5" text-anchor="middle" font-size="12" fill="#666">W</text>';
+        var rad = (displayBearing - 90) * Math.PI / 180;
+        var x2 = Math.cos(rad) * 70;
+        var y2 = Math.sin(rad) * 70;
+        html += '<line x1="0" y1="0" x2="' + x2.toFixed(1) + '" y2="' + y2.toFixed(1) + '" stroke="#10b981" stroke-width="3"/>';
+        var arrowSize = 10;
+        var ax = x2 - Math.cos(rad - Math.PI / 6) * arrowSize;
+        var ay = y2 - Math.sin(rad - Math.PI / 6) * arrowSize;
+        var bx = x2 - Math.cos(rad + Math.PI / 6) * arrowSize;
+        var by = y2 - Math.sin(rad + Math.PI / 6) * arrowSize;
+        html += '<polygon points="' + x2.toFixed(1) + ',' + y2.toFixed(1) + ' ' + ax.toFixed(1) + ',' + ay.toFixed(1) + ' ' + bx.toFixed(1) + ',' + by.toFixed(1) + '" fill="#10b981"/>';
+        html += '<circle cx="' + x2.toFixed(1) + '" cy="' + y2.toFixed(1) + '" r="4" fill="#1e40af"/>';
+        html += '<text x="' + (x2 + 8).toFixed(1) + '" y="' + (y2 + 4).toFixed(1) + '" font-size="10" fill="#1e40af">Mecca</text>';
+        html += '</svg>';
+        html += '</div>';
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+        html += '<div style="font-size:13px;font-weight:bold;color:#1e40af;margin-bottom:6px">Details</div>';
+        html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px">';
+        html += '<div><b>Your location:</b><br>' + lat.toFixed(4) + 'N, ' + lng.toFixed(4) + 'E</div>';
+        html += '<div><b>Kaaba location:</b><br>21.4225N, 39.8262E</div>';
+        html += '<div><b>True bearing:</b><br>' + bearing.toFixed(2) + ' deg (' + trueDir + ')</div>';
+        if(declination !== 0){
+            html += '<div><b>Magnetic bearing:</b><br>' + magneticBearing.toFixed(2) + ' deg (' + magDir + ')</div>';
+        }
+        html += '<div><b>Distance:</b><br>' + distance.toFixed(0) + ' km (' + (distance * 0.621371).toFixed(0) + ' mi)</div>';
+        html += '<div><b>Flight time:</b><br>~' + Math.ceil(distance / 900) + ' hours</div>';
+        html += '</div>';
+        html += '</div>';
+        html += '<div style="background:#d1fae5;padding:10px;border-radius:6px">';
+        html += '<div style="font-size:13px;font-weight:bold;color:#065f46;margin-bottom:4px">How to Use</div>';
+        html += '<div style="font-size:12px;color:#065f46">';
+        html += '<div>1. Hold compass flat, away from metal objects</div>';
+        html += '<div>2. Align needle with North (' + (northType === 'magnetic' ? 'magnetic' : 'true') + ')</div>';
+        html += '<div>3. Rotate to bearing ' + displayBearing.toFixed(0) + ' deg (' + displayDir + ')</div>';
+        html += '<div>4. Face the direction the arrow points</div>';
+        html += '</div>';
+        html += '</div>';
+        if(declination === 0){
+            html += '<div style="background:#fef3c7;padding:8px;border-radius:6px;margin-top:8px;font-size:12px;color:#92400e">Note: For accurate compass use, enter your local magnetic declination. Find it at NOAA or local survey data.</div>';
+        }
+        html += '<div style="font-size:11px;color:#999;margin-top:8px">Calculated using the spherical law of cosines formula. Accuracy depends on GPS precision. For formal prayer, verify with local mosque.</div>';
+        html += '</div>';
+        document.getElementById('result').innerHTML = html;
+    }
+    document.getElementById('city').addEventListener('change', function(){
+        var coords = this.value.split(',');
+        if(coords.length === 2){
+            document.getElementById('lat').value = coords[0];
+            document.getElementById('lng').value = coords[1];
+            calc();
+        }
+    });
+    document.getElementById('calc').addEventListener('click', calc);
+    calc();
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

@@ -117,8 +117,13 @@
     "icon": "/assets/icons/health-1.svg",
     "title": "BAC Calculator",
     "desc": "Calculate Blood Alcohol Concentration (BAC). Estimate intoxication level based on drinks, weight, gender, time. Free BAC calculator.",
-    "features": [],
-    "detailUrl": "",
+    "features": [
+      "Calculate Blood Alcohol Content quickly",
+      "Supports multiple weight units (kg/lbs)",
+      "Adjust for time elapsed since last drink",
+      "Visual BAC level indicator"
+    ],
+    "detailUrl": "/tools/bac-calculator/index.html",
     "zipUrl": "/assets/zip-packages/health/bac-calculator.zip"
   },
   {
@@ -126,8 +131,13 @@
     "icon": "/assets/icons/health-1.svg",
     "title": "Batting Average Calculator",
     "desc": "Calculate baseball batting average, OBP, slugging. Track baseball stats. Free baseball statistics calculator.",
-    "features": [],
-    "detailUrl": "",
+    "features": [
+      "Calculate MLB standard batting average",
+      "Include at-bats and hits data",
+      "Support for on-base percentage (OBP)",
+      "Season and career stats comparison"
+    ],
+    "detailUrl": "/tools/batting-average-calc/index.html",
     "zipUrl": "/assets/zip-packages/health/batting-average-calc.zip"
   },
   {
@@ -135,8 +145,13 @@
     "icon": "/assets/icons/health-1.svg",
     "title": "BMI & Ideal Weight Calculator",
     "desc": "Calculate BMI and ideal body weight. Multiple formulas (Devine, Hamwi, Robinson, Miller). BMI categories and health risk. Free BMI calculator.",
-    "features": [],
-    "detailUrl": "",
+    "features": [
+      "Accurate Body Mass Index calculation",
+      "Ideal weight range based on height",
+      "Metric and imperial unit support",
+      "Visual BMI category chart"
+    ],
+    "detailUrl": "/tools/bmi-ideal-weight-calculator/index.html",
     "zipUrl": "/assets/zip-packages/health/bmi-ideal-weight-calculator.zip"
   },
   {
@@ -144,8 +159,13 @@
     "icon": "/assets/icons/health-1.svg",
     "title": "BMR Calculator",
     "desc": "Calculate Basal Metabolic Rate (BMR). Mifflin-St Jeor and Harris-Benedict equations. Daily calorie burn at rest. Free BMR calculator.",
-    "features": [],
-    "detailUrl": "",
+    "features": [
+      "Basal Metabolic Rate using Mifflin-St Jeor",
+      "Support Harris-Benedict equation option",
+      "Adjust for age, gender, and activity level",
+      "Daily calorie expenditure estimate"
+    ],
+    "detailUrl": "/tools/bmr-calculator/index.html",
     "zipUrl": "/assets/zip-packages/health/bmr-calculator.zip"
   },
   {
@@ -153,8 +173,13 @@
     "icon": "/assets/icons/health-1.svg",
     "title": "Calorie Burn Calculator",
     "desc": "Calculate calories burned by activity. Free exercise calorie calculator.",
-    "features": [],
-    "detailUrl": "",
+    "features": [
+      "Estimate calories burned by activity",
+      "Support 200+ exercises and activities",
+      "MET values for accurate calculation",
+      "Adjust by duration and body weight"
+    ],
+    "detailUrl": "/tools/calorie-burn-calculator/index.html",
     "zipUrl": "/assets/zip-packages/health/calorie-burn-calculator.zip"
   },
   {
@@ -162,8 +187,13 @@
     "icon": "/assets/icons/health-1.svg",
     "title": "Calorie Counter",
     "desc": "Track daily calorie intake with a food log. Search common foods, add meals, monitor macros. Free online calorie tracker with localStorage.",
-    "features": [],
-    "detailUrl": "",
+    "features": [
+      "Track daily food and calorie intake",
+      "Macro nutrient breakdown (protein/fat/carbs)",
+      "Barcode search for common foods",
+      "Daily and weekly calorie summaries"
+    ],
+    "detailUrl": "/tools/calorie-counter/index.html",
     "zipUrl": "/assets/zip-packages/health/calorie-counter.zip"
   },
   {
@@ -171,8 +201,13 @@
     "icon": "/assets/icons/health-1.svg",
     "title": "Calories Burned Calculator",
     "desc": "Calculate calories burned during exercise using MET values. Supports 100+ activities including running, cycling, swimming, weightlifting. Free calories burned calculator.",
-    "features": [],
-    "detailUrl": "",
+    "features": [
+      "Workout calorie burn estimator",
+      "Heart rate based calorie formula",
+      "Running, cycling, swimming presets",
+      "Time and intensity adjustment"
+    ],
+    "detailUrl": "/tools/calories-burned-calculator/index.html",
     "zipUrl": "/assets/zip-packages/health/calories-burned-calculator.zip"
   },
   {
@@ -180,8 +215,13 @@
     "icon": "/assets/icons/health-1.svg",
     "title": "Fantasy Football Points Calculator",
     "desc": "Calculate fantasy football points. NFL, PPR, standard scoring. Free fantasy football calculator.",
-    "features": [],
-    "detailUrl": "",
+    "features": [
+      "Standard and PPR scoring systems",
+      "Customize scoring weights per position",
+      "Weekly player points projection",
+      "Multi-league scoring support"
+    ],
+    "detailUrl": "/tools/fantasy-points-calc/index.html",
     "zipUrl": "/assets/zip-packages/health/fantasy-points-calc.zip"
   },
   {
@@ -189,8 +229,13 @@
     "icon": "/assets/icons/health-1.svg",
     "title": "Golf Handicap Calculator",
     "desc": "Calculate golf handicap index. Course handicap, differential, stroke index. Free golf handicap calculator.",
-    "features": [],
-    "detailUrl": "",
+    "features": [
+      "USGA official handicap formula",
+      "Course rating and slope adjustment",
+      "Last 20 scores differential calc",
+      "Handicap index tracking over time"
+    ],
+    "detailUrl": "/tools/golf-handicap-calc/index.html",
     "zipUrl": "/assets/zip-packages/health/golf-handicap-calc.zip"
   },
   {
@@ -198,8 +243,13 @@
     "icon": "/assets/icons/health-1.svg",
     "title": "Hiking Water Calculator",
     "desc": "Calculate water needed for hiking. Adjust for distance, elevation, temperature. Free hiking hydration calculator.",
-    "features": [],
-    "detailUrl": "",
+    "features": [
+      "Calculate water needed per hike duration",
+      "Adjust for temperature and elevation",
+      "Day hike vs multi-day planning",
+      "Weight of water to carry estimate"
+    ],
+    "detailUrl": "/tools/hiking-water-calc/index.html",
     "zipUrl": "/assets/zip-packages/health/hiking-water-calc.zip"
   },
   {
@@ -207,8 +257,13 @@
     "icon": "/assets/icons/health-1.svg",
     "title": "Hydration Tracker",
     "desc": "Track daily water intake. Personalized water goal. Free hydration tracker.",
-    "features": [],
-    "detailUrl": "",
+    "features": [
+      "Daily water intake logging",
+      "Custom daily water goal setting",
+      "Hydration reminder notifications",
+      "Weekly hydration trend chart"
+    ],
+    "detailUrl": "/tools/hydration-tracker/index.html",
     "zipUrl": "/assets/zip-packages/health/hydration-tracker.zip"
   },
   {
@@ -216,8 +271,13 @@
     "icon": "/assets/icons/health-1.svg",
     "title": "1RM Calculator",
     "desc": "Calculate your one rep max (1RM) using multiple formulas. Free 1RM calculator.",
-    "features": [],
-    "detailUrl": "",
+    "features": [
+      "One Rep Max using Epley and Brzycki formulas",
+      "Calculate 1RM from working sets",
+      "Percentage chart for training zones",
+      "Volume load tracking per lift"
+    ],
+    "detailUrl": "/tools/one-rep-max-calculator/index.html",
     "zipUrl": "/assets/zip-packages/health/one-rep-max-calculator.zip"
   },
   {
@@ -225,8 +285,13 @@
     "icon": "/assets/icons/health-1.svg",
     "title": "Ovulation Calculator",
     "desc": "Calculate ovulation date and fertile window. Track menstrual cycle for conception or contraception. Free ovulation calculator.",
-    "features": [],
-    "detailUrl": "",
+    "features": [
+      "Predict fertile window based on cycle",
+      "Track period start dates over time",
+      "Estimate conception probability daily",
+      "Pregnancy due date projection"
+    ],
+    "detailUrl": "/tools/ovulation-calculator/index.html",
     "zipUrl": "/assets/zip-packages/health/ovulation-calculator.zip"
   },
   {
@@ -234,8 +299,13 @@
     "icon": "/assets/icons/health-1.svg",
     "title": "Race Pace Calculator",
     "desc": "Calculate running pace, finish time, splits. 5K, 10K, half, full marathon. Free race pace calculator.",
-    "features": [],
-    "detailUrl": "",
+    "features": [
+      "Calculate pace for 5K, 10K, half, full marathon",
+      "Predict finish time from training runs",
+      "Split times per mile/km planning",
+      "Compare multiple race distances"
+    ],
+    "detailUrl": "/tools/race-pace-calculator/index.html",
     "zipUrl": "/assets/zip-packages/health/race-pace-calculator.zip"
   },
   {
@@ -243,8 +313,13 @@
     "icon": "/assets/icons/health-1.svg",
     "title": "Resting Heart Rate Calculator",
     "desc": "Calculate your resting heart rate and fitness level. Free RHR calculator.",
-    "features": [],
-    "detailUrl": "",
+    "features": [
+      "Calculate age-predicted max heart rate",
+      "Heart rate zones for training intensity",
+      "Resting HR fitness level assessment",
+      "Karvonen formula for target zones"
+    ],
+    "detailUrl": "/tools/resting-heart-rate-calculator/index.html",
     "zipUrl": "/assets/zip-packages/health/resting-heart-rate-calculator.zip"
   },
   {
@@ -252,8 +327,13 @@
     "icon": "/assets/icons/health-1.svg",
     "title": "Sleep Calculator",
     "desc": "Calculate optimal bedtime and wake time. Find your perfect sleep schedule based on age and lifestyle. Free sleep calculator.",
-    "features": [],
-    "detailUrl": "",
+    "features": [
+      "Calculate optimal sleep cycles (90-min intervals)",
+      "Wake-up time based on bedtime",
+      "Bedtime calculator for desired wake time",
+      "Sleep quality score suggestions"
+    ],
+    "detailUrl": "/tools/sleep-calculator/index.html",
     "zipUrl": "/assets/zip-packages/health/sleep-calculator.zip"
   },
   {
@@ -261,8 +341,13 @@
     "icon": "/assets/icons/health-1.svg",
     "title": "Sleep Quality Tracker",
     "desc": "Track sleep quality and patterns. Free sleep tracker and analyzer.",
-    "features": [],
-    "detailUrl": "",
+    "features": [
+      "Log sleep duration and quality ratings",
+      "Track caffeine and exercise impact",
+      "Sleep phase visualization",
+      "Weekly sleep pattern insights"
+    ],
+    "detailUrl": "/tools/sleep-quality-tracker/index.html",
     "zipUrl": "/assets/zip-packages/health/sleep-quality-tracker.zip"
   },
   {
@@ -270,8 +355,13 @@
     "icon": "/assets/icons/health-1.svg",
     "title": "TDEE Calculator",
     "desc": "Calculate your Total Daily Energy Expenditure (TDEE). Combines BMR with activity level to estimate how many calories you burn per day. Essential for weight loss or gain planning.",
-    "features": [],
-    "detailUrl": "",
+    "features": [
+      "Total Daily Energy Expenditure calculator",
+      "Activity factor presets (sedentary to athlete)",
+      "BMR + activity based TDEE formula",
+      "Weight loss/gain calorie adjustment"
+    ],
+    "detailUrl": "/tools/tdee-calculator/index.html",
     "zipUrl": "/assets/zip-packages/health/tdee-calculator.zip"
   },
   {
@@ -279,8 +369,13 @@
     "icon": "/assets/icons/health-1.svg",
     "title": "VO2 Max Calculator",
     "desc": "Calculate VO2 max from Cooper test or running. Free aerobic capacity calculator.",
-    "features": [],
-    "detailUrl": "",
+    "features": [
+      "Estimate VO2 max from Cooper 12-min run test",
+      "Beep test / Bleep test conversion table",
+      "Cardio fitness level classification",
+      "Training pace zones from VO2"
+    ],
+    "detailUrl": "/tools/vo2-max-calculator/index.html",
     "zipUrl": "/assets/zip-packages/health/vo2-max-calculator.zip"
   }
 ]

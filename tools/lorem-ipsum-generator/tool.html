@@ -175,65 +175,134 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 
 // === Common: theme toggle + contact modal ===
 (function(){
-    function __setupTheme(){
-        var btn=document.getElementById('themeToggle');
-        if(!btn)return;
-        function apply(t){
-            document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
-        }
-        var saved=localStorage.getItem('theme');
-        if(saved){apply(saved);}
-        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
-        else{apply('light');}
-        btn.addEventListener('click',function(){
-            var next=document.body.classList.contains('dark')?'light':'dark';
-            apply(next);localStorage.setItem('theme',next);
+    const __themeBtn = document.getElementById('themeToggle');
+    function __applyTheme(t){
+        document.body.classList.toggle('dark', t === 'dark');
+        if(__themeBtn) __themeBtn.textContent = (t === 'dark') ? '\u2600\uFE0F' : '\uD83C\uDF19';
+    }
+    const __saved = localStorage.getItem('theme');
+    __saved ? __applyTheme(__saved) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? __applyTheme('dark') : __applyTheme('light');
+    if(__themeBtn){
+        __themeBtn.addEventListener('click', () => {
+            const next = document.body.classList.contains('dark') ? 'light' : 'dark';
+            __applyTheme(next);
+            localStorage.setItem('theme', next);
         });
     }
-    function __setupContactModal(){
-        var modal=document.getElementById('contactModal');
-        if(!modal)return;
-        var trig=document.getElementById('contactTrigger');
-        var close=document.getElementById('contactClose');
-        function open(){modal.classList.add('open');}
-        function closeM(){modal.classList.remove('open');}
-        if(trig)trig.addEventListener('click',open);
-        if(close)close.addEventListener('click',closeM);
-        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
-        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
-        var copyBtn=document.getElementById('copyEmail');
-        if(copyBtn){
-            copyBtn.addEventListener('click',function(){
-                navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
-                    setTimeout(function(){copyBtn.textContent=old;},1500);
-                });
-            });
+    document.addEventListener('keydown', e => {
+        if(e.key === 't' && e.ctrlKey && e.shiftKey){
+            e.preventDefault();
+            const next = document.body.classList.contains('dark') ? 'light' : 'dark';
+            __applyTheme(next);
+            localStorage.setItem('theme', next);
         }
-        var form=document.getElementById('contactForm');
-        if(form){
-            form.addEventListener('submit',function(e){
-                e.preventDefault();
-                var name=document.getElementById('formName').value.trim();
-                var email=document.getElementById('formEmail').value.trim();
-                var desc=document.getElementById('formDesc').value.trim();
-                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
-                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
-                window.location.href='mailto:contact@yuanqizhike.com?subject='+subject+'&body='+body;
+    });
+    document.getElementById('bookmarkBtn').addEventListener('click', () => alert('Press Ctrl/Cmd + D to bookmark this page.'));
+})();
+
+(function(){
+    const __modal = document.getElementById('contactModal');
+    const __trig = document.getElementById('contactTrigger');
+    const __close = document.getElementById('contactClose');
+    function __openModal(){ if(__modal) __modal.classList.add('open'); }
+    function __closeModal(){ if(__modal) __modal.classList.remove('open'); }
+    if(__trig) __trig.addEventListener('click', __openModal);
+    if(__close) __close.addEventListener('click', __closeModal);
+    if(__modal) __modal.addEventListener('click', e => { if(e.target === __modal) __closeModal(); });
+    document.addEventListener('keydown', e => { if(e.key === 'Escape') __closeModal(); });
+    const __copyBtn = document.getElementById('copyEmail');
+    if(__copyBtn){
+        __copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText('contact@yuanqizhike.com').then(() => {
+                const old = __copyBtn.textContent;
+                __copyBtn.textContent = 'Copied';
+                setTimeout(() => __copyBtn.textContent = old, 1500);
             });
-        }
+        });
     }
-    function __setupBookmark(){
-        var btn=document.getElementById('bookmarkBtn');
-        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
-    }
-    if(document.readyState==='loading'){
-        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
-    } else {
-        __setupTheme();__setupContactModal();__setupBookmark();
+    const __form = document.getElementById('contactForm');
+    if(__form){
+        __form.addEventListener('submit', e => {
+            e.preventDefault();
+            const name = document.getElementById('formName').value.trim();
+            const email = document.getElementById('formEmail').value.trim();
+            const desc = document.getElementById('formDesc').value.trim();
+            const subject = encodeURIComponent('Bespoke Tool Development Inquiry');
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nRequirement:\n${desc}`);
+            window.location.href = `mailto:contact@yuanqizhike.com?subject=${subject}&body=${body}`;
+        });
     }
 })();
+
+const WORDS = ['lorem', 'ipsum', 'dolor', 'sit', 'amet', 'consectetur', 'adipiscing', 'elit', 'sed', 'do', 'eiusmod', 'tempor', 'incididunt', 'ut', 'labore', 'et', 'dolore', 'magna', 'aliqua', 'enim', 'ad', 'minim', 'veniam', 'quis', 'nostrud', 'exercitation', 'ullamco', 'laboris', 'nisi', 'aliquip', 'ex', 'ea', 'commodo', 'consequat', 'duis', 'aute', 'irure', 'in', 'reprehenderit', 'voluptate', 'velit', 'esse', 'cillum', 'fugiat', 'nulla', 'pariatur', 'excepteur', 'sint', 'occaecat', 'cupidatat', 'non', 'proident', 'sunt', 'culpa', 'qui', 'officia', 'deserunt', 'mollit', 'anim', 'id', 'est', 'laborum', 'at', 'vero', 'eos', 'accusamus', 'iusto', 'odio', 'dignissimos', 'ducimus', 'blanditiis', 'praesentium', 'voluptatum', 'deleniti', 'atque', 'corrupti', 'quos', 'quas', 'molestias', 'excepturi', 'sint', 'occaecati', 'cupiditate', 'non', 'provident', 'similique', 'sunt', 'in', 'culpa', 'officia', 'deserunt', 'mollitia', 'animi', 'id', 'est', 'laborum'];
+const CLASSIC_START = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit';
+
+function escapeHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+function randomWord(){ return WORDS[Math.floor(Math.random() * WORDS.length)]; }
+
+function randomSentence(){
+    const len = 8 + Math.floor(Math.random() * 12);
+    const ws = Array.from({length: len}, () => randomWord());
+    const s = ws.join(' ');
+    return s.charAt(0).toUpperCase() + s.slice(1) + '.';
+}
+
+function randomParagraph(classic){
+    const len = 3 + Math.floor(Math.random() * 4);
+    const sentences = Array.from({length: len}, () => randomSentence());
+    return classic ? CLASSIC_START + '. ' + sentences.slice(1).join(' ') : sentences.join(' ');
+}
+
+function generate(){
+    const type = document.getElementById('type').value;
+    const count = parseInt(document.getElementById('count').value) || 3;
+    const htmlTags = document.getElementById('htmlTags').checked;
+    const classic = document.getElementById('classic').checked;
+    let output = '';
+
+    if(type === 'paragraphs'){
+        const paras = Array.from({length: count}, () => randomParagraph(classic));
+        output = htmlTags ? paras.map(p => '<p>' + p + '</p>').join('\n') : paras.join('\n\n');
+    } else if(type === 'sentences'){
+        const sentences = Array.from({length: count}, () => randomSentence());
+        if(classic && sentences.length > 0) sentences[0] = CLASSIC_START;
+        output = htmlTags ? '<p>' + sentences.join(' ') + '</p>' : sentences.join(' ');
+    } else if(type === 'words'){
+        const ws = Array.from({length: count}, () => randomWord());
+        if(classic) { ws[0] = 'Lorem'; ws[1] = 'ipsum'; }
+        output = ws.join(' ');
+    } else if(type === 'list'){
+        const items = Array.from({length: count}, () => randomSentence().slice(0, -1));
+        output = htmlTags ? '<ul>\n' + items.map(i => '  <li>' + i + '</li>').join('\n') + '\n</ul>' : items.map((i, idx) => (idx+1) + '. ' + i).join('\n');
+    }
+
+    const wordCount = output.split(/\s+/).filter(w => w).length;
+    const charCount = output.length;
+    let html = '<div style="background:#f0f7ff;padding:14px;border-radius:8px;border-left:4px solid #3b82f6">';
+    html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">';
+    html += '<div style="font-size:12px;color:#666">' + wordCount + ' words, ' + charCount + ' chars</div>';
+    html += '<button id="copyBtn" style="padding:4px 10px;background:#10b981;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:11px">Copy</button>';
+    html += '</div>';
+    html += '<pre style="background:#fff;padding:12px;border-radius:6px;font-size:12px;white-space:pre-wrap;max-height:400px;overflow-y:auto">' + escapeHtml(output) + '</pre>';
+    html += '<div style="background:#fef3c7;padding:8px;border-radius:4px;font-size:11px;color:#92400e;margin-top:8px"><b>About Lorem Ipsum:</b><br>- Dummy text used since 1500s<br>- From Latin "dolorem ipsum"<br>- Used in printing/typesetting for layout<br>- Helps focus on visual design<br>- Not meaningful Latin - scrambled words</div>';
+    html += '</div>';
+    document.getElementById('result').innerHTML = html;
+    document.getElementById('copyBtn').addEventListener('click', () => {
+        navigator.clipboard.writeText(output);
+        const btn = document.getElementById('copyBtn');
+        btn.textContent = 'Copied';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+    });
+}
+
+document.getElementById('gen').addEventListener('click', generate);
+['type','count','classic','htmlTags'].forEach(id => {
+    const el = document.getElementById(id);
+    el.addEventListener('input', generate);
+    el.addEventListener('change', generate);
+});
+generate();
 
 (function(){
     var words = ['lorem', 'ipsum', 'dolor', 'sit', 'amet', 'consectetur', 'adipiscing', 'elit', 'sed', 'do', 'eiusmod', 'tempor', 'incididunt', 'ut', 'labore', 'et', 'dolore', 'magna', 'aliqua', 'enim', 'ad', 'minim', 'veniam', 'quis', 'nostrud', 'exercitation', 'ullamco', 'laboris', 'nisi', 'aliquip', 'ex', 'ea', 'commodo', 'consequat', 'duis', 'aute', 'irure', 'in', 'reprehenderit', 'voluptate', 'velit', 'esse', 'cillum', 'fugiat', 'nulla', 'pariatur', 'excepteur', 'sint', 'occaecat', 'cupidatat', 'non', 'proident', 'sunt', 'culpa', 'qui', 'officia', 'deserunt', 'mollit', 'anim', 'id', 'est', 'laborum', 'at', 'vero', 'eos', 'accusamus', 'iusto', 'odio', 'dignissimos', 'ducimus', 'blanditiis', 'praesentium', 'voluptatum', 'deleniti', 'atque', 'corrupti', 'quos', 'quas', 'molestias', 'excepturi', 'sint', 'occaecati', 'cupiditate', 'non', 'provident', 'similique', 'sunt', 'in', 'culpa', 'officia', 'deserunt', 'mollitia', 'animi', 'id', 'est', 'laborum'];
@@ -320,9 +389,9 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         document.getElementById('result').innerHTML = html;
         document.getElementById('copyBtn').addEventListener('click', function(){
             navigator.clipboard.writeText(output);
-            this.textContent = '?Copied!';
+            this.textContent = 'Copied!';
             var btn = this;
-            setTimeout(function(){ btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19'; }, 1500);
+            setTimeout(function(){ btn.textContent = 'Copy'; }, 1500);
         });
     }
     function escapeHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }

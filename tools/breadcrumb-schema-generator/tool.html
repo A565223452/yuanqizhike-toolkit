@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Breadcrumb Schema Generator | YuanQiZhiLe Toolkit</title>
+<title>Breadcrumb Schema Generator | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Generate BreadcrumbList Schema.org JSON-LD markup for breadcrumbs. Improves search appearance with breadcrumb rich snippets. Free Breadcrumb Schema generator.">
 <meta name="keywords" content="breadcrumb schema, breadcrumblist, json-ld, schema.org, breadcrumb markup, rich snippets, seo structured data, breadcrumb navigation">
 <meta property="og:title" content="Breadcrumb Schema Generator - Free Online Tool">
@@ -112,7 +112,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>Breadcrumb Schema Generator</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">�?Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Generate BreadcrumbList Schema.org JSON-LD markup for breadcrumbs. Improves search appearance with breadcrumb rich snippets. Free Breadcrumb Schema generator.</div>
@@ -147,19 +147,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business �?batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">�?or describe your need below �?/div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit �?/button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -174,7 +174,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 </ol>
 <p style="margin-top:8px;font-size:12px;color:#666">BreadcrumbList schema helps Google show breadcrumb trails in search results. The last item should be the current page (no link in HTML, but URL is still required in schema).</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit �?Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -185,7 +185,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀�?:'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -211,7 +211,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='�?;
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -308,23 +308,23 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             if(!item.url) warnings.push('Item ' + (idx+1) + ': URL is empty');
         });
         var result = '<div style="background:#dcfce7;border:1px solid #86efac;padding:12px;border-radius:6px;margin-bottom:12px">';
-        result += '<b>�?Schema generated</b><br>';
+        result += '<b>?Schema generated</b><br>';
         result += 'Levels: ' + items.length + '<br>';
         result += 'Schema size: ' + json.length + ' chars';
         result += '</div>';
         if(warnings.length > 0){
             result += '<div style="background:#fef3c7;border:1px solid #fcd34d;padding:12px;border-radius:6px;margin-bottom:12px">';
-            result += '<b>⚠️ Warnings</b><br>�?' + warnings.join('<br>�?');
+            result += '<b>⚠️ Warnings</b><br>?' + warnings.join('<br>?');
             result += '</div>';
         }
         result += '<div style="background:#f0f9ff;border:1px solid #bae6fd;padding:12px;border-radius:6px">';
         result += '<b>📋 Breadcrumb best practices</b><br>';
-        result += '�?Last item: should be the current page (no link)<br>';
-        result += '�?Position: starts at 1, increments by 1<br>';
-        result += '�?Names: short, descriptive (avoid "Home Page")<br>';
-        result += '�?URLs: must be valid absolute URLs<br>';
-        result += '�?Match the visible breadcrumb navigation on your page<br>';
-        result += '�?Test with Google Rich Results Test';
+        result += '?Last item: should be the current page (no link)<br>';
+        result += '?Position: starts at 1, increments by 1<br>';
+        result += '?Names: short, descriptive (avoid "Home Page")<br>';
+        result += '?URLs: must be valid absolute URLs<br>';
+        result += '?Match the visible breadcrumb navigation on your page<br>';
+        result += '?Test with Google Rich Results Test';
         result += '</div>';
         document.getElementById('result').innerHTML = result;
     }
@@ -345,7 +345,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         navigator.clipboard.writeText(out.value).then(function(){
             var btn = document.getElementById('copyBtn');
             var old = btn.textContent;
-            btn.textContent = '�?Copied';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
             setTimeout(function(){ btn.textContent = old; }, 1500);
         });
     });
@@ -355,7 +355,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         navigator.clipboard.writeText(out.value).then(function(){
             var btn = document.getElementById('copyHtmlBtn');
             var old = btn.textContent;
-            btn.textContent = '�?Copied';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
             setTimeout(function(){ btn.textContent = old; }, 1500);
         });
     });

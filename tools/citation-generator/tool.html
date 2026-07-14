@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Citation Generator | YuanqiZhiKe Toolkit</title>
+    <style>
+        *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
+        body{padding:20px;font-family:system-ui;background:#f5f5f5;transition:background 0.3s,color 0.3s}
+        body.dark{background:#1a1a2e;color:#e0e0e0}
+        body.dark .wrap{background:#16213e}
+        body.dark input,body.dark select,body.dark textarea{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+        body.dark footer{border-color:#0f3460;color:#a0a0a0}
+        body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+        body.dark .bookmark-btn:hover{background:#0f3460}
+        body.dark .citation-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+        body.dark .history-item{background:#0f3460;border-color:#1a1a2e}
+        .wrap{max-width:900px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+        h1{margin-bottom:16px;font-size:24px}
+        .top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+        .top-controls{display:flex;gap:8px;align-items:center}
+        .theme-toggle{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:16px;transition:all 0.2s;display:flex;align-items:center;justify-content:center;width:36px;height:36px}
+        .theme-toggle:hover{background:#f0f0f0}
+        .bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+        .bookmark-btn:hover{background:#f0f0f0}
+        .form-row{margin:12px 0}
+        label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+        input,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:6px;font-size:14px;transition:background 0.3s,color 0.3s}
+        .doc-type{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+        .doc-type-btn{padding:8px 16px;border:1px solid #ddd;border-radius:6px;background:#ffffff!important;color:#333!important;cursor:pointer;font-size:13px;font-weight:500;transition:all 0.2s}
+        .doc-type-btn.active{background:#2563eb!important;color:#fff!important;border-color:#2563eb!important}
+        .doc-type-btn:hover:not(.active){background:#e8f0fe!important;border-color:#2563eb}
+        button{padding:10px 20px;background:#2563eb;color:#fff;border:none;border-radius:6px;margin:8px 8px 8px 0;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+        button:hover{opacity:0.85}
+        button.secondary{background:#6b7280}
+        .citation-box{padding:16px;background:#f3f4f6;border-radius:6px;margin-top:16px;border:1px solid #e5e7eb;transition:background 0.3s}
+        .citation-box h3{font-size:14px;margin-bottom:10px;color:#333}
+        .citation-text{font-size:14px;line-height:1.8;white-space:pre-wrap;word-break:break-word}
+        .citation-label{font-size:12px;color:#666;margin-top:8px}
+        .history-section{margin-top:24px}
+        .history-section h3{font-size:14px;margin-bottom:12px}
+        .history-item{padding:12px;background:#f8f9fa;border:1px solid #e5e7eb;border-radius:6px;margin-bottom:8px;cursor:pointer;transition:background 0.2s}
+        .history-item:hover{background:#f0f7ff}
+        .history-item .title{font-size:13px;font-weight:500}
+        .history-item .meta{font-size:11px;color:#666;margin-top:4px}
+        footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center}
+        @media(max-width:768px){
+            .wrap{padding:16px}
+            button{width:100%;margin:4px 0}
+            .top-bar{flex-direction:column;align-items:stretch}
+            .top-controls{justify-content:space-between}
+            .bookmark-btn{position:static}
+            .doc-type{flex-direction:column}
+            .doc-type-btn{width:100%;margin:4px 0}
+        }
+        @media(max-width:480px){
+            body{padding:12px}
+            .wrap{padding:12px}
+            h1{font-size:20px}
+        }
+    
+/* === Common: contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+body.dark .lead{color:#a0a0a0}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}.instructions li{margin:4px 0;font-size:13px;line-height:1.6}body.dark .instructions{background:#1e2a3a;border-color:#2c4a6e}body.dark .instructions h2{color:#5ba3f5}
+</style>
+<meta name="description" content="Free online citation generator tool - fast, secure, no installation. YuanqiZhiKe Toolkit.">
+</head>
+<body>
+<div class="wrap">
+    <div class="top-bar">
+        <h1>Academic Citation Generator</h1>
+        <div class="top-controls">
+            <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
+        </div>
+    </div>
+
+    <label>Document Type:</label>
+    <div class="doc-type">
+        <button class="doc-type-btn active" data-type="book">Book</button>
+        <button class="doc-type-btn" data-type="journal">Journal Article</button>
+        <button class="doc-type-btn" data-type="website">Website</button>
+        <button class="doc-type-btn" data-type="conference">Conference Paper</button>
+        <button class="doc-type-btn" data-type="thesis">Thesis</button>
+        <button class="doc-type-btn" data-type="video">Video</button>
+    </div>
+
+    <div class="form-row">
+        <label>Author(s) <span style="color:#999">(Last, First Middle)</span></label>
+        <input type="text" id="author" placeholder="e.g., Smith, John A.">
+    </div>
+
+    <div class="form-row">
+        <label>Title</label>
+        <input type="text" id="title" placeholder="e.g., The Art of Programming">
+    </div>
+
+    <div class="form-row" id="yearRow">
+        <label>Year</label>
+        <input type="number" id="year" placeholder="e.g., 2024" min="1800" max="2100">
+    </div>
+
+    <div class="form-row" id="publisherRow">
+        <label>Publisher / Journal Name</label>
+        <input type="text" id="publisher" placeholder="e.g., Oxford University Press">
+    </div>
+
+    <div class="form-row" id="editionRow" style="display:none">
+        <label>Edition (optional)</label>
+        <input type="text" id="edition" placeholder="e.g., 2nd ed.">
+    </div>
+
+    <div class="form-row" id="volumeRow" style="display:none">
+        <label>Volume / Issue (optional)</label>
+        <input type="text" id="volume" placeholder="e.g., Vol. 1, Issue 2">
+    </div>
+
+    <div class="form-row" id="urlRow" style="display:none">
+        <label>URL</label>
+        <input type="url" id="url" placeholder="e.g., https://example.com/article">
+    </div>
+
+    <div class="form-row" id="doiRow" style="display:none">
+        <label>DOI (optional)</label>
+        <input type="text" id="doi" placeholder="e.g., 10.1234/example.doi">
+    </div>
+
+    <div class="form-row" id="accessDateRow" style="display:none">
+        <label>Access Date (optional)</label>
+        <input type="date" id="accessDate">
+    </div>
+
+    <div class="form-row">
+        <label>Citation Style:</label>
+        <select id="citationStyle">
+            <option value="APA">APA 7th Edition</option>
+            <option value="MLA">MLA 9th Edition</option>
+            <option value="Chicago">Chicago Manual of Style</option>
+            <option value="Harvard">Harvard</option>
+            <option value="IEEE">IEEE</option>
+            <option value="AMA">AMA 11th Edition</option>
+        </select>
+    </div>
+
+    <button id="generateBtn">Generate Citation</button>
+    <button class="secondary" id="clearBtn">Clear Form</button>
+
+    <div class="citation-box" id="resultBox" style="display:none">
+        <h3>Generated Citation:</h3>
+        <div class="citation-text" id="citeResult"></div>
+        <div class="citation-label" id="citeLabel"></div>
+         <button id="copyBtn" style="margin-top:12px">Copy Citation</button>
+         <button class="secondary" id="bibtexBtn">Export BibTeX</button>
+         <button class="secondary" id="saveHistoryBtn">Save to History</button>
+     </div>
+
+     <div class="history-section" id="historySection" style="display:none">
+         <h3>Saved Citations</h3>
+         <div id="historyList"></div>
+         <button class="secondary" id="clearHistoryBtn" style="margin-top:12px">Clear History</button>
+         <button class="secondary" id="exportAllBtn" style="margin-top:8px">Export All as BibTeX</button>
+     </div>
+
+        
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol><li>Select citation style (APA, MLA, Chicago, Harvard)</li><li>Enter source type (book, journal, website)</li><li>Fill in the required fields (author, title, year, etc.)</li><li>Click <strong>Generate Citation</strong></li><li>Copy the formatted citation</li></ol>
+    </div>
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+<footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
+</div>
+
+<script>
+// === Common: contact modal ===
+(function(){
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:contact@yuanqizhike.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',__setupContactModal);
+    } else {
+        __setupContactModal();
+    }
+})();
+
+const authorInput=document.getElementById('author');
+const titleInput=document.getElementById('title');
+const yearInput=document.getElementById('year');
+const publisherInput=document.getElementById('publisher');
+const editionInput=document.getElementById('edition');
+const volumeInput=document.getElementById('volume');
+const urlInput=document.getElementById('url');
+const doiInput=document.getElementById('doi');
+const accessDateInput=document.getElementById('accessDate');
+const citationStyle=document.getElementById('citationStyle');
+const citeResult=document.getElementById('citeResult');
+const citeLabel=document.getElementById('citeLabel');
+const resultBox=document.getElementById('resultBox');
+const historySection=document.getElementById('historySection');
+const historyList=document.getElementById('historyList');
+const bookmarkBtn=document.getElementById('bookmarkBtn');
+const themeToggle=document.getElementById('themeToggle');
+
+let currentDocType='book';
+let citationHistory=JSON.parse(localStorage.getItem('citationHistory')||'[]');
+
+// Doc type buttons
+document.querySelectorAll('.doc-type-btn').forEach(btn=>{
+    btn.onclick=()=>{
+        document.querySelectorAll('.doc-type-btn').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        currentDocType=btn.dataset.type;
+        updateFormFields();
+    };
+});
+
+function updateFormFields(){
+    const isJournal=currentDocType==='journal'||currentDocType==='conference';
+    const isWebsite=currentDocType==='website';
+    const isThesis=currentDocType==='thesis';
+    const isVideo=currentDocType==='video';
+
+    document.getElementById('publisherRow').style.display=(isJournal||isWebsite||isThesis||isVideo)?'block':'block';
+    document.getElementById('editionRow').style.display=(currentDocType==='book')?'block':'none';
+    document.getElementById('volumeRow').style.display=isJournal?'block':'none';
+    document.getElementById('urlRow').style.display=(isWebsite||isVideo)?'block':'none';
+    document.getElementById('doiRow').style.display=isJournal?'block':'none';
+    document.getElementById('accessDateRow').style.display=(isWebsite||isVideo)?'block':'none';
+
+    const pubLabel=document.querySelector('#publisherRow label');
+    if(isJournal){pubLabel.innerHTML='Journal Name <span style="color:#999">(optional)</span>';}
+    else if(isWebsite){pubLabel.innerHTML='Website Name <span style="color:#999">(optional)</span>';}
+    else if(isThesis){pubLabel.innerHTML='University <span style="color:#999">(optional)</span>';}
+    else if(isVideo){pubLabel.innerHTML='Platform (e.g., YouTube) <span style="color:#999">(optional)</span>';}
+    else{pubLabel.innerHTML='Publisher <span style="color:#999">(optional)</span>';}
+}
+
+function generateCitation(){
+    const author=authorInput.value.trim();
+    const title=titleInput.value.trim();
+    const year=yearInput.value.trim();
+    const publisher=publisherInput.value.trim();
+    const edition=editionInput.value.trim();
+    const volume=volumeInput.value.trim();
+    const url=urlInput.value.trim();
+    const doi=doiInput.value.trim();
+    const accessDate=accessDateInput.value.trim();
+    const style=citationStyle.value;
+
+    if(!author||!title){alert('Please enter at least Author and Title');return}
+
+    let output='';
+    let label='';
+
+    // Format author
+    let authorFormatted=formatAuthor(author,style);
+
+    switch(style){
+        case 'APA':
+            output=generateAPA(author,title,year,publisher,edition,volume,url,doi,currentDocType);
+            label='APA 7th Edition';
+            break;
+        case 'MLA':
+            output=generateMLA(author,title,year,publisher,url,accessDate,currentDocType);
+            label='MLA 9th Edition';
+            break;
+        case 'Chicago':
+            output=generateChicago(author,title,year,publisher,edition,url,currentDocType);
+            label='Chicago Manual of Style';
+            break;
+        case 'Harvard':
+            output=generateHarvard(author,title,year,publisher,edition,volume,url,doi,currentDocType);
+            label='Harvard';
+            break;
+        case 'IEEE':
+            output=generateIEEE(author,title,year,publisher,volume,url,doi,currentDocType);
+            label='IEEE';
+            break;
+        case 'AMA':
+            output=generateAMA(author,title,year,publisher,volume,url,doi,currentDocType);
+            label='AMA 11th Edition';
+            break;
+    }
+
+    citeResult.textContent=output;
+    citeLabel.textContent=label+' citation generated';
+    resultBox.style.display='block';
+}
+
+function formatAuthor(author,style){
+    // Simple author formatting
+    const parts=author.split(',').map(p=>p.trim());
+    if(parts.length>=2){
+        return{last:parts[0],first:parts.slice(1).join(' ')};
+    }
+    const nameParts=author.split(' ').filter(p=>p);
+    return{last:nameParts[nameParts.length-1]||'',first:nameParts.slice(0,-1).join(' ')||''};
+}
+
+function generateAPA(author,title,year,publisher,edition,volume,url,doi,docType){
+    let auth=formatAuthor(author,'APA');
+    let result='';
+
+    if(docType==='book'){
+        result=`${auth.last}, ${auth.first.charAt(0)}. (${year||'n.d.'}). <em>${title}</em>${edition?` (${edition})`:``}. ${publisher||'[Publisher not specified]'}`;
+    }else if(docType==='journal'){
+        result=`${auth.last}, ${auth.first.charAt(0)}. (${year||'n.d.'}). ${title}. <em>${publisher||'[Journal not specified]'}${volume?`, ${volume}`:``}`;
+        if(doi)result+=`.<br>https://doi.org/${doi}`;
+    }else if(docType==='website'){
+        result=`${auth.last}, ${auth.first.charAt(0)}. (${year||'n.d.'}). ${title}. ${publisher||'[Website Name]'}. Retrieved from ${url||'[URL not provided]'}`;
+    }else if(docType==='conference'){
+        result=`${auth.last}, ${auth.first.charAt(0)}. (${year||'n.d.'}). ${title}. In <em>Proceedings of Conference</em>${volume?` (${volume})`:``}. ${publisher||''}`;
+    }else if(docType==='thesis'){
+        result=`${auth.last}, ${auth.first.charAt(0)}. (${year||'n.d.'}). <em>${title}</em> [Doctoral dissertation, ${publisher||'[University not specified]'}]`;
+    }else if(docType==='video'){
+        result=`${auth.last}, ${auth.first.charAt(0)}. (${year||'n.d.'}). <em>${title}</em> [${docType==='video'?'Video':docType}]. ${publisher||'[Platform not specified]'}`;
+    }
+    return result;
+}
+
+function generateMLA(author,title,year,publisher,url,accessDate,docType){
+    let auth=formatAuthor(author,'MLA');
+    let result='';
+
+    if(docType==='book'){
+        result=`${auth.last}, ${auth.first}. <em>${title}</em>. ${publisher||'[Publisher not specified]'}, ${year||'n.d.'}.`;
+    }else if(docType==='journal'){
+        result=`${auth.last}, ${auth.first}. "${title}." <em>${publisher||'[Journal not specified]'}${volume?` ${volume}`:``}, ${year||'n.d.'}.`;
+    }else if(docType==='website'){
+        result=`${auth.last}, ${auth.first}. "${title}." ${publisher||'[Website Name]'}, ${year||'n.d.'}. ${url||'[URL not provided]'}. Accessed ${accessDate||'n.d.'}.`;
+    }else{
+        result=`${auth.last}, ${auth.first}. "${title}." ${publisher||'[Publisher not specified]'}, ${year||'n.d.'}.`;
+    }
+    return result;
+}
+
+function generateChicago(author,title,year,publisher,edition,url,docType){
+    let auth=formatAuthor(author,'Chicago');
+    let result='';
+
+    if(docType==='book'){
+        result=`${auth.last}, ${auth.first}. <em>${title}</em>${edition?` ed.`:``}. ${publisher||'[Publisher not specified]'}, ${year||'n.d.'}.`;
+    }else{
+        result=`${auth.last}, ${auth.first}. "${title}." ${publisher||'[Publisher not specified]'}, ${year||'n.d.'}${url?'.'+url+'.':''}`;
+    }
+    return result;
+}
+
+function generateHarvard(author,title,year,publisher,edition,volume,url,doi,docType){
+    let auth=formatAuthor(author,'Harvard');
+    let result='';
+
+    if(docType==='book'){
+        result=`${auth.last}, ${auth.first} (${year||'n.d.'}) <em>${title}</em>${edition?`: ${edition}`:``}. ${publisher||'[Publisher not specified]'}`;
+    }else{
+        result=`${auth.last}, ${auth.first}. (${year||'n.d.'}) '${title}'. <em>${publisher||'[Publisher not specified]'}${volume?` ${volume}`:``}`;
+        if(doi)result+=`.<br>DOI: ${doi}`;
+    }
+    return result;
+}
+
+function generateIEEE(author,title,year,publisher,volume,url,doi,docType){
+    let auth=formatAuthor(author,'IEEE');
+    let result='';
+
+    if(docType==='book'){
+        result=`[1] ${auth.last}, ${auth.first}, <em>${title}</em>${volume?`, vol. ${volume}`:``}. ${publisher||'[Publisher not specified]'}, ${year||'n.d.'}.`;
+    }else{
+        result=`[1] ${auth.last} and ${auth.first}, "${title}," <em>${publisher||'[Publisher not specified]'}${volume?`, vol. ${volume}`:``}, ${year||'n.d.'}`;
+        if(url)result+=`.[Online]. Available: ${url}`;
+        if(doi)result+=`.<br>DOI: ${doi}`;
+    }
+    return result;
+}
+
+function generateAMA(author,title,year,publisher,volume,url,doi,docType){
+    let auth=formatAuthor(author,'AMA');
+    let result='';
+
+    if(docType==='book'){
+        result=`${auth.last} ${auth.first.charAt(0)}. <em>${title}</em>${volume?`: ${volume}`:``}. ${publisher||'[Publisher not specified]'}; ${year||'n.d.'}.`;
+    }else{
+        result=`${auth.last} ${auth.first.charAt(0)}. ${title}. ${publisher||'[Publisher not specified]'}; ${year||'n.d.'}${volume?`: ${volume}`:``}`;
+        if(url)result+=`. Available from: ${url}`;
+        if(doi)result+=`.<br>DOI: ${doi}`;
+    }
+    return result;
+}
+
+function copyCitation(){
+    const text=citeResult.textContent;
+    navigator.clipboard.writeText(text);
+    alert('Citation copied to clipboard!');
+}
+
+function saveToHistory(){
+    const entry={
+        author:authorInput.value.trim(),
+        title:titleInput.value.trim(),
+        year:yearInput.value.trim(),
+        style:citationStyle.value,
+        docType:currentDocType,
+        citation:citeResult.textContent,
+        timestamp:new Date().toISOString()
+    };
+    citationHistory.unshift(entry);
+    if(citationHistory.length>50)citationHistory.pop();
+    localStorage.setItem('citationHistory',JSON.stringify(citationHistory));
+    renderHistory();
+    alert('Saved to history!');
+}
+
+function renderHistory(){
+    if(citationHistory.length===0){
+        historySection.style.display='none';
+        return;
+    }
+    historySection.style.display='block';
+    historyList.innerHTML='';
+    citationHistory.forEach((entry,i)=>{
+        const div=document.createElement('div');
+        div.className='history-item';
+        div.innerHTML=`<div class="title">${entry.title}</div><div class="meta">${entry.author} | ${entry.style} | ${new Date(entry.timestamp).toLocaleDateString()}</div>`;
+        div.onclick=()=>{
+            citeResult.textContent=entry.citation;
+            citeLabel.textContent=entry.style+' citation (from history)';
+            resultBox.style.display='block';
+        };
+        historyList.appendChild(div);
+    });
+}
+
+function clearHistory(){
+    if(confirm('Clear all citation history?')){
+        citationHistory=[];
+        localStorage.removeItem('citationHistory');
+        renderHistory();
+    }
+}
+
+document.getElementById('generateBtn').onclick=generateCitation;
+document.getElementById('copyBtn').onclick=copyCitation;
+document.getElementById('saveHistoryBtn').onclick=saveToHistory;
+document.getElementById('clearHistoryBtn').onclick=clearHistory;
+document.getElementById('clearBtn').onclick=()=>{
+    authorInput.value='';
+    titleInput.value='';
+    yearInput.value='';
+    publisherInput.value='';
+    editionInput.value='';
+    volumeInput.value='';
+    urlInput.value='';
+    doiInput.value='';
+    accessDateInput.value='';
+    resultBox.style.display='none';
+};
+
+bookmarkBtn.onclick=()=>{
+    alert('Press Ctrl+D (or Cmd+D on Mac) to bookmark this page!');
+};
+
+// Theme toggle
+function setTheme(isDark){
+    if(isDark){
+        document.body.classList.add('dark');
+        themeToggle.textContent='☀-?';
+        themeToggle.title='Switch to light mode';
+    }else{
+        document.body.classList.remove('dark');
+        themeToggle.textContent='🌙';
+        themeToggle.title='Switch to dark mode';
+    }
+    localStorage.setItem('theme',isDark?'dark':'light');
+}
+
+themeToggle.onclick=()=>{
+    const isDark=document.body.classList.contains('dark');
+    setTheme(!isDark);
+};
+
+// Load saved theme
+(function(){
+    const saved=localStorage.getItem('theme');
+    if(saved==='dark'||(!saved&&window.matchMedia('(prefers-color-scheme:dark)').matches)){
+        setTheme(true);
+    }
+})();
+
+updateFormFields();
+renderHistory();
+</script>
+</em></em></em></em>    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

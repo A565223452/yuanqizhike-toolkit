@@ -106,7 +106,7 @@
             <p>Browse <strong>26</strong> free offline business &amp; productivity tools. Click any tool to view details or download its full source code.</p>
             <p style="margin-top: 14px;">
                 <a href="tools.html" class="btn btn-view-details" style="display: inline-block; text-decoration: none;">← All Categories</a>
-                <a href="tools-all.html" class="btn btn-secondary" style="display: inline-block; text-decoration: none; margin-left: 8px;">All 666 Tools</a>
+                <a href="tools-all.html" class="btn btn-secondary" style="display: inline-block; text-decoration: none; margin-left: 8px;">All 664 Tools</a>
             </p>
         </div>
     </section>
@@ -173,19 +173,22 @@
             function createToolCard(tool, t) {
                 var card = document.createElement('div');
                 card.className = 'tool-card';
-                var featuresHtml = '';
+                var featuresHtml = '<ul class="tool-features">';
                 if (tool.features && tool.features.length > 0) {
-                    featuresHtml = '<ul class="tool-features">';
                     tool.features.forEach(function (f) { featuresHtml += '<li>' + escapeHtml(f) + '</li>'; });
-                    featuresHtml += '</ul>';
                 }
+                featuresHtml += '</ul>';
                 var viewDetailsHtml = '';
                 if (tool.detailUrl) {
                     viewDetailsHtml = '<a href="' + escapeHtml(tool.detailUrl) + '" class="btn btn-view-details">' + t('tool.viewDetails', 'View Details') + '</a>';
+                } else {
+                    viewDetailsHtml = '<button type="button" class="btn btn-view-details" disabled style="opacity:0.4;cursor:not-allowed;">' + t('tool.noDetails', 'No Details') + '</button>';
                 }
                 var downloadHtml = '';
                 if (tool.zipUrl) {
                     downloadHtml = '<button class="btn btn-download-zip btn-download" data-download="' + escapeHtml(tool.zipUrl) + '" data-i18n="tool.downloadZip">Download ZIP</button>';
+                } else {
+                    downloadHtml = '<button type="button" class="btn btn-download-zip" disabled style="opacity:0.4;cursor:not-allowed;">' + t('tool.comingSoon', 'Coming Soon') + '</button>';
                 }
                 var iconHtml = '';
                 var isSvgIcon = tool.icon && (tool.icon.indexOf('assets/') === 0 || tool.icon.indexOf('.svg') === (tool.icon.length - 4));

@@ -175,159 +175,145 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 
 // === Common: theme toggle + contact modal ===
 (function(){
-    function __setupTheme(){
-        var btn=document.getElementById('themeToggle');
-        if(!btn)return;
-        function apply(t){
-            document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
-        }
-        var saved=localStorage.getItem('theme');
-        if(saved){apply(saved);}
-        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
-        else{apply('light');}
-        btn.addEventListener('click',function(){
-            var next=document.body.classList.contains('dark')?'light':'dark';
-            apply(next);localStorage.setItem('theme',next);
+    const __themeBtn = document.getElementById('themeToggle');
+    function __applyTheme(t){
+        document.body.classList.toggle('dark', t === 'dark');
+        if(__themeBtn) __themeBtn.textContent = (t === 'dark') ? '\u2600\uFE0F' : '\uD83C\uDF19';
+    }
+    const __saved = localStorage.getItem('theme');
+    __saved ? __applyTheme(__saved) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? __applyTheme('dark') : __applyTheme('light');
+    if(__themeBtn){
+        __themeBtn.addEventListener('click', () => {
+            const next = document.body.classList.contains('dark') ? 'light' : 'dark';
+            __applyTheme(next);
+            localStorage.setItem('theme', next);
         });
     }
-    function __setupContactModal(){
-        var modal=document.getElementById('contactModal');
-        if(!modal)return;
-        var trig=document.getElementById('contactTrigger');
-        var close=document.getElementById('contactClose');
-        function open(){modal.classList.add('open');}
-        function closeM(){modal.classList.remove('open');}
-        if(trig)trig.addEventListener('click',open);
-        if(close)close.addEventListener('click',closeM);
-        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
-        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
-        var copyBtn=document.getElementById('copyEmail');
-        if(copyBtn){
-            copyBtn.addEventListener('click',function(){
-                navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
-                    setTimeout(function(){copyBtn.textContent=old;},1500);
-                });
-            });
+    document.addEventListener('keydown', e => {
+        if(e.key === 't' && e.ctrlKey && e.shiftKey){
+            e.preventDefault();
+            const next = document.body.classList.contains('dark') ? 'light' : 'dark';
+            __applyTheme(next);
+            localStorage.setItem('theme', next);
         }
-        var form=document.getElementById('contactForm');
-        if(form){
-            form.addEventListener('submit',function(e){
-                e.preventDefault();
-                var name=document.getElementById('formName').value.trim();
-                var email=document.getElementById('formEmail').value.trim();
-                var desc=document.getElementById('formDesc').value.trim();
-                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
-                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
-                window.location.href='mailto:contact@yuanqizhike.com?subject='+subject+'&body='+body;
-            });
-        }
-    }
-    function __setupBookmark(){
-        var btn=document.getElementById('bookmarkBtn');
-        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
-    }
-    if(document.readyState==='loading'){
-        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
-    } else {
-        __setupTheme();__setupContactModal();__setupBookmark();
-    }
+    });
+    document.getElementById('bookmarkBtn').addEventListener('click', () => alert('Press Ctrl/Cmd + D to bookmark this page.'));
 })();
 
 (function(){
-    var flipMap = {
-        'a':'\u0250','b':'q','c':'\u0254','d':'p','e':'\u01DD','f':'\u025F','g':'\u0183',
-        'h':'\u0265','i':'\u1D09','j':'\u027E','k':'\u029E','l':'\u05DF','m':'\u026F',
-        'n':'u','o':'o','p':'d','q':'b','r':'\u0279','s':'s','t':'\u0287','u':'n','v':'\u028C',
-        'w':'\u028D','y':'\u028E','z':'z','A':'\u2200','B':'\u10412','C':'\u0186','D':'\u15E1',
-        'E':'\u018E','F':'\u2132','G':'\u2141','J':'\u017F','K':'\u22CA','L':'\u2142',
-        'M':'W','P':'\u0500','Q':'\u0382','R':'\u1D1A','T':'\u22A5','U':'\u2229','V':'\u039B',
-        'W':'M','Y':'\u2144','.':'\u02D9',',':'\u0027',"'":',','"':'\u201E','!':'\u00A1','?':'\u00BF','(':')',')':'(','[':']',']':'[','{':'}','}':'{','<':'>','>':'<','&':'\u214B','_':'\u203E','1':'\u21C2','2':'\u1100','3':'\u1110','4':'\u3123','5':'\u078E','6':'9','7':'\u3125','8':'8','9':'6','0':'0'
-    };
-    function reverseStr(s){ return s.split('').reverse().join(''); }
-    function flipText(s){
-        var result = '';
-        for(var i = s.length - 1; i >= 0; i--){
-            var c = s[i];
-            result += flipMap[c] || (c === ' ' ? ' ' : c);
-        }
-        return result;
-    }
-    function mirrorText(s){
-        var mirrorMap = {'(' : ')',')':'(','[':']',']':'[','{':'}','}':'{','<':'>','>':'<'};
-        var result = '';
-        for(var i = s.length - 1; i >= 0; i--){
-            var c = s[i];
-            result += mirrorMap[c] || c;
-        }
-        return result;
-    }
-    function reverse(mode){
-        var input = document.getElementById('input').value;
-        var output = '';
-        switch(mode){
-            case 'chars':
-                output = reverseStr(input);
-                break;
-            case 'words':
-                output = input.split('\n').map(function(line){
-                    return line.split(' ').reverse().join(' ');
-                }).join('\n');
-                break;
-            case 'lines':
-                output = input.split('\n').reverse().join('\n');
-                break;
-            case 'wordsChars':
-                output = input.split('\n').map(function(line){
-                    return line.split(' ').map(function(w){ return reverseStr(w); }).reverse().join(' ');
-                }).join('\n');
-                break;
-            case 'flip':
-                output = flipText(input);
-                break;
-            case 'mirror':
-                output = mirrorText(input);
-                break;
-        }
-        document.getElementById('output').value = output;
-        var desc = {
-            chars: 'Reversed all characters',
-            words: 'Reversed word order (kept chars in each word)',
-            lines: 'Reversed line order',
-            wordsChars: 'Reversed words AND characters in each word',
-            flip: 'Flipped upside down (using Unicode)',
-            mirror: 'Mirrored text horizontally'
-        };
-        var html = '<div style="background:#f0f9ff;border:1px solid #bae6fd;padding:10px;border-radius:6px;font-size:13px">';
-        html += '<b>Mode:</b> ' + desc[mode] + '<br>';
-        html += '<b>Input:</b> ' + input.length + ' chars, ' + (input.split('\n').length) + ' lines<br>';
-        html += '<b>Output:</b> ' + output.length + ' chars';
-        html += '</div>';
-        if(mode === 'flip'){
-            html += '<div style="background:#fafafa;border:1px solid #e5e7eb;padding:10px;border-radius:6px;font-size:12px;color:#666;margin-top:8px"><b>ℹ️ About upside down text</b><br>Uses Unicode lookalike characters. May not display correctly on all devices. Copy-pasting may lose formatting in some apps.</div>';
-        }
-        document.getElementById('stats').innerHTML = html;
-    }
-    document.querySelectorAll('[data-mode]').forEach(function(btn){
-        btn.addEventListener('click', function(){
-            reverse(btn.getAttribute('data-mode'));
-            document.querySelectorAll('[data-mode]').forEach(function(b){ b.style.background = '#3b82f6'; });
-            btn.style.background = '#1d4ed8';
+    const __modal = document.getElementById('contactModal');
+    const __trig = document.getElementById('contactTrigger');
+    const __close = document.getElementById('contactClose');
+    function __openModal(){ if(__modal) __modal.classList.add('open'); }
+    function __closeModal(){ if(__modal) __modal.classList.remove('open'); }
+    if(__trig) __trig.addEventListener('click', __openModal);
+    if(__close) __close.addEventListener('click', __closeModal);
+    if(__modal) __modal.addEventListener('click', e => { if(e.target === __modal) __closeModal(); });
+    document.addEventListener('keydown', e => { if(e.key === 'Escape') __closeModal(); });
+    const __copyBtn = document.getElementById('copyEmail');
+    if(__copyBtn){
+        __copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText('contact@yuanqizhike.com').then(() => {
+                const old = __copyBtn.textContent;
+                __copyBtn.textContent = 'Copied';
+                setTimeout(() => __copyBtn.textContent = old, 1500);
+            });
         });
-    });
-    document.getElementById('copyBtn').addEventListener('click', function(){
-        var out = document.getElementById('output');
-        out.select();
-        navigator.clipboard.writeText(out.value).then(function(){
-            var btn = document.getElementById('copyBtn');
-            var old = btn.textContent;
-            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
-            setTimeout(function(){ btn.textContent = old; }, 1500);
+    }
+    const __form = document.getElementById('contactForm');
+    if(__form){
+        __form.addEventListener('submit', e => {
+            e.preventDefault();
+            const name = document.getElementById('formName').value.trim();
+            const email = document.getElementById('formEmail').value.trim();
+            const desc = document.getElementById('formDesc').value.trim();
+            const subject = encodeURIComponent('Bespoke Tool Development Inquiry');
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nRequirement:\n${desc}`);
+            window.location.href = `mailto:contact@yuanqizhike.com?subject=${subject}&body=${body}`;
         });
-    });
-    reverse('chars');
+    }
 })();
+
+const FLIP_MAP = {
+    'a':'\u0250','b':'q','c':'\u0254','d':'p','e':'\u01DD','f':'\u025F','g':'\u0183',
+    'h':'\u0265','i':'\u1D09','j':'\u027E','k':'\u029E','l':'\u05DF','m':'\u026F',
+    'n':'u','o':'o','p':'d','q':'b','r':'\u0279','s':'s','t':'\u0287','u':'n','v':'\u028C',
+    'w':'\u028D','y':'\u028E','z':'z','A':'\u2200','B':'\u10412','C':'\u0186','D':'\u15E1',
+    'E':'\u018E','F':'\u2132','G':'\u2141','J':'\u017F','K':'\u22CA','L':'\u2142',
+    'M':'W','P':'\u0500','Q':'\u0382','R':'\u1D1A','T':'\u22A5','U':'\u2229','V':'\u039B',
+    'W':'M','Y':'\u2144','.':'\u02D9',',':'\u0027',"'":',','"':'\u201E','!':'\u00A1','?':'\u00BF','(':')',')':'(','[':']',']':'[','{':'}','}':'{','<':'>','>':'<','&':'\u214B','_':'\u203E','1':'\u21C2','2':'\u1100','3':'\u1110','4':'\u3123','5':'\u078E','6':'9','7':'\u3125','8':'8','9':'6','0':'0'
+};
+
+function reverseStr(s){ return s.split('').reverse().join(''); }
+
+function flipText(s){
+    let result = '';
+    for(let i = s.length - 1; i >= 0; i--){
+        const c = s[i];
+        result += FLIP_MAP[c] || (c === ' ' ? ' ' : c);
+    }
+    return result;
+}
+
+function mirrorText(s){
+    const MIRROR_MAP = {'(':')',')':'(','[':']',']':'[','{':'}','}':'{','<':'>','>':'<'};
+    let result = '';
+    for(let i = s.length - 1; i >= 0; i--){
+        const c = s[i];
+        result += MIRROR_MAP[c] || c;
+    }
+    return result;
+}
+
+function reverse(mode){
+    const input = document.getElementById('input').value;
+    let output = '';
+    switch(mode){
+        case 'chars':
+            output = reverseStr(input);
+            break;
+        case 'words':
+            output = input.split('\n').map(line => line.split(' ').reverse().join(' ')).join('\n');
+            break;
+        case 'lines':
+            output = input.split('\n').reverse().join('\n');
+            break;
+        case 'wordsChars':
+            output = input.split('\n').map(line => line.split(' ').map(w => reverseStr(w)).reverse().join(' ')).join('\n');
+            break;
+        case 'flip':
+            output = flipText(input);
+            break;
+        case 'mirror':
+            output = mirrorText(input);
+            break;
+    }
+    document.getElementById('output').value = output;
+    const desc = {chars:'Reversed all characters',words:'Reversed word order',lines:'Reversed line order',wordsChars:'Reversed words AND characters',flip:'Flipped upside down',mirror:'Mirrored text'};
+    const html = '<div style="background:#f0f9ff;border:1px solid #bae6fd;padding:10px;border-radius:6px;font-size:13px"><b>Mode:</b> ' + desc[mode] + '<br><b>Input:</b> ' + input.length + ' chars, ' + input.split('\n').length + ' lines<br><b>Output:</b> ' + output.length + ' chars</div>';
+    document.getElementById('stats').innerHTML = html + (mode === 'flip' ? '<div style="background:#fafafa;border:1px solid #e5e7eb;padding:10px;border-radius:6px;font-size:12px;color:#666;margin-top:8px"><b>About upside down text</b><br>Uses Unicode lookalike characters.</div>' : '');
+}
+
+document.querySelectorAll('[data-mode]').forEach(btn => {
+    btn.addEventListener('click', () => {
+        reverse(btn.getAttribute('data-mode'));
+        document.querySelectorAll('[data-mode]').forEach(b => b.style.background = '#3b82f6');
+        btn.style.background = '#1d4ed8';
+    });
+});
+
+document.getElementById('copyBtn').addEventListener('click', () => {
+    const out = document.getElementById('output');
+    out.select();
+    navigator.clipboard.writeText(out.value).then(() => {
+        const btn = document.getElementById('copyBtn');
+        const old = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = old, 1500);
+    });
+});
+
+reverse('chars');
 </script>
     <script src="/assets/js/date-utils.js"></script>
 </body>

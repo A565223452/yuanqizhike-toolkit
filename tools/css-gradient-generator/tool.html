@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Gradient Generator | YuanqiZhiKe Toolkit</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:24px;font-family:system-ui;background:#f1f1f1;transition:background 0.3s,color 0.3s}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+body.dark .wrap{background:#16213e}
+body.dark #preview{border-color:#0f3460}
+body.dark .ctrl label{color:#a0a0a0}
+body.dark input[type="text"]{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .preset-btn{border-color:#0f3460;color:#a0a0a0}
+body.dark .preset-btn:hover{background:#0f3460}
+body.dark .preset-btn.active{background:#0f3460;border-color:#e94560}
+body.dark textarea{background:#16213e;color:#e0e0e0;border-color:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark .type-btn{background:#16213e;color:#a0a0a0}
+body.dark .type-btn.active{background:#e94560;color:#fff}
+body.dark .add-color-btn{background:#0f3460}
+body.dark .remove-color-btn{background:#e94560}
+body.dark .color-stop-item{background:#16213e;border-color:#0f3460}
+body.dark .color-stop-item input[type="color"]{width:40px;height:32px}
+.wrap{max-width:1100px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:20px}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+#preview{height:320px;border-radius:10px;margin-bottom:16px;border:1px solid #ccc;transition:border-color 0.3s}
+.type-btns{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.type-btn{padding:6px 14px;border:1px solid #ccc;border-radius:4px;background:#fff;color:#555;cursor:pointer;font-size:13px;font-weight:500;transition:all 0.2s;box-shadow:0 1px 2px rgba(0,0,0,0.05)}
+.type-btn:hover{background:#f0f0f0;color:#333;border-color:#bbb}
+.type-btn.active{background:#007bff;color:#fff;border-color:#007bff;box-shadow:0 2px 4px rgba(0,123,255,0.3)}
+.ctrl{margin:8px 0;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.ctrl label{font-size:14px;font-weight:500}
+input[type="color"]{width:60px;height:36px;border:1px solid #ddd;border-radius:4px;cursor:pointer;padding:2px}
+input[type="range"]{flex:1;min-width:150px}
+input[type="text"]{padding:6px 10px;border:1px solid #ddd;border-radius:4px;font-size:13px;width:80px}
+.presets-section{margin:12px 0}
+.presets-section h3{font-size:14px;margin-bottom:8px;color:#555}
+.presets-grid{display:flex;gap:8px;flex-wrap:wrap}
+.preset-btn{width:40px;height:40px;border-radius:6px;border:2px solid #ddd;cursor:pointer;transition:transform 0.15s,border-color 0.2s}
+.preset-btn:hover{transform:scale(1.1)}
+.preset-btn.active{border-color:#007bff;transform:scale(1.1)}
+.color-stops{margin:12px 0}
+.color-stops h3{font-size:14px;margin-bottom:8px;color:#555}
+.color-stop-item{display:flex;gap:8px;align-items:center;margin:6px 0;padding:6px;background:#f8f9fa;border-radius:6px;transition:background 0.3s}
+.color-stop-item input[type="color"]{width:40px;height:32px}
+.color-stop-item input[type="number"]{width:60px;padding:4px;border:1px solid #ddd;border-radius:4px}
+.remove-color-btn{padding:4px 8px;background:#dc3545;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px}
+.add-color-btn{padding:6px 12px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:13px;margin-top:6px}
+textarea{width:100%;height:100px;margin-top:10px;padding:10px;font-family:monospace;font-size:13px;border:1px solid #ddd;border-radius:4px}
+button{padding:8px 14px;background:#007bff;color:white;border:none;border-radius:4px;cursor:pointer;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ccc;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#555;transition:all 0.2s;box-shadow:0 1px 2px rgba(0,0,0,0.05)}
+.bookmark-btn:hover{background:#f0f0f0;color:#333;border-color:#aaa}
+.angle-display{font-size:14px;min-width:45px;text-align:center}
+.output-section{margin-top:16px;padding:16px;background:#f8f9fa;border-radius:8px;border:1px solid #ddd}
+@media(max-width:768px){
+    .wrap{padding:16px}
+    #preview{height:200px}
+    .ctrl{flex-direction:column;align-items:flex-start}
+    input[type="text"]{width:100%}
+    .bookmark-btn{position:static;margin-top:8px}
+}
+
+/* === Common: contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+body.dark .lead{color:#a0a0a0}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}.instructions li{margin:4px 0;font-size:13px;line-height:1.6}body.dark .instructions{background:#1e2a3a;border-color:#2c4a6e}body.dark .instructions h2{color:#5ba3f5}
+</style>
+<meta name="description" content="Free online css gradient generator tool - fast, secure, no installation. YuanqiZhiKe Toolkit.">
+</head>
+<body>
+<div class="wrap">
+<div class="top-bar">
+    <h1>CSS Gradient Generator</h1>
+    <div style="display:flex;gap:8px;align-items:center"><button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button></div>
+</div>
+<div id="preview"></div>
+<div class="type-btns">
+    <button class="type-btn active" data-type="linear">Linear</button>
+    <button class="type-btn" data-type="radial">Radial</button>
+    <button class="type-btn" data-type="conic">Conic</button>
+</div>
+<div class="ctrl">
+    <label>Angle:</label>
+    <input type="range" id="angle" min="0" max="360" value="90">
+    <span class="angle-display" id="angVal">90deg</span>
+</div>
+<div class="color-stops">
+    <h3>Color Stops</h3>
+    <div id="colorStopsContainer"></div>
+    <button class="add-color-btn" id="addColorBtn">+ Add Color</button>
+</div>
+<div class="presets-section">
+    <h3>Popular Presets</h3>
+    <div class="presets-grid" id="presetsGrid"></div>
+</div>
+<div class="output-section">
+    <h3 style="margin-bottom:8px">Export Format</h3>
+    <div class="type-btns">
+        <button class="type-btn active" data-output="css">CSS Code</button>
+        <button class="type-btn" data-output="tailwind">Tailwind Config</button>
+        <button class="type-btn" data-output="cssvar">CSS Variables</button>
+    </div>
+    <textarea id="codeOut" readonly placeholder="Generated code will appear here..."></textarea>
+    <button id="copyBtn">Copy Code</button>
+</div>
+    
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol><li>Choose gradient type (linear or radial)</li><li>Select colors using the color pickers</li><li>Adjust angle and position</li><li>Add or remove color stops</li><li>Copy the generated CSS</li></ol>
+    </div>
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+<footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
+</div>
+<script>
+// === Common: contact modal ===
+(function(){
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:contact@yuanqizhike.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',__setupContactModal);
+    } else {
+        __setupContactModal();
+    }
+})();
+
+// === Common: theme toggle ===
+(function(){
+    var btn=document.getElementById('themeToggle');
+    if(!btn)return;
+    function apply(t){
+        document.body.classList.toggle('dark',t==='dark');
+        btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
+    }
+    var saved=localStorage.getItem('theme');
+    if(saved){apply(saved);}
+    else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+    else{apply('light');}
+    btn.addEventListener('click',function(){
+        var next=document.body.classList.contains('dark')?'light':'dark';
+        apply(next);localStorage.setItem('theme',next);
+    });
+})();
+
+const preview=document.getElementById('preview');
+const angle=document.getElementById('angle');
+const angVal=document.getElementById('angVal');
+const codeOut=document.getElementById('codeOut');
+const copyBtn=document.getElementById('copyBtn');
+const colorStopsContainer=document.getElementById('colorStopsContainer');
+const addColorBtn=document.getElementById('addColorBtn');
+const presetsGrid=document.getElementById('presetsGrid');
+const bookmarkBtn=document.getElementById('bookmarkBtn');
+const typeBtns=document.querySelectorAll('.type-btn');
+let gradientType='linear';
+let colors=['#2196F3','#4CAF50'];
+let positions=[0,100];
+let currentOutput='css';
+const presets=[
+    {name:'Sky',colors:['#87CEEB','#1E90FF'],angle:180},
+    {name:'Sunset',colors:['#FF6B6B','#FFE66D'],angle:90},
+    {name:'Ocean',colors:['#00B4DB','#0083B0'],angle:180},
+    {name:'Aurora',colors:['#11998E','#38EF7D'],angle:45},
+    {name:'Fire',colors:['#F12711','#F5AF19'],angle:180},
+    {name:'Purple Dream',colors:['#667EEA','#764BA2'],angle:90},
+    {name:'Neon',colors:['#00F260','#0575E6'],angle:135},
+    {name:'Rose',colors:['#ED4264','#FFEDBC'],angle:180},
+    {name:'Midnight',colors:['#0C3483','#A2B6DF'],angle:180},
+    {name:'Peach',colors:['#ff9a9e','#fecfef'],angle:135},
+    {name:'Tech',colors:['#667eea','#764ba2'],angle:90},
+    {name:'Corporate',colors:['#2c3e50','#3498db'],angle:180}
+];
+function getGradientCSS(){
+    const deg=angle.value;
+    angVal.textContent=deg+'deg';
+    if(gradientType==='linear'){
+        return 'linear-gradient('+deg+'deg, '+colors.map(function(c,i){return c+(positions[i]!==undefined?(' '+positions[i]+'%'): '')}).join(', ')+')';
+    }else if(gradientType==='radial'){
+        return 'radial-gradient(circle, '+colors.join(', ')+')';
+    }else{
+        return 'conic-gradient(from '+deg+'deg, '+colors.join(', ')+')';
+    }
+}
+function updateGrad(){
+    var grad=getGradientCSS();
+    preview.style.background=grad;
+    updateOutput(grad);
+}
+function updateOutput(grad){
+    if(currentOutput==='css'){
+        codeOut.value='background: '+grad+';';
+    }else if(currentOutput==='tailwind'){
+        codeOut.value=generateTailwindConfig(grad);
+    }else if(currentOutput==='cssvar'){
+        codeOut.value=generateCSSVariables(grad);
+    }
+}
+function generateTailwindConfig(grad){
+    var lines=[];
+    lines.push('// tailwind.config.js');
+    lines.push('module.exports = {');
+    lines.push('  theme: {');
+    lines.push('    extend: {');
+    lines.push('      backgroundImage: {');
+    lines.push("        'gradient-custom': '"+grad+"',");
+    lines.push('      }');
+    lines.push('    }');
+    lines.push('  }');
+    lines.push('}');
+    return lines.join('\n');
+}
+function generateCSSVariables(grad){
+    var lines=[];
+    lines.push('/* CSS Custom Properties */');
+    lines.push(':root {');
+    colors.forEach(function(c,i){
+        lines.push('  --gradient-color-'+i+': '+c+';');
+    });
+    lines.push('  --gradient-bg: '+grad+';');
+    lines.push('}');
+    lines.push('');
+    lines.push('/* Usage */');
+    lines.push('.element {');
+    lines.push('  background: var(--gradient-bg);');
+    lines.push('}');
+    return lines.join('\n');
+}
+function renderColorStops(){
+    colorStopsContainer.innerHTML='';
+    colors.forEach(function(c,i){
+        var item=document.createElement('div');
+        item.className='color-stop-item';
+        var pos=positions[i]!==undefined?positions[i]:Math.round(i/(colors.length-1)*100);
+        var html='<input type="color" value="'+c+'" data-index="'+i+'">';
+        html+='<input type="number" value="'+pos+'" min="0" max="100" data-pos="'+i+'" style="width:60px;padding:4px;border:1px solid #ddd;border-radius:4px">';
+        html+='<span>%</span>';
+        if(colors.length>2){
+            html+='<button class="remove-color-btn" data-index="'+i+'">X</button>';
+        }
+        item.innerHTML=html;
+        colorStopsContainer.appendChild(item);
+        item.querySelector('input[type="color"]').oninput=function(e){
+            colors[i]=e.target.value;
+            updateGrad();
+        };
+        item.querySelector('input[data-pos]').oninput=function(e){
+            positions[i]=parseInt(e.target.value)||0;
+            updateGrad();
+        };
+        var removeBtn=item.querySelector('.remove-color-btn');
+        if(removeBtn){
+            removeBtn.onclick=function(){
+                colors.splice(i,1);
+                positions.splice(i,1);
+                renderColorStops();
+                updateGrad();
+            };
+        }
+    });
+}
+function renderPresets(){
+    presetsGrid.innerHTML='';
+    presets.forEach(function(p){
+        var btn=document.createElement('button');
+        btn.className='preset-btn';
+        btn.title=p.name;
+        btn.style.background='linear-gradient(135deg, '+p.colors[0]+', '+p.colors[1]+')';
+        btn.onclick=function(){
+            colors=p.colors.slice();
+            angle.value=p.angle;
+            positions=colors.map(function(_,j){return Math.round(j/(colors.length-1)*100)});
+            renderColorStops();
+            updateGrad();
+            document.querySelectorAll('.output-section .type-btn').forEach(function(b){b.classList.remove('active')});
+            document.querySelectorAll('.presets-grid .preset-btn').forEach(function(b){b.classList.remove('active')});
+            btn.classList.add('active');
+        };
+        presetsGrid.appendChild(btn);
+    });
+}
+addColorBtn.onclick=function(){
+    colors.push('#ffffff');
+    positions.push(Math.round((colors.length-1)/colors.length*100));
+    renderColorStops();
+    updateGrad();
+};
+// Type buttons (gradient type)
+document.querySelectorAll('.type-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+        if(btn.dataset.type){
+            typeBtns.forEach(function(b){b.classList.remove('active')});
+            btn.classList.add('active');
+            gradientType=btn.dataset.type;
+            updateGrad();
+        }
+    });
+});
+// Output type buttons
+document.querySelectorAll('.output-section .type-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+        btn.parentElement.querySelectorAll('.type-btn').forEach(function(b){b.classList.remove('active')});
+        btn.classList.add('active');
+        currentOutput=btn.dataset.output;
+        updateGrad();
+    });
+});
+angle.oninput=updateGrad;
+copyBtn.onclick=async function(){
+    await navigator.clipboard.writeText(codeOut.value);
+    var btn=document.getElementById('copyBtn');
+    btn.textContent='Copied!';
+    setTimeout(function(){btn.textContent='Copy Code'},2000);
+};
+bookmarkBtn.onclick=function(){
+    if(!window.sidebar&&document.all&&!window.opera){
+        window.external.AddFavorite(location.href,document.title);
+    }else if(window.sidebar){
+        window.sidebar.addPanel(document.title,location.href,'');
+    }else{
+        alert('Press Ctrl+D (or Cmd+D on Mac) to bookmark this page!');
+    }
+};
+// Init
+renderColorStops();
+renderPresets();
+updateGrad();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

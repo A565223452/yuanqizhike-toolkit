@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Woodworking Cut List Calculator | YuanqiZhiKe Toolkit</title>
+<meta name="description" content="Calculate board feet, cut lists, and material costs for woodworking. Optimize lumber usage and minimize waste. Free woodworking calculator.">
+<meta name="keywords" content="woodworking calculator, board feet, cut list, lumber calculator, wood cost, woodworking math, board foot calculator">
+<meta property="og:title" content="Woodworking Cut List Calculator - Free Online Tool">
+<meta property="og:description" content="Calculate board feet, cut lists, and material costs for woodworking. Optimize lumber usage and minimize waste. Free woodworking calculator.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Woodworking Cut List Calculator</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Calculate board feet, cut lists, and material costs for woodworking. Optimize lumber usage and minimize waste. Free woodworking calculator.</div>
+    <div class="row">
+        <div class="group"><label>Lumber thickness (inches)</label><input type="number" id="thickness" value="0.75" min="0.25" max="8" step="0.125" style="width:100%;padding:8px"></div>
+        <div class="group"><label>Lumber width (inches)</label><input type="number" id="width" value="6" min="1" max="24" step="0.125" style="width:100%;padding:8px"></div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Lumber length (feet)</label><input type="number" id="length" value="8" min="1" max="20" step="0.5" style="width:100%;padding:8px"></div>
+        <div class="group"><label>Price per board foot ($)</label><input type="number" id="pricePerBf" value="4.50" min="0" step="0.01" style="width:100%;padding:8px"></div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Quantity</label><input type="number" id="qty" value="1" min="1" max="100" style="width:100%;padding:8px"></div>
+        <div class="group"><label>Kerf (saw blade width, in)</label><input type="number" id="kerf" value="0.125" min="0.0625" max="0.5" step="0.0625" style="width:100%;padding:8px"></div>
+    </div>
+    <hr style="margin:14px 0;border:none;border-top:1px solid #ddd">
+    <div style="font-weight:bold;color:#92400e;margin-bottom:6px">Project Cut List (optional)</div>
+    <div id="cutList" style="margin-bottom:8px"></div>
+    <div class="row">
+        <div class="group"><label>Cut length (inches)</label><input type="number" id="cutLength" placeholder="24" min="1" style="width:100%;padding:8px"></div>
+        <div class="group"><label>Cut quantity</label><input type="number" id="cutQty" value="1" min="1" max="100" style="width:100%;padding:8px"></div>
+    </div>
+    <button id="addCut" style="padding:6px 12px;background:#3b82f6;color:#fff;border:none;border-radius:4px;cursor:pointer">+ Add Cut</button>
+    <button id="calcAll" style="padding:10px 20px;background:#10b981;color:#fff;border:none;border-radius:6px;cursor:pointer;margin-top:14px">Calculate</button>
+    <div id="result" style="margin-top:12px"></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Enter <b>lumber dimensions</b>: thickness, width, length (use actual, not nominal, sizes).</li>
+<li>Enter <b>price per board foot</b> from your lumber supplier.</li>
+<li>Set <b>quantity</b> of boards to purchase.</li>
+<li>Optionally, build a <b>cut list</b>: enter cut lengths and quantities, click <b>+ Add Cut</b>.</li>
+<li>Click <b>Calculate</b> for board feet, cost, and optimized board layout.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">Board feet (BF) = thickness(in) × width(in) × length(ft) ÷ 12. The cut list uses greedy bin-packing to minimize waste. Always buy 10-15% extra for mistakes and defects.</p>
+    </div>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:contact@yuanqizhike.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    var cuts = [];
+    function addCut(){
+        var len = +document.getElementById('cutLength').value;
+        var qty = +document.getElementById('cutQty').value;
+        if(!len || !qty) return;
+        cuts.push({ length: len, qty: qty });
+        document.getElementById('cutLength').value = '';
+        document.getElementById('cutQty').value = '1';
+        renderCuts();
+    }
+    function removeCut(i){ cuts.splice(i, 1); renderCuts(); }
+    function renderCuts(){
+        if(cuts.length === 0){
+            document.getElementById('cutList').innerHTML = '<div style="color:#999;font-size:12px">No cuts added yet.</div>';
+            return;
+        }
+        var html = '<table style="width:100%;font-size:12px;border-collapse:collapse"><tr style="border-bottom:1px solid #ddd"><th style="text-align:left;padding:4px">Length (in)</th><th style="text-align:right;padding:4px">Qty</th><th style="text-align:right;padding:4px">Total (in)</th><th></th></tr>';
+        cuts.forEach(function(c, i){
+            html += '<tr style="border-bottom:1px solid #eee"><td style="padding:4px">' + c.length + '"</td><td style="text-align:right;padding:4px">' + c.qty + '</td><td style="text-align:right;padding:4px">' + (c.length * c.qty).toFixed(1) + '"</td><td style="text-align:right;padding:4px"><button data-i="' + i + '" class="rmCut" style="color:#dc2626;background:none;border:none;cursor:pointer">×</button></td></tr>';
+        });
+        html += '</table>';
+        document.getElementById('cutList').innerHTML = html;
+        document.querySelectorAll('.rmCut').forEach(function(btn){
+            btn.addEventListener('click', function(){ removeCut(+btn.dataset.i); });
+        });
+    }
+    function calc(){
+        var thickness = +document.getElementById('thickness').value;
+        var width = +document.getElementById('width').value;
+        var length = +document.getElementById('length').value;
+        var pricePerBf = +document.getElementById('pricePerBf').value;
+        var qty = +document.getElementById('qty').value;
+        var kerf = +document.getElementById('kerf').value;
+        // Board feet = thickness(in) * width(in) * length(ft) / 12
+        var bfPerPiece = thickness * width * length / 12;
+        var totalBf = bfPerPiece * qty;
+        var totalCost = totalBf * pricePerBf;
+        var html = '<div style="background:#fef3c7;padding:14px;border-radius:8px;border-left:4px solid #92400e">';
+        html += '<div style="font-size:14px;font-weight:bold;color:#92400e;margin-bottom:10px">Material Calculation</div>';
+        html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">';
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;text-align:center"><div style="font-size:12px;color:#666">Per piece</div><div style="font-size:20px;font-weight:bold;color:#92400e">' + bfPerPiece.toFixed(2) + ' BF</div></div>';
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;text-align:center"><div style="font-size:12px;color:#666">Total (' + qty + ' pcs)</div><div style="font-size:20px;font-weight:bold;color:#92400e">' + totalBf.toFixed(2) + ' BF</div></div>';
+        html += '</div>';
+        html += '<div style="background:#d1fae5;padding:10px;border-radius:6px;margin-top:8px;text-align:center"><div style="font-size:12px;color:#065f46">Total Cost</div><div style="font-size:24px;font-weight:bold;color:#065f46">$' + totalCost.toFixed(2) + '</div></div>';
+        // Cut list optimization
+        if(cuts.length > 0){
+            var totalCutLength = cuts.reduce(function(s, c){ return s + c.length * c.qty; }, 0);
+            var totalCutLengthFt = totalCutLength / 12;
+            // Account for kerf losses
+            var totalCuts = cuts.reduce(function(s, c){ return s + c.qty; }, 0);
+            var kerfLossIn = (totalCuts - 1) * kerf; // kerf between cuts (n-1 cuts per board on average)
+            // Calculate boards needed
+            var usableLengthIn = length * 12;
+            var boardLayout = [];
+            var currentBoard = 0;
+            var currentUsed = 0;
+            // Greedy bin packing
+            var allCuts = [];
+            cuts.forEach(function(c){
+                for(var i = 0; i < c.qty; i++) allCuts.push(c.length);
+            });
+            allCuts.sort(function(a, b){ return b - a; });
+            var boards = [[]];
+            var boardUsed = [0];
+            allCuts.forEach(function(cutLen){
+                var placed = false;
+                for(var i = 0; i < boards.length; i++){
+                    if(boardUsed[i] + cutLen + kerf <= usableLengthIn){
+                        boards[i].push(cutLen);
+                        boardUsed[i] += cutLen + kerf;
+                        placed = true;
+                        break;
+                    }
+                }
+                if(!placed){
+                    boards.push([cutLen]);
+                    boardUsed.push(cutLen + kerf);
+                }
+            });
+            var boardsNeeded = boards.length;
+            var totalMaterialIn = boardsNeeded * usableLengthIn;
+            var wasteIn = totalMaterialIn - totalCutLength;
+            var wastePct = (wasteIn / totalMaterialIn) * 100;
+            html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-top:10px">';
+            html += '<div style="font-size:13px;font-weight:bold;color:#92400e;margin-bottom:6px">Cut List Analysis</div>';
+            html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px">';
+            html += '<div>Total cuts: ' + totalCuts + '</div>';
+            html += '<div>Total cut length: ' + totalCutLengthFt.toFixed(1) + ' ft</div>';
+            html += '<div>Boards needed: <b style="color:#92400e">' + boardsNeeded + '</b></div>';
+            html += '<div>Waste: ' + wasteIn.toFixed(1) + ' in (' + wastePct.toFixed(1) + '%)</div>';
+            html += '</div>';
+            html += '<div style="font-size:11px;color:#666;margin-top:6px"><b>Board layout:</b></div>';
+            boards.forEach(function(b, i){
+                html += '<div style="font-size:11px;margin-top:2px">Board ' + (i+1) + ': ' + b.join('", "') + '" (used: ' + (boardUsed[i] - kerf).toFixed(1) + ' / ' + usableLengthIn + ' in)</div>';
+            });
+            html += '</div>';
+            // Cost for cut list
+            var cutBf = boardsNeeded * bfPerPiece;
+            var cutCost = cutBf * pricePerBf;
+            html += '<div style="background:#dbeafe;padding:8px;border-radius:6px;margin-top:8px;font-size:13px"><b>Material needed:</b> ' + boardsNeeded + ' boards = ' + cutBf.toFixed(2) + ' BF = <b>$' + cutCost.toFixed(2) + '</b></div>';
+        }
+        // Reference
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-top:8px;font-size:11px;color:#666">';
+        html += '<div style="font-weight:bold;color:#92400e;margin-bottom:4px">Board Feet Formula</div>';
+        html += '<div>BF = Thickness(in) × Width(in) × Length(ft) ÷ 12</div>';
+        html += '<div style="margin-top:4px">Nominal vs actual: 1x6 lumber is actually 0.75" × 5.5". Use actual dimensions for accuracy.</div>';
+        html += '</div>';
+        html += '</div>';
+        document.getElementById('result').innerHTML = html;
+    }
+    document.getElementById('addCut').addEventListener('click', addCut);
+    document.getElementById('calcAll').addEventListener('click', calc);
+    renderCuts();
+    calc();
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

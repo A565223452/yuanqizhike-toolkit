@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Escape Room Puzzle Generator | YuanqiZhiKe Toolkit</title>
+<meta name="description" content="Generate escape room puzzles. Ciphers, codes, riddles, and logic puzzles. Free puzzle generator for escape room designers.">
+<meta name="keywords" content="escape room puzzle, puzzle generator, cipher, riddle generator, code puzzle, escape room design, puzzle ideas">
+<meta property="og:title" content="Escape Room Puzzle Generator - Free Online Tool">
+<meta property="og:description" content="Generate escape room puzzles. Ciphers, codes, riddles, and logic puzzles. Free puzzle generator for escape room designers.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Escape Room Puzzle Generator</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Generate escape room puzzles. Ciphers, codes, riddles, and logic puzzles. Free puzzle generator for escape room designers.</div>
+    <div class="row">
+        <div class="group"><label>Puzzle type</label>
+            <select id="type" style="width:100%;padding:8px">
+                <option value="caesar">Caesar cipher</option>
+                <option value="substitution">Substitution cipher</option>
+                <option value="reverse">Reverse text</option>
+                <option value="binary">Binary code</option>
+                <option value="morse">Morse code</option>
+                <option value="riddle">Riddle</option>
+                <option value="number">Number sequence</option>
+                <option value="word">Word scramble</option>
+            </select>
+        </div>
+        <div class="group"><label>Difficulty</label>
+            <select id="diff" style="width:100%;padding:8px">
+                <option value="easy">Easy</option>
+                <option value="medium" selected>Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Custom phrase (optional)</label><input type="text" id="custom" placeholder="Leave blank for random" style="width:100%;padding:8px"></div>
+    </div>
+    <button id="gen" style="padding:8px 16px;background:#10b981;color:#fff;border:none;border-radius:4px;cursor:pointer;margin-right:8px">Generate puzzle</button>
+    <button id="show" style="padding:8px 16px;background:#3b82f6;color:#fff;border:none;border-radius:4px;cursor:pointer;margin-bottom:12px">Show solution</button>
+    <div id="result" style="background:#dbeafe;padding:12px;border-radius:6px;border-left:3px solid #3b82f6;margin-top:12px"></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Choose a <b>Puzzle type</b>: Caesar cipher, substitution, reverse, binary, Morse, riddle, number sequence, or word scramble.</li>
+<li>Set <b>Difficulty</b> (affects cipher shift complexity).</li>
+<li>Optionally enter a <b>custom phrase</b> to encode (leave blank for random).</li>
+<li>Click <b>Generate puzzle</b> for a new puzzle.</li>
+<li>Click <b>Show solution</b> to reveal the answer.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666>Use multiple puzzle types in sequence for a complete escape room. Combine ciphers with physical props (locked boxes, hidden notes). Always playtest with someone who didn't design it.</p>
+    </div>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:contact@yuanqizhike.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    var morseCode = {
+        A:'.-', B:'-...', C:'-.-.', D:'-..', E:'.', F:'..-.', G:'--.', H:'....',
+        I:'..', J:'.---', K:'-.-', L:'.-..', M:'--', N:'-.', O:'---', P:'.--.',
+        Q:'--.-', R:'.-.', S:'...', T:'-', U:'..-', V:'...-', W:'.--', X:'-..-',
+        Y:'-.--', Z:'--..', '0':'-----', '1':'.----', '2':'..---', '3':'...--',
+        '4':'....-', '5':'.....', '6':'-....', '7':'--...', '8':'---..', '9':'----.'
+    };
+    var riddles = [
+        { q: 'I have keys but no locks. You can enter but never leave. What am I?', a: 'A keyboard' },
+        { q: 'What has hands but cannot clap?', a: 'A clock' },
+        { q: 'The more you take, the more you leave behind. What are they?', a: 'Footsteps' },
+        { q: 'What can travel around the world while staying in a corner?', a: 'A stamp' },
+        { q: 'What has a head and a tail but no body?', a: 'A coin' },
+        { q: 'I speak without a mouth and hear without ears. I have no body, but come alive with the wind. What am I?', a: 'An echo' },
+        { q: 'What gets wetter the more it dries?', a: 'A towel' },
+        { q: 'What has many keys but cannot open a single lock?', a: 'A piano' },
+        { q: 'I am not alive, but I grow. I need air, but I have no lungs. What am I?', a: 'Fire' },
+        { q: 'The more of me you take, the more you leave behind. What am I?', a: 'Footsteps' },
+        { q: 'What has cities but no houses, forests but no trees, water but no fish?', a: 'A map' },
+        { q: 'What can you hold in your right hand but never in your left?', a: 'Your left hand' }
+    ];
+    var wordBank = ['PUZZLE', 'CIPHER', 'MYSTERY', 'VAULT', 'KEYCODE', 'SECRET', 'ESCAPE', 'HIDDEN', 'LOCKED', 'CODEBREAK', 'TREASURE', 'ANCIENT', 'WHISPER', 'SHADOW', 'CRYSTAL'];
+    var phrases = ['THE KEY IS HIDDEN UNDER THE CLOCK', 'ESCAPE THROUGH THE RED DOOR', 'THE CODE IS FOUR SEVEN TWO', 'MEET AT MIDNIGHT BY THE LAKE', 'THE TREASURE LIES BENEATH THE STAIRS'];
+    var solution = '';
+    var puzzle = '';
+    function gen(){
+        var type = document.getElementById('type').value;
+        var diff = document.getElementById('diff').value;
+        var custom = document.getElementById('custom').value.trim().toUpperCase();
+        var text = custom || phrases[Math.floor(Math.random() * phrases.length)];
+        if(type === 'caesar'){
+            var shift = diff === 'easy' ? 3 : (diff === 'medium' ? 7 + Math.floor(Math.random() * 5) : 13 + Math.floor(Math.random() * 13));
+            puzzle = text.replace(/[A-Z]/g, function(c){
+                return String.fromCharCode((c.charCodeAt(0) - 65 + shift) % 26 + 65);
+            });
+            solution = 'Caesar shift ' + shift + ': ' + text;
+            renderPuzzle('Caesar Cipher', puzzle, 'Decode by shifting each letter back ' + shift + ' positions in the alphabet.');
+        } else if(type === 'substitution'){
+            var alpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+            var shuffled = alpha.slice().sort(function(){ return Math.random() - 0.5; });
+            var map = {};
+            alpha.forEach(function(c, i){ map[c] = shuffled[i]; });
+            puzzle = text.replace(/[A-Z]/g, function(c){ return map[c]; });
+            solution = 'Substitution: ' + text + ' | Key: ' + alpha.join('') + ' -> ' + shuffled.join('');
+            renderPuzzle('Substitution Cipher', puzzle, 'Each letter maps to a different letter. Hint: look for common letters (E, T, A, O).');
+        } else if(type === 'reverse'){
+            puzzle = text.split('').reverse().join('');
+            solution = 'Reversed: ' + text;
+            renderPuzzle('Reverse Text', puzzle, 'Read the message backwards.');
+        } else if(type === 'binary'){
+            puzzle = text.split('').map(function(c){
+                return c.charCodeAt(0).toString(2).padStart(8, '0');
+            }).join(' ');
+            solution = 'Binary decoded: ' + text;
+            renderPuzzle('Binary Code', puzzle, 'Each 8-bit group represents an ASCII character.');
+        } else if(type === 'morse'){
+            puzzle = text.split('').map(function(c){
+                if(c === ' ') return '   ';
+                return morseCode[c] || c;
+            }).join(' ');
+            solution = 'Morse decoded: ' + text;
+            renderPuzzle('Morse Code', puzzle, 'Dots (.) and dashes (-). Three spaces separate words.');
+        } else if(type === 'riddle'){
+            var r = riddles[Math.floor(Math.random() * riddles.length)];
+            puzzle = r.q;
+            solution = 'Answer: ' + r.a;
+            renderPuzzle('Riddle', puzzle, 'Solve the riddle to find the next clue.');
+        } else if(type === 'number'){
+            var sequences = [
+                { seq: [2, 4, 8, 16, 32], rule: 'Double each number', next: 64 },
+                { seq: [1, 1, 2, 3, 5, 8], rule: 'Fibonacci (add previous two)', next: 13 },
+                { seq: [3, 6, 12, 24, 48], rule: 'Multiply by 2', next: 96 },
+                { seq: [1, 4, 9, 16, 25], rule: 'Perfect squares', next: 36 },
+                { seq: [2, 6, 12, 20, 30], rule: 'n * (n+1)', next: 42 },
+                { seq: [100, 50, 25, 12.5], rule: 'Halve each', next: 6.25 }
+            ];
+            var s = sequences[Math.floor(Math.random() * sequences.length)];
+            puzzle = s.seq.join(', ') + ', ?';
+            solution = 'Next: ' + s.next + ' (' + s.rule + ')';
+            renderPuzzle('Number Sequence', puzzle, 'Find the pattern and predict the next number.');
+        } else if(type === 'word'){
+            var word = wordBank[Math.floor(Math.random() * wordBank.length)];
+            var scrambled = word.split('').sort(function(){ return Math.random() - 0.5; }).join('');
+            if(scrambled === word) scrambled = word.split('').reverse().join('');
+            puzzle = scrambled;
+            solution = 'Unscrambled: ' + word;
+            renderPuzzle('Word Scramble', puzzle, 'Rearrange the letters to form a meaningful word.');
+        }
+    }
+    function renderPuzzle(type, p, hint){
+        var html = '<div style="font-size:15px;font-weight:bold;margin-bottom:6px">' + type + '</div>';
+        html += '<div style="background:#fff;padding:12px;border-radius:6px;font-family:monospace;font-size:14px;margin:8px 0;word-break:break-all">' + p + '</div>';
+        html += '<div style="font-size:12px;color:#666;padding:6px;background:#fef3c7;border-radius:4px">Hint: ' + hint + '</div>';
+        html += '<div id="sol" style="display:none;margin-top:8px;padding:8px;background:#dcfce7;border-radius:4px;font-size:13px"><b>Solution:</b> ' + solution + '</div>';
+        document.getElementById('result').innerHTML = html;
+    }
+    document.getElementById('gen').addEventListener('click', gen);
+    document.getElementById('show').addEventListener('click', function(){
+        var s = document.getElementById('sol');
+        if(s) s.style.display = s.style.display === 'none' ? 'block' : 'none';
+    });
+    gen();
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

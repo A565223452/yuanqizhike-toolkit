@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Resolution Calculator | YuanqiZhiKe Toolkit</title>
+<meta name="description" content="Calculate image resolution, pixel dimensions, DPI/PPI, and print size. Convert between pixels, inches, centimeters. Free resolution calculator.">
+<meta name="keywords" content="image resolution calculator, dpi calculator, ppi calculator, pixel to inch, print size calculator, image dimensions, megapixels">
+<meta property="og:title" content="Image Resolution Calculator - Free Online Tool">
+<meta property="og:description" content="Calculate image resolution, pixel dimensions, DPI/PPI, and print size. Convert between pixels, inches, centimeters. Free resolution calculator.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Image Resolution Calculator</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Calculate image resolution, pixel dimensions, DPI/PPI, and print size. Convert between pixels, inches, centimeters. Free resolution calculator.</div>
+    <div style="display:flex;gap:6px;margin-bottom:12px">
+        <button id="tab1" class="tab active" style="flex:1;padding:10px;background:#6366f1;color:#fff;border:none;border-radius:6px;cursor:pointer">Pixels &#8212; Print</button>
+        <button id="tab2" class="tab" style="flex:1;padding:10px;background:#f3f4f6;border:none;border-radius:6px;cursor:pointer">Print &#8212; Pixels</button>
+    </div>
+    <div id="mode1">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <div class="group">
+                <label>Width (px)</label>
+                <input type="number" id="width1" value="3000" min="1" style="width:100%;padding:8px">
+            </div>
+            <div class="group">
+                <label>Height (px)</label>
+                <input type="number" id="height1" value="2000" min="1" style="width:100%;padding:8px">
+            </div>
+        </div>
+        <div class="group">
+            <label>Resolution (DPI/PPI)</label>
+            <input type="number" id="dpi1" value="300" min="1" style="width:100%;padding:8px">
+        </div>
+    </div>
+    <div id="mode2" style="display:none">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <div class="group">
+                <label>Width</label>
+                <input type="number" id="width2" value="10" min="0.1" step="0.1" style="width:100%;padding:8px">
+            </div>
+            <div class="group">
+                <label>Height</label>
+                <input type="number" id="height2" value="8" min="0.1" step="0.1" style="width:100%;padding:8px">
+            </div>
+        </div>
+        <div class="group">
+            <label>Unit</label>
+            <select id="unit2" style="width:100%;padding:8px">
+                <option value="in">Inches</option>
+                <option value="cm">Centimeters</option>
+                <option value="mm">Millimeters</option>
+            </select>
+        </div>
+        <div class="group">
+            <label>Resolution (DPI/PPI)</label>
+            <input type="number" id="dpi2" value="300" min="1" style="width:100%;padding:8px">
+        </div>
+    </div>
+    <div class="result-box" id="result" style="margin-top:12px"></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Choose mode: <b>Pixels &#8212; Print</b> or <b>Print &#8212; Pixels</b>.</li>
+<li>Enter dimensions and DPI.</li>
+<li>See calculated print size or required pixels.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">DPI (dots per inch) for print, PPI (pixels per inch) for screen &#8212; same calculation. 300 DPI = professional print quality. 150 DPI acceptable for posters. 72 DPI = web. Print size = pixels ÷ DPI. Megapixels = (W × H) ÷ 1,000,000. Common sizes: 4×6" needs 1200×1800px, A4 needs 2480×3508px at 300 DPI.</p>
+    </div>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:contact@yuanqizhike.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    var mode = 1;
+    function calc(){
+        var html;
+        if(mode === 1){
+            var w = +document.getElementById('width1').value;
+            var h = +document.getElementById('height1').value;
+            var dpi = +document.getElementById('dpi1').value;
+            if(w <= 0 || h <= 0 || dpi <= 0){
+                document.getElementById('result').innerHTML = '<div style="color:#666;text-align:center;padding:12px">Enter valid values</div>';
+                return;
+            }
+            var inW = w / dpi;
+            var inH = h / dpi;
+            var cmW = inW * 2.54;
+            var cmH = inH * 2.54;
+            var mmW = cmW * 10;
+            var mmH = cmH * 10;
+            var megapixels = (w * h) / 1000000;
+            var aspectRatio = w / h;
+            html = '<div style="background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;padding:20px;border-radius:8px;text-align:center;margin-bottom:12px">';
+            html += '<div style="font-size:13px;opacity:0.9">Print size at ' + dpi + ' DPI</div>';
+            html += '<div style="font-size:28px;font-weight:bold">' + inW.toFixed(2) + '" × ' + inH.toFixed(2) + '"</div>';
+            html += '<div style="font-size:13px;opacity:0.9">' + cmW.toFixed(1) + ' × ' + cmH.toFixed(1) + ' cm</div>';
+            html += '</div>';
+            html += '<table style="width:100%;border-collapse:collapse;font-size:14px">';
+            html += '<tr><td style="padding:8px;border-bottom:1px solid #eee">Image dimensions</td><td style="padding:8px;border-bottom:1px solid #eee;text-align:right">' + w + ' × ' + h + ' px</td></tr>';
+            html += '<tr><td style="padding:8px;border-bottom:1px solid #eee">Megapixels</td><td style="padding:8px;border-bottom:1px solid #eee;text-align:right">' + megapixels.toFixed(1) + ' MP</td></tr>';
+            html += '<tr><td style="padding:8px;border-bottom:1px solid #eee">Total pixels</td><td style="padding:8px;border-bottom:1px solid #eee;text-align:right">' + (w * h).toLocaleString() + '</td></tr>';
+            html += '<tr><td style="padding:8px;border-bottom:1px solid #eee">Aspect ratio</td><td style="padding:8px;border-bottom:1px solid #eee;text-align:right">' + aspectRatio.toFixed(3) + ':1 (' + simplifyRatio(w, h) + ')</td></tr>';
+            html += '<tr><td style="padding:8px;border-bottom:1px solid #eee">Print (inches)</td><td style="padding:8px;border-bottom:1px solid #eee;text-align:right">' + inW.toFixed(2) + '" × ' + inH.toFixed(2) + '"</td></tr>';
+            html += '<tr><td style="padding:8px;border-bottom:1px solid #eee">Print (cm)</td><td style="padding:8px;border-bottom:1px solid #eee;text-align:right">' + cmW.toFixed(2) + ' × ' + cmH.toFixed(2) + ' cm</td></tr>';
+            html += '<tr><td style="padding:8px;border-bottom:1px solid #eee">Print (mm)</td><td style="padding:8px;border-bottom:1px solid #eee;text-align:right">' + mmW.toFixed(1) + ' × ' + mmH.toFixed(1) + ' mm</td></tr>';
+            html += '<tr><td style="padding:8px">File size (24-bit, uncompressed)</td><td style="padding:8px;text-align:right">' + formatSize(w * h * 3) + '</td></tr>';
+            html += '</table>';
+            html += renderQualityAssessment(dpi, inW, inH);
+        } else {
+            var w = +document.getElementById('width2').value;
+            var h = +document.getElementById('height2').value;
+            var unit = document.getElementById('unit2').value;
+            var dpi = +document.getElementById('dpi2').value;
+            if(w <= 0 || h <= 0 || dpi <= 0){
+                document.getElementById('result').innerHTML = '<div style="color:#666;text-align:center;padding:12px">Enter valid values</div>';
+                return;
+            }
+            // Convert to inches
+            var inW, inH;
+            if(unit === 'in'){ inW = w; inH = h; }
+            else if(unit === 'cm'){ inW = w / 2.54; inH = h / 2.54; }
+            else { inW = w / 25.4; inH = h / 25.4; }
+            var pxW = Math.round(inW * dpi);
+            var pxH = Math.round(inH * dpi);
+            var megapixels = (pxW * pxH) / 1000000;
+            html = '<div style="background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;padding:20px;border-radius:8px;text-align:center;margin-bottom:12px">';
+            html += '<div style="font-size:13px;opacity:0.9">Required resolution at ' + dpi + ' DPI</div>';
+            html += '<div style="font-size:28px;font-weight:bold">' + pxW.toLocaleString() + ' × ' + pxH.toLocaleString() + ' px</div>';
+            html += '<div style="font-size:13px;opacity:0.9">' + megapixels.toFixed(1) + ' megapixels</div>';
+            html += '</div>';
+            html += '<table style="width:100%;border-collapse:collapse;font-size:14px">';
+            html += '<tr><td style="padding:8px;border-bottom:1px solid #eee">Print size</td><td style="padding:8px;border-bottom:1px solid #eee;text-align:right">' + w + ' × ' + h + ' ' + unit + '</td></tr>';
+            html += '<tr><td style="padding:8px;border-bottom:1px solid #eee">Print (inches)</td><td style="padding:8px;border-bottom:1px solid #eee;text-align:right">' + inW.toFixed(2) + '" × ' + inH.toFixed(2) + '"</td></tr>';
+            html += '<tr><td style="padding:8px;border-bottom:1px solid #eee">Print (cm)</td><td style="padding:8px;border-bottom:1px solid #eee;text-align:right">' + (inW * 2.54).toFixed(2) + ' × ' + (inH * 2.54).toFixed(2) + ' cm</td></tr>';
+            html += '<tr><td style="padding:8px;border-bottom:1px solid #eee">Required pixels</td><td style="padding:8px;border-bottom:1px solid #eee;text-align:right">' + pxW.toLocaleString() + ' × ' + pxH.toLocaleString() + '</td></tr>';
+            html += '<tr><td style="padding:8px;border-bottom:1px solid #eee">Megapixels</td><td style="padding:8px;border-bottom:1px solid #eee;text-align:right">' + megapixels.toFixed(2) + ' MP</td></tr>';
+            html += '<tr><td style="padding:8px;border-bottom:1px solid #eee">Total pixels</td><td style="padding:8px;border-bottom:1px solid #eee;text-align:right">' + (pxW * pxH).toLocaleString() + '</td></tr>';
+            html += '<tr><td style="padding:8px">File size (24-bit, uncompressed)</td><td style="padding:8px;text-align:right">' + formatSize(pxW * pxH * 3) + '</td></tr>';
+            html += '</table>';
+            html += renderQualityAssessment(dpi, inW, inH);
+        }
+        document.getElementById('result').innerHTML = html;
+    }
+    function simplifyRatio(w, h){
+        var gcd = function(a, b){ return b === 0 ? a : gcd(b, a % b); };
+        var g = gcd(w, h);
+        return (w / g) + ':' + (h / g);
+    }
+    function formatSize(bytes){
+        if(bytes < 1024) return bytes + ' B';
+        if(bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+        if(bytes < 1024 * 1024 * 1024) return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+        return (bytes / (1024 * 1024 * 1024)).toFixed(2) + ' GB';
+    }
+    function renderQualityAssessment(dpi, inW, inH){
+        var quality, color, advice;
+        if(dpi >= 300){ quality = 'Excellent'; color = '#10b981'; advice = 'Professional print quality. Suitable for close viewing, magazines, photo books.'; }
+        else if(dpi >= 200){ quality = 'Good'; color = '#06b6d4'; advice = 'Good print quality. Suitable for most prints viewed at arm length.'; }
+        else if(dpi >= 150){ quality = 'Acceptable'; color = '#f59e0b'; advice = 'Acceptable for larger prints viewed from distance (posters, banners).'; }
+        else if(dpi >= 72){ quality = 'Screen only'; color = '#ef4444'; advice = 'Only suitable for screen display. Will look pixelated when printed.'; }
+        else { quality = 'Low'; color = '#ef4444'; advice = 'Too low for quality printing or display.'; }
+        var html = '<div style="margin-top:12px;padding:12px;background:' + color + '20;border-left:4px solid ' + color + ';border-radius:6px">';
+        html += '<div style="font-weight:bold;color:' + color + '">' + quality + ' (' + dpi + ' DPI)</div>';
+        html += '<div style="font-size:13px;margin-top:4px">' + advice + '</div>';
+        html += '</div>';
+        html += '<div style="margin-top:8px;padding:12px;background:#f0f9ff;border-radius:6px;font-size:13px;line-height:1.6">';
+        html += '<b>📐 DPI/PPI guide:</b><br>';
+        html += '?300 DPI: Magazine/photo print quality<br>';
+        html += '?200 DPI: Good quality prints<br>';
+        html += '?150 DPI: Newspaper, posters viewed far<br>';
+        html += '?96 DPI: Standard screen display<br>';
+        html += '?72 DPI: Web/legacy screen<br>';
+        html += '<br><b>📄 Common print sizes:</b><br>';
+        html += '?4×6" (10×15cm): 1200×1800 px @ 300 DPI<br>';
+        html += '?5×7" (13×18cm): 1500×2100 px @ 300 DPI<br>';
+        html += '?8×10" (20×25cm): 2400×3000 px @ 300 DPI<br>';
+        html += '?8.5×11" (Letter): 2550×3300 px @ 300 DPI<br>';
+        html += '?A4 (21×29.7cm): 2480×3508 px @ 300 DPI';
+        html += '</div>';
+        return html;
+    }
+    document.getElementById('tab1').addEventListener('click', function(){
+        mode = 1;
+        document.getElementById('mode1').style.display = 'block';
+        document.getElementById('mode2').style.display = 'none';
+        this.style.background = '#6366f1';
+        this.style.color = '#fff';
+        document.getElementById('tab2').style.background = '#f3f4f6';
+        document.getElementById('tab2').style.color = '#000';
+        calc();
+    });
+    document.getElementById('tab2').addEventListener('click', function(){
+        mode = 2;
+        document.getElementById('mode1').style.display = 'none';
+        document.getElementById('mode2').style.display = 'block';
+        this.style.background = '#6366f1';
+        this.style.color = '#fff';
+        document.getElementById('tab1').style.background = '#f3f4f6';
+        document.getElementById('tab1').style.color = '#000';
+        calc();
+    });
+    ['width1','height1','dpi1','width2','height2','dpi2'].forEach(function(id){
+        document.getElementById(id).addEventListener('input', calc);
+    });
+    document.getElementById('unit2').addEventListener('change', calc);
+    calc();
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pet Travel Cost Calculator | YuanqiZhiKe Toolkit</title>
+<meta name="description" content="Calculate pet travel costs: flights, hotels, vet, and gear. Budget for traveling with dogs and cats. Free pet travel calculator.">
+<meta name="keywords" content="pet travel cost, pet flight, dog travel, cat travel, pet hotel, pet travel budget, travel with pets, pet transport">
+<meta property="og:title" content="Pet Travel Cost Calculator - Free Online Tool">
+<meta property="og:description" content="Calculate pet travel costs: flights, hotels, vet, and gear. Budget for traveling with dogs and cats. Free pet travel calculator.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Pet Travel Cost Calculator</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Calculate pet travel costs: flights, hotels, vet, and gear. Budget for traveling with dogs and cats. Free pet travel calculator.</div>
+    <div class="row">
+        <div class="group"><label>Pet type</label>
+            <select id="petType" style="width:100%;padding:8px">
+                <option value="dog" selected>Dog</option>
+                <option value="cat">Cat</option>
+                <option value="small">Small animal (rabbit, bird)</option>
+            </select>
+        </div>
+        <div class="group"><label>Pet size</label>
+            <select id="petSize" style="width:100%;padding:8px">
+                <option value="small" selected>Small (under 20 lbs)</option>
+                <option value="medium">Medium (20-50 lbs)</option>
+                <option value="large">Large (50-100 lbs)</option>
+                <option value="giant">Giant (over 100 lbs)</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Travel mode</label>
+            <select id="mode" style="width:100%;padding:8px">
+                <option value="domestic-air" selected>Domestic flight</option>
+                <option value="intl-air">International flight</option>
+                <option value="road">Road trip</option>
+                <option value="train">Train</option>
+            </select>
+        </div>
+        <div class="group"><label>Trip duration (days)</label><input type="number" id="days" value="7" min="1" style="width:100%;padding:8px"></div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Hotel pet fee/night ($)</label><input type="number" id="hotelFee" value="50" min="0" style="width:100%;padding:8px"></div>
+        <div class="group"><label>Travel distance (miles)</label><input type="number" id="distance" value="500" min="0" style="width:100%;padding:8px"></div>
+    </div>
+    <div class="row">
+        <div class="group"><label>Vet health certificate ($)</label><input type="number" id="vetCost" value="50" min="0" style="width:100%;padding:8px"></div>
+        <div class="group"><label>Need carrier?</label>
+            <select id="carrier" style="width:100%;padding:8px">
+                <option value="yes" selected>Yes (need to buy)</option>
+                <option value="no">No (already have)</option>
+            </select>
+        </div>
+    </div>
+    <button id="calc" style="padding:10px 20px;background:#10b981;color:#fff;border:none;border-radius:6px;cursor:pointer;margin-top:10px">Calculate Travel Cost</button>
+    <div id="result" style="margin-top:12px"></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Select <b>pet type</b> and <b>size</b>.</li>
+<li>Choose <b>travel mode</b> (flight, road, train).</li>
+<li>Enter <b>trip duration</b> in days.</li>
+<li>Set <b>hotel pet fee/night</b> and <b>distance</b> if driving.</li>
+<li>Enter <b>vet certificate cost</b> and choose if carrier is needed.</li>
+<li>Click <b>Calculate Travel Cost</b> for full budget.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">Includes: transport, lodging fees, food, vet certificate, microchip, vaccinations, insurance, supplies, emergency fund. International travel requires USDA APHIS certificate and may need 6+ months preparation. Always verify with airline.</p>
+    </div>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:contact@yuanqizhike.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    function calc(){
+        var petType = document.getElementById('petType').value;
+        var petSize = document.getElementById('petSize').value;
+        var mode = document.getElementById('mode').value;
+        var days = +document.getElementById('days').value;
+        var hotelFee = +document.getElementById('hotelFee').value;
+        var distance = +document.getElementById('distance').value;
+        var vetCost = +document.getElementById('vetCost').value;
+        var needCarrier = document.getElementById('carrier').value === 'yes';
+        if(!days){ document.getElementById('result').innerHTML = '<div style="color:#dc2626;padding:8px">Enter trip duration.</div>'; return; }
+        var flightFee = 0;
+        var cabinAllowed = petSize === 'small';
+        if(mode === 'domestic-air'){
+            if(cabinAllowed) flightFee = 125;
+            else flightFee = 200;
+        } else if(mode === 'intl-air'){
+            if(cabinAllowed) flightFee = 200;
+            else flightFee = 400;
+        }
+        var carrierCost = 0;
+        if(needCarrier){
+            if(cabinAllowed) carrierCost = 50;
+            else carrierCost = 100;
+        }
+        var roadCost = 0;
+        if(mode === 'road'){
+            var gasPrice = 3.5;
+            var mpg = 25;
+            roadCost = (distance / mpg) * gasPrice;
+        }
+        var trainFee = 0;
+        if(mode === 'train'){
+            trainFee = 25; // Amtrak pet fee
+        }
+        var hotelTotal = days * hotelFee;
+        var petFoodPerDay = petSize === 'small' ? 2 : petSize === 'medium' ? 3 : petSize === 'large' ? 4 : 5;
+        var foodTotal = days * petFoodPerDay;
+        var microchipCost = 45;
+        var vaccinationsCost = 30;
+        var petInsurance = days * 5;
+        var suppliesCost = 50;
+        var emergencyFund = 200;
+        var totalCost = flightFee + carrierCost + roadCost + trainFee + hotelTotal + foodTotal + vetCost + microchipCost + vaccinationsCost + petInsurance + suppliesCost + emergencyFund;
+        var html = '<div style="background:#dbeafe;padding:14px;border-radius:8px;border-left:4px solid #1e40af">';
+        html += '<div style="text-align:center;margin-bottom:14px">';
+        html += '<div style="font-size:13px;color:#666">Total Pet Travel Cost</div>';
+        html += '<div style="font-size:32px;font-weight:bold;color:#1e40af">$' + totalCost.toFixed(0) + '</div>';
+        html += '<div style="font-size:14px;color:#666">For ' + days + '-day ' + mode + ' trip</div>';
+        html += '</div>';
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+        html += '<div style="font-size:13px;font-weight:bold;color:#1e40af;margin-bottom:6px">Cost Breakdown</div>';
+        html += '<table style="width:100%;font-size:12px;border-collapse:collapse">';
+        var rows = [];
+        if(flightFee > 0) rows.push(['Flight fee', flightFee]);
+        if(roadCost > 0) rows.push(['Gas (road trip)', roadCost]);
+        if(trainFee > 0) rows.push(['Train fee', trainFee]);
+        if(carrierCost > 0) rows.push(['Pet carrier', carrierCost]);
+        if(hotelTotal > 0) rows.push(['Hotel pet fee (' + days + ' x $' + hotelFee + ')', hotelTotal]);
+        rows.push(['Pet food (' + days + ' days)', foodTotal]);
+        rows.push(['Vet health certificate', vetCost]);
+        rows.push(['Microchip', microchipCost]);
+        rows.push(['Vaccinations', vaccinationsCost]);
+        rows.push(['Pet insurance (' + days + ' days)', petInsurance]);
+        rows.push(['Travel supplies', suppliesCost]);
+        rows.push(['Emergency fund', emergencyFund]);
+        rows.forEach(function(r){
+            html += '<tr style="border-bottom:1px solid #eee"><td style="padding:6px">' + r[0] + '</td><td style="text-align:right;padding:6px">$' + r[1].toFixed(0) + '</td></tr>';
+        });
+        html += '<tr style="background:#dbeafe;font-weight:bold"><td style="padding:6px">Total</td><td style="text-align:right;padding:6px;color:#1e40af">$' + totalCost.toFixed(0) + '</td></tr>';
+        html += '</table>';
+        html += '</div>';
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+        html += '<div style="font-size:13px;font-weight:bold;color:#1e40af;margin-bottom:6px">Cost Categories</div>';
+        var transport = flightFee + roadCost + trainFee;
+        var lodging = hotelTotal;
+        var vet = vetCost + microchipCost + vaccinationsCost;
+        var other = carrierCost + foodTotal + petInsurance + suppliesCost + emergencyFund;
+        html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px">';
+        html += '<div><b>Transport:</b> $' + transport.toFixed(0) + '</div>';
+        html += '<div><b>Lodging:</b> $' + lodging.toFixed(0) + '</div>';
+        html += '<div><b>Vet/Health:</b> $' + vet.toFixed(0) + '</div>';
+        html += '<div><b>Supplies/Other:</b> $' + other.toFixed(0) + '</div>';
+        html += '</div>';
+        html += '</div>';
+        html += '<div style="background:#d1fae5;padding:10px;border-radius:6px">';
+        html += '<div style="font-size:13px;font-weight:bold;color:#065f46;margin-bottom:4px">Money-Saving Tips</div>';
+        html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Book pet-friendly Airbnbs (often no pet fee)</div>';
+        html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Drive instead of fly for medium/large pets</div>';
+        html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Bring pet food from home (costs less)</div>';
+        html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Skip pet insurance for short trips</div>';
+        html += '<div style="font-size:12px;color:#065f46;padding:2px 0">- Use existing carrier if possible</div>';
+        html += '</div>';
+        html += '<div style="background:#fee2e2;padding:10px;border-radius:6px;margin-top:8px">';
+        html += '<div style="font-size:13px;font-weight:bold;color:#dc2626;margin-bottom:4px">Travel Requirements</div>';
+        if(mode === 'intl-air'){
+            html += '<div style="font-size:12px;color:#991b1b;padding:2px 0">- USDA APHIS health certificate (issued within 10 days)</div>';
+            html += '<div style="font-size:12px;color:#991b1b;padding:2px 0">- Country-specific import permits</div>';
+            html += '<div style="font-size:12px;color:#991b1b;padding:2px 0">- Rabies titer test (EU, UK, Japan, Australia)</div>';
+            html += '<div style="font-size:12px;color:#991b1b;padding:2px 0">- Quarantine may apply (up to 180 days)</div>';
+        } else {
+            html += '<div style="font-size:12px;color:#991b1b;padding:2px 0">- Health certificate from vet (within 10 days)</div>';
+            html += '<div style="font-size:12px;color:#991b1b;padding:2px 0">- Up-to-date rabies vaccination</div>';
+            html += '<div style="font-size:12px;color:#991b1b;padding:2px 0">- Airline-approved carrier</div>';
+            html += '<div style="font-size:12px;color:#991b1b;padding:2px 0">- Reservation for pet (separate from human)</div>';
+        }
+        html += '</div>';
+        html += '<div style="font-size:11px;color:#999;margin-top:8px">Costs are estimates. International travel has additional requirements and may need 6+ months preparation. Always check with airline and destination country for current pet policies.</div>';
+        html += '</div>';
+        document.getElementById('result').innerHTML = html;
+    }
+    document.getElementById('calc').addEventListener('click', calc);
+    calc();
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

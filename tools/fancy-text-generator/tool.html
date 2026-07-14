@@ -114,7 +114,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
     <div class="top-bar">
         <h1>Fancy Text Generator</h1>
         <div class="top-actions">
-            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark (Ctrl+Shift+T)">🌙</button>
             <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
@@ -166,201 +166,124 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 
 // === Common: theme toggle + contact modal ===
 (function(){
-    function __setupTheme(){
-        var btn=document.getElementById('themeToggle');
-        if(!btn)return;
-        function apply(t){
-            document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
-        }
-        var saved=localStorage.getItem('theme');
-        if(saved){apply(saved);}
-        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
-        else{apply('light');}
-        btn.addEventListener('click',function(){
-            var next=document.body.classList.contains('dark')?'light':'dark';
-            apply(next);localStorage.setItem('theme',next);
+    const __themeBtn = document.getElementById('themeToggle');
+    function __applyTheme(t){
+        document.body.classList.toggle('dark', t === 'dark');
+        if(__themeBtn) __themeBtn.textContent = (t === 'dark') ? '☀️' : '🌙';
+    }
+    const __saved = localStorage.getItem('theme');
+    __saved ? __applyTheme(__saved) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? __applyTheme('dark') : __applyTheme('light');
+    if(__themeBtn){
+        __themeBtn.addEventListener('click', () => {
+            const next = document.body.classList.contains('dark') ? 'light' : 'dark';
+            __applyTheme(next);
+            localStorage.setItem('theme', next);
         });
     }
-    function __setupContactModal(){
-        var modal=document.getElementById('contactModal');
-        if(!modal)return;
-        var trig=document.getElementById('contactTrigger');
-        var close=document.getElementById('contactClose');
-        function open(){modal.classList.add('open');}
-        function closeM(){modal.classList.remove('open');}
-        if(trig)trig.addEventListener('click',open);
-        if(close)close.addEventListener('click',closeM);
-        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
-        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
-        var copyBtn=document.getElementById('copyEmail');
-        if(copyBtn){
-            copyBtn.addEventListener('click',function(){
-                navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
-                    setTimeout(function(){copyBtn.textContent=old;},1500);
-                });
-            });
+    document.addEventListener('keydown', e => {
+        if(e.key === 't' && e.ctrlKey && e.shiftKey){
+            e.preventDefault();
+            const next = document.body.classList.contains('dark') ? 'light' : 'dark';
+            __applyTheme(next);
+            localStorage.setItem('theme', next);
         }
-        var form=document.getElementById('contactForm');
-        if(form){
-            form.addEventListener('submit',function(e){
-                e.preventDefault();
-                var name=document.getElementById('formName').value.trim();
-                var email=document.getElementById('formEmail').value.trim();
-                var desc=document.getElementById('formDesc').value.trim();
-                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
-                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
-                window.location.href='mailto:contact@yuanqizhike.com?subject='+subject+'&body='+body;
-            });
-        }
-    }
-    function __setupBookmark(){
-        var btn=document.getElementById('bookmarkBtn');
-        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
-    }
-    if(document.readyState==='loading'){
-        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
-    } else {
-        __setupTheme();__setupContactModal();__setupBookmark();
-    }
+    });
+    document.getElementById('bookmarkBtn').addEventListener('click', () => alert('Press Ctrl/Cmd + D to bookmark this page.'));
 })();
 
 (function(){
-    // Map a-z, A-Z, 0-9 to fancy unicode variants
-    var fonts = [
-        {name:'Bold', map: boldMap()},
-        {name:'Italic', map: italicMap()},
-        {name:'Bold Italic', map: boldItalicMap()},
-        {name:'Script', map: scriptMap()},
-        {name:'Bold Script', map: boldScriptMap()},
-        {name:'Fraktur (Gothic)', map: frakturMap()},
-        {name:'Bold Fraktur', map: boldFrakturMap()},
-        {name:'Double-struck', map: doubleStruckMap()},
-        {name:'Monospace', map: monoMap()},
-        {name:'Sans-serif', map: sansMap()},
-        {name:'Sans Bold', map: sansBoldMap()},
-        {name:'Circled', map: circledMap()},
-        {name:'Squared', map: squaredMap()},
-        {name:'Fullwidth', map: fullWidthMap()}
-    ];
-    function boldMap(){
-        var m = {};
-        for(var i = 0; i < 26; i++){ m[String.fromCharCode(65+i)] = String.fromCharCode(0x1D400+i); m[String.fromCharCode(97+i)] = String.fromCharCode(0x1D41A+i); }
-        for(var j = 0; j < 10; j++) m[String(j)] = String.fromCharCode(0x1D7CE+j);
-        return m;
-    }
-    function italicMap(){
-        var m = {};
-        for(var i = 0; i < 26; i++){ m[String.fromCharCode(65+i)] = String.fromCharCode(0x1D434+i); m[String.fromCharCode(97+i)] = String.fromCharCode(0x1D44E+i); }
-        return m;
-    }
-    function boldItalicMap(){
-        var m = {};
-        for(var i = 0; i < 26; i++){ m[String.fromCharCode(65+i)] = String.fromCharCode(0x1D468+i); m[String.fromCharCode(97+i)] = String.fromCharCode(0x1D482+i); }
-        return m;
-    }
-    function scriptMap(){
-        var m = {};
-        var upper = [0x1D49C,0x212C,0x1D49E,0x1D49F,0x212C,0x1D4A2,0x210A,0x1D4A5,0x1D4A6,0x1D4A7,0x1D4A8,0x1D4A9,0x1D4AA,0x1D4AB,0x1D4AC,0x1D4AD,0x1D4AE,0x1D4AF,0x1D4B0,0x1D4B1,0x1D4B2,0x1D4B3,0x1D4B4,0x1D4B5,0x1D4B6,0x1D4B7];
-        var lower = [0x1D4B8,0x1D4B9,0x212C,0x1D4BB,0x1D4BC,0x1D4BD,0x1D4BE,0x212C,0x1D4C0,0x1D4C1,0x1D4C2,0x1D4C3,0x1D4C4,0x1D4C5,0x1D4C6,0x1D4C7,0x1D4C8,0x1D4C9,0x1D4CA,0x1D4CB,0x1D4CC,0x1D4CD,0x1D4CE,0x1D4CF,0x1D4D0,0x1D4D1];
-        for(var i = 0; i < 26; i++){ m[String.fromCharCode(65+i)] = String.fromCharCode(upper[i] || 0x1D49C+i); m[String.fromCharCode(97+i)] = String.fromCharCode(lower[i] || 0x1D4B8+i); }
-        return m;
-    }
-    function boldScriptMap(){
-        var m = {};
-        for(var i = 0; i < 26; i++){ m[String.fromCharCode(65+i)] = String.fromCharCode(0x1D4D6+i); m[String.fromCharCode(97+i)] = String.fromCharCode(0x1D4F0+i); }
-        return m;
-    }
-    function frakturMap(){
-        var m = {};
-        var upper = [0x1D504,0x212D,0x1D506,0x1D507,0x1D508,0x212D,0x1D50A,0x210C,0x2111,0x1D50D,0x1D50E,0x1D50F,0x1D510,0x1D511,0x1D512,0x1D513,0x1D514,0x211C,0x1D516,0x1D517,0x1D518,0x1D519,0x1D51A,0x1D51B,0x1D51C,0x2128];
-        for(var i = 0; i < 26; i++){ m[String.fromCharCode(65+i)] = String.fromCharCode(upper[i] || 0x1D504+i); m[String.fromCharCode(97+i)] = String.fromCharCode(0x1D51E+i); }
-        return m;
-    }
-    function boldFrakturMap(){
-        var m = {};
-        for(var i = 0; i < 26; i++){ m[String.fromCharCode(65+i)] = String.fromCharCode(0x1D56C+i); m[String.fromCharCode(97+i)] = String.fromCharCode(0x1D586+i); }
-        return m;
-    }
-    function doubleStruckMap(){
-        var m = {};
-        var upper = [0x1D538,0x2102,0x1D53A,0x1D53B,0x1D53C,0x1D53D,0x1D53E,0x210D,0x1D540,0x1D541,0x1D542,0x1D543,0x1D544,0x2115,0x1D546,0x2119,0x211A,0x211D,0x1D54A,0x1D54B,0x1D54C,0x1D54D,0x1D54E,0x1D54F,0x1D550,0x2124];
-        var lower = [0x1D552,0x1D553,0x1D554,0x1D555,0x1D556,0x1D557,0x1D558,0x1D559,0x1D55A,0x1D55B,0x1D55C,0x1D55D,0x1D55E,0x1D55F,0x1D560,0x1D561,0x1D562,0x1D563,0x1D564,0x1D565,0x1D566,0x1D567,0x1D568,0x1D569,0x1D56A,0x1D56B];
-        for(var i = 0; i < 26; i++){ m[String.fromCharCode(65+i)] = String.fromCharCode(upper[i]); m[String.fromCharCode(97+i)] = String.fromCharCode(lower[i]); }
-        for(var j = 0; j < 10; j++) m[String(j)] = String.fromCharCode(0x1D7D8+j);
-        return m;
-    }
-    function monoMap(){
-        var m = {};
-        for(var i = 0; i < 26; i++){ m[String.fromCharCode(65+i)] = String.fromCharCode(0x1D670+i); m[String.fromCharCode(97+i)] = String.fromCharCode(0x1D68A+i); }
-        for(var j = 0; j < 10; j++) m[String(j)] = String.fromCharCode(0x1D7F6+j);
-        return m;
-    }
-    function sansMap(){
-        var m = {};
-        for(var i = 0; i < 26; i++){ m[String.fromCharCode(65+i)] = String.fromCharCode(0x1D5A0+i); m[String.fromCharCode(97+i)] = String.fromCharCode(0x1D5BA+i); }
-        for(var j = 0; j < 10; j++) m[String(j)] = String.fromCharCode(0x1D7E2+j);
-        return m;
-    }
-    function sansBoldMap(){
-        var m = {};
-        for(var i = 0; i < 26; i++){ m[String.fromCharCode(65+i)] = String.fromCharCode(0x1D5D4+i); m[String.fromCharCode(97+i)] = String.fromCharCode(0x1D5EE+i); }
-        for(var j = 0; j < 10; j++) m[String(j)] = String.fromCharCode(0x1D7EC+j);
-        return m;
-    }
-    function circledMap(){
-        var m = {};
-        for(var i = 0; i < 26; i++){ m[String.fromCharCode(65+i)] = String.fromCharCode(0x24B6+i); m[String.fromCharCode(97+i)] = String.fromCharCode(0x24D0+i); }
-        for(var j = 0; j < 10; j++) m[String(j)] = String.fromCharCode(0x2460+j);
-        return m;
-    }
-    function squaredMap(){
-        var m = {};
-        for(var i = 0; i < 26; i++){ m[String.fromCharCode(65+i)] = String.fromCharCode(0x1F130+i); m[String.fromCharCode(97+i)] = String.fromCharCode(0x1F170+i); }
-        return m;
-    }
-    function fullWidthMap(){
-        var m = {};
-        for(var i = 0; i < 26; i++){ m[String.fromCharCode(65+i)] = String.fromCharCode(0xFF21+i); m[String.fromCharCode(97+i)] = String.fromCharCode(0xFF41+i); }
-        for(var j = 0; j < 10; j++) m[String(j)] = String.fromCharCode(0xFF10+j);
-        m[' '] = '\u3000';
-        return m;
-    }
-    function convert(text, map){
-        var out = '';
-        for(var i = 0; i < text.length; i++){
-            out += map[text[i]] || text[i];
-        }
-        return out;
-    }
-    function update(){
-        var txt = document.getElementById('input').value;
-        var html = '';
-        fonts.forEach(function(f){
-            var result = convert(txt, f.map);
-            var escaped = result.replace(/</g,'&lt;').replace(/>/g,'&gt;');
-            html += '<div class="fancy-row">';
-            html += '<div class="fancy-label">' + f.name + '</div>';
-            html += '<div class="fancy-text">' + escaped + '</div>';
-            html += '<button class="fancy-copy" data-text="' + encodeURIComponent(result) + '">Copy</button>';
-            html += '</div>';
-        });
-        document.getElementById('result').innerHTML = html;
-        var btns = document.querySelectorAll('.fancy-copy');
-        for(var i = 0; i < btns.length; i++){
-            btns[i].addEventListener('click', function(e){
-                var t = decodeURIComponent(e.target.getAttribute('data-text'));
-                navigator.clipboard.writeText(t).then(function(){
-                    e.target.textContent = 'Copied!';
-                    setTimeout(function(){ e.target.textContent = 'Copy'; }, 1500);
-                });
+    const __modal = document.getElementById('contactModal');
+    const __trig = document.getElementById('contactTrigger');
+    const __close = document.getElementById('contactClose');
+    function __openModal(){ if(__modal) __modal.classList.add('open'); }
+    function __closeModal(){ if(__modal) __modal.classList.remove('open'); }
+    if(__trig) __trig.addEventListener('click', __openModal);
+    if(__close) __close.addEventListener('click', __closeModal);
+    if(__modal) __modal.addEventListener('click', e => { if(e.target === __modal) __closeModal(); });
+    document.addEventListener('keydown', e => { if(e.key === 'Escape') __closeModal(); });
+    const __copyBtn = document.getElementById('copyEmail');
+    if(__copyBtn){
+        __copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText('contact@yuanqizhike.com').then(() => {
+                const old = __copyBtn.textContent;
+                __copyBtn.textContent = 'Copied';
+                setTimeout(() => __copyBtn.textContent = old, 1500);
             });
-        }
+        });
     }
-    document.getElementById('input').addEventListener('input', update);
-    update();
+    const __form = document.getElementById('contactForm');
+    if(__form){
+        __form.addEventListener('submit', e => {
+            e.preventDefault();
+            const name = document.getElementById('formName').value.trim();
+            const email = document.getElementById('formEmail').value.trim();
+            const desc = document.getElementById('formDesc').value.trim();
+            const subject = encodeURIComponent('Bespoke Tool Development Inquiry');
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nRequirement:\n${desc}`);
+            window.location.href = `mailto:contact@yuanqizhike.com?subject=${subject}&body=${body}`;
+        });
+    }
 })();
+
+// Fancy text font map generators
+function makeFontMap(lowerStart, upperStart, digitStart){
+    const m = {};
+    for(let i = 0; i < 26; i++){
+        m[String.fromCharCode(65 + i)] = String.fromCharCode(upperStart + i);
+        m[String.fromCharCode(97 + i)] = String.fromCharCode(lowerStart + i);
+    }
+    if(digitStart){
+        for(let j = 0; j < 10; j++) m[String(j)] = String.fromCharCode(digitStart + j);
+    }
+    return m;
+}
+const FONTS = [
+    {name: 'Bold', map: makeFontMap(0x1D41A, 0x1D400)},
+    {name: 'Italic', map: makeFontMap(0x1D44E, 0x1D434)},
+    {name: 'Bold Italic', map: makeFontMap(0x1D482, 0x1D468)},
+    {name: 'Script', map: makeFontMap(0x1D4B8, 0x1D49C)},
+    {name: 'Bold Script', map: makeFontMap(0x1D4F0, 0x1D4D6)},
+    {name: 'Fraktur (Gothic)', map: makeFontMap(0x1D51E, 0x1D504)},
+    {name: 'Bold Fraktur', map: makeFontMap(0x1D586, 0x1D56C)},
+    {name: 'Double-struck', map: makeFontMap(0x1D552, 0x1D538, 0x1D7D8)},
+    {name: 'Monospace', map: makeFontMap(0x1D68A, 0x1D670, 0x1D7F6)},
+    {name: 'Sans-serif', map: makeFontMap(0x1D5BA, 0x1D5A0, 0x1D7E2)},
+    {name: 'Sans Bold', map: makeFontMap(0x1D5EE, 0x1D5D4, 0x1D7EC)},
+    {name: 'Circled', map: makeFontMap(0x24D0, 0x24B6, 0x2460)},
+    {name: 'Squared', map: makeFontMap(0x1F170, 0x1F130)},
+    {name: 'Fullwidth', map: makeFontMap(0xFF41, 0xFF21, 0xFF10)}
+];
+const fullwidthMap = FONTS[13].map;
+fullwidthMap[' '] = '\u3000';
+
+function convert(text, map){
+    let out = '';
+    for(const ch of text) out += map[ch] || ch;
+    return out;
+}
+
+function escapeHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+function update(){
+    const txt = document.getElementById('input').value;
+    let html = '';
+    FONTS.forEach(f => {
+        const result = convert(txt, f.map);
+        html += `<div class="fancy-row"><div class="fancy-label">${f.name}</div><div class="fancy-text">${escapeHtml(result)}</div><button class="fancy-copy" data-text="${encodeURIComponent(result)}">Copy</button></div>`;
+    });
+    document.getElementById('result').innerHTML = html;
+    document.querySelectorAll('.fancy-copy').forEach(btn => {
+        btn.addEventListener('click', () => {
+            navigator.clipboard.writeText(decodeURIComponent(btn.dataset.text)).then(() => {
+                btn.textContent = 'Copied!';
+                setTimeout(() => btn.textContent = 'Copy', 1500);
+            });
+        });
+    });
+}
+
+document.getElementById('input').addEventListener('input', update);
+update();
 </script>
     <script src="/assets/js/date-utils.js"></script>
 </body>
