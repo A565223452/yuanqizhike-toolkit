@@ -87,6 +87,12 @@
       }
     ]
   },
+  "howitworks": {
+    "title": "How It Works",
+    "step1": { "title": "Browse Tools", "desc": "Visit our tools catalog and filter by category to find the right tool for your workflow." },
+    "step2": { "title": "Download ZIP", "desc": "Click the Download ZIP button to get the full source code. No sign-up required." },
+    "step3": { "title": "Open & Use", "desc": "Extract the ZIP file and open index.html in any browser. Start working offline immediately." }
+  },
   "categories": {
     "title": "Tool Categories",
     "contentWriting": {
@@ -233,7 +239,10 @@
     "viewDetails": "View Details",
     "downloadZip": "Download ZIP",
     "stayTuned": "Stay Tuned",
-    "comingSoonDesc": "Tools in this category are currently under development."
+    "comingSoonDesc": "Tools in this category are currently under development.",
+    "landingTitle": "Tools Library",
+    "landingDesc": "Browse <strong>676+</strong> free offline frontend tools organized by category. Pick a category below, or view every tool on one page.",
+    "chooseCategory": "Browse by Category"
   },
   "languageSwitcher": {
     "title": "Language",
@@ -468,7 +477,7 @@
       "reasonCleanCode": "Clean Code: Well-structured, maintainable, and documented codebase",
       "reasonResponsive": "Responsive Design: Perfect experience across desktop, tablet, and mobile",
       "reasonFastDelivery": "Fast Delivery: Agile development process with regular progress updates",
-      "reasonSupport": "Post-Delivery Support: 30-day free bug-fixing period after project handover",
+      "reasonSupport": "Post-Launch Support: 30-day free bug-fixing period after project handover",
       "getInTouch": "Get in Touch",
       "getInTouchDesc": "Describe your project requirements and we will get back to you within 24 hours with a detailed proposal and quote.",
       "formName": "Your Name *",
@@ -487,7 +496,7 @@
     "guestbook": {
       "title": "Feedback - YuanqiZhiKe Toolkit",
       "heading": "Leave Your Mark",
-      "subtitle": "Feedback, suggestions, cooperation ideas, or just say hi — all welcome.",
+      "subtitle": "Feedback, suggestions, partnership inquiries, or just say hi \u2014 all welcome.",
       "shareThoughts": "Share Your Thoughts",
       "formNickname": "Nickname (optional)",
       "formNicknamePlaceholder": "Anonymous",

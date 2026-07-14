@@ -88,6 +88,12 @@
       }
     ]
   },
+  "howitworks": {
+    "title": "Cómo Funciona",
+    "step1": { "title": "Explore Herramientas", "desc": "Visite nuestro catálogo de herramientas y filtre por categoría para encontrar la herramienta adecuada para su flujo de trabajo." },
+    "step2": { "title": "Descargar ZIP", "desc": "Haga clic en el botón Descargar ZIP para obtener el código fuente completo. No requiere registro." },
+    "step3": { "title": "Abrir y Usar", "desc": "Extraiga el archivo ZIP y abra index.html en cualquier navegador. Comience a trabajar offline inmediatamente." }
+  },
   "categories": {
     "title": "Categorías de Herramientas",
     "contentWriting": {
@@ -234,7 +240,10 @@
     "viewDetails": "Ver Detalles",
     "downloadZip": "Descargar ZIP",
     "stayTuned": "Estén Atentos",
-    "comingSoonDesc": "Las herramientas en esta categoría están actualmente en desarrollo."
+    "comingSoonDesc": "Las herramientas en esta categoría están actualmente en desarrollo.",
+    "landingTitle": "Biblioteca de Herramientas",
+    "landingDesc": "Explore más de <strong>676</strong> herramientas frontend offline gratuitas organizadas por categoría. Elija una categoría a continuación o vea todas las herramientas en una página.",
+    "chooseCategory": "Explorar por Categoría"
   },
   "languageSwitcher": {
     "title": "Idioma",
@@ -488,7 +497,7 @@
     "guestbook": {
       "title": "Comentarios - YuanqiZhiKe Toolkit",
       "heading": "Deja tu Huella",
-      "subtitle": "Comentarios, sugerencias, ideas de cooperación o solo saludar — todo es bienvenido.",
+      "subtitle": "Comentarios, sugerencias, propuestas de colaboraci\u00f3n o solo saludar \u2014 todo es bienvenido.",
       "shareThoughts": "Comparte tus Pensamientos",
       "formNickname": "Apodo (opcional)",
       "formNicknamePlaceholder": "Anónimo",

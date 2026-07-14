@@ -88,6 +88,12 @@
       }
     ]
   },
+  "howitworks": {
+    "title": "使い方",
+    "step1": { "title": "ツールを探す", "desc": "ツールカタログを訪れ、カテゴリでフィルタリングして、ワークフローに最適なツールを見つけましょう。" },
+    "step2": { "title": "ZIPをダウンロード", "desc": "ダウンロードZIPボタンをクリックして完全なソースコードを取得します。登録不要。" },
+    "step3": { "title": "開いて使用", "desc": "ZIPファイルを解凍し、任意のブラウザでindex.htmlを開きます。すぐにオフライン作業を開始できます。" }
+  },
   "categories": {
     "title": "ツールカテゴリ",
     "contentWriting": {
@@ -234,7 +240,10 @@
     "viewDetails": "詳細を表示",
     "downloadZip": "ZIPをダウンロード",
     "stayTuned": "お楽しみに",
-    "comingSoonDesc": "このカテゴリのツールは現在開発中です。"
+    "comingSoonDesc": "このカテゴリのツールは現在開発中です。",
+    "landingTitle": "ツールライブラリ",
+    "landingDesc": "カテゴリ別に整理された<strong>676</strong>以上の無料オフラインフロントエンドツールを参照してください。以下からカテゴリを選択するか、すべてのツールを表示します。",
+    "chooseCategory": "カテゴリから探す"
   },
   "languageSwitcher": {
     "title": "言語",

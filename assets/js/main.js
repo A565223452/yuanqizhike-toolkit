@@ -144,21 +144,10 @@ function highlightActiveNav() {
 
 // ===================================
 // 页面浏览统计（PV）
-// 注意：PV 统计已由 assets/js/statistics.js (YQZ_STATS) 接管，
-// 该模块在页面加载时通过 /api/stat/pv 自动上报匿名 PV（sendBeacon）。
-// 此函数保留为空操作，仅为兼容各工具页内联的 trackPageView() 调用，
-// 避免重复统计与控制台日志污染。
+// PV 统计已由 assets/js/statistics.js (YQZ_STATS) 接管，
+// 此函数保留为空操作，仅为兼容各工具页内联的 trackPageView() 调用
 // ===================================
-function trackPageView(toolName) {
-    // PV 已由 YQZ_STATS.init() 自动上报，此处无需重复处理
-}
-
-// 页面加载时触发一次（兼容旧逻辑，实际统计由 statistics.js 完成）
-if (typeof window !== 'undefined') {
-    var pagePath = window.location.pathname;
-    var toolName = pagePath.includes('tools/') ? pagePath.split('/')[2] : 'homepage';
-    trackPageView(toolName);
-}
+function trackPageView() {}
 
 // ===================================
 // Form Validation Helper

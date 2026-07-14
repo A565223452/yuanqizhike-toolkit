@@ -76,15 +76,15 @@
                     <a href="category-weather-and-climate.html">Weather &amp; Climate</a>
                     <a href="category-music-and-audio.html">Music &amp; Audio</a>
                     <a href="category-video-tools.html">Video Tools</a>
-                    <a href="tools.html#category-photography">Photography &amp; Image</a>
+                    <a href="category-photography-and-image.html">Photography &amp; Image</a>
                     <a href="category-games-and-entertainment.html">Games &amp; Entertainment</a>
-                    <a href="tools.html#category-hobbies">Hobbies &amp; Crafts</a>
-                    <a href="tools.html#category-pets">Pets &amp; Animals</a>
+                    <a href="category-hobbies-and-crafts.html">Hobbies &amp; Crafts</a>
+                    <a href="category-pets-and-animals.html">Pets &amp; Animals</a>
                     <a href="category-real-estate-tools.html">Real Estate Tools</a>
-                    <a href="tools.html#category-religion">Religion &amp; Spirituality</a>
-                    <a href="tools.html#category-shopping">Shopping</a>
-                    <a href="tools.html#category-sports">Sports &amp; Fitness</a>
-                    <a href="tools.html#category-pdf">PDF Tools</a>
+                    <a href="category-religion-and-spirituality.html">Religion &amp; Spirituality</a>
+                    <a href="category-shopping.html">Shopping</a>
+                    <a href="category-sports-and-fitness.html">Sports &amp; Fitness</a>
+                    <a href="category-pdf-tools.html">PDF Tools</a>
                 </div>
             </div>
             <a href="customize.html" data-i18n="nav.customDev">Custom Dev</a>
@@ -97,17 +97,10 @@
 
     <section class="tool-hero">
         <div class="container">
-            <p style="opacity: 0.85; margin: 0 0 8px;">
-                <a href="tools.html" style="color: inherit; text-decoration: underline;">Tools Library</a>
-                &nbsp;/&nbsp;
-                <a href="tools-all.html" style="color: inherit; text-decoration: underline;">All Tools</a>
-            </p>
+            <p class="breadcrumb"><a href="tools.html">Tools Library</a><span>/</span><a href="tools-all.html">All Tools</a></p>
             <h1>Design &amp; Media</h1>
             <p>Browse <strong>56</strong> free offline design &amp; media tools. Click any tool to view details or download its full source code.</p>
-            <p style="margin-top: 14px;">
-                <a href="tools.html" class="btn btn-view-details" style="display: inline-block; text-decoration: none;">← All Categories</a>
-                <a href="tools-all.html" class="btn btn-secondary" style="display: inline-block; text-decoration: none; margin-left: 8px;">All 676 Tools</a>
-            </p>
+            <div class="btn-group"><a href="tools.html" class="btn btn-view-details">← All Categories</a><a href="tools-all.html" class="btn btn-secondary">All 676 Tools</a></div>
         </div>
     </section>
 
@@ -115,7 +108,7 @@
         <div class="container">
             <section class="tool-category" id="category-main">
                 <div class="tools-grid" data-single-category="Design &amp; Media" data-category-file="assets/data/design-and-media.json">
-                    <!-- Rendered via inline script below -->
+                    
                 </div>
             </section>
         </div>
@@ -146,8 +139,7 @@
             var CATEGORY_NAME = "Design & Media";
             var CATEGORY_FILE = "assets/data/design-and-media.json";
             var FALLBACK_LIST_JSON = 'tools-list.json';
-
-            var _downloadBinded = false;
+            var IS_COMING_SOON = false;
 
             function attachDownloadHandlers() {
                 var buttons = document.querySelectorAll('.btn-download:not([data-download-bound="1"])');
@@ -212,6 +204,7 @@
                 var grid = document.querySelector('[data-single-category="' + CATEGORY_NAME.replace(/"/g, '\"') + '"]');
                 if (!grid) return;
                 if (!list || list.length === 0) {
+                    if (IS_COMING_SOON) return; // 页面内已经渲染 Coming Soon 卡片，无需覆盖
                     grid.innerHTML = '<div class="tool-card coming-soon"><div class="tool-icon">&#128736;</div><h3>Coming Soon</h3><p class="tool-desc">Tools in this category are being prepared.</p></div>';
                     return;
                 }
@@ -223,6 +216,7 @@
                 attachDownloadHandlers();
             }
 
+            
             function start() {
                 var t = window.I18N ? window.I18N.t.bind(window.I18N) : function (k, fb) { return fb || k; };
                 fetch(CATEGORY_FILE)
@@ -247,6 +241,7 @@
             }
 
             document.addEventListener('DOMContentLoaded', function () {
+                if (IS_COMING_SOON) { start(); return; }
                 var tries = 0;
                 var timer = setInterval(function () {
                     tries++;

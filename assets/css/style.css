@@ -192,7 +192,19 @@ img {
     font-size: 1.5rem;
     cursor: pointer;
     color: var(--text-color);
-    padding: 4px;
+    padding: 8px;
+    min-height: 44px;
+    min-width: 44px;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius);
+    transition: background 0.15s;
+}
+.mobile-menu-btn:hover {
+    background: var(--bg-light);
+}
+.mobile-menu-btn:active {
+    background: var(--border-color);
 }
 
 /* --- Hero Section --- */
@@ -219,7 +231,9 @@ img {
 
 /* --- Buttons --- */
 .btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 12px 28px;
     border-radius: var(--radius);
     font-weight: 600;
@@ -228,6 +242,17 @@ img {
     transition: var(--transition);
     border: none;
     text-align: center;
+    text-decoration: none;
+    min-height: 44px;
+    line-height: 1.4;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn:active {
+    transform: translateY(0);
 }
 
 .btn-primary {
@@ -268,8 +293,8 @@ img {
 
 .tools-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-    gap: 28px;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
 }
 
 .tool-card {
@@ -278,43 +303,44 @@ img {
     padding: 0;
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border-color);
-    transition: var(--transition);
+    transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
     display: flex;
     flex-direction: column;
-    max-height: 420px;
+    max-height: 360px;
     overflow: hidden;
 }
 
 .tool-card:hover {
     box-shadow: var(--shadow-lg);
     transform: translateY(-4px);
+    border-color: var(--primary-color);
 }
 
 .tool-icon {
-    padding: 24px 24px 16px;
+    padding: 14px 16px 10px;
     text-align: center;
     background: var(--bg-light);
     border-bottom: 1px solid var(--border-color);
 }
 
 .tool-icon img {
-    width: 64px;
-    height: 64px;
+    width: 48px;
+    height: 48px;
     object-fit: contain;
 }
 
 .tool-card h3 {
-    font-size: 1.1rem;
+    font-size: 1.0rem;
     margin: 0;
-    padding: 16px 24px 8px;
+    padding: 10px 16px 4px;
     color: var(--text-color);
-    line-height: 1.4;
+    line-height: 1.35;
 }
 
 .tool-desc {
-    padding: 0 24px 8px;
+    padding: 0 16px 6px;
     color: var(--text-light);
-    font-size: 0.88rem;
+    font-size: 0.82rem;
     margin: 0;
     line-height: 1.5;
     overflow: hidden;
@@ -326,7 +352,7 @@ img {
 .tool-features {
     list-style: none;
     margin: 0;
-    padding: 8px 24px 16px;
+    padding: 6px 16px 10px;
     flex-grow: 1;
     overflow: hidden;
     display: -webkit-box;
@@ -335,9 +361,9 @@ img {
 }
 
 .tool-features li {
-    padding: 3px 0;
+    padding: 2px 0;
     color: var(--text-light);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     line-height: 1.4;
 }
 
@@ -351,8 +377,8 @@ img {
 
 .tool-actions {
     display: flex;
-    gap: 10px;
-    padding: 16px 24px 20px;
+    gap: 8px;
+    padding: 10px 16px 12px;
     margin-top: auto;
     border-top: 1px solid var(--border-color);
     background: var(--bg-light);
@@ -360,8 +386,8 @@ img {
 
 .tool-actions .btn {
     flex: 1;
-    padding: 10px 16px;
-    font-size: 0.85rem;
+    padding: 8px 12px;
+    font-size: 0.8rem;
     border-radius: 6px;
     font-weight: 600;
     cursor: pointer;
@@ -454,25 +480,25 @@ img {
 
 /* --- Page Content Layout --- */
 .page-content {
-    padding: 60px 0;
+    padding: 40px 0;
     flex: 1;
 }
 
 .page-content h1 {
-    font-size: 2rem;
-    margin-bottom: 24px;
+    font-size: 1.7rem;
+    margin-bottom: 20px;
 }
 
 .page-content h2 {
-    font-size: 1.5rem;
-    margin-top: 32px;
-    margin-bottom: 16px;
+    font-size: 1.35rem;
+    margin-top: 28px;
+    margin-bottom: 14px;
 }
 
 .page-content h3 {
-    font-size: 1.2rem;
-    margin-top: 24px;
-    margin-bottom: 12px;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 .page-content p {
@@ -495,18 +521,45 @@ img {
 .tool-hero {
     background: linear-gradient(135deg, var(--bg-dark) 0%, #1e3a5f 100%);
     color: var(--text-white);
-    padding: 60px 0 40px;
+    padding: 40px 0 28px;
 }
 
 .tool-hero h1 {
-    font-size: 2.2rem;
-    margin-bottom: 12px;
+    font-size: 1.9rem;
+    margin-bottom: 10px;
 }
 
 .tool-hero p {
     color: #cbd5e1;
-    font-size: 1.1rem;
+    font-size: 1rem;
     max-width: 700px;
+}
+
+.tool-hero .breadcrumb {
+    opacity: 0.85;
+    margin: 0 0 8px;
+}
+
+.tool-hero .breadcrumb a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.tool-hero .breadcrumb span {
+    margin: 0 8px;
+    opacity: 0.6;
+}
+
+.tool-hero .btn-group {
+    margin-top: 14px;
+}
+
+.tool-hero .btn-group .btn {
+    margin-right: 8px;
+}
+
+.tool-hero .btn-group .btn:last-child {
+    margin-right: 0;
 }
 
 .tool-info-grid {
@@ -845,45 +898,51 @@ img {
 
 .categories-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
 }
 
 .category-card {
     background: var(--bg-color);
     border: 1px solid var(--border-color);
     border-radius: var(--radius);
-    padding: 28px 24px;
+    padding: 18px 14px;
     text-align: center;
-    transition: var(--transition);
+    transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
     display: block;
 }
 
 .category-card:hover {
     box-shadow: var(--shadow-md);
-    transform: translateY(-4px);
+    transform: translateY(-3px);
     border-color: var(--primary-color);
 }
 
 .cat-icon {
-    font-size: 2.2rem;
-    margin-bottom: 14px;
+    font-size: 1.7rem;
+    margin-bottom: 10px;
 }
 
 .category-card h3 {
-    font-size: 1.05rem;
-    margin-bottom: 10px;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
     color: var(--text-color);
 }
 
 .category-card p {
     color: var(--text-light);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 /* --- Tool Category (tools.html) --- */
 .tool-category {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
+}
+
+.tool-category .tool-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
 .tool-category:last-child {
@@ -891,10 +950,10 @@ img {
 }
 
 .category-title {
-    font-size: 1.5rem;
-    padding-bottom: 12px;
+    font-size: 1.3rem;
+    padding-bottom: 8px;
     border-bottom: 2px solid var(--border-color);
-    margin-bottom: 28px;
+    margin-bottom: 20px;
     color: var(--text-color);
 }
 
@@ -913,12 +972,13 @@ img {
     cursor: pointer;
     line-height: 1;
     margin-left: 24px;
-    padding-right: 20px;
+    padding: 8px 20px 8px 8px;
     user-select: none;
     opacity: 0.8;
     transition: transform 0.2s ease, opacity 0.2s ease;
     display: flex;
     align-items: center;
+    min-height: 44px;
     color: var(--text-color);
 }
 

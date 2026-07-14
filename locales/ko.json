@@ -88,6 +88,12 @@
       }
     ]
   },
+  "howitworks": {
+    "title": "사용 방법",
+    "step1": { "title": "도구 찾아보기", "desc": "도구 카탈로그를 방문하여 카테고리별로 필터링하고 작업 흐름에 맞는 도구를 찾으세요." },
+    "step2": { "title": "ZIP 다운로드", "desc": "ZIP 다운로드 버튼을 클릭하여 전체 소스 코드를 받으세요. 가입 불필요." },
+    "step3": { "title": "열고 사용", "desc": "ZIP 파일의 압축을 풀고 브라우저에서 index.html을 여세요. 즉시 오프라인 작업을 시작하세요." }
+  },
   "categories": {
     "title": "도구 카테고리",
     "contentWriting": {
@@ -230,11 +236,14 @@
     "category": "카테고리",
     "comingSoon": "출시 예정",
     "pageTitle": "모든 도구",
-    "pageDesc": "성장하는 무료 오프라인 프론트엔드 도구 컬렉션을 둘러보세요. 도구를 클릭하여 세부 정보를 확인하고 소스 코드를 다운로드하세요.",
+    "pageDesc": "성장하는 물료 오프라인 프론트엔드 도구 컬렉션을 둘러보세요. 도구를 클릭하여 세부 정보를 확인하고 소스 코드를 다운로드하세요.",
     "viewDetails": "자세히 보기",
     "downloadZip": "ZIP 다운로드",
     "stayTuned": "기대해 주세요",
-    "comingSoonDesc": "이 카테고리의 도구는 현재 개발 중입니다."
+    "comingSoonDesc": "이 카테고리의 도구는 현재 개발 중입니다.",
+    "landingTitle": "도구 라이브러리",
+    "landingDesc": "카테고리별로 정리된 <strong>676</strong>개 이상의 물료 오프라인 프론트엔드 도구를 둘러보세요. 아래에서 카테고리를 선택하거나 모든 도구를 확인하세요.",
+    "chooseCategory": "카테고리별 탐색"
   },
   "languageSwitcher": {
     "title": "언어",

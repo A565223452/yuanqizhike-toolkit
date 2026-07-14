@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color & Design Utilities (8 Tools) | YuanqiZhiKe Toolkit</title>
-    <meta name="description" content="8 free offline color & design utilities tools. No server required — run entirely in your browser. Download full source code packages.">
+    <title>Religion & Spirituality - Coming Soon | YuanqiZhiKe Toolkit</title>
+    <meta name="description" content="Religion & Spirituality tools page — under development. Subscribe or check back soon for new religion & spirituality offline utilities.">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- GDPR Cookie Consent - Controls AdSense loading based on user consent -->
     <script src="assets/js/cookie-consent.js"></script>
-    <link rel="canonical" href="https://yuanqizhike.com/category-color-and-design-utilities.html">
-    <meta property="og:url" content="https://yuanqizhike.com/category-color-and-design-utilities.html">
+    <link rel="canonical" href="https://yuanqizhike.com/category-religion-and-spirituality.html">
+    <meta property="og:url" content="https://yuanqizhike.com/category-religion-and-spirituality.html">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
       
-      "name": "Color & Design Utilities (8 Tools) | YuanqiZhiKe Toolkit",
-      "description": "8 free offline color & design utilities tools. No server required — run entirely in your browser. Download full source code packages.",
+      "name": "Religion & Spirituality - Coming Soon | YuanqiZhiKe Toolkit",
+      "description": "Religion & Spirituality tools page — under development. Subscribe or check back soon for new religion & spirituality offline utilities.",
       "breadcrumb": {
         "@type": "BreadcrumbList",
         "itemListElement": [{
@@ -33,8 +33,8 @@
         },{
           "@type": "ListItem",
           "position": 3,
-          "name": "Color & Design Utilities",
-          "item": "https://yuanqizhike.com/category-color-and-design-utilities.html"
+          "name": "Religion & Spirituality",
+          "item": "https://yuanqizhike.com/category-religion-and-spirituality.html"
         }]
       }
     }
@@ -98,17 +98,28 @@
     <section class="tool-hero">
         <div class="container">
             <p class="breadcrumb"><a href="tools.html">Tools Library</a><span>/</span><a href="tools-all.html">All Tools</a></p>
-            <h1>Color &amp; Design Utilities</h1>
-            <p>Browse <strong>8</strong> free offline color &amp; design utilities tools. Click any tool to view details or download its full source code.</p>
-            <div class="btn-group"><a href="tools.html" class="btn btn-view-details">← All Categories</a><a href="tools-all.html" class="btn btn-secondary">All 676 Tools</a></div>
+            <h1>Religion &amp; Spirituality</h1>
+            <p>This category is under active development. Check back soon — the first <strong>religion & spirituality</strong> tools will land here shortly.</p>
+            <p class="btn-group">
+                <a href="tools.html" class="btn btn-view-details">← All Categories</a>
+                <a href="tools-all.html" class="btn btn-secondary">Browse All 676 Tools</a>
+            </p>
         </div>
     </section>
 
     <main class="page-content">
         <div class="container">
             <section class="tool-category" id="category-main">
-                <div class="tools-grid" data-single-category="Color &amp; Design Utilities" data-category-file="assets/data/color-and-design-utilities.json">
+                <div class="tools-grid" data-single-category="Religion &amp; Spirituality">
                     
+                    <div class="tool-card coming-soon">
+                        <div class="tool-icon">&#128736;</div>
+                        <h3>Coming Soon</h3>
+                        <p class="tool-desc">Religion &amp; Spirituality tools are currently under development.</p>
+                        <div class="tool-actions">
+                            <span class="btn btn-secondary" style="opacity: 0.6; cursor: default;">Stay Tuned</span>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
@@ -131,15 +142,15 @@
     <script src="assets/js/statistics.js"></script>
     <script src="assets/js/date-utils.js"></script>
     <script>
-        trackPageView("category-color-and-design-utilities.html");
+        trackPageView("category-religion-and-spirituality.html");
     </script>
 
     <script>
         (function () {
-            var CATEGORY_NAME = "Color & Design Utilities";
-            var CATEGORY_FILE = "assets/data/color-and-design-utilities.json";
+            var CATEGORY_NAME = "Religion & Spirituality";
+            var CATEGORY_FILE = "";
             var FALLBACK_LIST_JSON = 'tools-list.json';
-            var IS_COMING_SOON = false;
+            var IS_COMING_SOON = true;
 
             function attachDownloadHandlers() {
                 var buttons = document.querySelectorAll('.btn-download:not([data-download-bound="1"])');
@@ -217,28 +228,7 @@
             }
 
             
-            function start() {
-                var t = window.I18N ? window.I18N.t.bind(window.I18N) : function (k, fb) { return fb || k; };
-                fetch(CATEGORY_FILE)
-                    .then(function (r) {
-                        if (!r.ok) throw new Error('HTTP ' + r.status);
-                        return r.json();
-                    })
-                    .then(renderGrid)
-                    .catch(function (e) {
-                        console.warn('[CategoryPage] Fallback to tools-list.json for ' + CATEGORY_NAME + ':', e);
-                        fetch(FALLBACK_LIST_JSON)
-                            .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-                            .then(function (all) {
-                                var only = all.filter(function (x) { return x.category === CATEGORY_NAME; });
-                                renderGrid(only);
-                            })
-                            .catch(function (f) {
-                                console.error('[CategoryPage] Cannot load tools:', f);
-                                renderGrid([]);
-                            });
-                    });
-            }
+            function start() { renderGrid([]); }
 
             document.addEventListener('DOMContentLoaded', function () {
                 if (IS_COMING_SOON) { start(); return; }

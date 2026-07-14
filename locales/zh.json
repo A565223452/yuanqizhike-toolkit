@@ -88,6 +88,12 @@
       }
     ]
   },
+  "howitworks": {
+    "title": "如何使用",
+    "step1": { "title": "浏览工具", "desc": "访问我们的工具目录，按类别筛选，找到适合您工作流程的工具。" },
+    "step2": { "title": "下载 ZIP", "desc": "点击下载按钮获取完整源代码，无需注册。" },
+    "step3": { "title": "打开并使用", "desc": "解压 ZIP 文件，在任意浏览器中打开 index.html。立即开始离线工作。" }
+  },
   "categories": {
     "title": "工具分类",
     "contentWriting": {
@@ -234,7 +240,10 @@
     "viewDetails": "查看详情",
     "downloadZip": "下载 ZIP",
     "stayTuned": "敬请期待",
-    "comingSoonDesc": "此分类下的工具目前正在开发中。"
+    "comingSoonDesc": "此分类下的工具目前正在开发中。",
+    "landingTitle": "工具库",
+    "landingDesc": "浏览<strong>676+</strong>个按分类整理的免费离线前端工具。从下方选择分类，或查看所有工具。",
+    "chooseCategory": "按分类浏览"
   },
   "languageSwitcher": {
     "title": "语言",
