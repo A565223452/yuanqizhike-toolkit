@@ -1,0 +1,358 @@
+[
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Invoice Generator",
+    "desc": "A free offline tool for invoice generator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/invoice-generator/index.html",
+    "zipUrl": "/assets/zip-packages/business/invoice-generator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Quotation Generator",
+    "desc": "Generate professional price quotes for international trade with our free online quotation generator. Add products, calculate totals, apply discounts and taxes, and export as a printable PDF.",
+    "features": [
+      "Add itemized products",
+      "Calculate subtotal and total",
+      "Apply discounts and taxes",
+      "Print or save as PDF"
+    ],
+    "detailUrl": "/tools/quotation-generator/index.html",
+    "zipUrl": "/assets/zip-packages/business/quotation-generator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Batch File Renamer",
+    "desc": "A free offline tool for batch file renamer calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/batch-file-renamer/index.html",
+    "zipUrl": "/assets/zip-packages/business/batch-file-renamer.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Ean Barcode Generator",
+    "desc": "A free offline tool for ean barcode generator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/ean-barcode-generator/index.html",
+    "zipUrl": "/assets/zip-packages/business/ean-barcode-generator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-1.svg",
+    "title": "Pdf Metadata Viewer",
+    "desc": "Instantly view and edit PDF metadata like title, author, and dates directly in your browser with full privacy and zero uploads.",
+    "features": [
+      "View PDF Properties",
+      "Edit Document Info",
+      "Check Security Settings",
+      "100% Client-Side Privacy",
+      "Export Metadata Data"
+    ],
+    "detailUrl": "/tools/pdf-metadata-viewer/index.html",
+    "zipUrl": "/assets/zip-packages/business/pdf-metadata-viewer.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-23.svg",
+    "title": "PDF Split & Merge",
+    "desc": "Split, merge, and reorder PDF pages directly in your browser. Secure, private, and requires no installation or server uploads.",
+    "features": [
+      "Split PDF Pages",
+      "Merge Multiple PDFs",
+      "Reorder Page Order",
+      "Extract Specific Pages",
+      "Batch Processing Support",
+      "Local Browser Privacy"
+    ],
+    "detailUrl": "/tools/pdf-split-merge/index.html",
+    "zipUrl": "/assets/zip-packages/business/pdf-split-merge.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-8.svg",
+    "title": "Business Day Calculator",
+    "desc": "Calculate working days between dates while excluding weekends and customizable holidays. Supports adding or subtracting business days from any specific date.",
+    "features": [
+      "Exclude Weekends",
+      "Custom Holidays",
+      "Add Business Days",
+      "Subtract Business Days",
+      "Date Range Count",
+      "Half-Day Support"
+    ],
+    "detailUrl": "/tools/business-day-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/business/business-day-calculator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-9.svg",
+    "title": "Calendar Generator",
+    "desc": "Create and print customizable annual or monthly calendars with holiday markers, weekend highlighting, and ICS export for seamless scheduling.",
+    "features": [
+      "Customizable Year View",
+      "Holiday Marking",
+      "Print-Ready Layout",
+      "ICS Export Support",
+      "Dark Mode Theme",
+      "Local Processing"
+    ],
+    "detailUrl": "/tools/calendar-generator/index.html",
+    "zipUrl": "/assets/zip-packages/business/calendar-generator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-14.svg",
+    "title": "Week Number Converter",
+    "desc": "Instantly convert dates to ISO or US week numbers and vice versa. Supports fiscal years, ranges, and calendar views with full privacy.",
+    "features": [
+      "Date to Week Conversion",
+      "Week to Date Range",
+      "ISO and US Standards",
+      "Fiscal Year Support",
+      "Batch Processing",
+      "Local Privacy Protection"
+    ],
+    "detailUrl": "/tools/week-number-converter/index.html",
+    "zipUrl": "/assets/zip-packages/business/week-number-converter.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "assets/icons/business-1.svg",
+    "title": "Work Hours Calculator",
+    "desc": "Work Hours Calculator - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/work-hours-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/business/work-hours-calculator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Pomodoro Timer",
+    "desc": "Boost your productivity with our free online Pomodoro timer. Customize focus and break durations, track sessions, and stay on task using the proven time management technique.",
+    "features": [
+      "Customizable work/break durations",
+      "Session tracking with history",
+      "Auto-start next session",
+      "Sound notifications",
+      "Today's focus stats"
+    ],
+    "detailUrl": "/tools/pomodoro-timer/index.html",
+    "zipUrl": "/assets/zip-packages/business/pomodoro-timer.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-7.svg",
+    "title": "Daily Planner",
+    "desc": "Organize your day effectively with this free daily planner. Add priority tasks, set hourly schedules, and track completion. Boost productivity with time blocking and smart sorting features.",
+    "features": [
+      "Add priority-based tasks",
+      "Hourly schedule view",
+      "Track task completion",
+      "Local storage persistence",
+      "Dark mode support",
+      "Productivity tips included"
+    ],
+    "detailUrl": "/tools/daily-planner/index.html",
+    "zipUrl": "/assets/zip-packages/business/daily-planner.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Contract Template Builder",
+    "desc": "A free offline tool for contract template builder calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/contract-template-builder/index.html",
+    "zipUrl": "/assets/zip-packages/business/contract-template-builder.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Csv Cleaner",
+    "desc": "A free offline tool for csv cleaner calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/csv-cleaner/index.html",
+    "zipUrl": "/assets/zip-packages/business/csv-cleaner.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Discount Calculator",
+    "desc": "A free offline tool for discount calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/discount-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/business/discount-calculator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Hourly Rate Calculator",
+    "desc": "A free offline tool for hourly rate calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/hourly-rate-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/business/hourly-rate-calculator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Invoice Generator Simple",
+    "desc": "A free offline tool for invoice generator simple calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/invoice-generator-simple/index.html",
+    "zipUrl": "/assets/zip-packages/business/invoice-generator-simple.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Meeting Cost Calculator",
+    "desc": "Calculate the real cost of meetings based on attendee salaries and duration. Understand how much meetings cost your company and improve productivity with this free online tool.",
+    "features": [
+      "Attendee salary input",
+      "Duration calculation",
+      "Per-role cost breakdown",
+      "Total cost display",
+      "Productivity insights"
+    ],
+    "detailUrl": "/tools/meeting-cost-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/business/meeting-cost-calculator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Meeting Notes Template",
+    "desc": "Create structured meeting notes with attendees, agenda, decisions, and action items. Export as Markdown, plain text, or HTML. Free online meeting notes generator for teams and professionals.",
+    "features": [
+      "Structured meeting notes",
+      "Agenda and decisions tracking",
+      "Action items with owners",
+      "Export to Markdown/HTML",
+      "Free online tool"
+    ],
+    "detailUrl": "/tools/meeting-notes-template/index.html",
+    "zipUrl": "/assets/zip-packages/business/meeting-notes-template.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "OKR Template Generator",
+    "desc": "Generate Objectives and Key Results (OKR) templates for quarterly goal tracking. Create measurable outcomes with customizable objectives and key results. Free online OKR generator for teams and individuals.",
+    "features": [
+      "Generate OKR templates",
+      "Track quarterly goals",
+      "Measurable key results",
+      "Multiple output formats",
+      "Copy to clipboard",
+      "Customizable objectives"
+    ],
+    "detailUrl": "/tools/okr-template-generator/index.html",
+    "zipUrl": "/assets/zip-packages/business/okr-template-generator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Profit Margin Calculator",
+    "desc": "Calculate profit margin, markup, and net profit instantly from cost and selling price. Enter any two values to compute the third. Perfect for entrepreneurs, ecommerce sellers, and small business owners to analyze pricing and profitability.",
+    "features": [
+      "Instant profit calculation",
+      "Margin and markup display",
+      "ROI percentage output",
+      "Live formula breakdown",
+      "Dark mode support"
+    ],
+    "detailUrl": "/tools/profit-margin-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/business/profit-margin-calculator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Project Estimate Calculator",
+    "desc": "Estimate project costs and timelines with our free online tool. Add tasks, hours, and rates to generate a detailed quote including buffer, expenses, and profit margin. Perfect for freelancers and agencies.",
+    "features": [
+      "Add tasks with hours",
+      "Adjust difficulty multipliers",
+      "Include buffer and expenses",
+      "Calculate profit margin",
+      "Generate detailed quote breakdown"
+    ],
+    "detailUrl": "/tools/project-estimate-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/business/project-estimate-calculator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Sales Tax Calculator",
+    "desc": "Calculate US sales tax for any state with our free online tool. Choose a state to auto-fill the rate or enter a custom rate. Get tax amount, total price, and support reverse calculation.",
+    "features": [
+      "State rate auto-fill",
+      "Forward and reverse modes",
+      "Instant tax calculation",
+      "Custom rate support",
+      "No signup required"
+    ],
+    "detailUrl": "/tools/sales-tax-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/business/sales-tax-calculator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Timezone Meeting Planner",
+    "desc": "Plan meetings across time zones effortlessly. Add participants, set working hours, and find the best overlapping times with our free timezone meeting planner. Visualize availability with a 24-hour timeline.",
+    "features": [
+      "Add multiple timezones",
+      "Set working hours",
+      "Find best meeting times",
+      "Visual 24-hour timeline",
+      "Adjustable meeting duration"
+    ],
+    "detailUrl": "/tools/timezone-meeting-planner/index.html",
+    "zipUrl": "/assets/zip-packages/business/timezone-meeting-planner.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Random Name Picker / Lottery Draw",
+    "desc": "Free online random name picker / lottery draw tool. Pick random winners from a list, shuffle teams, draw lots. Local, no upload.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/name-picker.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "PDF Page Counter",
+    "desc": "Count pages in PDF files instantly in your browser. No upload, no server &#8212; fully private. Free online PDF page counter.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/pdf-page-counter.zip"
+  }
+]

@@ -1,0 +1,191 @@
+[
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Audio File Size Calculator",
+    "desc": "Calculate audio file size from duration, sample rate, and bit depth. Estimate WAV, MP3, FLAC sizes. Free audio file size calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/audio-file-size-calculator.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Online Metronome",
+    "desc": "Free online metronome with adjustable BPM. Practice music timing with visual and audio beats. Time signatures and accent patterns.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/audio-metronome-online.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Online Audio Recorder",
+    "desc": "Record audio from microphone in browser. Save as WAV/WebM. No upload, all processing local. Free online voice recorder.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/audio-recorder-online.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "BPM Counter",
+    "desc": "Tap to count BPM (beats per minute). Find the tempo of any song by tapping along. Free online BPM tapper for musicians and DJs.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/bpm-counter.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "BPM Detector",
+    "desc": "Detect BPM by tapping. Find song tempo by clicking. Free BPM tapper and detector.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/bpm-detector.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "BPM Tap Counter",
+    "desc": "Find BPM by tapping a rhythm. Tap any key to detect song tempo. Free BPM tap counter for musicians and DJs.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/bpm-tap-counter.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Chord Progression Generator",
+    "desc": "Generate chord progressions in any key. Free chord progression tool.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/chord-progression-generator.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Chord Progressions Reference",
+    "desc": "Common chord progressions in popular music. Find progressions by genre with examples. Free chord progression reference.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/chord-progressions-reference.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Guitar Chord Finder",
+    "desc": "Find guitar chord shapes. All positions, fingerings. Free guitar chord finder.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/guitar-chord-finder.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Guitar String Tension Calculator",
+    "desc": "Calculate guitar string tension for any tuning. Find correct string gauge for drop tunings. Free guitar string tension calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/guitar-string-tension-calculator.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Guitar Tuner Reference",
+    "desc": "Reference tones for tuning guitar. Standard EADGBE, drop D, open tunings. Free online guitar tuner with reference tones for each string.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/guitar-tuner-reference.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Key Signature Identifier",
+    "desc": "Identify musical key signatures and scales. Free music theory tool.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/key-signature-identifier.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Metronome BPM Tapper",
+    "desc": "Tap to find BPM or use as metronome. Free BPM tapper and metronome.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/metronome-bpm-tapper.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Tempo Marking Reference",
+    "desc": "Italian tempo markings reference with BPM ranges. Largo to presto markings. Free music tempo guide.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/metronome-tempo-marking.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Music Key Transposer",
+    "desc": "Transpose music chords and notes between keys. Capo positions. Free music transposer.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/music-key-transposer.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Music Note Frequency Calculator",
+    "desc": "Calculate frequency of musical notes. Convert note names to Hz based on A4=440Hz standard tuning. Free music frequency calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/music-note-frequency-calculator.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Music Note Frequency Calculator",
+    "desc": "Calculate frequencies of musical notes. Find note frequencies for any octave based on A4=440Hz. Free online music note frequency calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/music-note-frequency.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Music Transpose Calculator",
+    "desc": "Transpose music between keys. Convert chords, notes, scales. Free music transposition tool.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/music-transpose-calc.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Song Key Detector",
+    "desc": "Find musical key from chords. Identify major/minor keys. Circle of fifths reference. Free song key finder.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/song-key-detector.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Tone Generator",
+    "desc": "Generate pure audio tones at any frequency. Sine, square, sawtooth, triangle waveforms. Free online tone generator for testing hearing.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/tone-generator.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "White Noise Generator",
+    "desc": "Generate white, pink, brown noise for sleep, focus, tinnitus relief. Adjustable volume and duration. Free online noise generator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/white-noise-generator.zip"
+  }
+]

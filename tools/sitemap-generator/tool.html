@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Free online XML sitemap generator. Create sitemaps for Google, Bing, and other search engines. Local, no upload.">
+<meta name="keywords" content="sitemap generator, xml sitemap, sitemap.xml, SEO sitemap, google sitemap, bing sitemap">
+<title>XML Sitemap Generator | YuanQiZhiLe Toolkit</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:system-ui,-apple-system,sans-serif;background:#f7f7f7;transition:background 0.3s,color 0.3s}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+body.dark .wrap{background:#16213e}
+body.dark textarea,body.dark input,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark .field-label,body.dark .guide h3,body.dark .guide li,body.dark .url-item,body.dark .stat-box,body.dark .url-header{color:#c8c8c8}
+body.dark .url-item,body.dark .stat-box,body.dark .url-header{background:#0f3460;border-color:#1a1a2e}
+body.dark .guide{background:#0f3460;border-color:#1a1a2e}
+body.dark .guide code{background:#2a1a2a;color:#ffb3c7}
+.wrap{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:6px;font-size:24px}
+.subtitle{color:#888;font-size:13px;margin-bottom:18px}
+.top-bar{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.section{margin-bottom:18px;padding:14px;border:1px solid #eee;border-radius:6px;background:#fafafa;transition:background 0.3s}
+body.dark .section{background:#0f3460;border-color:#1a1a2e}
+.section h2{font-size:16px;margin-bottom:12px;color:#0056b3}
+body.dark .section h2{color:#60a5fa}
+.form{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:10px}
+.field{display:flex;flex-direction:column;gap:4px}
+.field-label{font-size:13px;font-weight:600;color:#444}
+input,select{padding:8px;border:1px solid #ddd;border-radius:4px;font-family:inherit;font-size:13px;transition:background 0.3s,color 0.3s}
+.url-header{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr auto;gap:8px;padding:8px;border:1px solid #ddd;border-radius:4px;background:#f0f0f0;font-size:12px;font-weight:bold;color:#666;margin-bottom:6px;transition:background 0.3s}
+.url-list{max-height:400px;overflow-y:auto;margin-bottom:10px}
+.url-item{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr auto;gap:8px;padding:8px;border:1px solid #ddd;border-radius:4px;background:#fff;margin-bottom:6px;align-items:center;font-size:12px;transition:background 0.3s}
+body.dark .url-item{background:#16213e}
+.url-item input,.url-item select{padding:5px;font-size:12px}
+.url-item button{padding:5px 8px;background:#dc3545;color:#fff;border:none;border-radius:3px;cursor:pointer;font-size:11px}
+.url-item button:hover{opacity:0.85}
+.bulk-box{margin-top:10px}
+.bulk-box textarea{width:100%;height:80px;padding:8px;border:1px solid #ddd;border-radius:4px;font-family:monospace;font-size:12px;resize:vertical;transition:background 0.3s,color 0.3s}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.btns button{padding:9px 16px;border:none;border-radius:4px;background:#007bff;color:#fff;cursor:pointer;transition:opacity 0.2s;font-size:14px}
+.btns button:hover{opacity:0.85}
+.btns button.secondary{background:#6c757d}
+.btns button.success{background:#28a745}
+.output-box{margin-top:14px}
+textarea{width:100%;height:300px;padding:10px;border:1px solid #ddd;border-radius:4px;font-family:monospace;font-size:13px;resize:vertical;transition:background 0.3s,color 0.3s}
+.stat-box{padding:12px;border:1px solid #ddd;border-radius:6px;background:#fafafa;margin-top:12px;transition:background 0.3s}
+.stat-box .row{display:flex;justify-content:space-between;padding:4px 0;font-size:13px}
+.stat-box .lbl{color:#666}
+body.dark .stat-box .lbl{color:#a0a0a0}
+.stat-box .val{font-family:monospace;font-weight:bold;color:#0056b3}
+.lead{margin-top:14px;padding:12px;background:#fff8e1;border:1px solid #ffe082;border-radius:6px;font-size:13px;color:#7a5c00;text-align:center}
+body.dark .lead{background:#3a2e00;border-color:#5c4400;color:#ffd54f}
+.guide{margin-top:18px;padding:16px;border:1px solid #e0e0e0;border-radius:8px;background:#fafafa;transition:background 0.3s}
+.guide h3{font-size:15px;margin-bottom:10px;color:#0056b3}
+.guide ol{padding-left:22px;font-size:13px;color:#444;line-height:1.7}
+.guide li{margin-bottom:4px}
+.guide code{background:#f9f2f4;padding:1px 5px;border-radius:3px;font-family:monospace;font-size:12px;color:#c7254e}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+footer a{color:#007bff;text-decoration:none}
+@media(max-width:768px){.wrap{padding:16px}.form{grid-template-columns:1fr}.url-header,.url-item{grid-template-columns:1fr}.bookmark-btn{position:static;margin-top:8px}}
+
+/* === Common: theme toggle button + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+</style>
+</head>
+<body>
+<div class="wrap">
+    <div class="top-bar">
+        <div>
+            <h1>XML Sitemap Generator</h1>
+            <div class="subtitle">Create XML sitemaps for Google, Bing, and other search engines. Local, no upload.</div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark (Ctrl+Shift+T)">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">�?Bookmark</button>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>1. URLs to include</h2>
+        <div class="url-header">
+            <span>URL</span>
+            <span>Last modified</span>
+            <span>Change freq</span>
+            <span>Priority (0-1)</span>
+            <span>Status</span>
+            <span></span>
+        </div>
+        <div class="url-list" id="urlList"></div>
+        <button class="btns" style="padding:8px 14px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer" id="addUrl">+ Add URL</button>
+        <div class="bulk-box">
+            <label class="field-label" style="margin-bottom:6px">Bulk add URLs (one per line):</label>
+            <textarea id="bulkUrls" placeholder="https://example.com/&#10;https://example.com/about&#10;https://example.com/contact"></textarea>
+            <button style="margin-top:6px;padding:8px 14px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:13px" id="addBulk">+ Add Bulk</button>
+        </div>
+    </div>
+
+    <div class="btns">
+        <button id="generate" class="success">Generate Sitemap</button>
+        <button id="copy" class="secondary">Copy XML</button>
+        <button id="download" class="secondary">Download sitemap.xml</button>
+        <button id="clear" class="secondary">Clear</button>
+    </div>
+
+    <div class="stat-box" id="statBox" style="display:none"></div>
+
+    <div class="output-box">
+        <label class="field-label" style="margin-bottom:6px">Generated sitemap.xml</label>
+        <textarea id="output" readonly placeholder="Click Generate to create sitemap..."></textarea>
+    </div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business �?batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">�?or describe your need below �?/div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit �?/button>
+            </form>
+        </div>
+    </div>
+
+    <div class="guide">
+        <h3>How to Use</h3>
+        <ol>
+            <li>Add URLs one by one using the form, or paste a list into the <strong>Bulk add URLs</strong> box and click <strong>+ Add Bulk</strong>.</li>
+            <li>For each URL set <strong>Last modified</strong> (date), <strong>Change freq</strong> (always/hourly/daily/weekly/monthly/yearly/never), and <strong>Priority</strong> (0.0 - 1.0).</li>
+            <li>Click <strong>Generate Sitemap</strong> �?a valid XML sitemap is produced in the output box with stats.</li>
+            <li>Use <strong>Copy XML</strong> or <strong>Download sitemap.xml</strong> to export.</li>
+            <li>Upload the file to your site root and submit it via Google Search Console.</li>
+        </ol>
+    </div>
+
+    <footer>
+        <div>YuanQiZhiLe Toolkit · Process locally in your browser, no data upload.</div>
+    </footer>
+</div>
+
+<script>
+(function(){
+    // === Common: theme + contact modal ===
+    const __themeBtn = document.getElementById('themeToggle');
+    function __applyTheme(t){
+        document.body.classList.toggle('dark', t === 'dark');
+        if(__themeBtn) __themeBtn.textContent = (t === 'dark') ? '☀�? : '🌙';
+    }
+    const __saved = localStorage.getItem('theme');
+    if(__saved){
+        __applyTheme(__saved);
+    } else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
+        __applyTheme('dark');
+    } else {
+        __applyTheme('light');
+    }
+    if(__themeBtn){
+        __themeBtn.addEventListener('click', () => {
+            const next = document.body.classList.contains('dark') ? 'light' : 'dark';
+            __applyTheme(next);
+            localStorage.setItem('theme', next);
+        });
+    }
+    document.addEventListener('keydown', e => {
+        if(e.key === 't' && e.ctrlKey && e.shiftKey){
+            e.preventDefault();
+            const next = document.body.classList.contains('dark') ? 'light' : 'dark';
+            __applyTheme(next);
+            localStorage.setItem('theme', next);
+        }
+    });
+    document.getElementById('bookmarkBtn').addEventListener('click', () => alert('Press Ctrl/Cmd + D to bookmark this page.'));
+
+    // Contact modal
+    const __modal = document.getElementById('contactModal');
+    const __trig = document.getElementById('contactTrigger');
+    const __close = document.getElementById('contactClose');
+    function __openModal(){ if(__modal) __modal.classList.add('open'); }
+    function __closeModal(){ if(__modal) __modal.classList.remove('open'); }
+    if(__trig) __trig.addEventListener('click', __openModal);
+    if(__close) __close.addEventListener('click', __closeModal);
+    if(__modal) __modal.addEventListener('click', e => { if(e.target === __modal) __closeModal(); });
+    document.addEventListener('keydown', e => { if(e.key === 'Escape') __closeModal(); });
+    const __copyBtn = document.getElementById('copyEmail');
+    if(__copyBtn){
+        __copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText('contact@yuanqizhike.com').then(() => {
+                const old = __copyBtn.textContent;
+                __copyBtn.textContent = '�?;
+                setTimeout(() => __copyBtn.textContent = old, 1500);
+            });
+        });
+    }
+    const __form = document.getElementById('contactForm');
+    if(__form){
+        __form.addEventListener('submit', e => {
+            e.preventDefault();
+            const name = document.getElementById('formName').value.trim();
+            const email = document.getElementById('formEmail').value.trim();
+            const desc = document.getElementById('formDesc').value.trim();
+            const subject = encodeURIComponent('Bespoke Tool Development Inquiry');
+            const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nRequirement:\n' + desc);
+            window.location.href = 'mailto:contact@yuanqizhike.com?subject=' + subject + '&body=' + body;
+        });
+    }
+
+    const urls = [];
+
+    function escapeXml(s){
+        return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&apos;');
+    }
+
+    function isValidUrl(url){
+        try { new URL(url); return true; } catch { return /^\/[^?\s]*$/.test(url); }
+    }
+
+    function addUrl(opts = {}){
+        urls.push({
+            loc: opts.loc || '',
+            lastmod: opts.lastmod || '',
+            changefreq: opts.changefreq || 'monthly',
+            priority: opts.priority || '0.5'
+        });
+        renderUrls();
+    }
+
+    function renderUrls(){
+        const list = document.getElementById('urlList');
+        list.innerHTML = '';
+        urls.forEach((u, idx) => {
+            const item = document.createElement('div');
+            item.className = 'url-item';
+            const valid = u.loc ? isValidUrl(u.loc) : null;
+            item.innerHTML = `
+                <input type="text" class="u-loc" value="${escapeXml(u.loc)}" placeholder="https://example.com/page">
+                <input type="date" class="u-lastmod" value="${u.lastmod}">
+                <select class="u-freq">
+                    ${['always','hourly','daily','weekly','monthly','yearly','never'].map(f => `<option value="${f}" ${u.changefreq === f ? 'selected' : ''}>${f}</option>`).join('')}
+                </select>
+                <input type="number" class="u-priority" value="${u.priority}" min="0" max="1" step="0.1">
+                <span style="font-size:11px">${valid === null ? '' : valid ? '<span style="color:#16a34a">�?/span>' : '<span style="color:#dc2626">�?/span>'}</span>
+                <button class="u-del">Delete</button>
+            `;
+            item.querySelector('.u-loc').addEventListener('input', e => { urls[idx].loc = e.target.value; renderUrls(); });
+            item.querySelector('.u-lastmod').addEventListener('change', e => { urls[idx].lastmod = e.target.value; });
+            item.querySelector('.u-freq').addEventListener('change', e => { urls[idx].changefreq = e.target.value; });
+            item.querySelector('.u-priority').addEventListener('input', e => { urls[idx].priority = e.target.value; });
+            item.querySelector('.u-del').addEventListener('click', () => { urls.splice(idx, 1); renderUrls(); });
+            list.appendChild(item);
+        });
+    }
+
+    function generate(){
+        const valid = urls.filter(u => u.loc && isValidUrl(u.loc));
+        if(!valid.length){
+            alert('Add at least one valid URL.');
+            return;
+        }
+        let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
+        xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+        valid.forEach(u => {
+            xml += '  <url>\n';
+            xml += `    <loc>${escapeXml(u.loc)}</loc>\n`;
+            if(u.lastmod) xml += `    <lastmod>${u.lastmod}</lastmod>\n`;
+            xml += `    <changefreq>${u.changefreq}</changefreq>\n`;
+            xml += `    <priority>${parseFloat(u.priority).toFixed(1)}</priority>\n`;
+            xml += '  </url>\n';
+        });
+        xml += '</urlset>\n';
+        document.getElementById('output').value = xml;
+        const statBox = document.getElementById('statBox');
+        statBox.style.display = 'block';
+        const today = new Date().toISOString().slice(0, 10);
+        statBox.innerHTML = `
+            <div class="row"><span class="lbl">Total URLs</span><span class="val">${valid.length}</span></div>
+            <div class="row"><span class="lbl">Skipped (invalid)</span><span class="val">${urls.length - valid.length}</span></div>
+            <div class="row"><span class="lbl">File size</span><span class="val">${formatBytes(new Blob([xml]).size)}</span></div>
+            <div class="row"><span class="lbl">Generated</span><span class="val">${today}</span></div>
+            <div class="row"><span class="lbl">Max URLs per sitemap</span><span class="val">50,000 (you have ${valid.length})</span></div>
+        `;
+    }
+
+    function formatBytes(bytes){
+        if(bytes < 1024) return bytes + ' B';
+        if(bytes < 1024 * 1024) return (bytes / 1024).toFixed(2) + ' KB';
+        return (bytes / 1024 / 1024).toFixed(2) + ' MB';
+    }
+
+    document.getElementById('addUrl').addEventListener('click', () => addUrl());
+    document.getElementById('addBulk').addEventListener('click', () => {
+        const bulk = document.getElementById('bulkUrls').value;
+        const lines = bulk.split(/\r?\n/).map(l => l.trim()).filter(l => l);
+        lines.forEach(line => {
+            if(isValidUrl(line)){
+                addUrl({loc: line, lastmod: new Date().toISOString().slice(0,10), changefreq: 'monthly', priority: '0.5'});
+            }
+        });
+        document.getElementById('bulkUrls').value = '';
+    });
+    document.getElementById('generate').addEventListener('click', generate);
+
+    document.getElementById('copy').addEventListener('click', () => {
+        const v = document.getElementById('output').value;
+        if(!v){ alert('Generate first.'); return; }
+        navigator.clipboard.writeText(v).then(() => {
+            const b = document.getElementById('copy');
+            const old = b.textContent;
+            b.textContent = '�?Copied';
+            setTimeout(() => b.textContent = old, 1500);
+        });
+    });
+
+    document.getElementById('download').addEventListener('click', () => {
+        const v = document.getElementById('output').value;
+        if(!v){ alert('Generate first.'); return; }
+        const blob = new Blob([v], {type:'application/xml'});
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'sitemap.xml';
+        a.click();
+        URL.revokeObjectURL(a.href);
+    });
+
+    document.getElementById('clear').addEventListener('click', () => {
+        urls.length = 0;
+        renderUrls();
+        document.getElementById('output').value = '';
+        document.getElementById('statBox').style.display = 'none';
+    });
+
+    // Seed sample
+    addUrl({loc:'https://example.com/', lastmod:new Date().toISOString().slice(0,10), changefreq:'weekly', priority:'1.0'});
+    addUrl({loc:'https://example.com/about', changefreq:'monthly', priority:'0.8'});
+    addUrl({loc:'https://example.com/contact', changefreq:'yearly', priority:'0.5'});
+    renderUrls();
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

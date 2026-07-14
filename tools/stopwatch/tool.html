@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Online Stopwatch | YuanQiZhiLe Toolkit</title>
+<title>Online Stopwatch | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Free online stopwatch with lap times. Millisecond precision, large display. Use in browser for sports, cooking, presentations. No app needed.">
 <meta name="keywords" content="online stopwatch, timer, lap times, millisecond, sports timer, cooking timer, presentation timer, free stopwatch">
 <meta property="og:title" content="Online Stopwatch - Free Online Tool">
@@ -112,7 +112,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>Online Stopwatch</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Free online stopwatch with lap times. Millisecond precision, large display. Use in browser for sports, cooking, presentations. No app needed.</div>
@@ -138,19 +138,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -163,7 +163,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 </ol>
 <p style="margin-top:8px;font-size:12px;color:#666">Keyboard shortcuts: Space = Start/Stop, L = Lap, R = Reset. The stopwatch uses requestAnimationFrame for smooth updates (60fps). Suitable for sports, cooking, presentations, productivity timer. For high-precision timing (scientific use), use dedicated hardware.</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -174,7 +174,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -200,7 +200,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -261,7 +261,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             laps.forEach(function(lap, i){
                 var badge = '';
                 if(laps.length > 1){
-                    if(i === fastest) badge = ' <span style="color:#10b981;font-size:11px">⚡ Fastest</span>';
+                    if(i === fastest) badge = ' <span style="color:#10b981;font-size:11px">?Fastest</span>';
                     else if(i === slowest) badge = ' <span style="color:#ef4444;font-size:11px">🐢 Slowest</span>';
                 }
                 html += '<tr><td style="padding:8px;border-bottom:1px solid #f3f4f6">#' + (i + 1) + badge + '</td><td style="padding:8px;border-bottom:1px solid #f3f4f6">' + formatTime(lap.split) + '</td><td style="padding:8px;border-bottom:1px solid #f3f4f6">' + formatTime(lap.total) + '</td></tr>';

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Feedback Form Builder | YuanQiZhiLe Toolkit</title>
+<title>Feedback Form Builder | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Build custom feedback forms with multiple field types, ratings, and validation. Export clean HTML code ready to deploy. Free feedback form builder.">
 <meta name="keywords" content="feedback form builder, html form generator, survey form, customer feedback, rating form, online form builder, html form code">
 <meta property="og:title" content="Feedback Form Builder - Free Online Tool">
@@ -112,7 +112,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>Feedback Form Builder</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Build custom feedback forms with multiple field types, ratings, and validation. Export clean HTML code ready to deploy. Free feedback form builder.</div>
@@ -165,19 +165,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -192,7 +192,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 </ol>
 <p style="margin-top:8px;font-size:12px;color:#666">Generates clean, dependency-free HTML form code with inline styles. Includes basic form-submit JavaScript that you can replace with your backend endpoint (Formspree, Netlify Forms, custom API, etc.).</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -203,7 +203,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -229,7 +229,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -325,8 +325,8 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             rows += '<input type="text" value="' + escapeHtml(f.label) + '" data-id="' + f.id + '" data-prop="label" style="flex:1;padding:4px;border:1px solid #ccc;border-radius:3px;font-size:12px">';
             rows += '<label style="font-size:11px;display:flex;align-items:center;gap:2px"><input type="checkbox" ' + (f.required ? 'checked' : '') + ' data-id="' + f.id + '" data-prop="required" style="width:auto">Req</label>';
             rows += '<button data-remove="' + f.id + '" style="padding:2px 6px;background:#dc2626;color:#fff;border:none;border-radius:3px;cursor:pointer;font-size:11px">×</button>';
-            rows += '<button data-up="' + f.id + '" style="padding:2px 6px;background:#6b7280;color:#fff;border:none;border-radius:3px;cursor:pointer;font-size:11px" ' + (idx === 0 ? 'disabled' : '') + '>↑</button>';
-            rows += '<button data-down="' + f.id + '" style="padding:2px 6px;background:#6b7280;color:#fff;border:none;border-radius:3px;cursor:pointer;font-size:11px" ' + (idx === fields.length-1 ? 'disabled' : '') + '>↓</button>';
+            rows += '<button data-up="' + f.id + '" style="padding:2px 6px;background:#6b7280;color:#fff;border:none;border-radius:3px;cursor:pointer;font-size:11px" ' + (idx === 0 ? 'disabled' : '') + '></button>';
+            rows += '<button data-down="' + f.id + '" style="padding:2px 6px;background:#6b7280;color:#fff;border:none;border-radius:3px;cursor:pointer;font-size:11px" ' + (idx === fields.length-1 ? 'disabled' : '') + '></button>';
             rows += '</div>';
             if(optEditor) rows += '<div style="font-size:11px;color:#666;margin-bottom:2px">Options (one per line):</div>' + optEditor;
             rows += '</div>';
@@ -385,7 +385,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
                 html += '<label style="display:block;font-size:13px;margin:4px 0"><input type="checkbox" name="' + f.id + '" style="width:auto;margin-right:6px">' + escapeHtml(o) + '</label>';
             });
         } else if(f.type === 'rating'){
-            html += '<div style="font-size:24px;letter-spacing:4px">★★★★★</div>';
+            html += '<div style="font-size:24px;letter-spacing:4px">★★★★</div>';
         } else if(f.type === 'scale'){
             html += '<div style="display:flex;gap:4px;flex-wrap:wrap">';
             for(var i = 1; i <= 10; i++){
@@ -436,7 +436,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             } else if(f.type === 'rating'){
                 code += '    <div style="font-size:24px">\n';
                 for(var i = 1; i <= 5; i++){
-                    code += '      <label><input type="radio" name="' + f.id + '" value="' + i + '"' + (f.required && i === 1 ? ' required' : '') + ' style="display:none">★</label>\n';
+                    code += '      <label><input type="radio" name="' + f.id + '" value="' + i + '"' + (f.required && i === 1 ? ' required' : '') + ' style="display:none"></label>\n';
                 }
                 code += '    </div>\n';
             } else if(f.type === 'scale'){
@@ -479,7 +479,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         navigator.clipboard.writeText(code.value).then(function(){
             var btn = document.getElementById('copyBtn');
             var old = btn.textContent;
-            btn.textContent = '✓ Copied';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
             setTimeout(function(){ btn.textContent = old; }, 1500);
         });
     });

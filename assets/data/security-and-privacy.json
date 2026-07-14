@@ -1,0 +1,58 @@
+[
+  {
+    "category": "Security & Privacy",
+    "icon": "/assets/icons/security-6.svg",
+    "title": "Base64 Encoder Decoder",
+    "desc": "Instantly encode text to Base64 or decode Base64 strings back to readable text. Supports UTF-8, Unicode, and URL-safe formats with local processing for privacy.",
+    "features": [
+      "Encode and decode Base64",
+      "URL-safe encoding support",
+      "UTF-8 and Unicode handling",
+      "Local client-side processing"
+    ],
+    "detailUrl": "/tools/base64-encode-decode/index.html",
+    "zipUrl": "/assets/zip-packages/security/base64-encode-decode.zip"
+  },
+  {
+    "category": "Security & Privacy",
+    "icon": "/assets/icons/security-7.svg",
+    "title": "Data Masker",
+    "desc": "Protect sensitive information by automatically masking emails, phone numbers, credit cards, SSNs, and IP addresses. Securely anonymize PII before sharing documents or logs.",
+    "features": [
+      "Mask emails and phone numbers",
+      "Hide credit cards and SSNs",
+      "Anonymize IP addresses",
+      "Custom masking styles"
+    ],
+    "detailUrl": "/tools/data-masker/index.html",
+    "zipUrl": "/assets/zip-packages/security/data-masker.zip"
+  },
+  {
+    "category": "Security & Privacy",
+    "icon": "/assets/icons/security-8.svg",
+    "title": "JWT Decoder",
+    "desc": "Decode and inspect JSON Web Tokens locally in your browser. View headers, payloads, and standard claims like exp and iat. Tokens never leave your device for maximum privacy and security.",
+    "features": [
+      "Local decoding only",
+      "Inspect header and payload",
+      "View standard claims",
+      "Expiration status check"
+    ],
+    "detailUrl": "/tools/jwt-decoder/index.html",
+    "zipUrl": "/assets/zip-packages/security/jwt-decoder.zip"
+  },
+  {
+    "category": "Security & Privacy",
+    "icon": "/assets/icons/security-10.svg",
+    "title": "URL Encode Decode",
+    "desc": "Instantly encode or decode strings for URLs. Supports standard and component encoding, handles UTF-8, query strings, and form data with real-time conversion.",
+    "features": [
+      "Encode and decode strings",
+      "Handle UTF-8 characters",
+      "Component encoding support",
+      "Real-time conversion"
+    ],
+    "detailUrl": "/tools/url-encode-decode/index.html",
+    "zipUrl": "/assets/zip-packages/security/url-encode-decode.zip"
+  }
+]

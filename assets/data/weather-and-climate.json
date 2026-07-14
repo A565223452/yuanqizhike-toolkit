@@ -1,0 +1,92 @@
+[
+  {
+    "category": "Weather & Climate",
+    "icon": "/assets/icons/weather-1.svg",
+    "title": "Apparent Temperature Calculator",
+    "desc": "Calculate apparent temperature (feels-like) combining heat index, wind chill, and humidity. Free real-feel temperature calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/weather/apparent-temperature-calc.zip"
+  },
+  {
+    "category": "Weather & Climate",
+    "icon": "/assets/icons/weather-1.svg",
+    "title": "Beaufort Wind Scale Converter",
+    "desc": "Convert wind speed to Beaufort scale with descriptions. Free wind scale converter for mph, km/h, m/s, knots, and Beaufort force 0-12.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/weather/beaufort-wind-scale.zip"
+  },
+  {
+    "category": "Weather & Climate",
+    "icon": "/assets/icons/weather-1.svg",
+    "title": "Dew Point Calculator",
+    "desc": "Calculate dew point from temperature and humidity. Free dew point calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/weather/dew-point-calculator.zip"
+  },
+  {
+    "category": "Weather & Climate",
+    "icon": "/assets/icons/weather-1.svg",
+    "title": "Heat Index Calculator",
+    "desc": "Calculate heat index and feels-like temperature. NWS formula with humidity. Free heat index calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/weather/heat-index-calculator.zip"
+  },
+  {
+    "category": "Weather & Climate",
+    "icon": "/assets/icons/weather-1.svg",
+    "title": "Precipitation Calculator",
+    "desc": "Calculate rainfall, water catchment, snow equivalent. Free precipitation calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/weather/precipitation-calculator.zip"
+  },
+  {
+    "category": "Weather & Climate",
+    "icon": "/assets/icons/weather-1.svg",
+    "title": "Storm Distance Calculator",
+    "desc": "Calculate distance from lightning strike by counting seconds between flash and thunder. Free storm distance and safety timer calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/weather/storm-distance-calc.zip"
+  },
+  {
+    "category": "Weather & Climate",
+    "icon": "/assets/icons/weather-1.svg",
+    "title": "Sunrise Sunset Calculator",
+    "desc": "Calculate sunrise, sunset, golden hour. Free solar time calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/weather/sunrise-sunset-calculator.zip"
+  },
+  {
+    "category": "Weather & Climate",
+    "icon": "/assets/icons/weather-1.svg",
+    "title": "Temperature Converter",
+    "desc": "Convert temperature between Celsius, Fahrenheit, Kelvin, and Rankine. Free online temperature converter for weather and science.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/weather/temperature-converter.zip"
+  },
+  {
+    "category": "Weather & Climate",
+    "icon": "/assets/icons/weather-1.svg",
+    "title": "UV Index Calculator",
+    "desc": "Calculate UV index and sun exposure time. SPF recommendations, vitamin D synthesis. Free UV index calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/weather/uv-index-calculator.zip"
+  },
+  {
+    "category": "Weather & Climate",
+    "icon": "/assets/icons/weather-1.svg",
+    "title": "Wind Chill Calculator",
+    "desc": "Calculate wind chill temperature. NWS formula. Feels-like temperature. Free wind chill calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/weather/wind-chill-calculator.zip"
+  }
+]

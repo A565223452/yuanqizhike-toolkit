@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Free online byte converter (B, KB, MB, GB, TB, PB) and data size calculator. Convert binary and decimal units. Local, no upload.">
 <meta name="keywords" content="byte converter, KB to MB, MB to GB, GB to TB, data size, binary prefix, digital storage, bits bytes">
-<title>Byte / Data Size Converter | YuanQiZhiLe Toolkit</title>
+<title>Byte / Data Size Converter | YuanqiZhiKe Toolkit</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{padding:20px;font-family:system-ui,-apple-system,sans-serif;background:#f7f7f7;transition:background 0.3s,color 0.3s}
@@ -97,7 +97,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         </div>
         <div style="display:flex;gap:8px;align-items:center">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark (Ctrl+Shift+T)">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
 
@@ -138,7 +138,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             <li>All converted values appear instantly in the list below; click <strong>Copy</strong> next to any row.</li>
         </ol>
         <div class="table">Decimal (SI)    : 1 KB = 10³ B = 1,000 B
-Binary (IEC)    : 1 KiB = 2¹⁰ B = 1,024 B
+Binary (IEC)    : 1 KiB = 2¹B = 1,024 B
 1 Byte = 8 bits</div>
     </div>
 
@@ -151,26 +151,24 @@ Binary (IEC)    : 1 KiB = 2¹⁰ B = 1,024 B
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
 
-    <footer>
-        <div>YuanQiZhiLe Toolkit · Process locally in your browser, no data upload.</div>
-    </footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 
 <script>
@@ -179,7 +177,7 @@ Binary (IEC)    : 1 KiB = 2¹⁰ B = 1,024 B
     const __themeBtn = document.getElementById('themeToggle');
     function __applyTheme(t){
         document.body.classList.toggle('dark', t === 'dark');
-        if(__themeBtn) __themeBtn.textContent = (t === 'dark') ? '☀️' : '🌙';
+        if(__themeBtn) __themeBtn.textContent = (t === 'dark') ? '☀? : '🌙';
     }
     const __saved = localStorage.getItem('theme');
     if(__saved){
@@ -221,7 +219,7 @@ Binary (IEC)    : 1 KiB = 2¹⁰ B = 1,024 B
         __copyBtn.addEventListener('click', () => {
             navigator.clipboard.writeText('contact@yuanqizhike.com').then(() => {
                 const old = __copyBtn.textContent;
-                __copyBtn.textContent = '✓';
+                __copyBtn.textContent='Copied';
                 setTimeout(() => __copyBtn.textContent = old, 1500);
             });
         });
@@ -239,7 +237,7 @@ Binary (IEC)    : 1 KiB = 2¹⁰ B = 1,024 B
         });
     }
 
-    // Unit → bytes (in decimal mode, 1000-based unless already binary-prefixed)
+    // Unit ?bytes (in decimal mode, 1000-based unless already binary-prefixed)
     const UNITS = [
         {key:'bit',   name:'bit (b)',     factor:1/8},
         {key:'B',     name:'Byte (B)',     factor:1},
@@ -265,7 +263,7 @@ Binary (IEC)    : 1 KiB = 2¹⁰ B = 1,024 B
         if(key === 'bit' || key === 'B') return u.factor;
         // For KB/MB/... switch by mode
         if(mode === 'binary'){
-            // KB → 1024
+            // KB ?1024
             const bin = {KB:1024, MB:1024**2, GB:1024**3, TB:1024**4, PB:1024**5, EB:1024**6};
             return bin[key] || u.factor;
         }
@@ -273,7 +271,7 @@ Binary (IEC)    : 1 KiB = 2¹⁰ B = 1,024 B
     }
 
     function formatNum(n, decimals, group){
-        if(!isFinite(n)) return '∞';
+        if(!isFinite(n)) return '?;
         if(n === 0) return '0';
         const fixed = n.toFixed(decimals);
         // Remove trailing zeros after decimal
@@ -315,7 +313,7 @@ Binary (IEC)    : 1 KiB = 2¹⁰ B = 1,024 B
                 navigator.clipboard.writeText(formatNum(converted, decimals, false));
                 const b = row.querySelector('button');
                 const old = b.textContent;
-                b.textContent = '✓';
+                b.textContent = '?;
                 setTimeout(() => b.textContent = old, 1000);
             });
             container.appendChild(row);

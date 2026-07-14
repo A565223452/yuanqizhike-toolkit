@@ -1,0 +1,286 @@
+[
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Age Calculator",
+    "desc": "Calculate your exact age in years, months, and days with precision. Get fun statistics like total heartbeats, days lived, and countdowns to your next birthday or half-birthday.",
+    "features": [
+      "Exact age calculation",
+      "Total days and weeks",
+      "Birthday countdown timer",
+      "Fun life statistics"
+    ],
+    "detailUrl": "/tools/age-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/time/age-calculator.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/lifestyle-2.svg",
+    "title": "Countdown Timer",
+    "desc": "Countdown Timer - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/countdown-timer/index.html",
+    "zipUrl": "/assets/zip-packages/time/countdown-timer.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/lifestyle-3.svg",
+    "title": "Date Calculator",
+    "desc": "Easily calculate the difference between two dates or add and subtract days, weeks, months, and years. Get precise results in days, weeks, months, and years instantly.",
+    "features": [
+      "Calculate date differences",
+      "Add or subtract time units",
+      "Results in days and weeks",
+      "Supports months and years",
+      "Instant real-time calculation"
+    ],
+    "detailUrl": "/tools/date-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/time/date-calculator.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/lifestyle-4.svg",
+    "title": "Random Number Generator",
+    "desc": "Generate random numbers within any range instantly. Supports unique selection, sorting, and history tracking. Perfect for lotteries, raffles, sampling, and decision making without signup.",
+    "features": [
+      "Custom range generation",
+      "Unique number mode",
+      "Sort results option",
+      "Copy to clipboard",
+      "Generation history log"
+    ],
+    "detailUrl": "/tools/random-number-generator/index.html",
+    "zipUrl": "/assets/zip-packages/time/random-number-generator.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/lifestyle-7.svg",
+    "title": "Budget Tracker",
+    "desc": "Budget Tracker - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/budget-tracker/index.html",
+    "zipUrl": "/assets/zip-packages/time/budget-tracker.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/lifestyle-8.svg",
+    "title": "Coin Flipper",
+    "desc": "Flip a virtual coin for quick decisions with animated results. Track heads and tails statistics, view flip history, and reset counters easily. Perfect for random choices.",
+    "features": [
+      "Animated coin flip",
+      "Live statistics tracking",
+      "Flip history log",
+      "Reset counter option"
+    ],
+    "detailUrl": "/tools/coin-flipper/index.html",
+    "zipUrl": "/assets/zip-packages/time/coin-flipper.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/lifestyle-9.svg",
+    "title": "Date Difference Calculator",
+    "desc": "Calculate the exact difference between two dates in days, weeks, months, and years. Includes business day counting and date addition features for project planning and age tracking.",
+    "features": [
+      "Calculate date differences",
+      "Count business days only",
+      "Add or subtract days",
+      "Supports years and months",
+      "Project deadline planner",
+      "Age and duration calculator"
+    ],
+    "detailUrl": "/tools/date-difference-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/time/date-difference-calculator.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/lifestyle-12.svg",
+    "title": "Meditation Timer",
+    "desc": "Enhance your mindfulness practice with this customizable meditation timer. Features interval bells, soothing audio cues, and a guided breathing exercise to help you relax and focus.",
+    "features": [
+      "Customizable meditation duration",
+      "Interval bell notifications",
+      "Soothing bell sound options",
+      "Guided breathing exercise"
+    ],
+    "detailUrl": "/tools/meditation-timer/index.html",
+    "zipUrl": "/assets/zip-packages/time/meditation-timer.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Productivity Score Calculator",
+    "desc": "Evaluate your daily work efficiency with this comprehensive productivity score calculator. Track task completion, focus time, energy levels, and mood to get actionable insights and personalized tips for improvement.",
+    "features": [
+      "Calculate weighted productivity score",
+      "Track task completion and focus time",
+      "Assess energy and mood levels",
+      "Get personalized improvement tips",
+      "Visual score breakdown and progress bar"
+    ],
+    "detailUrl": "/tools/productivity-score-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/time/productivity-score-calculator.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/lifestyle-2.svg",
+    "title": "Sleep Cycle Calculator",
+    "desc": "Optimize your rest by calculating ideal bedtime and wake-up times based on 90-minute sleep cycles. Enter your desired wake time or current moment to find the perfect sleep schedule for maximum refreshment.",
+    "features": [
+      "Calculate optimal bedtimes",
+      "Wake up refreshed naturally",
+      "90-minute cycle logic",
+      "Suggests best sleep duration",
+      "Includes sleep stage info",
+      "Mobile friendly interface"
+    ],
+    "detailUrl": "/tools/sleep-cycle-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/time/sleep-cycle-calculator.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/lifestyle-3.svg",
+    "title": "Online Stopwatch",
+    "desc": "Start a precise online stopwatch with millisecond accuracy and lap tracking. Perfect for sports, cooking, workouts, and presentations. Features keyboard shortcuts and a clean interface.",
+    "features": [
+      "Millisecond precision timing",
+      "Record lap splits easily",
+      "Keyboard shortcut support",
+      "Dark mode available"
+    ],
+    "detailUrl": "/tools/stopwatch/index.html",
+    "zipUrl": "/assets/zip-packages/time/stopwatch.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/lifestyle-4.svg",
+    "title": "Online To-Do List",
+    "desc": "Organize your daily tasks efficiently with this free online to-do list. Set priorities, assign due dates, and track progress using local storage without signup.",
+    "features": [
+      "Set task priorities and due dates",
+      "Filter by active or completed status",
+      "Persistent local storage saving",
+      "Dark mode and responsive design"
+    ],
+    "detailUrl": "/tools/to-do-list-online/index.html",
+    "zipUrl": "/assets/zip-packages/time/to-do-list-online.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/lifestyle-5.svg",
+    "title": "Wheel Spinner",
+    "desc": "Spin a custom wheel to make random choices instantly. Add options, spin the wheel, and get a random winner. Perfect for giveaways, decision making, and games.",
+    "features": [
+      "Customizable wheel options",
+      "Animated spin results",
+      "Winner history tracking",
+      "Random decision maker"
+    ],
+    "detailUrl": "/tools/wheel-spinner/index.html",
+    "zipUrl": "/assets/zip-packages/time/wheel-spinner.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/time-1.svg",
+    "title": "Age Milestones Calculator",
+    "desc": "Calculate age milestones. Driving, voting, retirement age. Free milestone calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/time/age-milestones-calculator.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/time-1.svg",
+    "title": "Day of Week Calculator",
+    "desc": "Find what day of the week any date falls on. Works for past and future dates. Free online day of week calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/time/day-of-week-calculator.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/time-1.svg",
+    "title": "Day of Year Calculator",
+    "desc": "Calculate what day of the year (1-366) any date falls on. Find remaining days in the year. Free online day of year calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/time/day-of-year-calculator.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/time-1.svg",
+    "title": "Days Between Dates Calculator",
+    "desc": "Calculate days between two dates. Business days, weeks, months. Free date difference calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/time/days-between-dates-calculator.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/time-1.svg",
+    "title": "Daylight Saving Time Converter",
+    "desc": "Convert times between Daylight Saving Time (DST) and Standard Time. See which countries observe DST and when transitions occur.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/time/dst-converter.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/time-1.svg",
+    "title": "Hijri Date Converter",
+    "desc": "Convert Gregorian to Hijri (Islamic) dates. Ramadan, Eid dates. Free Hijri calendar converter.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/time/hijri-date-converter.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/time-1.svg",
+    "title": "Leap Year Checker",
+    "desc": "Check if a year is a leap year. Find leap years in any range. Free online leap year calculator with Gregorian calendar rules.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/time/leap-year-checker.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/time-1.svg",
+    "title": "Lunar Phase Calculator",
+    "desc": "Calculate moon phase for any date. Free lunar phase calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/time/lunar-phase-calculator.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/time-1.svg",
+    "title": "Time Zone Meeting Planner",
+    "desc": "Plan meetings across multiple time zones. Find the best time for participants in different cities around the world.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/time/meeting-planner.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/time-1.svg",
+    "title": "Unix Timestamp Converter",
+    "desc": "Convert Unix timestamps to human-readable dates and back. Supports seconds and milliseconds. Free online Unix timestamp converter.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/time/unix-timestamp-converter-lite.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/time-1.svg",
+    "title": "Week Number Calculator",
+    "desc": "Calculate ISO week number for any date. Free week number calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/time/week-number-calculator.zip"
+  }
+]

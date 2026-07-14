@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JSON Formatter | YuanQiZhiLe Toolkit</title>
+    <title>JSON Formatter | YuanqiZhiKe Toolkit</title>
     <style>
         *{box-sizing:border-box;margin:0;padding:0}
         body{padding:20px;font-family:Arial,sans-serif;background:#f5f5f5;transition:background 0.3s,color 0.3s}
@@ -119,10 +119,11 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 .contact-modal form button:hover{background:#218838}
 .instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}.instructions li{margin:4px 0;font-size:13px;line-height:1.6}body.dark .instructions{background:#1e2a3a;border-color:#2c4a6e}body.dark .instructions h2{color:#5ba3f5}
 </style>
+<meta name="description" content="Free online json formatter tool - fast, secure, no installation. YuanqiZhiKe Toolkit.">
 </head>
 <body>
 <div style="display:flex;gap:8px;align-items:center"><button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn" title="Add to bookmarks">⭐ Bookmark</button></div>
+            <button class="bookmark-btn" id="bookmarkBtn" title="Add to bookmarks">Note: Bookmark</button></div>
 <div class="container">
     <div class="top-bar">
         <h1>Online JSON Formatter / Validator</h1>
@@ -192,25 +193,23 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
-<footer>
-        YuanQiZhiLe Toolkit — Developer Free Utility Tools
-    </footer>
+<footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <input type="file" id="fileInput" class="file-input-hidden" accept=".json,.txt">
 <script>
@@ -231,7 +230,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -262,7 +261,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
     if(!btn)return;
     function apply(t){
         document.body.classList.toggle('dark',t==='dark');
-        btn.textContent=(t==='dark')?'☀️':'🌙';
+        btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
     }
     var saved=localStorage.getItem('theme');
     if(saved){apply(saved);}
@@ -309,7 +308,7 @@ document.getElementById('clear').onclick=()=>{
 document.getElementById('copy').onclick=async()=>{
     await navigator.clipboard.writeText(input.value);
     const btn=document.getElementById('copy');
-    btn.textContent='✓ Copied!';
+    btn.textContent='?Copied!';
     setTimeout(()=>{btn.textContent='Copy'},2000);
 };
 
@@ -463,7 +462,7 @@ function javaType(v){
     if(typeof v==='object')return'Object';
     return'String';
 }
-function camelToSnake(s){return s.replace(/([a-z])([A-Z])/g,'$1_$2').toLowerCase()}
+function camelToSnake(s){return s.replace(/([a-z])([A-Z])/g,'<script>_</script>').toLowerCase()}
 
 // Generate Go Struct
 function generateGo(obj){
@@ -532,7 +531,7 @@ function buildNode(value,key,name,level){
     if(value===null){
         valSpan.innerHTML='<span class="null-val">null</span>';
     }else if(Array.isArray(value)){
-        toggle.textContent='▼';
+        toggle.textContent='?;
         if(value.length===0){
             valSpan.innerHTML='<span class="tree-bracket">[]</span>';
         }else{
@@ -545,11 +544,11 @@ function buildNode(value,key,name,level){
             node.appendChild(children);
             toggle.onclick=()=>{
                 children.classList.toggle('collapsed');
-                toggle.textContent=children.classList.contains('collapsed')?'▶':'▼';
+                toggle.textContent=children.classList.contains('collapsed')?'?:'?;
             };
         }
     }else if(typeof value==='object'){
-        toggle.textContent='▼';
+        toggle.textContent='?;
         const keys=Object.keys(value);
         if(keys.length===0){
             valSpan.innerHTML='<span class="tree-bracket">{}</span>';
@@ -563,7 +562,7 @@ function buildNode(value,key,name,level){
             node.appendChild(children);
             toggle.onclick=()=>{
                 children.classList.toggle('collapsed');
-                toggle.textContent=children.classList.contains('collapsed')?'▶':'▼';
+                toggle.textContent=children.classList.contains('collapsed')?'?:'?;
             };
         }
     }else if(typeof value==='string'){
@@ -627,13 +626,13 @@ function computeDiff(obj1,obj2,path=''){
 }
 
 function renderDiff(diffs){
-    if(diffs.length===0)return'<div style="color:#16a34a">✅ No differences found. JSON objects are identical.</div>';
+    if(diffs.length===0)return'<div style="color:#16a34a">?No differences found. JSON objects are identical.</div>';
     let html='<div style="margin-bottom:8px;font-size:13px;color:#666">Found '+diffs.length+' difference(s):</div>';
     diffs.forEach(d=>{
         if(d.type==='added')html+='<div class="diff-added">+ ['+d.path+']: '+escapeJson(d.value)+'</div>';
         else if(d.type==='removed')html+='<div class="diff-removed">- ['+d.path+']: '+escapeJson(d.from)+'</div>';
         else if(d.type==='changed')html+='<div class="diff-removed">- ['+d.path+']: '+escapeJson(d.from)+'</div><div class="diff-added">+ ['+d.path+']: '+escapeJson(d.to)+'</div>';
-        else if(d.type==='type_changed')html+='<div style="color:#f59e0b;background:#fef3c7;padding:2px 6px;border-radius:3px">⚠ ['+d.path+']: '+d.from+' → '+d.to+'</div>';
+        else if(d.type==='type_changed')html+='<div style="color:#f59e0b;background:#fef3c7;padding:2px 6px;border-radius:3px">?['+d.path+']: '+d.from+' ?'+d.to+'</div>';
     });
     return html;
 }
@@ -736,11 +735,11 @@ document.getElementById('validateSchemaBtn').onclick=()=>{
         const schemaObj=JSON.parse(schema);
         const errors=validateWithSchema(data,schemaObj);
         if(errors.length===0){
-            document.getElementById('diffOutput').innerHTML='<div style="color:#16a34a">✅ JSON is valid according to the schema!</div>';
+            document.getElementById('diffOutput').innerHTML='<div style="color:#16a34a">?JSON is valid according to the schema!</div>';
         }else{
-            let html='<div style="color:#dc2626;margin-bottom:8px">❌ Found '+errors.length+' validation error(s):</div>';
+            let html='<div style="color:#dc2626;margin-bottom:8px">?Found '+errors.length+' validation error(s):</div>';
             errors.forEach(e=>{
-                html+='<div style="padding:4px 8px;background:#fee2e2;border-radius:3px;margin:4px 0">⚠ ['+e.path+']: '+e.message+'</div>';
+                html+='<div style="padding:4px 8px;background:#fee2e2;border-radius:3px;margin:4px 0">?['+e.path+']: '+e.message+'</div>';
             });
             document.getElementById('diffOutput').innerHTML=html;
         }
@@ -753,7 +752,7 @@ document.getElementById('copyDiff').onclick=async()=>{
     if(!content){alert('Nothing to copy');return}
     await navigator.clipboard.writeText(content);
     const btn=document.getElementById('copyDiff');
-    btn.textContent='✓ Copied!';
+    btn.textContent='?Copied!';
     setTimeout(()=>{btn.textContent='Copy Diff'},2000);
 };
 
@@ -763,7 +762,7 @@ document.getElementById('copyConvert').onclick=async()=>{
     if(!output.value){alert('Nothing to copy');return}
     await navigator.clipboard.writeText(output.value);
     const btn=document.getElementById('copyConvert');
-    btn.textContent='✓ Copied!';
+    btn.textContent='?Copied!';
     setTimeout(()=>{btn.textContent='Copy Code'},2000);
 };
 

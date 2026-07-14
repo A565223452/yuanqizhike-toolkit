@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JSON to YAML Converter | YuanQiZhiLe Toolkit</title>
-<meta name="description" content="Bidirectional JSON ↔ YAML converter. Convert JSON to YAML or YAML to JSON with proper indentation, type handling, and inline array support. Pure client-side.">
+<title>JSON to YAML Converter | YuanqiZhiKe Toolkit</title>
+<meta name="description" content="Bidirectional JSON &#8212; YAML converter. Convert JSON to YAML or YAML to JSON with proper indentation, type handling, and inline array support. Pure client-side.">
 <meta name="keywords" content="json to yaml, yaml to json, yaml converter, convert yaml, json yaml bidirectional">
 <meta property="og:title" content="JSON to YAML Converter - Free Online Tool">
-<meta property="og:description" content="Bidirectional JSON ↔ YAML converter. Convert JSON to YAML or YAML to JSON with proper indentation, type handling, and inline array support. Pure client-side.">
+<meta property="og:description" content="Bidirectional JSON &#8212; YAML converter. Convert JSON to YAML or YAML to JSON with proper indentation, type handling, and inline array support. Pure client-side.">
 <meta property="og:type" content="website">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -112,15 +112,15 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>JSON to YAML Converter</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
-    <div class="subtitle">Bidirectional JSON ↔ YAML converter. Convert JSON to YAML or YAML to JSON with proper indentation, type handling, and inline array support. Pure client-side.</div>
+    <div class="subtitle">Bidirectional JSON &#8212; YAML converter. Convert JSON to YAML or YAML to JSON with proper indentation, type handling, and inline array support. Pure client-side.</div>
     <div class="group">
         <label>Direction</label>
         <select id="dir" style="padding:8px">
-            <option value="j2y" selected>JSON → YAML</option>
-            <option value="y2j">YAML → JSON</option>
+            <option value="j2y" selected>JSON &#8212; YAML</option>
+            <option value="y2j">YAML &#8212; JSON</option>
         </select>
     </div>
     <div class="group">
@@ -128,7 +128,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <textarea id="input" rows="10" placeholder='{"name":"John","age":30,"city":"NYC","tags":["a","b"]}' style="width:100%;padding:10px;font-family:monospace"></textarea>
     </div>
     <button id="convert">Convert</button>
-    <button id="swap" class="secondary">⇅ Swap & Convert</button>
+    <button id="swap" class="secondary">Note: Swap & Convert</button>
     <button id="copy" class="secondary">Copy Output</button>
     <div class="result-box" id="result" style="padding:10px"></div>
 
@@ -141,33 +141,33 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
     <div class="instructions">
         <h2>How to Use</h2>
 <ol>
-<li>Select <b>direction</b>: JSON → YAML or YAML → JSON.</li>
+<li>Select <b>direction</b>: JSON &#8212; YAML or YAML &#8212; JSON.</li>
 <li>Paste your input into the textarea.</li>
 <li>Click <b>Convert</b> to see the output.</li>
 <li>Use <b>Swap & Convert</b> to take the output and convert it back.</li>
 </ol>
 <p style="margin-top:8px;font-size:12px;color:#666">YAML parser supports basic structures: scalars, lists, mappings, nested objects, quoted strings. All processing happens in your browser.</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -178,7 +178,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -204,7 +204,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });

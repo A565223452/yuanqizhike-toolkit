@@ -1,0 +1,119 @@
+[
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/health-9.svg",
+    "title": "Ai Agent Workflow Planner",
+    "desc": "A free offline tool for ai agent workflow planner calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/ai-agent-workflow-planner/index.html",
+    "zipUrl": "/assets/zip-packages/ai-ml/ai-agent-workflow-planner.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Ai Content Detector Lite",
+    "desc": "A free offline tool for ai content detector lite calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/ai-content-detector-lite/index.html",
+    "zipUrl": "/assets/zip-packages/ai-ml/ai-content-detector-lite.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Ai Detection Score Tool",
+    "desc": "A free offline tool for ai detection score tool calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/ai-detection-score-tool/index.html",
+    "zipUrl": "/assets/zip-packages/ai-ml/ai-detection-score-tool.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/health-12.svg",
+    "title": "Ai Model Comparison Table",
+    "desc": "A free offline tool for ai model comparison table calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/ai-model-comparison-table/index.html",
+    "zipUrl": "/assets/zip-packages/ai-ml/ai-model-comparison-table.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Ai Prompt Generator",
+    "desc": "A free offline tool for ai prompt generator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/ai-prompt-generator/index.html",
+    "zipUrl": "/assets/zip-packages/ai-ml/ai-prompt-generator.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Ai Writing Style Detector",
+    "desc": "A free offline tool for ai writing style detector calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/ai-writing-style-detector/index.html",
+    "zipUrl": "/assets/zip-packages/ai-ml/ai-writing-style-detector.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Dalle Prompt Builder",
+    "desc": "A free offline tool for dalle prompt builder calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/dalle-prompt-builder/index.html",
+    "zipUrl": "/assets/zip-packages/ai-ml/dalle-prompt-builder.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Image Prompt Builder",
+    "desc": "A free offline tool for image prompt builder calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/image-prompt-builder/index.html",
+    "zipUrl": "/assets/zip-packages/ai-ml/image-prompt-builder.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Midjourney Prompt Builder",
+    "desc": "A free offline tool for midjourney prompt builder calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/midjourney-prompt-builder/index.html",
+    "zipUrl": "/assets/zip-packages/ai-ml/midjourney-prompt-builder.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Negative Prompt Generator",
+    "desc": "A free offline tool for negative prompt generator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/negative-prompt-generator/index.html",
+    "zipUrl": "/assets/zip-packages/ai-ml/negative-prompt-generator.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Prompt Engineering Cheat Sheet",
+    "desc": "A free offline tool for prompt engineering cheat sheet calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/prompt-engineering-cheat-sheet/index.html",
+    "zipUrl": "/assets/zip-packages/ai-ml/prompt-engineering-cheat-sheet.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Prompt Template Library",
+    "desc": "A free offline tool for prompt template library calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/prompt-template-library/index.html",
+    "zipUrl": "/assets/zip-packages/ai-ml/prompt-template-library.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Stable Diffusion Prompt Builder",
+    "desc": "A free offline tool for stable diffusion prompt builder calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/stable-diffusion-prompt-builder/index.html",
+    "zipUrl": "/assets/zip-packages/ai-ml/stable-diffusion-prompt-builder.zip"
+  }
+]

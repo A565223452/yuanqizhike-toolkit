@@ -1,0 +1,380 @@
+[
+  {
+    "category": "Forms & Generators",
+    "icon": "/assets/icons/forms-1.svg",
+    "title": "Barcode Generator",
+    "desc": "Generate high-quality barcodes online for free with our versatile barcode generator. Supports CODE-128, EAN-13, UPC-A, Code 39, and EAN-8, with customizable size, colors, and PNG, SVG, JPEG download options. No upload required, works instantly in your browser.",
+    "features": [
+      "Multiple barcode formats",
+      "Customizable size and colors",
+      "PNG, SVG, JPEG export",
+      "No upload required",
+      "Adjustable margin and text"
+    ],
+    "detailUrl": "/tools/barcode-generator/index.html",
+    "zipUrl": "/assets/zip-packages/forms/barcode-generator.zip"
+  },
+  {
+    "category": "Forms & Generators",
+    "icon": "/assets/icons/forms-1.svg",
+    "title": "Birthday Invitation Generator",
+    "desc": "A free offline tool for birthday invitation generator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/birthday-invitation-generator/index.html",
+    "zipUrl": "/assets/zip-packages/forms/birthday-invitation-generator.zip"
+  },
+  {
+    "category": "Forms & Generators",
+    "icon": "/assets/icons/forms-1.svg",
+    "title": "Business Plan Template Generator",
+    "desc": "Generate professional, fully customizable business plan templates with sections including executive summary, market analysis, and financial projections. Free online tool with print/PDF export for startups and entrepreneurs.",
+    "features": [
+      "Customizable plan sections",
+      "Multiple length options",
+      "HTML and Markdown export",
+      "Print / PDF support",
+      "No signup required"
+    ],
+    "detailUrl": "/tools/business-plan-template/index.html",
+    "zipUrl": "/assets/zip-packages/forms/business-plan-template.zip"
+  },
+  {
+    "category": "Forms & Generators",
+    "icon": "/assets/icons/forms-1.svg",
+    "title": "Certificate Maker",
+    "desc": "A free offline tool for certificate maker calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/certificate-maker/index.html",
+    "zipUrl": "/assets/zip-packages/forms/certificate-maker.zip"
+  },
+  {
+    "category": "Forms & Generators",
+    "icon": "/assets/icons/forms-1.svg",
+    "title": "Contract Template Maker",
+    "desc": "Create free, customizable contract templates online for freelancers and small businesses. Generate freelance, NDA, rental, and sales agreements and download them as PDF instantly.",
+    "features": [
+      "Multiple contract templates",
+      "Customizable clause options",
+      "Instant live preview",
+      "Print / save as PDF",
+      "Dark mode support",
+      "No signup required"
+    ],
+    "detailUrl": "/tools/contract-template-maker/index.html",
+    "zipUrl": "/assets/zip-packages/forms/contract-template-maker.zip"
+  },
+  {
+    "category": "Forms & Generators",
+    "icon": "/assets/icons/forms-1.svg",
+    "title": "Cover Letter Generator",
+    "desc": "Generate professional, tailored cover letters for job applications with our free online generator. Fill in personal, job, and company details, choose your tone, and get a polished letter instantly.",
+    "features": [
+      "Multiple tone options",
+      "Customizable personal & job info",
+      "Instant cover letter generation",
+      "Professionally formatted output",
+      "No signup required"
+    ],
+    "detailUrl": "/tools/cover-letter-generator/index.html",
+    "zipUrl": "/assets/zip-packages/forms/cover-letter-generator.zip"
+  },
+  {
+    "category": "Forms & Generators",
+    "icon": "/assets/icons/forms-2.svg",
+    "title": "Feedback Form Builder",
+    "desc": "Build custom feedback forms for your website with multiple field types, star ratings, built-in validation, and easy reordering. Export clean, deploy-ready HTML code with our free online builder.",
+    "features": [
+      "Multiple field types",
+      "Star and scale ratings",
+      "Instant HTML export",
+      "Easy field reordering",
+      "Customizable form content",
+      "No coding required"
+    ],
+    "detailUrl": "/tools/feedback-form-builder/index.html",
+    "zipUrl": "/assets/zip-packages/forms/feedback-form-builder.zip"
+  },
+  {
+    "category": "Forms & Generators",
+    "icon": "/assets/icons/forms-3.svg",
+    "title": "HTML Form Builder",
+    "desc": "Build custom HTML forms visually with our free online form builder. Add various field types, preview in real time, and copy clean semantic HTML code instantly.",
+    "features": [
+      "Multiple field type support",
+      "Real-time form preview",
+      "Clean semantic HTML output",
+      "One-click code copying",
+      "Dark mode support",
+      "Required field toggle"
+    ],
+    "detailUrl": "/tools/form-builder/index.html",
+    "zipUrl": "/assets/zip-packages/forms/form-builder.zip"
+  },
+  {
+    "category": "Forms & Generators",
+    "icon": "/assets/icons/forms-4.svg",
+    "title": "Form Template Generator",
+    "desc": "Free online form template generator to create HTML forms for contact, login, registration, survey, feedback and more. Customize styles and settings, view live previews, then copy ready-to-use code instantly.",
+    "features": [
+      "Multiple form type options",
+      "Four built-in style themes",
+      "Real-time form preview",
+      "One-click code copy",
+      "Customizable field settings"
+    ],
+    "detailUrl": "/tools/form-template-generator/index.html",
+    "zipUrl": "/assets/zip-packages/forms/form-template-generator.zip"
+  },
+  {
+    "category": "Forms & Generators",
+    "icon": "/assets/icons/forms-1.svg",
+    "title": "Gift Certificate Template",
+    "desc": "A free offline tool for gift certificate template calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/gift-certificate-template/index.html",
+    "zipUrl": "/assets/zip-packages/forms/gift-certificate-template.zip"
+  },
+  {
+    "category": "Forms & Generators",
+    "icon": "/assets/icons/forms-1.svg",
+    "title": "Invoice Pdf Template",
+    "desc": "A free offline tool for invoice pdf template calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/invoice-pdf-template/index.html",
+    "zipUrl": "/assets/zip-packages/forms/invoice-pdf-template.zip"
+  },
+  {
+    "category": "Forms & Generators",
+    "icon": "/assets/icons/forms-1.svg",
+    "title": "Login Form Builder",
+    "desc": "A free offline tool for login form builder calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/login-form-builder/index.html",
+    "zipUrl": "/assets/zip-packages/forms/login-form-builder.zip"
+  },
+  {
+    "category": "Forms & Generators",
+    "icon": "/assets/icons/forms-1.svg",
+    "title": "Meeting Agenda Generator",
+    "desc": "A free offline tool for meeting agenda generator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/meeting-agenda-generator/index.html",
+    "zipUrl": "/assets/zip-packages/forms/meeting-agenda-generator.zip"
+  },
+  {
+    "category": "Forms & Generators",
+    "icon": "/assets/icons/forms-1.svg",
+    "title": "Meeting Minutes Template",
+    "desc": "A free offline tool for meeting minutes template calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/meeting-minutes-template/index.html",
+    "zipUrl": "/assets/zip-packages/forms/meeting-minutes-template.zip"
+  },
+  {
+    "category": "Forms & Generators",
+    "icon": "/assets/icons/forms-1.svg",
+    "title": "Nda Template Generator",
+    "desc": "A free offline tool for nda template generator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/nda-template-generator/index.html",
+    "zipUrl": "/assets/zip-packages/forms/nda-template-generator.zip"
+  },
+  {
+    "category": "Forms & Generators",
+    "icon": "/assets/icons/forms-1.svg",
+    "title": "Payslip Maker",
+    "desc": "A free offline tool for payslip maker calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/payslip-maker/index.html",
+    "zipUrl": "/assets/zip-packages/forms/payslip-maker.zip"
+  },
+  {
+    "category": "Forms & Generators",
+    "icon": "/assets/icons/forms-1.svg",
+    "title": "Quiz Form Builder",
+    "desc": "A free offline tool for quiz form builder calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/quiz-form-builder/index.html",
+    "zipUrl": "/assets/zip-packages/forms/quiz-form-builder.zip"
+  },
+  {
+    "category": "Forms & Generators",
+    "icon": "/assets/icons/forms-1.svg",
+    "title": "Receipt Maker",
+    "desc": "A free offline tool for receipt maker calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/receipt-maker/index.html",
+    "zipUrl": "/assets/zip-packages/forms/receipt-maker.zip"
+  },
+  {
+    "category": "Forms & Generators",
+    "icon": "/assets/icons/forms-1.svg",
+    "title": "Receipt Template Generator",
+    "desc": "A free offline tool for receipt template generator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/receipt-template-generator/index.html",
+    "zipUrl": "/assets/zip-packages/forms/receipt-template-generator.zip"
+  },
+  {
+    "category": "Forms & Generators",
+    "icon": "/assets/icons/forms-1.svg",
+    "title": "Reference Letter Generator",
+    "desc": "A free offline tool for reference letter generator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/reference-letter-generator/index.html",
+    "zipUrl": "/assets/zip-packages/forms/reference-letter-generator.zip"
+  },
+  {
+    "category": "Forms & Generators",
+    "icon": "/assets/icons/forms-1.svg",
+    "title": "Registration Form Builder",
+    "desc": "A free offline tool for registration form builder calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/registration-form-builder/index.html",
+    "zipUrl": "/assets/zip-packages/forms/registration-form-builder.zip"
+  },
+  {
+    "category": "Forms & Generators",
+    "icon": "/assets/icons/forms-1.svg",
+    "title": "Rental Agreement Template",
+    "desc": "A free offline tool for rental agreement template calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/rental-agreement-template/index.html",
+    "zipUrl": "/assets/zip-packages/forms/rental-agreement-template.zip"
+  },
+  {
+    "category": "Forms & Generators",
+    "icon": "/assets/icons/forms-1.svg",
+    "title": "Resignation Letter Generator",
+    "desc": "A free offline tool for resignation letter generator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/resignation-letter-generator/index.html",
+    "zipUrl": "/assets/zip-packages/forms/resignation-letter-generator.zip"
+  },
+  {
+    "category": "Forms & Generators",
+    "icon": "/assets/icons/forms-1.svg",
+    "title": "Resume Builder",
+    "desc": "A free offline tool for resume builder calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/resume-builder/index.html",
+    "zipUrl": "/assets/zip-packages/forms/resume-builder.zip"
+  },
+  {
+    "category": "Forms & Generators",
+    "icon": "/assets/icons/forms-1.svg",
+    "title": "Resume Builder Online",
+    "desc": "A free offline tool for resume builder online calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/resume-builder-online/index.html",
+    "zipUrl": "/assets/zip-packages/forms/resume-builder-online.zip"
+  },
+  {
+    "category": "Forms & Generators",
+    "icon": "/assets/icons/forms-1.svg",
+    "title": "Survey Template Builder",
+    "desc": "A free offline tool for survey template builder calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/survey-template-builder/index.html",
+    "zipUrl": "/assets/zip-packages/forms/survey-template-builder.zip"
+  },
+  {
+    "category": "Forms & Generators",
+    "icon": "/assets/icons/forms-1.svg",
+    "title": "Thank You Note Generator",
+    "desc": "A free offline tool for thank you note generator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/thank-you-note-generator/index.html",
+    "zipUrl": "/assets/zip-packages/forms/thank-you-note-generator.zip"
+  },
+  {
+    "category": "Forms & Generators",
+    "icon": "/assets/icons/forms-1.svg",
+    "title": "Wedding Invitation Generator",
+    "desc": "A free offline tool for wedding invitation generator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/wedding-invitation-generator/index.html",
+    "zipUrl": "/assets/zip-packages/forms/wedding-invitation-generator.zip"
+  },
+  {
+    "category": "Forms & Generators",
+    "icon": "/assets/icons/forms-1.svg",
+    "title": "Contact Form Builder",
+    "desc": "Build a custom contact form with name, email, subject, message fields. Get ready-to-use HTML code. Free contact form builder.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/forms/contact-form-builder.zip"
+  },
+  {
+    "category": "Forms & Generators",
+    "icon": "/assets/icons/forms-1.svg",
+    "title": "Invoice Template Generator",
+    "desc": "Generate professional invoice templates. Add your business info, items, totals. Print or save as PDF. Free invoice template generator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/forms/invoice-template-generator.zip"
+  }
+]

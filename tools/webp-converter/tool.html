@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WebP Converter | YuanQiZhiLe Toolkit</title>
+<title>WebP Converter | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Convert images to and from WebP format. Upload PNG, JPG, or WebP and convert to any other supported format with adjustable quality. Reduce file size while keeping quality. Free online image converter.">
 <meta name="keywords" content="webp converter, convert webp, png to webp, jpg to webp, webp to png, image converter">
 <meta property="og:title" content="WebP Converter - Free Online Tool">
@@ -112,7 +112,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>WebP Converter</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Convert images to and from WebP format. Upload PNG, JPG, or WebP and convert to any other supported format with adjustable quality. Reduce file size while keeping quality. Free online image converter.</div>
@@ -148,19 +148,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -175,7 +175,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 </ol>
 <p style="margin-top:8px;font-size:12px;color:#666">WebP typically saves 25-35% vs PNG and 25-50% vs JPEG at the same quality. JPEG ignores alpha (white background is added). All conversion happens locally.</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -186,7 +186,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -212,7 +212,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });

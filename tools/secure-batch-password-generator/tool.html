@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Free online batch random password generator. Create strong secure passwords with custom charset, length, count. Local, no upload.">
 <meta name="keywords" content="random password generator, secure password, strong password, batch password, password creator, password maker">
-<title>Batch Random Password Generator | YuanQiZhiLe Toolkit</title>
+<title>Batch Random Password Generator | YuanqiZhiKe Toolkit</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{padding:20px;font-family:system-ui,-apple-system,sans-serif;background:#f7f7f7;transition:background 0.3s,color 0.3s}
@@ -115,7 +115,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         </div>
         <div style="display:flex;gap:8px;align-items:center">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark (Ctrl+Shift+T)">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
 
@@ -160,9 +160,9 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <ol>
             <li>Set <strong>Password length</strong> (longer = stronger; 16+ recommended) and <strong>Number of passwords</strong>.</li>
             <li>Tick the character sets you want included: lowercase, uppercase, digits, symbols.</li>
-            <li>Untick <strong>Include ambiguous</strong> to remove look-alike characters (<code>O 0 l 1 I</code>) — useful when passwords are read aloud.</li>
+            <li>Untick <strong>Include ambiguous</strong> to remove look-alike characters (<code>O 0 l 1 I</code>) -useful when passwords are read aloud.</li>
             <li>Optionally enable <strong>Use custom charset</strong> and type your own character pool, or type characters to exclude in the same field.</li>
-            <li>Click <strong>Generate</strong> — each password is shown with a strength badge and a copy button.</li>
+            <li>Click <strong>Generate</strong> -each password is shown with a strength badge and a copy button.</li>
             <li>Use <strong>Copy All</strong> or <strong>Download</strong> for the full batch.</li>
         </ol>
     </div>
@@ -176,26 +176,24 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
 
-    <footer>
-        <div>YuanQiZhiLe Toolkit · Process locally in your browser, no data upload.</div>
-    </footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 
 <script>
@@ -204,7 +202,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
     const __themeBtn = document.getElementById('themeToggle');
     function __applyTheme(t){
         document.body.classList.toggle('dark', t === 'dark');
-        if(__themeBtn) __themeBtn.textContent = (t === 'dark') ? '☀️' : '🌙';
+        if(__themeBtn) __themeBtn.textContent = (t === 'dark') ? '?' : '🌙';
     }
     const __saved = localStorage.getItem('theme');
     if(__saved){
@@ -246,7 +244,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         __copyBtn.addEventListener('click', () => {
             navigator.clipboard.writeText('contact@yuanqizhike.com').then(() => {
                 const old = __copyBtn.textContent;
-                __copyBtn.textContent = '✓';
+                __copyBtn.textContent='Copied';
                 setTimeout(() => __copyBtn.textContent = old, 1500);
             });
         });
@@ -343,7 +341,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             item.querySelector('.copy-btn').addEventListener('click', e => {
                 navigator.clipboard.writeText(pw);
                 const old = e.target.textContent;
-                e.target.textContent = '✓';
+                e.target.textContent = '-?';
                 setTimeout(() => e.target.textContent = old, 1000);
             });
             list.appendChild(item);
@@ -362,7 +360,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         navigator.clipboard.writeText(window._lastPasswords.join('\n')).then(() => {
             const b = document.getElementById('copyAll');
             const old = b.textContent;
-            b.textContent = '✓ Copied';
+            b.textContent = '?Copied';
             setTimeout(() => b.textContent = old, 1500);
         });
     });

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Math Formula Reference | YuanQiZhiLe Toolkit</title>
+<title>Math Formula Reference | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Quick reference for common math formulas: algebra, geometry, trigonometry, calculus, and statistics. Free online math formula cheat sheet for students.">
 <meta name="keywords" content="math formulas, algebra formulas, geometry formulas, trigonometry, calculus formulas, math reference, math cheat sheet">
 <meta property="og:title" content="Math Formula Reference - Free Online Tool">
@@ -112,7 +112,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>Math Formula Reference</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Quick reference for common math formulas: algebra, geometry, trigonometry, calculus, and statistics. Free online math formula cheat sheet for students.</div>
@@ -139,19 +139,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -164,7 +164,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 </ol>
 <p style="margin-top:8px;font-size:12px;color:#666">This is a reference tool, not a calculator. For calculations, use the specific calculators (quadratic solver, statistics, etc.). All formulas are standard mathematical notation.</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -175,7 +175,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -201,7 +201,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -233,13 +233,13 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 (function(){
     var formulas = {
         algebra: [
-            {name:'Quadratic Formula', formula:'x = (-b ± √(b² - 4ac)) / 2a', desc:'Solves ax² + bx + c = 0'},
+            {name:'Quadratic Formula', formula:'x = (-b ± ?b² - 4ac)) / 2a', desc:'Solves ax² + bx + c = 0'},
             {name:'Discriminant', formula:'Δ = b² - 4ac', desc:'Δ > 0: 2 real roots; Δ = 0: 1 root; Δ < 0: complex roots'},
             {name:'Linear Equation', formula:'y = mx + b', desc:'m = slope, b = y-intercept'},
-            {name:'Distance', formula:'d = √((x₂-x₁)² + (y₂-y₁)²)', desc:'Distance between two points'},
-            {name:'Midpoint', formula:'M = ((x₁+x₂)/2, (y₁+y₂)/2)', desc:'Midpoint of a line segment'},
-            {name:'Slope', formula:'m = (y₂-y₁)/(x₂-x₁)', desc:'Slope between two points'},
-            {name:'Point-Slope', formula:'y - y₁ = m(x - x₁)', desc:'Line through point with slope'},
+            {name:'Distance', formula:'d = ?(x?x?² + (y?y?²)', desc:'Distance between two points'},
+            {name:'Midpoint', formula:'M = ((x?x?/2, (y?y?/2)', desc:'Midpoint of a line segment'},
+            {name:'Slope', formula:'m = (y?y?/(x?x?', desc:'Slope between two points'},
+            {name:'Point-Slope', formula:'y - y?= m(x - x?', desc:'Line through point with slope'},
             {name:'Difference of Squares', formula:'a² - b² = (a+b)(a-b)', desc:'Factoring pattern'},
             {name:'Square of Sum', formula:'(a+b)² = a² + 2ab + b²', desc:'Binomial expansion'},
             {name:'Square of Difference', formula:'(a-b)² = a² - 2ab + b²', desc:'Binomial expansion'},
@@ -251,11 +251,11 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             {name:'Circle Area', formula:'A = πr²', desc:'r = radius'},
             {name:'Circle Circumference', formula:'C = 2πr = πd', desc:'d = diameter'},
             {name:'Triangle Area', formula:'A = ½bh', desc:'b = base, h = height'},
-            {name:'Triangle (Heron)', formula:'A = √(s(s-a)(s-b)(s-c)), s = (a+b+c)/2', desc:'For three sides known'},
+            {name:'Triangle (Heron)', formula:'A = ?s(s-a)(s-b)(s-c)), s = (a+b+c)/2', desc:'For three sides known'},
             {name:'Rectangle Area', formula:'A = lw', desc:'l = length, w = width'},
             {name:'Rectangle Perimeter', formula:'P = 2(l+w)', desc:''},
             {name:'Parallelogram Area', formula:'A = bh', desc:''},
-            {name:'Trapezoid Area', formula:'A = ½h(b₁+b₂)', desc:''},
+            {name:'Trapezoid Area', formula:'A = ½h(b?b?', desc:''},
             {name:'Sphere Volume', formula:'V = (4/3)πr³', desc:''},
             {name:'Sphere Surface Area', formula:'SA = 4πr²', desc:''},
             {name:'Cylinder Volume', formula:'V = πr²h', desc:''},
@@ -274,10 +274,10 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             {name:'Sum Formula', formula:'cos(A+B) = cosA·cosB - sinA·sinB', desc:''},
             {name:'Double Angle', formula:'sin(2θ) = 2sin(θ)cos(θ)', desc:''},
             {name:'Double Angle', formula:'cos(2θ) = cos²(θ) - sin²(θ)', desc:''},
-            {name:'Half Angle', formula:'sin(θ/2) = ±√((1-cosθ)/2)', desc:''},
+            {name:'Half Angle', formula:'sin(θ/2) = ±?(1-cosθ)/2)', desc:''},
             {name:'Law of Sines', formula:'a/sinA = b/sinB = c/sinC', desc:''},
             {name:'Law of Cosines', formula:'c² = a² + b² - 2ab·cos(C)', desc:''},
-            {name:'Special Values', formula:'sin(30°)=½, sin(45°)=√2/2, sin(60°)=√3/2', desc:''}
+            {name:'Special Values', formula:'sin(30°)=½, sin(45°)=?/2, sin(60°)=?/2', desc:''}
         ],
         calculus: [
             {name:'Power Rule', formula:'d/dx[xⁿ] = nx^(n-1)', desc:'Differentiation'},
@@ -289,9 +289,9 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             {name:'Natural Log', formula:'d/dx[ln(x)] = 1/x', desc:''},
             {name:'Sine Derivative', formula:'d/dx[sin(x)] = cos(x)', desc:''},
             {name:'Cosine Derivative', formula:'d/dx[cos(x)] = -sin(x)', desc:''},
-            {name:'Power Integral', formula:'∫xⁿdx = x^(n+1)/(n+1) + C, n ≠ -1', desc:''},
+            {name:'Power Integral', formula:'∫xⁿdx = x^(n+1)/(n+1) + C, n ?-1', desc:''},
             {name:'Exponential Integral', formula:'∫eˣdx = eˣ + C', desc:''},
-            {name:'Log Integral', formula:'∫(1/x)dx = ln|x| + C', desc:''},
+            {name:'Log Integral', formula:'?1/x)dx = ln|x| + C', desc:''},
             {name:'Sin Integral', formula:'∫sin(x)dx = -cos(x) + C', desc:''},
             {name:'Fundamental Theorem', formula:'∫[a to b] f(x)dx = F(b) - F(a)', desc:'F\'(x) = f(x)'}
         ],
@@ -301,7 +301,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             {name:'Mode', formula:'most frequent value', desc:''},
             {name:'Range', formula:'max - min', desc:''},
             {name:'Variance (pop)', formula:'σ² = Σ(x-μ)²/n', desc:''},
-            {name:'Standard Deviation', formula:'σ = √(σ²)', desc:''},
+            {name:'Standard Deviation', formula:'σ = ?σ²)', desc:''},
             {name:'Sample Variance', formula:'s² = Σ(x-x̄)²/(n-1)', desc:''},
             {name:'Z-Score', formula:'z = (x - μ)/σ', desc:''},
             {name:'Quartile', formula:'Q1 = 25th percentile, Q3 = 75th', desc:''},
@@ -312,32 +312,32 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             {name:'Bayes Theorem', formula:'P(A|B) = P(B|A)P(A)/P(B)', desc:''}
         ],
         logexp: [
-            {name:'Definition', formula:'y = aˣ ⟺ logₐ(y) = x', desc:''},
-            {name:'Product Rule', formula:'logₐ(xy) = logₐ(x) + logₐ(y)', desc:''},
-            {name:'Quotient Rule', formula:'logₐ(x/y) = logₐ(x) - logₐ(y)', desc:''},
-            {name:'Power Rule', formula:'logₐ(xⁿ) = n·logₐ(x)', desc:''},
-            {name:'Change of Base', formula:'logₐ(x) = log(x)/log(a)', desc:''},
-            {name:'Natural Log', formula:'ln(x) = logₑ(x), e ≈ 2.71828', desc:''},
+            {name:'Definition', formula:'y = aˣ ?log?y) = x', desc:''},
+            {name:'Product Rule', formula:'log?xy) = log?x) + log?y)', desc:''},
+            {name:'Quotient Rule', formula:'log?x/y) = log?x) - log?y)', desc:''},
+            {name:'Power Rule', formula:'log?x? = n·log?x)', desc:''},
+            {name:'Change of Base', formula:'log?x) = log(x)/log(a)', desc:''},
+            {name:'Natural Log', formula:'ln(x) = log?x), e ?2.71828', desc:''},
             {name:'Common Log', formula:'log(x) = log₁₀(x)', desc:''},
             {name:'Exponent Rules', formula:'aˣ · aʸ = a^(x+y)', desc:''},
             {name:'Exponent Rules', formula:'(aˣ)ʸ = a^(xy)', desc:''},
-            {name:'Exponent Rules', formula:'a⁰ = 1', desc:''},
-            {name:'Negative Exp', formula:'a⁻ⁿ = 1/aⁿ', desc:''},
+            {name:'Exponent Rules', formula:'a?= 1', desc:''},
+            {name:'Negative Exp', formula:'a⁻ⁿ = 1/a?, desc:''},
             {name:'Fractional Exp', formula:'a^(1/n) = ⁿ√a', desc:''}
         ],
         series: [
-            {name:'Arithmetic Seq', formula:'aₙ = a₁ + (n-1)d', desc:'d = common difference'},
-            {name:'Arithmetic Sum', formula:'Sₙ = n/2 · (a₁ + aₙ)', desc:''},
-            {name:'Arithmetic Sum', formula:'Sₙ = n/2 · [2a₁ + (n-1)d]', desc:''},
-            {name:'Geometric Seq', formula:'aₙ = a₁ · r^(n-1)', desc:'r = common ratio'},
-            {name:'Geometric Sum', formula:'Sₙ = a₁(1-rⁿ)/(1-r), r ≠ 1', desc:''},
-            {name:'Infinite Geom', formula:'S = a₁/(1-r), |r| < 1', desc:''},
-            {name:'Fibonacci', formula:'Fₙ = Fₙ₋₁ + Fₙ₋₂, F₁=F₂=1', desc:''},
+            {name:'Arithmetic Seq', formula:'a?= a?+ (n-1)d', desc:'d = common difference'},
+            {name:'Arithmetic Sum', formula:'S?= n/2 · (a?+ a?', desc:''},
+            {name:'Arithmetic Sum', formula:'S?= n/2 · [2a?+ (n-1)d]', desc:''},
+            {name:'Geometric Seq', formula:'a?= a?· r^(n-1)', desc:'r = common ratio'},
+            {name:'Geometric Sum', formula:'S?= a?1-r?/(1-r), r ?1', desc:''},
+            {name:'Infinite Geom', formula:'S = a?(1-r), |r| < 1', desc:''},
+            {name:'Fibonacci', formula:'F?= Fₙ₋?+ Fₙ₋? F &#8212; F?1', desc:''},
             {name:'Factorial', formula:'n! = n·(n-1)·...·1', desc:''},
             {name:'Sum of Integers', formula:'1+2+...+n = n(n+1)/2', desc:''},
             {name:'Sum of Squares', formula:'1²+2²+...+n² = n(n+1)(2n+1)/6', desc:''},
             {name:'Sum of Cubes', formula:'1³+...+n³ = [n(n+1)/2]²', desc:''},
-            {name:'Taylor Series', formula:'f(x) = Σ f⁽ⁿ⁾(a)(x-a)ⁿ/n!', desc:''},
+            {name:'Taylor Series', formula:'f(x) = Σ f⁽ⁿ?a)(x-a)?n!', desc:''},
             {name:'e Series', formula:'e = 1 + 1/1! + 1/2! + 1/3! + ...', desc:''}
         ]
     };

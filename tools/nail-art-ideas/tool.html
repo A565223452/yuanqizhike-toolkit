@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nail Art Ideas | YuanQiZhiLe Toolkit</title>
+<title>Nail Art Ideas | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Get nail art design ideas by occasion, color, style. Free nail art inspiration.">
 <meta name="keywords" content="nail art, nail design, manicure ideas, nail polish, nail inspiration">
 <meta property="og:title" content="Nail Art Ideas - Free Online Tool">
@@ -112,7 +112,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>Nail Art Ideas</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Get nail art design ideas by occasion, color, style. Free nail art inspiration.</div>
@@ -182,19 +182,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -207,7 +207,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 </ol>
 <p style="margin-top:8px;font-size:12px;color:#666">Nail care: Apply base coat to protect nails. Use thin coats (2-3 layers). Seal nail edge. Apply top coat every 2-3 days. Remove polish gently (no peeling). Moisturize cuticles daily. Take breaks between manicures. Keep nails hydrated.</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -218,7 +218,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -244,7 +244,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -276,21 +276,21 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 (function(){
     var designs = [
         { name: 'Classic French Tips', occasion: 'casual,work,wedding', color: 'white,nude', style: 'french,minimal', length: 'short,medium,long', desc: 'Timeless white tips on nude base. Elegant for any occasion.', difficulty: 'Easy', time: '30 min', emoji: '💅' },
-        { name: 'Glitter Ombre', occasion: 'party,holiday,wedding', color: 'pink,any', style: 'glitter,ombre', length: 'medium,long', desc: 'Gradient from solid to glitter. Eye-catching and festive.', difficulty: 'Medium', time: '45 min', emoji: '✨' },
-        { name: 'Minimalist Line Art', occasion: 'casual,work', color: 'black,white,nude', style: 'minimal,geometric', length: 'short,medium', desc: 'Thin black lines on nude base. Modern and chic.', difficulty: 'Easy', time: '20 min', emoji: '〰️' },
+        { name: 'Glitter Ombre', occasion: 'party,holiday,wedding', color: 'pink,any', style: 'glitter,ombre', length: 'medium,long', desc: 'Gradient from solid to glitter. Eye-catching and festive.', difficulty: 'Medium', time: '45 min', emoji: '? },
+        { name: 'Minimalist Line Art', occasion: 'casual,work', color: 'black,white,nude', style: 'minimal,geometric', length: 'short,medium', desc: 'Thin black lines on nude base. Modern and chic.', difficulty: 'Easy', time: '20 min', emoji: '~️' },
         { name: 'Floral Accent', occasion: 'wedding,summer,holiday', color: 'pink,white,pastel', style: 'floral', length: 'medium,long', desc: 'Hand-painted flowers on accent nails. Romantic and feminine.', difficulty: 'Hard', time: '60 min', emoji: '🌸' },
-        { name: 'Gold Foil Accents', occasion: 'party,wedding,holiday', color: 'gold,nude,black', style: 'glitter,minimal', length: 'medium,long', desc: 'Gold foil pieces on solid base. Luxurious and trendy.', difficulty: 'Medium', time: '40 min', emoji: '✨' },
+        { name: 'Gold Foil Accents', occasion: 'party,wedding,holiday', color: 'gold,nude,black', style: 'glitter,minimal', length: 'medium,long', desc: 'Gold foil pieces on solid base. Luxurious and trendy.', difficulty: 'Medium', time: '40 min', emoji: '? },
         { name: 'Geometric Patterns', occasion: 'casual,work,party', color: 'black,white,blue', style: 'geometric,minimal', length: 'short,medium', desc: 'Triangles, lines, and shapes. Modern and edgy.', difficulty: 'Medium', time: '40 min', emoji: '🔺' },
         { name: 'Pastel Clouds', occasion: 'summer,party', color: 'pastel,blue,pink', style: 'abstract,floral', length: 'short,medium', desc: 'Soft pastel clouds on sky base. Dreamy and cute.', difficulty: 'Medium', time: '50 min', emoji: '☁️' },
         { name: 'Animal Print', occasion: 'party,casual', color: 'black,brown,gold', style: 'animal', length: 'medium,long', desc: 'Leopard or cheetah spots. Bold and trendy.', difficulty: 'Medium', time: '45 min', emoji: '🐆' },
-        { name: 'Negative Space', occasion: 'work,party', color: 'black,white,nude', style: 'minimal,geometric', length: 'short,medium', desc: 'Strategic bare nail areas. Modern and sophisticated.', difficulty: 'Medium', time: '40 min', emoji: '⬜' },
+        { name: 'Negative Space', occasion: 'work,party', color: 'black,white,nude', style: 'minimal,geometric', length: 'short,medium', desc: 'Strategic bare nail areas. Modern and sophisticated.', difficulty: 'Medium', time: '40 min', emoji: '? },
         { name: 'Holographic', occasion: 'party,holiday', color: 'any', style: 'glitter', length: 'medium,long', desc: 'Iridescent holographic powder. Magical color shift.', difficulty: 'Easy', time: '25 min', emoji: '🌈' },
-        { name: 'Marble Effect', occasion: 'work,wedding', color: 'white,black,nude', style: 'abstract', length: 'medium,long', desc: 'Marbled polish swirls. Elegant and luxurious.', difficulty: 'Hard', time: '60 min', emoji: '⚪' },
+        { name: 'Marble Effect', occasion: 'work,wedding', color: 'white,black,nude', style: 'abstract', length: 'medium,long', desc: 'Marbled polish swirls. Elegant and luxurious.', difficulty: 'Hard', time: '60 min', emoji: '? },
         { name: 'Chrome Finish', occasion: 'party,holiday', color: 'gold,silver', style: 'glitter,minimal', length: 'medium,long', desc: 'Mirror-like chrome powder. Futuristic and shiny.', difficulty: 'Easy', time: '30 min', emoji: '🔮' },
         { name: 'Matte Black', occasion: 'casual,work,party', color: 'black', style: 'minimal', length: 'short,medium,long', desc: 'Matte top coat on black. Bold and sophisticated.', difficulty: 'Easy', time: '20 min', emoji: '🖤' },
         { name: 'Rainbow Tips', occasion: 'summer,party', color: 'rainbow', style: 'ombre,geometric', length: 'medium,long', desc: 'Different color on each nail tip. Fun and playful.', difficulty: 'Easy', time: '30 min', emoji: '🌈' },
         { name: 'Crystal Accent', occasion: 'wedding,party,holiday', color: 'nude,white,any', style: 'glitter,minimal', length: 'medium,long,stiletto,coffin', desc: 'Rhinestones on accent nails. Glamorous and sparkling.', difficulty: 'Medium', time: '45 min', emoji: '💎' },
-        { name: 'Starry Night', occasion: 'party,holiday,winter', color: 'blue,black,purple', style: 'abstract,glitter', length: 'medium,long', desc: 'Galaxy with stars and glitter. Magical and dreamy.', difficulty: 'Medium', time: '50 min', emoji: '⭐' },
+        { name: 'Starry Night', occasion: 'party,holiday,winter', color: 'blue,black,purple', style: 'abstract,glitter', length: 'medium,long', desc: 'Galaxy with stars and glitter. Magical and dreamy.', difficulty: 'Medium', time: '50 min', emoji: '? },
         { name: 'Polka Dots', occasion: 'casual,summer', color: 'white,black,pink,red', style: 'geometric', length: 'short,medium', desc: 'Playful polka dots. Retro and cute.', difficulty: 'Easy', time: '25 min', emoji: '🔴' },
         { name: 'Velvet Nails', occasion: 'party,winter,holiday', color: 'any', style: 'minimal', length: 'medium,long', desc: 'Velvet powder effect. Soft and luxurious texture.', difficulty: 'Easy', time: '25 min', emoji: '🧶' }
     ];
@@ -320,7 +320,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
                 html += '<div style="display:flex;justify-content:space-between;align-items:start">';
                 html += '<div><div style="font-size:16px;font-weight:bold">' + d.emoji + ' ' + d.name + '</div>';
                 html += '<div style="font-size:11px;color:#666;margin-top:2px">' + d.desc + '</div></div>';
-                html += '<div style="text-align:right"><span style="background:' + diffColor + ';color:#fff;padding:2px 6px;border-radius:3px;font-size:10px">' + d.difficulty + '</span><br><span style="font-size:10px;color:#999">⏱ ' + d.time + '</span></div>';
+                html += '<div style="text-align:right"><span style="background:' + diffColor + ';color:#fff;padding:2px 6px;border-radius:3px;font-size:10px">' + d.difficulty + '</span><br><span style="font-size:10px;color:#999">?' + d.time + '</span></div>';
                 html += '</div>';
                 html += '<div style="font-size:10px;color:#999;margin-top:6px">Colors: ' + d.color + ' | Length: ' + d.length + '</div>';
                 html += '</div>';

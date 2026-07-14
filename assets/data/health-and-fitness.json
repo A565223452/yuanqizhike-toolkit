@@ -1,0 +1,349 @@
+[
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-2.svg",
+    "title": "BMI Calculator",
+    "desc": "Calculate your Body Mass Index instantly with our free online BMI calculator. Supports metric and imperial units to determine your weight category and healthy range.",
+    "features": [
+      "Instant BMI calculation",
+      "Metric and imperial units",
+      "Healthy weight range",
+      "Weight category indicator"
+    ],
+    "detailUrl": "/tools/bmi-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/health/bmi-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Body Fat Calculator",
+    "desc": "Estimate your body fat percentage using the US Navy method. Enter height, neck, waist, and hip measurements to get instant results and fitness categories.",
+    "features": [
+      "US Navy method calculation",
+      "Instant body fat percentage",
+      "Fitness level categorization",
+      "Supports male and female"
+    ],
+    "detailUrl": "/tools/body-fat-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/health/body-fat-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-3.svg",
+    "title": "Calorie Calculator",
+    "desc": "Calculate your daily calorie needs (TDEE) and BMR using the Mifflin-St Jeor formula. Get personalized targets for weight loss, maintenance, or muscle gain based on your activity level.",
+    "features": [
+      "TDEE and BMR calculation",
+      "Mifflin-St Jeor formula",
+      "Weight loss targets",
+      "Muscle gain recommendations",
+      "Dark mode support"
+    ],
+    "detailUrl": "/tools/calorie-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/health/calorie-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-4.svg",
+    "title": "Heart Rate Zone Calculator",
+    "desc": "Calculate 5 personalized heart rate training zones using the Karvonen formula or standard max heart rate method. Optimize your cardio workouts with precise target ranges for fat burn, endurance, and VO2 max.",
+    "features": [
+      "Karvonen formula support",
+      "5 distinct training zones",
+      "Fat burn to VO2 max",
+      "Instant bpm calculations"
+    ],
+    "detailUrl": "/tools/heart-rate-zone-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/health/heart-rate-zone-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-5.svg",
+    "title": "Ideal Weight Calculator",
+    "desc": "Calculate your ideal body weight using four proven formulas: Devine, Robinson, Miller, and Hamwi. Get instant results in kilograms and pounds alongside a healthy BMI range for comprehensive health insights.",
+    "features": [
+      "Four scientific formulas",
+      "Kilogram and pound output",
+      "Healthy BMI range display",
+      "Dark mode support"
+    ],
+    "detailUrl": "/tools/ideal-weight-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/health/ideal-weight-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-6.svg",
+    "title": "Macro Calculator",
+    "desc": "Calculate your daily macronutrient needs for protein, carbs, and fat based on calorie targets. Supports balanced, low-carb, keto, and high-protein diets with instant results.",
+    "features": [
+      "Daily macro calculation",
+      "Keto and low-carb support",
+      "Multiple diet presets",
+      "Instant gram conversion"
+    ],
+    "detailUrl": "/tools/macro-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/health/macro-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-7.svg",
+    "title": "Running Pace Calculator",
+    "desc": "Calculate running pace, time, or distance instantly. Supports 5K, 10K, half marathon, and marathon distances with metric and imperial unit conversions for runners.",
+    "features": [
+      "Calculate pace from time and distance",
+      "Compute total run time or distance",
+      "Supports 5K to marathon distances",
+      "Converts km and miles automatically"
+    ],
+    "detailUrl": "/tools/pace-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/health/pace-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-8.svg",
+    "title": "Water Intake Calculator",
+    "desc": "Calculate your ideal daily water intake based on weight, exercise, and climate. Get personalized hydration goals in liters and cups to stay healthy and energized.",
+    "features": [
+      "Personalized hydration goals",
+      "Exercise and climate factors",
+      "Liters and cups output",
+      "Instant daily calculation"
+    ],
+    "detailUrl": "/tools/water-intake-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/health/water-intake-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Chatgpt System Message Builder",
+    "desc": "A free offline tool for chatgpt system message builder calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/chatgpt-system-message-builder/index.html",
+    "zipUrl": "/assets/zip-packages/health/chatgpt-system-message-builder.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Conversation Token Trimmer",
+    "desc": "A free offline tool for conversation token trimmer calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/conversation-token-trimmer/index.html",
+    "zipUrl": "/assets/zip-packages/health/conversation-token-trimmer.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Embedding Cost Estimator",
+    "desc": "A free offline tool for embedding cost estimator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/embedding-cost-estimator/index.html",
+    "zipUrl": "/assets/zip-packages/health/embedding-cost-estimator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Fine Tune Data Formatter",
+    "desc": "A free offline tool for fine tune data formatter calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/fine-tune-data-formatter/index.html",
+    "zipUrl": "/assets/zip-packages/health/fine-tune-data-formatter.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Llm Cost Estimator",
+    "desc": "A free offline tool for llm cost estimator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/llm-cost-estimator/index.html",
+    "zipUrl": "/assets/zip-packages/health/llm-cost-estimator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Rag Chunker",
+    "desc": "A free offline tool for rag chunker calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/rag-chunker/index.html",
+    "zipUrl": "/assets/zip-packages/health/rag-chunker.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Text Token Counter",
+    "desc": "A free offline tool for text token counter calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/text-token-counter/index.html",
+    "zipUrl": "/assets/zip-packages/health/text-token-counter.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "BAC Calculator",
+    "desc": "Calculate Blood Alcohol Concentration (BAC). Estimate intoxication level based on drinks, weight, gender, time. Free BAC calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/bac-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Batting Average Calculator",
+    "desc": "Calculate baseball batting average, OBP, slugging. Track baseball stats. Free baseball statistics calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/batting-average-calc.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "BMI & Ideal Weight Calculator",
+    "desc": "Calculate BMI and ideal body weight. Multiple formulas (Devine, Hamwi, Robinson, Miller). BMI categories and health risk. Free BMI calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/bmi-ideal-weight-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "BMR Calculator",
+    "desc": "Calculate Basal Metabolic Rate (BMR). Mifflin-St Jeor and Harris-Benedict equations. Daily calorie burn at rest. Free BMR calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/bmr-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Calorie Burn Calculator",
+    "desc": "Calculate calories burned by activity. Free exercise calorie calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/calorie-burn-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Calorie Counter",
+    "desc": "Track daily calorie intake with a food log. Search common foods, add meals, monitor macros. Free online calorie tracker with localStorage.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/calorie-counter.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Calories Burned Calculator",
+    "desc": "Calculate calories burned during exercise using MET values. Supports 100+ activities including running, cycling, swimming, weightlifting. Free calories burned calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/calories-burned-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Fantasy Football Points Calculator",
+    "desc": "Calculate fantasy football points. NFL, PPR, standard scoring. Free fantasy football calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/fantasy-points-calc.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Golf Handicap Calculator",
+    "desc": "Calculate golf handicap index. Course handicap, differential, stroke index. Free golf handicap calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/golf-handicap-calc.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Hiking Water Calculator",
+    "desc": "Calculate water needed for hiking. Adjust for distance, elevation, temperature. Free hiking hydration calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/hiking-water-calc.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Hydration Tracker",
+    "desc": "Track daily water intake. Personalized water goal. Free hydration tracker.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/hydration-tracker.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "1RM Calculator",
+    "desc": "Calculate your one rep max (1RM) using multiple formulas. Free 1RM calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/one-rep-max-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Ovulation Calculator",
+    "desc": "Calculate ovulation date and fertile window. Track menstrual cycle for conception or contraception. Free ovulation calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/ovulation-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Race Pace Calculator",
+    "desc": "Calculate running pace, finish time, splits. 5K, 10K, half, full marathon. Free race pace calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/race-pace-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Resting Heart Rate Calculator",
+    "desc": "Calculate your resting heart rate and fitness level. Free RHR calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/resting-heart-rate-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Sleep Calculator",
+    "desc": "Calculate optimal bedtime and wake time. Find your perfect sleep schedule based on age and lifestyle. Free sleep calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/sleep-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Sleep Quality Tracker",
+    "desc": "Track sleep quality and patterns. Free sleep tracker and analyzer.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/sleep-quality-tracker.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "TDEE Calculator",
+    "desc": "Calculate your Total Daily Energy Expenditure (TDEE). Combines BMR with activity level to estimate how many calories you burn per day. Essential for weight loss or gain planning.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/tdee-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "VO2 Max Calculator",
+    "desc": "Calculate VO2 max from Cooper test or running. Free aerobic capacity calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/vo2-max-calculator.zip"
+  }
+]

@@ -1,0 +1,377 @@
+[
+  {
+    "category": "Finance & Crypto",
+    "icon": "assets/icons/business-1.svg",
+    "title": "Budget Calculator",
+    "desc": "Budget Calculator - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/budget-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/finance/budget-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "assets/icons/business-1.svg",
+    "title": "Inventory Turnover Calculator",
+    "desc": "Inventory Turnover Calculator - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/inventory-turnover-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/finance/inventory-turnover-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "assets/icons/business-6.svg",
+    "title": "Tariff Calculator",
+    "desc": "Estimate import duties, taxes, and total landed costs for cross-border e-commerce shipments with country-specific rates.",
+    "features": [
+      "Calculate Import Duties",
+      "Estimate Landed Costs",
+      "HS Code Lookup",
+      "Country-Specific Rates",
+      "Trade Agreement Checks",
+      "Multi-Item Shipments"
+    ],
+    "detailUrl": "/tools/tariff-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/finance/tariff-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-1.svg",
+    "title": "Compound Interest Calculator",
+    "desc": "Free online compound interest calculator for investment and savings planning. Calculate future value with regular contributions, multiple compounding frequencies, and visual growth charts.",
+    "features": [
+      "Multiple compounding frequencies",
+      "Regular monthly contributions",
+      "Visual growth chart display",
+      "Detailed financial breakdown",
+      "Dark mode support"
+    ],
+    "detailUrl": "/tools/compound-interest-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/finance/compound-interest-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-1.svg",
+    "title": "Crypto Profit Calculator",
+    "desc": "Calculate your crypto investment profit, loss and ROI instantly with our free online calculator. Supports Bitcoin, Ethereum, altcoins, with trading fees and capital gains tax estimates.",
+    "features": [
+      "Instant profit & ROI calculation",
+      "15+ supported cryptocurrencies",
+      "Trading fee & tax calculation",
+      "Investment or quantity input",
+      "Custom token support",
+      "Dark mode available"
+    ],
+    "detailUrl": "/tools/crypto-profit-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/finance/crypto-profit-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-1.svg",
+    "title": "Mortgage Calculator",
+    "desc": "Our free online mortgage calculator helps you estimate monthly payments, total interest, and total home loan cost. Enter loan details and get a detailed 12-month amortization schedule instantly.",
+    "features": [
+      "Monthly payment calculation",
+      "Total interest breakdown",
+      "Total loan cost display",
+      "12-month amortization schedule",
+      "Down payment input",
+      "Customizable loan terms"
+    ],
+    "detailUrl": "/tools/mortgage-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/finance/mortgage-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-1.svg",
+    "title": "Retirement Calculator",
+    "desc": "Instantly calculate your required retirement savings and track financial progress with our free online retirement calculator. Factor in contributions, returns, and inflation for accurate retirement planning.",
+    "features": [
+      "Retirement savings projection",
+      "Inflation rate adjustment",
+      "Custom contribution settings",
+      "Retirement readiness status",
+      "Detailed financial breakdown",
+      "Dark mode support"
+    ],
+    "detailUrl": "/tools/retirement-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/finance/retirement-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-1.svg",
+    "title": "Income Tax Calculator",
+    "desc": "Estimate your 2024 US federal income tax instantly with our free online calculator. Compute taxable income, tax brackets, effective rate, and marginal rate for single, married, and head of household filers.",
+    "features": [
+      "Multiple filing statuses",
+      "Auto-filled standard deduction",
+      "Taxable income calculation",
+      "Effective tax rate display",
+      "Marginal tax rate info",
+      "Detailed bracket breakdown"
+    ],
+    "detailUrl": "/tools/tax-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/finance/tax-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-1.svg",
+    "title": "401k Calculator",
+    "desc": "Project your 401k retirement savings balance accurately with our free online calculator. Enter current savings, contributions, employer match, and expected returns to estimate annual withdrawal amounts.",
+    "features": [
+      "Instant 401k projection",
+      "Employer match calculation",
+      "Annual growth breakdown",
+      "4% rule withdrawal estimate",
+      "Real-time calculation",
+      "Dark mode support"
+    ],
+    "detailUrl": "/tools/401k-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/finance/401k-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-1.svg",
+    "title": "Amortization Schedule Generator",
+    "desc": "Generate an instant loan amortization schedule with monthly payment breakdowns using our free online tool. Enter loan amount, interest rate, and term to view principal, interest, and remaining balance for each payment.",
+    "features": [
+      "Instant schedule generation",
+      "Monthly payment breakdown",
+      "Principal & interest split",
+      "Total interest calculation",
+      "Custom loan parameters",
+      "Dark mode support"
+    ],
+    "detailUrl": "/tools/amortization-schedule-generator/index.html",
+    "zipUrl": "/assets/zip-packages/finance/amortization-schedule-generator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-1.svg",
+    "title": "APY Calculator",
+    "desc": "Free online APY calculator to compute Annual Percentage Yield (APY) from APR and compounding frequency. Compare savings accounts, CDs, and crypto staking yields across various compounding periods.",
+    "features": [
+      "Instant APY calculation",
+      "Multiple compounding periods",
+      "Final amount calculation",
+      "Interest earned breakdown",
+      "Dark mode support",
+      "No signup required"
+    ],
+    "detailUrl": "/tools/apy-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/finance/apy-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-1.svg",
+    "title": "Capital Gains Calculator",
+    "desc": "Calculate capital gains tax on stocks, crypto, and real estate. Enter purchase price, sale price, holding period, income, and filing status to estimate US federal tax with short and long-term rates.",
+    "features": [
+      "Multiple asset types supported",
+      "Long and short-term rates",
+      "Multiple filing statuses",
+      "Accurate tax estimates",
+      "Dark mode available"
+    ],
+    "detailUrl": "/tools/capital-gains-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/finance/capital-gains-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-1.svg",
+    "title": "Debt to Income Ratio Calculator",
+    "desc": "Calculate your debt-to-income (DTI) ratio instantly with our free online tool for mortgage and loan applications. Enter monthly income and debts to check eligibility with front-end and back-end ratios.",
+    "features": [
+      "Instant DTI calculation",
+      "Front & back end ratios",
+      "Loan eligibility guidance",
+      "Supports multiple debt types",
+      "Dark mode support"
+    ],
+    "detailUrl": "/tools/debt-to-income-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/finance/debt-to-income-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-1.svg",
+    "title": "Future Value Calculator",
+    "desc": "Calculate the future value of your investments with regular contributions using our free online FV calculator. Track compound growth, total contributions, and interest earned over your chosen time horizon.",
+    "features": [
+      "Initial and periodic contributions",
+      "Custom interest rate input",
+      "Multiple compounding frequencies",
+      "Year-by-year growth breakdown",
+      "Growth multiple calculation"
+    ],
+    "detailUrl": "/tools/future-value-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/finance/future-value-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-1.svg",
+    "title": "Inflation Calculator",
+    "desc": "Our free inflation calculator shows how inflation erodes purchasing power over time. Enter an amount and two years to see equivalent dollar values using historical US CPI data.",
+    "features": [
+      "Real-time inflation calculation",
+      "Historical US CPI data",
+      "Purchasing power conversion",
+      "Cumulative inflation rate display",
+      "Average annual inflation rate",
+      "Dark mode support"
+    ],
+    "detailUrl": "/tools/inflation-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/finance/inflation-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-1.svg",
+    "title": "Mortgage Payoff Calculator",
+    "desc": "Calculate your mortgage payoff with extra monthly payments to see interest savings and loan term reduction. Free online tool to compare original vs early payoff scenarios.",
+    "features": [
+      "Extra monthly payment input",
+      "Interest savings calculation",
+      "Loan term reduction display",
+      "Original vs extra comparison",
+      "Balance timeline visualization",
+      "Dark mode support"
+    ],
+    "detailUrl": "/tools/mortgage-payoff-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/finance/mortgage-payoff-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-1.svg",
+    "title": "Mortgage Refinance Calculator",
+    "desc": "Calculate if refinancing your mortgage makes financial sense. Compare current and new rates, closing costs, monthly savings, and break-even point with our free online refinance calculator.",
+    "features": [
+      "Current vs new loan comparison",
+      "Break-even point calculation",
+      "Monthly savings estimate",
+      "Refinance recommendation indicator",
+      "Closing cost accounting"
+    ],
+    "detailUrl": "/tools/mortgage-refinance-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/finance/mortgage-refinance-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-1.svg",
+    "title": "Net Worth Calculator",
+    "desc": "Calculate your personal net worth for free with our easy-to-use online calculator. List all assets and liabilities to get an instant breakdown of your financial health.",
+    "features": [
+      "Instant net worth calculation",
+      "Custom asset & liability rows",
+      "Percentage breakdown view",
+      "Dark mode support",
+      "Mobile responsive design",
+      "No signup required"
+    ],
+    "detailUrl": "/tools/net-worth-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/finance/net-worth-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-1.svg",
+    "title": "Present Value Calculator",
+    "desc": "Calculate the present value of future sums with our free online PV calculator. Adjust discount rate, time period, and compounding frequency for accurate investment valuation and loan analysis.",
+    "features": [
+      "Instant PV calculation",
+      "Multiple compounding frequencies",
+      "Discount amount breakdown",
+      "Detailed formula explanation",
+      "Dark mode support",
+      "No signup required"
+    ],
+    "detailUrl": "/tools/present-value-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/finance/present-value-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-1.svg",
+    "title": "Rent vs Buy Calculator",
+    "desc": "Use our free rent vs buy calculator to compare renting vs buying a home. Factor in mortgage, taxes, appreciation, and opportunity cost for informed decisions.",
+    "features": [
+      "Mortgage payment calculation",
+      "Property tax & insurance",
+      "Home appreciation modeling",
+      "Opportunity cost analysis",
+      "Rent increase projection",
+      "Instant buy/rent verdict"
+    ],
+    "detailUrl": "/tools/rent-vs-buy-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/finance/rent-vs-buy-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-1.svg",
+    "title": "Roth IRA Calculator",
+    "desc": "Project your Roth IRA retirement balance, tax-free growth, and withdrawal income with our free online calculator. Enter annual contributions, expected return, and years to retirement.",
+    "features": [
+      "Tax-free growth projection",
+      "Retirement balance calculation",
+      "Monthly withdrawal estimates",
+      "Traditional IRA comparison",
+      "Yearly growth breakdown"
+    ],
+    "detailUrl": "/tools/roth-ira-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/finance/roth-ira-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-1.svg",
+    "title": "Simple Interest Calculator",
+    "desc": "Calculate simple interest on loans or investments with our free online tool. Enter principal, annual rate, and time to get interest earned and total amount instantly.",
+    "features": [
+      "Instant interest calculation",
+      "Years and months support",
+      "Yearly breakdown table",
+      "Clear formula display",
+      "Dark mode support",
+      "No signup required"
+    ],
+    "detailUrl": "/tools/simple-interest-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/finance/simple-interest-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-1.svg",
+    "title": "Tax Estimator",
+    "desc": "Estimate your US federal income tax with our free online 2024 tax bracket calculator. Enter income, filing status, and deductions to see tax owed and take-home pay.",
+    "features": [
+      "2024 US tax brackets",
+      "Multiple filing statuses",
+      "Deduction & credit support",
+      "Effective rate calculation",
+      "Take-home pay estimate",
+      "Dark mode support"
+    ],
+    "detailUrl": "/tools/tax-estimator/index.html",
+    "zipUrl": "/assets/zip-packages/finance/tax-estimator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-1.svg",
+    "title": "Tip Calculator",
+    "desc": "A free offline tool for tip calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/tip-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/finance/tip-calculator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-1.svg",
+    "title": "Loan Amortization Schedule",
+    "desc": "Generate loan amortization schedule. Monthly payment breakdown, principal vs interest. Free amortization calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/finance/loan-amortization-schedule.zip"
+  }
+]

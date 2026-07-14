@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Random Token Generator | YuanQiZhiLe Toolkit</title>
+<title>Random Token Generator | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Generate cryptographically secure random tokens. Customizable length, charset, format. Free online token generator for API auth, sessions.">
 <meta name="keywords" content="random token generator, secure token, api token, session token, crypto random, secure random, token string">
 <meta property="og:title" content="Random Token Generator - Free Online Tool">
@@ -112,7 +112,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>Random Token Generator</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Generate cryptographically secure random tokens. Customizable length, charset, format. Free online token generator for API auth, sessions.</div>
@@ -151,19 +151,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -175,9 +175,9 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 <li>Enter <b>count</b> and optional <b>prefix</b> (e.g. sk_, api_).</li>
 <li>Click <b>Generate</b> and copy tokens.</li>
 </ol>
-<p style="margin-top:8px;font-size:12px;color:#666">Uses crypto.getRandomValues() for cryptographically secure randomness. Entropy = length × log2(charsetSize). 32 hex chars = 128 bits. 22 base62 chars = ~128 bits. 16 alphanumeric = ~95 bits. Tokens generated locally — never uploaded. Suitable for API keys, session tokens, password reset tokens, OAuth states.</p>
+<p style="margin-top:8px;font-size:12px;color:#666">Uses crypto.getRandomValues() for cryptographically secure randomness. Entropy = length × log2(charsetSize). 32 hex chars = 128 bits. 22 base62 chars = ~128 bits. 16 alphanumeric = ~95 bits. Tokens generated locally &#8212; never uploaded. Suitable for API keys, session tokens, password reset tokens, OAuth states.</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -188,7 +188,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -214,7 +214,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -292,20 +292,20 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         });
         html += '<div style="margin-top:12px;padding:12px;background:#f0f9ff;border-radius:6px;font-size:13px;line-height:1.6">';
         html += '<b>🔐 Entropy guide:</b><br>';
-        html += '• < 64 bits: weak (crackable in hours)<br>';
-        html += '• 64-80 bits: moderate (use for low-security)<br>';
-        html += '• 80-128 bits: good (suitable for sessions)<br>';
-        html += '• > 128 bits: strong (API keys, secrets)<br>';
-        html += '• > 256 bits: very strong (cryptographic)';
+        html += '?< 64 bits: weak (crackable in hours)<br>';
+        html += '?64-80 bits: moderate (use for low-security)<br>';
+        html += '?80-128 bits: good (suitable for sessions)<br>';
+        html += '> 128 bits: strong (API keys, secrets)<br>';
+        html += '> 256 bits: very strong (cryptographic)';
         html += '</div>';
         html += '<div style="margin-top:8px;padding:12px;background:#fef3c7;border-radius:6px;font-size:13px;line-height:1.6">';
         html += '<b>💡 Best practices:</b><br>';
-        html += '• Use crypto.getRandomValues() — Math.random() is NOT secure<br>';
-        html += '• Tokens generated in your browser — never sent to server<br>';
-        html += '• 32+ chars recommended for API tokens<br>';
-        html += '• Store hashes server-side, not plaintext<br>';
-        html += '• Use HTTPS to transmit tokens<br>';
-        html += '• Set expiration on tokens';
+        html += '?Use crypto.getRandomValues() ?Math.random() is NOT secure<br>';
+        html += '?Tokens generated in your browser ?never sent to server<br>';
+        html += '?32+ chars recommended for API tokens<br>';
+        html += '?Store hashes server-side, not plaintext<br>';
+        html += '?Use HTTPS to transmit tokens<br>';
+        html += '?Set expiration on tokens';
         html += '</div>';
         document.getElementById('result').innerHTML = html;
         document.querySelectorAll('.copy-btn').forEach(function(btn){
@@ -313,7 +313,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
                 var token = this.getAttribute('data-token');
                 navigator.clipboard.writeText(token).then(function(){
                     var orig = btn.textContent;
-                    btn.textContent = '✓';
+                    btn.textContent = '?;
                     setTimeout(function(){ btn.textContent = orig; }, 1000);
                 });
             });

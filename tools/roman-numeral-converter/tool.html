@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Roman Numeral Converter | YuanQiZhiLe Toolkit</title>
+<title>Roman Numeral Converter | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Convert between Arabic numbers (1-3999) and Roman numerals instantly. Includes a reference table and validation. Useful for history students, typesetters, and anyone working with Roman numerals.">
 <meta name="keywords" content="roman numeral converter, arabic to roman, roman to arabic, roman number, roman numeral">
 <meta property="og:title" content="Roman Numeral Converter - Free Online Tool">
@@ -112,7 +112,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>Roman Numeral Converter</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Convert between Arabic numbers (1-3999) and Roman numerals instantly. Includes a reference table and validation. Useful for history students, typesetters, and anyone working with Roman numerals.</div>
@@ -125,8 +125,8 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <input type="text" id="roman" placeholder="e.g. MMXXIV" style="font-family:monospace;font-size:18px">
     </div>
     <div class="row" style="margin-top:8px">
-        <button id="toRomanBtn">↓ Convert to Roman</button>
-        <button class="secondary" id="toArabicBtn">↑ Convert to Arabic</button>
+        <button id="toRomanBtn">Note: Convert to Roman</button>
+        <button class="secondary" id="toArabicBtn">Note: Convert to Arabic</button>
         <button class="secondary" id="copyRomanBtn">Copy Roman</button>
     </div>
     <div class="result-box" id="result" style="text-align:center;font-size:18px;padding:14px">Enter a number or Roman numeral to convert.</div>
@@ -138,10 +138,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         </table>
     </div>
     <div class="info-box" style="margin-top:12px">
-        <b>Roman Numeral Rules:</b><br>
-        • Symbols: I=1, V=5, X=10, L=50, C=100, D=500, M=1000<br>
-        • Subtraction rule: I before V or X (4=IV, 9=IX); X before L or C (40=XL, 90=XC); C before D or M (400=CD, 900=CM)<br>
-        • Standard form supports 1-3999. Larger numbers use a vinculum (overbar) for ×1000.
+        <b>Roman Numeral Rules:</b><br>Note: Symbols: I=1, V=5, X=10, L=50, C=100, D=500, M=1000<br>Note: Subtraction rule: I before V or X (4=IV, 9=IX); X before L or C (40=XL, 90=XC); C before D or M (400=CD, 900=CM)<br>Note: Standard form supports 1-3999. Larger numbers use a vinculum (overbar) for ×1000.
     </div>
 
     <div class="lead">
@@ -153,34 +150,34 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
     <div class="instructions">
         <h2>How to Use</h2>
 <ol>
-<li><b>Arabic → Roman</b>: Type a number (1-3999) in the <b>Arabic Number</b> box. Roman numeral appears instantly.</li>
-<li><b>Roman → Arabic</b>: Type a Roman numeral in the <b>Roman Numeral</b> box. Arabic number appears instantly.</li>
+<li><b>Arabic &#8212; Roman</b>: Type a number (1-3999) in the <b>Arabic Number</b> box. Roman numeral appears instantly.</li>
+<li><b>Roman &#8212; Arabic</b>: Type a Roman numeral in the <b>Roman Numeral</b> box. Arabic number appears instantly.</li>
 <li>Use the buttons to convert one direction at a time or copy the result.</li>
 <li>Invalid input shows a red error message.</li>
 <li>Consult the <b>Reference Table</b> for common conversions.</li>
 </ol>
 <p style="margin-top:8px;font-size:12px;color:#666">Valid Roman numerals use I, V, X, L, C, D, M. Standard form supports 1 to 3999 (MMMCMXCIX).</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -191,7 +188,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -217,7 +214,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });

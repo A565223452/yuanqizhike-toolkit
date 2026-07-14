@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UV Index Calculator | YuanQiZhiLe Toolkit</title>
+<meta name="description" content="Calculate UV index and sun exposure time. SPF recommendations, vitamin D synthesis. Free UV index calculator.">
+<meta name="keywords" content="uv index, sun protection, uv radiation, spf, sunburn time, vitamin d, sun exposure">
+<meta property="og:title" content="UV Index Calculator - Free Online Tool">
+<meta property="og:description" content="Calculate UV index and sun exposure time. SPF recommendations, vitamin D synthesis. Free UV index calculator.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>UV Index Calculator</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">�?Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Calculate UV index and sun exposure time. SPF recommendations, vitamin D synthesis. Free UV index calculator.</div>
+    <div class="row">
+        <div class="group"><label>Current UV index</label><input type="number" id="uv" value="7" min="0" max="12" step="0.5" style="width:100%;padding:8px"></div>
+        <div class="group"><label>Your skin type</label>
+            <select id="skin" style="width:100%;padding:8px">
+                <option value="1">Type 1 (Very fair, always burns)</option>
+                <option value="2">Type 2 (Fair, burns easily)</option>
+                <option value="3" selected>Type 3 (Medium, tans gradually)</option>
+                <option value="4">Type 4 (Olive, rarely burns)</option>
+                <option value="5">Type 5 (Brown, very rarely burns)</option>
+                <option value="6">Type 6 (Dark, never burns)</option>
+            </select>
+        </div>
+    </div>
+    <div class="group"><label>SPF applied</label>
+        <select id="spf" style="width:100%;padding:8px">
+            <option value="0">None</option>
+            <option value="15">SPF 15</option>
+            <option value="30" selected>SPF 30</option>
+            <option value="50">SPF 50</option>
+            <option value="70">SPF 70+</option>
+        </select>
+    </div>
+    <button id="calc" style="width:100%;padding:12px;background:#3b82f6;color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:bold;margin:8px 0">Calculate</button>
+    <div id="result" style="margin-top:12px"></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business �?batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">�?or describe your need below �?/div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit �?/button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Enter current UV index (check weather app).</li>
+<li>Select your skin type (1-6).</li>
+<li>Choose SPF applied.</li>
+<li>Click <b>Calculate</b>.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">UV levels: Low (0-2), Moderate (3-5), High (6-7), Very High (8-10), Extreme (11+). Safe time = MED / UV. Skin Type 1: 5 min MED, Type 6: 60 min MED. SPF extends protection (real-world ~50% of label). Vitamin D: 1/3 of MED is enough. Apply sunscreen 15-30 min before sun, reapply every 2 hours.</p>
+    </div>
+    <footer>YuanQiZhiLe Toolkit �?Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'☀�?:'🌙';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='�?;
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:contact@yuanqizhike.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    function calc(){
+        var uv = parseFloat(document.getElementById('uv').value);
+        var skin = parseInt(document.getElementById('skin').value);
+        var spf = parseInt(document.getElementById('spf').value);
+        if(isNaN(uv)){ alert('Enter UV index'); return; }
+        // MED (Minimal Erythemal Dose) by skin type in minutes at UV=1
+        var medMinutes = [5, 10, 15, 20, 30, 60];
+        var med = medMinutes[skin - 1];
+        // Safe exposure time = MED / UV index
+        var safeMin = med / uv;
+        // With SPF, multiply by SPF factor (real-world ~50% of labeled)
+        var spfEffective = spf > 0 ? spf * 0.5 : 1;
+        var safeWithSPF = safeMin * spfEffective;
+        // Vitamin D synthesis time (1/3 of MED)
+        var vitaminDMin = safeMin / 3;
+        // UV level
+        var uvLevel, uvColor, uvDesc;
+        if(uv <= 2){ uvLevel = 'Low'; uvColor = '#10b981'; uvDesc = 'Minimal protection needed'; }
+        else if(uv <= 5){ uvLevel = 'Moderate'; uvColor = '#eab308'; uvDesc = 'Sun protection recommended'; }
+        else if(uv <= 7){ uvLevel = 'High'; uvColor = '#f59e0b'; uvDesc = 'Protection essential'; }
+        else if(uv <= 10){ uvLevel = 'Very High'; uvColor = '#ef4444'; uvDesc = 'Extra protection needed'; }
+        else { uvLevel = 'Extreme'; uvColor = '#7c3aed'; uvDesc = 'Avoid being outside'; }
+        var html = '<div style="background:#f0f7ff;padding:14px;border-radius:8px;border-left:4px solid #3b82f6">';
+        // UV level
+        html += '<div style="text-align:center;margin-bottom:14px">';
+        html += '<div style="font-size:13px;color:#666">UV Index</div>';
+        html += '<div style="font-size:42px;font-weight:bold;color:' + uvColor + '">' + uv + '</div>';
+        html += '<div style="font-size:14px;color:' + uvColor + ';font-weight:bold;margin-top:4px">' + uvLevel + '</div>';
+        html += '<div style="font-size:12px;color:#666;margin-top:4px">' + uvDesc + '</div>';
+        html += '</div>';
+        // UV scale
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+        html += '<div style="height:24px;border-radius:4px;background:linear-gradient(to right, #10b981 0%, #10b981 20%, #eab308 20%, #eab308 40%, #f59e0b 40%, #f59e0b 60%, #ef4444 60%, #ef4444 80%, #7c3aed 80%);position:relative;margin-bottom:4px">';
+        var markerPos = Math.min(uv / 11 * 100, 100);
+        html += '<div style="position:absolute;left:' + markerPos + '%;top:-4px;width:2px;height:32px;background:#000"></div>';
+        html += '<div style="position:absolute;left:' + markerPos + '%;top:-20px;transform:translateX(-50%);font-size:11px;font-weight:bold;color:#000">' + uv + '</div>';
+        html += '</div>';
+        html += '<div style="display:flex;justify-content:space-between;font-size:9px;color:#666"><span>0</span><span>2</span><span>5</span><span>7</span><span>10</span><span>11+</span></div>';
+        html += '</div>';
+        // Safe exposure
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+        html += '<div style="font-size:12px;font-weight:bold;margin-bottom:6px">Exposure times:</div>';
+        html += '<table style="width:100%;font-size:12px;border-collapse:collapse">';
+        var fmtTime = function(min){
+            if(min < 60) return min.toFixed(0) + ' min';
+            return (min / 60).toFixed(1) + ' hrs';
+        };
+        html += '<tr><td style="padding:6px;border-bottom:1px solid #f0f0f0">Without sunscreen</td><td style="padding:6px;text-align:right;border-bottom:1px solid #f0f0f0;color:#ef4444">' + fmtTime(safeMin) + '</td></tr>';
+        html += '<tr><td style="padding:6px;border-bottom:1px solid #f0f0f0">With SPF ' + spf + '</td><td style="padding:6px;text-align:right;border-bottom:1px solid #f0f0f0;color:#10b981">' + fmtTime(safeWithSPF) + '</td></tr>';
+        html += '<tr><td style="padding:6px;border-bottom:1px solid #f0f0f0">Vitamin D synthesis</td><td style="padding:6px;text-align:right;border-bottom:1px solid #f0f0f0">' + fmtTime(vitaminDMin) + '</td></tr>';
+        html += '<tr><td style="padding:6px">Burn time (MED)</td><td style="padding:6px;text-align:right">' + fmtTime(safeMin) + '</td></tr>';
+        html += '</table>';
+        html += '</div>';
+        // Skin type info
+        var skinNames = ['Very fair', 'Fair', 'Medium', 'Olive', 'Brown', 'Dark'];
+        var skinColors = ['#fff', '#ffe0c0', '#f0c090', '#d0a070', '#a07050', '#604030'];
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+        html += '<div style="font-size:12px;font-weight:bold;margin-bottom:6px">Skin type ' + skin + ' (' + skinNames[skin-1] + '):</div>';
+        html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">';
+        html += '<div style="width:24px;height:24px;background:' + skinColors[skin-1] + ';border:1px solid #ccc;border-radius:50%"></div>';
+        html += '<div style="font-size:12px">MED: ' + med + ' min at UV=1</div>';
+        html += '</div>';
+        html += '<div style="font-size:11px;color:#666">MED = Minimal Erythemal Dose (time to sunburn at UV 1)</div>';
+        html += '</div>';
+        // Protection recommendations
+        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+        html += '<div style="font-size:12px;font-weight:bold;margin-bottom:6px">Protection needed:</div>';
+        if(uv <= 2){
+            html += '<div style="font-size:12px">�?No protection needed</div>';
+            html += '<div style="font-size:12px">�?Safe for extended outdoor time</div>';
+        } else {
+            if(uv > 2) html += '<div style="font-size:12px">�?Sunglasses (UV400)</div>';
+            if(uv > 5) html += '<div style="font-size:12px">�?Hat with brim</div>';
+            if(uv > 5) html += '<div style="font-size:12px">�?SPF 30+ sunscreen (reapply every 2 hrs)</div>';
+            if(uv > 7) html += '<div style="font-size:12px">�?Protective clothing</div>';
+            if(uv > 7) html += '<div style="font-size:12px">�?Seek shade 10 AM - 4 PM</div>';
+            if(uv > 10) html += '<div style="font-size:12px;color:#ef4444;font-weight:bold">�?Avoid sun exposure if possible</div>';
+        }
+        html += '</div>';
+        html += '<div style="background:#fef3c7;padding:8px;border-radius:4px;font-size:11px;color:#92400e">';
+        html += '<b>Sun safety tips:</b><br>';
+        html += '�?Apply sunscreen 15-30 min before sun<br>';
+        html += '�?Reapply every 2 hours or after swimming<br>';
+        html += '�?UV strongest 10 AM - 4 PM<br>';
+        html += '�?Clouds only block ~20% of UV<br>';
+        html += '�?Snow/water reflect UV (80%)<br>';
+        html += '�?Check UV index daily in summer';
+        html += '</div>';
+        html += '</div>';
+        document.getElementById('result').innerHTML = html;
+    }
+    ['uv','spf'].forEach(function(id){
+        document.getElementById(id).addEventListener('change', calc);
+        if(id === 'uv') document.getElementById(id).addEventListener('input', calc);
+    });
+    document.getElementById('skin').addEventListener('change', calc);
+    document.getElementById('calc').addEventListener('click', calc);
+    calc();
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JWT Decoder | YuanQiZhiLe Toolkit</title>
+<title>JWT Decoder | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Decode JSON Web Tokens (JWT) and inspect header, payload, and signature. View claims like exp, iat, sub. Free online JWT decoder. Tokens are decoded locally - never sent to a server.">
 <meta name="keywords" content="jwt decoder, json web token, jwt decode, jwt inspect, token decoder, jwt claims">
 <meta property="og:title" content="JWT Decoder - Free Online Tool">
@@ -112,7 +112,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>JWT Decoder</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Decode JSON Web Tokens (JWT) and inspect header, payload, and signature. View claims like exp, iat, sub. Free online JWT decoder. Tokens are decoded locally - never sent to a server.</div>
@@ -132,19 +132,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -158,7 +158,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 </ol>
 <p style="margin-top:8px;font-size:12px;color:#666">JWT = header.payload.signature, all Base64URL-encoded. This tool decodes locally only - your token never leaves the browser. <b>Decoding is not verification</b>: always verify signatures server-side using the secret/public key.</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -169,7 +169,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -195,7 +195,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -298,9 +298,9 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         }
         // Warning
         if(alg === 'none'){
-            html += '<div style="margin-top:12px;padding:12px;background:#fef2f2;border:2px solid #ef4444;border-radius:6px;font-size:13px"><b>⚠ Security warning:</b> This token uses "alg:none" - it has no signature. Anyone can forge it. Never accept these tokens in production.</div>';
+            html += '<div style="margin-top:12px;padding:12px;background:#fef2f2;border:2px solid #ef4444;border-radius:6px;font-size:13px"><b>?Security warning:</b> This token uses "alg:none" - it has no signature. Anyone can forge it. Never accept these tokens in production.</div>';
         }
-        html += '<div style="margin-top:12px;padding:8px;background:#fef3c7;border-radius:6px;font-size:12px;color:#666">⚠ This tool only <b>decodes</b> JWTs - it does not verify signatures. Never trust JWT contents without server-side signature verification.</div>';
+        html += '<div style="margin-top:12px;padding:8px;background:#fef3c7;border-radius:6px;font-size:12px;color:#666">?This tool only <b>decodes</b> JWTs - it does not verify signatures. Never trust JWT contents without server-side signature verification.</div>';
         html += '</div>';
         document.getElementById('result').innerHTML = html;
     }

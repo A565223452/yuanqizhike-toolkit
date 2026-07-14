@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Free SEO meta tag generator. Create title, description, Open Graph, Twitter Card, Schema.org markup. Local, no upload.">
+<meta name="keywords" content="SEO meta tag generator, Open Graph, Twitter Card, OG tags, meta description, schema.org, social media tags">
+<title>SEO Meta Tag Generator | YuanQiZhiLe Toolkit</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:system-ui,-apple-system,sans-serif;background:#f7f7f7;transition:background 0.3s,color 0.3s}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+body.dark .wrap{background:#16213e}
+body.dark textarea,body.dark input{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark .field-label,body.dark .guide h3,body.dark .guide li{color:#c8c8c8}
+body.dark .guide{background:#0f3460;border-color:#1a1a2e}
+body.dark .guide code{background:#2a1a2a;color:#ffb3c7}
+body.dark .preview-card{background:#0f3460;border-color:#1a1a2e}
+body.dark .preview-card .url{color:#86efac}
+body.dark .preview-card .title{color:#5fa8ff}
+body.dark .preview-card .desc{color:#a0a0a0}
+.wrap{max-width:1100px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:6px;font-size:24px}
+.subtitle{color:#888;font-size:13px;margin-bottom:18px}
+.top-bar{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:14px}
+.field-label{font-size:13px;font-weight:600;color:#444;margin-bottom:6px;display:block}
+.field-label .count{float:right;font-size:11px;color:#999;font-weight:normal}
+.field-label .count.warn{color:#dc2626}
+.field-label .count.ok{color:#16a34a}
+input[type=text],textarea{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-family:inherit;font-size:13px;transition:background 0.3s,color 0.3s}
+textarea{height:280px;font-family:monospace;resize:vertical}
+.preview-section{margin:14px 0}
+.preview-card{padding:14px;border:1px solid #ddd;border-radius:8px;background:#fff;transition:background 0.3s}
+.preview-card .url{font-size:13px;color:#006621;margin-bottom:4px}
+.preview-card .title{font-size:18px;color:#1a0dab;margin-bottom:4px;cursor:pointer}
+.preview-card .desc{font-size:13px;color:#545454;line-height:1.4}
+.preview-card .og-preview{margin-top:12px;padding-top:12px;border-top:1px solid #eee}
+.preview-card .og-img{width:100%;max-width:200px;height:105px;background:#f0f0f0 url('') center/cover;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#999;font-size:12px}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.btns button{padding:9px 16px;border:none;border-radius:4px;background:#007bff;color:#fff;cursor:pointer;transition:opacity 0.2s;font-size:14px}
+.btns button:hover{opacity:0.85}
+.btns button.secondary{background:#6c757d}
+.btns button.success{background:#28a745}
+.tabs{display:flex;gap:4px;margin:8px 0;flex-wrap:wrap}
+.tab{padding:6px 12px;background:#f0f0f0;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px}
+.tab.active{background:#007bff;color:#fff;border-color:#007bff}
+.lead{margin-top:14px;padding:12px;background:#fff8e1;border:1px solid #ffe082;border-radius:6px;font-size:13px;color:#7a5c00;text-align:center}
+body.dark .lead{background:#3a2e00;border-color:#5c4400;color:#ffd54f}
+.guide{margin-top:18px;padding:16px;border:1px solid #e0e0e0;border-radius:8px;background:#fafafa;transition:background 0.3s}
+.guide h3{font-size:15px;margin-bottom:10px;color:#0056b3}
+.guide ol{padding-left:22px;font-size:13px;color:#444;line-height:1.7}
+.guide li{margin-bottom:4px}
+.guide code{background:#f9f2f4;padding:1px 5px;border-radius:3px;font-family:monospace;font-size:12px;color:#c7254e}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+footer a{color:#007bff;text-decoration:none}
+@media(max-width:768px){.wrap{padding:16px}.grid{grid-template-columns:1fr}.bookmark-btn{position:static;margin-top:8px}}
+
+/* === Common: theme toggle button + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+</style>
+</head>
+<body>
+<div class="wrap">
+    <div class="top-bar">
+        <div>
+            <h1>SEO Meta Tag Generator</h1>
+            <div class="subtitle">Generate title, description, Open Graph, Twitter Card, Schema.org. Live SERP preview. Local, no upload.</div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark (Ctrl+Shift+T)">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">�?Bookmark</button>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div>
+            <label class="field-label">Page Title <span class="count" id="titleCount">0 / 60</span></label>
+            <input type="text" id="title" placeholder="My Awesome Page Title">
+
+            <label class="field-label" style="margin-top:10px">Meta Description <span class="count" id="descCount">0 / 160</span></label>
+            <textarea id="description" rows="3" placeholder="A brief, compelling description of the page..."></textarea>
+
+            <label class="field-label" style="margin-top:10px">Keywords (comma-separated)</label>
+            <input type="text" id="keywords" placeholder="keyword1, keyword2, keyword3">
+
+            <label class="field-label" style="margin-top:10px">Canonical URL</label>
+            <input type="text" id="canonical" placeholder="https://example.com/page">
+
+            <label class="field-label" style="margin-top:10px">OG Image URL</label>
+            <input type="text" id="ogImage" placeholder="https://example.com/image.jpg">
+
+            <label class="field-label" style="margin-top:10px">Site Name / Author</label>
+            <input type="text" id="author" placeholder="Your Brand">
+        </div>
+        <div>
+            <div class="preview-section">
+                <div class="preview-card">
+                    <div class="url" id="previewUrl">https://example.com</div>
+                    <div class="title" id="previewTitle">Page Title</div>
+                    <div class="desc" id="previewDesc">Meta description preview...</div>
+                </div>
+            </div>
+
+            <div class="tabs">
+                <div class="tab active" data-tab="all">All Tags</div>
+                <div class="tab" data-tab="basic">Basic</div>
+                <div class="tab" data-tab="og">Open Graph</div>
+                <div class="tab" data-tab="twitter">Twitter</div>
+                <div class="tab" data-tab="schema">Schema.org</div>
+            </div>
+
+            <label class="field-label">Generated HTML</label>
+            <textarea id="outputBox" readonly></textarea>
+        </div>
+    </div>
+
+    <div class="btns">
+        <button id="generate" class="success">Generate</button>
+        <button id="copy" class="secondary">Copy HTML</button>
+        <button id="download" class="secondary">Download .html</button>
+        <button id="clear" class="secondary">Clear</button>
+    </div>
+
+    <div class="guide">
+        <h3>How to Use</h3>
+        <ol>
+            <li>Fill in the form fields on the left: <strong>Page Title</strong>, <strong>Meta Description</strong>, <strong>Keywords</strong>, <strong>Canonical URL</strong>, <strong>OG Image URL</strong>, <strong>Site Name</strong>.</li>
+            <li>Watch the SERP preview at the top-right �?it shows how Google may render your snippet.</li>
+            <li>Character counters turn green within recommended limits (title �?60, description �?160) and red when over.</li>
+            <li>Switch tabs (<strong>All Tags</strong>, <strong>Basic</strong>, <strong>Open Graph</strong>, <strong>Twitter</strong>, <strong>Schema.org</strong>) to focus on a specific tag group.</li>
+            <li>Click <strong>Copy HTML</strong> to copy the tags, then paste into the <code>&lt;head&gt;</code> of your page.</li>
+        </ol>
+    </div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business �?batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">�?or describe your need below �?/div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit �?/button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div>YuanQiZhiLe Toolkit · Process locally in your browser, no data upload.</div>
+    </footer>
+</div>
+
+<script>
+(function(){
+    // === Common: theme + contact modal ===
+    const __themeBtn = document.getElementById('themeToggle');
+    function __applyTheme(t){
+        document.body.classList.toggle('dark', t === 'dark');
+        if(__themeBtn) __themeBtn.textContent = (t === 'dark') ? '☀�? : '🌙';
+    }
+    const __saved = localStorage.getItem('theme');
+    if(__saved){
+        __applyTheme(__saved);
+    } else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
+        __applyTheme('dark');
+    } else {
+        __applyTheme('light');
+    }
+    if(__themeBtn){
+        __themeBtn.addEventListener('click', () => {
+            const next = document.body.classList.contains('dark') ? 'light' : 'dark';
+            __applyTheme(next);
+            localStorage.setItem('theme', next);
+        });
+    }
+    document.addEventListener('keydown', e => {
+        if(e.key === 't' && e.ctrlKey && e.shiftKey){
+            e.preventDefault();
+            const next = document.body.classList.contains('dark') ? 'light' : 'dark';
+            __applyTheme(next);
+            localStorage.setItem('theme', next);
+        }
+    });
+    document.getElementById('bookmarkBtn').addEventListener('click', () => alert('Press Ctrl/Cmd + D to bookmark this page.'));
+
+    // Contact modal
+    const __modal = document.getElementById('contactModal');
+    const __trig = document.getElementById('contactTrigger');
+    const __close = document.getElementById('contactClose');
+    function __openModal(){ if(__modal) __modal.classList.add('open'); }
+    function __closeModal(){ if(__modal) __modal.classList.remove('open'); }
+    if(__trig) __trig.addEventListener('click', __openModal);
+    if(__close) __close.addEventListener('click', __closeModal);
+    if(__modal) __modal.addEventListener('click', e => { if(e.target === __modal) __closeModal(); });
+    document.addEventListener('keydown', e => { if(e.key === 'Escape') __closeModal(); });
+    const __copyBtn = document.getElementById('copyEmail');
+    if(__copyBtn){
+        __copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText('contact@yuanqizhike.com').then(() => {
+                const old = __copyBtn.textContent;
+                __copyBtn.textContent = '�?;
+                setTimeout(() => __copyBtn.textContent = old, 1500);
+            });
+        });
+    }
+    const __form = document.getElementById('contactForm');
+    if(__form){
+        __form.addEventListener('submit', e => {
+            e.preventDefault();
+            const name = document.getElementById('formName').value.trim();
+            const email = document.getElementById('formEmail').value.trim();
+            const desc = document.getElementById('formDesc').value.trim();
+            const subject = encodeURIComponent('Bespoke Tool Development Inquiry');
+            const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nRequirement:\n' + desc);
+            window.location.href = 'mailto:contact@yuanqizhike.com?subject=' + subject + '&body=' + body;
+        });
+    }
+
+    let currentTab = 'all';
+
+    function escapeHTML(s){
+        return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    function generate(){
+        const title = document.getElementById('title').value;
+        const desc = document.getElementById('description').value;
+        const keywords = document.getElementById('keywords').value;
+        const canonical = document.getElementById('canonical').value;
+        const ogImage = document.getElementById('ogImage').value;
+        const author = document.getElementById('author').value;
+
+        // Update counters
+        const tEl = document.getElementById('titleCount');
+        const dEl = document.getElementById('descCount');
+        tEl.textContent = `${title.length} / 60`;
+        dEl.textContent = `${desc.length} / 160`;
+        tEl.className = 'count ' + (title.length > 60 ? 'warn' : title.length > 0 ? 'ok' : '');
+        dEl.className = 'count ' + (desc.length > 160 ? 'warn' : desc.length > 0 ? 'ok' : '');
+
+        // Update preview
+        document.getElementById('previewTitle').textContent = title || 'Page Title';
+        document.getElementById('previewDesc').textContent = desc || 'Meta description preview...';
+        document.getElementById('previewUrl').textContent = canonical || 'https://example.com';
+
+        // Build tags
+        const tags = [];
+        // Basic
+        if(title) tags.push(`<title>${title}</title>`);
+        if(desc) tags.push(`<meta name="description" content="${escapeHTML(desc)}">`);
+        if(keywords) tags.push(`<meta name="keywords" content="${escapeHTML(keywords)}">`);
+        if(author) tags.push(`<meta name="author" content="${escapeHTML(author)}">`);
+        tags.push(`<meta name="viewport" content="width=device-width, initial-scale=1.0">`);
+        tags.push(`<meta charset="UTF-8">`);
+        if(canonical) tags.push(`<link rel="canonical" href="${escapeHTML(canonical)}">`);
+        tags.push(`<meta name="robots" content="index, follow">`);
+
+        // Open Graph
+        const og = [];
+        og.push(`<!-- Open Graph / Facebook -->`);
+        og.push(`<meta property="og:type" content="website">`);
+        if(canonical) og.push(`<meta property="og:url" content="${escapeHTML(canonical)}">`);
+        if(title) og.push(`<meta property="og:title" content="${escapeHTML(title)}">`);
+        if(desc) og.push(`<meta property="og:description" content="${escapeHTML(desc)}">`);
+        if(ogImage) og.push(`<meta property="og:image" content="${escapeHTML(ogImage)}">`);
+        if(author) og.push(`<meta property="og:site_name" content="${escapeHTML(author)}">`);
+
+        // Twitter
+        const tw = [];
+        tw.push(`<!-- Twitter -->`);
+        tw.push(`<meta name="twitter:card" content="summary_large_image">`);
+        if(canonical) tw.push(`<meta name="twitter:url" content="${escapeHTML(canonical)}">`);
+        if(title) tw.push(`<meta name="twitter:title" content="${escapeHTML(title)}">`);
+        if(desc) tw.push(`<meta name="twitter:description" content="${escapeHTML(desc)}">`);
+        if(ogImage) tw.push(`<meta name="twitter:image" content="${escapeHTML(ogImage)}">`);
+
+        // Schema.org
+        const schema = [];
+        schema.push(`<!-- Schema.org / JSON-LD -->`);
+        const schemaObj = {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": title || "",
+            "description": desc || "",
+            "url": canonical || ""
+        };
+        if(ogImage) schemaObj.image = ogImage;
+        schema.push(`<script type="application/ld+json">`);
+        schema.push(JSON.stringify(schemaObj, null, 2));
+        schema.push(`<\/script>`);
+
+        let output = '';
+        if(currentTab === 'all' || currentTab === 'basic') output += tags.join('\n') + '\n\n';
+        if(currentTab === 'all' || currentTab === 'og') output += og.join('\n') + '\n\n';
+        if(currentTab === 'all' || currentTab === 'twitter') output += tw.join('\n') + '\n\n';
+        if(currentTab === 'all' || currentTab === 'schema') output += schema.join('\n') + '\n';
+
+        document.getElementById('outputBox').value = output.trim();
+    }
+
+    document.querySelectorAll('input[type=text], textarea').forEach(el => el.addEventListener('input', generate));
+    document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
+        t.classList.add('active');
+        currentTab = t.dataset.tab;
+        generate();
+    }));
+
+    document.getElementById('generate').addEventListener('click', generate);
+    document.getElementById('copy').addEventListener('click', () => {
+        const v = document.getElementById('outputBox').value;
+        if(!v){ alert('Nothing to copy.'); return; }
+        navigator.clipboard.writeText(v).then(() => {
+            const b = document.getElementById('copy');
+            const old = b.textContent;
+            b.textContent = '�?Copied';
+            setTimeout(() => b.textContent = old, 1500);
+        });
+    });
+
+    document.getElementById('download').addEventListener('click', () => {
+        const v = document.getElementById('outputBox').value;
+        if(!v){ alert('Nothing to download.'); return; }
+        const blob = new Blob([v], {type:'text/html'});
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'meta-tags.html';
+        a.click();
+        URL.revokeObjectURL(a.href);
+    });
+
+    document.getElementById('clear').addEventListener('click', () => {
+        document.querySelectorAll('input[type=text], textarea:not(#outputBox)').forEach(el => el.value = '');
+        document.getElementById('outputBox').value = '';
+        generate();
+    });
+
+    generate();
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Color Blind Simulator | YuanQiZhiLe Toolkit</title>
+<title>Color Blind Simulator | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Simulate how colors appear to color-blind users. Test designs for accessibility. Supports Protanopia, Deuteranopia, Tritanopia. Free color blind simulator.">
 <meta name="keywords" content="color blind simulator, color blindness, protanopia, deuteranopia, tritanopia, accessibility, daltonism, color vision deficiency">
 <meta property="og:title" content="Color Blind Simulator - Free Online Tool">
@@ -112,7 +112,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>Color Blind Simulator</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Simulate how colors appear to color-blind users. Test designs for accessibility. Supports Protanopia, Deuteranopia, Tritanopia. Free color blind simulator.</div>
@@ -147,19 +147,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -170,9 +170,9 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 <li>Select <b>color blindness type</b>.</li>
 <li>Compare original vs simulated appearance.</li>
 </ol>
-<p style="margin-top:8px;font-size:12px;color:#666">~8% of men and 0.5% of women have some form of color vision deficiency (CVD). Most common: deuteranomaly (green-weak). Design accessible UIs by never relying on color alone — always add text labels or icons. WCAG 2.1 AA requires 4.5:1 contrast ratio for normal text. Use blue/orange palettes — visible to most CVD types.</p>
+<p style="margin-top:8px;font-size:12px;color:#666">~8% of men and 0.5% of women have some form of color vision deficiency (CVD). Most common: deuteranomaly (green-weak). Design accessible UIs by never relying on color alone &#8212; always add text labels or icons. WCAG 2.1 AA requires 4.5:1 contrast ratio for normal text. Use blue/orange palettes &#8212; visible to most CVD types.</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -183,7 +183,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -209,7 +209,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -317,10 +317,10 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         html += '</table>';
         // Accessibility assessment
         var assessment;
-        if(perceptualDiff < 5) assessment = {text: 'Minimal difference — color appears nearly identical', color: '#10b981'};
-        else if(perceptualDiff < 15) assessment = {text: 'Slight difference — most users can distinguish', color: '#eab308'};
-        else if(perceptualDiff < 30) assessment = {text: 'Moderate difference — may cause confusion', color: '#f59e0b'};
-        else assessment = {text: 'Major difference — color appears very different', color: '#ef4444'};
+        if(perceptualDiff < 5) assessment = {text: 'Minimal difference ?color appears nearly identical', color: '#10b981'};
+        else if(perceptualDiff < 15) assessment = {text: 'Slight difference ?most users can distinguish', color: '#eab308'};
+        else if(perceptualDiff < 30) assessment = {text: 'Moderate difference ?may cause confusion', color: '#f59e0b'};
+        else assessment = {text: 'Major difference ?color appears very different', color: '#ef4444'};
         html += '<div style="margin-top:12px;padding:12px;background:' + assessment.color + ';color:#fff;border-radius:6px;text-align:center;font-size:14px">';
         html += assessment.text;
         html += '</div>';
@@ -341,7 +341,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             'deuteranopia': 'Green-blind: cannot see green light. ~1% of males. Most common severe type.',
             'tritanopia': 'Blue-blind: cannot see blue light. Very rare (<0.01%). Not X-linked.',
             'protanomaly': 'Red-weak: reduced red sensitivity. ~1% of males.',
-            'deuteranomaly': 'Green-weak: reduced green sensitivity. ~5% of males — MOST COMMON type.',
+            'deuteranomaly': 'Green-weak: reduced green sensitivity. ~5% of males ?MOST COMMON type.',
             'tritanomaly': 'Blue-weak: reduced blue sensitivity. ~0.01% of population.',
             'achromatopsia': 'Complete color blindness (monochromacy). Sees only grayscale. ~1 in 33,000.'
         };
@@ -352,12 +352,12 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         // Tips
         html += '<div style="margin-top:8px;padding:12px;background:#fef3c7;border-radius:6px;font-size:13px;line-height:1.6">';
         html += '<b>💡 Accessibility tips:</b><br>';
-        html += '• Do not rely on color alone — add text/icons<br>';
-        html += '• Use patterns or textures in addition to color<br>';
-        html += '• Ensure 4.5:1 contrast ratio (WCAG AA)<br>';
-        html += '• Test with simulator — 8% of men have CVD<br>';
-        html += '• Avoid red-green combinations for important info<br>';
-        html += '• Use blue-orange (visible to most CVD types)';
+        html += '?Do not rely on color alone ?add text/icons<br>';
+        html += '?Use patterns or textures in addition to color<br>';
+        html += '?Ensure 4.5:1 contrast ratio (WCAG AA)<br>';
+        html += '?Test with simulator ?8% of men have CVD<br>';
+        html += '?Avoid red-green combinations for important info<br>';
+        html += '?Use blue-orange (visible to most CVD types)';
         html += '</div>';
         document.getElementById('result').innerHTML = html;
     }

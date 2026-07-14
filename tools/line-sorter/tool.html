@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Free online multi-line text sorter. Sort lines alphabetically, numerically, by length, reverse, shuffle. Remove duplicates. Local, no upload.">
 <meta name="keywords" content="sort lines, text sorter, alphabetical sort, line sort, remove duplicates, shuffle lines, multi-line sort">
-<title>Multi-Line Text Sorter | YuanQiZhiLe Toolkit</title>
+<title>Multi-Line Text Sorter | YuanqiZhiKe Toolkit</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{padding:20px;font-family:system-ui,-apple-system,sans-serif;background:#f7f7f7;transition:background 0.3s,color 0.3s}
@@ -104,7 +104,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         </div>
         <div style="display:flex;gap:8px;align-items:center">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark (Ctrl+Shift+T)">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
 
@@ -123,13 +123,13 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="field">
             <label>Sort by</label>
             <select id="sortBy">
-                <option value="alpha-asc" selected>A → Z (alphabetical)</option>
-                <option value="alpha-desc">Z → A (reverse alphabetical)</option>
-                <option value="case-insensitive">A → Z (case-insensitive)</option>
-                <option value="num-asc">0 → 9 (numerical ascending)</option>
-                <option value="num-desc">9 → 0 (numerical descending)</option>
-                <option value="len-asc">Short → Long (by length)</option>
-                <option value="len-desc">Long → Short (by length)</option>
+                <option value="alpha-asc" selected>A &#8212; Z (alphabetical)</option>
+                <option value="alpha-desc">Z &#8212; A (reverse alphabetical)</option>
+                <option value="case-insensitive">A &#8212; Z (case-insensitive)</option>
+                <option value="num-asc">0 9 (numerical ascending)</option>
+                <option value="num-desc">9 0 (numerical descending)</option>
+                <option value="len-asc">Short &#8212; Long (by length)</option>
+                <option value="len-desc">Long &#8212; Short (by length)</option>
                 <option value="reverse">Reverse order</option>
                 <option value="shuffle">Shuffle (random)</option>
             </select>
@@ -148,7 +148,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <button id="sort" class="success">Sort</button>
         <button id="copy" class="secondary">Copy Result</button>
         <button id="download" class="secondary">Download .txt</button>
-        <button id="swap" class="secondary">⇅ Swap</button>
+        <button id="swap" class="secondary">Swap</button>
         <button id="clear" class="secondary">Clear</button>
     </div>
 
@@ -160,9 +160,9 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             <li>Paste your multi-line text in the input box on the left.</li>
             <li>Choose a sort mode from the dropdown (alphabetical, numerical, by length, reverse, shuffle).</li>
             <li>Tick any extra options: <strong>Remove duplicates</strong>, <strong>Trim each line</strong>, <strong>Remove empty lines</strong>, <strong>Natural sort</strong>, <strong>Sort by leading number</strong>.</li>
-            <li>Click <strong>Sort</strong> (or just type — output updates live).</li>
+            <li>Click <strong>Sort</strong> (or just type &#8212; output updates live).</li>
             <li>Click <strong>Copy Result</strong> to copy the sorted output, or <strong>Download</strong> to save as a text file.</li>
-            <li>Use <strong>⇅ Swap</strong> to feed the output back as input for a second pass.</li>
+            <li>Use <strong>Swap</strong> to feed the output back as input for a second pass.</li>
         </ol>
     </div>
 
@@ -175,26 +175,24 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
 
-    <footer>
-        <div>YuanQiZhiLe Toolkit · Process locally in your browser, no data upload.</div>
-    </footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 
 <script>
@@ -245,7 +243,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         __copyBtn.addEventListener('click', () => {
             navigator.clipboard.writeText('contact@yuanqizhike.com').then(() => {
                 const old = __copyBtn.textContent;
-                __copyBtn.textContent = '✓';
+                __copyBtn.textContent='Copied';
                 setTimeout(() => __copyBtn.textContent = old, 1500);
             });
         });
@@ -339,7 +337,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         navigator.clipboard.writeText(v).then(() => {
             const b = document.getElementById('copy');
             const old = b.textContent;
-            b.textContent = '✓ Copied';
+            b.textContent = 'Copied';
             setTimeout(() => b.textContent = old, 1500);
         });
     });

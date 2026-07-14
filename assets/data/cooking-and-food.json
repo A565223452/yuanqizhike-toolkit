@@ -1,0 +1,369 @@
+[
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Baking Ingredient Converter",
+    "desc": "Convert baking measurements accurately with our free online baking ingredient converter. Easily switch between cups, tablespoons, grams, and ounces for perfect recipes.",
+    "features": [
+      "Cups to grams conversion",
+      "Multiple baking ingredients",
+      "Volume to weight support",
+      "Accurate density calculations",
+      "Free and easy to use"
+    ],
+    "detailUrl": "/tools/baking-converter/index.html",
+    "zipUrl": "/assets/zip-packages/cooking/baking-converter.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "BBQ Cooking Time Calculator",
+    "desc": "Calculate BBQ and smoker cooking times for brisket, ribs, pork butt, chicken and more. Free BBQ time and temperature calculator.",
+    "features": [
+      "Multiple meat types supported",
+      "Adjustable smoker temperature",
+      "Doneness level selection",
+      "Estimated cook time range",
+      "Suggested cooking timeline",
+      "Stall phase estimation"
+    ],
+    "detailUrl": "/tools/bbq-cooking-time-calc/index.html",
+    "zipUrl": "/assets/zip-packages/cooking/bbq-cooking-time-calc.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Butter Converter",
+    "desc": "Convert butter measurements easily between cups, tablespoons, grams, ounces, and US sticks. Perfect for precise baking and cooking recipe conversions.",
+    "features": [
+      "Cups to grams conversion",
+      "Tablespoons and ounces support",
+      "US butter sticks measurement",
+      "Quick common measure presets",
+      "Accurate baking calculations"
+    ],
+    "detailUrl": "/tools/butter-converter/index.html",
+    "zipUrl": "/assets/zip-packages/cooking/butter-converter.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Cheese Pairing Finder",
+    "desc": "Discover perfect pairings for your favorite cheeses. Find complementary wines, fruits, crackers, nuts, and jams to build the ultimate cheese board effortlessly.",
+    "features": [
+      "16 popular cheese varieties",
+      "Wine and beverage pairings",
+      "Fruit and nut suggestions",
+      "Cracker and jam matches",
+      "Expert serving tips included",
+      "Free cheese pairing guide"
+    ],
+    "detailUrl": "/tools/cheese-pairing-finder/index.html",
+    "zipUrl": "/assets/zip-packages/cooking/cheese-pairing-finder.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Cocktail Recipe Finder",
+    "desc": "Find the perfect cocktail recipe by base spirit, style, or difficulty. Discover classic and modern mixed drink recipes with full ingredients and step-by-step instructions.",
+    "features": [
+      "Filter by base spirit",
+      "Search by style",
+      "Detailed ingredients list",
+      "Step-by-step mixing instructions",
+      "Includes mocktail options"
+    ],
+    "detailUrl": "/tools/cocktail-recipe-finder/index.html",
+    "zipUrl": "/assets/zip-packages/cooking/cocktail-recipe-finder.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Coffee Brew Ratio Calculator",
+    "desc": "Calculate coffee to water ratio for perfect brew. Supports pour over, French press, espresso, AeroPress, drip, and cold brew methods. Get exact grams and water volume instantly.",
+    "features": [
+      "Multiple brewing methods",
+      "Precise coffee water ratio",
+      "Grams and cups conversion",
+      "Grind and time tips",
+      "Instant recipe generation"
+    ],
+    "detailUrl": "/tools/coffee-brew-ratio-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/cooking/coffee-brew-ratio-calculator.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Cooking Time Calculator",
+    "desc": "Calculate perfect cooking times for meats and dishes with our free online calculator. Get accurate time, temperature, and rest time for beef, chicken, pork, and more based on weight and doneness.",
+    "features": [
+      "Multiple meat types",
+      "Doneness level selection",
+      "Oven temperature guidance",
+      "Rest time calculation",
+      "Cooking method adjustments",
+      "Metric and imperial units"
+    ],
+    "detailUrl": "/tools/cooking-time-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/cooking/cooking-time-calculator.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Cooking Time Converter",
+    "desc": "Convert cooking times between different methods including air fryer, slow cooker, and pressure cooker. Adjust your recipes easily for perfect results every time.",
+    "features": [
+      "Multiple cooking methods supported",
+      "Air fryer and slow cooker",
+      "Food type specific adjustments",
+      "Helpful cooking tips included",
+      "Instant time calculation"
+    ],
+    "detailUrl": "/tools/cooking-time-conv/index.html",
+    "zipUrl": "/assets/zip-packages/cooking/cooking-time-conv.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Cups to Milliliters Converter",
+    "desc": "Convert cups to milliliters and liters instantly. Supports US, metric, UK, and Japanese cup standards for accurate cooking and baking measurements.",
+    "features": [
+      "Multiple cup standards",
+      "Instant two-way conversion",
+      "Liters and tablespoons output",
+      "Common amounts reference",
+      "Cross-standard comparison",
+      "Free for cooking and baking"
+    ],
+    "detailUrl": "/tools/cups-to-ml/index.html",
+    "zipUrl": "/assets/zip-packages/cooking/cups-to-ml.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Fahrenheit to Celsius Cooking Converter",
+    "desc": "Convert Fahrenheit to Celsius for cooking and baking with ease. Includes oven temperature reference, Gas Mark conversion, and quick tips for international recipes.",
+    "features": [
+      "Instant F to C conversion",
+      "Oven temperature reference table",
+      "Gas Mark conversion included",
+      "Cooking heat level indicator",
+      "Bidirectional temperature converter",
+      "Free and mobile friendly"
+    ],
+    "detailUrl": "/tools/fahrenheit-to-celsius-cooking/index.html",
+    "zipUrl": "/assets/zip-packages/cooking/fahrenheit-to-celsius-cooking.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Gluten-Free Flour Blend Calculator",
+    "desc": "Create your perfect gluten-free flour blend with our free online calculator. Easily calculate ratios for rice, almond, and tapioca flours for all your celiac baking needs.",
+    "features": [
+      "Multiple blend type presets",
+      "Accurate ingredient ratio calculation",
+      "Custom total amount input",
+      "Common substitution suggestions",
+      "Helpful celiac baking tips"
+    ],
+    "detailUrl": "/tools/gluten-free-flour-blend/index.html",
+    "zipUrl": "/assets/zip-packages/cooking/gluten-free-flour-blend.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Grams to Cups Converter",
+    "desc": "Convert grams to cups accurately for baking with our free ingredient-based converter. Supports flour, sugar, butter, and more for perfect recipes.",
+    "features": [
+      "Ingredient-specific conversion",
+      "Supports 20+ baking ingredients",
+      "Converts grams, ounces, and cups",
+      "Includes tablespoons and teaspoons",
+      "Common measurement reference",
+      "Real-time conversion updates"
+    ],
+    "detailUrl": "/tools/grams-to-cups/index.html",
+    "zipUrl": "/assets/zip-packages/cooking/grams-to-cups.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Cooking Measurement Converter",
+    "desc": "Convert cooking measurements easily with our free online tool. Switch between cups, tablespoons, teaspoons, fluid ounces, milliliters, and grams for perfect recipes every time.",
+    "features": [
+      "Cups to grams conversion",
+      "Tablespoons and teaspoons support",
+      "Multiple ingredient densities",
+      "Volume and weight units",
+      "Accurate recipe scaling"
+    ],
+    "detailUrl": "/tools/measurement-converter-cooking/index.html",
+    "zipUrl": "/assets/zip-packages/cooking/measurement-converter-cooking.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Nutrition Calculator",
+    "desc": "Calculate nutrition facts and track daily calorie intake with our free nutrition calculator. Easily monitor protein, carbs, and fat for a balanced diet.",
+    "features": [
+      "Track daily calorie intake",
+      "Calculate macronutrient breakdown",
+      "Add multiple food items",
+      "Set daily calorie target",
+      "Monitor protein, carbs, fat"
+    ],
+    "detailUrl": "/tools/nutrition-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/cooking/nutrition-calculator.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Ounces to Grams Converter",
+    "desc": "Convert ounces to grams and vice versa with our free online tool. Includes fluid ounces to milliliters conversion for cooking, baking, and shipping needs.",
+    "features": [
+      "Instant oz to g conversion",
+      "Fluid ounces to milliliters",
+      "US and UK volume support",
+      "Common weight reference table",
+      "Bidirectional real-time input",
+      "Free and no signup required"
+    ],
+    "detailUrl": "/tools/ounces-to-grams/index.html",
+    "zipUrl": "/assets/zip-packages/cooking/ounces-to-grams.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Oven Temperature Converter",
+    "desc": "Convert oven temperatures between Celsius, Fahrenheit, gas mark, and fan convection instantly. An essential free tool for adapting international baking recipes accurately.",
+    "features": [
+      "Celsius to Fahrenheit conversion",
+      "Gas mark temperature support",
+      "Fan oven convection mode",
+      "Common baking reference table",
+      "Instant multi-unit conversion"
+    ],
+    "detailUrl": "/tools/oven-temperature-converter/index.html",
+    "zipUrl": "/assets/zip-packages/cooking/oven-temperature-converter.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Pizza Dough Calculator",
+    "desc": "Calculate precise pizza dough ingredients by weight and hydration. Free baker-style recipe calculator for any pizza count, size, and style.",
+    "features": [
+      "Baker's percentage calculations",
+      "Multiple pizza styles supported",
+      "Adjustable hydration levels",
+      "Ingredient weight in grams",
+      "Fermentation time options"
+    ],
+    "detailUrl": "/tools/pizza-dough-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/cooking/pizza-dough-calculator.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Pounds to Grams Converter",
+    "desc": "Convert pounds to grams, ounces, and kilograms instantly. Perfect weight conversion tool for cooking and baking recipes. Free online lb to g converter.",
+    "features": [
+      "Instant pounds to grams conversion",
+      "Supports ounces and kilograms",
+      "Quick common weight reference",
+      "Ingredient volume estimates",
+      "Common recipe weight examples"
+    ],
+    "detailUrl": "/tools/pounds-to-grams/index.html",
+    "zipUrl": "/assets/zip-packages/cooking/pounds-to-grams.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Recipe Scaler",
+    "desc": "Scale your recipes up or down effortlessly for any serving size. Convert ingredient measurements with fractions easily using this free online recipe scaler and converter.",
+    "features": [
+      "Scale recipes up or down",
+      "Convert fractional measurements",
+      "Adjust serving sizes instantly",
+      "Supports various cooking units",
+      "Automatic fraction simplification"
+    ],
+    "detailUrl": "/tools/recipe-scaler/index.html",
+    "zipUrl": "/assets/zip-packages/cooking/recipe-scaler.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Serving Size Calculator",
+    "desc": "Calculate food servings per person and total portions for any group size. Scale recipes accurately with our free serving size calculator.",
+    "features": [
+      "Calculate servings per person",
+      "Scale recipes for groups",
+      "Adjust for appetite levels",
+      "Supports multiple meal types",
+      "Shopping quantity estimates"
+    ],
+    "detailUrl": "/tools/serving-size-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/cooking/serving-size-calculator.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Sourdough Hydration Calculator",
+    "desc": "Calculate sourdough hydration, starter feeding ratios, and baker percentages with our free online tool. Perfect your sourdough recipes and achieve the ideal dough consistency for delicious loaves.",
+    "features": [
+      "Instant hydration calculation",
+      "Starter feeding ratio guide",
+      "Baker percentage formula support",
+      "Multiple loaf count scaling",
+      "Recommended baking schedule"
+    ],
+    "detailUrl": "/tools/sourdough-hydration-calc/index.html",
+    "zipUrl": "/assets/zip-packages/cooking/sourdough-hydration-calc.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Sugar Substitute Calculator",
+    "desc": "Convert sugar amounts to natural and keto-friendly substitutes like stevia, monk fruit, and honey. Perfect for baking and healthy cooking conversions.",
+    "features": [
+      "Multiple sugar substitute options",
+      "Supports various measurement units",
+      "Keto-friendly and GI indicators",
+      "Baking tips and notes included",
+      "Instant conversion results"
+    ],
+    "detailUrl": "/tools/sugar-substitute-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/cooking/sugar-substitute-calculator.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Tablespoon to Cup Converter",
+    "desc": "Convert tablespoons to cups instantly with our free cooking measurement converter. Supports US, Metric, UK, and Australian standards for accurate baking and recipe scaling.",
+    "features": [
+      "Instant tbsp to cup conversion",
+      "Supports US and Metric standards",
+      "Detailed measurement breakdown",
+      "Common conversions reference table",
+      "Free online baking tool"
+    ],
+    "detailUrl": "/tools/tablespoon-to-cup/index.html",
+    "zipUrl": "/assets/zip-packages/cooking/tablespoon-to-cup.zip"
+  },
+  {
+    "category": "Cooking & Food",
+    "icon": "/assets/icons/cooking-1.svg",
+    "title": "Wine Pairing Finder",
+    "desc": "Find the perfect wine for any food with our free wine pairing guide. Discover ideal matches for meat, fish, cheese, pasta and dessert dishes.",
+    "features": [
+      "Food category selection",
+      "Cooking method filter",
+      "Wine preference options",
+      "Budget-based recommendations",
+      "Detailed pairing notes"
+    ],
+    "detailUrl": "/tools/wine-pairing-finder/index.html",
+    "zipUrl": "/assets/zip-packages/cooking/wine-pairing-finder.zip"
+  }
+]

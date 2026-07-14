@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pomodoro Timer | YuanQiZhiLe Toolkit</title>
+<title>Pomodoro Timer | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="A clean, distraction-free Pomodoro timer for students and remote workers. 25-minute work sprints with 5-minute breaks. Customizable durations, sound alerts, browser notifications, and daily session tracking.">
 <meta name="keywords" content="pomodoro timer, focus timer, 25 minute timer, productivity timer, study timer, work timer">
 <meta property="og:title" content="Pomodoro Timer - Free Online Tool">
@@ -112,7 +112,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>Pomodoro Timer</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">A clean, distraction-free Pomodoro timer for students and remote workers. 25-minute work sprints with 5-minute breaks. Customizable durations, sound alerts, browser notifications, and daily session tracking.</div>
@@ -152,19 +152,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -174,14 +174,14 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 <li>Default durations: <b>25 min work / 5 min short break / 15 min long break</b>. Customize as needed.</li>
 <li>Click <b>Start</b> to begin a work session. The tab title will show remaining time.</li>
 <li>When the timer ends, a sound plays and a browser notification appears.</li>
-<li>The timer auto-starts the next phase (break → work → break...).</li>
+<li>The timer auto-starts the next phase (break &#8212; work &#8212; break...).</li>
 <li>After every 4 work sessions (configurable), a long break is triggered.</li>
 <li>Use <b>Pause</b> / <b>Reset</b> / <b>Skip</b> as needed.</li>
 <li>Daily and total session counts are saved in your browser (per device).</li>
 </ol>
 <p style="margin-top:8px;font-size:12px;color:#666">Tip: Allow browser notifications when prompted, so you don't miss the end of a session when this tab is in the background.</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -192,7 +192,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -218,7 +218,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });

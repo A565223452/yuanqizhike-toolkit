@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Probability Calculator | YuanQiZhiLe Toolkit</title>
+<title>Probability Calculator | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Calculate probability of single events, multiple events, and combinations. Includes AND/OR probability. Free probability calculator.">
 <meta name="keywords" content="probability calculator, probability, single event, multiple events, and or probability">
 <meta property="og:title" content="Probability Calculator - Free Online Tool">
@@ -112,7 +112,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>Probability Calculator</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Calculate probability of single events, multiple events, and combinations. Includes AND/OR probability. Free probability calculator.</div>
@@ -134,7 +134,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             <option value="0">Dependent</option>
         </select>
     </div>
-    <div class="group"><label>P(A|B) — probability of A given B</label><input type="number" id="pagb" value="0.5" step="0.01" min="0" max="1" style="width:100%;padding:8px"></div>
+    <div class="group"><label>P(A|B) -probability of A given B</label><input type="number" id="pagb" value="0.5" step="0.01" min="0" max="1" style="width:100%;padding:8px"></div>
     <button id="multi" style="padding:10px 20px;background:#10b981;color:#fff;border:none;border-radius:6px;cursor:pointer;margin-top:10px">Calculate Combined</button>
     <div id="result" style="margin-top:12px"></div>
 
@@ -147,19 +147,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -173,7 +173,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 </ol>
 <p style="margin-top:8px;font-size:12px;color:#666">AND = both occur. OR = at least one occurs. Independent: P(A|B) = P(A). Dependent: needs P(A|B). Probabilities are 0-1 (0% to 100%).</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -184,7 +184,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -210,7 +210,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -244,7 +244,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         var fav = parseInt(document.getElementById('fav').value);
         var total = parseInt(document.getElementById('total').value);
         if(isNaN(fav) || isNaN(total) || total < 1){ alert('Enter valid numbers'); return; }
-        if(fav < 0 || fav > total){ alert('Favorable must be 0 ≤ fav ≤ total'); return; }
+        if(fav < 0 || fav > total){ alert('Favorable must be 0 ?fav ?total'); return; }
         var p = fav / total;
         var notP = 1 - p;
         var odds = fav + '/' + total;
@@ -312,7 +312,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         html += '<div style="display:flex;justify-content:space-between;padding:4px 0;font-size:12px"><span>P(neither A nor B)</span><span style="font-weight:bold">' + (1 - pOr).toFixed(4) + '</span></div>';
         html += '</div>';
         html += '<div style="background:#dbeafe;padding:10px;border-radius:6px;font-size:12px;color:#1e40af">';
-        html += '<b>AND</b>: both events occur. <b>OR</b>: at least one event occurs. <b>Independent</b>: P(A|B) = P(A). <b>Dependent</b>: P(A|B) ≠ P(A), must provide P(A|B).';
+        html += '<b>AND</b>: both events occur. <b>OR</b>: at least one event occurs. <b>Independent</b>: P(A|B) = P(A). <b>Dependent</b>: P(A|B) ?P(A), must provide P(A|B).';
         html += '</div>';
         html += '</div>';
         document.getElementById('result').innerHTML = html;

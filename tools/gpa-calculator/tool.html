@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GPA Calculator | YuanQiZhiLe Toolkit</title>
+<title>GPA Calculator | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Calculate GPA with weighted courses. 4.0 scale, +/- grades, semester tracking. Free GPA calculator.">
 <meta name="keywords" content="gpa calculator, grade point average, college gpa, semester gpa, weighted gpa, academic">
 <meta property="og:title" content="GPA Calculator - Free Online Tool">
@@ -112,7 +112,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>GPA Calculator</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Calculate GPA with weighted courses. 4.0 scale, +/- grades, semester tracking. Free GPA calculator.</div>
@@ -145,19 +145,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -169,9 +169,9 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 <li>Optional: enter previous GPA for cumulative.</li>
 <li>Click <b>Calculate GPA</b>.</li>
 </ol>
-<p style="margin-top:8px;font-size:12px;color:#666">4.0 scale: A=4.0, A-=3.7, B+=3.3, B=3.0, etc. Weighted by credit hours. Cumulative GPA combines all semesters. Honors: Summa Cum Laude ≥3.9, Magna ≥3.7, Cum Laude ≥3.5. Most schools require ≥2.0 to graduate.</p>
+<p style="margin-top:8px;font-size:12px;color:#666">4.0 scale: A=4.0, A-=3.7, B+=3.3, B=3.0, etc. Weighted by credit hours. Cumulative GPA combines all semesters. Honors: Summa Cum Laude -.9, Magna -.7, Cum Laude -.5. Most schools require -.0 to graduate.</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -182,7 +182,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -208,7 +208,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -328,7 +328,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         var matched = false;
         honors.forEach(function(h){
             if(!matched && cumGpa >= h.min){
-                html += '<div style="font-size:14px;font-weight:bold;color:' + h.color + '">' + h.name + ' (≥' + h.min.toFixed(1) + ')</div>';
+                html += '<div style="font-size:14px;font-weight:bold;color:' + h.color + '">' + h.name + ' (- + h.min.toFixed(1) + ')</div>';
                 matched = true;
             }
         });
@@ -336,11 +336,11 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         // Tips
         html += '<div style="background:#fef3c7;padding:8px;border-radius:4px;font-size:11px;color:#92400e">';
         html += '<b>GPA tips:</b><br>';
-        html += '• 4.0 = A, 3.0 = B, 2.0 = C (C minimum to pass)<br>';
-        html += '• Weighted by credits — 4-credit course counts more<br>';
-        html += '• Some schools weight AP/IB honors (+1.0)<br>';
-        html += '• Graduation: usually need ≥2.0 cumulative<br>';
-        html += '• Graduate programs often require ≥3.0';
+        html += '?4.0 = A, 3.0 = B, 2.0 = C (C minimum to pass)<br>';
+        html += '?Weighted by credits ?4-credit course counts more<br>';
+        html += '?Some schools weight AP/IB honors (+1.0)<br>';
+        html += '?Graduation: usually need ?.0 cumulative<br>';
+        html += '?Graduate programs often require ?.0';
         html += '</div>';
         html += '</div>';
         document.getElementById('result').innerHTML = html;

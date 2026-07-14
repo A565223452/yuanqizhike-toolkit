@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Headline Analyzer | YuanQiZhiLe Toolkit</title>
+<title>Headline Analyzer | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Analyze headline strength. SEO score, emotional words. Free headline analyzer.">
 <meta name="keywords" content="headline analyzer, headline checker, title analyzer, seo headline, headline score">
 <meta property="og:title" content="Headline Analyzer - Free Online Tool">
@@ -112,7 +112,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>Headline Analyzer</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Analyze headline strength. SEO score, emotional words. Free headline analyzer.</div>
@@ -131,19 +131,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -156,7 +156,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 </ol>
 <p style="margin-top:8px;font-size:12px;color:#666">Ideal headline: 50-60 characters, 6-12 words. Include numbers (boosts CTR by 36%). Use power words (Amazing, Ultimate). Add emotional words. Best formats: How-to, Listicle, Question. Avoid clickbait. Google truncates at ~60 chars in search results.</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -167,7 +167,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -193,7 +193,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -293,11 +293,11 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
         html += '<div style="font-size:12px;font-weight:bold;margin-bottom:6px">Stats:</div>';
         html += '<table style="width:100%;font-size:11px;border-collapse:collapse">';
-        html += '<tr><td style="padding:4px;border-bottom:1px solid #f0f0f0">Characters</td><td style="padding:4px;text-align:right;border-bottom:1px solid #f0f0f0">' + charCount + '</td><td style="padding:4px;text-align:right;border-bottom:1px solid #f0f0f0;color:' + (lengthScore >= 80 ? '#10b981' : '#f59e0b') + '">' + (charCount >= 50 && charCount <= 60 ? '✓' : '⚠') + ' Ideal: 50-60</td></tr>';
-        html += '<tr><td style="padding:4px;border-bottom:1px solid #f0f0f0">Words</td><td style="padding:4px;text-align:right;border-bottom:1px solid #f0f0f0">' + wordCount + '</td><td style="padding:4px;text-align:right;border-bottom:1px solid #f0f0f0;color:' + (wordScore >= 80 ? '#10b981' : '#f59e0b') + '">' + (wordCount >= 6 && wordCount <= 12 ? '✓' : '⚠') + ' Ideal: 6-12</td></tr>';
-        html += '<tr><td style="padding:4px;border-bottom:1px solid #f0f0f0">Power words</td><td style="padding:4px;text-align:right;border-bottom:1px solid #f0f0f0">' + foundPower.length + '</td><td style="padding:4px;text-align:right;border-bottom:1px solid #f0f0f0;color:' + (foundPower.length >= 1 ? '#10b981' : '#f59e0b') + '">' + (foundPower.length >= 1 ? '✓' : '⚠') + ' Use 1+</td></tr>';
-        html += '<tr><td style="padding:4px;border-bottom:1px solid #f0f0f0">Emotional words</td><td style="padding:4px;text-align:right;border-bottom:1px solid #f0f0f0">' + foundEmotional.length + '</td><td style="padding:4px;text-align:right;border-bottom:1px solid #f0f0f0;color:' + (foundEmotional.length >= 1 ? '#10b981' : '#f59e0b') + '">' + (foundEmotional.length >= 1 ? '✓' : '⚠') + ' Use 1+</td></tr>';
-        html += '<tr><td style="padding:4px">Has number</td><td style="padding:4px;text-align:right">' + (hasNumber ? 'Yes' : 'No') + '</td><td style="padding:4px;text-align:right;color:' + (hasNumber ? '#10b981' : '#f59e0b') + '">' + (hasNumber ? '✓' : '⚠') + ' Numbers boost CTR</td></tr>';
+        html += '<tr><td style="padding:4px;border-bottom:1px solid #f0f0f0">Characters</td><td style="padding:4px;text-align:right;border-bottom:1px solid #f0f0f0">' + charCount + '</td><td style="padding:4px;text-align:right;border-bottom:1px solid #f0f0f0;color:' + (lengthScore >= 80 ? '#10b981' : '#f59e0b') + '">' + (charCount >= 50 && charCount <= 60 ? '? : '?) + ' Ideal: 50-60</td></tr>';
+        html += '<tr><td style="padding:4px;border-bottom:1px solid #f0f0f0">Words</td><td style="padding:4px;text-align:right;border-bottom:1px solid #f0f0f0">' + wordCount + '</td><td style="padding:4px;text-align:right;border-bottom:1px solid #f0f0f0;color:' + (wordScore >= 80 ? '#10b981' : '#f59e0b') + '">' + (wordCount >= 6 && wordCount <= 12 ? '? : '?) + ' Ideal: 6-12</td></tr>';
+        html += '<tr><td style="padding:4px;border-bottom:1px solid #f0f0f0">Power words</td><td style="padding:4px;text-align:right;border-bottom:1px solid #f0f0f0">' + foundPower.length + '</td><td style="padding:4px;text-align:right;border-bottom:1px solid #f0f0f0;color:' + (foundPower.length >= 1 ? '#10b981' : '#f59e0b') + '">' + (foundPower.length >= 1 ? '? : '?) + ' Use 1+</td></tr>';
+        html += '<tr><td style="padding:4px;border-bottom:1px solid #f0f0f0">Emotional words</td><td style="padding:4px;text-align:right;border-bottom:1px solid #f0f0f0">' + foundEmotional.length + '</td><td style="padding:4px;text-align:right;border-bottom:1px solid #f0f0f0;color:' + (foundEmotional.length >= 1 ? '#10b981' : '#f59e0b') + '">' + (foundEmotional.length >= 1 ? '? : '?) + ' Use 1+</td></tr>';
+        html += '<tr><td style="padding:4px">Has number</td><td style="padding:4px;text-align:right">' + (hasNumber ? 'Yes' : 'No') + '</td><td style="padding:4px;text-align:right;color:' + (hasNumber ? '#10b981' : '#f59e0b') + '">' + (hasNumber ? '? : '?) + ' Numbers boost CTR</td></tr>';
         html += '</table>';
         html += '</div>';
         // Structure type
@@ -352,7 +352,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!isHowTo && !isList && !isWhy) suggestions.push('Consider "How to" or listicle format.');
         if(wordCount > 14) suggestions.push('Too many words. Aim for 6-12.');
         if(suggestions.length === 0) suggestions.push('Great headline! All checks passed.');
-        suggestions.forEach(function(s){ html += '<div style="margin-bottom:4px">• ' + s + '</div>'; });
+        suggestions.forEach(function(s){ html += '<div style="margin-bottom:4px">?' + s + '</div>'; });
         html += '</div>';
         html += '</div>';
         document.getElementById('result').innerHTML = html;

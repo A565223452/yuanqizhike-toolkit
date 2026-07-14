@@ -1,0 +1,200 @@
+[
+  {
+    "category": "Beauty & Fashion",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Body Measurement Tracker",
+    "desc": "Track your body measurements over time including chest, waist, hips, arms, and thighs. Free online fitness progress tracker with history and health indicators.",
+    "features": [
+      "Save measurement entries",
+      "View change over time",
+      "Calculate waist-hip ratio",
+      "Track multiple body parts",
+      "Local data storage"
+    ],
+    "detailUrl": "/tools/body-measurement-tracker/index.html",
+    "zipUrl": "/assets/zip-packages/beauty/body-measurement-tracker.zip"
+  },
+  {
+    "category": "Beauty & Fashion",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Closet Organizer",
+    "desc": "Organize your wardrobe digitally with our free Closet Organizer. Add items by category, color, and name, then generate random outfit suggestions. Perfect for capsule wardrobe planning and daily outfit inspiration.",
+    "features": [
+      "Add items by category",
+      "Color and name tracking",
+      "Random outfit generator",
+      "Local storage persistence",
+      "Capsule wardrobe support"
+    ],
+    "detailUrl": "/tools/closet-organizer/index.html",
+    "zipUrl": "/assets/zip-packages/beauty/closet-organizer.zip"
+  },
+  {
+    "category": "Beauty & Fashion",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Fabric Yardage Calculator",
+    "desc": "Calculate fabric needed for sewing projects with our free online tool. Supports dresses, shirts, quilts, curtains and more. Get yardage in yards, meters and inches.",
+    "features": [
+      "Project type selection",
+      "Size and width options",
+      "Yardage and meter display",
+      "Extra fabric allowance",
+      "Quilt and curtain support"
+    ],
+    "detailUrl": "/tools/fabric-yardage-calc/index.html",
+    "zipUrl": "/assets/zip-packages/beauty/fabric-yardage-calc.zip"
+  },
+  {
+    "category": "Beauty & Fashion",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Hair Color Developer Calculator",
+    "desc": "Calculate the perfect hair color to developer ratio for your desired lift level. Our free online tool recommends the correct developer volume and provides a precise mixing recipe for salon-quality results.",
+    "features": [
+      "Color-developer ratio calculation",
+      "Developer volume recommendation",
+      "Mixing recipe with grams",
+      "Lift level analysis",
+      "Multiple ratio support",
+      "Natural to target level input"
+    ],
+    "detailUrl": "/tools/hair-color-developer/index.html",
+    "zipUrl": "/assets/zip-packages/beauty/hair-color-developer.zip"
+  },
+  {
+    "category": "Beauty & Fashion",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Hair Color Predictor",
+    "desc": "Predict your hair dye results with our free online hair color calculator. Enter natural hair level, desired level, and hair condition to get developer volume, method, and processing time recommendations. Perfect for DIY hair coloring planning.",
+    "features": [
+      "Natural level input",
+      "Desired level selector",
+      "Hair condition options",
+      "Developer volume recommendation",
+      "Processing time estimate",
+      "Color journey visualization"
+    ],
+    "detailUrl": "/tools/hair-color-predictor/index.html",
+    "zipUrl": "/assets/zip-packages/beauty/hair-color-predictor.zip"
+  },
+  {
+    "category": "Beauty & Fashion",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Hairstyle Length Calculator",
+    "desc": "Find the perfect hairstyle length for your face shape and hair type. Calculate growth time to reach your desired length with adjustable growth rate and trim frequency. Free online hairstyle length calculator.",
+    "features": [
+      "Face shape recommendations",
+      "Hair type shrinkage adjustment",
+      "Growth time estimation",
+      "Trim frequency calculation",
+      "Styling tips for each face shape"
+    ],
+    "detailUrl": "/tools/hairstyle-length-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/beauty/hairstyle-length-calculator.zip"
+  },
+  {
+    "category": "Beauty & Fashion",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Jewelry Size Calculator",
+    "desc": "Find your perfect ring, bracelet, necklace, and bangle size with our free online jewelry size calculator. Convert between US, UK, EU, and Asian ring sizes easily. Accurate measurements for all jewelry types.",
+    "features": [
+      "Ring size conversion",
+      "Bracelet and necklace sizing",
+      "Knuckle adjustment",
+      "International size charts",
+      "Easy measurement input"
+    ],
+    "detailUrl": "/tools/jewelry-size-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/beauty/jewelry-size-calculator.zip"
+  },
+  {
+    "category": "Beauty & Fashion",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Laundry Symbol Guide",
+    "desc": "Decode laundry care symbols with our free online guide. Quickly identify washing, bleaching, drying, ironing, and dry cleaning icons to properly care for your clothes and avoid fabric damage.",
+    "features": [
+      "Decode washing symbols",
+      "Identify care instructions",
+      "Learn drying methods",
+      "Understand ironing settings",
+      "Avoid fabric damage",
+      "Free online reference"
+    ],
+    "detailUrl": "/tools/laundry-symbol-guide/index.html",
+    "zipUrl": "/assets/zip-packages/beauty/laundry-symbol-guide.zip"
+  },
+  {
+    "category": "Beauty & Fashion",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Makeup Shade Matcher",
+    "desc": "Find your perfect foundation shade match across top beauty brands like MAC, Fenty, NARS, Maybelline, and L'Oréal. Our free online shade matcher converts your current shade to equivalent shades in other brands based on undertone and depth.",
+    "features": [
+      "Cross-brand shade matching",
+      "Undertone and depth analysis",
+      "Supports 5 major brands",
+      "Instant shade conversion",
+      "Free online tool"
+    ],
+    "detailUrl": "/tools/makeup-shade-matcher/index.html",
+    "zipUrl": "/assets/zip-packages/beauty/makeup-shade-matcher.zip"
+  },
+  {
+    "category": "Beauty & Fashion",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Nail Polish Mixer",
+    "desc": "A free offline tool for nail polish mixer calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/nail-polish-mixer/index.html",
+    "zipUrl": "/assets/zip-packages/beauty/nail-polish-mixer.zip"
+  },
+  {
+    "category": "Beauty & Fashion",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Outfit Color Matcher",
+    "desc": "A free offline tool for outfit color matcher calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/outfit-color-matcher/index.html",
+    "zipUrl": "/assets/zip-packages/beauty/outfit-color-matcher.zip"
+  },
+  {
+    "category": "Beauty & Fashion",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Outfit Planner",
+    "desc": "A free offline tool for outfit planner calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/outfit-planner/index.html",
+    "zipUrl": "/assets/zip-packages/beauty/outfit-planner.zip"
+  },
+  {
+    "category": "Beauty & Fashion",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Perfume Dilution Calculator",
+    "desc": "A free offline tool for perfume dilution calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/perfume-dilution-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/beauty/perfume-dilution-calculator.zip"
+  },
+  {
+    "category": "Beauty & Fashion",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Perfume Finder",
+    "desc": "A free offline tool for perfume finder calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/perfume-finder/index.html",
+    "zipUrl": "/assets/zip-packages/beauty/perfume-finder.zip"
+  }
+]

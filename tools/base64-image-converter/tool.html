@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Base64 Image Converter | YuanQiZhiLe Toolkit</title>
+<title>Base64 Image Converter | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Convert images to Base64 data URI for inline embedding. Also decodes Base64 back to image. Optimizes HTML/CSS by reducing HTTP requests. Free Base64 image converter.">
 <meta name="keywords" content="base64 image, image to base64, base64 to image, data uri, inline image, base64 converter, image encoder">
 <meta property="og:title" content="Base64 Image Converter - Free Online Tool">
@@ -112,7 +112,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>Base64 Image Converter</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Convert images to Base64 data URI for inline embedding. Also decodes Base64 back to image. Optimizes HTML/CSS by reducing HTTP requests. Free Base64 image converter.</div>
@@ -152,19 +152,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -176,9 +176,9 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 <li>Copy as <b>Data URI</b>, <b>CSS background</b>, or <b>HTML img tag</b>.</li>
 <li>To decode, paste a Base64 data URI in the decode box.</li>
 </ol>
-<p style="margin-top:8px;font-size:12px;color:#666">All processing happens in your browser — no upload to server. Base64 increases file size by ~33%. Recommended for images under 4KB. For larger images, use CDN with HTTP/2 multiplexing instead.</p>
+<p style="margin-top:8px;font-size:12px;color:#666">All processing happens in your browser &#8212; no upload to server. Base64 increases file size by ~33%. Recommended for images under 4KB. For larger images, use CDN with HTTP/2 multiplexing instead.</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -189,7 +189,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -215,7 +215,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -288,17 +288,17 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             }
             var tips = '<div style="background:#f0f9ff;border:1px solid #bae6fd;padding:12px;border-radius:6px;margin-top:12px;font-size:12px">';
             tips += '<b>📋 When to use Base64 images</b><br>';
-            tips += '✓ Small icons and logos (&lt; 4KB)<br>';
-            tips += '✓ Email signatures and newsletters<br>';
-            tips += '✓ Single-file HTML deliverables<br>';
-            tips += '✓ CSS sprites in data URIs<br>';
-            tips += '✗ Large photos (use CDN + HTTP/2 instead)<br>';
-            tips += '✗ Repeated images across pages (caching disabled)';
+            tips += '?Small icons and logos (&lt; 4KB)<br>';
+            tips += '?Email signatures and newsletters<br>';
+            tips += '?Single-file HTML deliverables<br>';
+            tips += '?CSS sprites in data URIs<br>';
+            tips += '?Large photos (use CDN + HTTP/2 instead)<br>';
+            tips += '?Repeated images across pages (caching disabled)';
             tips += '</div>';
             document.getElementById('result').innerHTML = advice + tips;
         };
         reader.onerror = function(){
-            document.getElementById('result').innerHTML = '<div style="background:#fee2e2;border:1px solid #fecaca;padding:12px;border-radius:6px"><b>❌ Error reading file</b></div>';
+            document.getElementById('result').innerHTML = '<div style="background:#fee2e2;border:1px solid #fecaca;padding:12px;border-radius:6px"><b>?Error reading file</b></div>';
         };
         reader.readAsDataURL(file);
     }
@@ -312,7 +312,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             if(input.match(/^([A-Za-z0-9+/]+={0,2})$/)){
                 input = 'data:image/png;base64,' + input;
             } else {
-                document.getElementById('decodedPreview').innerHTML = '<div style="background:#fee2e2;border:1px solid #fecaca;padding:12px;border-radius:6px"><b>❌ Invalid format</b><br>Expected data:image/...;base64,...</div>';
+                document.getElementById('decodedPreview').innerHTML = '<div style="background:#fee2e2;border:1px solid #fecaca;padding:12px;border-radius:6px"><b>?Invalid format</b><br>Expected data:image/...;base64,...</div>';
                 return;
             }
         }
@@ -336,7 +336,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             document.getElementById('decodedPreview').innerHTML = html;
         };
         img.onerror = function(){
-            document.getElementById('decodedPreview').innerHTML = '<div style="background:#fee2e2;border:1px solid #fecaca;padding:12px;border-radius:6px"><b>❌ Invalid image data</b><br>Could not decode the Base64 string as an image.</div>';
+            document.getElementById('decodedPreview').innerHTML = '<div style="background:#fee2e2;border:1px solid #fecaca;padding:12px;border-radius:6px"><b>?Invalid image data</b><br>Could not decode the Base64 string as an image.</div>';
         };
         img.src = input;
     }
@@ -347,7 +347,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         navigator.clipboard.writeText(text).then(function(){
             var btn = event.target;
             var old = btn.textContent;
-            btn.textContent = '✓ Copied';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
             setTimeout(function(){ btn.textContent = old; }, 1500);
         });
     }

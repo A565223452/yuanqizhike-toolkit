@@ -1,0 +1,107 @@
+[
+  {
+    "category": "Real Estate Tools",
+    "icon": "/assets/icons/real-estate-1.svg",
+    "title": "Solar Panel Calculator",
+    "desc": "Estimate solar panel savings, ROI, and payback period. Calculate lifetime benefits, CO2 reduction, and system costs based on your electricity usage and local sun hours.",
+    "features": [
+      "Calculate ROI and payback",
+      "Estimate lifetime savings",
+      "CO2 reduction tracking",
+      "System cost analysis",
+      "Customize sun hours and efficiency"
+    ],
+    "detailUrl": "/tools/solar-panel-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/real-estate/solar-panel-calculator.zip"
+  },
+  {
+    "category": "Real Estate Tools",
+    "icon": "/assets/icons/real-estate-1.svg",
+    "title": "Closing Cost Estimator",
+    "desc": "Estimate closing costs when buying a home. Calculate fees, taxes, and prepaid expenses. Free closing cost calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/real-estate/closing-cost-estimator.zip"
+  },
+  {
+    "category": "Real Estate Tools",
+    "icon": "/assets/icons/real-estate-1.svg",
+    "title": "Real Estate Commission Calculator",
+    "desc": "Calculate real estate commission. Agent fees, split commissions. Free commission calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/real-estate/commission-calculator.zip"
+  },
+  {
+    "category": "Real Estate Tools",
+    "icon": "/assets/icons/real-estate-1.svg",
+    "title": "HOA Fee Calculator",
+    "desc": "Calculate HOA fees and their impact on housing costs. Free HOA calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/real-estate/hoa-fee-calculator.zip"
+  },
+  {
+    "category": "Real Estate Tools",
+    "icon": "/assets/icons/real-estate-1.svg",
+    "title": "Home Appreciation Calculator",
+    "desc": "Project home value appreciation over time. Calculate future home value with custom appreciation rate. Free home value calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/real-estate/home-appreciation-calculator.zip"
+  },
+  {
+    "category": "Real Estate Tools",
+    "icon": "/assets/icons/real-estate-1.svg",
+    "title": "Mortgage Affordability Calculator",
+    "desc": "Calculate how much house you can afford based on income, debts, and down payment. Uses DTI ratio rules. Free mortgage affordability calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/real-estate/mortgage-affordability-calculator.zip"
+  },
+  {
+    "category": "Real Estate Tools",
+    "icon": "/assets/icons/real-estate-1.svg",
+    "title": "Price per Square Foot Calculator",
+    "desc": "Calculate price per square foot or square meter for real estate. Compare property values fairly. Free price per sq ft calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/real-estate/price-per-square-foot.zip"
+  },
+  {
+    "category": "Real Estate Tools",
+    "icon": "/assets/icons/real-estate-1.svg",
+    "title": "Property Tax Calculator",
+    "desc": "Calculate property tax based on assessed value. Free property tax calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/real-estate/property-tax-calculator.zip"
+  },
+  {
+    "category": "Real Estate Tools",
+    "icon": "/assets/icons/real-estate-1.svg",
+    "title": "Rental Deposit Calculator",
+    "desc": "Calculate rental deposits and interest. Free security deposit calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/real-estate/rental-deposit-calculator.zip"
+  },
+  {
+    "category": "Real Estate Tools",
+    "icon": "/assets/icons/real-estate-1.svg",
+    "title": "Rental Yield Calculator",
+    "desc": "Calculate rental yield. Gross yield, net yield, cash flow. Free rental yield calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/real-estate/rental-yield-calculator.zip"
+  },
+  {
+    "category": "Real Estate Tools",
+    "icon": "/assets/icons/real-estate-1.svg",
+    "title": "Square Feet to Square Meters",
+    "desc": "Convert square feet to square meters and back. Essential for international real estate. Free sq ft to sq m area converter.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/real-estate/sqft-to-sqm-converter.zip"
+  }
+]

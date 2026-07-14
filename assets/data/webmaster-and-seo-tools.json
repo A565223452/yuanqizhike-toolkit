@@ -1,0 +1,249 @@
+[
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "assets/icons/business-34.svg",
+    "title": "Amazon Keyword Miner",
+    "desc": "Discover high-traffic Amazon keywords for SEO optimization. Analyze competitors and export data locally without server uploads.",
+    "features": [
+      "Mine High-Traffic Keywords",
+      "Analyze Competitor Data",
+      "Estimate Search Volume",
+      "Export Keyword Lists",
+      "Filter By Relevance",
+      "100% Private Local Processing"
+    ],
+    "detailUrl": "/tools/amazon-keyword-miner/index.html",
+    "zipUrl": "/assets/zip-packages/seo/amazon-keyword-miner.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "assets/icons/business-3.svg",
+    "title": "Amazon Title Optimizer",
+    "desc": "Optimize Amazon product titles for better SEO, check character limits, and improve keyword placement for higher conversions.",
+    "features": [
+      "SEO Optimization",
+      "Character Limit Check",
+      "Keyword Placement",
+      "Readability Analysis",
+      "A/B Testing Support"
+    ],
+    "detailUrl": "/tools/amazon-title-optimizer/index.html",
+    "zipUrl": "/assets/zip-packages/seo/amazon-title-optimizer.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-2.svg",
+    "title": "Keyword Density Checker",
+    "desc": "Analyze keyword density and frequency in your content for better SEO optimization. Identify over-optimized keywords and improve your search engine rankings.",
+    "features": [
+      "Real-time density analysis",
+      "Top keywords highlighted",
+      "SEO optimization tips",
+      "Word frequency count"
+    ],
+    "detailUrl": "/tools/keyword-density-checker/index.html",
+    "zipUrl": "/assets/zip-packages/seo/keyword-density-checker.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-4.svg",
+    "title": "Open Graph Generator",
+    "desc": "Generate optimized Open Graph meta tags for Facebook, LinkedIn, and Twitter. Preview social share cards instantly and ensure your links look perfect on all platforms.",
+    "features": [
+      "Social media preview",
+      "Auto-generate OG tags",
+      "Multi-platform support",
+      "Image dimension tips"
+    ],
+    "detailUrl": "/tools/open-graph-generator/index.html",
+    "zipUrl": "/assets/zip-packages/seo/open-graph-generator.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-3.svg",
+    "title": "Schema Markup Generator",
+    "desc": "Generate valid JSON-LD schema markup for Articles, Products, FAQs, Local Businesses, and Persons. Boost SEO with structured data and enhance Google Rich Results visibility effortlessly.",
+    "features": [
+      "JSON-LD generation",
+      "Multiple schema types",
+      "Rich results ready",
+      "Easy copy output"
+    ],
+    "detailUrl": "/tools/schema-markup-generator/index.html",
+    "zipUrl": "/assets/zip-packages/seo/schema-markup-generator.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-5.svg",
+    "title": "SERP Snippet Preview",
+    "desc": "Preview how your website appears in Google search results. Test title length, meta description truncation, and URL display for both desktop and mobile views to optimize click-through rates.",
+    "features": [
+      "Real-time SERP preview",
+      "Desktop and mobile views",
+      "Title length checker",
+      "Meta description analyzer",
+      "Visual truncation indicators",
+      "Optimization tips included"
+    ],
+    "detailUrl": "/tools/serp-snippet-preview/index.html",
+    "zipUrl": "/assets/zip-packages/seo/serp-snippet-preview.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-6.svg",
+    "title": "YouTube Tag Generator",
+    "desc": "Boost your video visibility with this free YouTube tag generator. Create SEO-optimized, high-ranking tags based on your title and niche to attract more views and subscribers.",
+    "features": [
+      "Auto-generate relevant tags",
+      "Niche-specific suggestions",
+      "Copy comma-separated tags",
+      "Optimize for YouTube SEO"
+    ],
+    "detailUrl": "/tools/youtube-tag-generator/index.html",
+    "zipUrl": "/assets/zip-packages/seo/youtube-tag-generator.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "Article Schema Generator",
+    "desc": "Generate Article Schema.org JSON-LD markup for news articles, blog posts. Improves rich snippets and SEO. Free Article Schema generator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/article-schema-generator.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "Backlink Spam Checker",
+    "desc": "Analyze backlinks for spam signals. Check domain reputation, link quality indicators, and identify potentially toxic backlinks.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/backlink-checker.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "Breadcrumb Schema Generator",
+    "desc": "Generate BreadcrumbList Schema.org JSON-LD markup for breadcrumbs. Improves search appearance with breadcrumb rich snippets. Free Breadcrumb Schema generator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/breadcrumb-schema-generator.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "CORS Checker",
+    "desc": "Check if a URL supports Cross-Origin Resource Sharing (CORS). Test preflight OPTIONS requests and verify Access-Control headers.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/cors-checker.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "DNS Lookup",
+    "desc": "Look up DNS records for any domain. Check A, AAAA, MX, TXT, NS, CNAME, and SOA records using DNS-over-HTTPS.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/dns-lookup.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "Domain Filing Checker",
+    "desc": "Check domain ICP filing/registration status. Verify if a domain is registered for hosting in China and view filing details.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/domain-filing-checker.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "FAQ Schema Generator",
+    "desc": "Generate FAQ structured data (Schema.org) for rich results in Google. Add Q&A schema to your pages for better SEO. Free FAQ schema generator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/faq-schema-generator.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "Hreflang Tag Generator",
+    "desc": "Generate hreflang tags for international SEO. Tell Google which language/region versions of your pages exist. Free hreflang tag generator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/hreflang-tag-generator.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "IP Geolocation Lookup",
+    "desc": "Look up geolocation and ASN information for any IP address. Find country, city, ISP, and organization details.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/ip-geolocation.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "Open Graph Preview Tool",
+    "desc": "Preview how your website will look when shared on social media (Facebook, Twitter, LinkedIn). Enter OG tags and see live preview cards.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/og-preview.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "SEO Meta Tag Generator",
+    "desc": "Free SEO meta tag generator. Create title, description, Open Graph, Twitter Card, Schema.org markup. Local, no upload.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/seo-meta-generator.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "XML Sitemap Generator",
+    "desc": "Free online XML sitemap generator. Create sitemaps for Google, Bing, and other search engines. Local, no upload.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/sitemap-generator.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "Website Speed Test",
+    "desc": "Measure website load time from your browser. Test DNS resolution, connection, and content download speed for any URL.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/speed-test.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "SSL Certificate Checker",
+    "desc": "Check SSL/TLS certificate details for any domain. View issuer, validity dates, SAN entries, and certificate chain.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/ssl-checker.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "Structured Data Validator",
+    "desc": "Validate Schema.org JSON-LD structured data. Check for required fields, common errors, and Google rich results eligibility. Free structured data validator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/structured-data-validator.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "UTM Parameter Builder",
+    "desc": "Generate UTM tracking parameters for Google Analytics 4 (GA4). Build campaign URLs for email, social, ads. Free online UTM builder.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/utm-builder.zip"
+  }
+]

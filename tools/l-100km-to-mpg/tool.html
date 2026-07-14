@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>L/100km to MPG Converter | YuanQiZhiLe Toolkit</title>
+<title>L/100km to MPG Converter | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Convert fuel consumption between L/100km and MPG. Bidirectional conversion for international car comparisons. Free L/100km to MPG converter.">
 <meta name="keywords" content="l 100km to mpg, liters per 100km to mpg, mpg to l 100km, fuel conversion, metric imperial, car fuel economy">
 <meta property="og:title" content="L/100km to MPG Converter - Free Online Tool">
@@ -112,13 +112,13 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>L/100km to MPG Converter</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Convert fuel consumption between L/100km and MPG. Bidirectional conversion for international car comparisons. Free L/100km to MPG converter.</div>
     <div style="display:flex;gap:6px;margin-bottom:12px">
-        <button id="tab1" class="tab active" style="flex:1;padding:8px;background:#6366f1;color:#fff;border:none;border-radius:4px;cursor:pointer">L/100km → MPG</button>
-        <button id="tab2" class="tab" style="flex:1;padding:8px;background:#f3f4f6;border:none;border-radius:4px;cursor:pointer">MPG → L/100km</button>
+        <button id="tab1" class="tab active" style="flex:1;padding:8px;background:#6366f1;color:#fff;border:none;border-radius:4px;cursor:pointer">L/100km &#8212; MPG</button>
+        <button id="tab2" class="tab" style="flex:1;padding:8px;background:#f3f4f6;border:none;border-radius:4px;cursor:pointer">MPG &#8212; L/100km</button>
     </div>
     <div class="group">
         <label id="inputLabel">Liters per 100km</label>
@@ -135,32 +135,32 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
     <div class="instructions">
         <h2>How to Use</h2>
 <ol>
-<li>Switch direction: <b>L/100km → MPG</b> or <b>MPG → L/100km</b>.</li>
-<li>Enter value — instant conversion.</li>
+<li>Switch direction: <b>L/100km &#8212; MPG</b> or <b>MPG &#8212; L/100km</b>.</li>
+<li>Enter value &#8212; instant conversion.</li>
 <li>See MPG (US), MPG (UK), km/L equivalents.</li>
 </ol>
-<p style="margin-top:8px;font-size:12px;color:#666">Lower L/100km = better fuel economy. Higher MPG = better. EU/Asia use L/100km; US/UK use MPG. Note: UK gallon (4.546 L) is larger than US gallon (3.785 L), so MPG numbers differ — 30 US MPG = 36 UK MPG.</p>
+<p style="margin-top:8px;font-size:12px;color:#666">Lower L/100km = better fuel economy. Higher MPG = better. EU/Asia use L/100km; US/UK use MPG. Note: UK gallon (4.546 L) is larger than US gallon (3.785 L), so MPG numbers differ ~ 30 US MPG = 36 UK MPG.</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -171,7 +171,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -197,7 +197,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -284,11 +284,11 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         html += '</table></div>';
         html += '<div style="margin-top:12px;padding:12px;background:#f0f9ff;border-radius:6px;font-size:13px;line-height:1.6">';
         html += '<b>💡 Conversion facts:</b><br>';
-        html += '• Formula: MPG = 235.215 / (L/100km)<br>';
-        html += '• US gallon = 3.785 L; UK gallon = 4.546 L<br>';
-        html += '• Lower L/100km = better; higher MPG = better<br>';
-        html += '• EU uses L/100km; US uses MPG; Japan uses km/L<br>';
-        html += '• 6 L/100km ≈ 39 MPG — typical for compact cars';
+        html += '?Formula: MPG = 235.215 / (L/100km)<br>';
+        html += '?US gallon = 3.785 L; UK gallon = 4.546 L<br>';
+        html += '?Lower L/100km = better; higher MPG = better<br>';
+        html += '?EU uses L/100km; US uses MPG; Japan uses km/L<br>';
+        html += '?6 L/100km ?39 MPG ?typical for compact cars';
         html += '</div>';
         document.getElementById('result').innerHTML = html;
     }

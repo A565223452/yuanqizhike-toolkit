@@ -1,0 +1,412 @@
+[
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Average Calculator",
+    "desc": "Calculate the average of any set of numbers instantly. Our free online average calculator also finds the sum, median, variance, and standard deviation for your statistical data analysis.",
+    "features": [
+      "Instant average calculation",
+      "Calculates sum and count",
+      "Finds median and range",
+      "Computes variance and standard deviation",
+      "Supports multiple input formats"
+    ],
+    "detailUrl": "/tools/average-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/math/average-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Basic Calculator",
+    "desc": "Perform quick arithmetic with our free basic online calculator. Features a clean interface, large buttons, and full keyboard support for addition, subtraction, multiplication, and division.",
+    "features": [
+      "Basic arithmetic operations",
+      "Full keyboard support",
+      "Calculate percentages easily",
+      "Clean responsive interface",
+      "Dark mode support"
+    ],
+    "detailUrl": "/tools/basic-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/math/basic-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Binomial Distribution Calculator",
+    "desc": "Calculate binomial distribution probabilities instantly. Compute mean, variance, PMF, CDF, and standard deviation for any number of trials and success probability.",
+    "features": [
+      "Instant probability calculation",
+      "Mean and variance output",
+      "PMF and CDF results",
+      "Interactive distribution chart",
+      "Probability table view",
+      "Normal approximation support"
+    ],
+    "detailUrl": "/tools/binomial-distribution-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/math/binomial-distribution-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Chi-Square Test Calculator",
+    "desc": "Calculate chi-square statistic, p-value, and degrees of freedom for goodness-of-fit and independence tests. Free online statistics calculator for hypothesis testing.",
+    "features": [
+      "Goodness-of-fit test",
+      "Independence test support",
+      "Accurate p-value calculation",
+      "Degrees of freedom output",
+      "Contingency table input",
+      "Adjustable significance level"
+    ],
+    "detailUrl": "/tools/chi-square-test-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/math/chi-square-test-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Circle Calculator",
+    "desc": "Calculate circle area, circumference, diameter, and radius from any single value. Includes bonus sphere volume and surface area calculations with visual diagrams.",
+    "features": [
+      "Instant circle property calculation",
+      "Radius, diameter, circumference, area",
+      "Bonus sphere volume and surface",
+      "Visual circle diagram",
+      "Step-by-step formula breakdown",
+      "Free online geometry tool"
+    ],
+    "detailUrl": "/tools/circle-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/math/circle-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Cone Calculator",
+    "desc": "Calculate cone volume, surface area, slant height, and missing dimensions instantly. Free online cone geometry calculator for students and engineers.",
+    "features": [
+      "Instant volume calculation",
+      "Surface area and slant height",
+      "Solve missing dimensions",
+      "Detailed formula breakdown",
+      "Free online geometry tool"
+    ],
+    "detailUrl": "/tools/cone-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/math/cone-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Cube Calculator",
+    "desc": "Calculate cube volume, surface area, face diagonal, and space diagonal instantly. Free online cube geometry calculator for students and professionals.",
+    "features": [
+      "Calculate volume and surface",
+      "Find face and space diagonals",
+      "Solve side from properties",
+      "Detailed formula breakdown",
+      "Dark mode support"
+    ],
+    "detailUrl": "/tools/cube-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/math/cube-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Cylinder Calculator",
+    "desc": "Calculate cylinder volume, surface area, and lateral area instantly. Find missing radius or height with our free online geometry calculator.",
+    "features": [
+      "Calculate volume and area",
+      "Solve missing dimensions",
+      "Detailed formula breakdown",
+      "Instant calculation results",
+      "Free and easy to use"
+    ],
+    "detailUrl": "/tools/cylinder-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/math/cylinder-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Derivative Calculator",
+    "desc": "Calculate numerical derivatives of functions instantly. Supports first, second, and third order derivatives with adjustable step sizes for accurate results.",
+    "features": [
+      "First to third order derivatives",
+      "Central difference method",
+      "Adjustable step size",
+      "Function plot visualization",
+      "Supports trigonometric functions"
+    ],
+    "detailUrl": "/tools/derivative-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/math/derivative-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Factorial Calculator",
+    "desc": "Calculate factorial n! for any non-negative integer up to 1000. View step-by-step calculations, digit counts, trailing zeros, and Stirling approximations instantly.",
+    "features": [
+      "Supports large numbers up to 1000!",
+      "Step-by-step calculation view",
+      "Count digits and trailing zeros",
+      "Stirling approximation included",
+      "Related factorials table",
+      "Free online math tool"
+    ],
+    "detailUrl": "/tools/factorial-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/math/factorial-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Fraction Calculator",
+    "desc": "Add, subtract, multiply, and divide fractions with our free online fraction calculator. Simplify fractions and convert them to decimals instantly with step-by-step solutions.",
+    "features": [
+      "Add subtract multiply divide",
+      "Simplify fractions instantly",
+      "Convert to decimal percentage",
+      "Step-by-step calculation guide",
+      "Mixed number conversion",
+      "Free online tool"
+    ],
+    "detailUrl": "/tools/fraction-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/math/fraction-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Logarithm Calculator",
+    "desc": "A free offline tool for logarithm calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/logarithm-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/math/logarithm-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Logarithm Calculator Extended",
+    "desc": "A free offline tool for logarithm calculator extended calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/logarithm-calculator-extended/index.html",
+    "zipUrl": "/assets/zip-packages/math/logarithm-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Normal Distribution Calculator",
+    "desc": "A free offline tool for normal distribution calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/normal-distribution-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/math/normal-distribution-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Percentage Calculator Math",
+    "desc": "A free offline tool for percentage calculator math calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/percentage-calculator-math/index.html",
+    "zipUrl": "/assets/zip-packages/math/percentage-calculator-math.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Percentage Change Calculator",
+    "desc": "A free offline tool for percentage change calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/percentage-change-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/math/percentage-change-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Poisson Distribution Calculator",
+    "desc": "A free offline tool for poisson distribution calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/poisson-distribution-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/math/poisson-distribution-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Prime Number Checker",
+    "desc": "A free offline tool for prime number checker calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/prime-number-checker/index.html",
+    "zipUrl": "/assets/zip-packages/math/prime-number-checker.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Probability Calculator",
+    "desc": "A free offline tool for probability calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/probability-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/math/probability-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Proportion Calculator",
+    "desc": "A free offline tool for proportion calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/proportion-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/math/proportion-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Pythagorean Theorem Calculator",
+    "desc": "A free offline tool for pythagorean theorem calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/pythagorean-theorem-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/math/pythagorean-theorem-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Range Calculator",
+    "desc": "A free offline tool for range calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/range-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/math/range-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Ratio Calculator",
+    "desc": "A free offline tool for ratio calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/ratio-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/math/ratio-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Scientific Calculator",
+    "desc": "A free offline tool for scientific calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/scientific-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/math/scientific-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Sphere Calculator",
+    "desc": "A free offline tool for sphere calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/sphere-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/math/sphere-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Standard Deviation Calculator",
+    "desc": "A free offline tool for standard deviation calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/standard-deviation-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/math/standard-deviation-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Statistics Calculator",
+    "desc": "A free offline tool for statistics calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/statistics-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/math/statistics-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "T Test Calculator",
+    "desc": "A free offline tool for t test calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/t-test-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/math/t-test-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Triangle Calculator",
+    "desc": "A free offline tool for triangle calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/triangle-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/math/triangle-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Variance Calculator",
+    "desc": "A free offline tool for variance calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/variance-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/math/variance-calculator.zip"
+  },
+  {
+    "category": "Math & Science",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Math Practice Generator",
+    "desc": "A free offline tool for math practice generator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/math-practice-generator/index.html",
+    "zipUrl": "/assets/zip-packages/math/math-practice-generator.zip"
+  }
+]

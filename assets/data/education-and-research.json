@@ -1,0 +1,324 @@
+[
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Final Grade Calculator",
+    "desc": "Calculate your final course grade from weighted components like assignments and exams. Reverse-calculate the score needed on your final exam to reach your target overall grade.",
+    "features": [
+      "Weighted grade calculation",
+      "Target final exam score",
+      "Multiple grade components",
+      "Letter grade reference",
+      "Real-time overall updates",
+      "Dark mode support"
+    ],
+    "detailUrl": "/tools/final-grade-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/education/final-grade-calculator.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Roman Numeral Converter",
+    "desc": "A free offline tool for roman numeral converter calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/roman-numeral-converter/index.html",
+    "zipUrl": "/assets/zip-packages/education/roman-numeral-converter.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "CGPA Calculator",
+    "desc": "Calculate your Cumulative Grade Point Average (CGPA) across multiple semesters. Track your GPA, total credits, and academic performance easily with our free online tool.",
+    "features": [
+      "Multiple semester tracking",
+      "Supports 4.0 and 10.0 scales",
+      "Automatic CGPA calculation",
+      "Semester breakdown table",
+      "Class and honors indicator"
+    ],
+    "detailUrl": "/tools/cgpa-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/education/cgpa-calculator.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Country Facts Lookup",
+    "desc": "Discover quick facts about world countries including capitals, populations, areas, currencies, and languages. Free online country information lookup tool.",
+    "features": [
+      "Quick country facts lookup",
+      "Capital and population data",
+      "Currency and language info",
+      "Area and density metrics",
+      "Search and filter countries"
+    ],
+    "detailUrl": "/tools/country-facts-lookup/index.html",
+    "zipUrl": "/assets/zip-packages/education/country-facts-lookup.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Flashcard Creator",
+    "desc": "Create and study digital flashcards for any subject. Add front and back text, flip through your deck, and shuffle cards for effective memorization. Save, load, and export your study decks easily.",
+    "features": [
+      "Create custom flashcards",
+      "Flip and shuffle decks",
+      "Save and load decks",
+      "Export deck as JSON",
+      "Study any subject"
+    ],
+    "detailUrl": "/tools/flashcard-creator/index.html",
+    "zipUrl": "/assets/zip-packages/education/flashcard-creator.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Geography Quiz",
+    "desc": "A free offline tool for geography quiz calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/geography-quiz/index.html",
+    "zipUrl": "/assets/zip-packages/education/geography-quiz.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Grade Calculator",
+    "desc": "A free offline tool for grade calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/grade-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/education/grade-calculator.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Grammar Checker Basic",
+    "desc": "A free offline tool for grammar checker basic calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/grammar-checker-basic/index.html",
+    "zipUrl": "/assets/zip-packages/education/grammar-checker-basic.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Language Learning Tracker",
+    "desc": "A free offline tool for language learning tracker calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/language-learning-tracker/index.html",
+    "zipUrl": "/assets/zip-packages/education/language-learning-tracker.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Language Translation Helper",
+    "desc": "A free offline tool for language translation helper calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/language-translation-helper/index.html",
+    "zipUrl": "/assets/zip-packages/education/language-translation-helper.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Mole Calculator",
+    "desc": "A free offline tool for mole calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/mole-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/education/mole-calculator.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Periodic Table Reference",
+    "desc": "A free offline tool for periodic table reference calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/periodic-table-reference/index.html",
+    "zipUrl": "/assets/zip-packages/education/periodic-table-reference.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Quiz Grade Calculator",
+    "desc": "A free offline tool for quiz grade calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/quiz-grade-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/education/quiz-grade-calculator.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Reading Speed Test",
+    "desc": "A free offline tool for reading speed test calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/reading-speed-test/index.html",
+    "zipUrl": "/assets/zip-packages/education/reading-speed-test.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Research Paper Organizer",
+    "desc": "A free offline tool for research paper organizer calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/research-paper-organizer/index.html",
+    "zipUrl": "/assets/zip-packages/education/research-paper-organizer.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Science Fair Idea Gen",
+    "desc": "A free offline tool for science fair idea gen calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/science-fair-idea-gen/index.html",
+    "zipUrl": "/assets/zip-packages/education/science-fair-idea-gen.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Spelling Bee Practice",
+    "desc": "A free offline tool for spelling bee practice calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/spelling-bee-practice/index.html",
+    "zipUrl": "/assets/zip-packages/education/spelling-bee-practice.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Spelling Quiz",
+    "desc": "A free offline tool for spelling quiz calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/spelling-quiz/index.html",
+    "zipUrl": "/assets/zip-packages/education/spelling-quiz.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "State Capital Quiz",
+    "desc": "A free offline tool for state capital quiz calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/state-capital-quiz/index.html",
+    "zipUrl": "/assets/zip-packages/education/state-capital-quiz.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Student Loan Calculator",
+    "desc": "A free offline tool for student loan calculator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/student-loan-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/education/student-loan-calculator.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Study Schedule Planner",
+    "desc": "A free offline tool for study schedule planner calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/study-schedule-planner/index.html",
+    "zipUrl": "/assets/zip-packages/education/study-schedule-planner.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Study Time Tracker",
+    "desc": "A free offline tool for study time tracker calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/study-time-tracker/index.html",
+    "zipUrl": "/assets/zip-packages/education/study-time-tracker.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Study Timer",
+    "desc": "A free offline tool for study timer calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/study-timer/index.html",
+    "zipUrl": "/assets/zip-packages/education/study-timer.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Vocabulary Builder",
+    "desc": "A free offline tool for vocabulary builder calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/vocabulary-builder/index.html",
+    "zipUrl": "/assets/zip-packages/education/vocabulary-builder.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Vocabulary Quiz",
+    "desc": "A free offline tool for vocabulary quiz calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/vocabulary-quiz/index.html",
+    "zipUrl": "/assets/zip-packages/education/vocabulary-quiz.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Academic Citation Generator",
+    "desc": "Free online citation generator tool - fast, secure, no installation. YuanqiZhiKe Toolkit.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/citation-generator.zip"
+  }
+]

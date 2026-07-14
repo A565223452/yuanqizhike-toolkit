@@ -1,0 +1,293 @@
+[
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/finance-1.svg",
+    "title": "Auto Loan Calculator",
+    "desc": "Our free online auto loan calculator estimates monthly car payments, total interest, and total cost for accurate auto financing planning, factoring in down payment, trade-in value, and sales tax.",
+    "features": [
+      "Monthly payment estimate",
+      "Total interest calculation",
+      "Down payment deduction",
+      "Trade-in value credit",
+      "Sales tax integration",
+      "Flexible loan terms"
+    ],
+    "detailUrl": "/tools/auto-loan-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/cars/auto-loan-calculator.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Brake Pad Wear Estimator",
+    "desc": "A free offline tool for brake pad wear estimator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/brake-pad-wear-estimator/index.html",
+    "zipUrl": "/assets/zip-packages/cars/brake-pad-wear-estimator.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Car Loan Payoff Calculator",
+    "desc": "A free offline tool for car loan payoff calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/car-loan-payoff-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/cars/car-loan-payoff-calculator.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Car Maintenance Schedule",
+    "desc": "A free offline tool for car maintenance schedule calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/car-maintenance-schedule/index.html",
+    "zipUrl": "/assets/zip-packages/cars/car-maintenance-schedule.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Car Payment Calculator",
+    "desc": "A free offline tool for car payment calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/car-payment-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/cars/car-payment-calculator.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Car Resale Value Calculator",
+    "desc": "A free offline tool for car resale value calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/car-resale-value-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/cars/car-resale-value-calculator.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Ev Charging Cost Calculator",
+    "desc": "A free offline tool for ev charging cost calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/ev-charging-cost-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/cars/ev-charging-cost-calculator.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Fuel Cost Calculator",
+    "desc": "A free offline tool for fuel cost calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/fuel-cost-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/cars/fuel-cost-calculator.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Fuel Cost Comparison",
+    "desc": "A free offline tool for fuel cost comparison calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/fuel-cost-comparison/index.html",
+    "zipUrl": "/assets/zip-packages/cars/fuel-cost-comparison.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Mpg Calculator",
+    "desc": "A free offline tool for mpg calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/mpg-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/cars/mpg-calculator.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Tire Pressure Calculator",
+    "desc": "A free offline tool for tire pressure calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/tire-pressure-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/cars/tire-pressure-calculator.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Tire Size Calculator",
+    "desc": "A free offline tool for tire size calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/tire-size-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/cars/tire-size-calculator.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Trip Mileage Log",
+    "desc": "A free offline tool for trip mileage log calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/trip-mileage-log/index.html",
+    "zipUrl": "/assets/zip-packages/cars/trip-mileage-log.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Ev Range Calculator",
+    "desc": "A free offline tool for ev range calculator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/ev-range-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/cars/ev-range-calculator.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Tire Size Converter",
+    "desc": "A free offline tool for tire size converter calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/tire-size-converter/index.html",
+    "zipUrl": "/assets/zip-packages/cars/tire-size-converter.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-2.svg",
+    "title": "Driving Cost Per Mile Calculator",
+    "desc": "Calculate your true vehicle operating expenses with this comprehensive driving cost per mile calculator. Track fuel, depreciation, insurance, and maintenance to make smarter automotive financial decisions.",
+    "features": [
+      "Calculate total cost per mile",
+      "Track fuel and depreciation costs",
+      "Break down annual ownership expenses",
+      "Instant real-time cost analysis",
+      "Comprehensive expense category breakdown"
+    ],
+    "detailUrl": "/tools/driving-cost-per-mile/index.html",
+    "zipUrl": "/assets/zip-packages/cars/driving-cost-per-mile.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Car Battery Size Selector",
+    "desc": "Find the right car battery group size for your vehicle with our free online selector. Compare BCI group dimensions, CCA ratings, and get recommendations based on vehicle type and climate.",
+    "features": [
+      "Vehicle type selection",
+      "Climate-based CCA filtering",
+      "BCI group size chart",
+      "Instant battery recommendations",
+      "Compare dimensions and specs"
+    ],
+    "detailUrl": "/tools/battery-size-selector/index.html",
+    "zipUrl": "/assets/zip-packages/cars/battery-size-selector.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Car Depreciation Calculator",
+    "desc": "Calculate your car's depreciation over time with our free online tool. Estimate yearly value loss based on purchase price, vehicle type, and annual mileage. Plan your car's resale value accurately.",
+    "features": [
+      "Yearly depreciation schedule",
+      "Multiple vehicle types",
+      "Annual mileage adjustment",
+      "Total value loss calculation",
+      "Break-even year estimate"
+    ],
+    "detailUrl": "/tools/car-depreciation-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/cars/car-depreciation-calculator.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Car Fuel Cost Calculator",
+    "desc": "Calculate your trip fuel expenses instantly with our free car fuel cost calculator. Enter distance, MPG or L/100km, and gas price to estimate total cost, driving time, and carbon footprint.",
+    "features": [
+      "Trip distance input",
+      "Fuel efficiency conversion",
+      "Gas price estimation",
+      "Round trip calculation",
+      "Driving time estimate",
+      "Carbon footprint calculation"
+    ],
+    "detailUrl": "/tools/fuel-cost-calculator-car/index.html",
+    "zipUrl": "/assets/zip-packages/cars/fuel-cost-calculator-car.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Kilometers to Miles Converter",
+    "desc": "Convert kilometers to miles instantly with our free online distance converter. Supports meters, feet, yards, running pace, and driving time estimates. Perfect for runners, cyclists, and travelers.",
+    "features": [
+      "Instant km to mi conversion",
+      "Multiple unit display",
+      "Running pace conversion",
+      "Driving time estimates",
+      "Common distance references"
+    ],
+    "detailUrl": "/tools/km-to-miles/index.html",
+    "zipUrl": "/assets/zip-packages/cars/km-to-miles.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "L/100km to MPG Converter",
+    "desc": "Convert fuel consumption between L/100km and MPG instantly with our free bidirectional converter. Supports US and UK gallons, km/L, and includes a reference table for common fuel economy ratings.",
+    "features": [
+      "Bidirectional L/100km ↔ MPG",
+      "US and UK MPG support",
+      "Instant conversion results",
+      "Reference table for common values"
+    ],
+    "detailUrl": "/tools/l-100km-to-mpg/index.html",
+    "zipUrl": "/assets/zip-packages/cars/l-100km-to-mpg.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Miles to Kilometers Converter",
+    "desc": "Convert miles to kilometers instantly with our free online converter. Supports bidirectional conversion, common distance references, and driving time estimates for travel, running, and driving.",
+    "features": [
+      "Bidirectional conversion",
+      "Common distance references",
+      "Driving time estimates",
+      "Multiple unit display",
+      "No signup required"
+    ],
+    "detailUrl": "/tools/miles-to-km/index.html",
+    "zipUrl": "/assets/zip-packages/cars/miles-to-km.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Speed Converter",
+    "desc": "Convert speed units instantly with our free online speed converter. Supports mph, km/h, m/s, knots, ft/s, and Mach. Ideal for cars, planes, sports, and everyday use.",
+    "features": [
+      "Instant unit conversion",
+      "Supports 6 speed units",
+      "Contextual speed comparison",
+      "Reference speed table",
+      "Dark mode support"
+    ],
+    "detailUrl": "/tools/speed-converter/index.html",
+    "zipUrl": "/assets/zip-packages/cars/speed-converter.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Tire Pressure Converter",
+    "desc": "Convert tire pressure between PSI, bar, kPa, and kg/cm2 with our free online converter. Instantly get accurate pressure conversions for cars, bikes, and trucks.",
+    "features": [
+      "Multiple unit support",
+      "Instant conversion results",
+      "Reference pressure guide",
+      "Free to use online"
+    ],
+    "detailUrl": "/tools/tire-pressure-converter/index.html",
+    "zipUrl": "/assets/zip-packages/cars/tire-pressure-converter.zip"
+  },
+  {
+    "category": "Auto & Vehicles",
+    "icon": "/assets/icons/cars-1.svg",
+    "title": "Trip Cost Estimator",
+    "desc": "Estimate total road trip expenses including gas, tolls, parking, and vehicle wear. Plan your travel budget with accurate cost breakdown per mile. Free online trip cost calculator.",
+    "features": [
+      "Gas cost calculation",
+      "Toll and parking input",
+      "Wear and maintenance cost",
+      "Cost per mile breakdown",
+      "IRS mileage rate reference"
+    ],
+    "detailUrl": "/tools/trip-cost-estimator/index.html",
+    "zipUrl": "/assets/zip-packages/cars/trip-cost-estimator.zip"
+  }
+]

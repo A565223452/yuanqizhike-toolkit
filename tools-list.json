@@ -16,22 +16,6 @@
   {
     "category": "Developer Tools",
     "icon": "/assets/icons/dev-1.svg",
-    "title": "JSON Formatter & Validator",
-    "desc": "Free online JSON formatter to beautify, minify, and validate JSON data. Interactive tree view, import/export, and copy features. Works offline with no data sent to servers.",
-    "features": [
-      "Beautify and indent JSON",
-      "Minify to compact JSON",
-      "Validate syntax errors",
-      "Interactive collapsible tree view",
-      "Import and export files",
-      "Copy to clipboard"
-    ],
-    "detailUrl": "/tools/json-formatter/index.html",
-    "zipUrl": "/assets/zip-packages/dev/json-formatter.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/dev-1.svg",
     "title": "Base64 URL Encoder Decoder & JWT Parser",
     "desc": "A free browser-based tool for encoding and decoding Base64 and URL strings, parsing JWT tokens, batch processing, and generating cryptographic hashes. All processing is local and private.",
     "features": [
@@ -128,21 +112,6 @@
     "zipUrl": "/assets/zip-packages/business/quotation-generator.zip"
   },
   {
-    "category": "Business & Productivity",
-    "icon": "/assets/icons/business-1.svg",
-    "title": "Shipping Cost Estimator",
-    "desc": "Estimate international shipping costs for e-commerce with our free online calculator. Compare rates by weight, dimensions, destination zone, and shipping method. Get detailed cost breakdown including fuel surcharge, insurance, and tax.",
-    "features": [
-      "Weight and dimension input",
-      "Multiple shipping methods",
-      "Zone-based rate calculation",
-      "Insurance and value options",
-      "Detailed cost breakdown"
-    ],
-    "detailUrl": "/tools/shipping-cost-estimator/index.html",
-    "zipUrl": "/assets/zip-packages/business/shipping-cost-estimator.zip"
-  },
-  {
     "category": "Webmaster & SEO Tools",
     "icon": "assets/icons/business-3.svg",
     "title": "Amazon Title Optimizer",
@@ -171,37 +140,6 @@
   },
   {
     "category": "Business & Productivity",
-    "icon": "assets/icons/business-4.svg",
-    "title": "CSV Order Data Cleaner",
-    "desc": "Browser-based tool to clean, deduplicate, and prepare CSV order data for e-commerce platforms with local privacy.",
-    "features": [
-      "Deduplicate Rows",
-      "Remove Empty Entries",
-      "Trim Whitespace",
-      "Local Data Privacy",
-      "One-Click Export"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/business/csv-order-data-cleaner.zip"
-  },
-  {
-    "category": "Finance & Crypto",
-    "icon": "assets/icons/business-5.svg",
-    "title": "Currency Converter",
-    "desc": "Convert between 150+ currencies instantly with real-time exchange rates, historical data, and offline support.",
-    "features": [
-      "Real-time Rates",
-      "150+ Currencies",
-      "Historical Data",
-      "Offline Support",
-      "Batch Conversion",
-      "Currency Charts"
-    ],
-    "detailUrl": "/tools/currency-converter/index.html",
-    "zipUrl": "/assets/zip-packages/finance/currency-converter.zip"
-  },
-  {
-    "category": "Business & Productivity",
     "icon": "/assets/icons/business-1.svg",
     "title": "Ean Barcode Generator",
     "desc": "A free offline tool for ean barcode generator calculations. Works in your browser.",
@@ -211,36 +149,6 @@
     ],
     "detailUrl": "/tools/ean-barcode-generator/index.html",
     "zipUrl": "/assets/zip-packages/business/ean-barcode-generator.zip"
-  },
-  {
-    "category": "Business & Productivity",
-    "icon": "assets/icons/business-20.svg",
-    "title": "Random Name Picker",
-    "desc": "Select random winners, shuffle teams, or draw lots from a list locally without uploads. Supports weighted selection and export.",
-    "features": [
-      "Pick Random Winners",
-      "Shuffle Teams",
-      "Weighted Selection",
-      "No Data Upload",
-      "Export Results"
-    ],
-    "detailUrl": "/tools/random-name-picker/index.html",
-    "zipUrl": "/assets/zip-packages/business/random-name-picker.zip"
-  },
-  {
-    "category": "Business & Productivity",
-    "icon": "/assets/icons/business-1.svg",
-    "title": "Batch SKU Generator",
-    "desc": "Generate unique product SKU codes in bulk with custom patterns, prefixes, categories, and sequential numbering. Fully local processing ensures privacy and speed.",
-    "features": [
-      "Custom pattern builder",
-      "Bulk generation up to 5000",
-      "Duplicate prevention",
-      "Copy and download results",
-      "Local no-upload processing"
-    ],
-    "detailUrl": "/tools/sku-generator/index.html",
-    "zipUrl": "/assets/zip-packages/business/sku-generator.zip"
   },
   {
     "category": "Finance & Crypto",
@@ -272,22 +180,6 @@
     ],
     "detailUrl": "/tools/text-case-converter/index.html",
     "zipUrl": "/assets/zip-packages/writing/text-case-converter.zip"
-  },
-  {
-    "category": "Content & Writing",
-    "icon": "",
-    "title": "Email Extractor",
-    "desc": "Free online email extractor to find, validate, and deduplicate email addresses from text or HTML. Process locally in your browser with no data upload.",
-    "features": [
-      "Extract from text and HTML",
-      "Deduplicate and validate emails",
-      "Sort by domain or alphabet",
-      "Multiple export separators",
-      "Filter out test emails",
-      "100% local and private"
-    ],
-    "detailUrl": "/tools/email-extractor/index.html",
-    "zipUrl": "/assets/zip-packages/writing/email-extractor.zip"
   },
   {
     "category": "Developer Tools",
@@ -334,7 +226,7 @@
       "Local Privacy Protection"
     ],
     "detailUrl": "/tools/text-deduplication-tool/index.html",
-    "zipUrl": "/assets/zip-packages/writing/text-deduplication-tool.zip"
+    "zipUrl": "/assets/zip-packages/writing/text-deduplication.zip"
   },
   {
     "category": "Content & Writing",
@@ -351,22 +243,6 @@
     ],
     "detailUrl": "/tools/whitespace-cleaner/index.html",
     "zipUrl": "/assets/zip-packages/writing/whitespace-cleaner.zip"
-  },
-  {
-    "category": "Content & Writing",
-    "icon": "",
-    "title": "Word Counter",
-    "desc": "Instantly count words, characters, sentences, and paragraphs with our free online word counter. Perfect for writers, students, and SEO content creators.",
-    "features": [
-      "Real-time word count",
-      "Character and sentence stats",
-      "Reading time estimate",
-      "Word frequency analysis",
-      "Detailed character breakdown",
-      "Local and private"
-    ],
-    "detailUrl": "/tools/word-counter/index.html",
-    "zipUrl": "/assets/zip-packages/writing/word-counter.zip"
   },
   {
     "category": "Content & Writing",
@@ -402,21 +278,6 @@
   },
   {
     "category": "Developer Tools",
-    "icon": "assets/icons/dev-28.svg",
-    "title": "Api Mock Data Generator",
-    "desc": "Generate realistic fake JSON data locally for API testing and prototyping without uploading sensitive information.",
-    "features": [
-      "Local JSON Generation",
-      "Custom Schema Support",
-      "Faker Integration",
-      "Privacy Focused",
-      "No Server Upload"
-    ],
-    "detailUrl": "/tools/api-mock-data-generator/index.html",
-    "zipUrl": "/assets/zip-packages/dev/api-mock-data-generator.zip"
-  },
-  {
-    "category": "Developer Tools",
     "icon": "/assets/icons/dev-1.svg",
     "title": "API Request Tester",
     "desc": "Test REST APIs directly in your browser with custom headers, body, and parameters. Supports GET, POST, PUT, DELETE, and PATCH. View response status, headers, and body instantly.",
@@ -430,70 +291,6 @@
     ],
     "detailUrl": "/tools/api-request-tester/index.html",
     "zipUrl": "/assets/zip-packages/dev/api-request-tester.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-36.svg",
-    "title": "Number Base Converter",
-    "desc": "Convert numbers between binary, octal, decimal, hex, and custom bases instantly with local processing and no data upload.",
-    "features": [
-      "Binary Octal Hex Conversion",
-      "Custom Base Support",
-      "IEEE 754 Float Handling",
-      "Two's Complement Calculation",
-      "Batch Conversion Mode",
-      "Local Privacy Protection"
-    ],
-    "detailUrl": "/tools/number-base-converter/index.html",
-    "zipUrl": "/assets/zip-packages/dev/number-base-converter.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-3.svg",
-    "title": "Batch Base64 Encoder",
-    "desc": "Encode or decode multiple files and strings simultaneously with local privacy, URL-safe options, and drag-and-drop support.",
-    "features": [
-      "Batch Encoding",
-      "Batch Decoding",
-      "Drag & Drop Files",
-      "URL-Safe Mode",
-      "Local Processing",
-      "MIME Detection"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/batch-base64-encoder.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-4.svg",
-    "title": "Base64 Url Jwt Tool",
-    "desc": "Encode and decode Base64 and URL data, parse JWTs, and generate cryptographic hashes securely in your browser.",
-    "features": [
-      "Base64 Encode Decode",
-      "URL Encode Decode",
-      "JWT Token Parser",
-      "Batch Processing Support",
-      "Hash Generator MD5 SHA",
-      "Client Side Privacy"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/base64-url-jwt-tool.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-11.svg",
-    "title": "Byte Unit Converter",
-    "desc": "Instantly convert digital storage sizes between bits, bytes, KB, MB, GB, TB, and PB with local privacy and precision control.",
-    "features": [
-      "Convert Storage Units",
-      "Binary vs Decimal",
-      "Bit/Byte Toggle",
-      "Copy Results Instantly",
-      "Adjust Precision",
-      "Private Local Processing"
-    ],
-    "detailUrl": "/tools/byte-unit-converter/index.html",
-    "zipUrl": "/assets/zip-packages/dev/byte-unit-converter.zip"
   },
   {
     "category": "Color & Design Utilities",
@@ -513,70 +310,6 @@
   },
   {
     "category": "Developer Tools",
-    "icon": "assets/icons/dev-34.svg",
-    "title": "Command Line Cheat Sheet",
-    "desc": "Search over 500 Linux, macOS, and Windows terminal commands with fuzzy search and instant copy functionality.",
-    "features": [
-      "Fuzzy Search Commands",
-      "Multi-OS Support",
-      "One-Click Copy",
-      "Offline Access",
-      "Category Filtering",
-      "Privacy Focused"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/command-line-cheat-sheet.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-31.svg",
-    "title": "Cron Expression Parser",
-    "desc": "Parse and validate cron expressions instantly. Visualize next run times, generate human-readable descriptions, and build schedules with timezone support.",
-    "features": [
-      "Parse Cron Expressions",
-      "Validate Syntax",
-      "Next Run Times",
-      "Human-Readable Output",
-      "Timezone Support",
-      "Interactive Builder"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/cron-expression-parser.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-5.svg",
-    "title": "Crud Code Template Generator",
-    "desc": "Instantly generate boilerplate CRUD code for REST APIs across multiple languages and frameworks directly in your browser.",
-    "features": [
-      "Multi-language Support",
-      "REST API Generation",
-      "Custom Templates",
-      "Local Processing",
-      "Validation Rules",
-      "Auth Integration"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/crud-code-template-generator.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/dev-1.svg",
-    "title": "CSS Formatter / Minifier",
-    "desc": "Free online CSS formatter and minifier to beautify or compress stylesheets. Sort properties, merge duplicates, and remove comments with instant local processing.",
-    "features": [
-      "Beautify or minify CSS",
-      "Sort properties alphabetically",
-      "Merge duplicate selectors",
-      "Keep or remove comments",
-      "Configurable indentation",
-      "Local browser processing"
-    ],
-    "detailUrl": "/tools/css-formatter/index.html",
-    "zipUrl": "/assets/zip-packages/dev/css-formatter.zip"
-  },
-  {
-    "category": "Developer Tools",
     "icon": "/assets/icons/dev-1.svg",
     "title": "Duplicate File Name Comparator",
     "desc": "Easily compare two file name lists to identify duplicates, unique entries, and conflicts. Ideal for folder synchronization, data cleanup, and managing file collections. Supports case-sensitive and extension-ignoring comparison.",
@@ -590,38 +323,6 @@
     ],
     "detailUrl": "/tools/duplicate-file-comparator/index.html",
     "zipUrl": "/assets/zip-packages/dev/duplicate-file-comparator.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-29.svg",
-    "title": "Excel To Json Converter",
-    "desc": "Convert Excel XLSX and CSV files to structured JSON locally. Supports sheet selection, header mapping, nested objects, and type inference.",
-    "features": [
-      "Convert XLSX And CSV",
-      "Local Browser Processing",
-      "Sheet Selection Support",
-      "Header Mapping Options",
-      "Nested Object Creation",
-      "Automatic Type Inference"
-    ],
-    "detailUrl": "/tools/excel-to-json-converter/index.html",
-    "zipUrl": "/assets/zip-packages/dev/excel-to-json-converter.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-7.svg",
-    "title": "Spreadsheet Formula Converter",
-    "desc": "Convert Excel and Google Sheets formulas into JavaScript, Python, or SQL code instantly with local privacy.",
-    "features": [
-      "Excel To Code",
-      "Python Conversion",
-      "SQL Translation",
-      "JavaScript Output",
-      "Cell Reference Resolution",
-      "Batch Processing"
-    ],
-    "detailUrl": "/tools/spreadsheet-formula-converter/index.html",
-    "zipUrl": "/assets/zip-packages/dev/spreadsheet-formula-converter.zip"
   },
   {
     "category": "Developer Tools",
@@ -641,37 +342,6 @@
   },
   {
     "category": "Developer Tools",
-    "icon": "assets/icons/dev-9.svg",
-    "title": "Hash Generator",
-    "desc": "Generate MD5, SHA-1, SHA-256, and SHA-512 hashes locally. Supports text, files, HMAC, and batch processing with zero data upload.",
-    "features": [
-      "Local Processing",
-      "HMAC Support",
-      "Batch Hashing",
-      "File Integrity",
-      "Secure Generation"
-    ],
-    "detailUrl": "/tools/hash-generator/index.html",
-    "zipUrl": "/assets/zip-packages/dev/hash-generator.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-10.svg",
-    "title": "Hex To Text Converter",
-    "desc": "Instantly convert between hexadecimal and text formats. Supports UTF-8, ASCII, byte arrays, and file dumps for efficient debugging.",
-    "features": [
-      "Hex To Text Conversion",
-      "Text To Hex Encoding",
-      "UTF-8 And ASCII Support",
-      "Byte Array Output",
-      "File Hex Dump Analysis",
-      "Endianness Toggle"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/hex-to-text-converter.zip"
-  },
-  {
-    "category": "Developer Tools",
     "icon": "/assets/icons/dev-1.svg",
     "title": ".htaccess Generator",
     "desc": "Generate Apache .htaccess files with ease. Configure URL redirects, rewrites, security headers, caching, and more. No server required, all processing is done locally in your browser.",
@@ -685,53 +355,6 @@
     ],
     "detailUrl": "/tools/htaccess-generator/index.html",
     "zipUrl": "/assets/zip-packages/dev/htaccess-generator.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-13.svg",
-    "title": "JavaScript Minifier",
-    "desc": "Instantly minify ES6+ JavaScript code locally in your browser. Reduce file size by removing comments, whitespace, and dead code with source map support.",
-    "features": [
-      "Minify ES6+ Code",
-      "Remove Comments And Whitespace",
-      "Variable Renaming",
-      "Dead Code Removal",
-      "Source Map Support",
-      "Local Browser Processing"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/javascript-minifier.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-14.svg",
-    "title": "JSON Field Cleaner",
-    "desc": "Clean and sanitize JSON data locally. Deduplicate keys, remove null values, and flatten objects without uploading files.",
-    "features": [
-      "Deduplicate Keys",
-      "Remove Null Values",
-      "Flatten Objects",
-      "Local Processing",
-      "Schema Validation",
-      "Fix Trailing Commas"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/json-field-cleaner.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-16.svg",
-    "title": "Json Format Converter",
-    "desc": "Convert JSON to CSV, XML, YAML, and TSV instantly. Secure, local processing with customizable options for developers.",
-    "features": [
-      "Convert JSON To CSV",
-      "Export To XML Format",
-      "Generate YAML Output",
-      "Local Browser Processing",
-      "Custom Delimiter Support"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/json-format-converter.zip"
   },
   {
     "category": "Developer Tools",
@@ -767,22 +390,6 @@
   {
     "category": "Developer Tools",
     "icon": "/assets/icons/dev-1.svg",
-    "title": "JSON Minifier",
-    "desc": "Compress and minify JSON online instantly. Remove whitespace, strip comments, deduplicate keys, and reduce file size. Free, private, and no upload required.",
-    "features": [
-      "Remove whitespace and comments",
-      "Strip trailing commas",
-      "Deduplicate object keys",
-      "Sort keys alphabetically",
-      "Compact numbers and non-ASCII",
-      "Copy or download minified JSON"
-    ],
-    "detailUrl": "/tools/json-minifier/index.html",
-    "zipUrl": "/assets/zip-packages/dev/json-minifier.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/dev-1.svg",
     "title": "JSON Path Extractor",
     "desc": "Extract specific data from JSON using JSONPath expressions. Navigate complex JSON structures with simple path queries. Free online tool for developers and data analysts.",
     "features": [
@@ -795,69 +402,6 @@
     ],
     "detailUrl": "/tools/json-path-extractor/index.html",
     "zipUrl": "/assets/zip-packages/dev/json-path-extractor.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-24.svg",
-    "title": "JSON Key Sorter",
-    "desc": "Sort JSON object keys alphabetically with deep nesting support. Ensures consistent data structure for diffing, canonicalization, and API testing locally.",
-    "features": [
-      "Deep Key Sorting",
-      "Alphabetical Order",
-      "Local Processing",
-      "Canonical JSON",
-      "Nested Support",
-      "Privacy Focused"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/json-key-sorter.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-47.svg",
-    "title": "Batch JSON Validator",
-    "desc": "Validate multiple JSON documents locally with syntax checks, schema support, and detailed error reporting for developers.",
-    "features": [
-      "Batch Validation",
-      "Syntax Checking",
-      "Schema Support",
-      "Local Processing",
-      "Error Reporting",
-      "Dark Mode"
-    ],
-    "detailUrl": "/tools/batch-json-validator/index.html",
-    "zipUrl": "/assets/zip-packages/dev/batch-json-validator.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-25.svg",
-    "title": "Jwt Token Decoder",
-    "desc": "Instantly decode, verify, and inspect JWT tokens locally in your browser. Supports header, payload, signature validation, and expiration checks.",
-    "features": [
-      "Decode Header And Payload",
-      "Verify Signature",
-      "Check Expiration",
-      "Local Browser Processing",
-      "Copy Claims Data",
-      "JWKS Support"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/jwt-token-decoder.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-27.svg",
-    "title": "Log File Formatter",
-    "desc": "Parse, format, and filter messy log files directly in your browser with local privacy and regex extraction.",
-    "features": [
-      "Parse Structured Logs",
-      "Filter By Level",
-      "Regex Extraction",
-      "Local Privacy",
-      "Export Cleaned Logs"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/log-file-formatter.zip"
   },
   {
     "category": "Developer Tools",
@@ -877,38 +421,6 @@
   },
   {
     "category": "Developer Tools",
-    "icon": "assets/icons/dev-30.svg",
-    "title": "Secure Batch Password Generator",
-    "desc": "Generate cryptographically secure passwords locally with customizable length, charset, and bulk options.",
-    "features": [
-      "Cryptographically Secure",
-      "Bulk Generation",
-      "Custom Charset",
-      "Local Processing",
-      "Strength Meter",
-      "Offline Ready"
-    ],
-    "detailUrl": "/tools/secure-batch-password-generator/index.html",
-    "zipUrl": "/assets/zip-packages/dev/secure-batch-password-generator.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-32.svg",
-    "title": "Password Strength Analyzer",
-    "desc": "Analyze password security locally with zxcvbn scoring, crack time estimates, and entropy visualization without uploading data.",
-    "features": [
-      "Local zxcvbn Scoring",
-      "Crack Time Estimate",
-      "Entropy Visualization",
-      "Pattern Detection",
-      "Privacy Focused Analysis",
-      "Improvement Tips"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/password-strength-analyzer.zip"
-  },
-  {
-    "category": "Developer Tools",
     "icon": "/assets/icons/dev-1.svg",
     "title": "QR Code Generator",
     "desc": "Generate custom QR codes for URLs, text, emails, WiFi, and more. Adjust size, colors, and error correction. Download as PNG or SVG. All processing happens locally in your browser.",
@@ -925,22 +437,6 @@
   },
   {
     "category": "Developer Tools",
-    "icon": "/assets/icons/dev-1.svg",
-    "title": "Random Port Generator",
-    "desc": "Generate random port numbers in batches for development, testing, and DevOps. Choose from well-known, registered, or dynamic ranges. All processing is local and private.",
-    "features": [
-      "Batch port generation",
-      "Range presets and custom range",
-      "Unique and sorted output",
-      "Port type classification badges",
-      "Copy all or CSV output",
-      "Local processing, no upload"
-    ],
-    "detailUrl": "/tools/random-port-generator/index.html",
-    "zipUrl": "/assets/zip-packages/dev/random-port-generator.zip"
-  },
-  {
-    "category": "Developer Tools",
     "icon": "assets/icons/dev-37.svg",
     "title": "Regex Tester",
     "desc": "Test regular expressions in real-time with instant match highlighting, capture group analysis, and common pattern templates.",
@@ -953,39 +449,7 @@
       "Offline Support"
     ],
     "detailUrl": "/tools/regex-tester-2/index.html",
-    "zipUrl": "/assets/zip-packages/dev/regex-tester-2.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-38.svg",
-    "title": "API Signature Validator",
-    "desc": "Generate and validate API request signatures with support for HMAC-SHA256, MD5, and custom algorithms for secure authentication testing.",
-    "features": [
-      "HMAC-SHA256 Validation",
-      "MD5 Signature Support",
-      "Custom Algorithm Input",
-      "Request Signing Test",
-      "Local Browser Processing",
-      "Secure Authentication"
-    ],
-    "detailUrl": "/tools/api-signature-validator/index.html",
-    "zipUrl": "/assets/zip-packages/dev/api-signature-validator.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-39.svg",
-    "title": "URL Slug Generator",
-    "desc": "Convert titles into SEO-friendly URL slugs instantly. Supports Unicode, bulk generation, custom separators, and reserved word handling.",
-    "features": [
-      "SEO-friendly slugs",
-      "Unicode transliteration",
-      "Bulk generation",
-      "Custom separators",
-      "Reserved words filter",
-      "Local privacy"
-    ],
-    "detailUrl": "/tools/url-slug-generator/index.html",
-    "zipUrl": "/assets/zip-packages/dev/url-slug-generator.zip"
+    "zipUrl": "/assets/zip-packages/dev/regex-tester.zip"
   },
   {
     "category": "Developer Tools",
@@ -1035,38 +499,6 @@
     "zipUrl": "/assets/zip-packages/dev/test-address-generator.zip"
   },
   {
-    "category": "Business & Productivity",
-    "icon": "assets/icons/business-13.svg",
-    "title": "Global Time Zone Converter",
-    "desc": "Instantly convert dates and times across multiple time zones. Features meeting scheduling, world clocks, and DST indicators for seamless global coordination.",
-    "features": [
-      "Multi-Timezone Conversion",
-      "Meeting Time Generator",
-      "Live World Clock",
-      "DST Status Indicator",
-      "Real-Time Results",
-      "Offline Privacy"
-    ],
-    "detailUrl": "/tools/global-time-zone-converter/index.html",
-    "zipUrl": "/assets/zip-packages/business/global-time-zone-converter.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/dev-1.svg",
-    "title": "Unicode Converter",
-    "desc": "Convert text to Unicode escape sequences and back with support for JS, HTML, CSS, and UTF-8 formats. All processing happens locally in your browser for privacy.",
-    "features": [
-      "Encode text to Unicode escapes",
-      "Decode \\uXXXX sequences",
-      "Multiple output formats",
-      "Keep ASCII as-is option",
-      "Per-character breakdown",
-      "No data upload"
-    ],
-    "detailUrl": "/tools/unicode-converter/index.html",
-    "zipUrl": "/assets/zip-packages/dev/unicode-converter.zip"
-  },
-  {
     "category": "Developer Tools",
     "icon": "/assets/icons/dev-1.svg",
     "title": "All-in-One Unit Converter",
@@ -1096,21 +528,6 @@
     ],
     "detailUrl": "/tools/unix-timestamp-converter/index.html",
     "zipUrl": "/assets/zip-packages/dev/unix-timestamp-converter.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-46.svg",
-    "title": "URL To JSON Converter",
-    "desc": "Instantly convert URL query strings into structured JSON. Supports nested objects, arrays, and local processing for secure debugging.",
-    "features": [
-      "Parse Query Strings",
-      "Support Nested Objects",
-      "Handle Array Brackets",
-      "Local Secure Processing",
-      "Pretty Print Output"
-    ],
-    "detailUrl": "/tools/url-to-json-converter/index.html",
-    "zipUrl": "/assets/zip-packages/dev/url-to-json-converter.zip"
   },
   {
     "category": "Developer Tools",
@@ -1146,7 +563,7 @@
       "Works offline"
     ],
     "detailUrl": "/tools/css-gradient-generator-2/index.html",
-    "zipUrl": "/assets/zip-packages/design/css-gradient-generator-2.zip"
+    "zipUrl": "/assets/zip-packages/dev/css-gradient-generator.zip"
   },
   {
     "category": "Design & Media",
@@ -1159,84 +576,6 @@
     ],
     "detailUrl": "/tools/exif-remover/index.html",
     "zipUrl": "/assets/zip-packages/design/exif-remover.zip"
-  },
-  {
-    "category": "Design & Media",
-    "icon": "assets/icons/design-38.svg",
-    "title": "Web Font Format Converter",
-    "desc": "Convert between TTF, OTF, WOFF, and WOFF2 formats locally. Preview glyphs, subset fonts, and generate CSS @font-face rules instantly.",
-    "features": [
-      "Convert Font Formats",
-      "Generate CSS Rules",
-      "Preview Glyphs",
-      "Subset Fonts",
-      "Batch Processing",
-      "Local Privacy"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/design/web-font-format-converter.zip"
-  },
-  {
-    "category": "Design & Media",
-    "icon": "assets/icons/design-47.svg",
-    "title": "Ico Icon Generator",
-    "desc": "Convert PNG and JPG images into multi-size ICO files for websites and apps with transparent backgrounds.",
-    "features": [
-      "Convert Images To Ico",
-      "Multi-Size Support",
-      "Transparent Backgrounds",
-      "Client-Side Processing",
-      "Favicon Generation"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/design/ico-icon-generator.zip"
-  },
-  {
-    "category": "Design & Media",
-    "icon": "assets/icons/design-1.svg",
-    "title": "Batch Image Compressor",
-    "desc": "Compress JPG, PNG, and WebP images locally in your browser. Reduce file sizes instantly while preserving quality and privacy.",
-    "features": [
-      "Batch Compression",
-      "Local Processing",
-      "Format Support",
-      "Quality Control",
-      "Privacy Safe"
-    ],
-    "detailUrl": "/tools/batch-image-compressor/index.html",
-    "zipUrl": "/assets/zip-packages/design/batch-image-compressor.zip"
-  },
-  {
-    "category": "Design & Media",
-    "icon": "assets/icons/design-5.svg",
-    "title": "Batch Image Converter",
-    "desc": "Resize and convert multiple images locally with preset sizes, quality control, and instant download.",
-    "features": [
-      "Batch Processing",
-      "Format Conversion",
-      "Preset Sizes",
-      "Local Privacy",
-      "Quality Control",
-      "Instant Download"
-    ],
-    "detailUrl": "/tools/batch-image-converter/index.html",
-    "zipUrl": "/assets/zip-packages/design/batch-image-converter.zip"
-  },
-  {
-    "category": "Design & Media",
-    "icon": "assets/icons/design-6.svg",
-    "title": "Image Filter & Color Adjust",
-    "desc": "Apply professional filters and adjust image colors like brightness and contrast directly in your browser with real-time preview and local processing.",
-    "features": [
-      "Real-time Preview",
-      "Brightness Adjustment",
-      "Color Filters",
-      "Local Processing",
-      "Batch Apply",
-      "Download Results"
-    ],
-    "detailUrl": "/tools/image-filter-color-adjust/index.html",
-    "zipUrl": "/assets/zip-packages/design/image-filter-color-adjust.zip"
   },
   {
     "category": "Design & Media",
@@ -1255,22 +594,6 @@
   },
   {
     "category": "Design & Media",
-    "icon": "assets/icons/design-7.svg",
-    "title": "Image Resizer & Cropper",
-    "desc": "Resize and crop images directly in your browser with batch support, aspect ratio locking, and instant downloads without uploading.",
-    "features": [
-      "Batch Image Resizing",
-      "Custom Dimension Input",
-      "Aspect Ratio Locking",
-      "Format Conversion",
-      "Privacy-Focused Local Processing",
-      "Preset Social Sizes"
-    ],
-    "detailUrl": "/tools/image-resizer-cropper/index.html",
-    "zipUrl": "/assets/zip-packages/design/image-resizer-cropper.zip"
-  },
-  {
-    "category": "Design & Media",
     "icon": "assets/icons/design-8.svg",
     "title": "Image Watermark Tool",
     "desc": "Add text or image watermarks to photos with batch processing, custom positioning, opacity, and tile patterns directly in your browser.",
@@ -1283,54 +606,7 @@
       "EXIF Data Preservation"
     ],
     "detailUrl": "/tools/image-watermark-tool/index.html",
-    "zipUrl": "/assets/zip-packages/design/image-watermark-tool.zip"
-  },
-  {
-    "category": "Education & Research",
-    "icon": "assets/icons/education-1.svg",
-    "title": "Academic Citation Generator",
-    "desc": "Instantly generate accurate citations in APA, MLA, Chicago, and other styles. Supports multiple document types with local privacy and copy features.",
-    "features": [
-      "Six Citation Styles",
-      "Multiple Document Types",
-      "One-Click Copy",
-      "Citation History",
-      "Local Privacy",
-      "Offline Support"
-    ],
-    "detailUrl": "/tools/academic-citation-generator/index.html",
-    "zipUrl": "/assets/zip-packages/education/academic-citation-generator.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-50.svg",
-    "title": "Open Graph Preview",
-    "desc": "Visually preview and debug Open Graph meta tags for social media platforms like Facebook, Twitter, and LinkedIn directly in your browser.",
-    "features": [
-      "Live Social Preview",
-      "OG Tag Debugger",
-      "Mobile View Support",
-      "Client-Side Processing",
-      "One-Click Copy Code"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/open-graph-preview.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/dev-1.svg",
-    "title": "Password Strength Checker & Generator",
-    "desc": "Test password strength, estimate crack time, and generate strong passwords. Local analysis with entropy, pattern detection, and common password warnings. No data upload.",
-    "features": [
-      "Real-time strength scoring",
-      "Entropy and crack time estimation",
-      "Common password detection",
-      "Pattern and repetition analysis",
-      "Built-in password generator",
-      "Local processing, no upload"
-    ],
-    "detailUrl": "/tools/password-strength-checker/index.html",
-    "zipUrl": "/assets/zip-packages/dev/password-strength-checker.zip"
+    "zipUrl": "/assets/zip-packages/design/image-watermark.zip"
   },
   {
     "category": "Business & Productivity",
@@ -1362,21 +638,6 @@
     ],
     "detailUrl": "/tools/pdf-split-merge/index.html",
     "zipUrl": "/assets/zip-packages/business/pdf-split-merge.zip"
-  },
-  {
-    "category": "Webmaster & SEO Tools",
-    "icon": "assets/icons/business-7.svg",
-    "title": "Backlink Spam Checker",
-    "desc": "Analyze backlinks for spam signals and toxic links. Check domain reputation and link quality indicators to protect your SEO health.",
-    "features": [
-      "Detect Toxic Links",
-      "Check Domain Reputation",
-      "Analyze Link Quality",
-      "Identify Spam Signals",
-      "Protect SEO Health"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/seo/backlink-spam-checker.zip"
   },
   {
     "category": "Business & Productivity",
@@ -1411,99 +672,6 @@
     "zipUrl": "/assets/zip-packages/business/calendar-generator.zip"
   },
   {
-    "category": "Content & Writing",
-    "icon": "assets/icons/content-5.svg",
-    "title": "Chinese-English Word Counter",
-    "desc": "Accurately count Chinese characters and English words in mixed text. Ideal for translators, writers, and content editors needing precise bilingual statistics.",
-    "features": [
-      "Bilingual Word Counting",
-      "Mixed Text Analysis",
-      "Character Type Breakdown",
-      "Reading Time Estimation",
-      "Paragraph Statistics",
-      "Local Privacy Protection"
-    ],
-    "detailUrl": "/tools/chinese-english-word-counter/index.html",
-    "zipUrl": "/assets/zip-packages/writing/chinese-english-word-counter.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-28.svg",
-    "title": "CORS Policy Checker",
-    "desc": "Test Cross-Origin Resource Sharing headers and preflight requests directly in your browser to diagnose API access issues.",
-    "features": [
-      "Preflight Simulation",
-      "CORS Header Analysis",
-      "Error Diagnosis",
-      "Wildcard Detection",
-      "Share Results"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/cors-policy-checker.zip"
-  },
-  {
-    "category": "Business & Productivity",
-    "icon": "assets/icons/business-10.svg",
-    "title": "Countdown Timer Generator",
-    "desc": "Create customizable, embeddable countdown timers for events and launches. Generates shareable links and local code snippets instantly.",
-    "features": [
-      "Generate Embed Code",
-      "Custom Event Labels",
-      "Shareable Countdown Links",
-      "Local Browser Processing",
-      "Responsive Design Support",
-      "Dark Mode Compatible"
-    ],
-    "detailUrl": "/tools/countdown-timer-generator/index.html",
-    "zipUrl": "/assets/zip-packages/business/countdown-timer-generator.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-28.svg",
-    "title": "DNS Record Lookup",
-    "desc": "Query A, AAAA, MX, TXT, NS, CNAME, and SOA records instantly using DNS-over-HTTPS directly in your browser.",
-    "features": [
-      "Multi-record Support",
-      "DNS-over-HTTPS",
-      "Instant Results",
-      "Client-side Processing",
-      "Export Capabilities"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/dns-record-lookup.zip"
-  },
-  {
-    "category": "Business & Productivity",
-    "icon": "assets/icons/business-11.svg",
-    "title": "Domain ICP Filing Checker",
-    "desc": "Verify China ICP filing status and entity details for domains. Supports batch queries and historical record checks directly in your browser.",
-    "features": [
-      "Real-time ICP Status",
-      "Batch Domain Query",
-      "Entity Information",
-      "Historical Records",
-      "Privacy-Focused",
-      "No Installation Needed"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/business/domain-icp-filing-checker.zip"
-  },
-  {
-    "category": "Business & Productivity",
-    "icon": "assets/icons/business-12.svg",
-    "title": "DST Timezone Converter",
-    "desc": "Convert times across timezones while automatically handling Daylight Saving Time transitions for accurate global scheduling.",
-    "features": [
-      "Automatic DST Handling",
-      "Batch Time Conversion",
-      "Meeting Planner Support",
-      "Historical Date Lookup",
-      "Privacy-Focused Local Processing"
-    ],
-    "detailUrl": "/tools/dst-timezone-converter/index.html",
-    "zipUrl": "/assets/zip-packages/business/dst-timezone-converter.zip"
-  },
-  {
     "category": "Developer Tools",
     "icon": "assets/icons/dev-19.svg",
     "title": "Expired Domain Finder",
@@ -1517,7 +685,7 @@
       "Local Privacy Processing"
     ],
     "detailUrl": "/tools/expired-domain-finder/index.html",
-    "zipUrl": "/assets/zip-packages/dev/expired-domain-finder.zip"
+    "zipUrl": "/assets/zip-packages/seo/expired-domain-finder.zip"
   },
   {
     "category": "Developer Tools",
@@ -1533,84 +701,7 @@
       "Calculate Security Score"
     ],
     "detailUrl": "/tools/http-header-checker/index.html",
-    "zipUrl": "/assets/zip-packages/dev/http-header-checker.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-6.svg",
-    "title": "IP Geolocation Lookup",
-    "desc": "Instantly retrieve detailed location, ISP, ASN, and proxy detection data for any IP address directly in your browser.",
-    "features": [
-      "Real-time IP lookup",
-      "ISP and ASN details",
-      "Batch processing support",
-      "Proxy detection",
-      "100% private local processing"
-    ],
-    "detailUrl": "/tools/ip-geolocation-lookup/index.html",
-    "zipUrl": "/assets/zip-packages/dev/ip-geolocation-lookup.zip"
-  },
-  {
-    "category": "Education & Research",
-    "icon": "assets/icons/education-8.svg",
-    "title": "ISBN Book Lookup",
-    "desc": "Instantly retrieve detailed book metadata, author details, publisher info, and cover images by entering an ISBN number.",
-    "features": [
-      "ISBN-10 and 13 Support",
-      "Retrieve Book Metadata",
-      "Display Cover Images",
-      "Export Citations",
-      "Price Comparison Data",
-      "Open Library Integration"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/education/isbn-book-lookup.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-2.svg",
-    "title": "Markdown To Html Converter",
-    "desc": "Instantly convert Markdown text to valid HTML with live preview, GFM support, and local processing for developers and writers.",
-    "features": [
-      "Live Preview",
-      "GFM Support",
-      "Local Processing",
-      "Copy HTML Output",
-      "Dark Mode"
-    ],
-    "detailUrl": "/tools/markdown-to-html-converter/index.html",
-    "zipUrl": "/assets/zip-packages/dev/markdown-to-html-converter.zip"
-  },
-  {
-    "category": "Business & Productivity",
-    "icon": "assets/icons/business-28.svg",
-    "title": "Meeting Time Planner",
-    "desc": "Find optimal meeting times across multiple time zones with visual timelines and calendar export for global teams.",
-    "features": [
-      "Time Zone Overlap",
-      "Visual Timeline",
-      "Working Hours Filter",
-      "Calendar Export",
-      "Global Team Support"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/business/meeting-time-planner.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-32.svg",
-    "title": "Browser Port Scanner",
-    "desc": "Scan common TCP ports and detect services directly in your browser. Secure, private, and requires no installation or server-side processing.",
-    "features": [
-      "Scan Common Ports",
-      "Service Detection",
-      "Custom Port Ranges",
-      "Local Processing",
-      "Export Results",
-      "Secure And Private"
-    ],
-    "detailUrl": "/tools/browser-port-scanner/index.html",
-    "zipUrl": "/assets/zip-packages/dev/browser-port-scanner.zip"
+    "zipUrl": "/assets/zip-packages/seo/http-header-checker.zip"
   },
   {
     "category": "Developer Tools",
@@ -1625,39 +716,7 @@
       "Local Browser Processing"
     ],
     "detailUrl": "/tools/reverse-ip-lookup/index.html",
-    "zipUrl": "/assets/zip-packages/dev/reverse-ip-lookup.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-31.svg",
-    "title": "Robots.txt Generator",
-    "desc": "Create and validate robots.txt files locally for SEO optimization. Supports user agents, allow rules, sitemaps, and crawl delays without server uploads.",
-    "features": [
-      "Generate Robots.txt",
-      "Validate Syntax",
-      "Crawl Delay Support",
-      "Sitemap Declaration",
-      "Local Processing",
-      "SEO Optimization"
-    ],
-    "detailUrl": "/tools/robots-txt-generator/index.html",
-    "zipUrl": "/assets/zip-packages/dev/robots-txt-generator.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-1.svg",
-    "title": "SEO Meta Tag Generator",
-    "desc": "Generate complete SEO meta tags, Open Graph, Twitter Cards, and JSON-LD locally in your browser for optimal web visibility.",
-    "features": [
-      "Generate Meta Tags",
-      "Open Graph Support",
-      "Twitter Card Markup",
-      "JSON-LD Schema",
-      "Real-time Preview",
-      "Local Processing"
-    ],
-    "detailUrl": "/tools/seo-meta-tag-generator/index.html",
-    "zipUrl": "/assets/zip-packages/dev/seo-meta-tag-generator.zip"
+    "zipUrl": "/assets/zip-packages/seo/reverse-ip-lookup.zip"
   },
   {
     "category": "Developer Tools",
@@ -1673,38 +732,7 @@
       "No Data Upload"
     ],
     "detailUrl": "/tools/xml-sitemap-generator/index.html",
-    "zipUrl": "/assets/zip-packages/dev/xml-sitemap-generator.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-9.svg",
-    "title": "Website Speed Test",
-    "desc": "Measure website load times and analyze performance metrics directly in your browser with detailed breakdowns.",
-    "features": [
-      "Load Time Analysis",
-      "Core Web Vitals",
-      "Resource Waterfall",
-      "Performance Insights",
-      "Privacy Focused"
-    ],
-    "detailUrl": "/tools/website-speed-test/index.html",
-    "zipUrl": "/assets/zip-packages/dev/website-speed-test.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-16.svg",
-    "title": "SSL Certificate Checker",
-    "desc": "Verify SSL/TLS certificate details, validity, chain, and expiry locally in your browser without sending data to any server.",
-    "features": [
-      "Check Certificate Details",
-      "Validate Certificate Chain",
-      "View SAN Entries",
-      "Monitor Expiry Dates",
-      "OCSP and CRL Status",
-      "Grade Rating System"
-    ],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/dev/ssl-certificate-checker.zip"
+    "zipUrl": "/assets/zip-packages/seo/xml-sitemap-generator.zip"
   },
   {
     "category": "Business & Productivity",
@@ -1732,7 +760,7 @@
       "Works offline"
     ],
     "detailUrl": "/tools/whois-lookup/index.html",
-    "zipUrl": "/assets/zip-packages/dev/whois-lookup.zip"
+    "zipUrl": "/assets/zip-packages/seo/whois-lookup.zip"
   },
   {
     "category": "Business & Productivity",
@@ -1761,18 +789,6 @@
     ],
     "detailUrl": "/tools/final-grade-calculator/index.html",
     "zipUrl": "/assets/zip-packages/education/final-grade-calculator.zip"
-  },
-  {
-    "category": "Education & Research",
-    "icon": "/assets/icons/education-1.svg",
-    "title": "Gpa Calculator",
-    "desc": "A free offline tool for gpa calculator calculations. Works in your browser.",
-    "features": [
-      "Easy to use",
-      "Works offline"
-    ],
-    "detailUrl": "/tools/gpa-calculator/index.html",
-    "zipUrl": "/assets/zip-packages/education/gpa-calculator.zip"
   },
   {
     "category": "Developer Tools",
@@ -1850,22 +866,6 @@
   {
     "category": "Finance & Crypto",
     "icon": "/assets/icons/finance-1.svg",
-    "title": "Credit Card Payoff Calculator",
-    "desc": "Calculate how long it takes to pay off credit card debt with our free online calculator. Compare minimum vs fixed monthly payments and estimate total interest savings.",
-    "features": [
-      "Custom balance and APR input",
-      "Payoff timeline calculation",
-      "Minimum vs fixed payment comparison",
-      "Total interest cost estimate",
-      "Interest savings calculation",
-      "Debt payoff strategy tips"
-    ],
-    "detailUrl": "/tools/credit-card-payoff-calculator/index.html",
-    "zipUrl": "/assets/zip-packages/finance/credit-card-payoff-calculator.zip"
-  },
-  {
-    "category": "Finance & Crypto",
-    "icon": "/assets/icons/finance-1.svg",
     "title": "Crypto Profit Calculator",
     "desc": "Calculate your crypto investment profit, loss and ROI instantly with our free online calculator. Supports Bitcoin, Ethereum, altcoins, with trading fees and capital gains tax estimates.",
     "features": [
@@ -1910,22 +910,6 @@
     ],
     "detailUrl": "/tools/retirement-calculator/index.html",
     "zipUrl": "/assets/zip-packages/finance/retirement-calculator.zip"
-  },
-  {
-    "category": "Finance & Crypto",
-    "icon": "/assets/icons/finance-1.svg",
-    "title": "ROI Calculator",
-    "desc": "Calculate Return on Investment (ROI), annualized ROI, and payback period instantly. Factor in extra costs and compare investments with our free online ROI calculator.",
-    "features": [
-      "Instant ROI calculation",
-      "Annualized ROI computation",
-      "Payback period estimation",
-      "Flexible period units",
-      "Additional cost support",
-      "Built-in benchmark comparison"
-    ],
-    "detailUrl": "/tools/roi-calculator/index.html",
-    "zipUrl": "/assets/zip-packages/finance/roi-calculator.zip"
   },
   {
     "category": "Finance & Crypto",
@@ -2080,7 +1064,7 @@
       "Works offline"
     ],
     "detailUrl": "/tools/meta-tag-generator/index.html",
-    "zipUrl": "/assets/zip-packages/dev/meta-tag-generator.zip"
+    "zipUrl": "/assets/zip-packages/seo/meta-tag-generator.zip"
   },
   {
     "category": "Webmaster & SEO Tools",
@@ -2269,33 +1253,6 @@
   },
   {
     "category": "Social Media",
-    "icon": "/assets/icons/social-7.svg",
-    "title": "Instagram Bio Generator",
-    "desc": "Instagram Bio Generator - a handy browser-based tool.",
-    "features": [
-      "Easy to use",
-      "Works offline"
-    ],
-    "detailUrl": "/tools/instagram-bio-generator/index.html",
-    "zipUrl": "/assets/zip-packages/social/instagram-bio-generator.zip"
-  },
-  {
-    "category": "Social Media",
-    "icon": "/assets/icons/social-8.svg",
-    "title": "Instagram Caption Generator",
-    "desc": "Create engaging Instagram captions instantly with emojis and hashtags. Select a mood, enter your topic, and generate ready-to-post text optimized for maximum social media engagement.",
-    "features": [
-      "Generate captions by mood",
-      "Auto-add relevant emojis",
-      "Include trending hashtags",
-      "One-click copy to clipboard",
-      "Optimized for engagement"
-    ],
-    "detailUrl": "/tools/instagram-caption-generator/index.html",
-    "zipUrl": "/assets/zip-packages/social/instagram-caption-generator.zip"
-  },
-  {
-    "category": "Social Media",
     "icon": "/assets/icons/social-9.svg",
     "title": "LinkedIn Character Counter",
     "desc": "Check character counts for LinkedIn posts, headlines, and summaries. Get real-time limits, word counts, reading time, and platform-specific optimization tips.",
@@ -2307,20 +1264,6 @@
     ],
     "detailUrl": "/tools/linkedin-character-counter/index.html",
     "zipUrl": "/assets/zip-packages/social/linkedin-character-counter.zip"
-  },
-  {
-    "category": "Social Media",
-    "icon": "/assets/icons/social-10.svg",
-    "title": "Social Media Character Counter",
-    "desc": "Check character and word counts for Twitter, Instagram, Facebook, LinkedIn, TikTok, and more. Visual progress bars ensure your posts stay within platform limits.",
-    "features": [
-      "Multi-platform character limits",
-      "Real-time usage progress bars",
-      "Emoji hashtag mention tracking",
-      "Dark mode support"
-    ],
-    "detailUrl": "/tools/social-media-character-counter-all/index.html",
-    "zipUrl": "/assets/zip-packages/social/social-media-character-counter-all.zip"
   },
   {
     "category": "Webmaster & SEO Tools",
@@ -2410,46 +1353,6 @@
   },
   {
     "category": "Time & Date",
-    "icon": "/assets/icons/lifestyle-10.svg",
-    "title": "Gift Idea Generator",
-    "desc": "Discover unique gift suggestions tailored to any recipient, occasion, and budget. Filter by interests like tech, cooking, or travel to find the perfect present instantly.",
-    "features": [
-      "Filter by recipient and occasion",
-      "Budget-based gift filtering",
-      "Interest-specific recommendations",
-      "Instant personalized suggestions"
-    ],
-    "detailUrl": "/tools/gift-idea-generator/index.html",
-    "zipUrl": "/assets/zip-packages/time/gift-idea-generator.zip"
-  },
-  {
-    "category": "Business & Productivity",
-    "icon": "/assets/icons/business-3.svg",
-    "title": "Habit Streak Tracker",
-    "desc": "Track your daily habits and build consistency with streak counters. Monitor progress for building good habits or breaking bad ones with visual stats and local storage.",
-    "features": [
-      "Track build and break habits",
-      "Visual streak statistics",
-      "Local data persistence",
-      "Dark mode support"
-    ],
-    "detailUrl": "/tools/habit-streak-tracker/index.html",
-    "zipUrl": "/assets/zip-packages/business/habit-streak-tracker.zip"
-  },
-  {
-    "category": "Time & Date",
-    "icon": "/assets/icons/lifestyle-11.svg",
-    "title": "Habit Tracker",
-    "desc": "Habit Tracker - a handy browser-based tool.",
-    "features": [
-      "Easy to use",
-      "Works offline"
-    ],
-    "detailUrl": "/tools/habit-tracker/index.html",
-    "zipUrl": "/assets/zip-packages/time/habit-tracker.zip"
-  },
-  {
-    "category": "Time & Date",
     "icon": "/assets/icons/lifestyle-12.svg",
     "title": "Meditation Timer",
     "desc": "Enhance your mindfulness practice with this customizable meditation timer. Features interval bells, soothing audio cues, and a guided breathing exercise to help you relax and focus.",
@@ -2536,34 +1439,6 @@
     "zipUrl": "/assets/zip-packages/time/wheel-spinner.zip"
   },
   {
-    "category": "Time & Date",
-    "icon": "/assets/icons/lifestyle-6.svg",
-    "title": "World Clock",
-    "desc": "Track current time across major global cities with this free world clock. Easily compare time zones for international meetings, travel planning, and remote team coordination.",
-    "features": [
-      "Live time for multiple cities",
-      "Time zone comparison tool",
-      "Day and night indicators",
-      "Searchable city list"
-    ],
-    "detailUrl": "/tools/world-clock/index.html",
-    "zipUrl": "/assets/zip-packages/time/world-clock.zip"
-  },
-  {
-    "category": "Security & Privacy",
-    "icon": "/assets/icons/security-5.svg",
-    "title": "API Key Generator",
-    "desc": "Generate secure, random API keys with custom prefixes, lengths, and formats. Supports Hex, Base64, UUID, and Alphanumeric standards with local entropy calculation.",
-    "features": [
-      "Custom prefix support",
-      "Multiple format options",
-      "Local entropy calculation",
-      "Bulk key generation"
-    ],
-    "detailUrl": "/tools/api-key-generator/index.html",
-    "zipUrl": "/assets/zip-packages/security/api-key-generator.zip"
-  },
-  {
     "category": "Security & Privacy",
     "icon": "/assets/icons/security-6.svg",
     "title": "Base64 Encoder Decoder",
@@ -2604,20 +1479,6 @@
     ],
     "detailUrl": "/tools/jwt-decoder/index.html",
     "zipUrl": "/assets/zip-packages/security/jwt-decoder.zip"
-  },
-  {
-    "category": "Security & Privacy",
-    "icon": "/assets/icons/security-9.svg",
-    "title": "Random Token Generator",
-    "desc": "Generate cryptographically secure random tokens for API keys, sessions, and passwords. Customize length, character sets, and prefixes with real-time entropy calculation.",
-    "features": [
-      "Cryptographically secure generation",
-      "Customizable character sets",
-      "Real-time entropy calculation",
-      "Batch token generation"
-    ],
-    "detailUrl": "/tools/random-token-generator/index.html",
-    "zipUrl": "/assets/zip-packages/security/random-token-generator.zip"
   },
   {
     "category": "Security & Privacy",
@@ -2714,22 +1575,6 @@
   {
     "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
-    "title": "Complex Number Calculator",
-    "desc": "Calculate complex numbers instantly with our free online tool. Perform addition, subtraction, multiplication, division, and advanced operations like powers and roots. Get results in rectangular and polar forms.",
-    "features": [
-      "Add, subtract, multiply, divide",
-      "Power and conjugate operations",
-      "Magnitude and argument calculation",
-      "Rectangular and polar forms",
-      "Square root and exponential",
-      "Free online math tool"
-    ],
-    "detailUrl": "/tools/complex-number-calculator/index.html",
-    "zipUrl": "/assets/zip-packages/math/complex-number-calculator.zip"
-  },
-  {
-    "category": "Math & Science",
-    "icon": "/assets/icons/education-1.svg",
     "title": "Cone Calculator",
     "desc": "Calculate cone volume, surface area, slant height, and missing dimensions instantly. Free online cone geometry calculator for students and engineers.",
     "features": [
@@ -2790,21 +1635,6 @@
   {
     "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
-    "title": "Exponent Calculator",
-    "desc": "Calculate exponents and powers instantly. Raise any base to any power, including negative and fractional exponents, with step-by-step results. Free online power calculator.",
-    "features": [
-      "Supports negative exponents",
-      "Handles fractional exponents",
-      "Step-by-step solution",
-      "Quick power presets",
-      "Powers table generation"
-    ],
-    "detailUrl": "/tools/exponent-calculator/index.html",
-    "zipUrl": "/assets/zip-packages/math/exponent-calculator.zip"
-  },
-  {
-    "category": "Math & Science",
-    "icon": "/assets/icons/education-1.svg",
     "title": "Factorial Calculator",
     "desc": "Calculate factorial n! for any non-negative integer up to 1000. View step-by-step calculations, digit counts, trailing zeros, and Stirling approximations instantly.",
     "features": [
@@ -2837,18 +1667,6 @@
   {
     "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
-    "title": "Linear Equation Solver",
-    "desc": "A free offline tool for linear equation solver calculations. Works in your browser.",
-    "features": [
-      "Easy to use",
-      "Works offline"
-    ],
-    "detailUrl": "/tools/linear-equation-solver/index.html",
-    "zipUrl": "/assets/zip-packages/math/linear-equation-solver.zip"
-  },
-  {
-    "category": "Math & Science",
-    "icon": "/assets/icons/education-1.svg",
     "title": "Logarithm Calculator",
     "desc": "A free offline tool for logarithm calculator calculations. Works in your browser.",
     "features": [
@@ -2868,55 +1686,7 @@
       "Works offline"
     ],
     "detailUrl": "/tools/logarithm-calculator-extended/index.html",
-    "zipUrl": "/assets/zip-packages/math/logarithm-calculator-extended.zip"
-  },
-  {
-    "category": "Math & Science",
-    "icon": "/assets/icons/education-1.svg",
-    "title": "Math Formula Reference",
-    "desc": "A free offline tool for math formula reference calculations. Works in your browser.",
-    "features": [
-      "Easy to use",
-      "Works offline"
-    ],
-    "detailUrl": "/tools/math-formula-reference/index.html",
-    "zipUrl": "/assets/zip-packages/math/math-formula-reference.zip"
-  },
-  {
-    "category": "Math & Science",
-    "icon": "/assets/icons/education-1.svg",
-    "title": "Matrix Calculator",
-    "desc": "A free offline tool for matrix calculator calculations. Works in your browser.",
-    "features": [
-      "Easy to use",
-      "Works offline"
-    ],
-    "detailUrl": "/tools/matrix-calculator/index.html",
-    "zipUrl": "/assets/zip-packages/math/matrix-calculator.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/dev-2.svg",
-    "title": "Median Calculator",
-    "desc": "Median Calculator - a handy browser-based tool.",
-    "features": [
-      "Easy to use",
-      "Works offline"
-    ],
-    "detailUrl": "/tools/median-calculator/index.html",
-    "zipUrl": "/assets/zip-packages/dev/median-calculator.zip"
-  },
-  {
-    "category": "Math & Science",
-    "icon": "/assets/icons/education-1.svg",
-    "title": "Mode Calculator",
-    "desc": "A free offline tool for mode calculator calculations. Works in your browser.",
-    "features": [
-      "Easy to use",
-      "Works offline"
-    ],
-    "detailUrl": "/tools/mode-calculator/index.html",
-    "zipUrl": "/assets/zip-packages/math/mode-calculator.zip"
+    "zipUrl": "/assets/zip-packages/math/logarithm-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -2953,18 +1723,6 @@
     ],
     "detailUrl": "/tools/percentage-change-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/percentage-change-calculator.zip"
-  },
-  {
-    "category": "Math & Science",
-    "icon": "/assets/icons/education-1.svg",
-    "title": "Permutation Combination Calculator",
-    "desc": "A free offline tool for permutation combination calculator calculations. Works in your browser.",
-    "features": [
-      "Easy to use",
-      "Works offline"
-    ],
-    "detailUrl": "/tools/permutation-combination-calculator/index.html",
-    "zipUrl": "/assets/zip-packages/math/permutation-combination-calculator.zip"
   },
   {
     "category": "Math & Science",
@@ -3025,18 +1783,6 @@
     ],
     "detailUrl": "/tools/pythagorean-theorem-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/pythagorean-theorem-calculator.zip"
-  },
-  {
-    "category": "Math & Science",
-    "icon": "/assets/icons/education-1.svg",
-    "title": "Quadratic Equation Solver",
-    "desc": "A free offline tool for quadratic equation solver calculations. Works in your browser.",
-    "features": [
-      "Easy to use",
-      "Works offline"
-    ],
-    "detailUrl": "/tools/quadratic-equation-solver/index.html",
-    "zipUrl": "/assets/zip-packages/math/quadratic-equation-solver.zip"
   },
   {
     "category": "Math & Science",
@@ -3152,30 +1898,6 @@
   {
     "category": "Math & Science",
     "icon": "/assets/icons/education-1.svg",
-    "title": "Trigonometry Calculator",
-    "desc": "A free offline tool for trigonometry calculator calculations. Works in your browser.",
-    "features": [
-      "Easy to use",
-      "Works offline"
-    ],
-    "detailUrl": "/tools/trigonometry-calculator/index.html",
-    "zipUrl": "/assets/zip-packages/math/trigonometry-calculator.zip"
-  },
-  {
-    "category": "Math & Science",
-    "icon": "/assets/icons/education-1.svg",
-    "title": "Unit Rate Calculator",
-    "desc": "A free offline tool for unit rate calculator calculations. Works in your browser.",
-    "features": [
-      "Easy to use",
-      "Works offline"
-    ],
-    "detailUrl": "/tools/unit-rate-calculator/index.html",
-    "zipUrl": "/assets/zip-packages/math/unit-rate-calculator.zip"
-  },
-  {
-    "category": "Math & Science",
-    "icon": "/assets/icons/education-1.svg",
     "title": "Variance Calculator",
     "desc": "A free offline tool for variance calculator calculations. Works in your browser.",
     "features": [
@@ -3184,18 +1906,6 @@
     ],
     "detailUrl": "/tools/variance-calculator/index.html",
     "zipUrl": "/assets/zip-packages/math/variance-calculator.zip"
-  },
-  {
-    "category": "Math & Science",
-    "icon": "/assets/icons/education-1.svg",
-    "title": "Vector Calculator",
-    "desc": "A free offline tool for vector calculator calculations. Works in your browser.",
-    "features": [
-      "Easy to use",
-      "Works offline"
-    ],
-    "detailUrl": "/tools/vector-calculator/index.html",
-    "zipUrl": "/assets/zip-packages/math/vector-calculator.zip"
   },
   {
     "category": "AI & ML Utilities",
@@ -3506,15 +2216,6 @@
   {
     "category": "Auto & Vehicles",
     "icon": "/assets/icons/cars-1.svg",
-    "title": "Oil Change Interval",
-    "desc": "A free offline tool for oil change interval calculations. Works in your browser.",
-    "features": [],
-    "detailUrl": "/tools/oil-change-interval/index.html",
-    "zipUrl": "/assets/zip-packages/cars/oil-change-interval.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-1.svg",
     "title": "Tire Size Converter",
     "desc": "A free offline tool for tire size converter calculations. Works in your browser.",
     "features": [],
@@ -3535,21 +2236,6 @@
     ],
     "detailUrl": "/tools/driving-cost-per-mile/index.html",
     "zipUrl": "/assets/zip-packages/cars/driving-cost-per-mile.zip"
-  },
-  {
-    "category": "Auto & Vehicles",
-    "icon": "/assets/icons/cars-5.svg",
-    "title": "Vehicle Depreciation Calculator",
-    "desc": "Track your car's value loss over time with our free vehicle depreciation calculator. Enter purchase price, type, mileage, and condition to get a detailed year-by-year breakdown and optimal selling advice.",
-    "features": [
-      "Year-by-year value projection",
-      "Adjust for vehicle type and mileage",
-      "Condition-based depreciation multiplier",
-      "Optimal selling time insights",
-      "Detailed financial breakdown table"
-    ],
-    "detailUrl": "/tools/vehicle-depreciation/index.html",
-    "zipUrl": "/assets/zip-packages/cars/vehicle-depreciation.zip"
   },
   {
     "category": "Auto & Vehicles",
@@ -3718,21 +2404,6 @@
   {
     "category": "Beauty & Fashion",
     "icon": "/assets/icons/design-1.svg",
-    "title": "Clothing Size Converter",
-    "desc": "Convert clothing sizes between US, EU, UK, AU, and JP with our free online tool. Supports dresses, shirts, shoes, pants, and bras for accurate international size matching.",
-    "features": [
-      "Multiple clothing types",
-      "International size charts",
-      "Instant conversion results",
-      "Supports US, EU, UK, AU, JP",
-      "Free and easy to use"
-    ],
-    "detailUrl": "/tools/clothing-size-converter/index.html",
-    "zipUrl": "/assets/zip-packages/beauty/clothing-size-converter.zip"
-  },
-  {
-    "category": "Beauty & Fashion",
-    "icon": "/assets/icons/design-1.svg",
     "title": "Fabric Yardage Calculator",
     "desc": "Calculate fabric needed for sewing projects with our free online tool. Supports dresses, shirts, quilts, curtains and more. Get yardage in yards, meters and inches.",
     "features": [
@@ -3776,20 +2447,6 @@
     ],
     "detailUrl": "/tools/hair-color-predictor/index.html",
     "zipUrl": "/assets/zip-packages/beauty/hair-color-predictor.zip"
-  },
-  {
-    "category": "Beauty & Fashion",
-    "icon": "/assets/icons/design-1.svg",
-    "title": "Hair Type Identifier",
-    "desc": "Identify your hair type instantly with our free online hair type finder. Select curl pattern, density, porosity, and scalp condition to get personalized hair care tips and product recommendations.",
-    "features": [
-      "Curl pattern selection",
-      "Density and porosity input",
-      "Personalized care routine",
-      "Instant hair type identification"
-    ],
-    "detailUrl": "/tools/hair-type-identifier/index.html",
-    "zipUrl": "/assets/zip-packages/beauty/hair-type-identifier.zip"
   },
   {
     "category": "Beauty & Fashion",
@@ -3855,21 +2512,6 @@
   {
     "category": "Beauty & Fashion",
     "icon": "/assets/icons/design-1.svg",
-    "title": "Nail Art Ideas",
-    "desc": "Discover endless nail art design ideas tailored to your occasion, color preference, and style. Get free inspiration for manicures, from minimalist to glittery, with difficulty and time estimates.",
-    "features": [
-      "Filter by occasion, color, style",
-      "View difficulty and time estimates",
-      "Get instant design suggestions",
-      "Explore various nail lengths",
-      "Free and easy to use"
-    ],
-    "detailUrl": "/tools/nail-art-ideas/index.html",
-    "zipUrl": "/assets/zip-packages/beauty/nail-art-ideas.zip"
-  },
-  {
-    "category": "Beauty & Fashion",
-    "icon": "/assets/icons/design-1.svg",
     "title": "Nail Polish Mixer",
     "desc": "A free offline tool for nail polish mixer calculations. Works in your browser.",
     "features": [
@@ -3926,18 +2568,6 @@
     ],
     "detailUrl": "/tools/perfume-finder/index.html",
     "zipUrl": "/assets/zip-packages/beauty/perfume-finder.zip"
-  },
-  {
-    "category": "Beauty & Fashion",
-    "icon": "/assets/icons/design-1.svg",
-    "title": "Skincare Routine Builder",
-    "desc": "A free offline tool for skincare routine builder calculations. Works in your browser.",
-    "features": [
-      "Easy to use",
-      "Works offline"
-    ],
-    "detailUrl": "/tools/skincare-routine-builder/index.html",
-    "zipUrl": "/assets/zip-packages/beauty/skincare-routine-builder.zip"
   },
   {
     "category": "Business & Productivity",
@@ -4093,21 +2723,6 @@
   {
     "category": "Business & Productivity",
     "icon": "/assets/icons/business-1.svg",
-    "title": "Time Tracker",
-    "desc": "Track time spent on tasks and projects with our free online time tracker. Start and stop timers, log sessions, and view totals by project. Ideal for freelancers and teams to boost productivity.",
-    "features": [
-      "Add tasks with projects",
-      "Start and stop timer",
-      "View total time per task",
-      "Session history logging",
-      "Project-based time breakdown"
-    ],
-    "detailUrl": "/tools/time-tracker/index.html",
-    "zipUrl": "/assets/zip-packages/business/time-tracker.zip"
-  },
-  {
-    "category": "Business & Productivity",
-    "icon": "/assets/icons/business-1.svg",
     "title": "Timezone Meeting Planner",
     "desc": "Plan meetings across time zones effortlessly. Add participants, set working hours, and find the best overlapping times with our free timezone meeting planner. Visualize availability with a 24-hour timeline.",
     "features": [
@@ -4133,7 +2748,7 @@
       "Local and private processing"
     ],
     "detailUrl": "/tools/case-converter/index.html",
-    "zipUrl": "/assets/zip-packages/writing/case-converter.zip"
+    "zipUrl": "/assets/zip-packages/writing/case-converter-all.zip"
   },
   {
     "category": "Content & Writing",
@@ -4164,21 +2779,6 @@
     ],
     "detailUrl": "/tools/fancy-text-generator/index.html",
     "zipUrl": "/assets/zip-packages/writing/fancy-text-generator.zip"
-  },
-  {
-    "category": "Content & Writing",
-    "icon": "",
-    "title": "Headline Analyzer",
-    "desc": "Analyze your headline strength with our free online headline analyzer. Get an SEO score, check for emotional words, and optimize your titles for maximum click-through rates and engagement.",
-    "features": [
-      "Instant SEO score calculation",
-      "Detects power and emotional words",
-      "Optimal length and word count",
-      "Headline structure analysis",
-      "Actionable improvement suggestions"
-    ],
-    "detailUrl": "/tools/headline-analyzer/index.html",
-    "zipUrl": "/assets/zip-packages/writing/headline-analyzer.zip"
   },
   {
     "category": "Content & Writing",
@@ -4462,21 +3062,6 @@
   {
     "category": "Cooking & Food",
     "icon": "/assets/icons/cooking-1.svg",
-    "title": "Cooking Timer",
-    "desc": "Set and track multiple cooking timers simultaneously for different dishes. Get audio alerts when your food is ready with this free online kitchen timer.",
-    "features": [
-      "Multiple simultaneous timers",
-      "Quick recipe presets",
-      "Audio alarm alerts",
-      "Pause and reset options",
-      "Custom timer names"
-    ],
-    "detailUrl": "/tools/cooking-timer/index.html",
-    "zipUrl": "/assets/zip-packages/cooking/cooking-timer.zip"
-  },
-  {
-    "category": "Cooking & Food",
-    "icon": "/assets/icons/cooking-1.svg",
     "title": "Cups to Milliliters Converter",
     "desc": "Convert cups to milliliters and liters instantly. Supports US, metric, UK, and Japanese cup standards for accurate cooking and baking measurements.",
     "features": [
@@ -4748,21 +3333,6 @@
     ],
     "detailUrl": "/tools/box-shadow-generator/index.html",
     "zipUrl": "/assets/zip-packages/design/box-shadow-generator.zip"
-  },
-  {
-    "category": "Design & Media",
-    "icon": "/assets/icons/design-1.svg",
-    "title": "CMYK to RGB Converter",
-    "desc": "Instantly convert CMYK print color values to RGB, HEX, and HSL formats for digital design projects. This free, accurate tool helps graphic and web designers match colors across print and screen.",
-    "features": [
-      "Instant CMYK to RGB conversion",
-      "HEX and HSL value output",
-      "Live color preview swatch",
-      "Copy-ready CSS color snippets",
-      "Common color reference chart"
-    ],
-    "detailUrl": "/tools/cmyk-to-rgb/index.html",
-    "zipUrl": "/assets/zip-packages/design/cmyk-to-rgb.zip"
   },
   {
     "category": "Color & Design Utilities",
@@ -5189,22 +3759,6 @@
   {
     "category": "Developer Tools",
     "icon": "/assets/icons/dev-1.svg",
-    "title": "Base64 Batch Encoder / Decoder",
-    "desc": "Free online Base64 batch encoder and decoder. Process multiple strings at once with UTF-8 and URL-safe options. All processing happens locally in your browser, no data upload.",
-    "features": [
-      "Batch encode or decode multiple lines",
-      "URL-safe Base64 support",
-      "UTF-8 encoding support",
-      "Copy all results at once",
-      "Download results as .txt file",
-      "Swap input and output instantly"
-    ],
-    "detailUrl": "/tools/base64-batch/index.html",
-    "zipUrl": "/assets/zip-packages/dev/base64-batch.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/dev-1.svg",
     "title": "Base64 Image Converter",
     "desc": "Convert images to Base64 data URIs for inline embedding in HTML/CSS. Also decode Base64 back to image. Optimize web performance by reducing HTTP requests. Free online tool.",
     "features": [
@@ -5217,22 +3771,6 @@
     ],
     "detailUrl": "/tools/base64-image-converter/index.html",
     "zipUrl": "/assets/zip-packages/dev/base64-image-converter.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/dev-1.svg",
-    "title": "Byte Converter",
-    "desc": "Free online byte converter to convert between bits, bytes, KB, MB, GB, TB, PB and binary units. Supports decimal and binary modes, precision control, and instant copy. No upload required.",
-    "features": [
-      "Convert bits, bytes, KB, MB",
-      "Decimal and binary modes",
-      "Precision control",
-      "Copy results instantly",
-      "No data upload",
-      "Supports KiB, MiB, GiB"
-    ],
-    "detailUrl": "/tools/byte-converter/index.html",
-    "zipUrl": "/assets/zip-packages/dev/byte-converter.zip"
   },
   {
     "category": "Color & Design Utilities",
@@ -5409,22 +3947,6 @@
   {
     "category": "Developer Tools",
     "icon": "/assets/icons/dev-1.svg",
-    "title": "HTML Entities Encoder/Decoder",
-    "desc": "Encode text to HTML entities (named, decimal, hex) or decode entities back to plain text. Protect against XSS and safely display special characters in HTML.",
-    "features": [
-      "Encode to named entities",
-      "Encode to decimal entities",
-      "Encode to hex entities",
-      "Decode HTML entities",
-      "Swap input and output",
-      "Copy output instantly"
-    ],
-    "detailUrl": "/tools/html-entities-encoder/index.html",
-    "zipUrl": "/assets/zip-packages/dev/html-entities-encoder.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/dev-1.svg",
     "title": "HTML Formatter",
     "desc": "Format messy or minified HTML into clean, readable code with our free online HTML formatter. Fix indentation, normalize tags, and beautify your markup instantly in your browser.",
     "features": [
@@ -5486,38 +4008,6 @@
   {
     "category": "Developer Tools",
     "icon": "/assets/icons/dev-1.svg",
-    "title": "JSON Cleaner",
-    "desc": "Clean and sanitize JSON data instantly in your browser. Remove null values, deduplicate keys, flatten nested objects, and sort keys with a single click.",
-    "features": [
-      "Deduplicate identical objects",
-      "Remove null and empty values",
-      "Flatten nested JSON objects",
-      "Sort keys alphabetically",
-      "Trim string values",
-      "Pretty print output"
-    ],
-    "detailUrl": "/tools/json-cleaner/index.html",
-    "zipUrl": "/assets/zip-packages/dev/json-cleaner.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/dev-1.svg",
-    "title": "JSON to CSV / XML / YAML Converter",
-    "desc": "Convert JSON data to CSV, XML, YAML, TSV, Properties, and JSON Lines instantly. Free online tool with local processing, no upload required. Supports flattening nested objects and custom delimiters.",
-    "features": [
-      "Convert JSON to multiple formats",
-      "Flatten nested objects",
-      "Custom CSV delimiters",
-      "Download or copy results",
-      "No data upload",
-      "Supports JSON Lines"
-    ],
-    "detailUrl": "/tools/json-converter/index.html",
-    "zipUrl": "/assets/zip-packages/dev/json-converter.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/dev-1.svg",
     "title": "JSON Path Evaluator",
     "desc": "Query and extract values from JSON data using JSONPath expressions. Supports dot notation, wildcards, recursive descent, and filters. Free online JSONPath evaluator for developers.",
     "features": [
@@ -5530,22 +4020,6 @@
     ],
     "detailUrl": "/tools/json-path-evaluator/index.html",
     "zipUrl": "/assets/zip-packages/dev/json-path-evaluator.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/dev-1.svg",
-    "title": "JSON Data Sorter",
-    "desc": "Sort JSON arrays by any field with nested path support. Choose ascending or descending order, auto-detect types, and apply options like case-insensitive, nulls last, and duplicate removal.",
-    "features": [
-      "Sort by nested fields",
-      "Ascending or descending order",
-      "Auto type detection",
-      "Case-insensitive sorting",
-      "Nulls last handling",
-      "Remove duplicates"
-    ],
-    "detailUrl": "/tools/json-sorter/index.html",
-    "zipUrl": "/assets/zip-packages/dev/json-sorter.zip"
   },
   {
     "category": "Developer Tools",
@@ -5798,18 +4272,6 @@
     "zipUrl": "/assets/zip-packages/education/mole-calculator.zip"
   },
   {
-    "category": "Math & Science",
-    "icon": "/assets/icons/education-1.svg",
-    "title": "Percentage Calculator",
-    "desc": "A free offline tool for percentage calculator calculations. Works in your browser.",
-    "features": [
-      "Easy to use",
-      "Works offline"
-    ],
-    "detailUrl": "/tools/percentage-calculator/index.html",
-    "zipUrl": "/assets/zip-packages/math/percentage-calculator.zip"
-  },
-  {
     "category": "Education & Research",
     "icon": "/assets/icons/education-1.svg",
     "title": "Periodic Table Reference",
@@ -6043,22 +4505,6 @@
   {
     "category": "Finance & Crypto",
     "icon": "/assets/icons/finance-1.svg",
-    "title": "Crypto Currency Converter",
-    "desc": "Convert Bitcoin, Ethereum, and other cryptocurrencies with live exchange rates. Free online BTC to USD tool supporting major fiat currencies for fast, accurate crypto conversion.",
-    "features": [
-      "Live exchange rates",
-      "15+ major cryptocurrencies",
-      "Fiat currency support",
-      "One-click currency swap",
-      "Top crypto price table",
-      "Dark mode support"
-    ],
-    "detailUrl": "/tools/crypto-converter/index.html",
-    "zipUrl": "/assets/zip-packages/finance/crypto-converter.zip"
-  },
-  {
-    "category": "Finance & Crypto",
-    "icon": "/assets/icons/finance-1.svg",
     "title": "Debt to Income Ratio Calculator",
     "desc": "Calculate your debt-to-income (DTI) ratio instantly with our free online tool for mortgage and loan applications. Enter monthly income and debts to check eligibility with front-end and back-end ratios.",
     "features": [
@@ -6211,22 +4657,6 @@
     ],
     "detailUrl": "/tools/simple-interest-calculator/index.html",
     "zipUrl": "/assets/zip-packages/finance/simple-interest-calculator.zip"
-  },
-  {
-    "category": "Finance & Crypto",
-    "icon": "/assets/icons/finance-1.svg",
-    "title": "Tax Bracket Calculator",
-    "desc": "Calculate your US federal income tax with our free 2024 tax bracket calculator. View marginal vs effective rates, after-tax income, and detailed breakdowns for all filing statuses.",
-    "features": [
-      "2024 US tax brackets",
-      "Multiple filing statuses",
-      "Marginal rate calculation",
-      "Effective rate display",
-      "After-tax income estimate",
-      "Detailed tax breakdown"
-    ],
-    "detailUrl": "/tools/tax-bracket-calculator/index.html",
-    "zipUrl": "/assets/zip-packages/finance/tax-bracket-calculator.zip"
   },
   {
     "category": "Finance & Crypto",
@@ -6615,5 +5045,2813 @@
     ],
     "detailUrl": "/tools/wedding-invitation-generator/index.html",
     "zipUrl": "/assets/zip-packages/forms/wedding-invitation-generator.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Audio File Size Calculator",
+    "desc": "Calculate audio file size from duration, sample rate, and bit depth. Estimate WAV, MP3, FLAC sizes. Free audio file size calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/audio-file-size-calculator.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Online Metronome",
+    "desc": "Free online metronome with adjustable BPM. Practice music timing with visual and audio beats. Time signatures and accent patterns.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/audio-metronome-online.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Online Audio Recorder",
+    "desc": "Record audio from microphone in browser. Save as WAV/WebM. No upload, all processing local. Free online voice recorder.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/audio-recorder-online.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "BPM Counter",
+    "desc": "Tap to count BPM (beats per minute). Find the tempo of any song by tapping along. Free online BPM tapper for musicians and DJs.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/bpm-counter.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "BPM Detector",
+    "desc": "Detect BPM by tapping. Find song tempo by clicking. Free BPM tapper and detector.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/bpm-detector.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "BPM Tap Counter",
+    "desc": "Find BPM by tapping a rhythm. Tap any key to detect song tempo. Free BPM tap counter for musicians and DJs.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/bpm-tap-counter.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Chord Progression Generator",
+    "desc": "Generate chord progressions in any key. Free chord progression tool.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/chord-progression-generator.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Chord Progressions Reference",
+    "desc": "Common chord progressions in popular music. Find progressions by genre with examples. Free chord progression reference.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/chord-progressions-reference.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Guitar Chord Finder",
+    "desc": "Find guitar chord shapes. All positions, fingerings. Free guitar chord finder.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/guitar-chord-finder.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Guitar String Tension Calculator",
+    "desc": "Calculate guitar string tension for any tuning. Find correct string gauge for drop tunings. Free guitar string tension calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/guitar-string-tension-calculator.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Guitar Tuner Reference",
+    "desc": "Reference tones for tuning guitar. Standard EADGBE, drop D, open tunings. Free online guitar tuner with reference tones for each string.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/guitar-tuner-reference.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Key Signature Identifier",
+    "desc": "Identify musical key signatures and scales. Free music theory tool.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/key-signature-identifier.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Metronome BPM Tapper",
+    "desc": "Tap to find BPM or use as metronome. Free BPM tapper and metronome.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/metronome-bpm-tapper.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Tempo Marking Reference",
+    "desc": "Italian tempo markings reference with BPM ranges. Largo to presto markings. Free music tempo guide.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/metronome-tempo-marking.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Music Key Transposer",
+    "desc": "Transpose music chords and notes between keys. Capo positions. Free music transposer.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/music-key-transposer.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Music Note Frequency Calculator",
+    "desc": "Calculate frequency of musical notes. Convert note names to Hz based on A4=440Hz standard tuning. Free music frequency calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/music-note-frequency-calculator.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Music Note Frequency Calculator",
+    "desc": "Calculate frequencies of musical notes. Find note frequencies for any octave based on A4=440Hz. Free online music note frequency calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/music-note-frequency.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Music Transpose Calculator",
+    "desc": "Transpose music between keys. Convert chords, notes, scales. Free music transposition tool.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/music-transpose-calc.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Song Key Detector",
+    "desc": "Find musical key from chords. Identify major/minor keys. Circle of fifths reference. Free song key finder.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/song-key-detector.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Tone Generator",
+    "desc": "Generate pure audio tones at any frequency. Sine, square, sawtooth, triangle waveforms. Free online tone generator for testing hearing.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/tone-generator.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "White Noise Generator",
+    "desc": "Generate white, pink, brown noise for sleep, focus, tinnitus relief. Adjustable volume and duration. Free online noise generator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/white-noise-generator.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "Random Name Picker / Lottery Draw",
+    "desc": "Free online random name picker / lottery draw tool. Pick random winners from a list, shuffle teams, draw lots. Local, no upload.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/name-picker.zip"
+  },
+  {
+    "category": "Business & Productivity",
+    "icon": "/assets/icons/business-1.svg",
+    "title": "PDF Page Counter",
+    "desc": "Count pages in PDF files instantly in your browser. No upload, no server &#8212; fully private. Free online PDF page counter.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/business/pdf-page-counter.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Aspect Ratio Calculator",
+    "desc": "Calculate image dimensions from aspect ratio. Resize photos maintaining ratio. Free aspect ratio calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/aspect-ratio-calc.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Aspect Ratio Calculator",
+    "desc": "Calculate aspect ratio. Resize images, crop dimensions. Free aspect ratio calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/aspect-ratio-calculator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Image Aspect Ratio Calculator",
+    "desc": "Calculate image dimensions for any aspect ratio. Resize images while maintaining proportions. Common ratios for social media, prints, and screens.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/aspect-ratio-resizer.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Bokeh Calculator",
+    "desc": "Calculate bokeh size, depth of field, and background blur for any lens. Free bokeh and DOF calculator for photographers.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/bokeh-calculator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Depth of Field Calculator",
+    "desc": "Calculate depth of field. Hyperfocal distance, near/far focus. Free DoF calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/depth-of-field-calculator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Photography Exposure Calculator",
+    "desc": "Calculate equivalent exposure settings. Find shutter speed, aperture, and ISO combinations for the same exposure. Free online EV calculator for photographers.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/exposure-calculator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Exposure Triangle Calculator",
+    "desc": "Calculate equivalent exposures. ISO, aperture, shutter speed combinations. Free photography exposure tool.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/exposure-triangle-calc.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Exposure Triangle Calculator",
+    "desc": "Calculate equivalent exposures. Shutter speed, aperture, ISO. Free exposure triangle calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/exposure-triangle-calculator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Photo File Size Calculator",
+    "desc": "Estimate photo file sizes. RAW vs JPEG, megapixels to MB. Free image file size calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/file-size-calc.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Focal Length Crop Factor",
+    "desc": "Calculate effective focal length with crop factor. Compare lenses across sensor sizes. Free crop factor calculator for photographers.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/focal-length-crop-factor.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Web Font Format Converter",
+    "desc": "Convert web font formats. Convert between WOFF, WOFF2, TTF, and OTF. Preview fonts and generate CSS @font-face rules.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/font-converter.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Golden Hour Calculator",
+    "desc": "Calculate golden hour and blue hour times for photography. Find optimal lighting times based on location and date. Free golden hour calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/golden-hour-calculator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Golden Hour Finder",
+    "desc": "Find golden hour and blue hour times for any location and date. Free photography lighting calculator for sunrise and sunset.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/golden-hour-finder.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Golden Ratio Composition",
+    "desc": "Calculate golden ratio and phi grid for composition. Free photography composition tool.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/golden-ratio-composition.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "CSS Gradient Generator",
+    "desc": "Create beautiful CSS gradients. Linear, radial, conic gradients with multiple color stops, angles, and live preview. Free online gradient generator for web designers.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/gradient-generator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Hyperfocal Distance Calculator",
+    "desc": "Calculate hyperfocal distance for sharp landscapes. Lens focus, depth of field. Free hyperfocal calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/hyperfocal-distance-calc.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Hyperfocal Distance Calculator",
+    "desc": "Calculate hyperfocal distance for landscape photography. Find focus point for max depth of field. Free hyperfocal calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/hyperfocal-distance-calculator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Image Resizer & Cropper",
+    "desc": "Batch resize and crop images in your browser. Set custom dimensions, maintain aspect ratio, and download instantly. No upload required.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/image-resizer.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Image Resolution Calculator",
+    "desc": "Calculate image resolution, pixel dimensions, DPI/PPI, and print size. Convert between pixels, inches, centimeters. Free resolution calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/image-resolution-calculator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Lens Field of View Calculator",
+    "desc": "Calculate field of view, angle of view, and equivalent focal length for any lens. Free lens calculator for photographers.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/lens-fov-calculator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Photo Print Resizer",
+    "desc": "Resize photos for printing at standard sizes without cropping. Free aspect-ratio-preserving photo print calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/photo-print-resizer.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Photo Print Size Calculator",
+    "desc": "Calculate print sizes, DPI, and resolution. Free photo print calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/photo-print-size-calculator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Print Size Calculator",
+    "desc": "Calculate maximum print size from image resolution. Find DPI/PPI for any print dimensions. Free photo print size calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/print-size-calculator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Resolution PPI Calculator",
+    "desc": "Calculate PPI (pixels per inch) for any screen or image. Compare display resolutions and pixel density. Free PPI calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/resolution-ppi-calculator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Time",
+    "desc": "Calculate time-lapse intervals, clip duration, and photo count. Free time-lapse photography calculator for any scene.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/time-lapse-interval-calc.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Command Line Cheat Sheet",
+    "desc": "Quick reference for Linux/Windows/macOS command line commands. Search by task or category. Copy commands with one click.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/command-cheat-sheet.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "CRUD Code Template Generator",
+    "desc": "Generate CRUD (Create, Read, Update, Delete) code templates for any entity. Supports multiple languages and frameworks. Saves development time.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/crud-template-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Spreadsheet Formula Converter",
+    "desc": "Convert between spreadsheet formulas (Excel, Google Sheets) and programming code. Transform SUM, VLOOKUP, IF and more to JavaScript, Python, or SQL.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/formula-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Hex to Text Converter",
+    "desc": "Convert Hex strings to readable text and vice versa. Supports UTF-8, ASCII, and various hex formats. Useful for debugging and data analysis.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/hex-text-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "JavaScript Minifier",
+    "desc": "Minify JavaScript code to reduce file size. Remove comments, whitespace, and unnecessary characters instantly.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/js-minifier.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Log File Formatter",
+    "desc": "Format and clean messy log files. Parse timestamps, levels, and messages. Filter by log level, search, and export cleaned logs.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/log-formatter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Port Scanner",
+    "desc": "Scan common ports on any host. Check if HTTP, HTTPS, SSH, FTP, MySQL and other services are accessible from the browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/port-scanner.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "API Signature Validator",
+    "desc": "Generate and validate API request signatures. Support HMAC-SHA256, MD5, and custom signature algorithms. Perfect for testing API authentication.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/signature-validator.zip"
+  },
+  {
+    "category": "Education & Research",
+    "icon": "/assets/icons/education-1.svg",
+    "title": "Academic Citation Generator",
+    "desc": "Free online citation generator tool - fast, secure, no installation. YuanqiZhiKe Toolkit.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/education/citation-generator.zip"
+  },
+  {
+    "category": "Finance & Crypto",
+    "icon": "/assets/icons/finance-1.svg",
+    "title": "Loan Amortization Schedule",
+    "desc": "Generate loan amortization schedule. Monthly payment breakdown, principal vs interest. Free amortization calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/finance/loan-amortization-schedule.zip"
+  },
+  {
+    "category": "Forms & Generators",
+    "icon": "/assets/icons/forms-1.svg",
+    "title": "Contact Form Builder",
+    "desc": "Build a custom contact form with name, email, subject, message fields. Get ready-to-use HTML code. Free contact form builder.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/forms/contact-form-builder.zip"
+  },
+  {
+    "category": "Forms & Generators",
+    "icon": "/assets/icons/forms-1.svg",
+    "title": "Invoice Template Generator",
+    "desc": "Generate professional invoice templates. Add your business info, items, totals. Print or save as PDF. Free invoice template generator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/forms/invoice-template-generator.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Board Game Picker",
+    "desc": "Find board games by players, time, and complexity. Free board game finder.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/board-game-picker.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Board Game Time Calculator",
+    "desc": "Estimate board game playtime. Adjust for player count, experience. Free board game time calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/boardgame-time-calc.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Card Deck Shuffler",
+    "desc": "Shuffle a standard 52-card deck online. Draw random cards. Free online card deck shuffler for games and probability practice.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/card-deck-shuffler.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Chess Clock Timer",
+    "desc": "Online chess clock with multiple time controls. Blitz, rapid, classical, and custom. Free dual chess timer with increments.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/chess-clock-timer.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Dice Probability Calculator",
+    "desc": "Calculate probabilities for dice rolls. Any number of dice, any sides. Free dice probability calculator for tabletop games.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/dice-probability-calculator.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Dice Roll Probability Calculator",
+    "desc": "Calculate dice roll probabilities. Dungeons and Dragons, Yahtzee, board game odds. Free dice probability calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/dice-roll-probability.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "RPG Dice Roller",
+    "desc": "Roll RPG dice: D4, D6, D8, D10, D12, D20, D100. Roll multiple dice with modifiers. Free online tabletop dice roller for D&D.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/dice-roller-rpg.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Dice Statistics Calculator",
+    "desc": "Calculate dice roll statistics and probabilities. Free dice probability calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/dice-statistics-calculator.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "D&D Character Stat Roller",
+    "desc": "Roll D&D 5e character stats. 4d6 drop lowest, point buy, standard array. Free dice roller for D&D character creation.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/dnd-character-roller.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Escape Room Puzzle Generator",
+    "desc": "Generate escape room puzzles. Ciphers, codes, riddles, and logic puzzles. Free puzzle generator for escape room designers.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/escape-room-puzzle-gen.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Magic 8 Ball",
+    "desc": "Ask the Magic 8 Ball any question and get a mysterious answer. Free online Magic 8 Ball fortune teller.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/magic-8-ball.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Movie Night Picker",
+    "desc": "Pick movies for movie night. Filter by genre, mood, runtime. Free movie recommendation tool.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/movie-night-picker.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "MTG Mana Curve Calculator",
+    "desc": "Analyze Magic: The Gathering deck mana curve. Optimal land count and curve distribution. Free MTG deck analyzer.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/mtg-mana-curve.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Number Guessing Game",
+    "desc": "Classic number guessing game. Guess the secret number with hints. Multiple difficulty levels. Free online guessing game for kids and adults.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/number-guessing-game.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Poker Odds Calculator",
+    "desc": "Calculate Texas Hold em poker odds. Hand strength, outs, pot odds. Free poker odds calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/poker-odds-calc.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Reaction Time Tester",
+    "desc": "Test your reaction time in milliseconds. Click when color changes. Free reaction time test and average calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/reaction-time-tester.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "RPG Encounter Builder",
+    "desc": "Build balanced D&D 5e encounters. Calculate XP budget and difficulty by party level. Free encounter difficulty calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/rpg-encounter-builder.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Trivia Quiz Game",
+    "desc": "Test your knowledge with trivia questions across multiple categories. Free online trivia quiz game with score tracking.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/trivia-quiz-game.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Typing Speed Game",
+    "desc": "Practice typing with fun word challenges. Improve your typing speed and accuracy. Free online typing game with instant feedback.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/typing-game.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Video Game Length Lookup",
+    "desc": "Look up how long video games take to beat. Main story, completionist times. Free game length database.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/video-game-length-lookup.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "BAC Calculator",
+    "desc": "Calculate Blood Alcohol Concentration (BAC). Estimate intoxication level based on drinks, weight, gender, time. Free BAC calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/bac-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Batting Average Calculator",
+    "desc": "Calculate baseball batting average, OBP, slugging. Track baseball stats. Free baseball statistics calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/batting-average-calc.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "BMI & Ideal Weight Calculator",
+    "desc": "Calculate BMI and ideal body weight. Multiple formulas (Devine, Hamwi, Robinson, Miller). BMI categories and health risk. Free BMI calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/bmi-ideal-weight-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "BMR Calculator",
+    "desc": "Calculate Basal Metabolic Rate (BMR). Mifflin-St Jeor and Harris-Benedict equations. Daily calorie burn at rest. Free BMR calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/bmr-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Calorie Burn Calculator",
+    "desc": "Calculate calories burned by activity. Free exercise calorie calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/calorie-burn-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Calorie Counter",
+    "desc": "Track daily calorie intake with a food log. Search common foods, add meals, monitor macros. Free online calorie tracker with localStorage.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/calorie-counter.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Calories Burned Calculator",
+    "desc": "Calculate calories burned during exercise using MET values. Supports 100+ activities including running, cycling, swimming, weightlifting. Free calories burned calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/calories-burned-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Fantasy Football Points Calculator",
+    "desc": "Calculate fantasy football points. NFL, PPR, standard scoring. Free fantasy football calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/fantasy-points-calc.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Golf Handicap Calculator",
+    "desc": "Calculate golf handicap index. Course handicap, differential, stroke index. Free golf handicap calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/golf-handicap-calc.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Hiking Water Calculator",
+    "desc": "Calculate water needed for hiking. Adjust for distance, elevation, temperature. Free hiking hydration calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/hiking-water-calc.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Hydration Tracker",
+    "desc": "Track daily water intake. Personalized water goal. Free hydration tracker.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/hydration-tracker.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "1RM Calculator",
+    "desc": "Calculate your one rep max (1RM) using multiple formulas. Free 1RM calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/one-rep-max-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Ovulation Calculator",
+    "desc": "Calculate ovulation date and fertile window. Track menstrual cycle for conception or contraception. Free ovulation calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/ovulation-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Race Pace Calculator",
+    "desc": "Calculate running pace, finish time, splits. 5K, 10K, half, full marathon. Free race pace calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/race-pace-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Resting Heart Rate Calculator",
+    "desc": "Calculate your resting heart rate and fitness level. Free RHR calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/resting-heart-rate-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Sleep Calculator",
+    "desc": "Calculate optimal bedtime and wake time. Find your perfect sleep schedule based on age and lifestyle. Free sleep calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/sleep-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "Sleep Quality Tracker",
+    "desc": "Track sleep quality and patterns. Free sleep tracker and analyzer.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/sleep-quality-tracker.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "TDEE Calculator",
+    "desc": "Calculate your Total Daily Energy Expenditure (TDEE). Combines BMR with activity level to estimate how many calories you burn per day. Essential for weight loss or gain planning.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/tdee-calculator.zip"
+  },
+  {
+    "category": "Health & Fitness",
+    "icon": "/assets/icons/health-1.svg",
+    "title": "VO2 Max Calculator",
+    "desc": "Calculate VO2 max from Cooper test or running. Free aerobic capacity calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/health/vo2-max-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Angel Number Meaning",
+    "desc": "Discover the spiritual meaning of angel numbers. Look up recurring number sequences and their messages. Free angel number interpretation.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/angel-number-meaning.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Aquarium Calculator",
+    "desc": "Calculate aquarium volume, substrate, stocking levels. Tank size, water changes. Free aquarium calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/aquarium-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Aquarium Stock Calculator",
+    "desc": "Calculate safe fish stocking levels. Determine how many fish your aquarium can hold. Free aquarium stocking calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/aquarium-stock-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Aquarium Stocking Calculator",
+    "desc": "Calculate fish stocking levels for your aquarium. Avoid overstocking with bio-load calculator. Free tank capacity estimator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/aquarium-stocking-calc.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Aquarium Volume Calculator",
+    "desc": "Calculate aquarium tank volume in gallons and liters. Tank stocking guide, substrate, and water change calculator. Free aquarium calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/aquarium-volume-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Ballot Measure Explainer",
+    "desc": "Understand ballot measures: propositions, referendums, initiatives. Decode ballot language. Free voter guide.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/ballot-measure-explainer.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Bible Reading Plan Generator",
+    "desc": "Create custom Bible reading plans. Read Bible in a year, 90 days, topical. Free Bible plan generator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/bible-reading-plan.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Bible Verse Finder",
+    "desc": "Find Bible verses by topic. Reference popular verses for comfort, strength, hope, and guidance. Free Bible verse reference tool.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/bible-verse-finder.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Bible Verse Lookup",
+    "desc": "Look up Bible verses by reference. Search by book, chapter, and verse. Free online Bible verse finder with multiple translations.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/bible-verse-lookup.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Bird Watching Log",
+    "desc": "Log bird sightings with species, location, date, and notes. Track life list. Free birding journal for birdwatchers.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/bird-watching-log.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Bulk vs Unit Price Calculator",
+    "desc": "Compare bulk vs unit prices. Find best deal, savings. Free bulk price calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/bulk-vs-unit-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Camp Meal Planner",
+    "desc": "Plan camping meals and food list. Free camp meal planner.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/camp-meal-planner.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Camping Gear Checklist",
+    "desc": "Interactive camping gear checklist by trip type. Tent camping, backpacking, car camping. Free camping packing list generator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/camping-gear-checklist.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Carpet Calculator",
+    "desc": "Calculate carpet needed for rooms of any shape. Estimate square feet, square yards, and total cost. Free carpet measurement calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/carpet-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Cat Calorie Calculator",
+    "desc": "Calculate daily calorie needs for your cat. Free cat calorie calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/cat-calorie-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Cat Food Calculator",
+    "desc": "Calculate daily cat food portions. Calorie needs by weight, age, activity. Free cat feeding calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/cat-food-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Chicken Flock Calculator",
+    "desc": "Calculate coop size, run area, and egg production for backyard chickens. Plan your flock size. Free chicken flock calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/chicken-flock-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Chinese Zodiac Calculator",
+    "desc": "Find your Chinese zodiac animal by birth year. 12 animals with personality traits and compatibility. Free Chinese zodiac calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/chinese-zodiac-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Christmas Countdown",
+    "desc": "Live countdown to Christmas Day. See days, hours, minutes until December 25. Free Christmas countdown timer with festive design.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/christmas-countdown.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Concrete Calculator",
+    "desc": "Calculate concrete needed for slabs, footings, and columns. Estimate cubic yards, bags, and cost. Free concrete volume calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/concrete-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Coupon Stack Calculator",
+    "desc": "Calculate stacked coupon savings. Combine percentage off, dollar off, cashback. Free coupon calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/coupon-stack-calc.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Coupon Stack Calculator",
+    "desc": "Calculate final price with stacked coupons. Free coupon calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/coupon-stack-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Court Cost Calculator",
+    "desc": "Estimate court costs for civil cases. Filing fees, service, motion fees. Free court cost calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/court-cost-calc.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Crochet Hook Converter",
+    "desc": "Convert crochet hook sizes between US, UK, and metric (mm). Find equivalent hook sizes for any pattern. Free crochet hook size chart.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/crochet-hook-converter.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Crochet Pattern Resizer",
+    "desc": "Resize crochet patterns to match your gauge. Convert stitch and row counts between different yarn weights or hook sizes. Free crochet calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/crochet-pattern-resizer.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Cross Stitch Pattern Maker",
+    "desc": "Convert images to cross stitch patterns. Choose fabric count, colors, and size. Generate a printable pattern grid. Free online.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/cross-stitch-pattern-maker.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Daily Devotion Picker",
+    "desc": "Daily devotion picker. Bible verses by topic, mood, need. Free daily scripture generator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/daily-devotion-picker.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Daily Prayer Generator",
+    "desc": "Generate daily prayers for different occasions. Morning, evening, gratitude, healing, and guidance prayers. Free online prayer generator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/daily-prayer-generator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Deck Material Calculator",
+    "desc": "Calculate deck materials needed. Decking boards, joists, posts, and hardware. Free deck building material estimator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/deck-material-calc.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Dog Age Calculator",
+    "desc": "Calculate your dog age in human years. Accurate by breed size. Free dog age calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/dog-age-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Dog Breed Finder",
+    "desc": "Find the perfect dog breed for your lifestyle. Match by size, energy, living space. Free dog breed selector.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/dog-breed-finder.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Dog Breed Size Chart",
+    "desc": "Compare dog breeds by size, weight, and height. Find the right breed for your home. Free dog breed size comparison chart.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/dog-breed-size-chart.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Dog Food Calculator",
+    "desc": "Calculate daily dog food portions by weight, activity, and life stage. Calorie needs and feeding guide for adult dogs, puppies, and seniors.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/dog-food-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Dog Pregnancy Calculator",
+    "desc": "Calculate dog pregnancy due date and whelping timeline. Track canine gestation stages. Free dog pregnancy calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/dog-pregnancy-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Dog Vaccine Schedule",
+    "desc": "Track your dog vaccination schedule. Free dog vaccine reminder tool.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/dog-vaccine-schedule.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Drywall Calculator",
+    "desc": "Calculate drywall sheets needed for walls and ceilings. Estimate mud, tape, screws, and cost. Free drywall estimator for remodeling.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/drywall-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Election Vote Calculator",
+    "desc": "Calculate election results: percentages, margins, electoral votes. Free election result calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/election-vote-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Fabric Yardage Calculator",
+    "desc": "Calculate fabric needed for sewing projects. Estimate yards based on project type and fabric width. Free fabric yardage calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/fabric-yardage-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Fact Check Checklist",
+    "desc": "Verify news and claims with fact-checking checklist. Spot fake news and misinformation. Free media literacy tool.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/fact-check-checklist.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Fasting Tracker",
+    "desc": "Track religious fasts: Ramadan, Lent, Daniel Fast, intermittent. Calculate fasting hours and track progress. Free fasting tracker.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/fasting-tracker.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Fence Material Calculator",
+    "desc": "Calculate fence materials needed. Posts, rails, pickets, concrete. Free fencing material estimator for any fence length.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/fence-material-calc.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Fishing Best Time Calculator",
+    "desc": "Find the best fishing times by date and location. Solunar theory-based bite times and major feeding periods. Free fishing calendar.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/fishing-best-time.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Fishing License Estimator",
+    "desc": "Estimate fishing license costs by state. Resident, non-resident, daily. Free fishing license calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/fishing-license-estimator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Fishing Line Strength Calculator",
+    "desc": "Calculate fishing line breaking strength and shock leader needed. Match line to fish species. Free fishing line strength calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/fishing-line-strength-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Fishing Tide Calculator",
+    "desc": "Estimate tide times for fishing. Find best fishing times based on tide movement. Free tide predictor for anglers.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/fishing-tide-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Flooring Cost Calculator",
+    "desc": "Calculate flooring cost by material type. Hardwood, laminate, tile, carpet. Installation included. Free flooring calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/flooring-cost-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Gift Idea Finder",
+    "desc": "Find gift ideas by recipient, occasion, budget. Personalized gift suggestions. Free gift idea generator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/gift-idea-finder.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Gutter Size Calculator",
+    "desc": "Size gutters and downspouts for your roof. Calculate gutter capacity by roof area and rainfall. Free gutter sizing tool.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/gutter-size-calc.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Hiking Time Calculator",
+    "desc": "Calculate hiking time using Naismith rule. Distance, elevation, pace. Free hiking calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/hiking-time-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Hiking Trail Difficulty Calculator",
+    "desc": "Estimate hiking trail difficulty from distance, elevation gain, and terrain. Free trail difficulty rating calculator for hikers.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/hiking-trail-difficulty.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Hiking Trail Time Estimator",
+    "desc": "Estimate hiking time based on distance and elevation. Free trail time calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/hiking-trail-time-estimator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Hindu Festival Calendar",
+    "desc": "Find dates of major Hindu festivals. Diwali, Holi, Navratri, Janmashtami, and more. Free online Hindu festival calendar.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/hindu-festival-calendar.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Horse Age Calculator",
+    "desc": "Convert horse years to human equivalent. Calculate horse age in human years and life stage. Free horse age calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/horse-age-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Horse Feed Calculator",
+    "desc": "Calculate horse feed requirements by weight and activity. Hay, grain, and water needs. Free horse feeding calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/horse-feed-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Insulation R",
+    "desc": "Calculate insulation R-value for walls, attic, and floors. Compare materials and thickness. Free R-value calculator for energy efficiency.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/insulation-r-value-calc.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Jury Duty Pay Calculator",
+    "desc": "Calculate jury duty pay by state. Daily rates, mileage, employer policies. Free jury pay calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/jury-duty-pay-calc.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Knitting Needle Converter",
+    "desc": "Convert knitting needle sizes between US, metric, and UK. Free knitting needle size chart and converter.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/knitting-needle-converter.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Knitting Stitch Calculator",
+    "desc": "Calculate stitches and rows for knitting projects. Convert gauge swatch to pattern stitch counts. Free knitting calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/knitting-stitch-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Lent Date Finder",
+    "desc": "Find Lent dates for any year. Ash Wednesday, Easter, Holy Week. Free liturgical calendar calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/lent-finder.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Lumber Calculator",
+    "desc": "Calculate lumber needed for decks, fences, and framing. Estimate board feet, pieces, and cost. Free lumber estimator for DIY projects.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/lumber-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Model Paint Mixer",
+    "desc": "Calculate paint mixing ratios for scale models. Blend colors for miniature painting. Free model paint ratio calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/model-paint-mixer.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Model Rocket Parachute Size Calculator",
+    "desc": "Calculate parachute size for model rockets. Descent rate, drift distance, and recovery. Free model rocket parachute calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/model-rocket-parachute-size.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Moon Phase Lookup",
+    "desc": "Find moon phase for any date. Lunar illumination, age, and next full moon. Free moon phase calculator for fishing and astrophotography.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/moon-phase-lookup.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Mosquito Activity Predictor",
+    "desc": "Predict mosquito activity based on weather. Free mosquito forecast tool.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/mosquito-activity-predictor.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Mulch Calculator",
+    "desc": "Calculate mulch needed for garden beds. Estimate cubic yards, bags needed, and cost. Free mulch coverage calculator for landscaping.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/mulch-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "News Source Evaluator",
+    "desc": "Evaluate news source reliability and bias. Media bias chart for major outlets. Free media literacy tool.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/news-source-evaluator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Paint Color Mixer",
+    "desc": "Mix paint colors to create custom shades. Combine RGB colors with adjustable ratios. Preview mixed colors. Free online color mixer.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/paint-color-mixer.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Paint Coverage Calculator",
+    "desc": "Calculate paint needed for walls, ceilings, rooms. Coverage by surface type. Free paint calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/paint-coverage-calc.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Paint Ratio Mixer",
+    "desc": "Calculate paint mixing ratios for miniatures and models. Mix acrylics, enamels, and thinners accurately. Free hobby paint ratio calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/paint-ratio-mixer.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Painting Cost Estimator",
+    "desc": "Estimate art painting material costs. Calculate canvas, paint, and supplies budget. Free painting cost calculator for artists.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/painting-cost-estimator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Passport Fees Calculator",
+    "desc": "Calculate US passport fees. New, renewal, expedited, child passports. Free passport fee calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/passport-fees-calc.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Pet Age Calculator",
+    "desc": "Calculate your pet age in human years. Free pet age calculator for dogs, cats.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/pet-age-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Pet Food Calculator",
+    "desc": "Calculate daily food portions for dogs and cats. By weight, activity, age. Free pet food calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/pet-food-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Pet Medication Calculator",
+    "desc": "Calculate pet medication dosage by weight. Dog and cat drug dosage for common medications. Free pet drug dosage calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/pet-medication-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Pet Medication Dose Calculator",
+    "desc": "Calculate pet medication doses by weight. Common veterinary drugs dosage. Free pet medication calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/pet-medication-dose.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Pet Medication Dose Calculator",
+    "desc": "Calculate pet medication doses by weight. Veterinary drug dosing for dogs and cats. Free pet medication dose calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/pet-medication-doser.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Pet Name Generator",
+    "desc": "Generate pet names by category. Dog, cat, fish, bird, exotic pet names. Free pet name ideas for any animal.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/pet-name-generator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Pet Travel Checklist",
+    "desc": "Generate pet travel checklist. Prepare for car trips, flights, and international moves. Free pet travel preparation tool.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/pet-travel-checklist.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Pet Travel Cost Calculator",
+    "desc": "Calculate pet travel costs: flights, hotels, vet, and gear. Budget for traveling with dogs and cats. Free pet travel calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/pet-travel-cost-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Pet Weight Tracker",
+    "desc": "Track your pet weight over time. Monitor dog and cat weight changes. Free pet weight tracker with charts.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/pet-weight-tracker.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Photography Exposure Tracker",
+    "desc": "Log and analyze photography exposure settings. Track aperture, shutter, ISO with EV calculations. Free exposure tracker for photographers.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/photography-exposure-tracker.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Plant Care Tracker",
+    "desc": "Track houseplant care schedule. Watering, fertilizing. Free plant tracker.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/plant-care-tracker.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Plant Hardiness Zone Lookup",
+    "desc": "Find USDA plant hardiness zone by ZIP code or temperature. Determine what plants survive in your area. Free hardiness zone finder.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/plant-hardiness-zone-lookup.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Polling Margin Calculator",
+    "desc": "Calculate polling margin of error and statistical significance. Sample size calculator for surveys. Free polling statistics tool.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/polling-margin-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Pottery Shrinkage Calculator",
+    "desc": "Calculate clay shrinkage for pottery. Determine wet-to-fired size ratios. Free pottery shrinkage calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/pottery-shrinkage-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Islamic Prayer Times Calculator",
+    "desc": "Calculate Islamic prayer times. Five daily prayers by location. Free Salah prayer time calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/prayer-times-calc.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Prayer Times Calculator",
+    "desc": "Calculate Islamic prayer times for any location. Fajr, Dhuhr, Asr, Maghrib, Isha times. Free Salah prayer time calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/prayer-times-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Prayer Times Estimator",
+    "desc": "Estimate Muslim prayer times based on location and date. Salah schedule calculator with sunrise and sunset. Free Islamic prayer times.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/prayer-times-estimator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Price History Tracker",
+    "desc": "Track prices and find the best time to buy. Free price tracker.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/price-history-tracker.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Qibla Direction Finder",
+    "desc": "Find Qibla direction from any location. Calculate prayer direction to Mecca with compass bearing. Free Qibla calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/qibla-direction-finder.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Quilt Block Calculator",
+    "desc": "Calculate fabric pieces needed for quilt blocks. Free quilting math helper for squares, triangles, and strips.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/quilt-block-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Quilt Fabric Calculator",
+    "desc": "Calculate fabric needed for quilts. Blocks, sashing, borders, binding, and backing. Free quilt fabric calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/quilt-fabric-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Ramadan Calendar Calculator",
+    "desc": "Calculate Ramadan dates and prayer times. Find Suhoor and Iftar times based on your location. Free Ramadan calendar and timing tool.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/ramadan-calendar.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Reptile Enclosure Calculator",
+    "desc": "Calculate reptile enclosure size by species. Minimum tank dimensions for lizards, snakes, turtles. Free reptile habitat calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/reptile-enclosure-calc.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Return Window Calculator",
+    "desc": "Calculate return window deadline. Refund eligibility, days left. Free return calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/return-window-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Roof Shingle Calculator",
+    "desc": "Calculate roof shingles needed. Estimate bundles, square footage, and cost. Free roofing material calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/roof-shingle-calc.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Rosary Prayer Counter",
+    "desc": "Interactive rosary prayer counter. Track mysteries, Hail Marys. Free Catholic rosary guide.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/rosary-counter.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Rosary Prayer Tracker",
+    "desc": "Track Catholic rosary prayers. Count Hail Marys, Our Fathers, and Glorias. Interactive rosary tracker with mysteries.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/rosary-prayer-tracker.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Scrapbook Layout Planner",
+    "desc": "Plan scrapbook page layouts with photo arrangements and decorations. Free scrapbooking design planner with templates.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/scrapbook-layout-planner.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Screw Size Selector",
+    "desc": "Select right screw size for project. Wood, metal, drywall screws. Free screw selector guide.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/screw-size-selector.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Scripture Memory Tracker",
+    "desc": "Track Bible verse memorization. Spaced repetition for scripture memory. Free Bible verse memory tracker.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/scripture-memory-tracker.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Seed Bead Calculator",
+    "desc": "Calculate seed beads needed for jewelry projects. Estimate bead count by length and project type. Free seed bead calculator for beading.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/seed-bead-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Sewing Yardage Calculator",
+    "desc": "Calculate fabric yardage for sewing projects. Pattern pieces, seam allowances, and fabric width. Free sewing fabric calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/sewing-yardage-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Speeding Fine Calculator",
+    "desc": "Calculate speeding ticket fines by state. Speed over limit, school zone, work zone. Free fine estimator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/speeding-fine-calc.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Stamp Collection Tracker",
+    "desc": "Track your stamp collection. Catalog stamps with country, year, condition, and value. Free stamp collection inventory manager.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/stamp-collection-tracker.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Sunrise Sunset Estimator",
+    "desc": "Estimate sunrise and sunset times by location and date. Plan outdoor activities with daylight hours. Free sunrise sunset calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/sunrise-sunset-estimator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Tent Size Calculator",
+    "desc": "Calculate tent size needed. Person capacity, floor area. Free tent size calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/tent-size-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Tile Calculator",
+    "desc": "Calculate tiles needed for floor or wall. Tile size, pattern, waste factor. Free tile calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/tile-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Tile Pattern Calculator",
+    "desc": "Calculate tiles needed for patterns. Herringbone, basketweave, subway layouts. Free tile calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/tile-pattern-calc.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Time Zone Converter",
+    "desc": "Free online timezone converter tool - fast, secure, no installation. YuanqiZhiKe Toolkit.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/timezone-converter.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Trail Grade Calculator",
+    "desc": "Calculate trail grade, slope, elevation. Free hiking trail calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/trail-grade-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "UV Index Activity Guide",
+    "desc": "Check UV index risk level and recommended outdoor activities. Sun protection guide by UV exposure. Free UV risk calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/uv-index-activity-guide.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Wallpaper Calculator",
+    "desc": "Calculate wallpaper rolls needed. Pattern repeat, matching considerations. Free wallpaper calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/wallpaper-calc.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Weather Clothing Advisor",
+    "desc": "Get clothing recommendations based on weather. Free outfit weather tool.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/weather-clothing-advisor.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Wood Stain Calculator",
+    "desc": "Calculate wood stain needed for projects. Coverage by wood type, coats. Free stain calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/wood-stain-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Woodworking Board Calculator",
+    "desc": "Calculate board feet, dimensions, and cost for woodworking projects. Free lumber calculator for board feet and pricing.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/woodworking-board-calc.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Woodworking Cut List Calculator",
+    "desc": "Calculate board feet, cut lists, and material costs for woodworking. Optimize lumber usage and minimize waste. Free woodworking calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/woodworking-cut-list.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Yarn Calculator",
+    "desc": "Calculate yarn needed for knitting and crochet projects. Estimate yardage based on project type, size, and gauge. Free online yarn calculator for crafters.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/yarn-calculator.zip"
+  },
+  {
+    "category": "Real Estate Tools",
+    "icon": "/assets/icons/real-estate-1.svg",
+    "title": "Closing Cost Estimator",
+    "desc": "Estimate closing costs when buying a home. Calculate fees, taxes, and prepaid expenses. Free closing cost calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/real-estate/closing-cost-estimator.zip"
+  },
+  {
+    "category": "Real Estate Tools",
+    "icon": "/assets/icons/real-estate-1.svg",
+    "title": "Real Estate Commission Calculator",
+    "desc": "Calculate real estate commission. Agent fees, split commissions. Free commission calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/real-estate/commission-calculator.zip"
+  },
+  {
+    "category": "Real Estate Tools",
+    "icon": "/assets/icons/real-estate-1.svg",
+    "title": "HOA Fee Calculator",
+    "desc": "Calculate HOA fees and their impact on housing costs. Free HOA calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/real-estate/hoa-fee-calculator.zip"
+  },
+  {
+    "category": "Real Estate Tools",
+    "icon": "/assets/icons/real-estate-1.svg",
+    "title": "Home Appreciation Calculator",
+    "desc": "Project home value appreciation over time. Calculate future home value with custom appreciation rate. Free home value calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/real-estate/home-appreciation-calculator.zip"
+  },
+  {
+    "category": "Real Estate Tools",
+    "icon": "/assets/icons/real-estate-1.svg",
+    "title": "Mortgage Affordability Calculator",
+    "desc": "Calculate how much house you can afford based on income, debts, and down payment. Uses DTI ratio rules. Free mortgage affordability calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/real-estate/mortgage-affordability-calculator.zip"
+  },
+  {
+    "category": "Real Estate Tools",
+    "icon": "/assets/icons/real-estate-1.svg",
+    "title": "Price per Square Foot Calculator",
+    "desc": "Calculate price per square foot or square meter for real estate. Compare property values fairly. Free price per sq ft calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/real-estate/price-per-square-foot.zip"
+  },
+  {
+    "category": "Real Estate Tools",
+    "icon": "/assets/icons/real-estate-1.svg",
+    "title": "Property Tax Calculator",
+    "desc": "Calculate property tax based on assessed value. Free property tax calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/real-estate/property-tax-calculator.zip"
+  },
+  {
+    "category": "Real Estate Tools",
+    "icon": "/assets/icons/real-estate-1.svg",
+    "title": "Rental Deposit Calculator",
+    "desc": "Calculate rental deposits and interest. Free security deposit calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/real-estate/rental-deposit-calculator.zip"
+  },
+  {
+    "category": "Real Estate Tools",
+    "icon": "/assets/icons/real-estate-1.svg",
+    "title": "Rental Yield Calculator",
+    "desc": "Calculate rental yield. Gross yield, net yield, cash flow. Free rental yield calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/real-estate/rental-yield-calculator.zip"
+  },
+  {
+    "category": "Real Estate Tools",
+    "icon": "/assets/icons/real-estate-1.svg",
+    "title": "Square Feet to Square Meters",
+    "desc": "Convert square feet to square meters and back. Essential for international real estate. Free sq ft to sq m area converter.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/real-estate/sqft-to-sqm-converter.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "Article Schema Generator",
+    "desc": "Generate Article Schema.org JSON-LD markup for news articles, blog posts. Improves rich snippets and SEO. Free Article Schema generator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/article-schema-generator.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "Backlink Spam Checker",
+    "desc": "Analyze backlinks for spam signals. Check domain reputation, link quality indicators, and identify potentially toxic backlinks.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/backlink-checker.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "Breadcrumb Schema Generator",
+    "desc": "Generate BreadcrumbList Schema.org JSON-LD markup for breadcrumbs. Improves search appearance with breadcrumb rich snippets. Free Breadcrumb Schema generator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/breadcrumb-schema-generator.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "CORS Checker",
+    "desc": "Check if a URL supports Cross-Origin Resource Sharing (CORS). Test preflight OPTIONS requests and verify Access-Control headers.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/cors-checker.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "DNS Lookup",
+    "desc": "Look up DNS records for any domain. Check A, AAAA, MX, TXT, NS, CNAME, and SOA records using DNS-over-HTTPS.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/dns-lookup.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "Domain Filing Checker",
+    "desc": "Check domain ICP filing/registration status. Verify if a domain is registered for hosting in China and view filing details.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/domain-filing-checker.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "FAQ Schema Generator",
+    "desc": "Generate FAQ structured data (Schema.org) for rich results in Google. Add Q&A schema to your pages for better SEO. Free FAQ schema generator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/faq-schema-generator.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "Hreflang Tag Generator",
+    "desc": "Generate hreflang tags for international SEO. Tell Google which language/region versions of your pages exist. Free hreflang tag generator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/hreflang-tag-generator.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "IP Geolocation Lookup",
+    "desc": "Look up geolocation and ASN information for any IP address. Find country, city, ISP, and organization details.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/ip-geolocation.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "Open Graph Preview Tool",
+    "desc": "Preview how your website will look when shared on social media (Facebook, Twitter, LinkedIn). Enter OG tags and see live preview cards.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/og-preview.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "SEO Meta Tag Generator",
+    "desc": "Free SEO meta tag generator. Create title, description, Open Graph, Twitter Card, Schema.org markup. Local, no upload.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/seo-meta-generator.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "XML Sitemap Generator",
+    "desc": "Free online XML sitemap generator. Create sitemaps for Google, Bing, and other search engines. Local, no upload.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/sitemap-generator.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "Website Speed Test",
+    "desc": "Measure website load time from your browser. Test DNS resolution, connection, and content download speed for any URL.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/speed-test.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "SSL Certificate Checker",
+    "desc": "Check SSL/TLS certificate details for any domain. View issuer, validity dates, SAN entries, and certificate chain.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/ssl-checker.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "Structured Data Validator",
+    "desc": "Validate Schema.org JSON-LD structured data. Check for required fields, common errors, and Google rich results eligibility. Free structured data validator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/structured-data-validator.zip"
+  },
+  {
+    "category": "Webmaster & SEO Tools",
+    "icon": "/assets/icons/seo-1.svg",
+    "title": "UTM Parameter Builder",
+    "desc": "Generate UTM tracking parameters for Google Analytics 4 (GA4). Build campaign URLs for email, social, ads. Free online UTM builder.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/seo/utm-builder.zip"
+  },
+  {
+    "category": "Social Media",
+    "icon": "/assets/icons/social-1.svg",
+    "title": "Twitter Card Generator",
+    "desc": "Generate Twitter Card meta tags (summary, summary_large_image, player, app). Preview how your links appear on X/Twitter. Free Twitter Card generator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/social/twitter-card-generator.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/time-1.svg",
+    "title": "Age Milestones Calculator",
+    "desc": "Calculate age milestones. Driving, voting, retirement age. Free milestone calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/time/age-milestones-calculator.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/time-1.svg",
+    "title": "Day of Week Calculator",
+    "desc": "Find what day of the week any date falls on. Works for past and future dates. Free online day of week calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/time/day-of-week-calculator.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/time-1.svg",
+    "title": "Day of Year Calculator",
+    "desc": "Calculate what day of the year (1-366) any date falls on. Find remaining days in the year. Free online day of year calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/time/day-of-year-calculator.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/time-1.svg",
+    "title": "Days Between Dates Calculator",
+    "desc": "Calculate days between two dates. Business days, weeks, months. Free date difference calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/time/days-between-dates-calculator.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/time-1.svg",
+    "title": "Daylight Saving Time Converter",
+    "desc": "Convert times between Daylight Saving Time (DST) and Standard Time. See which countries observe DST and when transitions occur.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/time/dst-converter.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/time-1.svg",
+    "title": "Hijri Date Converter",
+    "desc": "Convert Gregorian to Hijri (Islamic) dates. Ramadan, Eid dates. Free Hijri calendar converter.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/time/hijri-date-converter.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/time-1.svg",
+    "title": "Leap Year Checker",
+    "desc": "Check if a year is a leap year. Find leap years in any range. Free online leap year calculator with Gregorian calendar rules.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/time/leap-year-checker.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/time-1.svg",
+    "title": "Lunar Phase Calculator",
+    "desc": "Calculate moon phase for any date. Free lunar phase calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/time/lunar-phase-calculator.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/time-1.svg",
+    "title": "Time Zone Meeting Planner",
+    "desc": "Plan meetings across multiple time zones. Find the best time for participants in different cities around the world.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/time/meeting-planner.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/time-1.svg",
+    "title": "Unix Timestamp Converter",
+    "desc": "Convert Unix timestamps to human-readable dates and back. Supports seconds and milliseconds. Free online Unix timestamp converter.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/time/unix-timestamp-converter-lite.zip"
+  },
+  {
+    "category": "Time & Date",
+    "icon": "/assets/icons/time-1.svg",
+    "title": "Week Number Calculator",
+    "desc": "Calculate ISO week number for any date. Free week number calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/time/week-number-calculator.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Airport Code Lookup",
+    "desc": "Look up IATA airport codes worldwide. Search by code, city, or airport name. Free airport code finder.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/airport-code-lookup.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Country Calling Code Lookup",
+    "desc": "Look up international country calling codes. Find dialing codes and formats. Free country code directory.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/country-calling-code-lookup.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Travel Currency Converter",
+    "desc": "Quick currency converter for travelers. Convert USD, EUR, GBP, JPY and more. Free offline currency calculator with preset rates.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/currency-converter-travel.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Distance Calculator",
+    "desc": "Calculate distance between cities. GPS coordinates distance. Free distance calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/distance-calculator.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Distance & Fuel Estimator",
+    "desc": "Calculate fuel cost and emissions for any trip distance. Compare vehicles by MPG. Free trip fuel calculator and carbon footprint estimator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/distance-fuel-estimator.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Driving Side by Country",
+    "desc": "Check which side of the road countries drive on. Left or right hand traffic guide. Free driving side reference.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/driving-side-by-country.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Flight Baggage Calculator",
+    "desc": "Calculate airline baggage fees by weight and dimensions. Compare carry-on and checked bag fees. Free airline baggage fee calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/flight-baggage-calc.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Flight Time Calculator",
+    "desc": "Calculate flight time between airports with time zones. See arrival time and flight duration. Free flight time calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/flight-time-calculator.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Fuel Economy Converter",
+    "desc": "Convert MPG to L/100km. Compare fuel economy. Free fuel economy converter.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/fuel-economy-converter.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Jet Lag Calculator",
+    "desc": "Calculate jet lag recovery time and adjustment schedule. Time zone shift, light exposure timing. Free jet lag calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/jet-lag-calculator.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Mileage Calculator",
+    "desc": "Track and calculate mileage for reimbursement, taxes, or expenses. Log trips with distance and rate. Free mileage tracker calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/mileage-calculator.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Mileage Tracker",
+    "desc": "Track mileage for tax deductions. Log trips, calculate reimbursements. IRS rate. Free mileage tracker.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/mileage-tracker.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Packing List Generator",
+    "desc": "Generate custom packing list for any trip. Beach, business, hiking, international. Free packing list generator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/packing-list-generator.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Passport Validity Checker",
+    "desc": "Check passport validity for international travel. Six-month rule checker. Free passport expiration calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/passport-validity-checker.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Plug Socket Reference",
+    "desc": "Find plug socket types and voltage by country. Know which adapter you need for international travel. Free plug socket reference guide.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/plug-socket-reference.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Road Toll Calculator",
+    "desc": "Estimate road trip toll costs across US highways. Calculate toll fees by state and vehicle type. Free toll road cost calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/road-toll-calculator.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Time Zone Converter",
+    "desc": "Convert time between world time zones. Free international time zone converter.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/time-zone-converter.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Tipping Guide by Country",
+    "desc": "Find tipping customs and percentages for 50+ countries. Know when, where, and how much to tip while traveling. Free international tipping guide.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/tipping-guide-by-country.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Travel Budget Calculator",
+    "desc": "Plan your trip budget. Flights, hotels, food, activities. Daily budget tracker. Free travel budget calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/travel-budget-calculator.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Travel Budget Splitter",
+    "desc": "Split travel costs among group members. Track who paid what and calculate balances. Free trip expense splitter.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/travel-budget-splitter.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Travel Itinerary Template",
+    "desc": "Generate a travel itinerary template. Plan day-by-day activities and schedule. Free travel itinerary maker.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/travel-itinerary-template.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Travel Visa Requirement Checker",
+    "desc": "Check tourist visa requirements between countries. Free visa checker for international travelers. Find visa-free destinations.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/travel-visa-checker.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Trip Budget Calculator",
+    "desc": "Plan and budget for trips. Estimate flights, hotels, food, activities, and daily costs. Free trip budget calculator for travelers.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/trip-budget-calculator.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Voltage by Country",
+    "desc": "Reference of voltage and frequency standards by country. 110V vs 220V guide for international travelers. Free voltage reference.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/voltage-by-country.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Audio Video Muxer",
+    "desc": "Combine video (no audio) with separate audio track. Replace or add audio to video. Browser-side muxing. Free audio video merger.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/audio-video-muxer.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Loop Video Maker",
+    "desc": "Loop a video clip N times to create extended looping video. Choose count or duration. Browser-side export. Free loop video maker.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/loop-video-maker.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Slow Motion Maker",
+    "desc": "Create slow motion video. Choose speed (0.25x, 0.5x, 0.75x). Frame interpolation preview. Browser-side export. Free slowmo maker.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/slow-motion-maker.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Time Lapse Maker",
+    "desc": "Speed up video to create time-lapse. Choose speed multiplier (2x-100x). Browser-side export. Free time lapse video maker.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/time-lapse-maker.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Video Aspect Ratio Converter",
+    "desc": "Convert video aspect ratio for any platform: 16:9 (YouTube), 9:16 (TikTok/Reels), 1:1 (Instagram), 4:5 (Facebook). Browser-based preview.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/video-aspect-ratio-converter.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Video Compressor Online",
+    "desc": "Compress video files in browser. Reduce file size by adjusting bitrate, resolution and quality. Free client-side video compressor.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/video-compressor-online.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Video Flipper",
+    "desc": "Flip video horizontally or vertically online. Free browser-based video mirroring tool with live preview and frame export. No upload.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/video-flipper.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Video Frame Extractor",
+    "desc": "Extract multiple frames from a video at regular intervals. Free online video frame grabber for analysis, GIFs, and stop motion. No upload.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/video-frame-extractor.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Video Joiner",
+    "desc": "Combine multiple video clips into one. Add videos in order, preview sequence, merge into single file. Free online video joiner.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/video-joiner.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Video Metadata Viewer",
+    "desc": "View video metadata online: duration, resolution, codec, bitrate, frame rate, file size. Free browser-based video info inspector. No upload.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/video-metadata-viewer.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Video Resolution Converter",
+    "desc": "Change video resolution by scaling frames. Convert 4K to 1080p, 1080p to 720p, or any custom resolution. Browser-based, no upload.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/video-resolution-converter.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Video Reverser",
+    "desc": "Reverse video playback in browser. Play video backwards and download reversed clip. Free client-side video reverser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/video-reverser.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Video Rotator",
+    "desc": "Rotate video 90, 180, or 270 degrees online. Free browser-based video rotation tool with live preview and frame export. No upload.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/video-rotator.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Video Speed Changer",
+    "desc": "Change video playback speed from 0.25x to 4x. Preview videos at any speed and extract frames at modified rate. No upload, browser-based.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/video-speed-changer.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Video Thumbnail Maker",
+    "desc": "Extract a thumbnail image from any video at a chosen timestamp. Free online video thumbnail generator. No upload, browser-based.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/video-thumbnail-maker.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Video to GIF Converter",
+    "desc": "Convert video files to animated GIF. Set start time, duration, size and frame rate. Free client-side video to GIF converter.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/video-to-gif.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Video to MP3 Converter",
+    "desc": "Extract audio from video files as WAV. Convert video to audio in browser. Free client-side video to audio converter.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/video-to-mp3.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Video Trimmer",
+    "desc": "Trim and cut video files in browser. Set start and end time to extract clips. Free client-side video trimmer.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/video-trimmer.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Video Volume Booster",
+    "desc": "Boost video volume beyond 100% using Web Audio API. Watch videos louder than browser default. No upload, browser-based audio amplification.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/video-volume-booster.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Video Watermark Adder",
+    "desc": "Add text or image watermark to video. Position, opacity, size. Browser-side preview and export. Free video watermark tool.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/video-watermark-adder.zip"
+  },
+  {
+    "category": "Weather & Climate",
+    "icon": "/assets/icons/weather-1.svg",
+    "title": "Apparent Temperature Calculator",
+    "desc": "Calculate apparent temperature (feels-like) combining heat index, wind chill, and humidity. Free real-feel temperature calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/weather/apparent-temperature-calc.zip"
+  },
+  {
+    "category": "Weather & Climate",
+    "icon": "/assets/icons/weather-1.svg",
+    "title": "Beaufort Wind Scale Converter",
+    "desc": "Convert wind speed to Beaufort scale with descriptions. Free wind scale converter for mph, km/h, m/s, knots, and Beaufort force 0-12.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/weather/beaufort-wind-scale.zip"
+  },
+  {
+    "category": "Weather & Climate",
+    "icon": "/assets/icons/weather-1.svg",
+    "title": "Dew Point Calculator",
+    "desc": "Calculate dew point from temperature and humidity. Free dew point calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/weather/dew-point-calculator.zip"
+  },
+  {
+    "category": "Weather & Climate",
+    "icon": "/assets/icons/weather-1.svg",
+    "title": "Heat Index Calculator",
+    "desc": "Calculate heat index and feels-like temperature. NWS formula with humidity. Free heat index calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/weather/heat-index-calculator.zip"
+  },
+  {
+    "category": "Weather & Climate",
+    "icon": "/assets/icons/weather-1.svg",
+    "title": "Precipitation Calculator",
+    "desc": "Calculate rainfall, water catchment, snow equivalent. Free precipitation calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/weather/precipitation-calculator.zip"
+  },
+  {
+    "category": "Weather & Climate",
+    "icon": "/assets/icons/weather-1.svg",
+    "title": "Storm Distance Calculator",
+    "desc": "Calculate distance from lightning strike by counting seconds between flash and thunder. Free storm distance and safety timer calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/weather/storm-distance-calc.zip"
+  },
+  {
+    "category": "Weather & Climate",
+    "icon": "/assets/icons/weather-1.svg",
+    "title": "Sunrise Sunset Calculator",
+    "desc": "Calculate sunrise, sunset, golden hour. Free solar time calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/weather/sunrise-sunset-calculator.zip"
+  },
+  {
+    "category": "Weather & Climate",
+    "icon": "/assets/icons/weather-1.svg",
+    "title": "Temperature Converter",
+    "desc": "Convert temperature between Celsius, Fahrenheit, Kelvin, and Rankine. Free online temperature converter for weather and science.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/weather/temperature-converter.zip"
+  },
+  {
+    "category": "Weather & Climate",
+    "icon": "/assets/icons/weather-1.svg",
+    "title": "UV Index Calculator",
+    "desc": "Calculate UV index and sun exposure time. SPF recommendations, vitamin D synthesis. Free UV index calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/weather/uv-index-calculator.zip"
+  },
+  {
+    "category": "Weather & Climate",
+    "icon": "/assets/icons/weather-1.svg",
+    "title": "Wind Chill Calculator",
+    "desc": "Calculate wind chill temperature. NWS formula. Feels-like temperature. Free wind chill calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/weather/wind-chill-calculator.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "/assets/icons/writing-1.svg",
+    "title": "Chinese",
+    "desc": "Count words in mixed Chinese-English text. Handles CJK characters, English words, numbers, and punctuation separately. Perfect for translation and content work.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/cn-en-word-counter.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "/assets/icons/writing-1.svg",
+    "title": "ISBN Book Info Lookup",
+    "desc": "Look up book information by ISBN. Get title, author, publisher, cover image, and more from the Open Library API.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/isbn-lookup.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "/assets/icons/writing-1.svg",
+    "title": "Markdown to HTML Converter",
+    "desc": "Convert Markdown to HTML in real-time. Supports headings, lists, code blocks, links, images, tables, and more. Copy HTML output instantly.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/markdown-to-html.zip"
   }
 ]

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Free online Unicode converter. Convert Chinese characters to Unicode escape sequences and back. Local, no upload.">
 <meta name="keywords" content="Unicode converter, Chinese to Unicode, escape sequence, \\u encoding, decode Unicode, encode Chinese">
-<title>Unicode ↔ Chinese Converter | YuanQiZhiLe Toolkit</title>
+<title>Unicode &#8212; Chinese Converter | YuanqiZhiKe Toolkit</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{padding:20px;font-family:system-ui,-apple-system,sans-serif;background:#f7f7f7;transition:background 0.3s,color 0.3s}
@@ -94,19 +94,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 <div class="wrap">
     <div class="top-bar">
         <div>
-            <h1>Unicode ↔ Chinese Converter</h1>
+            <h1>Unicode &#8212; Chinese Converter</h1>
             <div class="subtitle">Convert Chinese / any text to Unicode escape sequences and back. Local, no upload.</div>
         </div>
         <div style="display:flex;gap:8px;align-items:center">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark (Ctrl+Shift+T)">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
 
     <div class="grid">
         <div>
             <label class="field-label" for="inputBox">Input Text</label>
-            <textarea id="inputBox" placeholder="你好, world!"></textarea>
+            <textarea id="inputBox" placeholder="Hello, world!"></textarea>
         </div>
         <div>
             <label class="field-label" for="outputBox">Output</label>
@@ -117,8 +117,8 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
     <div class="options">
         <label>Mode:
             <select id="mode">
-                <option value="encode" selected>Encode (Text → Unicode)</option>
-                <option value="decode">Decode (Unicode → Text)</option>
+                <option value="encode" selected>Encode (Text &#8212; Unicode)</option>
+                <option value="decode">Decode (Unicode &#8212; Text)</option>
                 <option value="both">Auto detect</option>
             </select>
         </label>
@@ -139,14 +139,14 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 
     <div class="btns">
         <button id="convert" class="success">Convert</button>
-        <button id="swap" class="secondary">⇅ Swap Input/Output</button>
+        <button id="swap" class="secondary">Swap Input/Output</button>
         <button id="copy" class="secondary">Copy Result</button>
         <button id="clear" class="secondary">Clear</button>
     </div>
 
     <div class="preview">
         <div class="lbl">Char-by-char breakdown</div>
-        <div class="val" id="breakdown" style="margin-top:6px;white-space:pre-wrap;font-size:12px;line-height:1.6">—</div>
+        <div class="val" id="breakdown" style="margin-top:6px;white-space:pre-wrap;font-size:12px;line-height:1.6"></div>
     </div>
 
     <div class="guide">
@@ -155,14 +155,14 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             <li>Paste your text into the input box (Chinese, English, or mixed).</li>
             <li>Choose <strong>Mode</strong>:
                 <ul style="margin-top:4px;padding-left:18px">
-                    <li><strong>Encode</strong> — convert text to Unicode escapes (<code>\u4f60\u597d</code>).</li>
-                    <li><strong>Decode</strong> — convert <code>\uXXXX</code> sequences back to readable text.</li>
-                    <li><strong>Auto detect</strong> — let the tool guess based on content.</li>
+                    <li><strong>Encode</strong> convert text to Unicode escapes (<code>\u4f60\u597d</code>).</li>
+                    <li><strong>Decode</strong> convert <code>\uXXXX</code> sequences back to readable text.</li>
+                    <li><strong>Auto detect</strong> let the tool guess based on content.</li>
                 </ul>
             </li>
             <li>Pick the <strong>Format</strong>: JS <code>\uXXXX</code>, HTML <code>&amp;#NNNN;</code>, CSS <code>\HHHH</code>, or raw UTF-8 bytes.</li>
             <li>Toggle <strong>Keep ASCII as-is</strong> (only encode non-ASCII) and <strong>Encode spaces</strong>.</li>
-            <li>Click <strong>Convert</strong> — output and per-character breakdown appear instantly.</li>
+            <li>Click <strong>Convert</strong> output and per-character breakdown appear instantly.</li>
         </ol>
     </div>
 
@@ -175,26 +175,24 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
 
-    <footer>
-        <div>YuanQiZhiLe Toolkit · Process locally in your browser, no data upload.</div>
-    </footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 
 <script>
@@ -203,7 +201,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
     const __themeBtn = document.getElementById('themeToggle');
     function __applyTheme(t){
         document.body.classList.toggle('dark', t === 'dark');
-        if(__themeBtn) __themeBtn.textContent = (t === 'dark') ? '☀️' : '🌙';
+        if(__themeBtn) __themeBtn.textContent = (t === 'dark') ? '☀? : '🌙';
     }
     const __saved = localStorage.getItem('theme');
     if(__saved){
@@ -245,7 +243,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         __copyBtn.addEventListener('click', () => {
             navigator.clipboard.writeText('contact@yuanqizhike.com').then(() => {
                 const old = __copyBtn.textContent;
-                __copyBtn.textContent = '✓';
+                __copyBtn.textContent='Copied';
                 setTimeout(() => __copyBtn.textContent = old, 1500);
             });
         });
@@ -371,7 +369,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
     }
 
     function detectMode(text){
-        // If contains \u, \x, or &# → decode
+        // If contains \u, \x, or &# ?decode
         if(/\\u[0-9a-fA-F]{4}|\\x[0-9a-fA-F]{2}|&#x?[0-9a-fA-F]+;/i.test(text)) return 'decode';
         return 'encode';
     }
@@ -384,7 +382,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         const encodeSpace = document.getElementById('opt-space').checked;
         if(!input){
             document.getElementById('outputBox').value = '';
-            document.getElementById('breakdown').textContent = '—';
+            document.getElementById('breakdown').textContent = '?;
             return;
         }
         let actualMode = mode;
@@ -403,7 +401,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             const code = ch.codePointAt(0);
             const hex = code.toString(16).toUpperCase().padStart(4, '0');
             const dec = code;
-            return `${ch === ' ' ? '␣' : ch === '\n' ? '⏎' : ch}  →  U+${hex}  (${dec})`;
+            return `${ch === ' ' ? '? : ch === '\n' ? '-? : ch}  -? U+${hex}  (${dec})`;
         });
         document.getElementById('breakdown').textContent = lines.slice(0, 30).join('\n') + (lines.length > 30 ? `\n... (+${lines.length - 30} more)` : '');
     }
@@ -433,7 +431,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         navigator.clipboard.writeText(v).then(() => {
             const b = document.getElementById('copy');
             const old = b.textContent;
-            b.textContent = '✓ Copied';
+            b.textContent = '?Copied';
             setTimeout(() => b.textContent = old, 1500);
         });
     });
@@ -441,7 +439,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
     document.getElementById('clear').addEventListener('click', () => {
         document.getElementById('inputBox').value = '';
         document.getElementById('outputBox').value = '';
-        document.getElementById('breakdown').textContent = '—';
+        document.getElementById('breakdown').textContent = ';
     });
 
     convert();

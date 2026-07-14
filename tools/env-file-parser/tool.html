@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ENV File Parser | YuanQiZhiLe Toolkit</title>
+<title>ENV File Parser | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Parse and edit .env files. Convert env to JSON, YAML. Free environment variable editor.">
 <meta name="keywords" content="env file, environment variables, dotenv, env parser, env to json, env editor">
 <meta property="og:title" content="ENV File Parser - Free Online Tool">
@@ -112,7 +112,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>ENV File Parser</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Parse and edit .env files. Convert env to JSON, YAML. Free environment variable editor.</div>
@@ -120,9 +120,9 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <textarea id="input" placeholder="API_KEY=abc123&#10;DB_HOST=localhost&#10;PORT=3000" style="width:100%;min-height:150px;padding:8px;font-family:monospace;font-size:12px"></textarea>
     </div>
     <div class="row">
-        <button id="toJson" style="flex:1;padding:8px;background:#3b82f6;color:#fff;border:none;border-radius:4px;cursor:pointer">→ JSON</button>
-        <button id="toYaml" style="flex:1;padding:8px;background:#10b981;color:#fff;border:none;border-radius:4px;cursor:pointer">→ YAML</button>
-        <button id="toTable" style="flex:1;padding:8px;background:#f59e0b;color:#fff;border:none;border-radius:4px;cursor:pointer">→ Table</button>
+        <button id="toJson" style="flex:1;padding:8px;background:#3b82f6;color:#fff;border:none;border-radius:4px;cursor:pointer">Note: JSON</button>
+        <button id="toYaml" style="flex:1;padding:8px;background:#10b981;color:#fff;border:none;border-radius:4px;cursor:pointer">Note: YAML</button>
+        <button id="toTable" style="flex:1;padding:8px;background:#f59e0b;color:#fff;border:none;border-radius:4px;cursor:pointer">Note: Table</button>
     </div>
     <button id="download" style="width:100%;padding:8px;background:#7c3aed;color:#fff;border:none;border-radius:4px;cursor:pointer;margin-top:4px">Download .env</button>
     <div id="result" style="margin-top:12px"></div>
@@ -136,19 +136,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -161,7 +161,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 </ol>
 <p style="margin-top:8px;font-size:12px;color:#666">.env format: KEY=VALUE per line. Comments start with #. Values can be quoted. Types auto-detected (string, number, boolean, null). Common in Node.js (dotenv), Docker, CI/CD. Never commit real secrets to git.</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -172,7 +172,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -198,7 +198,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -348,7 +348,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
                 var text = decodeURIComponent(this.getAttribute('data-text'));
                 navigator.clipboard.writeText(text);
                 var old = this.textContent;
-                this.textContent = '✓ Copied!';
+                this.textContent = '?Copied!';
                 var self = this;
                 setTimeout(function(){ self.textContent = old; }, 1500);
             });

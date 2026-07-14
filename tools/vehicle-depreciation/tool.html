@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vehicle Depreciation Calculator | YuanQiZhiLe Toolkit</title>
+<title>Vehicle Depreciation Calculator | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Calculate car depreciation over time. Year-by-year value loss, best time to sell. Free vehicle depreciation calculator.">
 <meta name="keywords" content="car depreciation, vehicle value, car value loss, depreciation curve, when to sell car, vehicle value calculator">
 <meta property="og:title" content="Vehicle Depreciation Calculator - Free Online Tool">
@@ -112,7 +112,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>Vehicle Depreciation Calculator</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Calculate car depreciation over time. Year-by-year value loss, best time to sell. Free vehicle depreciation calculator.</div>
@@ -156,19 +156,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -184,7 +184,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 </ol>
 <p style="margin-top:8px;font-size:12px;color:#666">Cars typically lose 15-30% in year 1, then 10-15% per year. Luxury cars and EVs depreciate fastest. Trucks and sports cars hold value better. High mileage increases depreciation by ~1% per 1,000 miles over 12k/year.</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -195,7 +195,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -221,7 +221,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -352,7 +352,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             for(var i = 5; i < 10; i++) val *= (1 - r[i] / 100);
             var loss10 = ((price - val) / price * 100);
             var isCurrent = t === vehicleType;
-            html += '<tr style="border-bottom:1px solid #eee' + (isCurrent ? ';background:#dbeafe;font-weight:bold' : '') + '"><td style="padding:4px">' + t + (isCurrent ? ' ✓' : '') + '</td><td style="text-align:right;padding:4px">' + loss5.toFixed(0) + '%</td><td style="text-align:right;padding:4px">' + loss10.toFixed(0) + '%</td></tr>';
+            html += '<tr style="border-bottom:1px solid #eee' + (isCurrent ? ';background:#dbeafe;font-weight:bold' : '') + '"><td style="padding:4px">' + t + (isCurrent ? ' ? : '') + '</td><td style="text-align:right;padding:4px">' + loss5.toFixed(0) + '%</td><td style="text-align:right;padding:4px">' + loss10.toFixed(0) + '%</td></tr>';
         });
         html += '</table>';
         html += '</div>';

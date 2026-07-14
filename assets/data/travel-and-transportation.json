@@ -1,0 +1,227 @@
+[
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/audio-1.svg",
+    "title": "Road Trip Planner",
+    "desc": "A free offline tool for road trip planner calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/road-trip-planner/index.html",
+    "zipUrl": "/assets/zip-packages/travel/road-trip-planner.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Airport Code Lookup",
+    "desc": "Look up IATA airport codes worldwide. Search by code, city, or airport name. Free airport code finder.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/airport-code-lookup.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Country Calling Code Lookup",
+    "desc": "Look up international country calling codes. Find dialing codes and formats. Free country code directory.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/country-calling-code-lookup.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Travel Currency Converter",
+    "desc": "Quick currency converter for travelers. Convert USD, EUR, GBP, JPY and more. Free offline currency calculator with preset rates.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/currency-converter-travel.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Distance Calculator",
+    "desc": "Calculate distance between cities. GPS coordinates distance. Free distance calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/distance-calculator.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Distance & Fuel Estimator",
+    "desc": "Calculate fuel cost and emissions for any trip distance. Compare vehicles by MPG. Free trip fuel calculator and carbon footprint estimator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/distance-fuel-estimator.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Driving Side by Country",
+    "desc": "Check which side of the road countries drive on. Left or right hand traffic guide. Free driving side reference.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/driving-side-by-country.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Flight Baggage Calculator",
+    "desc": "Calculate airline baggage fees by weight and dimensions. Compare carry-on and checked bag fees. Free airline baggage fee calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/flight-baggage-calc.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Flight Time Calculator",
+    "desc": "Calculate flight time between airports with time zones. See arrival time and flight duration. Free flight time calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/flight-time-calculator.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Fuel Economy Converter",
+    "desc": "Convert MPG to L/100km. Compare fuel economy. Free fuel economy converter.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/fuel-economy-converter.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Jet Lag Calculator",
+    "desc": "Calculate jet lag recovery time and adjustment schedule. Time zone shift, light exposure timing. Free jet lag calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/jet-lag-calculator.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Mileage Calculator",
+    "desc": "Track and calculate mileage for reimbursement, taxes, or expenses. Log trips with distance and rate. Free mileage tracker calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/mileage-calculator.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Mileage Tracker",
+    "desc": "Track mileage for tax deductions. Log trips, calculate reimbursements. IRS rate. Free mileage tracker.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/mileage-tracker.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Packing List Generator",
+    "desc": "Generate custom packing list for any trip. Beach, business, hiking, international. Free packing list generator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/packing-list-generator.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Passport Validity Checker",
+    "desc": "Check passport validity for international travel. Six-month rule checker. Free passport expiration calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/passport-validity-checker.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Plug Socket Reference",
+    "desc": "Find plug socket types and voltage by country. Know which adapter you need for international travel. Free plug socket reference guide.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/plug-socket-reference.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Road Toll Calculator",
+    "desc": "Estimate road trip toll costs across US highways. Calculate toll fees by state and vehicle type. Free toll road cost calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/road-toll-calculator.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Time Zone Converter",
+    "desc": "Convert time between world time zones. Free international time zone converter.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/time-zone-converter.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Tipping Guide by Country",
+    "desc": "Find tipping customs and percentages for 50+ countries. Know when, where, and how much to tip while traveling. Free international tipping guide.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/tipping-guide-by-country.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Travel Budget Calculator",
+    "desc": "Plan your trip budget. Flights, hotels, food, activities. Daily budget tracker. Free travel budget calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/travel-budget-calculator.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Travel Budget Splitter",
+    "desc": "Split travel costs among group members. Track who paid what and calculate balances. Free trip expense splitter.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/travel-budget-splitter.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Travel Itinerary Template",
+    "desc": "Generate a travel itinerary template. Plan day-by-day activities and schedule. Free travel itinerary maker.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/travel-itinerary-template.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Travel Visa Requirement Checker",
+    "desc": "Check tourist visa requirements between countries. Free visa checker for international travelers. Find visa-free destinations.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/travel-visa-checker.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Trip Budget Calculator",
+    "desc": "Plan and budget for trips. Estimate flights, hotels, food, activities, and daily costs. Free trip budget calculator for travelers.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/trip-budget-calculator.zip"
+  },
+  {
+    "category": "Travel & Transportation",
+    "icon": "/assets/icons/travel-1.svg",
+    "title": "Voltage by Country",
+    "desc": "Reference of voltage and frequency standards by country. 110V vs 220V guide for international travelers. Free voltage reference.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/travel/voltage-by-country.zip"
+  }
+]

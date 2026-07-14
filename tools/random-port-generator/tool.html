@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Free online random port generator. Generate random available ports in batches. Useful for developers. Local, no upload.">
 <meta name="keywords" content="random port generator, port picker, developer tool, network port, free port finder, batch port">
-<title>Random Port Generator | YuanQiZhiLe Toolkit</title>
+<title>Random Port Generator | YuanqiZhiKe Toolkit</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{padding:20px;font-family:system-ui,-apple-system,sans-serif;background:#f7f7f7;transition:background 0.3s,color 0.3s}
@@ -106,7 +106,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         </div>
         <div style="display:flex;gap:8px;align-items:center">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark (Ctrl+Shift+T)">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
 
@@ -157,13 +157,13 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             <li>Set the <strong>Number of ports</strong> you want to generate.</li>
             <li>Pick a <strong>Range preset</strong> or choose <code>Custom range</code> and set Min / Max manually (0-65535).</li>
             <li>Toggle <strong>Unique</strong> to avoid duplicate ports, <strong>Sort ascending</strong> for ordered output, <strong>Show port type badge</strong> to label each port's category.</li>
-            <li>Click <strong>Generate</strong> — ports appear in the list below with copy buttons.</li>
+            <li>Click <strong>Generate</strong> ports appear in the list below with copy buttons.</li>
             <li>Use <strong>Copy All</strong> or <strong>Copy CSV</strong> to grab the whole batch.</li>
         </ol>
         <p style="margin-top:10px;font-size:12px;color:#666"><strong>Port ranges:</strong><br>
-        • Well-known: 0 - 1023 (system services)<br>
-        • Registered: 1024 - 49151 (IANA registered apps)<br>
-        • Dynamic/Private: 49152 - 65535 (ephemeral, safe to use)</p>
+        Well-known: 0 - 1023 (system services)<br>
+        Registered: 1024 - 49151 (IANA registered apps)<br>
+        Dynamic/Private: 49152 - 65535 (ephemeral, safe to use)</p>
     </div>
 
     <div class="lead">
@@ -175,26 +175,24 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
 
-    <footer>
-        <div>YuanQiZhiLe Toolkit · Process locally in your browser, no data upload.</div>
-    </footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 
 <script>
@@ -203,7 +201,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
     const __themeBtn = document.getElementById('themeToggle');
     function __applyTheme(t){
         document.body.classList.toggle('dark', t === 'dark');
-        if(__themeBtn) __themeBtn.textContent = (t === 'dark') ? '☀️' : '🌙';
+        if(__themeBtn) __themeBtn.textContent = (t === 'dark') ? '☀? : '🌙';
     }
     const __saved = localStorage.getItem('theme');
     if(__saved){
@@ -245,7 +243,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         __copyBtn.addEventListener('click', () => {
             navigator.clipboard.writeText('contact@yuanqizhike.com').then(() => {
                 const old = __copyBtn.textContent;
-                __copyBtn.textContent = '✓';
+                __copyBtn.textContent='Copied';
                 setTimeout(() => __copyBtn.textContent = old, 1500);
             });
         });
@@ -327,7 +325,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
                 item.querySelector('.copy').addEventListener('click', e => {
                     navigator.clipboard.writeText(e.target.dataset.port);
                     const old = e.target.textContent;
-                    e.target.textContent = '✓';
+                    e.target.textContent = '?;
                     setTimeout(() => e.target.textContent = old, 1000);
                 });
                 container.appendChild(item);
@@ -346,7 +344,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         navigator.clipboard.writeText(lastPorts.join('\n')).then(() => {
             const b = document.getElementById('copy');
             const old = b.textContent;
-            b.textContent = '✓ Copied';
+            b.textContent = '?Copied';
             setTimeout(() => b.textContent = old, 1500);
         });
     });
@@ -356,7 +354,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         navigator.clipboard.writeText(lastPorts.join(', ')).then(() => {
             const b = document.getElementById('copyCsv');
             const old = b.textContent;
-            b.textContent = '✓ Copied';
+            b.textContent = '?Copied';
             setTimeout(() => b.textContent = old, 1500);
         });
     });

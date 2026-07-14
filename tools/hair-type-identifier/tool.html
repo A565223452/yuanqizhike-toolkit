@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hair Type Identifier | YuanQiZhiLe Toolkit</title>
+<title>Hair Type Identifier | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Identify your hair type and get care tips. Free hair type finder.">
 <meta name="keywords" content="hair type, hair care, curl pattern, hair texture, hair identifier">
 <meta property="og:title" content="Hair Type Identifier - Free Online Tool">
@@ -112,7 +112,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>Hair Type Identifier</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Identify your hair type and get care tips. Free hair type finder.</div>
@@ -167,19 +167,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -193,7 +193,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 </ol>
 <p style="margin-top:8px;font-size:12px;color:#666">Hair typing: 1 (straight), 2 (wavy), 3 (curly), 4 (coily). Sub-types: A (fine), B (medium), C (thick). Porosity test: drop hair in water - floats = low, sinks slowly = normal, sinks fast = high. Density: how many hairs per square inch.</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -204,7 +204,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -230,7 +230,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -268,18 +268,18 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         var scalp = document.getElementById('scalp').value;
         var fullType = pattern + subType;
         var typeDescriptions = {
-            '1A': { name: 'Fine Straight', desc: 'Soft, shiny, fine hair that rarely tangles', emoji: '💇‍♀️' },
-            '1B': { name: 'Medium Straight', desc: 'Has more body and volume', emoji: '💇‍♀️' },
-            '1C': { name: 'Coarse Straight', desc: 'Thick, hard to hold curls', emoji: '💇‍♀️' },
+            '1A': { name: 'Fine Straight', desc: 'Soft, shiny, fine hair that rarely tangles', emoji: '💇‍♀? },
+            '1B': { name: 'Medium Straight', desc: 'Has more body and volume', emoji: '💇‍♀? },
+            '1C': { name: 'Coarse Straight', desc: 'Thick, hard to hold curls', emoji: '💇‍♀? },
             '2A': { name: 'Loose Wave', desc: 'Subtle S-shaped waves', emoji: '🌊' },
             '2B': { name: 'Medium Wave', desc: 'More defined S-shaped waves', emoji: '🌊' },
             '2C': { name: 'Coarse Wave', desc: 'Thick, defined waves with some curl', emoji: '🌊' },
             '3A': { name: 'Loose Curl', desc: 'Large, loose spiral curls', emoji: '🌀' },
             '3B': { name: 'Medium Curl', desc: 'Springy, medium-sized curls', emoji: '🌀' },
             '3C': { name: 'Tight Curl', desc: 'Tight, corkscrew curls', emoji: '🌀' },
-            '4A': { name: 'Soft Coil', desc: 'Tight coils with S-pattern', emoji: '➰' },
-            '4B': { name: 'Z-Pattern Coil', desc: 'Zigzag pattern, less defined', emoji: '➰' },
-            '4C': { name: 'Tight Coil', desc: 'Very tight, no defined pattern', emoji: '➰' }
+            '4A': { name: 'Soft Coil', desc: 'Tight coils with S-pattern', emoji: '? },
+            '4B': { name: 'Z-Pattern Coil', desc: 'Zigzag pattern, less defined', emoji: '? },
+            '4C': { name: 'Tight Coil', desc: 'Very tight, no defined pattern', emoji: '? }
         };
         var info = typeDescriptions[fullType] || { name: fullType, desc: 'Custom combination', emoji: '💇' };
         // Wash frequency
@@ -327,7 +327,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         html += '<div style="font-size:13px;font-weight:bold;margin-bottom:6px">Recommended Products</div>';
         html += '<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:4px">';
         productRecs[pattern].forEach(function(p){
-            html += '<div style="background:#f3e8ff;padding:6px;border-radius:4px;font-size:11px">• ' + p + '</div>';
+            html += '<div style="background:#f3e8ff;padding:6px;border-radius:4px;font-size:11px">?' + p + '</div>';
         });
         html += '</div>';
         html += '</div>';
@@ -347,7 +347,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         html += '<div style="background:#fef3c7;padding:10px;border-radius:6px;font-size:11px;color:#92400e">';
         html += '<div style="font-weight:bold;margin-bottom:6px">Hair Care Tips for Type ' + pattern + ':</div>';
         typeTips[pattern].forEach(function(tip){
-            html += '• ' + tip + '<br>';
+            html += '?' + tip + '<br>';
         });
         html += '</div>';
         html += '</div>';

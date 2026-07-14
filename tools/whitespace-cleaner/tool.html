@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Free online whitespace cleaner. Remove extra spaces, trim lines, remove blank lines, dedupe spaces, normalize line breaks. Local, no upload.">
 <meta name="keywords" content="whitespace remover, remove extra spaces, trim lines, remove blank lines, clean text, normalize whitespace, online text cleaner">
-<title>Whitespace Cleaner - Remove Extra Spaces / Blank Lines | YuanQiZhiLe Toolkit</title>
+<title>Whitespace Cleaner - Remove Extra Spaces / Blank Lines | YuanqiZhiKe Toolkit</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{padding:20px;font-family:system-ui,-apple-system,sans-serif;background:#f7f7f7;transition:background 0.3s,color 0.3s}
@@ -93,7 +93,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         </div>
         <div style="display:flex;gap:8px;align-items:center">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark (Ctrl+Shift+T)">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
 
@@ -102,14 +102,14 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 
     <div class="options">
         <label class="check-label"><input type="checkbox" id="opt-trim-lines" checked> Trim each line (leading/trailing spaces)</label>
-        <label class="check-label"><input type="checkbox" id="opt-collapse-spaces" checked> Collapse multiple spaces → 1</label>
-        <label class="check-label"><input type="checkbox" id="opt-collapse-blank" checked> Collapse multiple blank lines → 1</label>
+        <label class="check-label"><input type="checkbox" id="opt-collapse-spaces" checked> Collapse multiple spaces 1</label>
+        <label class="check-label"><input type="checkbox" id="opt-collapse-blank" checked> Collapse multiple blank lines 1</label>
         <label class="check-label"><input type="checkbox" id="opt-remove-blank"> Remove all blank lines</label>
-        <label class="check-label"><input type="checkbox" id="opt-remove-tabs"> Convert tabs → spaces</label>
+        <label class="check-label"><input type="checkbox" id="opt-remove-tabs"> Convert tabs &#8212; spaces</label>
         <label class="check-label"><input type="checkbox" id="opt-remove-extra-spaces"> Remove spaces around punctuation</label>
-        <label class="check-label"><input type="checkbox" id="opt-nbsp"> Convert non-breaking spaces → normal</label>
+        <label class="check-label"><input type="checkbox" id="opt-nbsp"> Convert non-breaking spaces &#8212; normal</label>
         <label class="check-label"><input type="checkbox" id="opt-zero-width"> Remove zero-width / BOM chars</label>
-        <label class="check-label"><input type="checkbox" id="opt-lf"> Normalize line breaks → LF (\n)</label>
+        <label class="check-label"><input type="checkbox" id="opt-lf"> Normalize line breaks &#8212; LF (\n)</label>
         <label class="check-label"><input type="checkbox" id="opt-trim-doc"> Trim whole document</label>
     </div>
 
@@ -117,7 +117,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <button id="process" class="success">Clean</button>
         <button id="copy" class="secondary">Copy Result</button>
         <button id="download" class="secondary">Download .txt</button>
-        <button id="swap" class="secondary">⇅ Swap</button>
+        <button id="swap" class="secondary">Swap</button>
         <button id="clear" class="secondary">Clear</button>
     </div>
 
@@ -128,7 +128,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 
     
     <div class="instructions">
-        <h2>How to Use</h2>
+        <h2>How to Use</h1>
 <ol><li>Paste text with extra spaces or blank lines</li><li>Select cleaning options (trim, collapse spaces, remove blank lines)</li><li>Click <strong>Clean</strong></li><li>Copy the cleaned text</li></ol>
     </div>
     <div class="lead">
@@ -140,26 +140,24 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
 
-    <footer>
-        <div>YuanQiZhiLe Toolkit · Process locally in your browser, no data upload.</div>
-    </footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 
 <script>
@@ -210,7 +208,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         __copyBtn.addEventListener('click', () => {
             navigator.clipboard.writeText('contact@yuanqizhike.com').then(() => {
                 const old = __copyBtn.textContent;
-                __copyBtn.textContent = '✓';
+                __copyBtn.textContent='Copied';
                 setTimeout(() => __copyBtn.textContent = old, 1500);
             });
         });
@@ -244,7 +242,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(isChecked('opt-lf')){
             s = s.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
         }
-        // tabs → spaces
+        // tabs ?spaces
         if(isChecked('opt-remove-tabs')){
             s = s.replace(/\t/g, '  ');
         }
@@ -311,7 +309,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         navigator.clipboard.writeText(v).then(() => {
             const b = document.getElementById('copy');
             const old = b.textContent;
-            b.textContent = '✓ Copied';
+            b.textContent = 'Copied';
             setTimeout(() => b.textContent = old, 1500);
         });
     });

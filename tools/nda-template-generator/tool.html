@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NDA Template Generator | YuanQiZhiLe Toolkit</title>
+<title>NDA Template Generator | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Generate Non-Disclosure Agreement (NDA) templates. Mutual or one-way. Customizable terms. Free legal NDA template generator.">
 <meta name="keywords" content="nda, non disclosure agreement, confidentiality agreement, nda template, legal template, mutual nda">
 <meta property="og:title" content="NDA Template Generator - Free Online Tool">
@@ -112,7 +112,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>NDA Template Generator</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Generate Non-Disclosure Agreement (NDA) templates. Mutual or one-way. Customizable terms. Free legal NDA template generator.</div>
@@ -159,19 +159,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -183,9 +183,9 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 <li>Select optional clauses (non-solicit, injunctive, etc.).</li>
 <li>Click <b>Generate</b>, then <b>Print</b> to save as PDF.</li>
 </ol>
-<p style="margin-top:8px;font-size:12px;color:#666"><b>Disclaimer:</b> This is a template only — not legal advice. Always consult a qualified attorney. NDAs vary by jurisdiction. Common terms: 2-5 year confidentiality, return/destruction of materials, injunctive relief. Use specific-purpose NDAs (employment, M&A, vendor) when applicable.</p>
+<p style="margin-top:8px;font-size:12px;color:#666"><b>Disclaimer:</b> This is a template only &#8212; not legal advice. Always consult a qualified attorney. NDAs vary by jurisdiction. Common terms: 2-5 year confidentiality, return/destruction of materials, injunctive relief. Use specific-purpose NDAs (employment, M&A, vendor) when applicable.</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -196,7 +196,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -222,7 +222,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -310,7 +310,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         }
         if(residuals){
             html += '<h3 style="margin-top:18px">' + sectionNum + '. Residual Knowledge</h3>';
-            html += '<p style="font-size:13px">The receiving party may use residual knowledge — general skills, knowledge, and experience retained in unaided memory — provided such use does not involve direct reproduction or disclosure of specific Confidential Information.</p>';
+            html += '<p style="font-size:13px">The receiving party may use residual knowledge ?general skills, knowledge, and experience retained in unaided memory ?provided such use does not involve direct reproduction or disclosure of specific Confidential Information.</p>';
             sectionNum++;
         }
         if(governing){

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mortgage Refinance Calculator | YuanQiZhiLe Toolkit</title>
+<title>Mortgage Refinance Calculator | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Calculate if refinancing your mortgage makes sense. Compare current and new rates, closing costs, and break-even point. Free online refinance calculator.">
 <meta name="keywords" content="mortgage refinance, refinance calculator, break even, refi calculator, mortgage comparison, home loan refinance">
 <meta property="og:title" content="Mortgage Refinance Calculator - Free Online Tool">
@@ -112,7 +112,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>Mortgage Refinance Calculator</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Calculate if refinancing your mortgage makes sense. Compare current and new rates, closing costs, and break-even point. Free online refinance calculator.</div>
@@ -169,19 +169,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -195,7 +195,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 </ol>
 <p style="margin-top:8px;font-size:12px;color:#666">Break-even = closing costs / monthly savings. If you'll sell before break-even, refinancing loses money. Closing costs typically 2-5% of loan. "No-cost" refinances roll costs into the rate. Always get quotes from 3+ lenders.</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -206,7 +206,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -232,7 +232,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -289,7 +289,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         var breakEvenMonths = monthlySavings > 0 ? Math.ceil(closing / monthlySavings) : Infinity;
         var recommend = monthlySavings > 0 && (breakEvenMonths < yearsLeft * 12);
         var html = '<div style="background:linear-gradient(135deg,' + (recommend ? '#10b981,#06b6d4' : '#ef4444,#f59e0b') + ');color:#fff;padding:20px;border-radius:8px;text-align:center;margin-bottom:12px">';
-        html += '<div style="font-size:14px;opacity:0.9">' + (recommend ? '✅ Refinance recommended' : '⚠️ Refinance may not be worth it') + '</div>';
+        html += '<div style="font-size:14px;opacity:0.9">' + (recommend ? '?Refinance recommended' : '⚠️ Refinance may not be worth it') + '</div>';
         html += '<div style="font-size:36px;font-weight:bold;margin-top:4px">' + (monthlySavings > 0 ? '+' : '') + formatMoney(monthlySavings) + '/mo</div>';
         html += '<div style="font-size:13px;opacity:0.9">Monthly ' + (monthlySavings > 0 ? 'savings' : 'increase') + '</div>';
         html += '</div>';
@@ -315,11 +315,11 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         }
         html += '<div style="margin-top:12px;padding:12px;background:#fef3c7;border-radius:6px;font-size:13px;line-height:1.6">';
         html += '<b>💡 Tips:</b><br>';
-        html += '• Rule of thumb: refinance if you can lower rate by ≥1%<br>';
-        html += '• Plan to stay in home past break-even point<br>';
-        html += '• Consider shorter term (15-yr) for bigger savings<br>';
-        html += '• Points (upfront fee) can lower rate — calculate ROI<br>';
-        html += '• Compare APR (not just rate) — includes fees';
+        html += '?Rule of thumb: refinance if you can lower rate by ?%<br>';
+        html += '?Plan to stay in home past break-even point<br>';
+        html += '?Consider shorter term (15-yr) for bigger savings<br>';
+        html += '?Points (upfront fee) can lower rate ?calculate ROI<br>';
+        html += '?Compare APR (not just rate) ?includes fees';
         html += '</div>';
         document.getElementById('result').innerHTML = html;
     }

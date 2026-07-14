@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vector Calculator | YuanQiZhiLe Toolkit</title>
+<title>Vector Calculator | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="2D/3D vector calculator. Magnitude, dot product, cross product, angle, projection. Free vector math calculator.">
 <meta name="keywords" content="vector calculator, magnitude, dot product, cross product, vector math, angle between vectors, projection">
 <meta property="og:title" content="Vector Calculator - Free Online Tool">
@@ -112,7 +112,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>Vector Calculator</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">2D/3D vector calculator. Magnitude, dot product, cross product, angle, projection. Free vector math calculator.</div>
@@ -126,7 +126,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <select id="op" style="width:100%;padding:8px">
             <option value="mag" selected>Magnitude |A|</option>
             <option value="add">A + B</option>
-            <option value="sub">A − B</option>
+            <option value="sub">A &#8212; B</option>
             <option value="dot">A · B (dot)</option>
             <option value="cross">A × B (cross, 3D only)</option>
             <option value="angle">Angle between A and B</option>
@@ -148,19 +148,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -174,7 +174,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 </ol>
 <p style="margin-top:8px;font-size:12px;color:#666">Vector operations: magnitude (length), dot product (scalar, = 0 if perpendicular), cross product (3D only, perpendicular to both), angle (cos θ = A·B / |A||B|), projection (shadow of A on B). Applications: physics (force, velocity), graphics (normals), ML (cosine similarity).</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -185,7 +185,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -211,7 +211,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -305,7 +305,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(op === 'mag'){
             var m = mag(A);
             html += '<div style="text-align:center">';
-            html += '<div style="font-size:14px;color:#666">|A| = √(';
+            html += '<div style="font-size:14px;color:#666">|A| = ?';
             html += A.map(function(x){ return x + '²'; }).join(' + ');
             html += ')</div>';
             html += '<div style="font-size:24px;font-weight:bold;color:#3b82f6;margin-top:8px">' + m.toFixed(6) + '</div>';
@@ -314,7 +314,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             var B = getVec('b', dim);
             var res = [];
             for(var i = 0; i < dim; i++) res.push(op === 'add' ? A[i] + B[i] : A[i] - B[i]);
-            html += '<div style="text-align:center;font-size:20px;margin:10px 0">' + fmtVec(A) + ' ' + (op === 'add' ? '+' : '−') + ' ' + fmtVec(B) + ' = <b style="color:#10b981">' + fmtVec(res) + '</b></div>';
+            html += '<div style="text-align:center;font-size:20px;margin:10px 0">' + fmtVec(A) + ' ' + (op === 'add' ? '+' : '?) + ' ' + fmtVec(B) + ' = <b style="color:#10b981">' + fmtVec(res) + '</b></div>';
         } else if(op === 'dot'){
             var B = getVec('b', dim);
             var d = dot(A, B);
@@ -325,7 +325,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             var ma = mag(A), mb = mag(B);
             if(ma > 0 && mb > 0){
                 var cos = d / (ma * mb);
-                html += '<div style="font-size:13px;color:#666;margin-top:8px">cos θ = ' + cos.toFixed(6) + ' → θ = ' + (Math.acos(Math.max(-1, Math.min(1, cos))) * 180 / Math.PI).toFixed(4) + '°</div>';
+                html += '<div style="font-size:13px;color:#666;margin-top:8px">cos θ = ' + cos.toFixed(6) + ' ?θ = ' + (Math.acos(Math.max(-1, Math.min(1, cos))) * 180 / Math.PI).toFixed(4) + '°</div>';
                 html += '<div style="font-size:12px;color:#999;margin-top:4px">' + (Math.abs(cos) < 0.01 ? 'Perpendicular' : (cos > 0.99 ? 'Same direction' : (cos < -0.99 ? 'Opposite direction' : 'General angle'))) + '</div>';
             }
             html += '</div>';

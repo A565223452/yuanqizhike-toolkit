@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prompt Template Library | YuanQiZhiLe Toolkit</title>
+<title>Prompt Template Library | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Browse curated prompt templates by category. Copy prompts for ChatGPT, Claude, Midjourney. Free prompt library.">
 <meta name="keywords" content="prompt library, prompt templates, chatgpt prompts, claude prompts, ai prompts, prompt collection">
 <meta property="og:title" content="Prompt Template Library - Free Online Tool">
@@ -112,7 +112,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>Prompt Template Library</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Browse curated prompt templates by category. Copy prompts for ChatGPT, Claude, Midjourney. Free prompt library.</div>
@@ -154,19 +154,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -181,7 +181,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 </ol>
 <p style="margin-top:8px;font-size:12px;color:#666">40+ curated prompts across 8 categories. Templates use [BRACKETS] for variables - the tool will prompt you to fill them in. Customize freely after copying.</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -192,7 +192,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -218,7 +218,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -334,8 +334,8 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             btn.addEventListener('click', function(){
                 var idx = parseInt(this.getAttribute('data-copy'));
                 navigator.clipboard.writeText(filtered[idx].prompt).then(function(){
-                    btn.textContent = 'Copied!';
-                    setTimeout(function(){ btn.textContent = 'Copy'; }, 1500);
+                    btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
+                    setTimeout(function(){ btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19'; }, 1500);
                 });
             });
         });
@@ -348,8 +348,8 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
                     return val !== null ? val : m;
                 });
                 navigator.clipboard.writeText(edited).then(function(){
-                    btn.textContent = 'Filled & Copied!';
-                    setTimeout(function(){ btn.textContent = 'Use Template'; }, 1500);
+                    btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
+                    setTimeout(function(){ btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19'; }, 1500);
                 });
             });
         });

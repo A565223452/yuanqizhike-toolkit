@@ -1,0 +1,1 @@
+Get-ChildItem 'assets/zip-packages/seo' | Where-Object { $_.Name -match 'backlink|og-preview|cors|dns|ssl' } | Select-Object Name

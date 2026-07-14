@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Outfit Planner | YuanQiZhiLe Toolkit</title>
+<title>Outfit Planner | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Plan outfits by weather and occasion. Smart clothing suggestions. Free outfit planner.">
 <meta name="keywords" content="outfit planner, what to wear, outfit ideas, weather outfit, fashion planner, daily outfit">
 <meta property="og:title" content="Outfit Planner - Free Online Tool">
@@ -112,7 +112,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>Outfit Planner</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Plan outfits by weather and occasion. Smart clothing suggestions. Free outfit planner.</div>
@@ -167,19 +167,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -192,7 +192,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 </ol>
 <p style="margin-top:8px;font-size:12px;color:#666">Outfits categorized by temperature: freezing (<20°F), cold (20-40°F), cool (40-55°F), mild (55-70°F), warm (70-85°F), hot (>85°F). Layer for flexibility. Natural fabrics breathe better. Dark colors for cold, light for hot. Rainy: water-resistant gear. Sunny: UV protection. Accessorize to express personality.</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -203,7 +203,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -229,7 +229,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -394,7 +394,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
             html += '<div style="font-size:13px;font-weight:bold;color:#3b82f6;margin-bottom:6px">' + cat.icon + ' ' + cat.name + ' (' + cat.items.length + ')</div>';
             cat.items.forEach(function(item){
-                html += '<div style="padding:4px 0;font-size:12px;border-bottom:1px solid #f0f0f0">• ' + item + '</div>';
+                html += '<div style="padding:4px 0;font-size:12px;border-bottom:1px solid #f0f0f0">?' + item + '</div>';
             });
             html += '</div>';
         });
@@ -402,15 +402,15 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
         html += '<div style="font-size:12px;font-weight:bold;margin-bottom:6px">Weather tips:</div>';
         if(condition === 'rainy'){
-            html += '<div style="font-size:12px">• Water-resistant outerwear<br>• Avoid suede/leather<br>• Carry umbrella<br>• Waterproof shoes</div>';
+            html += '<div style="font-size:12px">?Water-resistant outerwear<br>?Avoid suede/leather<br>?Carry umbrella<br>?Waterproof shoes</div>';
         } else if(condition === 'snowy'){
-            html += '<div style="font-size:12px">• Insulated, waterproof boots<br>• Layer up<br>• Wool socks<br>• Cover head/hands</div>';
+            html += '<div style="font-size:12px">?Insulated, waterproof boots<br>?Layer up<br>?Wool socks<br>?Cover head/hands</div>';
         } else if(condition === 'sunny' && temp > 70){
-            html += '<div style="font-size:12px">• Light-colored, breathable fabrics<br>• Sunglasses (UV400)<br>• Sun hat<br>• Sunscreen on exposed skin</div>';
+            html += '<div style="font-size:12px">?Light-colored, breathable fabrics<br>?Sunglasses (UV400)<br>?Sun hat<br>?Sunscreen on exposed skin</div>';
         } else if(condition === 'windy'){
-            html += '<div style="font-size:12px">• Layer up<br>• Avoid loose scarves<br>• Secure long hair<br>• Close-fitting outerwear</div>';
+            html += '<div style="font-size:12px">?Layer up<br>?Avoid loose scarves<br>?Secure long hair<br>?Close-fitting outerwear</div>';
         } else {
-            html += '<div style="font-size:12px">• Layer for temperature flexibility<br>• Comfortable fabrics<br>• Neutral colors mix well</div>';
+            html += '<div style="font-size:12px">?Layer for temperature flexibility<br>?Comfortable fabrics<br>?Neutral colors mix well</div>';
         }
         html += '</div>';
         // Color palette
@@ -432,11 +432,11 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         html += '</div>';
         html += '<div style="background:#fef3c7;padding:8px;border-radius:4px;font-size:11px;color:#92400e">';
         html += '<b>Style tips:</b><br>';
-        html += '• Layer for temperature control<br>';
-        html += '• Natural fabrics (cotton, wool, linen) breathe better<br>';
-        html += '• Dark colors absorb heat, light colors reflect<br>';
-        html += '• Accessorize to express personality<br>';
-        html += '• Comfort = confidence';
+        html += '?Layer for temperature control<br>';
+        html += '?Natural fabrics (cotton, wool, linen) breathe better<br>';
+        html += '?Dark colors absorb heat, light colors reflect<br>';
+        html += '?Accessorize to express personality<br>';
+        html += '?Comfort = confidence';
         html += '</div>';
         html += '</div>';
         document.getElementById('result').innerHTML = html;

@@ -1,0 +1,110 @@
+[
+  {
+    "category": "Social Media",
+    "icon": "/assets/icons/social-1.svg",
+    "title": "Emoji Character Counter",
+    "desc": "Emoji Character Counter - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/emoji-character-counter/index.html",
+    "zipUrl": "/assets/zip-packages/social/emoji-character-counter.zip"
+  },
+  {
+    "category": "Social Media",
+    "icon": "/assets/icons/social-2.svg",
+    "title": "Instagram Character Counter",
+    "desc": "Count characters for Instagram captions, bios, names, and hashtags instantly. Track limits, word counts, and hashtag usage with a live progress bar for optimal posting.",
+    "features": [
+      "Live character tracking",
+      "Caption and bio limits",
+      "Hashtag counter included",
+      "Word and line count"
+    ],
+    "detailUrl": "/tools/instagram-character-counter/index.html",
+    "zipUrl": "/assets/zip-packages/social/instagram-character-counter.zip"
+  },
+  {
+    "category": "Social Media",
+    "icon": "/assets/icons/social-3.svg",
+    "title": "Social Media Image Size Guide",
+    "desc": "Get the latest image dimensions for Instagram, Facebook, X, TikTok, YouTube, and LinkedIn. A quick reference guide for profile photos, covers, posts, and stories to ensure perfect formatting.",
+    "features": [
+      "Platform-specific dimensions",
+      "Profile and cover sizes",
+      "Post and story ratios",
+      "Updated 2024 guidelines"
+    ],
+    "detailUrl": "/tools/social-media-image-size-guide/index.html",
+    "zipUrl": "/assets/zip-packages/social/social-media-image-size-guide.zip"
+  },
+  {
+    "category": "Social Media",
+    "icon": "/assets/icons/social-4.svg",
+    "title": "TikTok Hashtag Generator",
+    "desc": "Boost your TikTok reach with this free hashtag generator. Create optimized, trending, and niche-specific tags for cooking, fitness, beauty, and more to grow your audience.",
+    "features": [
+      "Generate niche-specific hashtags",
+      "Trending and viral tag suggestions",
+      "Audience size targeting options",
+      "One-click copy to clipboard",
+      "Mix broad and niche tags",
+      "Free online tool"
+    ],
+    "detailUrl": "/tools/tiktok-hashtag-generator/index.html",
+    "zipUrl": "/assets/zip-packages/social/tiktok-hashtag-generator.zip"
+  },
+  {
+    "category": "Social Media",
+    "icon": "/assets/icons/social-5.svg",
+    "title": "X Character Counter",
+    "desc": "Accurately count characters for X (Twitter) posts with real-time weighted counting. Handles URLs, emojis, and CJK characters to ensure your tweets stay within the 280-character limit.",
+    "features": [
+      "Real-time weighted counting",
+      "Handles URLs and emojis",
+      "CJK character support",
+      "Visual progress indicator",
+      "Dark mode support"
+    ],
+    "detailUrl": "/tools/x-character-counter/index.html",
+    "zipUrl": "/assets/zip-packages/social/x-character-counter.zip"
+  },
+  {
+    "category": "Social Media",
+    "icon": "/assets/icons/social-6.svg",
+    "title": "YouTube Title Generator",
+    "desc": "Boost your YouTube CTR with clickable, SEO-optimized titles. Generate engaging video titles based on your topic and style to increase views and rankings instantly.",
+    "features": [
+      "Generate clickable titles",
+      "SEO optimized for YouTube",
+      "Multiple style templates",
+      "Character count indicator"
+    ],
+    "detailUrl": "/tools/youtube-title-generator/index.html",
+    "zipUrl": "/assets/zip-packages/social/youtube-title-generator.zip"
+  },
+  {
+    "category": "Social Media",
+    "icon": "/assets/icons/social-9.svg",
+    "title": "LinkedIn Character Counter",
+    "desc": "Check character counts for LinkedIn posts, headlines, and summaries. Get real-time limits, word counts, reading time, and platform-specific optimization tips.",
+    "features": [
+      "Real-time character counting",
+      "Multiple LinkedIn sections support",
+      "Word and emoji statistics",
+      "Optimization tips included"
+    ],
+    "detailUrl": "/tools/linkedin-character-counter/index.html",
+    "zipUrl": "/assets/zip-packages/social/linkedin-character-counter.zip"
+  },
+  {
+    "category": "Social Media",
+    "icon": "/assets/icons/social-1.svg",
+    "title": "Twitter Card Generator",
+    "desc": "Generate Twitter Card meta tags (summary, summary_large_image, player, app). Preview how your links appear on X/Twitter. Free Twitter Card generator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/social/twitter-card-generator.zip"
+  }
+]

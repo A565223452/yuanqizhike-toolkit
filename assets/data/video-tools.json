@@ -1,0 +1,182 @@
+[
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Audio Video Muxer",
+    "desc": "Combine video (no audio) with separate audio track. Replace or add audio to video. Browser-side muxing. Free audio video merger.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/audio-video-muxer.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Loop Video Maker",
+    "desc": "Loop a video clip N times to create extended looping video. Choose count or duration. Browser-side export. Free loop video maker.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/loop-video-maker.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Slow Motion Maker",
+    "desc": "Create slow motion video. Choose speed (0.25x, 0.5x, 0.75x). Frame interpolation preview. Browser-side export. Free slowmo maker.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/slow-motion-maker.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Time Lapse Maker",
+    "desc": "Speed up video to create time-lapse. Choose speed multiplier (2x-100x). Browser-side export. Free time lapse video maker.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/time-lapse-maker.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Video Aspect Ratio Converter",
+    "desc": "Convert video aspect ratio for any platform: 16:9 (YouTube), 9:16 (TikTok/Reels), 1:1 (Instagram), 4:5 (Facebook). Browser-based preview.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/video-aspect-ratio-converter.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Video Compressor Online",
+    "desc": "Compress video files in browser. Reduce file size by adjusting bitrate, resolution and quality. Free client-side video compressor.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/video-compressor-online.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Video Flipper",
+    "desc": "Flip video horizontally or vertically online. Free browser-based video mirroring tool with live preview and frame export. No upload.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/video-flipper.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Video Frame Extractor",
+    "desc": "Extract multiple frames from a video at regular intervals. Free online video frame grabber for analysis, GIFs, and stop motion. No upload.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/video-frame-extractor.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Video Joiner",
+    "desc": "Combine multiple video clips into one. Add videos in order, preview sequence, merge into single file. Free online video joiner.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/video-joiner.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Video Metadata Viewer",
+    "desc": "View video metadata online: duration, resolution, codec, bitrate, frame rate, file size. Free browser-based video info inspector. No upload.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/video-metadata-viewer.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Video Resolution Converter",
+    "desc": "Change video resolution by scaling frames. Convert 4K to 1080p, 1080p to 720p, or any custom resolution. Browser-based, no upload.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/video-resolution-converter.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Video Reverser",
+    "desc": "Reverse video playback in browser. Play video backwards and download reversed clip. Free client-side video reverser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/video-reverser.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Video Rotator",
+    "desc": "Rotate video 90, 180, or 270 degrees online. Free browser-based video rotation tool with live preview and frame export. No upload.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/video-rotator.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Video Speed Changer",
+    "desc": "Change video playback speed from 0.25x to 4x. Preview videos at any speed and extract frames at modified rate. No upload, browser-based.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/video-speed-changer.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Video Thumbnail Maker",
+    "desc": "Extract a thumbnail image from any video at a chosen timestamp. Free online video thumbnail generator. No upload, browser-based.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/video-thumbnail-maker.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Video to GIF Converter",
+    "desc": "Convert video files to animated GIF. Set start time, duration, size and frame rate. Free client-side video to GIF converter.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/video-to-gif.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Video to MP3 Converter",
+    "desc": "Extract audio from video files as WAV. Convert video to audio in browser. Free client-side video to audio converter.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/video-to-mp3.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Video Trimmer",
+    "desc": "Trim and cut video files in browser. Set start and end time to extract clips. Free client-side video trimmer.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/video-trimmer.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Video Volume Booster",
+    "desc": "Boost video volume beyond 100% using Web Audio API. Watch videos louder than browser default. No upload, browser-based audio amplification.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/video-volume-booster.zip"
+  },
+  {
+    "category": "Video Tools",
+    "icon": "/assets/icons/video-1.svg",
+    "title": "Video Watermark Adder",
+    "desc": "Add text or image watermark to video. Position, opacity, size. Browser-side preview and export. Free video watermark tool.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/video/video-watermark-adder.zip"
+  }
+]

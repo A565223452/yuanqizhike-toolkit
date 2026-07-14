@@ -1,0 +1,122 @@
+[
+  {
+    "category": "Color & Design Utilities",
+    "icon": "assets/icons/design-3.svg",
+    "title": "Color Converter",
+    "desc": "Instantly convert between HEX, RGB, and HSL formats. Includes palette generation and WCAG contrast checking for accessible design.",
+    "features": [
+      "HEX RGB HSL Conversion",
+      "Visual Color Picker",
+      "Palette Generator",
+      "WCAG Contrast Checker",
+      "One-Click Copy",
+      "Export CSS Variables"
+    ],
+    "detailUrl": "/tools/color-converter/index.html",
+    "zipUrl": "/assets/zip-packages/design/color-converter.zip"
+  },
+  {
+    "category": "Color & Design Utilities",
+    "icon": "assets/icons/design-1.svg",
+    "title": "Css Gradient Generator",
+    "desc": "Css Gradient Generator - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/css-gradient-generator-2/index.html",
+    "zipUrl": "/assets/zip-packages/dev/css-gradient-generator.zip"
+  },
+  {
+    "category": "Color & Design Utilities",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Color Blind Simulator",
+    "desc": "Free online color blind simulator that replicates how colors appear to users with color vision deficiency. Test design accessibility across protanopia, deuteranopia, tritanopia and more for inclusive UI design.",
+    "features": [
+      "Color picker and hex input",
+      "Multiple CVD simulation modes",
+      "Side-by-side color comparison",
+      "RGB and HEX value display",
+      "Perceptual difference scoring"
+    ],
+    "detailUrl": "/tools/color-blind-simulator/index.html",
+    "zipUrl": "/assets/zip-packages/design/color-blind-simulator.zip"
+  },
+  {
+    "category": "Color & Design Utilities",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Color Palette Extractor",
+    "desc": "Free online color palette extractor that identifies dominant colors from any uploaded image. Get precise hex codes and RGB values to build cohesive color schemes for design work.",
+    "features": [
+      "Extract dominant colors from images",
+      "Adjustable color count slider",
+      "Hex and RGB color support",
+      "One-click hex code copying",
+      "Light and dark mode toggle"
+    ],
+    "detailUrl": "/tools/color-palette-extractor/index.html",
+    "zipUrl": "/assets/zip-packages/design/color-palette-extractor.zip"
+  },
+  {
+    "category": "Color & Design Utilities",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Color Scheme Generator",
+    "desc": "Instantly generate beautiful, harmonious color palettes for web and design projects with our free online tool. Supports multiple color harmony rules and exports to CSS, Tailwind, SCSS, and JSON formats.",
+    "features": [
+      "Multiple color harmony modes",
+      "Customizable palette color count",
+      "One-click HEX code copying",
+      "Multi-format export options",
+      "Random palette generation"
+    ],
+    "detailUrl": "/tools/color-scheme-generator/index.html",
+    "zipUrl": "/assets/zip-packages/design/color-scheme-generator.zip"
+  },
+  {
+    "category": "Color & Design Utilities",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Image Color Picker",
+    "desc": "Free online image color picker to sample colors from any uploaded image directly in your browser. Instantly get HEX, RGB, and HSL values with one-click copy, no server upload required.",
+    "features": [
+      "Local image upload support",
+      "Click-to-sample color picking",
+      "HEX/RGB/HSL value display",
+      "One-click color code copy",
+      "Stores up to 12 colors",
+      "Dark mode support"
+    ],
+    "detailUrl": "/tools/image-color-picker/index.html",
+    "zipUrl": "/assets/zip-packages/design/image-color-picker.zip"
+  },
+  {
+    "category": "Color & Design Utilities",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Color Contrast Checker",
+    "desc": "Check color contrast for WCAG AA and AAA compliance. Pick foreground and background colors to see the contrast ratio and whether your text meets accessibility standards for normal and large text.",
+    "features": [
+      "Live contrast ratio calculation",
+      "WCAG AA/AAA pass/fail badges",
+      "Color picker and hex input",
+      "Swap foreground and background",
+      "Preview text sample",
+      "Dark mode support"
+    ],
+    "detailUrl": "/tools/color-contrast-checker/index.html",
+    "zipUrl": "/assets/zip-packages/design/color-contrast-checker.zip"
+  },
+  {
+    "category": "Color & Design Utilities",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Color Palette Generator",
+    "desc": "Create beautiful color palettes instantly with our free online tool. Choose from complementary, analogous, triadic, and more. Copy HEX, RGB, and HSL values for your design projects.",
+    "features": [
+      "Multiple palette types",
+      "HEX, RGB, HSL conversion",
+      "Click to copy color codes",
+      "Random color generator",
+      "Dark mode support"
+    ],
+    "detailUrl": "/tools/color-palette-generator/index.html",
+    "zipUrl": "/assets/zip-packages/design/color-palette-generator.zip"
+  }
+]

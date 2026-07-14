@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Week Number Converter | YuanQiZhiLe Toolkit</title>
+<title>Week Number Converter | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Convert between dates and ISO week numbers. Find the week number for any date, or get the date range for a specific week.">
 <meta name="keywords" content="week number, iso week, week of year, date to week, week to date">
 <meta property="og:title" content="Week Number Converter - Free Online Tool">
@@ -112,15 +112,15 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>Week Number Converter</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Convert between dates and ISO week numbers. Find the week number for any date, or get the date range for a specific week.</div>
     <div class="group">
         <label>Mode</label>
         <select id="modeSelect" style="width:auto">
-            <option value="date2week" selected>Date → Week Number</option>
-            <option value="week2date">Week Number → Date Range</option>
+            <option value="date2week" selected>Date &#8212; Week Number</option>
+            <option value="week2date">Week Number &#8212; Date Range</option>
         </select>
     </div>
     <div id="dateInputGroup">
@@ -147,32 +147,32 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
     <div class="instructions">
         <h2>How to Use</h2>
         <ol>
-            <li>Choose mode: <strong>Date → Week Number</strong> or <strong>Week Number → Date Range</strong></li>
+            <li>Choose mode: <strong>Date &#8212; Week Number</strong> or <strong>Week Number &#8212; Date Range</strong></li>
             <li>For Date mode: select a date to get its ISO week number</li>
             <li>For Week mode: enter year and week number to get the date range (Monday to Sunday)</li>
             <li>Click <strong>Convert</strong> to see the result</li>
         </ol>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -183,7 +183,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -209,7 +209,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });

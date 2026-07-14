@@ -1,0 +1,690 @@
+[
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Batch Image Resizer & Format Converter",
+    "desc": "Free online batch image resizer and format converter that runs entirely in your browser. Resize, compress, and convert images to popular formats with social media presets, no file uploads required for instant results.",
+    "features": [
+      "Batch image processing",
+      "Multi-format conversion support",
+      "Social media size presets",
+      "Adjustable output quality",
+      "Drag-and-drop file upload",
+      "Local private processing"
+    ],
+    "detailUrl": "/tools/image-converter/index.html",
+    "zipUrl": "/assets/zip-packages/design/image-converter.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Background Remover",
+    "desc": "A free offline tool for background remover calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/background-remover/index.html",
+    "zipUrl": "/assets/zip-packages/design/background-remover.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Exif Remover",
+    "desc": "A free offline tool for exif remover calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/exif-remover/index.html",
+    "zipUrl": "/assets/zip-packages/design/exif-remover.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Image Pixelator",
+    "desc": "Free online image pixelator to blur sensitive content, censor private details, or create retro pixel art effects. Adjust pixel size, select custom regions, and process files locally to protect your privacy.",
+    "features": [
+      "Adjustable pixel size",
+      "Full or region pixelation",
+      "Local in-browser processing",
+      "One-click PNG download",
+      "No signup required"
+    ],
+    "detailUrl": "/tools/image-pixelator/index.html",
+    "zipUrl": "/assets/zip-packages/design/image-pixelator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "assets/icons/design-8.svg",
+    "title": "Image Watermark Tool",
+    "desc": "Add text or image watermarks to photos with batch processing, custom positioning, opacity, and tile patterns directly in your browser.",
+    "features": [
+      "Batch Watermark Processing",
+      "Text And Image Overlays",
+      "Custom Position And Opacity",
+      "Tile Pattern Support",
+      "Local Browser Processing",
+      "EXIF Data Preservation"
+    ],
+    "detailUrl": "/tools/image-watermark-tool/index.html",
+    "zipUrl": "/assets/zip-packages/design/image-watermark.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "CSS Border Radius Generator",
+    "desc": "Free online CSS border radius generator with precise individual corner controls. Easily create circles, pills, leaves, and organic blob shapes, then copy production-ready CSS code for your web projects instantly.",
+    "features": [
+      "Individual corner radius control",
+      "Px and percent unit support",
+      "Ready-to-use shape presets",
+      "Real-time visual preview",
+      "One-click CSS code copy"
+    ],
+    "detailUrl": "/tools/border-radius-generator/index.html",
+    "zipUrl": "/assets/zip-packages/design/border-radius-generator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "CSS Box Shadow Generator",
+    "desc": "Free online CSS box shadow generator for web designers and developers. Visually adjust offset, blur, spread, color, opacity and inset with live preview, then copy ready-to-use CSS code instantly.",
+    "features": [
+      "Live visual shadow preview",
+      "Custom offset, blur, spread settings",
+      "Inset shadow support",
+      "Custom color and opacity",
+      "One-click CSS code copy",
+      "Dark/light mode support"
+    ],
+    "detailUrl": "/tools/box-shadow-generator/index.html",
+    "zipUrl": "/assets/zip-packages/design/box-shadow-generator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Free Online Color Picker",
+    "desc": "Free online color picker for designers to select colors, convert between HEX, RGB, HSL, HSV, and CMYK values, and generate tints, shades, and harmonious palettes for web and graphic design projects.",
+    "features": [
+      "Multi-format color value conversion",
+      "One-click color code copying",
+      "Harmonious color palette generation",
+      "Tints and shades creation",
+      "Light and dark mode support"
+    ],
+    "detailUrl": "/tools/color-picker-tool/index.html",
+    "zipUrl": "/assets/zip-packages/design/color-picker-tool.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Interactive Color Wheel",
+    "desc": "Generate harmonious, cohesive color palettes with our free interactive online color wheel. Explore complementary, analogous, triadic, tetradic and split-complementary schemes for all your creative design projects.",
+    "features": [
+      "Multiple color harmony schemes",
+      "Interactive clickable color wheel",
+      "One-click HEX code copying",
+      "Adjustable hue slider control",
+      "Light and dark theme support"
+    ],
+    "detailUrl": "/tools/color-wheel/index.html",
+    "zipUrl": "/assets/zip-packages/design/color-wheel.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "CSS Filter Generator",
+    "desc": "Visually create custom CSS filter effects for your web projects with our free online tool. Adjust blur, brightness, contrast, hue and more, preview changes in real time, and copy ready-to-use code instantly.",
+    "features": [
+      "Real-time side-by-side preview",
+      "Custom image upload support",
+      "Adjustable filter parameter sliders",
+      "One-click CSS code copy",
+      "No registration required"
+    ],
+    "detailUrl": "/tools/css-filter-generator/index.html",
+    "zipUrl": "/assets/zip-packages/design/css-filter-generator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "CSS Grid Generator",
+    "desc": "Visually build custom responsive CSS grid layouts with our free online generator. Adjust columns, rows, gaps, and item alignment, then copy production-ready CSS code for modern web projects.",
+    "features": [
+      "Live visual grid preview",
+      "Customizable rows and columns",
+      "Adjustable row and column gaps",
+      "Multiple sizing unit options",
+      "Item alignment controls",
+      "One-click CSS code copy"
+    ],
+    "detailUrl": "/tools/css-grid-generator/index.html",
+    "zipUrl": "/assets/zip-packages/design/css-grid-generator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "CSS Transform Generator",
+    "desc": "Visually generate custom CSS transform code for free with our online tool. Combine rotate, scale, skew, translate effects with live preview, then copy ready-to-use code for web projects.",
+    "features": [
+      "Live visual transform preview",
+      "Rotate, scale, skew, translate controls",
+      "One-click CSS code copy",
+      "Quick reset to defaults",
+      "Dark and light mode support"
+    ],
+    "detailUrl": "/tools/css-transform-generator/index.html",
+    "zipUrl": "/assets/zip-packages/design/css-transform-generator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "CSS Transition Generator",
+    "desc": "Free online tool to generate production-ready CSS transition code with custom duration, delay, and easing curves including cubic-bezier. Preview animations live and copy clean CSS for your web projects instantly.",
+    "features": [
+      "Custom cubic-bezier curve support",
+      "Live transition effect preview",
+      "One-click CSS code copy",
+      "Built-in easing curve presets",
+      "Adjustable duration and delay",
+      "Light and dark theme support"
+    ],
+    "detailUrl": "/tools/css-transition-generator/index.html",
+    "zipUrl": "/assets/zip-packages/design/css-transition-generator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Favicon Generator",
+    "desc": "A free offline tool for favicon generator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/favicon-generator/index.html",
+    "zipUrl": "/assets/zip-packages/design/favicon-generator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Favicon Multi-Size Generator",
+    "desc": "Free online multi-size favicon generator for webmasters. Create standard 16x16 to 256x256 website icons from one source image, download individual PNGs or full sets instantly with secure local processing.",
+    "features": [
+      "Multiple standard favicon sizes",
+      "Single source image upload",
+      "Individual PNG downloads",
+      "Full set batch download",
+      "No server upload required"
+    ],
+    "detailUrl": "/tools/favicon-multi-size/index.html",
+    "zipUrl": "/assets/zip-packages/design/favicon-multi-size.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "CSS Flexbox Playground",
+    "desc": "Free interactive online CSS Flexbox playground for testing and learning flex layout properties. Adjust alignment, direction, gap and more, with live preview and ready-to-copy generated CSS code.",
+    "features": [
+      "Live flex layout preview",
+      "All flex property adjustments",
+      "Adjustable gap and item count",
+      "Multiple item height presets",
+      "One-click CSS code copy",
+      "Dark and light theme support"
+    ],
+    "detailUrl": "/tools/flexbox-playground/index.html",
+    "zipUrl": "/assets/zip-packages/design/flexbox-playground.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Font Pairing Finder",
+    "desc": "Discover curated Google Font pairings for headings and body text with our free online design tool. Preview custom text, mix font combinations, and copy ready-to-use CSS for your projects.",
+    "features": [
+      "Curated Google Font combinations",
+      "Live custom text preview",
+      "Heading and body font selectors",
+      "Copyable CSS code snippets",
+      "Dark/light theme toggle"
+    ],
+    "detailUrl": "/tools/font-pairing-finder/index.html",
+    "zipUrl": "/assets/zip-packages/design/font-pairing-finder.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Font Previewer",
+    "desc": "Free online font preview tool for designers and developers. Preview Google Fonts and web safe fonts, adjust typography settings, and copy ready-to-use CSS snippets for web projects instantly.",
+    "features": [
+      "Google & web safe font support",
+      "Adjustable font styling controls",
+      "Live custom text preview",
+      "One-click CSS snippet copy",
+      "Light and dark theme support"
+    ],
+    "detailUrl": "/tools/font-previewer/index.html",
+    "zipUrl": "/assets/zip-packages/design/font-previewer.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Ico Generator",
+    "desc": "A free offline tool for ico generator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/ico-generator/index.html",
+    "zipUrl": "/assets/zip-packages/design/ico-generator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Image Compressor",
+    "desc": "Compress PNG, JPG, and WebP images online for free without visible quality loss. Adjust compression levels, preview results, and download optimized files instantly with no uploads or signup required.",
+    "features": [
+      "Adjustable quality slider",
+      "Multi-format image support",
+      "Before/after preview comparison",
+      "Custom max width resizing",
+      "100% local private processing",
+      "One-click compressed download"
+    ],
+    "detailUrl": "/tools/image-compressor/index.html",
+    "zipUrl": "/assets/zip-packages/design/image-compressor.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Image Cropper",
+    "desc": "Free online image cropper that runs entirely in your web browser. Trim photos to custom sizes or social media aspect ratios, adjust output quality, and download results instantly with no server uploads.",
+    "features": [
+      "Drag to select crop area",
+      "Social media size presets",
+      "Custom aspect ratio support",
+      "Multi-format export options",
+      "Adjustable output quality",
+      "Client-side only processing"
+    ],
+    "detailUrl": "/tools/image-cropper/index.html",
+    "zipUrl": "/assets/zip-packages/design/image-cropper.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Image Filter & Color Adjuster",
+    "desc": "Apply custom filters and fine-tune image colors right in your browser. Adjust brightness, contrast, saturation and more with real-time preview, all processing happens locally to protect your privacy.",
+    "features": [
+      "Real-time effect preview",
+      "Custom color adjustment sliders",
+      "Multiple built-in filter presets",
+      "Local private processing",
+      "One-click result download"
+    ],
+    "detailUrl": "/tools/image-filter/index.html",
+    "zipUrl": "/assets/zip-packages/design/image-filter.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Image Flipper",
+    "desc": "Flip images horizontally or vertically with our free online image flipper. All processing runs locally in your browser—no file uploads, no signup required, with instant preview and multi-format download options.",
+    "features": [
+      "Horizontal and vertical flip",
+      "Instant real-time preview",
+      "PNG/JPEG/WebP format support",
+      "Local in-browser processing",
+      "One-click result download",
+      "No signup or upload required"
+    ],
+    "detailUrl": "/tools/image-flipper/index.html",
+    "zipUrl": "/assets/zip-packages/design/image-flipper.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Image Metadata Viewer",
+    "desc": "Free online image metadata viewer to extract EXIF data from your photos. View camera settings, capture date, GPS location, and technical image details instantly in your browser with no signup required.",
+    "features": [
+      "Instant image preview",
+      "Basic file details display",
+      "Full EXIF data extraction",
+      "Camera settings viewing",
+      "Capture date display",
+      "Client-side processing"
+    ],
+    "detailUrl": "/tools/image-metadata-viewer/index.html",
+    "zipUrl": "/assets/zip-packages/design/image-metadata-viewer.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Image Rotator",
+    "desc": "Free online image rotator that lets you rotate photos by 90, 180, 270 degrees or any custom angle. Runs entirely in your browser with no signup, supports PNG, JPEG and WebP export.",
+    "features": [
+      "Quick preset rotation options",
+      "Custom angle rotation support",
+      "Multiple export format options",
+      "Local in-browser processing",
+      "No signup required",
+      "Instant rotation preview"
+    ],
+    "detailUrl": "/tools/image-rotator/index.html",
+    "zipUrl": "/assets/zip-packages/design/image-rotator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Image To Base64",
+    "desc": "A free offline tool for image to base64 calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/image-to-base64/index.html",
+    "zipUrl": "/assets/zip-packages/design/image-to-base64.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "QR Code Designer",
+    "desc": "Design custom, highly scannable QR codes for free with our online QR Code Designer. Adjust colors, sizes, margins, error correction, and download high-quality codes for URLs, WiFi, text, and vCards.",
+    "features": [
+      "Custom foreground and background colors",
+      "Adjustable size and margin settings",
+      "Multiple error correction levels",
+      "PNG and SVG download options",
+      "Supports multiple content types"
+    ],
+    "detailUrl": "/tools/qr-code-designer/index.html",
+    "zipUrl": "/assets/zip-packages/design/qr-code-designer.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "SVG Icon Editor",
+    "desc": "Free online SVG icon editor to view, edit and customize vector icons directly in your browser. Adjust colors, stroke and size with live preview, optimize code, and export finished assets instantly.",
+    "features": [
+      "Live SVG code preview",
+      "Fill and stroke color pickers",
+      "Adjustable size and stroke width",
+      "One-click SVG optimization",
+      "Instant SVG file download",
+      "Quick code copy support"
+    ],
+    "detailUrl": "/tools/svg-icon-editor/index.html",
+    "zipUrl": "/assets/zip-packages/design/svg-icon-editor.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "SVG to PNG Converter",
+    "desc": "Free browser-based SVG to PNG converter that processes files locally. Upload files or paste SVG code, set custom dimensions and backgrounds, then download crisp high-resolution PNGs instantly with no signup required.",
+    "features": [
+      "SVG code and file upload",
+      "Custom resolution settings",
+      "Transparent background option",
+      "Custom background color picker",
+      "Local in-browser processing",
+      "One-click PNG download"
+    ],
+    "detailUrl": "/tools/svg-to-png/index.html",
+    "zipUrl": "/assets/zip-packages/design/svg-to-png.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "CSS Text Shadow Generator",
+    "desc": "Free online CSS text shadow generator for creating custom multi-layer text effects. Build glow, neon, 3D, and letterpress styles with live preview, no signup required, and instant CSS export.",
+    "features": [
+      "Adjustable shadow parameters",
+      "Built-in style presets",
+      "Live effect preview",
+      "Custom color controls",
+      "One-click CSS copy"
+    ],
+    "detailUrl": "/tools/text-shadow-generator/index.html",
+    "zipUrl": "/assets/zip-packages/design/text-shadow-generator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "WebP Converter",
+    "desc": "Free online WebP converter to switch between WebP, PNG, and JPG formats. Adjust output quality, shrink file sizes, and process images privately in your browser with no server uploads required.",
+    "features": [
+      "Convert between WebP, PNG, JPG",
+      "Adjustable output quality slider",
+      "Real-time file size comparison",
+      "Private local browser processing",
+      "One-click converted file download"
+    ],
+    "detailUrl": "/tools/webp-converter/index.html",
+    "zipUrl": "/assets/zip-packages/design/webp-converter.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Aspect Ratio Calculator",
+    "desc": "Calculate image dimensions from aspect ratio. Resize photos maintaining ratio. Free aspect ratio calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/aspect-ratio-calc.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Aspect Ratio Calculator",
+    "desc": "Calculate aspect ratio. Resize images, crop dimensions. Free aspect ratio calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/aspect-ratio-calculator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Image Aspect Ratio Calculator",
+    "desc": "Calculate image dimensions for any aspect ratio. Resize images while maintaining proportions. Common ratios for social media, prints, and screens.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/aspect-ratio-resizer.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Bokeh Calculator",
+    "desc": "Calculate bokeh size, depth of field, and background blur for any lens. Free bokeh and DOF calculator for photographers.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/bokeh-calculator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Depth of Field Calculator",
+    "desc": "Calculate depth of field. Hyperfocal distance, near/far focus. Free DoF calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/depth-of-field-calculator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Photography Exposure Calculator",
+    "desc": "Calculate equivalent exposure settings. Find shutter speed, aperture, and ISO combinations for the same exposure. Free online EV calculator for photographers.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/exposure-calculator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Exposure Triangle Calculator",
+    "desc": "Calculate equivalent exposures. ISO, aperture, shutter speed combinations. Free photography exposure tool.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/exposure-triangle-calc.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Exposure Triangle Calculator",
+    "desc": "Calculate equivalent exposures. Shutter speed, aperture, ISO. Free exposure triangle calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/exposure-triangle-calculator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Photo File Size Calculator",
+    "desc": "Estimate photo file sizes. RAW vs JPEG, megapixels to MB. Free image file size calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/file-size-calc.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Focal Length Crop Factor",
+    "desc": "Calculate effective focal length with crop factor. Compare lenses across sensor sizes. Free crop factor calculator for photographers.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/focal-length-crop-factor.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Web Font Format Converter",
+    "desc": "Convert web font formats. Convert between WOFF, WOFF2, TTF, and OTF. Preview fonts and generate CSS @font-face rules.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/font-converter.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Golden Hour Calculator",
+    "desc": "Calculate golden hour and blue hour times for photography. Find optimal lighting times based on location and date. Free golden hour calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/golden-hour-calculator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Golden Hour Finder",
+    "desc": "Find golden hour and blue hour times for any location and date. Free photography lighting calculator for sunrise and sunset.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/golden-hour-finder.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Golden Ratio Composition",
+    "desc": "Calculate golden ratio and phi grid for composition. Free photography composition tool.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/golden-ratio-composition.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "CSS Gradient Generator",
+    "desc": "Create beautiful CSS gradients. Linear, radial, conic gradients with multiple color stops, angles, and live preview. Free online gradient generator for web designers.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/gradient-generator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Hyperfocal Distance Calculator",
+    "desc": "Calculate hyperfocal distance for sharp landscapes. Lens focus, depth of field. Free hyperfocal calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/hyperfocal-distance-calc.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Hyperfocal Distance Calculator",
+    "desc": "Calculate hyperfocal distance for landscape photography. Find focus point for max depth of field. Free hyperfocal calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/hyperfocal-distance-calculator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Image Resizer & Cropper",
+    "desc": "Batch resize and crop images in your browser. Set custom dimensions, maintain aspect ratio, and download instantly. No upload required.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/image-resizer.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Image Resolution Calculator",
+    "desc": "Calculate image resolution, pixel dimensions, DPI/PPI, and print size. Convert between pixels, inches, centimeters. Free resolution calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/image-resolution-calculator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Lens Field of View Calculator",
+    "desc": "Calculate field of view, angle of view, and equivalent focal length for any lens. Free lens calculator for photographers.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/lens-fov-calculator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Photo Print Resizer",
+    "desc": "Resize photos for printing at standard sizes without cropping. Free aspect-ratio-preserving photo print calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/photo-print-resizer.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Photo Print Size Calculator",
+    "desc": "Calculate print sizes, DPI, and resolution. Free photo print calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/photo-print-size-calculator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Print Size Calculator",
+    "desc": "Calculate maximum print size from image resolution. Find DPI/PPI for any print dimensions. Free photo print size calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/print-size-calculator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Resolution PPI Calculator",
+    "desc": "Calculate PPI (pixels per inch) for any screen or image. Compare display resolutions and pixel density. Free PPI calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/resolution-ppi-calculator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Time",
+    "desc": "Calculate time-lapse intervals, clip duration, and photo count. Free time-lapse photography calculator for any scene.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/time-lapse-interval-calc.zip"
+  }
+]

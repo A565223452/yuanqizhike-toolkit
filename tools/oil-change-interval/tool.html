@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Oil Change Interval Calculator | YuanQiZhiKe Toolkit</title>
+<title>Oil Change Interval Calculator | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Calculate when to change your engine oil based on mileage, oil type, and driving conditions. Free oil change interval calculator.">
 <meta name="keywords" content="oil change interval, oil change calculator, engine oil, synthetic oil, maintenance schedule, car oil">
 <meta property="og:title" content="Oil Change Interval Calculator - Free Online Tool">
@@ -110,7 +110,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>Oil Change Interval Calculator</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Find out when your next oil change is due based on oil type, mileage, and driving conditions.</div>
@@ -151,19 +151,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -171,14 +171,14 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h2>How to Use</h2>
 <ol>
 <li>Enter your <b>current odometer</b> reading and the <b>miles at your last oil change</b>.</li>
-<li>Select <b>oil type</b> — synthetic oils last longer than conventional.</li>
+<li>Select <b>oil type</b> &#8212; synthetic oils last longer than conventional.</li>
 <li>Choose <b>driving conditions</b>: severe conditions (short trips, extreme heat/cold, dusty roads, towing) require more frequent changes.</li>
 <li>Enter your <b>annual mileage</b> to estimate when the next change is due in time.</li>
 <li>Click <b>Calculate</b> for a full maintenance schedule.</li>
 </ol>
-<p style="margin-top:8px;font-size:12px;color:#666">General guidelines: Conventional oil every 3,000–5,000 mi. Synthetic blend every 5,000–7,500 mi. Full synthetic every 7,500–10,000 mi. Severe conditions halve these intervals. Always follow your vehicle manufacturer's recommendations.</p>
+<p style="margin-top:8px;font-size:12px;color:#666">General guidelines: Conventional oil every 3,000–,000 mi. Synthetic blend every 5,000–,500 mi. Full synthetic every 7,500–0,000 mi. Severe conditions halve these intervals. Always follow your vehicle manufacturer's recommendations.</p>
     </div>
-    <footer>YuanqiZhiKe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -189,7 +189,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -215,7 +215,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -245,7 +245,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 })();
 
 (function(){
-    // 机油类型推荐间隔（英里）
+    // (internal note)
     var oilIntervals = {
         'conventional': { normal: 5000, severe: 3000, label: 'Conventional', timeMonths: 6 },
         'blend':        { normal: 7500, severe: 5000, label: 'Synthetic Blend', timeMonths: 8 },
@@ -279,19 +279,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         var isOverdue = milesRemaining < 0;
         var milesOverdue = isOverdue ? -milesRemaining : 0;
 
-        // 时间估算
+        // (internal note)
         var milesPerMonth = milesPerYear / 12;
         var monthsRemaining = milesRemaining / milesPerMonth;
         var daysRemaining = monthsRemaining * 30.4;
 
-        // 车龄系数：老车（10年+）建议缩短 15%
+        // (internal note)
         var ageAdjusted = vehicleAge >= 10 ? Math.round(interval * 0.85) : interval;
         var ageNote = vehicleAge >= 10 ? ' (reduced 15% for vehicle age 10+ years)' : '';
 
         var html = '<div style="background:' + (isOverdue ? '#fee2e2' : '#dbeafe') + ';padding:14px;border-radius:8px;border-left:4px solid ' + (isOverdue ? '#dc2626' : '#1e40af') + '">';
         html += '<div style="text-align:center;margin-bottom:14px">';
         if(isOverdue){
-            html += '<div style="font-size:13px;color:#dc2626">⚠️ OVERDUE — Change oil now!</div>';
+            html += '<div style="font-size:13px;color:#dc2626">⚠️ OVERDUE ?Change oil now!</div>';
             html += '<div style="font-size:32px;font-weight:bold;color:#dc2626">' + milesOverdue + ' mi overdue</div>';
             html += '<div style="font-size:14px;color:#666">Recommended interval: every ' + interval + ' mi</div>';
         } else {
@@ -301,7 +301,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         }
         html += '</div>';
 
-        // 当前周期详情
+        // (internal note)
         html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
         html += '<div style="font-size:13px;font-weight:bold;color:#1e40af;margin-bottom:6px">Current Oil Change Cycle</div>';
         html += '<table style="width:100%;font-size:12px;border-collapse:collapse">';
@@ -315,8 +315,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         html += '</table>';
         html += '</div>';
 
-        // 进度条
-        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+        // (internal note)
         html += '<div style="font-size:13px;font-weight:bold;color:#1e40af;margin-bottom:6px">Interval Progress: ' + pctUsed + '%</div>';
         var barColor = pctUsed >= 100 ? '#dc2626' : (pctUsed >= 80 ? '#f59e0b' : '#10b981');
         html += '<div style="background:#e5e7eb;border-radius:8px;height:24px;overflow:hidden">';
@@ -325,7 +324,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         html += '<div style="display:flex;justify-content:space-between;font-size:11px;color:#999;margin-top:4px"><span>0 mi</span><span>' + interval + ' mi</span></div>';
         html += '</div>';
 
-        // 未来保养计划
+        // (internal note)
         html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
         html += '<div style="font-size:13px;font-weight:bold;color:#1e40af;margin-bottom:6px">Upcoming Oil Changes</div>';
         html += '<table style="width:100%;font-size:12px;border-collapse:collapse">';
@@ -336,15 +335,14 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             var changeMile = baseMileage + interval * i;
             var monthsAhead = (changeMile - currentMiles) / milesPerMonth;
             var estDate = new Date(baseDate.getTime() + monthsAhead * 30.4 * 24 * 60 * 60 * 1000);
-            var dateStr = isNaN(estDate.getTime()) ? '—' : estDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
+            var dateStr = isNaN(estDate.getTime()) ? '? : estDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
             var status = changeMile <= currentMiles ? '<span style="color:#dc2626">Past due</span>' : (i === 1 ? '<span style="color:#1e40af">Next</span>' : '<span style="color:#666">Upcoming</span>');
             html += '<tr style="border-bottom:1px solid #eee"><td style="padding:6px">' + i + '</td><td style="padding:6px">' + changeMile.toLocaleString() + ' mi</td><td style="padding:6px">' + dateStr + '</td><td style="padding:6px">' + status + '</td></tr>';
         }
         html += '</table>';
         html += '</div>';
 
-        // 油类型对比
-        html += '<div style="background:#fff;padding:10px;border-radius:6px">';
+        // (internal note)
         html += '<div style="font-size:13px;font-weight:bold;color:#1e40af;margin-bottom:6px">Oil Type Comparison (' + (conditions === 'severe' ? 'Severe' : 'Normal') + ' conditions)</div>';
         html += '<table style="width:100%;font-size:12px;border-collapse:collapse">';
         html += '<tr style="background:#f3f4f6;border-bottom:1px solid #ddd"><th style="padding:6px">Oil Type</th><th>Interval (mi)</th><th>Time Limit</th><th>Annual Cost Est.</th></tr>';
@@ -355,19 +353,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             var changesPerYear = Math.ceil(milesPerYear / intv);
             var annualCost = changesPerYear * costPerChange[key];
             var isCurrent = key === oilType;
-            html += '<tr style="border-bottom:1px solid #eee' + (isCurrent ? ';background:#dbeafe;font-weight:bold' : '') + '"><td style="padding:6px">' + o.label + (isCurrent ? ' ✓' : '') + '</td><td style="text-align:right;padding:6px">' + intv + '</td><td style="text-align:right;padding:6px">' + o.timeMonths + ' mo</td><td style="text-align:right;padding:6px">$' + annualCost + ' (' + changesPerYear + 'x/yr)</td></tr>';
+            html += '<tr style="border-bottom:1px solid #eee' + (isCurrent ? ';background:#dbeafe;font-weight:bold' : '') + '"><td style="padding:6px">' + o.label + (isCurrent ? ' ? : '') + '</td><td style="text-align:right;padding:6px">' + intv + '</td><td style="text-align:right;padding:6px">' + o.timeMonths + ' mo</td><td style="text-align:right;padding:6px"> + annualCost + ' (' + changesPerYear + 'x/yr)</td></tr>';
         });
         html += '</table>';
         html += '<div style="font-size:11px;color:#999;margin-top:4px">Cost estimates include oil + filter. Actual prices vary by location and vehicle.</div>';
         html += '</div>';
 
-        // 严重条件提示
+        // (internal note)
         if(conditions === 'severe'){
             html += '<div style="background:#fff3cd;border:1px solid #ffe69b;border-radius:6px;padding:10px;margin-top:10px;font-size:12px;color:#92400e"><b>Severe conditions detected.</b> Short trips (&lt;5 mi), extreme temperatures, towing, or dusty roads cause oil to break down faster. Consider switching to synthetic oil for better protection under severe conditions.</div>';
         }
 
-        html += '<div style="font-size:11px;color:#999;margin-top:8px">This calculator provides general guidance. Always consult your owner\'s manual for manufacturer-specific intervals. Some modern vehicles use oil life monitoring systems that adjust intervals based on actual driving patterns.</div>';
-        html += '</div>';
+        html += '<div style="font-size:11px;color:#999;margin-top:8px">This calculator provides general guidance. Always consult your owner\'s manual for manufacturer-specific intervals. Some modern vehicles use oil life monitoring systems that adjust intervals based on actual driving patterns.';
+        html += '';
         document.getElementById('result').innerHTML = html;
     }
     document.getElementById('calc').addEventListener('click', calc);

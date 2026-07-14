@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Grade Calculator | YuanQiZhiLe Toolkit</title>
+<title>Grade Calculator | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Calculate final grade with weighted assignments. Track what you need on final exam. Free grade calculator.">
 <meta name="keywords" content="grade calculator, final grade, weighted grade, exam grade, what do I need, semester grade">
 <meta property="og:title" content="Grade Calculator - Free Online Tool">
@@ -112,7 +112,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>Grade Calculator</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Calculate final grade with weighted assignments. Track what you need on final exam. Free grade calculator.</div>
@@ -139,19 +139,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -162,9 +162,9 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 <li>Set target grade and final exam weight.</li>
 <li>Click <b>Calculate</b>.</li>
 </ol>
-<p style="margin-top:8px;font-size:12px;color:#666">Weighted grade = Σ(score × weight) / Σ(weight). To find needed final exam score: (target × total weight − current weighted sum) / final weight. Letter grades: A ≥90, B ≥80, C ≥70, D ≥60, F <60. AP/Honors may add +1 to GPA.</p>
+<p style="margin-top:8px;font-size:12px;color:#666">Weighted grade = Σ(score × weight) / Σ(weight). To find needed final exam score: (target × total weight &#8212; current weighted sum) / final weight. Letter grades: A ~ 0, B ~ 0, C ~ 0, D ~ 0, F <60. AP/Honors may add +1 to GPA.</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -175,7 +175,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -201,7 +201,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -279,9 +279,9 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             var neededColor = neededOnFinal > 100 ? '#ef4444' : (neededOnFinal > 90 ? '#f59e0b' : '#10b981');
             html += '<div style="font-size:32px;font-weight:bold;text-align:center;color:' + neededColor + '">' + neededOnFinal.toFixed(1) + '%</div>';
             if(neededOnFinal > 100){
-                html += '<div style="font-size:12px;color:#ef4444;text-align:center;margin-top:4px">⚠ Impossible — max achievable: ' + ((weightedSum + 100 * finalWeight) / totalPossibleWeight).toFixed(1) + '%</div>';
+                html += '<div style="font-size:12px;color:#ef4444;text-align:center;margin-top:4px">?Impossible ?max achievable: ' + ((weightedSum + 100 * finalWeight) / totalPossibleWeight).toFixed(1) + '%</div>';
             } else if(neededOnFinal < 0){
-                html += '<div style="font-size:12px;color:#10b981;text-align:center;margin-top:4px">✓ Already achieved! You can score 0% on final.</div>';
+                html += '<div style="font-size:12px;color:#10b981;text-align:center;margin-top:4px">?Already achieved! You can score 0% on final.</div>';
             } else {
                 html += '<div style="font-size:12px;color:#666;text-align:center;margin-top:4px">Achievable. Current pace: ' + currentGrade.toFixed(1) + '%</div>';
             }

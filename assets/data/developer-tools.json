@@ -1,0 +1,827 @@
+[
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Base64 URL Encoder Decoder & JWT Parser",
+    "desc": "A free browser-based tool for encoding and decoding Base64 and URL strings, parsing JWT tokens, batch processing, and generating cryptographic hashes. All processing is local and private.",
+    "features": [
+      "Base64 encode and decode",
+      "URL encode and decode",
+      "JWT token parser",
+      "Batch processing",
+      "SHA-256/384/512 hash generation",
+      "Base64 image preview"
+    ],
+    "detailUrl": "/tools/base64-url-tool/index.html",
+    "zipUrl": "/assets/zip-packages/dev/base64-url-tool.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-15.svg",
+    "title": "Encoding Fixer",
+    "desc": "Detect and repair garbled text from incorrect character encodings. Supports UTF-8, Latin-1, and Windows-1252 conversion directly in your browser.",
+    "features": [
+      "Fix Mojibake",
+      "Convert Encodings",
+      "Batch Processing",
+      "BOM Handling",
+      "Local Privacy"
+    ],
+    "detailUrl": "/tools/encoding-fixer/index.html",
+    "zipUrl": "/assets/zip-packages/dev/encoding-fixer.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-17.svg",
+    "title": "Aes Encryptor",
+    "desc": "Securely encrypt and decrypt text or files using AES-GCM locally in your browser with no server uploads.",
+    "features": [
+      "AES-256 Encryption",
+      "Local Browser Processing",
+      "Password-Based Security",
+      "Supports Text And Files",
+      "Offline Capable",
+      "GCM Mode Support"
+    ],
+    "detailUrl": "/tools/aes-encryptor/index.html",
+    "zipUrl": "/assets/zip-packages/dev/aes-encryptor.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "API Request Tester",
+    "desc": "Test REST APIs directly in your browser with custom headers, body, and parameters. Supports GET, POST, PUT, DELETE, and PATCH. View response status, headers, and body instantly.",
+    "features": [
+      "Send HTTP requests easily",
+      "Custom headers and body",
+      "View response status and headers",
+      "Supports multiple HTTP methods",
+      "No installation required",
+      "Works offline in browser"
+    ],
+    "detailUrl": "/tools/api-request-tester/index.html",
+    "zipUrl": "/assets/zip-packages/dev/api-request-tester.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Duplicate File Name Comparator",
+    "desc": "Easily compare two file name lists to identify duplicates, unique entries, and conflicts. Ideal for folder synchronization, data cleanup, and managing file collections. Supports case-sensitive and extension-ignoring comparison.",
+    "features": [
+      "Compare two file name lists",
+      "Detect duplicates and unique files",
+      "Case-sensitive matching option",
+      "Ignore file extensions option",
+      "Instant results with summary",
+      "No upload, fully private"
+    ],
+    "detailUrl": "/tools/duplicate-file-comparator/index.html",
+    "zipUrl": "/assets/zip-packages/dev/duplicate-file-comparator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": ".gitignore Generator",
+    "desc": "Generate .gitignore files for any project with templates for Node.js, Python, Java, Go, Rust, and more. Combine multiple templates and add custom rules.",
+    "features": [
+      "Multiple project templates",
+      "Custom ignore patterns",
+      "One-click generation",
+      "Copy to clipboard",
+      "Download as file",
+      "Combine multiple templates"
+    ],
+    "detailUrl": "/tools/gitignore-generator/index.html",
+    "zipUrl": "/assets/zip-packages/dev/gitignore-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": ".htaccess Generator",
+    "desc": "Generate Apache .htaccess files with ease. Configure URL redirects, rewrites, security headers, caching, and more. No server required, all processing is done locally in your browser.",
+    "features": [
+      "Force HTTPS and www redirects",
+      "Custom error pages setup",
+      "Security headers configuration",
+      "Gzip compression and caching",
+      "Hotlink protection rules",
+      "Disable directory listing"
+    ],
+    "detailUrl": "/tools/htaccess-generator/index.html",
+    "zipUrl": "/assets/zip-packages/dev/htaccess-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "JSON Sensitive Data Masker",
+    "desc": "Mask sensitive fields in JSON data like passwords, emails, phone numbers, and API keys. Replace values with asterisks for safe logging and sharing. Free online tool with auto-detection.",
+    "features": [
+      "Mask PII fields",
+      "Custom masking rules",
+      "Auto-detect emails and phones",
+      "Preserve JSON structure",
+      "Copy masked result",
+      "No data sent to server"
+    ],
+    "detailUrl": "/tools/json-data-masker/index.html",
+    "zipUrl": "/assets/zip-packages/dev/json-data-masker.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "JSON File Splitter",
+    "desc": "Split large JSON arrays into smaller files by record count or file size. Process locally in your browser with no uploads. Download each part instantly.",
+    "features": [
+      "Split by record count",
+      "Split by file size",
+      "Nested array path support",
+      "Download as separate files",
+      "100% client-side processing"
+    ],
+    "detailUrl": "/tools/json-file-splitter/index.html",
+    "zipUrl": "/assets/zip-packages/dev/json-file-splitter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "JSON Path Extractor",
+    "desc": "Extract specific data from JSON using JSONPath expressions. Navigate complex JSON structures with simple path queries. Free online tool for developers and data analysts.",
+    "features": [
+      "JSONPath query evaluation",
+      "Wildcards and filter support",
+      "Recursive descent search",
+      "Format and clear JSON",
+      "Instant browser-based extraction",
+      "No data sent to server"
+    ],
+    "detailUrl": "/tools/json-path-extractor/index.html",
+    "zipUrl": "/assets/zip-packages/dev/json-path-extractor.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Mock JSON Data Generator",
+    "desc": "Generate realistic mock JSON data for testing APIs and databases. Create fake users, products, orders and more with customizable schemas and adjustable record counts.",
+    "features": [
+      "Custom JSON schema input",
+      "Multiple data types supported",
+      "Adjustable record count",
+      "Copy and download JSON",
+      "Template presets available",
+      "Local browser processing"
+    ],
+    "detailUrl": "/tools/mock-data-generator/index.html",
+    "zipUrl": "/assets/zip-packages/dev/mock-data-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "QR Code Generator",
+    "desc": "Generate custom QR codes for URLs, text, emails, WiFi, and more. Adjust size, colors, and error correction. Download as PNG or SVG. All processing happens locally in your browser.",
+    "features": [
+      "Text, URL, email, WiFi, vCard",
+      "Custom colors and size",
+      "Error correction levels",
+      "Download PNG or SVG",
+      "Copy data URL",
+      "Auto-generate as you type"
+    ],
+    "detailUrl": "/tools/qr-code-generator/index.html",
+    "zipUrl": "/assets/zip-packages/dev/qr-code-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-37.svg",
+    "title": "Regex Tester",
+    "desc": "Test regular expressions in real-time with instant match highlighting, capture group analysis, and common pattern templates.",
+    "features": [
+      "Real-time Matching",
+      "Pattern Highlighting",
+      "Common Templates",
+      "Match Statistics",
+      "Error Handling",
+      "Offline Support"
+    ],
+    "detailUrl": "/tools/regex-tester-2/index.html",
+    "zipUrl": "/assets/zip-packages/dev/regex-tester.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "SQL Formatter",
+    "desc": "Free online SQL formatter and beautifier for MySQL, PostgreSQL, SQLite, and SQL Server. Format queries with customizable indentation, keyword casing, and syntax highlighting.",
+    "features": [
+      "Format messy SQL queries",
+      "Uppercase SQL keywords",
+      "Adjustable indentation (2/4/tab)",
+      "Syntax highlighting output",
+      "Copy formatted SQL instantly",
+      "Supports multiple SQL dialects"
+    ],
+    "detailUrl": "/tools/sql-formatter/index.html",
+    "zipUrl": "/assets/zip-packages/dev/sql-formatter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "SVG Optimizer",
+    "desc": "Minify and optimize SVG code by removing comments, metadata, editor data, and whitespace. Reduce file size instantly with a live preview and download option.",
+    "features": [
+      "Remove comments and metadata",
+      "Strip editor-specific attributes",
+      "Collapse excessive whitespace",
+      "Remove unused defs",
+      "Live preview of optimized SVG",
+      "Download optimized SVG file"
+    ],
+    "detailUrl": "/tools/svg-optimizer/index.html",
+    "zipUrl": "/assets/zip-packages/dev/svg-optimizer.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Test Address & Phone Generator",
+    "desc": "Generate realistic test addresses, phone numbers, names, and emails for multiple countries. Ideal for form testing, database seeding, and e-commerce checkout simulations. Export as JSON or CSV.",
+    "features": [
+      "Multi-country address generation",
+      "Random names and phone numbers",
+      "Customizable output fields",
+      "JSON and CSV export",
+      "Bulk generation up to 100 records"
+    ],
+    "detailUrl": "/tools/test-address-generator/index.html",
+    "zipUrl": "/assets/zip-packages/dev/test-address-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "All-in-One Unit Converter",
+    "desc": "Convert length, weight, area, volume, temperature, speed, data size, time, pressure, and energy instantly. Free online tool with local processing, no upload required.",
+    "features": [
+      "Multiple unit categories",
+      "Instant live conversion",
+      "Formula display",
+      "Dark mode support",
+      "No data upload"
+    ],
+    "detailUrl": "/tools/unit-converter/index.html",
+    "zipUrl": "/assets/zip-packages/dev/unit-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Unix Timestamp Converter",
+    "desc": "Convert Unix timestamps to human-readable dates and vice versa. Supports seconds, milliseconds, microseconds, and nanoseconds. All processing happens locally in your browser for privacy. Ideal for developers, log analysis, and API debugging.",
+    "features": [
+      "Timestamp to date conversion",
+      "Date to timestamp conversion",
+      "Multiple precision levels",
+      "Timezone support",
+      "Relative time display",
+      "Copy results easily"
+    ],
+    "detailUrl": "/tools/unix-timestamp-converter/index.html",
+    "zipUrl": "/assets/zip-packages/dev/unix-timestamp-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Uuid Generator",
+    "desc": "A free offline tool for uuid generator calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/uuid-generator/index.html",
+    "zipUrl": "/assets/zip-packages/dev/uuid-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-19.svg",
+    "title": "Expired Domain Finder",
+    "desc": "Discover expiring domains with SEO metrics, backlink history, and bulk export capabilities for investors and developers.",
+    "features": [
+      "Search Expiring Domains",
+      "Filter By SEO Metrics",
+      "View Backlink History",
+      "Export Bulk Data",
+      "Archive.org Snapshots",
+      "Local Privacy Processing"
+    ],
+    "detailUrl": "/tools/expired-domain-finder/index.html",
+    "zipUrl": "/assets/zip-packages/seo/expired-domain-finder.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-28.svg",
+    "title": "Http Header Checker",
+    "desc": "Analyze HTTP response headers, security settings, caching rules, and server information for any URL directly in your browser.",
+    "features": [
+      "Inspect Response Headers",
+      "Check Security Headers",
+      "Analyze Caching Rules",
+      "View Redirect Chains",
+      "Get Server Information",
+      "Calculate Security Score"
+    ],
+    "detailUrl": "/tools/http-header-checker/index.html",
+    "zipUrl": "/assets/zip-packages/seo/http-header-checker.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-32.svg",
+    "title": "Reverse Ip Lookup",
+    "desc": "Discover all domains hosted on a specific IP address. Ideal for security research, competitor analysis, and shared hosting detection.",
+    "features": [
+      "Domain By IP Search",
+      "Shared Hosting Detection",
+      "Security Reconnaissance",
+      "Competitor Analysis",
+      "Local Browser Processing"
+    ],
+    "detailUrl": "/tools/reverse-ip-lookup/index.html",
+    "zipUrl": "/assets/zip-packages/seo/reverse-ip-lookup.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-31.svg",
+    "title": "XML Sitemap Generator",
+    "desc": "Generate XML sitemaps locally for SEO optimization. Supports crawling, priority settings, and media inclusion without uploading data.",
+    "features": [
+      "Local XML Generation",
+      "Crawl Website URLs",
+      "Set Priority & Frequency",
+      "Support Images & Videos",
+      "Respect Robots.txt",
+      "No Data Upload"
+    ],
+    "detailUrl": "/tools/xml-sitemap-generator/index.html",
+    "zipUrl": "/assets/zip-packages/seo/xml-sitemap-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-19.svg",
+    "title": "Whois Lookup",
+    "desc": "Whois Lookup - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/whois-lookup/index.html",
+    "zipUrl": "/assets/zip-packages/seo/whois-lookup.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-17.svg",
+    "title": "Secure Password Generator",
+    "desc": "Generate strong, customizable passwords locally in your browser with options for length, character sets, and ambiguity exclusion.",
+    "features": [
+      "Local Generation",
+      "Custom Length",
+      "Exclude Ambiguity",
+      "Character Sets",
+      "No Data Sent"
+    ],
+    "detailUrl": "/tools/password-generator/index.html",
+    "zipUrl": "/assets/zip-packages/dev/password-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-8.svg",
+    "title": "Meta Tag Generator",
+    "desc": "Meta Tag Generator - a handy browser-based tool.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/meta-tag-generator/index.html",
+    "zipUrl": "/assets/zip-packages/seo/meta-tag-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Base64 Image Converter",
+    "desc": "Convert images to Base64 data URIs for inline embedding in HTML/CSS. Also decode Base64 back to image. Optimize web performance by reducing HTTP requests. Free online tool.",
+    "features": [
+      "Image to Base64 encoding",
+      "Base64 to image decoding",
+      "Copy as CSS background",
+      "Copy as HTML img tag",
+      "File size comparison",
+      "No server upload"
+    ],
+    "detailUrl": "/tools/base64-image-converter/index.html",
+    "zipUrl": "/assets/zip-packages/dev/base64-image-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Cron Expression Generator",
+    "desc": "Generate cron expressions visually with our free online tool. Build schedules using a friendly UI, see plain-English descriptions, and preview next execution times. Perfect for developers and sysadmins.",
+    "features": [
+      "Visual cron field editing",
+      "Quick preset templates",
+      "Plain-English description",
+      "Next 5 execution times",
+      "Copy cron expression",
+      "Dark mode support"
+    ],
+    "detailUrl": "/tools/cron-expression-generator/index.html",
+    "zipUrl": "/assets/zip-packages/dev/cron-expression-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Cron to Human Reader",
+    "desc": "Convert cron expressions to human readable text instantly. Understand cron schedules with field breakdown and next run predictions. Free online cron translator.",
+    "features": [
+      "Instant cron translation",
+      "Field-by-field breakdown",
+      "Next 5 run predictions",
+      "Example presets",
+      "Supports all cron syntax"
+    ],
+    "detailUrl": "/tools/cron-to-human-reader/index.html",
+    "zipUrl": "/assets/zip-packages/dev/cron-to-human-reader.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Crontab Generator",
+    "desc": "Generate cron schedule expressions visually with our free online crontab generator. Build crontab entries easily and get human-readable descriptions. Perfect for Linux cron jobs.",
+    "features": [
+      "Visual cron expression builder",
+      "Preset schedules for quick setup",
+      "Human-readable schedule description",
+      "One-click copy to clipboard",
+      "Supports step, range, and list values",
+      "Free and no signup required"
+    ],
+    "detailUrl": "/tools/crontab-generator/index.html",
+    "zipUrl": "/assets/zip-packages/dev/crontab-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "CSS Shadow Generator",
+    "desc": "Generate CSS box-shadow and text-shadow with live preview. Add multiple layered shadows, adjust offset, blur, spread, and color. Copy production-ready CSS code instantly. Perfect for buttons, cards, and neon text effects.",
+    "features": [
+      "Choose box or text shadow",
+      "Adjust offset, blur, spread",
+      "Add multiple shadow layers",
+      "Live preview updates",
+      "Copy CSS code instantly",
+      "Inset shadow support"
+    ],
+    "detailUrl": "/tools/css-shadow-generator/index.html",
+    "zipUrl": "/assets/zip-packages/dev/css-shadow-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "CSV to JSON Converter",
+    "desc": "Convert CSV data to JSON array of objects instantly in your browser. Auto-detects delimiters, handles quoted fields, and supports typed value parsing for numbers, booleans, and null.",
+    "features": [
+      "Auto-detect delimiter",
+      "Parse typed values",
+      "Handle quoted fields",
+      "Copy or download JSON",
+      "100% client-side"
+    ],
+    "detailUrl": "/tools/csv-to-json/index.html",
+    "zipUrl": "/assets/zip-packages/dev/csv-to-json.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "ENV File Parser",
+    "desc": "Parse and convert .env files to JSON, YAML, or table format. Free online environment variable editor for developers working with Node.js, Docker, and CI/CD configurations.",
+    "features": [
+      "Convert .env to JSON",
+      "Convert .env to YAML",
+      "View variables in table",
+      "Auto-detect value types",
+      "Copy output to clipboard",
+      "Download parsed .env file"
+    ],
+    "detailUrl": "/tools/env-file-parser/index.html",
+    "zipUrl": "/assets/zip-packages/dev/env-file-parser.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Excel/CSV to JSON Converter",
+    "desc": "Convert Excel (XLSX) and CSV files to JSON instantly. Choose delimiter, output format, and download the result. All processing happens locally in your browser.",
+    "features": [
+      "Drag and drop file upload",
+      "CSV delimiter selection",
+      "Multiple output formats",
+      "Local browser processing",
+      "Copy or download JSON",
+      "First row as header option"
+    ],
+    "detailUrl": "/tools/excel-to-json/index.html",
+    "zipUrl": "/assets/zip-packages/dev/excel-to-json.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Git Cheat Sheet",
+    "desc": "Complete Git command cheat sheet for developers. Search, browse, and copy 60+ Git commands for setup, staging, commits, branches, merging, rebasing, remotes, stashing, logs, undo, and advanced workflows.",
+    "features": [
+      "Search and filter commands",
+      "Copy commands to clipboard",
+      "Grouped by category",
+      "60+ everyday Git commands",
+      "Advanced workflow examples",
+      "Light and dark mode"
+    ],
+    "detailUrl": "/tools/git-cheat-sheet/index.html",
+    "zipUrl": "/assets/zip-packages/dev/git-cheat-sheet.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "HTML Encoder / Decoder",
+    "desc": "Encode text to HTML entities or decode entities back to readable text. Supports named and numeric entities. Free online tool for web developers and content creators.",
+    "features": [
+      "Encode special characters to entities",
+      "Decode HTML entities to text",
+      "Swap input and output",
+      "Copy result to clipboard",
+      "Common entity reference table"
+    ],
+    "detailUrl": "/tools/html-encoder-decoder/index.html",
+    "zipUrl": "/assets/zip-packages/dev/html-encoder-decoder.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "HTML Formatter",
+    "desc": "Format messy or minified HTML into clean, readable code with our free online HTML formatter. Fix indentation, normalize tags, and beautify your markup instantly in your browser.",
+    "features": [
+      "Instant HTML beautification",
+      "Customizable indent size",
+      "Copy formatted code",
+      "Browser-based, no upload",
+      "Handles void tags correctly"
+    ],
+    "detailUrl": "/tools/html-formatter/index.html",
+    "zipUrl": "/assets/zip-packages/dev/html-formatter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "HTML Minifier",
+    "desc": "Compress and minify HTML online. Remove comments, collapse whitespace, and strip optional closing tags to shrink page size and speed up load times. Free, no upload, no signup.",
+    "features": [
+      "Remove HTML comments",
+      "Collapse whitespace",
+      "Strip optional closing tags",
+      "Show saved bytes and percentage",
+      "Copy minified result"
+    ],
+    "detailUrl": "/tools/html-minifier/index.html",
+    "zipUrl": "/assets/zip-packages/dev/html-minifier.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "HTML Table Generator",
+    "desc": "Visually build and edit HTML tables with our free online generator. Set rows and columns, toggle header row, and export clean HTML or Markdown table code instantly.",
+    "features": [
+      "Visual table builder",
+      "Editable cell content",
+      "Header row toggle",
+      "Export HTML and Markdown",
+      "Add or remove rows/cols",
+      "Copy code to clipboard"
+    ],
+    "detailUrl": "/tools/html-table-generator/index.html",
+    "zipUrl": "/assets/zip-packages/dev/html-table-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "HTTP Status Code Reference",
+    "desc": "Quickly look up HTTP status codes with our free reference tool. Search and filter 60+ official codes across 1xx to 5xx categories, complete with descriptions and usage examples.",
+    "features": [
+      "Search by code or name",
+      "Filter by category",
+      "Color-coded status groups",
+      "60+ official codes",
+      "Descriptions and examples"
+    ],
+    "detailUrl": "/tools/http-status-code-reference/index.html",
+    "zipUrl": "/assets/zip-packages/dev/http-status-code-reference.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "JSON Path Evaluator",
+    "desc": "Query and extract values from JSON data using JSONPath expressions. Supports dot notation, wildcards, recursive descent, and filters. Free online JSONPath evaluator for developers.",
+    "features": [
+      "Evaluate JSONPath expressions",
+      "Support dot notation and filters",
+      "Wildcard and recursive descent",
+      "Interactive example buttons",
+      "Format JSON input",
+      "Instant result display"
+    ],
+    "detailUrl": "/tools/json-path-evaluator/index.html",
+    "zipUrl": "/assets/zip-packages/dev/json-path-evaluator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "JSON to CSV Converter",
+    "desc": "Convert JSON array of objects to CSV format with custom delimiters and nested object flattening. Instant client-side conversion ensures your data stays private. Free online tool.",
+    "features": [
+      "Convert JSON array to CSV",
+      "Custom delimiter support",
+      "Flatten nested objects",
+      "Copy to clipboard",
+      "Download as CSV file",
+      "No data upload"
+    ],
+    "detailUrl": "/tools/json-to-csv/index.html",
+    "zipUrl": "/assets/zip-packages/dev/json-to-csv.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "JSON to TypeScript Types",
+    "desc": "Convert JSON objects into TypeScript interfaces and types instantly. Supports nested objects, arrays, optional fields, and union types from multiple samples. Pure client-side tool.",
+    "features": [
+      "Generate TypeScript interfaces",
+      "Handle nested objects and arrays",
+      "Optional readonly and export",
+      "Union types from samples",
+      "Copy output instantly"
+    ],
+    "detailUrl": "/tools/json-to-typescript/index.html",
+    "zipUrl": "/assets/zip-packages/dev/json-to-typescript.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "JSON to YAML Converter",
+    "desc": "Convert JSON to YAML and YAML to JSON instantly with our free online bidirectional converter. Supports nested objects, arrays, and proper indentation. No server required.",
+    "features": [
+      "Bidirectional JSON ↔ YAML conversion",
+      "Supports nested objects and arrays",
+      "Inline array handling",
+      "Copy output to clipboard",
+      "Pure client-side processing"
+    ],
+    "detailUrl": "/tools/json-to-yaml/index.html",
+    "zipUrl": "/assets/zip-packages/dev/json-to-yaml.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Markdown Cheatsheet",
+    "desc": "Quick reference for Markdown syntax with live previews. Copy headings, bold, italic, lists, links, images, code blocks, tables, and GitHub Flavored Markdown snippets instantly.",
+    "features": [
+      "Search and filter syntax",
+      "Live preview of Markdown",
+      "One-click copy snippets",
+      "Covers GFM extensions",
+      "Light and dark mode",
+      "No signup required"
+    ],
+    "detailUrl": "/tools/markdown-cheatsheet/index.html",
+    "zipUrl": "/assets/zip-packages/dev/markdown-cheatsheet.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Markdown Table Generator",
+    "desc": "Create clean GFM-compatible Markdown tables with a visual editor. Add rows and columns, edit cell content, and copy the formatted table syntax instantly. Free online tool, no signup required.",
+    "features": [
+      "Visual table editor",
+      "Add/remove rows and columns",
+      "Copy Markdown syntax",
+      "GFM-compatible output",
+      "No signup required"
+    ],
+    "detailUrl": "/tools/markdown-table-generator/index.html",
+    "zipUrl": "/assets/zip-packages/dev/markdown-table-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Regex Tester Live",
+    "desc": "Test JavaScript regular expressions instantly with live highlighting, capture groups, and detailed match info. Supports all flags and replacement with backreferences. Free online regex debugger.",
+    "features": [
+      "Real-time regex testing",
+      "Capture groups and flags",
+      "Match highlighting",
+      "Replace with backreferences",
+      "Detailed match info",
+      "Supports all JS flags"
+    ],
+    "detailUrl": "/tools/regex-tester-live/index.html",
+    "zipUrl": "/assets/zip-packages/dev/regex-tester-live.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Slug Generator",
+    "desc": "Convert any text into clean, SEO-friendly URL slugs with our free online slug generator. Customize separators, case, and remove stop words for optimal permalinks. No signup required.",
+    "features": [
+      "Custom separator options",
+      "Lowercase/uppercase/preserve case",
+      "Strict mode for alphanumeric",
+      "Trim common stop words",
+      "Live preview and copy",
+      "Unicode transliteration"
+    ],
+    "detailUrl": "/tools/slug-generator/index.html",
+    "zipUrl": "/assets/zip-packages/dev/slug-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "User Agent Parser",
+    "desc": "A free offline tool for user agent parser calculations. Works in your browser.",
+    "features": [
+      "Easy to use",
+      "Works offline"
+    ],
+    "detailUrl": "/tools/user-agent-parser/index.html",
+    "zipUrl": "/assets/zip-packages/dev/user-agent-parser.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Command Line Cheat Sheet",
+    "desc": "Quick reference for Linux/Windows/macOS command line commands. Search by task or category. Copy commands with one click.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/command-cheat-sheet.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "CRUD Code Template Generator",
+    "desc": "Generate CRUD (Create, Read, Update, Delete) code templates for any entity. Supports multiple languages and frameworks. Saves development time.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/crud-template-generator.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Spreadsheet Formula Converter",
+    "desc": "Convert between spreadsheet formulas (Excel, Google Sheets) and programming code. Transform SUM, VLOOKUP, IF and more to JavaScript, Python, or SQL.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/formula-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Hex to Text Converter",
+    "desc": "Convert Hex strings to readable text and vice versa. Supports UTF-8, ASCII, and various hex formats. Useful for debugging and data analysis.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/hex-text-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "JavaScript Minifier",
+    "desc": "Minify JavaScript code to reduce file size. Remove comments, whitespace, and unnecessary characters instantly.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/js-minifier.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Log File Formatter",
+    "desc": "Format and clean messy log files. Parse timestamps, levels, and messages. Filter by log level, search, and export cleaned logs.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/log-formatter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "Port Scanner",
+    "desc": "Scan common ports on any host. Check if HTTP, HTTPS, SSH, FTP, MySQL and other services are accessible from the browser.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/port-scanner.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
+    "title": "API Signature Validator",
+    "desc": "Generate and validate API request signatures. Support HMAC-SHA256, MD5, and custom signature algorithms. Perfect for testing API authentication.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/dev/signature-validator.zip"
+  }
+]

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Country Facts Lookup | YuanQiZhiLe Toolkit</title>
+<title>Country Facts Lookup | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Quick facts about world countries. Capital, population, area, currency, language. Free country information lookup.">
 <meta name="keywords" content="country facts, country information, world countries, capital city, population, currency, language, country data">
 <meta property="og:title" content="Country Facts Lookup - Free Online Tool">
@@ -112,7 +112,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>Country Facts Lookup</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Quick facts about world countries. Capital, population, area, currency, language. Free country information lookup.</div>
@@ -139,19 +139,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -164,7 +164,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 </ol>
 <p style="margin-top:8px;font-size:12px;color:#666>Data covers ~38 major countries. Density shows people per km². Area shown in both km² and mi² for international users.</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -175,7 +175,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -201,7 +201,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -238,37 +238,37 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         {name:'Brazil', capital:'Brasília', pop:214300000, area:8515767, currency:'BRL (R$)', lang:'Portuguese', region:'South America', code:'BR'},
         {name:'Argentina', capital:'Buenos Aires', pop:45410000, area:2780400, currency:'ARS ($)', lang:'Spanish', region:'South America', code:'AR'},
         {name:'United Kingdom', capital:'London', pop:67530000, area:243610, currency:'GBP (£)', lang:'English', region:'Europe', code:'GB'},
-        {name:'France', capital:'Paris', pop:67390000, area:643801, currency:'EUR (€)', lang:'French', region:'Europe', code:'FR'},
-        {name:'Germany', capital:'Berlin', pop:83190000, area:357114, currency:'EUR (€)', lang:'German', region:'Europe', code:'DE'},
-        {name:'Italy', capital:'Rome', pop:60360000, area:301340, currency:'EUR (€)', lang:'Italian', region:'Europe', code:'IT'},
-        {name:'Spain', capital:'Madrid', pop:47350000, area:505992, currency:'EUR (€)', lang:'Spanish', region:'Europe', code:'ES'},
-        {name:'Netherlands', capital:'Amsterdam', pop:17440000, area:41850, currency:'EUR (€)', lang:'Dutch', region:'Europe', code:'NL'},
-        {name:'Russia', capital:'Moscow', pop:144100000, area:17098242, currency:'RUB (₽)', lang:'Russian', region:'Europe/Asia', code:'RU'},
+        {name:'France', capital:'Paris', pop:67390000, area:643801, currency:'EUR (?', lang:'French', region:'Europe', code:'FR'},
+        {name:'Germany', capital:'Berlin', pop:83190000, area:357114, currency:'EUR (?', lang:'German', region:'Europe', code:'DE'},
+        {name:'Italy', capital:'Rome', pop:60360000, area:301340, currency:'EUR (?', lang:'Italian', region:'Europe', code:'IT'},
+        {name:'Spain', capital:'Madrid', pop:47350000, area:505992, currency:'EUR (?', lang:'Spanish', region:'Europe', code:'ES'},
+        {name:'Netherlands', capital:'Amsterdam', pop:17440000, area:41850, currency:'EUR (?', lang:'Dutch', region:'Europe', code:'NL'},
+        {name:'Russia', capital:'Moscow', pop:144100000, area:17098242, currency:'RUB (?', lang:'Russian', region:'Europe/Asia', code:'RU'},
         {name:'China', capital:'Beijing', pop:1412000000, area:9596961, currency:'CNY (¥)', lang:'Mandarin', region:'Asia', code:'CN'},
         {name:'Japan', capital:'Tokyo', pop:125700000, area:377975, currency:'JPY (¥)', lang:'Japanese', region:'Asia', code:'JP'},
-        {name:'India', capital:'New Delhi', pop:1380000000, area:3287263, currency:'INR (₹)', lang:'Hindi/English', region:'Asia', code:'IN'},
-        {name:'South Korea', capital:'Seoul', pop:51780000, area:100210, currency:'KRW (₩)', lang:'Korean', region:'Asia', code:'KR'},
+        {name:'India', capital:'New Delhi', pop:1380000000, area:3287263, currency:'INR (?', lang:'Hindi/English', region:'Asia', code:'IN'},
+        {name:'South Korea', capital:'Seoul', pop:51780000, area:100210, currency:'KRW (?', lang:'Korean', region:'Asia', code:'KR'},
         {name:'Australia', capital:'Canberra', pop:25690000, area:7692024, currency:'AUD ($)', lang:'English', region:'Oceania', code:'AU'},
         {name:'New Zealand', capital:'Wellington', pop:5124000, area:268021, currency:'NZD ($)', lang:'English/Maori', region:'Oceania', code:'NZ'},
         {name:'South Africa', capital:'Pretoria/Cape Town/Bloemfontein', pop:59390000, area:1221037, currency:'ZAR (R)', lang:'11 official', region:'Africa', code:'ZA'},
         {name:'Egypt', capital:'Cairo', pop:102300000, area:1001450, currency:'EGP (£)', lang:'Arabic', region:'Africa', code:'EG'},
-        {name:'Nigeria', capital:'Abuja', pop:213400000, area:923768, currency:'NGN (₦)', lang:'English', region:'Africa', code:'NG'},
+        {name:'Nigeria', capital:'Abuja', pop:213400000, area:923768, currency:'NGN (?', lang:'English', region:'Africa', code:'NG'},
         {name:'Kenya', capital:'Nairobi', pop:53770000, area:580367, currency:'KES (KSh)', lang:'Swahili/English', region:'Africa', code:'KE'},
-        {name:'Saudi Arabia', capital:'Riyadh', pop:35340000, area:2149690, currency:'SAR (﷼)', lang:'Arabic', region:'Middle East', code:'SA'},
+        {name:'Saudi Arabia', capital:'Riyadh', pop:35340000, area:2149690, currency:'SAR (?', lang:'Arabic', region:'Middle East', code:'SA'},
         {name:'United Arab Emirates', capital:'Abu Dhabi', pop:9980000, area:83600, currency:'AED (د.إ)', lang:'Arabic', region:'Middle East', code:'AE'},
-        {name:'Turkey', capital:'Ankara', pop:84750000, area:783562, currency:'TRY (₺)', lang:'Turkish', region:'Europe/Asia', code:'TR'},
-        {name:'Israel', capital:'Jerusalem', pop:9217000, area:20770, currency:'ILS (₪)', lang:'Hebrew/Arabic', region:'Middle East', code:'IL'},
+        {name:'Turkey', capital:'Ankara', pop:84750000, area:783562, currency:'TRY (?', lang:'Turkish', region:'Europe/Asia', code:'TR'},
+        {name:'Israel', capital:'Jerusalem', pop:9217000, area:20770, currency:'ILS (?', lang:'Hebrew/Arabic', region:'Middle East', code:'IL'},
         {name:'Sweden', capital:'Stockholm', pop:10360000, area:450295, currency:'SEK (kr)', lang:'Swedish', region:'Europe', code:'SE'},
         {name:'Norway', capital:'Oslo', pop:5391000, area:385207, currency:'NOK (kr)', lang:'Norwegian', region:'Europe', code:'NO'},
-        {name:'Finland', capital:'Helsinki', pop:5541000, area:338424, currency:'EUR (€)', lang:'Finnish/Swedish', region:'Europe', code:'FI'},
+        {name:'Finland', capital:'Helsinki', pop:5541000, area:338424, currency:'EUR (?', lang:'Finnish/Swedish', region:'Europe', code:'FI'},
         {name:'Poland', capital:'Warsaw', pop:37950000, area:312696, currency:'PLN (zł)', lang:'Polish', region:'Europe', code:'PL'},
         {name:'Switzerland', capital:'Bern', pop:8637000, area:41284, currency:'CHF (Fr)', lang:'German/French/Italian', region:'Europe', code:'CH'},
-        {name:'Greece', capital:'Athens', pop:10720000, area:131957, currency:'EUR (€)', lang:'Greek', region:'Europe', code:'GR'},
-        {name:'Portugal', capital:'Lisbon', pop:10330000, area:92090, currency:'EUR (€)', lang:'Portuguese', region:'Europe', code:'PT'},
-        {name:'Thailand', capital:'Bangkok', pop:71690000, area:513120, currency:'THB (฿)', lang:'Thai', region:'Asia', code:'TH'},
-        {name:'Vietnam', capital:'Hanoi', pop:97340000, area:331212, currency:'VND (₫)', lang:'Vietnamese', region:'Asia', code:'VN'},
+        {name:'Greece', capital:'Athens', pop:10720000, area:131957, currency:'EUR (?', lang:'Greek', region:'Europe', code:'GR'},
+        {name:'Portugal', capital:'Lisbon', pop:10330000, area:92090, currency:'EUR (?', lang:'Portuguese', region:'Europe', code:'PT'},
+        {name:'Thailand', capital:'Bangkok', pop:71690000, area:513120, currency:'THB (?', lang:'Thai', region:'Asia', code:'TH'},
+        {name:'Vietnam', capital:'Hanoi', pop:97340000, area:331212, currency:'VND (?', lang:'Vietnamese', region:'Asia', code:'VN'},
         {name:'Indonesia', capital:'Jakarta', pop:273500000, area:1904569, currency:'IDR (Rp)', lang:'Indonesian', region:'Asia', code:'ID'},
-        {name:'Philippines', capital:'Manila', pop:109600000, area:300000, currency:'PHP (₱)', lang:'Filipino/English', region:'Asia', code:'PH'}
+        {name:'Philippines', capital:'Manila', pop:109600000, area:300000, currency:'PHP (?', lang:'Filipino/English', region:'Asia', code:'PH'}
     ];
     var select = document.getElementById('country');
     countries.sort(function(a, b){ return a.name.localeCompare(b.name); });

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSV Order Data Cleaner | YuanQiZhiLe Toolkit</title>
+    <title>CSV Order Data Cleaner | YuanqiZhiKe Toolkit</title>
     <style>
         *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
         body{padding:20px;font-family:system-ui;background:#f5f5f5;transition:background 0.3s,color 0.3s}
@@ -97,6 +97,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 .contact-modal form button:hover{background:#218838}
 .instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}.instructions li{margin:4px 0;font-size:13px;line-height:1.6}body.dark .instructions{background:#1e2a3a;border-color:#2c4a6e}body.dark .instructions h2{color:#5ba3f5}
 </style>
+<meta name="description" content="Free online csv cleaner tool - fast, secure, no installation. YuanqiZhiKe Toolkit.">
 </head>
 <body>
 <div class="wrap">
@@ -104,7 +105,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>CSV Order Data Cleaner (Shopify / Amazon)</h1>
         <div class="top-controls">
             <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
 
@@ -153,23 +154,23 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
-<footer>YuanQiZhiLe Toolkit — Business & Productivity Tools</footer>
+<footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 
 <script>
@@ -190,7 +191,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -299,7 +300,7 @@ cleanBtn.onclick=()=>{
     previewBtn.disabled=false;
 
     const removed=beforeCount-lines.length;
-    statsBox.textContent=`Cleaned: ${beforeCount} → ${lines.length} lines (${removed} removed)`;
+    statsBox.textContent=`Cleaned: ${beforeCount} -?${lines.length} lines (${removed} removed)`;
 
     // Column statistics
     renderColumnStats(lines);
@@ -432,7 +433,7 @@ bookmarkBtn.onclick=()=>{
 function setTheme(isDark){
     if(isDark){
         document.body.classList.add('dark');
-        themeToggle.textContent='☀️';
+        themeToggle.textContent='☀-?';
         themeToggle.title='Switch to light mode';
     }else{
         document.body.classList.remove('dark');

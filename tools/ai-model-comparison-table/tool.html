@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Model Comparison Table | YuanQiZhiLe Toolkit</title>
+<title>AI Model Comparison Table | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Compare features, pricing, and capabilities of major LLMs (GPT-4, Claude, Gemini, Llama). Free AI model comparison reference.">
 <meta name="keywords" content="ai model comparison, llm comparison, gpt vs claude, ai models, language model comparison, llm features">
 <meta property="og:title" content="AI Model Comparison Table - Free Online Tool">
@@ -112,7 +112,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>AI Model Comparison Table</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Compare features, pricing, and capabilities of major LLMs (GPT-4, Claude, Gemini, Llama). Free AI model comparison reference.</div>
@@ -142,19 +142,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -165,9 +165,9 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 <li>Filter by vendor (OpenAI, Anthropic, Google, Meta, Mistral).</li>
 <li>Compare context, pricing, multimodal support, strengths.</li>
 </ol>
-<p style="margin-top:8px;font-size:12px;color:#666">Prices per 1M tokens as of mid-2024. Always check vendor pricing pages — they change frequently. Context window is the max input + output. Multimodal = supports images/audio/video input. For production: test 2-3 models on your actual workload before committing.</p>
+<p style="margin-top:8px;font-size:12px;color:#666">Prices per 1M tokens as of mid-2024. Always check vendor pricing pages &#8212; they change frequently. Context window is the max input + output. Multimodal = supports images/audio/video input. For production: test 2-3 models on your actual workload before committing.</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -178,7 +178,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -204,7 +204,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -268,7 +268,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             html += '<td style="padding:8px;border-bottom:1px solid #eee">' + m.ctx + '</td>';
             html += '<td style="padding:8px;border-bottom:1px solid #eee">' + m.input + '</td>';
             html += '<td style="padding:8px;border-bottom:1px solid #eee">' + m.output + '</td>';
-            html += '<td style="padding:8px;border-bottom:1px solid #eee">' + (m.multimodal === 'Yes' ? '<span style="color:#10b981">✓</span>' : '<span style="color:#ef4444">✗</span>') + '</td>';
+            html += '<td style="padding:8px;border-bottom:1px solid #eee">' + (m.multimodal === 'Yes' ? '<span style="color:#10b981"></span>' : '<span style="color:#ef4444"></span>') + '</td>';
             html += '<td style="padding:8px;border-bottom:1px solid #eee">' + m.release + '</td>';
             html += '<td style="padding:8px;border-bottom:1px solid #eee;color:#10b981">' + m.strengths + '</td>';
             html += '<td style="padding:8px;border-bottom:1px solid #eee;color:#ef4444">' + m.weaknesses + '</td>';
@@ -278,12 +278,12 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         // Summary
         html += '<div style="margin-top:12px;padding:12px;background:#f0f9ff;border-radius:6px;font-size:13px;line-height:1.6">';
         html += '<b>💡 Quick recommendations:</b><br>';
-        html += '• <b>Cheapest production:</b> Claude 3 Haiku or GPT-3.5 Turbo<br>';
-        html += '• <b>Best reasoning:</b> GPT-4o or Claude 3.5 Sonnet<br>';
-        html += '• <b>Long context (books/code):</b> Gemini 1.5 Pro (1M tokens)<br>';
-        html += '• <b>Self-hosted:</b> Llama 3 70B (best) or 8B (lightweight)<br>';
-        html += '• <b>Best for coding:</b> Claude 3.5 Sonnet<br>';
-        html += '• <b>Best multimodal:</b> GPT-4o (vision + audio)';
+        html += '?<b>Cheapest production:</b> Claude 3 Haiku or GPT-3.5 Turbo<br>';
+        html += '?<b>Best reasoning:</b> GPT-4o or Claude 3.5 Sonnet<br>';
+        html += '?<b>Long context (books/code):</b> Gemini 1.5 Pro (1M tokens)<br>';
+        html += '?<b>Self-hosted:</b> Llama 3 70B (best) or 8B (lightweight)<br>';
+        html += '?<b>Best for coding:</b> Claude 3.5 Sonnet<br>';
+        html += '?<b>Best multimodal:</b> GPT-4o (vision + audio)';
         html += '</div>';
         document.getElementById('table').innerHTML = html;
     }

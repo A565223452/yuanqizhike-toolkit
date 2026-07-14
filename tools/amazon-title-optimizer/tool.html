@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amazon Listing Title Optimizer | YuanQiZhiLe Toolkit</title>
+<title>Amazon Listing Title Optimizer | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Optimize Amazon product listing titles for better SEO. Check character limits, keyword placement, and readability. Free online tool for sellers.">
 <meta name="keywords" content="amazon listing, title optimizer, amazon seo, product title, keyword optimization, amazon seller">
 <meta property="og:title" content="Amazon Listing Title Optimizer - Free Online Tool">
@@ -112,7 +112,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>Amazon Listing Title Optimizer</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Optimize Amazon product listing titles for better SEO. Check character limits, keyword placement, and readability. Free online tool for sellers.</div>
@@ -174,19 +174,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -208,7 +208,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             <li>Brand name as first word</li>
         </ul>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -219,7 +219,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -245,7 +245,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -320,7 +320,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(repeated.length > 0){ suggestions.push({type:'warning', msg:'Repeated keywords: "' + repeated.join('", "') + '". Avoid keyword stuffing.'}); }
         
         // Check first word (should be brand)
-        suggestions.push({type:'info', msg:'First word: "' + words[0] + '" — Amazon recommends starting with brand name.'});
+        suggestions.push({type:'info', msg:'First word: "' + words[0] + '" ?Amazon recommends starting with brand name.'});
         
         // Check for numbers (model numbers, sizes)
         if(!/\d/.test(title)){ suggestions.push({type:'info', msg:'No numbers found. Consider adding size, quantity, or model number.'}); }
@@ -337,13 +337,13 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         // Issues
         var issuesHtml = r.issues.map(function(i){
             var color = i.type === 'error' ? '#dc3545' : i.type === 'warning' ? '#ffc107' : '#17a2b8';
-            return '<div style="padding:4px 0;color:' + color + '">• ' + i.msg + '</div>';
+            return '<div style="padding:4px 0;color:' + color + '">?' + i.msg + '</div>';
         }).join('') || '<div style="color:#28a745">No issues found!</div>';
         document.getElementById('issuesList').innerHTML = issuesHtml;
         // Suggestions
         var suggHtml = r.suggestions.map(function(s){
             var color = s.type === 'success' ? '#28a745' : s.type === 'warning' ? '#ffc107' : '#17a2b8';
-            return '<div style="padding:4px 0;color:' + color + '">• ' + s.msg + '</div>';
+            return '<div style="padding:4px 0;color:' + color + '">?' + s.msg + '</div>';
         }).join('') || '<div style="color:#999">No suggestions.</div>';
         document.getElementById('suggestionsList').innerHTML = suggHtml;
     });

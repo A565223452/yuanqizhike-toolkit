@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Batch File Renamer | YuanQiZhiLe Toolkit</title>
-<meta name="description" content="Preview and generate batch file rename patterns. Add prefixes, suffixes, sequential numbers, find & replace, and more — all in your browser.">
+<title>Batch File Renamer | YuanqiZhiKe Toolkit</title>
+<meta name="description" content="Preview and generate batch file rename patterns. Add prefixes, suffixes, sequential numbers, find & replace, and more &#8212; all in your browser.">
 <meta name="keywords" content="batch rename, file renamer, rename files, bulk rename, file name generator, rename pattern">
 <meta property="og:title" content="Batch File Renamer - Free Online Tool">
-<meta property="og:description" content="Preview and generate batch file rename patterns. Add prefixes, suffixes, sequential numbers, find & replace, and more — all in your browser.">
+<meta property="og:description" content="Preview and generate batch file rename patterns. Add prefixes, suffixes, sequential numbers, find & replace, and more &#8212; all in your browser.">
 <meta property="og:type" content="website">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -112,10 +112,10 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>Batch File Renamer</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
-    <div class="subtitle">Preview and generate batch file rename patterns. Add prefixes, suffixes, sequential numbers, find & replace, and more — all in your browser.</div>
+    <div class="subtitle">Preview and generate batch file rename patterns. Add prefixes, suffixes, sequential numbers, find & replace, and more &#8212; all in your browser.</div>
     <div class="group">
         <label>File Names (one per line)</label>
         <textarea id="fileInput" placeholder="photo.jpg&#10;document.pdf&#10;report.docx" style="min-height:120px">IMG_001.jpg
@@ -164,7 +164,7 @@ notes.txt</textarea>
     <div class="group" style="margin-top:16px">
         <label>Preview</label>
         <table id="previewTable" style="display:none">
-            <thead><tr><th>#</th><th>Original Name</th><th>→</th><th>New Name</th></tr></thead>
+            <thead><tr><th>#</th><th>Original Name</th><th></th><th>New Name</th></tr></thead>
             <tbody id="previewBody"></tbody>
         </table>
     </div>
@@ -178,19 +178,19 @@ notes.txt</textarea>
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -205,17 +205,17 @@ notes.txt</textarea>
         </ol>
         <h3>Available Patterns</h3>
         <ul>
-            <li><strong>Add Prefix</strong> — prepend text to all filenames</li>
-            <li><strong>Add Suffix</strong> — append text before the file extension</li>
-            <li><strong>Find &amp; Replace</strong> — replace text in filenames</li>
-            <li><strong>Sequential Number</strong> — add numbered prefix (001_, 002_, ...)</li>
-            <li><strong>Case conversion</strong> — lowercase, UPPERCASE, or Title Case</li>
-            <li><strong>Space handling</strong> — remove spaces or convert to underscores</li>
-            <li><strong>Date prefix</strong> — add current date as prefix</li>
+            <li><strong>Add Prefix</strong> -prepend text to all filenames</li>
+            <li><strong>Add Suffix</strong> -append text before the file extension</li>
+            <li><strong>Find &amp; Replace</strong> -replace text in filenames</li>
+            <li><strong>Sequential Number</strong> -add numbered prefix (001_, 002_, ...)</li>
+            <li><strong>Case conversion</strong> -lowercase, UPPERCASE, or Title Case</li>
+            <li><strong>Space handling</strong> -remove spaces or convert to underscores</li>
+            <li><strong>Date prefix</strong> -add current date as prefix</li>
         </ul>
         <p><strong>Note:</strong> This tool generates renamed file names for preview. To actually rename files on your computer, use the generated names with a script or file manager.</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -226,7 +226,7 @@ notes.txt</textarea>
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -252,7 +252,7 @@ notes.txt</textarea>
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -336,7 +336,7 @@ notes.txt</textarea>
         lines.forEach(function(file, i){
             var newName = renameFile(file, pattern, i);
             var tr = document.createElement('tr');
-            tr.innerHTML = '<td>' + (i+1) + '</td><td><code>' + file + '</code></td><td>→</td><td><code style="color:#007bff">' + newName + '</code></td>';
+            tr.innerHTML = '<td>' + (i+1) + '</td><td><code>' + file + '</code></td><td></td><td><code style="color:#007bff">' + newName + '</code></td>';
             body.appendChild(tr);
         });
         document.getElementById('previewTable').style.display = 'table';

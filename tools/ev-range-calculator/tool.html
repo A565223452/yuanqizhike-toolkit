@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EV Range Calculator | YuanQiZhiKe Toolkit</title>
+<title>EV Range Calculator | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Calculate electric vehicle range based on battery, efficiency, weather and driving conditions. Free EV range estimator.">
 <meta name="keywords" content="ev range calculator, electric vehicle range, ev mileage, battery range, tesla range, ev trip planner">
 <meta property="og:title" content="EV Range Calculator - Free Online Tool">
@@ -110,7 +110,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>EV Range Calculator</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Estimate your electric vehicle's real-world driving range based on battery, efficiency, weather, and driving conditions.</div>
@@ -153,7 +153,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
     <div class="row">
         <div class="group"><label>Outside temperature</label>
             <select id="temp" style="width:100%;padding:8px">
-                <option value="mild" selected>Mild (50–77°F / 10–25°C)</option>
+                <option value="mild" selected>Mild (50–7°F / 10–5°C)</option>
                 <option value="cold">Cold (below 50°F / 10°C)</option>
                 <option value="hot">Hot (above 77°F / 25°C)</option>
                 <option value="freezing">Freezing (below 32°F / 0°C)</option>
@@ -181,19 +181,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -203,12 +203,12 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 <li>Pick a <b>vehicle preset</b> or enter <b>battery size</b> and <b>efficiency</b> manually.</li>
 <li>Set <b>current charge</b> (%) to estimate remaining range.</li>
 <li>Choose <b>driving environment</b> (city, mixed, highway) and <b>style</b> (eco, normal, sport).</li>
-<li>Adjust <b>temperature</b> and <b>climate control</b> — cold weather and heating can reduce range by 20–40%.</li>
+<li>Adjust <b>temperature</b> and <b>climate control</b> &#8212; cold weather and heating can reduce range by 20–0%.</li>
 <li>Click <b>Calculate Range</b> for a detailed breakdown.</li>
 </ol>
-<p style="margin-top:8px;font-size:12px;color:#666">Typical EV efficiency: 3–4 mi/kWh. Cold weather (below 32°F) can cut range 30%+. Highway speeds above 65 mph reduce efficiency significantly. Preconditioning the battery while plugged in helps in cold weather.</p>
+<p style="margin-top:8px;font-size:12px;color:#666">Typical EV efficiency: 3- mi/kWh. Cold weather (below 32°F) can cut range 30%+. Highway speeds above 65 mph reduce efficiency significantly. Preconditioning the battery while plugged in helps in cold weather.</p>
     </div>
-    <footer>YuanqiZhiKe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -219,7 +219,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -245,7 +245,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -275,7 +275,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 })();
 
 (function(){
-    // 车型预设
+    // (internal note)
     var presets = {
         'tesla-m3': { battery: 75, efficiency: 3.7 },
         'tesla-my': { battery: 78, efficiency: 3.5 },
@@ -309,31 +309,31 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             return;
         }
 
-        // 基础范围 = 电池容量 × 效率
+        // (internal note)
         var baseRange = battery * efficiency;
         var availableKWh = battery * soc / 100;
         var currentRange = availableKWh * efficiency;
 
-        // 环境影响因子
+        // (internal note)
         var factors = [];
         var multiplier = 1.0;
 
-        // 驾驶环境
+        // (internal note)
         var envFactor = { 'city': 1.05, 'mixed': 1.0, 'highway': 0.82 }[env];
         multiplier *= envFactor;
         factors.push({ name: 'Driving environment', factor: envFactor, detail: { 'city': 'Stop-and-go regen bonus', 'mixed': 'Balanced', 'highway': 'High-speed aerodynamic loss' }[env] });
 
-        // 驾驶风格
+        // (internal note)
         var styleFactor = { 'eco': 1.10, 'normal': 1.0, 'sport': 0.85 }[style];
         multiplier *= styleFactor;
         factors.push({ name: 'Driving style', factor: styleFactor, detail: { 'eco': 'Gentle acceleration', 'normal': 'Average', 'sport': 'Aggressive acceleration' }[style] });
 
-        // 温度
+        // (internal note)
         var tempFactor = { 'mild': 1.0, 'cold': 0.85, 'hot': 0.92, 'freezing': 0.70 }[temp];
         multiplier *= tempFactor;
         factors.push({ name: 'Temperature', factor: tempFactor, detail: { 'mild': 'Optimal battery temp', 'cold': 'Battery chemistry slower', 'hot': 'AC + battery cooling', 'freezing': 'Severe cold penalty' }[temp] });
 
-        // 空调/加热
+        // (internal note)
         var climateFactor = { 'off': 1.0, 'low': 0.98, 'ac': 0.92, 'heat': 0.80, 'auto': 0.75 }[climate];
         multiplier *= climateFactor;
         factors.push({ name: 'Climate control', factor: climateFactor, detail: { 'off': 'No HVAC load', 'low': 'Fan only', 'ac': 'Air conditioning', 'heat': 'Electric heater (high draw)', 'auto': 'Full auto HVAC' }[climate] });
@@ -349,7 +349,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         html += '<div style="font-size:14px;color:#666">Full charge: ~' + Math.round(fullRange) + ' mi (' + pctVsEpa + '% of rated)</div>';
         html += '</div>';
 
-        // 关键指标
+        // (internal note)
         html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
         html += '<div style="font-size:13px;font-weight:bold;color:#1e40af;margin-bottom:6px">Energy Breakdown</div>';
         html += '<table style="width:100%;font-size:12px;border-collapse:collapse">';
@@ -361,8 +361,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         html += '</table>';
         html += '</div>';
 
-        // 影响因子表
-        html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
+        // (internal note)
         html += '<div style="font-size:13px;font-weight:bold;color:#1e40af;margin-bottom:6px">Range Impact Factors</div>';
         html += '<table style="width:100%;font-size:12px;border-collapse:collapse">';
         html += '<tr style="background:#f3f4f6;border-bottom:1px solid #ddd"><th style="padding:6px">Factor</th><th>Detail</th><th>Impact</th></tr>';
@@ -376,7 +375,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         html += '</table>';
         html += '</div>';
 
-        // 速度范围估算
+        // (internal note)
         html += '<div style="background:#fff;padding:10px;border-radius:6px">';
         html += '<div style="font-size:13px;font-weight:bold;color:#1e40af;margin-bottom:6px">Range at Different Speeds</div>';
         html += '<table style="width:100%;font-size:12px;border-collapse:collapse">';

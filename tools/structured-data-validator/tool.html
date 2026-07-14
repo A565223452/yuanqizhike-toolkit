@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Structured Data Validator | YuanQiZhiLe Toolkit</title>
+<meta name="description" content="Validate Schema.org JSON-LD structured data. Check for required fields, common errors, and Google rich results eligibility. Free structured data validator.">
+<meta name="keywords" content="structured data validator, json-ld validator, schema.org validator, rich snippets checker, seo structured data, google structured data, json-ld checker">
+<meta property="og:title" content="Structured Data Validator - Free Online Tool">
+<meta property="og:description" content="Validate Schema.org JSON-LD structured data. Check for required fields, common errors, and Google rich results eligibility. Free structured data validator.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{padding:20px;font-family:Arial,sans-serif;background:#f6f6f6;color:#333;transition:background 0.3s,color 0.3s;line-height:1.6}
+body.dark{background:#1a1a2e;color:#e0e0e0}
+.container{max-width:1000px;margin:0 auto;background:#fff;border-radius:10px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.3s}
+h1{margin-bottom:8px;font-size:24px}
+.subtitle{color:#666;font-size:14px;margin-bottom:16px}
+body.dark .subtitle{color:#a0a0a0}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.top-bar h1{margin:0}
+.top-actions{display:flex;gap:8px;align-items:center}
+.bookmark-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;color:#333;transition:all 0.2s}
+.bookmark-btn:hover{background:#f0f0f0}
+.group{margin-bottom:14px}
+label{display:block;margin-bottom:6px;font-weight:500;font-size:14px}
+input,textarea,select{width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:14px;font-family:inherit;transition:border-color 0.3s}
+input:focus,textarea:focus,select:focus{border-color:#007bff;outline:none}
+textarea{resize:vertical;min-height:120px}
+button{padding:8px 16px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px;transition:opacity 0.2s}
+button:hover{opacity:0.85}
+button.secondary{background:#6c757d}
+button.success{background:#28a745}
+.result-box,.output-box{margin-top:12px;padding:12px;background:#f9f9f9;border:1px solid #ddd;border-radius:4px;min-height:60px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+.info-box{margin-top:12px;padding:12px;background:#e7f4ff;border:1px solid #b8daff;border-radius:4px;font-size:13px}
+.tip-box{margin-top:12px;padding:12px;background:#fff3cd;border:1px solid #ffe69b;border-radius:4px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row > *{flex:1;min-width:120px}
+.row button{flex:0 0 auto}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+th,td{border:1px solid #ddd;padding:8px;text-align:left}
+th{background:#f0f0f0;font-weight:600}
+tr:nth-child(even){background:#f9f9f9}
+.instructions{margin-top:20px;padding:16px;background:#f0f7ff;border:1px solid #b8daff;border-radius:6px}
+.instructions h2{font-size:16px;margin-bottom:10px;color:#007bff}
+.instructions h3{font-size:14px;margin:12px 0 6px;color:#333}
+body.dark .instructions h3{color:#e0e0e0}
+.instructions ol,.instructions ul{padding-left:20px;margin:6px 0}
+.instructions li{margin:4px 0;font-size:13px;line-height:1.6}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid #ddd;color:#666;text-align:center;font-size:13px}
+@media(max-width:768px){
+    .container{padding:16px}
+    textarea{min-height:100px}
+    .top-bar{flex-direction:column;align-items:flex-start}
+}
+
+/* === Common: theme toggle + contact modal === */
+.theme-toggle-btn{padding:6px 12px;background:#fff;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:14px;transition:all 0.2s;line-height:1}
+.theme-toggle-btn:hover{background:#f0f0f0}
+body.dark .theme-toggle-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .theme-toggle-btn:hover{background:#0f3460}
+body.dark .container{background:#16213e;color:#e0e0e0}
+body.dark input,body.dark textarea,body.dark select{background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark button:not(.theme-toggle-btn):not(.bookmark-btn):not(.contact-trigger){background:#0f3460;color:#e0e0e0;border-color:#1a1a2e}
+body.dark .bookmark-btn{background:#16213e;border-color:#0f3460;color:#a0a0a0}
+body.dark .bookmark-btn:hover{background:#0f3460}
+body.dark footer{border-color:#0f3460;color:#a0a0a0}
+body.dark .lead{color:#a0a0a0}
+body.dark .result-box,body.dark .output-box{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+body.dark .info-box,body.dark .tip-box{background:#0f3460;border-color:#1a1a2e}
+body.dark table{background:#0f3460}
+body.dark th,body.dark td{border-color:#1a1a2e}
+body.dark tr:nth-child(even){background:#16213e}
+.lead{margin-top:18px;padding:12px 0;text-align:center;color:#777;font-size:14px}
+.lead a.contact-trigger{color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;cursor:pointer}
+.lead a.contact-trigger:hover{color:#007bff}
+body.dark .lead a.contact-trigger:hover{color:#7ab8ff}
+.contact-modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;z-index:9999;justify-content:center;align-items:center;padding:20px}
+.contact-modal.open{display:flex}
+.contact-modal .box{background:#fff;border-radius:10px;padding:28px;max-width:440px;width:100%;box-shadow:0 10px 40px rgba(0,0,0,0.2);position:relative;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+body.dark .contact-modal .box{background:#16213e;color:#e0e0e0;border:1px solid #0f3460}
+.contact-modal .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#999;line-height:1;padding:4px}
+.contact-modal .close:hover{color:#333}
+body.dark .contact-modal .close:hover{color:#fff}
+.contact-modal h3{font-size:18px;margin-bottom:6px;font-weight:600}
+.contact-modal .desc{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5}
+body.dark .contact-modal .desc{color:#a0a0a0}
+.contact-modal .email-row{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f6f8fa;border:1px solid #e1e4e8;border-radius:6px;margin-bottom:12px}
+body.dark .contact-modal .email-row{background:#0f3460;border-color:#1a1a2e}
+.contact-modal .email-row .ico{font-size:16px}
+.contact-modal .email-row .email{font-family:monospace;font-size:14px;flex:1;word-break:break-all;color:#333}
+body.dark .contact-modal .email-row .email{color:#e0e0e0}
+.contact-modal .email-row .copy-btn{padding:4px 10px;background:#28a745;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:12px;white-space:nowrap}
+.contact-modal .email-row .copy-btn:hover{background:#218838}
+.contact-modal .mailto-btn{display:block;width:100%;padding:11px;background:#007bff;color:#fff;text-align:center;border:none;border-radius:6px;cursor:pointer;font-size:14px;text-decoration:none;margin-bottom:14px}
+.contact-modal .mailto-btn:hover{background:#0069d9}
+.contact-modal .form-hint{font-size:12px;color:#999;margin-bottom:8px;text-align:center}
+body.dark .contact-modal .form-hint{color:#888}
+.contact-modal form{display:flex;flex-direction:column;gap:8px}
+.contact-modal input,.contact-modal textarea{padding:9px 12px;border:1px solid #ddd;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#333}
+body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3460;border-color:#1a1a2e;color:#e0e0e0}
+.contact-modal textarea{min-height:80px;resize:vertical;font-family:inherit}
+.contact-modal form button{padding:11px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;margin-top:4px}
+.contact-modal form button:hover{background:#218838}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <h1>Structured Data Validator</h1>
+        <div class="top-actions">
+            <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
+            <button class="bookmark-btn" id="bookmarkBtn">�?Bookmark</button>
+        </div>
+    </div>
+    <div class="subtitle">Validate Schema.org JSON-LD structured data. Check for required fields, common errors, and Google rich results eligibility. Free structured data validator.</div>
+    <div class="group">
+        <label>Paste JSON-LD or HTML with structured data</label>
+        <textarea id="input" placeholder='Paste your JSON-LD here...' style="width:100%;padding:8px;font-family:monospace;font-size:12px;min-height:200px"></textarea>
+    </div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px">
+        <button id="validate" style="padding:8px 16px;background:#3b82f6;color:#fff;border:none;border-radius:4px;cursor:pointer">Validate</button>
+        <button id="format" style="padding:8px 16px;background:#6b7280;color:#fff;border:none;border-radius:4px;cursor:pointer">Format</button>
+        <button id="sample" style="padding:8px 16px;background:#8b5cf6;color:#fff;border:none;border-radius:4px;cursor:pointer">Load sample</button>
+        <button id="clear" style="padding:8px 16px;background:#dc2626;color:#fff;border:none;border-radius:4px;cursor:pointer">Clear</button>
+    </div>
+    <div class="result-box" id="result"></div>
+
+    <div class="lead">
+        Need custom private tool for your business? <a class="contact-trigger" id="contactTrigger">Contact us for bespoke development</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="box">
+            <button class="close" id="contactClose" aria-label="Close">×</button>
+            <h3>Get in touch</h3>
+            <div class="desc">We build custom private tools for your business �?batch processing, internal tools, integrations and more.</div>
+            <div class="email-row">
+                <span class="ico">📧</span>
+                <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
+                <button class="copy-btn" id="copyEmail">Copy</button>
+            </div>
+            <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
+            <div class="form-hint">�?or describe your need below �?/div>
+            <form id="contactForm">
+                <input type="text" id="formName" placeholder="Your name" required>
+                <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
+                <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
+                <button type="submit">Submit �?/button>
+            </form>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>How to Use</h2>
+<ol>
+<li>Paste JSON-LD or HTML containing <code>&lt;script type="application/ld+json"&gt;</code> tags.</li>
+<li>Click <b>Validate</b> to check structure and required fields.</li>
+<li>Click <b>Format</b> to pretty-print JSON.</li>
+<li>Click <b>Load sample</b> to test with example data.</li>
+</ol>
+<p style="margin-top:8px;font-size:12px;color:#666">Validates 16 common schema types: Article, NewsArticle, BlogPosting, Product, Event, Organization, LocalBusiness, Recipe, Review, FAQPage, HowTo, VideoObject, BreadcrumbList, Person, WebSite, WebPage. For full Google rich results eligibility, use the official Google Rich Results Test.</p>
+    </div>
+    <footer>YuanQiZhiLe Toolkit �?Free Online Tools</footer>
+</div>
+<script>
+
+// === Common: theme toggle + contact modal ===
+(function(){
+    function __setupTheme(){
+        var btn=document.getElementById('themeToggle');
+        if(!btn)return;
+        function apply(t){
+            document.body.classList.toggle('dark',t==='dark');
+            btn.textContent=(t==='dark')?'☀�?:'🌙';
+        }
+        var saved=localStorage.getItem('theme');
+        if(saved){apply(saved);}
+        else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){apply('dark');}
+        else{apply('light');}
+        btn.addEventListener('click',function(){
+            var next=document.body.classList.contains('dark')?'light':'dark';
+            apply(next);localStorage.setItem('theme',next);
+        });
+    }
+    function __setupContactModal(){
+        var modal=document.getElementById('contactModal');
+        if(!modal)return;
+        var trig=document.getElementById('contactTrigger');
+        var close=document.getElementById('contactClose');
+        function open(){modal.classList.add('open');}
+        function closeM(){modal.classList.remove('open');}
+        if(trig)trig.addEventListener('click',open);
+        if(close)close.addEventListener('click',closeM);
+        modal.addEventListener('click',function(e){if(e.target===modal)closeM();});
+        document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+        var copyBtn=document.getElementById('copyEmail');
+        if(copyBtn){
+            copyBtn.addEventListener('click',function(){
+                navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
+                    var old=copyBtn.textContent;copyBtn.textContent='�?;
+                    setTimeout(function(){copyBtn.textContent=old;},1500);
+                });
+            });
+        }
+        var form=document.getElementById('contactForm');
+        if(form){
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                var name=document.getElementById('formName').value.trim();
+                var email=document.getElementById('formEmail').value.trim();
+                var desc=document.getElementById('formDesc').value.trim();
+                var subject=encodeURIComponent('Bespoke Tool Development Inquiry');
+                var body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nRequirement:\n'+desc);
+                window.location.href='mailto:contact@yuanqizhike.com?subject='+subject+'&body='+body;
+            });
+        }
+    }
+    function __setupBookmark(){
+        var btn=document.getElementById('bookmarkBtn');
+        if(btn)btn.addEventListener('click',function(){alert('Press Ctrl/Cmd + D to bookmark this page.');});
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',function(){__setupTheme();__setupContactModal();__setupBookmark();});
+    } else {
+        __setupTheme();__setupContactModal();__setupBookmark();
+    }
+})();
+
+(function(){
+    var schemaRequirements = {
+        'Article': {req:['headline','author','datePublished','image','publisher'], rec:['dateModified','mainEntityOfPage','articleSection']},
+        'NewsArticle': {req:['headline','author','datePublished','image','publisher','dateModified'], rec:['articleSection','mainEntityOfPage']},
+        'BlogPosting': {req:['headline','author','datePublished','image'], rec:['dateModified','mainEntityOfPage','wordCount']},
+        'Product': {req:['name'], rec:['image','description','brand','offers','aggregateRating','review']},
+        'Event': {req:['name','startDate','location'], rec:['endDate','image','description','offers','organizer']},
+        'Organization': {req:['name'], rec:['url','logo','sameAs','contactPoint','address']},
+        'LocalBusiness': {req:['name','address'], rec:['telephone','openingHours','priceRange','image','geo','aggregateRating']},
+        'Recipe': {req:['name','recipeIngredient','recipeInstructions'], rec:['image','cookTime','prepTime','totalTime','nutrition','aggregateRating']},
+        'Review': {req:['itemReviewed','reviewRating','author'], rec:['datePublished','publisher','reviewBody']},
+        'FAQPage': {req:['mainEntity'], rec:[]},
+        'HowTo': {req:['name','step'], rec:['totalTime','estimatedCost','supply','tool','image']},
+        'VideoObject': {req:['name','uploadDate'], rec:['description','thumbnailUrl','contentUrl','duration']},
+        'BreadcrumbList': {req:['itemListElement'], rec:[]},
+        'Person': {req:['name'], rec:['url','image','jobTitle','worksFor','sameAs']},
+        'WebSite': {req:['url','name'], rec:['potentialAction','publisher','inLanguage']},
+        'WebPage': {req:['name','url'], rec:['description','image','datePublished','dateModified']}
+    };
+    function extractJsonLd(input){
+        input = input.trim();
+        if(input.startsWith('{') || input.startsWith('[')){
+            try { return [JSON.parse(input)]; } catch(e){ throw new Error('Invalid JSON: ' + e.message); }
+        }
+        var scripts = input.match(/<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi) || [];
+        if(scripts.length === 0) throw new Error('No JSON-LD script tags found in HTML');
+        var results = [];
+        scripts.forEach(function(s){
+            var json = s.replace(/<script[^>]*>/i, '').replace(/<\/script>/i, '');
+            try { results.push(JSON.parse(json)); } catch(e){ throw new Error('Invalid JSON in script tag: ' + e.message); }
+        });
+        return results;
+    }
+    function validateSchema(obj){
+        var errors = [];
+        var warnings = [];
+        var info = [];
+        if(!obj['@context']) warnings.push('Missing @context (should be "https://schema.org")');
+        else if(obj['@context'] !== 'https://schema.org' && obj['@context'] !== 'http://schema.org') warnings.push('Unusual @context: ' + obj['@context']);
+        var type = obj['@type'];
+        if(!type){ errors.push('Missing @type �?required for all schema objects'); return {errors,warnings,info,type:'Unknown',fields:Object.keys(obj)}; }
+        if(typeof type === 'object') type = type.join(', ');
+        info.push('Type: ' + type);
+        var reqs = schemaRequirements[type];
+        if(!reqs){
+            warnings.push('Type "' + type + '" not in our common types database �?manual validation needed');
+        } else {
+            reqs.req.forEach(function(f){
+                if(obj[f] === undefined || obj[f] === null || obj[f] === ''){
+                    errors.push('Missing required field: ' + f);
+                }
+            });
+            reqs.rec.forEach(function(f){
+                if(obj[f] === undefined || obj[f] === null || obj[f] === ''){
+                    warnings.push('Missing recommended field: ' + f);
+                }
+            });
+        }
+        if(obj.datePublished && !/^\d{4}-\d{2}-\d{2}/.test(obj.datePublished)){
+            warnings.push('datePublished should be ISO 8601 format (YYYY-MM-DD)');
+        }
+        if(obj.dateModified && !/^\d{4}-\d{2}-\d{2}/.test(obj.dateModified)){
+            warnings.push('dateModified should be ISO 8601 format (YYYY-MM-DD)');
+        }
+        if(obj.image){
+            if(typeof obj.image === 'string' && !obj.image.match(/^https?:\/\//)){
+                warnings.push('image should be absolute URL');
+            }
+        }
+        if(obj.url && !obj.url.match(/^https?:\/\//)){
+            warnings.push('url should be absolute URL');
+        }
+        if(obj.author && typeof obj.author === 'object'){
+            if(!obj.author.name) errors.push('author object missing "name"');
+            if(!obj.author['@type'] && !obj.author['@id']) warnings.push('author should have @type (Person or Organization)');
+        }
+        if(obj.publisher && typeof obj.publisher === 'object'){
+            if(!obj.publisher.name) errors.push('publisher object missing "name"');
+            if(!obj.publisher['@type']) warnings.push('publisher should have @type (Organization)');
+        }
+        if(obj.mainEntityOfPage && typeof obj.mainEntityOfPage === 'object' && !obj.mainEntityOfPage['@id']){
+            warnings.push('mainEntityOfPage should have @id');
+        }
+        if(obj.headline && obj.headline.length > 110){
+            warnings.push('headline over 110 chars may be truncated');
+        }
+        return {errors:errors, warnings:warnings, info:info, type:type, fields:Object.keys(obj)};
+    }
+    function validate(){
+        var input = document.getElementById('input').value.trim();
+        if(!input){
+            document.getElementById('result').innerHTML = '<div style="color:#666;text-align:center;padding:12px">Paste JSON-LD or HTML to validate</div>';
+            return;
+        }
+        try {
+            var schemas = extractJsonLd(input);
+            var html = '<div style="background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff;padding:16px;border-radius:8px;margin-bottom:12px">';
+            html += '<b>📋 Validated ' + schemas.length + ' schema object' + (schemas.length > 1 ? 's' : '') + '</b>';
+            html += '</div>';
+            var allErrors = 0, allWarnings = 0;
+            schemas.forEach(function(schema, idx){
+                var result = validateSchema(schema);
+                allErrors += result.errors.length;
+                allWarnings += result.warnings.length;
+                var statusColor = result.errors.length > 0 ? '#dc2626' : (result.warnings.length > 0 ? '#f59e0b' : '#10b981');
+                var statusText = result.errors.length > 0 ? '�?Invalid' : (result.warnings.length > 0 ? '⚠️ Valid with warnings' : '�?Valid');
+                html += '<div style="border:1px solid #e5e7eb;border-radius:6px;margin-bottom:12px;overflow:hidden">';
+                html += '<div style="background:' + statusColor + '11;color:' + statusColor + ';padding:10px 12px;font-weight:bold;border-bottom:1px solid #e5e7eb">';
+                html += 'Schema #' + (idx+1) + ' �?' + result.type + ' �?' + statusText;
+                html += '</div>';
+                html += '<div style="padding:12px">';
+                html += '<div style="font-size:12px;color:#666;margin-bottom:8px"><b>Fields present:</b> ' + (result.fields.join(', ') || 'none') + '</div>';
+                if(result.info.length > 0){
+                    html += '<div style="font-size:12px;color:#3b82f6;margin-bottom:8px">' + result.info.join('<br>') + '</div>';
+                }
+                if(result.errors.length > 0){
+                    html += '<div style="background:#fee2e2;border:1px solid #fecaca;padding:8px;border-radius:4px;margin-bottom:8px">';
+                    html += '<b>�?Errors (' + result.errors.length + ')</b><br>';
+                    html += '�?' + result.errors.join('<br>�?');
+                    html += '</div>';
+                }
+                if(result.warnings.length > 0){
+                    html += '<div style="background:#fef3c7;border:1px solid #fcd34d;padding:8px;border-radius:4px;margin-bottom:8px">';
+                    html += '<b>⚠️ Warnings (' + result.warnings.length + ')</b><br>';
+                    html += '�?' + result.warnings.join('<br>�?');
+                    html += '</div>';
+                }
+                if(result.errors.length === 0 && result.warnings.length === 0){
+                    html += '<div style="background:#dcfce7;border:1px solid #86efac;padding:8px;border-radius:4px">';
+                    html += '�?All required and recommended fields present';
+                    html += '</div>';
+                }
+                html += '</div></div>';
+            });
+            html += '<div style="background:#f0f9ff;border:1px solid #bae6fd;padding:12px;border-radius:6px;margin-bottom:12px">';
+            html += '<b>📊 Summary</b><br>';
+            html += '�?Schemas validated: ' + schemas.length + '<br>';
+            html += '�?Total errors: ' + allErrors + '<br>';
+            html += '�?Total warnings: ' + allWarnings;
+            html += '</div>';
+            html += '<div style="background:#fafafa;border:1px solid #e5e7eb;padding:12px;border-radius:6px;font-size:12px;color:#666">';
+            html += '<b>ℹ️ About this validator</b><br>';
+            html += '�?Checks JSON-LD syntax and schema.org structure<br>';
+            html += '�?Validates required fields for common types<br>';
+            html += '�?For full validation, use Google Rich Results Test<br>';
+            html += '�?Supported types: ' + Object.keys(schemaRequirements).length + ' common schemas';
+            html += '</div>';
+            document.getElementById('result').innerHTML = html;
+        } catch(e){
+            document.getElementById('result').innerHTML = '<div style="background:#fee2e2;border:1px solid #fecaca;padding:12px;border-radius:6px"><b>�?Parse error</b><br>' + e.message + '</div>';
+        }
+    }
+    function formatJson(){
+        var input = document.getElementById('input').value.trim();
+        if(!input) return;
+        try {
+            var obj = JSON.parse(input);
+            document.getElementById('input').value = JSON.stringify(obj, null, 2);
+        } catch(e){
+            try {
+                var scripts = input.match(/<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/i);
+                if(scripts){
+                    var obj = JSON.parse(scripts[1]);
+                    document.getElementById('input').value = JSON.stringify(obj, null, 2);
+                }
+            } catch(e2){
+                alert('Could not parse JSON: ' + e.message);
+            }
+        }
+    }
+    document.getElementById('validate').addEventListener('click', validate);
+    document.getElementById('format').addEventListener('click', formatJson);
+    document.getElementById('clear').addEventListener('click', function(){
+        document.getElementById('input').value = '';
+        document.getElementById('result').innerHTML = '';
+    });
+    document.getElementById('sample').addEventListener('click', function(){
+        document.getElementById('input').value = JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            'headline': 'How to Use Schema.org for SEO',
+            'author': {'@type':'Person','name':'Jane Doe'},
+            'datePublished': '2024-03-15',
+            'image': 'https://example.com/image.jpg',
+            'publisher': {'@type':'Organization','name':'Example Media'},
+            'mainEntityOfPage': {'@type':'WebPage','@id':'https://example.com/article'}
+        }, null, 2);
+        validate();
+    });
+})();
+</script>
+    <script src="/assets/js/date-utils.js"></script>
+</body>
+</html>

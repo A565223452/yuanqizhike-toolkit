@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Scientific Calculator | YuanQiZhiLe Toolkit</title>
+<title>Scientific Calculator | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Free online scientific calculator with trigonometry, logarithms, exponents, factorial, square root, and constants like pi and e. Evaluate complex expressions with full order of operations.">
 <meta name="keywords" content="scientific calculator, online calculator, trigonometry, logarithm, sin cos tan, math calculator">
 <meta property="og:title" content="Scientific Calculator - Free Online Tool">
@@ -114,7 +114,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>Scientific Calculator</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Free online scientific calculator with trigonometry, logarithms, exponents, factorial, square root, and constants like pi and e. Evaluate complex expressions with full order of operations.</div>
@@ -126,7 +126,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <button class="key" data-k="(" style="background:#e5e7eb">(</button>
         <button class="key" data-k=")" style="background:#e5e7eb">)</button>
         <button class="key" data-k="C" style="background:#fca5a5;color:#fff">C</button>
-        <button class="key" data-k="back" style="background:#fca5a5;color:#fff">⌫</button>
+        <button class="key" data-k="back" style="background:#fca5a5;color:#fff"></button>
         <button class="key" data-k="=" style="background:#6366f1;color:#fff">=</button>
 
         <button class="key" data-k="sin(">sin</button>
@@ -139,7 +139,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <button class="key" data-k="8">8</button>
         <button class="key" data-k="9">9</button>
         <button class="key" data-k="/" style="background:#e5e7eb">÷</button>
-        <button class="key" data-k="sqrt(">√</button>
+        <button class="key" data-k="sqrt("></button>
 
         <button class="key" data-k="4">4</button>
         <button class="key" data-k="5">5</button>
@@ -150,7 +150,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <button class="key" data-k="1">1</button>
         <button class="key" data-k="2">2</button>
         <button class="key" data-k="3">3</button>
-        <button class="key" data-k="-" style="background:#e5e7eb">−</button>
+        <button class="key" data-k="-" style="background:#e5e7eb"></button>
         <button class="key" data-k="log(">log</button>
 
         <button class="key" data-k="0">0</button>
@@ -176,19 +176,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -198,11 +198,11 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 <li>Click number and operator keys, or type directly using your keyboard.</li>
 <li>Use <b>sin/cos/tan</b>, <b>log/ln</b>, <b>sqrt</b>, <b>^</b> for powers, <b>x!</b> for factorial.</li>
 <li>Toggle <b>DEG/RAD</b> for trig functions (default degrees).</li>
-<li>Press <b>=</b> or Enter to evaluate. Use <b>C</b> to clear, <b>⌫</b> to backspace.</li>
+<li>Press <b>=</b> or Enter to evaluate. Use <b>C</b> to clear, <b></b> to backspace.</li>
 </ol>
-<p style="margin-top:8px;font-size:12px;color:#666">Supports π (pi), e (Euler's number), scientific notation. Order of operations: parentheses first, then ^, ×/÷, +/−. Factorial works on integers up to 170.</p>
+<p style="margin-top:8px;font-size:12px;color:#666">Supports π (pi), e (Euler's number), scientific notation. Order of operations: parentheses first, then ^, ×/÷, +/- Factorial works on integers up to 170.</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -213,7 +213,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -239,7 +239,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -298,7 +298,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
                 .replace(/EXP/g, 'e')
                 .replace(/×/g, '*')
                 .replace(/÷/g, '/')
-                .replace(/−/g, '-');
+                .replace(/./g, '-');
             // Handle 1/x: 1/5 -> 1/5 (works naturally), but key inserts "1/" so 5 1/x => 5*1/ ... need closing
             // We'll just let user complete the expression
             var result = Function('"use strict"; return (' + jsExpr + ');')();

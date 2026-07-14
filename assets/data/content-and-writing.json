@@ -1,0 +1,323 @@
+[
+  {
+    "category": "Content & Writing",
+    "icon": "assets/icons/content-4.svg",
+    "title": "Offline Article Rewriter",
+    "desc": "Rewrite articles and check content similarity. Built-in synonym dictionary with 100+ word entries. All processing runs locally in your browser.",
+    "features": [
+      "Content Rewriting",
+      "Similarity Checker",
+      "Synonym Dictionary",
+      "One-Click Copy"
+    ],
+    "detailUrl": "/tools/article-rewriter/index.html",
+    "zipUrl": "/assets/zip-packages/writing/article-rewriter.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Text Case Converter",
+    "desc": "Convert text to UPPERCASE, lowercase, Title Case, camelCase, snake_case, and kebab-case instantly. Free online case converter tool for writers and developers.",
+    "features": [
+      "Multiple text case formats",
+      "Instant copy to clipboard",
+      "Chain conversions with swap",
+      "Supports camelCase and snake_case",
+      "Free for writers and developers"
+    ],
+    "detailUrl": "/tools/text-case-converter/index.html",
+    "zipUrl": "/assets/zip-packages/writing/text-case-converter.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Multi-Line Text Sorter",
+    "desc": "Free online multi-line text sorter. Sort lines alphabetically, numerically, by length, reverse, or shuffle. Remove duplicates and empty lines easily. All processing is local.",
+    "features": [
+      "Alphabetical and numerical sort",
+      "Remove duplicate lines",
+      "Shuffle or reverse text",
+      "Natural sort support",
+      "Local and private",
+      "Copy and download results"
+    ],
+    "detailUrl": "/tools/line-sorter/index.html",
+    "zipUrl": "/assets/zip-packages/writing/line-sorter.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "assets/icons/content-2.svg",
+    "title": "Text Deduplication Tool",
+    "desc": "Remove duplicate lines from text instantly. Supports case-sensitive and fuzzy matching, comparison, and unique extraction locally.",
+    "features": [
+      "Remove Duplicate Lines",
+      "Fuzzy Matching Support",
+      "Compare Two Lists",
+      "Extract Unique Values",
+      "Case-Sensitive Options",
+      "Local Privacy Protection"
+    ],
+    "detailUrl": "/tools/text-deduplication-tool/index.html",
+    "zipUrl": "/assets/zip-packages/writing/text-deduplication.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Whitespace Cleaner",
+    "desc": "Free online whitespace cleaner to remove extra spaces, blank lines, and trailing spaces. Normalize line breaks and clean up text formatting instantly in your browser.",
+    "features": [
+      "Remove extra spaces",
+      "Trim leading and trailing spaces",
+      "Remove or collapse blank lines",
+      "Normalize line breaks",
+      "Convert tabs to spaces",
+      "Remove zero-width characters"
+    ],
+    "detailUrl": "/tools/whitespace-cleaner/index.html",
+    "zipUrl": "/assets/zip-packages/writing/whitespace-cleaner.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Word Frequency Analyzer",
+    "desc": "Analyze word frequency in text. Find most common words, keyword density, and word distribution. Free online text analysis tool for SEO and writing.",
+    "features": [
+      "Instant word frequency analysis",
+      "Keyword density calculation",
+      "Stop word filtering options",
+      "Visual word cloud display",
+      "Lexical diversity metrics",
+      "Top 20 words table"
+    ],
+    "detailUrl": "/tools/word-frequency-analyzer/index.html",
+    "zipUrl": "/assets/zip-packages/writing/word-frequency-analyzer.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Case Converter",
+    "desc": "Free online case converter to instantly transform text into UPPERCASE, lowercase, Title Case, camelCase, snake_case, and more. Batch convert text locally without uploading.",
+    "features": [
+      "11 conversion formats",
+      "Real-time batch conversion",
+      "Copy individual or all",
+      "Download as txt file",
+      "Local and private processing"
+    ],
+    "detailUrl": "/tools/case-converter/index.html",
+    "zipUrl": "/assets/zip-packages/writing/case-converter-all.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Character Counter",
+    "desc": "Count characters, words, sentences, and paragraphs instantly. Check text limits for Twitter, SMS, and SEO meta descriptions with our free online character counter.",
+    "features": [
+      "Live character and word count",
+      "Sentence and paragraph tracking",
+      "Reading time estimation",
+      "Social media limit checker",
+      "SEO meta description limits",
+      "Dark mode support"
+    ],
+    "detailUrl": "/tools/char-counter/index.html",
+    "zipUrl": "/assets/zip-packages/writing/char-counter.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Fancy Text Generator",
+    "desc": "Convert plain text into fancy Unicode fonts instantly. Choose from cursive, bold, script, gothic, and more for your social media bios and posts.",
+    "features": [
+      "14 unique font styles",
+      "Instant text conversion",
+      "One-click copy feature",
+      "Social media ready"
+    ],
+    "detailUrl": "/tools/fancy-text-generator/index.html",
+    "zipUrl": "/assets/zip-packages/writing/fancy-text-generator.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Lorem Ipsum Generator",
+    "desc": "Generate Lorem Ipsum placeholder text instantly. Create paragraphs, sentences, words, or lists for your design and typesetting needs. Free dummy text generator.",
+    "features": [
+      "Generate paragraphs and sentences",
+      "Create word lists",
+      "Classic Lorem Ipsum start",
+      "Wrap in HTML tags",
+      "One-click copy to clipboard",
+      "Word and character count"
+    ],
+    "detailUrl": "/tools/lorem-ipsum-generator/index.html",
+    "zipUrl": "/assets/zip-packages/writing/lorem-ipsum-generator.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Reading Time Calculator",
+    "desc": "Estimate reading and speaking time from any text instantly. Count words, characters, sentences, and paragraphs with adjustable WPM settings. Perfect for bloggers and content marketers.",
+    "features": [
+      "Instant word count",
+      "Character and paragraph stats",
+      "Adjustable reading speed",
+      "Speaking time estimation",
+      "Live text analysis",
+      "No signup required"
+    ],
+    "detailUrl": "/tools/reading-time-calculator/index.html",
+    "zipUrl": "/assets/zip-packages/writing/reading-time-calculator.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Slogan Generator",
+    "desc": "Generate catchy business slogans and taglines for your brand. Customize by industry, keyword, and tone to create the perfect marketing message.",
+    "features": [
+      "Multiple industry templates",
+      "Custom keyword integration",
+      "Adjustable tone options",
+      "Instant slogan generation",
+      "Copy and paste results",
+      "Free and easy to use"
+    ],
+    "detailUrl": "/tools/slogan-generator/index.html",
+    "zipUrl": "/assets/zip-packages/writing/slogan-generator.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Speech to Text",
+    "desc": "Convert your voice to text in real time with our free Speech to Text tool. Supports multiple languages, instant transcription, and easy copying for your writing needs.",
+    "features": [
+      "Real-time voice transcription",
+      "Multiple language support",
+      "Instant text copying",
+      "Continuous listening mode",
+      "No signup required"
+    ],
+    "detailUrl": "/tools/speech-to-text/index.html",
+    "zipUrl": "/assets/zip-packages/writing/speech-to-text.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Strikethrough Text Generator",
+    "desc": "Generate strikethrough text instantly using Unicode combining characters. Copy and paste crossed-out text on Facebook, Twitter, Instagram, Discord, and any platform that supports Unicode.",
+    "features": [
+      "Instant strikethrough generation",
+      "Unicode combining characters",
+      "Copy and paste anywhere",
+      "Works on social media",
+      "No signup required"
+    ],
+    "detailUrl": "/tools/strikethrough-text/index.html",
+    "zipUrl": "/assets/zip-packages/writing/strikethrough-text.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Text Diff Checker",
+    "desc": "Compare two text blocks instantly and highlight differences with our free online Text Diff Checker. View additions, deletions, and changes side-by-side or inline for easy text comparison.",
+    "features": [
+      "Side-by-side text comparison",
+      "Inline diff highlighting",
+      "Ignore case and whitespace",
+      "Similarity percentage stats",
+      "Swap text inputs quickly"
+    ],
+    "detailUrl": "/tools/text-diff-checker/index.html",
+    "zipUrl": "/assets/zip-packages/writing/text-diff-checker.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Text Reverser",
+    "desc": "Reverse text by characters, words, or lines instantly. Flip text upside down and create mirrored text with our free online text reverser tool.",
+    "features": [
+      "Reverse characters and words",
+      "Flip text upside down",
+      "Create mirrored text",
+      "Multiple reversal modes",
+      "Instant copy to clipboard",
+      "Free online text tool"
+    ],
+    "detailUrl": "/tools/text-reverser/index.html",
+    "zipUrl": "/assets/zip-packages/writing/text-reverser.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Text to Speech",
+    "desc": "Convert text to natural speech directly in your browser. Choose from available system voices, adjust the rate and pitch, and listen to your text instantly.",
+    "features": [
+      "Multiple system voice options",
+      "Adjustable rate and pitch",
+      "Play pause and stop controls",
+      "Powered by Web Speech API",
+      "No audio upload required",
+      "Light and dark mode"
+    ],
+    "detailUrl": "/tools/text-to-speech/index.html",
+    "zipUrl": "/assets/zip-packages/writing/text-to-speech.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Typing Speed Test",
+    "desc": "Test your typing speed in words per minute (WPM) with our free online typing test. Measure your accuracy, track live WPM, and improve your keyboard skills instantly.",
+    "features": [
+      "Live WPM tracking",
+      "Real-time accuracy calculation",
+      "60-second timed test",
+      "Random text passages",
+      "Instant error highlighting",
+      "No signup required"
+    ],
+    "detailUrl": "/tools/typing-speed-test/index.html",
+    "zipUrl": "/assets/zip-packages/writing/typing-speed-test.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "",
+    "title": "Word Density Analyzer",
+    "desc": "Analyze word frequency, density, and keyword distribution to optimize your SEO strategy. Find most used words, n-grams, and reading level metrics. Perfect for content creators and webmasters.",
+    "features": [
+      "Word frequency and density calculation",
+      "N-gram phrase analysis",
+      "Stop word removal options",
+      "Reading time and level metrics",
+      "Visual keyword distribution chart"
+    ],
+    "detailUrl": "/tools/word-density-analyzer/index.html",
+    "zipUrl": "/assets/zip-packages/writing/word-density-analyzer.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "/assets/icons/writing-1.svg",
+    "title": "Chinese",
+    "desc": "Count words in mixed Chinese-English text. Handles CJK characters, English words, numbers, and punctuation separately. Perfect for translation and content work.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/cn-en-word-counter.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "/assets/icons/writing-1.svg",
+    "title": "ISBN Book Info Lookup",
+    "desc": "Look up book information by ISBN. Get title, author, publisher, cover image, and more from the Open Library API.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/isbn-lookup.zip"
+  },
+  {
+    "category": "Content & Writing",
+    "icon": "/assets/icons/writing-1.svg",
+    "title": "Markdown to HTML Converter",
+    "desc": "Convert Markdown to HTML in real-time. Supports headings, lists, code blocks, links, images, tables, and more. Copy HTML output instantly.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/writing/markdown-to-html.zip"
+  }
+]

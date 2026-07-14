@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Credit Card Payoff Calculator | YuanQiZhiLe Toolkit</title>
+<title>Credit Card Payoff Calculator | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Calculate how long it takes to pay off credit card debt. Compare minimum payments vs fixed payments. Free online credit card payoff calculator.">
 <meta name="keywords" content="credit card payoff, debt calculator, credit card debt, minimum payment, debt free, payoff strategy">
 <meta property="og:title" content="Credit Card Payoff Calculator - Free Online Tool">
@@ -112,7 +112,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>Credit Card Payoff Calculator</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Calculate how long it takes to pay off credit card debt. Compare minimum payments vs fixed payments. Free online credit card payoff calculator.</div>
@@ -145,19 +145,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -170,9 +170,9 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 <li>Enter the <b>monthly payment</b> you can afford.</li>
 <li>Compare minimum-only vs your payment.</li>
 </ol>
-<p style="margin-top:8px;font-size:12px;color:#666">Credit card interest compounds daily. Minimum payments are designed to keep you in debt for decades. Paying just $50-100 extra per month can save thousands and years. Always pay more than the minimum — even small extra payments make a big difference.</p>
+<p style="margin-top:8px;font-size:12px;color:#666">Credit card interest compounds daily. Minimum payments are designed to keep you in debt for decades. Paying just $50-100 extra per month can save thousands and years. Always pay more than the minimum &#8212; even small extra payments make a big difference.</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -183,7 +183,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -209,7 +209,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -240,7 +240,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 
 (function(){
     function formatMoney(n){
-        return '$' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        return ' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     }
     function simulate(balance, apr, monthlyPayment, minPct){
         var monthlyRate = apr / 100 / 12;
@@ -255,7 +255,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             var minPayment = Math.max(25, currentBalance * minPct / 100);
             var payment = Math.min(currentBalance + interest, monthlyPayment > 0 ? monthlyPayment : minPayment);
             if(payment < interest && months > 1){
-                // Payment doesn't cover interest — never pays off
+                // Payment doesn't cover interest ?never pays off
                 return {months: Infinity, totalInterest: Infinity, totalPaid: Infinity, balanceHistory: balanceHistory};
             }
             currentBalance = currentBalance + interest - payment;
@@ -279,27 +279,27 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         var monthsSaved = minResult.months === Infinity ? Infinity : minResult.months - fixedResult.months;
         var recommend = fixedResult.months < minResult.months;
         var html = '<div style="background:linear-gradient(135deg,#10b981,#06b6d4);color:#fff;padding:20px;border-radius:8px;text-align:center;margin-bottom:12px">';
-        html += '<div style="font-size:14px;opacity:0.9">Paying $' + payment + '/month, you will be debt-free in</div>';
-        html += '<div style="font-size:48px;font-weight:bold">' + (fixedResult.months === Infinity ? '∞' : Math.ceil(fixedResult.months / 12)) + ' years</div>';
-        html += '<div style="font-size:13px;opacity:0.9;margin-top:4px">' + (fixedResult.months === Infinity ? 'Payment too low — balance never reaches zero' : fixedResult.months + ' months total') + '</div>';
+        html += '<div style="font-size:14px;opacity:0.9">Paying  + payment + '/month, you will be debt-free in</div>';
+        html += '<div style="font-size:48px;font-weight:bold">' + (fixedResult.months === Infinity ? '? : Math.ceil(fixedResult.months / 12)) + ' years</div>';
+        html += '<div style="font-size:13px;opacity:0.9;margin-top:4px">' + (fixedResult.months === Infinity ? 'Payment too low ?balance never reaches zero' : fixedResult.months + ' months total') + '</div>';
         html += '</div>';
         // Comparison table
         html += '<table style="width:100%;border-collapse:collapse;font-size:14px">';
-        html += '<tr style="background:#f3f4f6"><th style="padding:8px;text-align:left"></th><th style="padding:8px;text-align:left">Minimum only</th><th style="padding:8px;text-align:left">$' + payment + '/month</th></tr>';
-        html += '<tr><td style="padding:8px;border-bottom:1px solid #eee">Monthly payment</td><td style="padding:8px;border-bottom:1px solid #eee">$' + (balance * minPct / 100).toFixed(0) + ' (start)</td><td style="padding:8px;border-bottom:1px solid #eee">$' + payment + '</td></tr>';
-        html += '<tr><td style="padding:8px;border-bottom:1px solid #eee">Time to payoff</td><td style="padding:8px;border-bottom:1px solid #eee">' + (minResult.months === Infinity ? '∞' : Math.ceil(minResult.months / 12) + ' yrs') + '</td><td style="padding:8px;border-bottom:1px solid #eee;color:#10b981;font-weight:bold">' + Math.ceil(fixedResult.months / 12) + ' yrs</td></tr>';
+        html += '<tr style="background:#f3f4f6"><th style="padding:8px;text-align:left"></th><th style="padding:8px;text-align:left">Minimum only</th><th style="padding:8px;text-align:left"> + payment + '/month</th></tr>';
+        html += '<tr><td style="padding:8px;border-bottom:1px solid #eee">Monthly payment</td><td style="padding:8px;border-bottom:1px solid #eee"> + (balance * minPct / 100).toFixed(0) + ' (start)</td><td style="padding:8px;border-bottom:1px solid #eee"> + payment + '</td></tr>';
+        html += '<tr><td style="padding:8px;border-bottom:1px solid #eee">Time to payoff</td><td style="padding:8px;border-bottom:1px solid #eee">' + (minResult.months === Infinity ? '? : Math.ceil(minResult.months / 12) + ' yrs') + '</td><td style="padding:8px;border-bottom:1px solid #eee;color:#10b981;font-weight:bold">' + Math.ceil(fixedResult.months / 12) + ' yrs</td></tr>';
         html += '<tr><td style="padding:8px;border-bottom:1px solid #eee">Total interest</td><td style="padding:8px;border-bottom:1px solid #eee">' + formatMoney(minResult.totalInterest) + '</td><td style="padding:8px;border-bottom:1px solid #eee">' + formatMoney(fixedResult.totalInterest) + '</td></tr>';
         html += '<tr><td style="padding:8px;border-bottom:1px solid #eee">Total paid</td><td style="padding:8px;border-bottom:1px solid #eee">' + formatMoney(minResult.totalPaid) + '</td><td style="padding:8px;border-bottom:1px solid #eee">' + formatMoney(fixedResult.totalPaid) + '</td></tr>';
-        html += '<tr style="background:#dcfce7"><td style="padding:8px"><b>You save</b></td><td colspan="2" style="padding:8px;text-align:center"><b style="color:#10b981">' + formatMoney(savings) + '</b> in interest, ' + (monthsSaved === Infinity ? '∞' : monthsSaved + ' months sooner') + '</td></tr>';
+        html += '<tr style="background:#dcfce7"><td style="padding:8px"><b>You save</b></td><td colspan="2" style="padding:8px;text-align:center"><b style="color:#10b981">' + formatMoney(savings) + '</b> in interest, ' + (monthsSaved === Infinity ? '? : monthsSaved + ' months sooner') + '</td></tr>';
         html += '</table>';
         // Strategies
         html += '<div style="margin-top:12px;padding:12px;background:#fef3c7;border-radius:6px;font-size:13px;line-height:1.6">';
         html += '<b>💡 Payoff strategies:</b><br>';
-        html += '• <b>Avalanche:</b> Pay highest-APR card first (saves most money)<br>';
-        html += '• <b>Snowball:</b> Pay smallest balance first (psychological wins)<br>';
-        html += '• <b>Balance transfer:</b> Move to 0% APR card (saves interest, watch fees)<br>';
-        html += '• <b>Consolidation loan:</b> Lower rate personal loan to pay off cards<br>';
-        html += '• Even $50 extra/month can save thousands';
+        html += '?<b>Avalanche:</b> Pay highest-APR card first (saves most money)<br>';
+        html += '?<b>Snowball:</b> Pay smallest balance first (psychological wins)<br>';
+        html += '?<b>Balance transfer:</b> Move to 0% APR card (saves interest, watch fees)<br>';
+        html += '?<b>Consolidation loan:</b> Lower rate personal loan to pay off cards<br>';
+        html += '?Even $50 extra/month can save thousands';
         html += '</div>';
         document.getElementById('result').innerHTML = html;
     }

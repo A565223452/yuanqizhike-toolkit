@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Free online JSON to CSV, XML, YAML, TSV, Properties converter. Convert JSON data to other formats instantly. Local, no upload.">
 <meta name="keywords" content="JSON to CSV, JSON to XML, JSON to YAML, JSON converter, convert JSON, JSON to TSV, JSON to properties">
-<title>JSON to CSV / XML / YAML Converter | YuanQiZhiLe Toolkit</title>
+<title>JSON to CSV / XML / YAML Converter | YuanqiZhiKe Toolkit</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{padding:20px;font-family:system-ui,-apple-system,sans-serif;background:#f7f7f7;transition:background 0.3s,color 0.3s}
@@ -93,12 +93,12 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 <div class="wrap">
     <div class="top-bar">
         <div>
-            <h1>JSON → CSV / XML / YAML</h1>
+            <h1>JSON &#8212; CSV / XML / YAML</h1>
             <div class="subtitle">Convert JSON to CSV, XML, YAML, TSV, Properties. Local, no upload.</div>
         </div>
         <div style="display:flex;gap:8px;align-items:center">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark (Ctrl+Shift+T)">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
 
@@ -161,26 +161,24 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
 
-    <footer>
-        <div>YuanQiZhiLe Toolkit · Process locally in your browser, no data upload.</div>
-    </footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 
 <script>
@@ -189,7 +187,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
     const __themeBtn = document.getElementById('themeToggle');
     function __applyTheme(t){
         document.body.classList.toggle('dark', t === 'dark');
-        if(__themeBtn) __themeBtn.textContent = (t === 'dark') ? '☀️' : '🌙';
+        if(__themeBtn) __themeBtn.textContent = (t === 'dark') ? '☀? : '🌙';
     }
     const __saved = localStorage.getItem('theme');
     if(__saved){
@@ -231,7 +229,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         __copyBtn.addEventListener('click', () => {
             navigator.clipboard.writeText('contact@yuanqizhike.com').then(() => {
                 const old = __copyBtn.textContent;
-                __copyBtn.textContent = '✓';
+                __copyBtn.textContent='Copied';
                 setTimeout(() => __copyBtn.textContent = old, 1500);
             });
         });
@@ -435,7 +433,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             switch(currentFmt){
                 case 'csv': result = toCSV(parsed, delim, header, flattenOpt); break;
                 case 'tsv': result = toCSV(parsed, '\t', header, flattenOpt); break;
-                case 'xml': result = '<?xml version="1.0" encoding="UTF-8"?>\n' + toXML(parsed, root, 0); break;
+                case 'xml': result = '<' + '?xml version="1.0" encoding="UTF-8"?'+'>\n' + toXML(parsed, root, 0); break;
                 case 'yaml': result = toYAML(parsed, 0); break;
                 case 'properties': result = toProperties(parsed); break;
                 case 'jsonlines': result = toJSONLines(parsed); break;
@@ -468,7 +466,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         navigator.clipboard.writeText(v).then(() => {
             const b = document.getElementById('copy');
             const old = b.textContent;
-            b.textContent = '✓ Copied';
+            b.textContent = 'Copied';
             setTimeout(() => b.textContent = old, 1500);
         });
     });

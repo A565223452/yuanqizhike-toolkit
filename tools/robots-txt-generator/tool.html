@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Free online robots.txt generator and validator. Create, test, and validate robots.txt for SEO. Local, no upload.">
 <meta name="keywords" content="robots.txt generator, robots.txt validator, robots.txt checker, SEO robots, crawl rules">
-<title>Robots.txt Generator & Validator | YuanQiZhiLe Toolkit</title>
+<title>Robots.txt Generator & Validator | YuanqiZhiKe Toolkit</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{padding:20px;font-family:system-ui,-apple-system,sans-serif;background:#f7f7f7;transition:background 0.3s,color 0.3s}
@@ -122,7 +122,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         </div>
         <div style="display:flex;gap:8px;align-items:center">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark (Ctrl+Shift+T)">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
 
@@ -154,7 +154,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
     </div>
 
     <div class="output-box">
-        <label class="field-label">Generated robots.txt (editable — re-validate after edits)</label>
+        <label class="field-label">Generated robots.txt (editable &#8212; re-validate after edits)</label>
         <textarea id="output" placeholder="# Generated robots.txt..."></textarea>
     </div>
 
@@ -184,19 +184,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -206,15 +206,13 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <ol>
             <li>Set optional <strong>Sitemap URL</strong> and <strong>Crawl-delay</strong> in the global settings.</li>
             <li>Add rules with the <strong>+ Add Rule</strong> button. Each rule targets a User-agent and applies Allow/Disallow paths.</li>
-            <li>Click <strong>Generate robots.txt</strong> — the file is shown in the textarea with a validation log below.</li>
-            <li>Edit the textarea directly if needed — the validation re-runs on every change.</li>
+            <li>Click <strong>Generate robots.txt</strong> -the file is shown in the textarea with a validation log below.</li>
+            <li>Edit the textarea directly if needed &#8212; the validation re-runs on every change.</li>
             <li>Use the <strong>Test URL</strong> box to check whether a specific URL is allowed or blocked for a chosen bot.</li>
         </ol>
     </div>
 
-    <footer>
-        <div>YuanQiZhiLe Toolkit · Process locally in your browser, no data upload.</div>
-    </footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 
 <script>
@@ -223,7 +221,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
     const __themeBtn = document.getElementById('themeToggle');
     function __applyTheme(t){
         document.body.classList.toggle('dark', t === 'dark');
-        if(__themeBtn) __themeBtn.textContent = (t === 'dark') ? '☀️' : '🌙';
+        if(__themeBtn) __themeBtn.textContent = (t === 'dark') ? '?' : '🌙';
     }
     const __saved = localStorage.getItem('theme');
     if(__saved){
@@ -265,7 +263,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         __copyBtn.addEventListener('click', () => {
             navigator.clipboard.writeText('contact@yuanqizhike.com').then(() => {
                 const old = __copyBtn.textContent;
-                __copyBtn.textContent = '✓';
+                __copyBtn.textContent='Copied';
                 setTimeout(() => __copyBtn.textContent = old, 1500);
             });
         });
@@ -371,7 +369,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
     function generate(){
         const sitemap = document.getElementById('sitemap').value.trim();
         const delay = document.getElementById('crawlDelay').value.trim();
-        let txt = '# robots.txt generated by YuanQiZhiLe Toolkit\n';
+        let txt = '# robots.txt generated by YuanqiZhiKe Toolkit\n';
         // Group by UA
         const groups = {};
         rules.forEach(r => {
@@ -408,7 +406,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             }
             const m = trimmed.match(/^(User-agent|Disallow|Allow|Crawl-delay|Sitemap):\s*(.*)$/i);
             if(!m){
-                addLog('err', `Line ${lineNum}: Unknown directive — "${trimmed}"`);
+                addLog('err', `Line ${lineNum}: Unknown directive ?"${trimmed}"`);
                 return;
             }
             const directive = m[1].toLowerCase();
@@ -423,22 +421,22 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
                 if(value){
                     hasRules = true;
                     if(!value.startsWith('/') && !value.startsWith('*')){
-                        addLog('warn', `Line ${lineNum}: Path should start with / — "${value}"`);
+                        addLog('warn', `Line ${lineNum}: Path should start with / ?"${value}"`);
                     } else {
                         addLog('ok', `Line ${lineNum}: ${directive} ${value}`);
                     }
                 }
             } else if(directive === 'crawl-delay'){
-                if(!/^\d+$/.test(value)) addLog('err', `Line ${lineNum}: Crawl-delay must be a number — "${value}"`);
+                if(!/^\d+$/.test(value)) addLog('err', `Line ${lineNum}: Crawl-delay must be a number ?"${value}"`);
                 else addLog('ok', `Line ${lineNum}: Crawl-delay ${value}s`);
             } else if(directive === 'sitemap'){
-                if(!/^https?:\/\//i.test(value)) addLog('warn', `Line ${lineNum}: Sitemap should be a full URL — "${value}"`);
+                if(!/^https?:\/\//i.test(value)) addLog('warn', `Line ${lineNum}: Sitemap should be a full URL ?"${value}"`);
                 else addLog('ok', `Line ${lineNum}: Sitemap ${value}`);
             }
         });
         if(!hasUA) addLog('warn', 'No User-agent defined');
         if(!hasRules && !rules.some(r => r.path)) addLog('warn', 'No Allow/Disallow rules defined');
-        if(!log.children.length) addLog('ok', '✓ No issues found');
+        if(!log.children.length) addLog('ok', '-?No issues found');
     }
 
     function addLog(type, msg){
@@ -482,7 +480,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
                 applicableRules.push({type: dMatch[1].toLowerCase(), path: dMatch[2].trim()});
             }
         });
-        // Check rules in order — last matching wins (per spec, but more specific Allow beats Disallow)
+        // Check rules in order ?last matching wins (per spec, but more specific Allow beats Disallow)
         let decision = 'allow';
         let matchedRule = null;
         applicableRules.forEach(r => {
@@ -492,9 +490,293 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             }
         });
         if(decision === 'allow'){
-            result.innerHTML = `<div class="result-line result-allow">✓ ALLOWED — ${ua} can crawl ${url}${matchedRule ? ` (matched: Allow ${matchedRule.path})` : ' (no rule matched, default allow)'}</div>`;
+            result.innerHTML = `<div class="result-line result-allow">?ALLOWED ?${ua} can crawl ${url}${matchedRule ? ` (matched: Allow ${matchedRule.path})` : ' (no rule matched, default allow)'}</div>`;
         } else {
-            result.innerHTML = `<div class="result-line result-deny">✗ BLOCKED — ${ua} cannot crawl ${url} (matched: Disallow ${matchedRule.path})</div>`;
+            result.innerHTML = `<div class="result-line result-deny">?BLOCKED ?${ua} cannot crawl ${url} (matched: Disallow ${matchedRule.path})</div>`;
+        }
+    }
+
+    function matchesPath(url, pattern){
+        if(!pattern) return false;
+        // Convert pattern to regex (* = any chars, $ = end)
+        let regex = pattern.replace(/[.+^${}()|[\]\\]/g, '\\
+(function(){
+    // === Common: theme + contact modal ===
+    const __themeBtn = document.getElementById('themeToggle');
+    function __applyTheme(t){
+        document.body.classList.toggle('dark', t === 'dark');
+        if(__themeBtn) __themeBtn.textContent = (t === 'dark') ? '☀? : '🌙';
+    }
+    const __saved = localStorage.getItem('theme');
+    if(__saved){
+        __applyTheme(__saved);
+    } else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
+        __applyTheme('dark');
+    } else {
+        __applyTheme('light');
+    }
+    if(__themeBtn){
+        __themeBtn.addEventListener('click', () => {
+            const next = document.body.classList.contains('dark') ? 'light' : 'dark';
+            __applyTheme(next);
+            localStorage.setItem('theme', next);
+        });
+    }
+    document.addEventListener('keydown', e => {
+        if(e.key === 't' && e.ctrlKey && e.shiftKey){
+            e.preventDefault();
+            const next = document.body.classList.contains('dark') ? 'light' : 'dark';
+            __applyTheme(next);
+            localStorage.setItem('theme', next);
+        }
+    });
+    document.getElementById('bookmarkBtn').addEventListener('click', () => alert('Press Ctrl/Cmd + D to bookmark this page.'));
+
+    // Contact modal
+    const __modal = document.getElementById('contactModal');
+    const __trig = document.getElementById('contactTrigger');
+    const __close = document.getElementById('contactClose');
+    function __openModal(){ if(__modal) __modal.classList.add('open'); }
+    function __closeModal(){ if(__modal) __modal.classList.remove('open'); }
+    if(__trig) __trig.addEventListener('click', __openModal);
+    if(__close) __close.addEventListener('click', __closeModal);
+    if(__modal) __modal.addEventListener('click', e => { if(e.target === __modal) __closeModal(); });
+    document.addEventListener('keydown', e => { if(e.key === 'Escape') __closeModal(); });
+    const __copyBtn = document.getElementById('copyEmail');
+    if(__copyBtn){
+        __copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText('contact@yuanqizhike.com').then(() => {
+                const old = __copyBtn.textContent;
+                __copyBtn.textContent='Copied';
+                setTimeout(() => __copyBtn.textContent = old, 1500);
+            });
+        });
+    }
+    const __form = document.getElementById('contactForm');
+    if(__form){
+        __form.addEventListener('submit', e => {
+            e.preventDefault();
+            const name = document.getElementById('formName').value.trim();
+            const email = document.getElementById('formEmail').value.trim();
+            const desc = document.getElementById('formDesc').value.trim();
+            const subject = encodeURIComponent('Bespoke Tool Development Inquiry');
+            const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nRequirement:\n' + desc);
+            window.location.href = 'mailto:contact@yuanqizhike.com?subject=' + subject + '&body=' + body;
+        });
+    }
+
+    const BOT_OPTIONS = [
+        {value:'*', label:'Any bot (*)'},
+        {value:'Googlebot', label:'Googlebot'},
+        {value:'Googlebot-Image', label:'Googlebot-Image'},
+        {value:'Bingbot', label:'Bingbot'},
+        {value:'Slurp', label:'Yahoo Slurp'},
+        {value:'DuckDuckBot', label:'DuckDuckBot'},
+        {value:'Baiduspider', label:'Baiduspider'},
+        {value:'YandexBot', label:'YandexBot'},
+        {value:'AhrefsBot', label:'AhrefsBot'},
+        {value:'SemrushBot', label:'SemrushBot'},
+        {value:'GPTBot', label:'GPTBot (OpenAI)'}
+    ];
+
+    const rules = [];
+
+    function addRule(opts = {}){
+        const rule = {
+            ua: opts.ua || '*',
+            type: opts.type || 'Disallow',
+            path: opts.path || ''
+        };
+        rules.push(rule);
+        renderRules();
+    }
+
+    function renderRules(){
+        const list = document.getElementById('ruleList');
+        list.innerHTML = '';
+        rules.forEach((rule, idx) => {
+            const item = document.createElement('div');
+            item.className = 'rule-item';
+            const uaOpts = BOT_OPTIONS.map(o => `<option value="${o.value}" ${rule.ua === o.value ? 'selected' : ''}>${o.label}</option>`).join('') + '<option value="custom" '+(rule.ua && !BOT_OPTIONS.find(o=>o.value===rule.ua)?'selected':'')+'>Custom...</option>';
+            item.innerHTML = `
+                <select class="rule-ua">${uaOpts}</select>
+                <select class="rule-type">
+                    <option value="Allow" ${rule.type === 'Allow' ? 'selected' : ''}>Allow</option>
+                    <option value="Disallow" ${rule.type === 'Disallow' ? 'selected' : ''}>Disallow</option>
+                </select>
+                <input type="text" class="rule-path" value="${escapeHtml(rule.path)}" placeholder="/path/*">
+                <button class="rule-del">Delete</button>
+            `;
+            const uaSel = item.querySelector('.rule-ua');
+            const typeSel = item.querySelector('.rule-type');
+            const pathInput = item.querySelector('.rule-path');
+            uaSel.addEventListener('change', e => {
+                if(e.target.value === 'custom'){
+                    const v = prompt('Enter User-agent:');
+                    if(v){ rules[idx].ua = v; renderRules(); }
+                } else {
+                    rules[idx].ua = e.target.value;
+                }
+                generate();
+            });
+            typeSel.addEventListener('change', e => { rules[idx].type = e.target.value; generate(); });
+            pathInput.addEventListener('input', e => { rules[idx].path = e.target.value; generate(); });
+            item.querySelector('.rule-del').addEventListener('click', () => {
+                rules.splice(idx, 1);
+                renderRules();
+                generate();
+            });
+            list.appendChild(item);
+        });
+        updateTestUA();
+    }
+
+    function updateTestUA(){
+        const sel = document.getElementById('testUA');
+        const cur = sel.value;
+        sel.innerHTML = '';
+        const uas = [...new Set(rules.map(r => r.ua))];
+        if(!uas.length) uas.push('*');
+        uas.forEach(ua => {
+            const opt = document.createElement('option');
+            opt.value = ua;
+            opt.textContent = ua;
+            sel.appendChild(opt);
+        });
+        if(uas.includes(cur)) sel.value = cur;
+    }
+
+    function escapeHtml(s){
+        return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    function generate(){
+        const sitemap = document.getElementById('sitemap').value.trim();
+        const delay = document.getElementById('crawlDelay').value.trim();
+        let txt = '# robots.txt generated by YuanqiZhiKe Toolkit\n';
+        // Group by UA
+        const groups = {};
+        rules.forEach(r => {
+            if(!groups[r.ua]) groups[r.ua] = [];
+            groups[r.ua].push(r);
+        });
+        Object.entries(groups).forEach(([ua, rs]) => {
+            txt += `\nUser-agent: ${ua}\n`;
+            rs.forEach(r => {
+                if(r.path) txt += `${r.type}: ${r.path}\n`;
+            });
+            if(delay) txt += `Crawl-delay: ${delay}\n`;
+        });
+        if(sitemap){
+            txt += `\nSitemap: ${sitemap}\n`;
+        }
+        document.getElementById('output').value = txt;
+        validate(txt);
+    }
+
+    function validate(txt){
+        const log = document.getElementById('log');
+        log.innerHTML = '';
+        const lines = txt.split(/\r?\n/);
+        let lastUA = null;
+        let hasUA = false;
+        let hasRules = false;
+        let lineNum = 0;
+        lines.forEach(line => {
+            lineNum++;
+            const trimmed = line.trim();
+            if(!trimmed || trimmed.startsWith('#')){
+                return;
+            }
+            const m = trimmed.match(/^(User-agent|Disallow|Allow|Crawl-delay|Sitemap):\s*(.*)$/i);
+            if(!m){
+                addLog('err', `Line ${lineNum}: Unknown directive ?"${trimmed}"`);
+                return;
+            }
+            const directive = m[1].toLowerCase();
+            const value = m[2].trim();
+            if(directive === 'user-agent'){
+                if(!value){ addLog('err', `Line ${lineNum}: Empty User-agent`); return; }
+                lastUA = value;
+                hasUA = true;
+                addLog('ok', `Line ${lineNum}: User-agent "${value}" defined`);
+            } else if(directive === 'disallow' || directive === 'allow'){
+                if(!lastUA){ addLog('warn', `Line ${lineNum}: ${directive} without preceding User-agent`); }
+                if(value){
+                    hasRules = true;
+                    if(!value.startsWith('/') && !value.startsWith('*')){
+                        addLog('warn', `Line ${lineNum}: Path should start with / ?"${value}"`);
+                    } else {
+                        addLog('ok', `Line ${lineNum}: ${directive} ${value}`);
+                    }
+                }
+            } else if(directive === 'crawl-delay'){
+                if(!/^\d+$/.test(value)) addLog('err', `Line ${lineNum}: Crawl-delay must be a number ?"${value}"`);
+                else addLog('ok', `Line ${lineNum}: Crawl-delay ${value}s`);
+            } else if(directive === 'sitemap'){
+                if(!/^https?:\/\//i.test(value)) addLog('warn', `Line ${lineNum}: Sitemap should be a full URL ?"${value}"`);
+                else addLog('ok', `Line ${lineNum}: Sitemap ${value}`);
+            }
+        });
+        if(!hasUA) addLog('warn', 'No User-agent defined');
+        if(!hasRules && !rules.some(r => r.path)) addLog('warn', 'No Allow/Disallow rules defined');
+        if(!log.children.length) addLog('ok', 'No issues found');
+    }
+
+    function addLog(type, msg){
+        const log = document.getElementById('log');
+        const item = document.createElement('div');
+        item.className = 'log-item log-' + type;
+        item.textContent = msg;
+        log.appendChild(item);
+    }
+
+    function testUrl(){
+        const txt = document.getElementById('output').value;
+        const ua = document.getElementById('testUA').value;
+        let url = document.getElementById('testUrl').value.trim();
+        const result = document.getElementById('testResult');
+        if(!url){ result.innerHTML = ''; return; }
+        if(!url.startsWith('/')) url = '/' + url;
+        const lines = txt.split(/\r?\n/);
+        let currentUA = null;
+        let matched = false;
+        let allowed = true;
+        let matchedPath = '';
+        // Collect rules for matching UA (most specific first)
+        const applicableRules = [];
+        let capturing = false;
+        lines.forEach(line => {
+            const m = line.match(/^User-agent:\s*(.*)$/i);
+            if(m){
+                if(capturing) return; // next UA group
+                currentUA = m[1].trim();
+                if(currentUA === ua || currentUA === '*'){
+                    capturing = true;
+                } else {
+                    capturing = false;
+                }
+                return;
+            }
+            if(!capturing) return;
+            const dMatch = line.match(/^(Disallow|Allow):\s*(.*)$/i);
+            if(dMatch){
+                applicableRules.push({type: dMatch[1].toLowerCase(), path: dMatch[2].trim()});
+            }
+        });
+        // Check rules in order ?last matching wins (per spec, but more specific Allow beats Disallow)
+        let decision = 'allow';
+        let matchedRule = null;
+        applicableRules.forEach(r => {
+            if(matchesPath(url, r.path)){
+                matchedRule = r;
+                decision = r.type === 'allow' ? 'allow' : 'deny';
+            }
+        });
+        if(decision === 'allow'){
+            result.innerHTML = `<div class="result-line result-allow">?ALLOWED ?${ua} can crawl ${url}${matchedRule ? ` (matched: Allow ${matchedRule.path})` : ' (no rule matched, default allow)'}</div>`;
+        } else {
+            result.innerHTML = `<div class="result-line result-deny">?BLOCKED ?${ua} cannot crawl ${url} (matched: Disallow ${matchedRule.path})</div>`;
         }
     }
 
@@ -518,7 +800,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         navigator.clipboard.writeText(v).then(() => {
             const b = document.getElementById('copy');
             const old = b.textContent;
-            b.textContent = '✓ Copied';
+            b.textContent = 'Copied';
             setTimeout(() => b.textContent = old, 1500);
         });
     });
@@ -548,7 +830,53 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
     addRule({ua:'Googlebot-Image', type:'Allow', path:'/images/'});
     generate();
 })();
-</script>
+').replace(/\*/g, '.*');
+        if(regex.endsWith('</script>)) regex = regex.slice(0, -1) + ';
+        return new RegExp('^' + regex).test(url);
+    }
+
+    document.getElementById('addRule').addEventListener('click', () => addRule());
+    document.getElementById('generate').addEventListener('click', generate);
+    document.getElementById('output').addEventListener('input', () => validate(document.getElementById('output').value));
+    document.getElementById('test').addEventListener('click', testUrl);
+    document.getElementById('testUrl').addEventListener('keydown', e => { if(e.key === 'Enter') testUrl(); });
+
+    document.getElementById('copy').addEventListener('click', () => {
+        const v = document.getElementById('output').value;
+        if(!v){ alert('Nothing to copy.'); return; }
+        navigator.clipboard.writeText(v).then(() => {
+            const b = document.getElementById('copy');
+            const old = b.textContent;
+            b.textContent = '-?Copied';
+            setTimeout(() => b.textContent = old, 1500);
+        });
+    });
+
+    document.getElementById('download').addEventListener('click', () => {
+        const v = document.getElementById('output').value;
+        if(!v){ alert('Nothing to download.'); return; }
+        const blob = new Blob([v], {type:'text/plain'});
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'robots.txt';
+        a.click();
+        URL.revokeObjectURL(a.href);
+    });
+
+    document.getElementById('clear').addEventListener('click', () => {
+        rules.length = 0;
+        document.getElementById('output').value = '';
+        document.getElementById('testResult').innerHTML = '';
+        document.getElementById('log').innerHTML = '';
+        renderRules();
+    });
+
+    // Seed defaults
+    addRule({ua:'*', type:'Disallow', path:'/admin/*'});
+    addRule({ua:'*', type:'Disallow', path:'/private/'});
+    addRule({ua:'Googlebot-Image', type:'Allow', path:'/images/'});
+    generate();
+})();
     <script src="/assets/js/date-utils.js"></script>
 </body>
 </html>

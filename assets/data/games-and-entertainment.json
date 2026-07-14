@@ -1,0 +1,196 @@
+[
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Dice Roller",
+    "desc": "Roll virtual dice online for D&D, RPGs, and board games. Supports D4, D6, D8, D10, D12, D20, D100, and custom dice with modifiers and roll history.",
+    "features": [
+      "Support all standard RPG dice",
+      "Add bonuses and penalties",
+      "View individual roll results",
+      "Track roll history log"
+    ],
+    "detailUrl": "/tools/dice-roller/index.html",
+    "zipUrl": "/assets/zip-packages/gaming/dice-roller.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Board Game Picker",
+    "desc": "Find board games by players, time, and complexity. Free board game finder.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/board-game-picker.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Board Game Time Calculator",
+    "desc": "Estimate board game playtime. Adjust for player count, experience. Free board game time calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/boardgame-time-calc.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Card Deck Shuffler",
+    "desc": "Shuffle a standard 52-card deck online. Draw random cards. Free online card deck shuffler for games and probability practice.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/card-deck-shuffler.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Chess Clock Timer",
+    "desc": "Online chess clock with multiple time controls. Blitz, rapid, classical, and custom. Free dual chess timer with increments.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/chess-clock-timer.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Dice Probability Calculator",
+    "desc": "Calculate probabilities for dice rolls. Any number of dice, any sides. Free dice probability calculator for tabletop games.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/dice-probability-calculator.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Dice Roll Probability Calculator",
+    "desc": "Calculate dice roll probabilities. Dungeons and Dragons, Yahtzee, board game odds. Free dice probability calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/dice-roll-probability.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "RPG Dice Roller",
+    "desc": "Roll RPG dice: D4, D6, D8, D10, D12, D20, D100. Roll multiple dice with modifiers. Free online tabletop dice roller for D&D.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/dice-roller-rpg.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Dice Statistics Calculator",
+    "desc": "Calculate dice roll statistics and probabilities. Free dice probability calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/dice-statistics-calculator.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "D&D Character Stat Roller",
+    "desc": "Roll D&D 5e character stats. 4d6 drop lowest, point buy, standard array. Free dice roller for D&D character creation.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/dnd-character-roller.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Escape Room Puzzle Generator",
+    "desc": "Generate escape room puzzles. Ciphers, codes, riddles, and logic puzzles. Free puzzle generator for escape room designers.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/escape-room-puzzle-gen.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Magic 8 Ball",
+    "desc": "Ask the Magic 8 Ball any question and get a mysterious answer. Free online Magic 8 Ball fortune teller.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/magic-8-ball.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Movie Night Picker",
+    "desc": "Pick movies for movie night. Filter by genre, mood, runtime. Free movie recommendation tool.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/movie-night-picker.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "MTG Mana Curve Calculator",
+    "desc": "Analyze Magic: The Gathering deck mana curve. Optimal land count and curve distribution. Free MTG deck analyzer.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/mtg-mana-curve.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Number Guessing Game",
+    "desc": "Classic number guessing game. Guess the secret number with hints. Multiple difficulty levels. Free online guessing game for kids and adults.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/number-guessing-game.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Poker Odds Calculator",
+    "desc": "Calculate Texas Hold em poker odds. Hand strength, outs, pot odds. Free poker odds calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/poker-odds-calc.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Reaction Time Tester",
+    "desc": "Test your reaction time in milliseconds. Click when color changes. Free reaction time test and average calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/reaction-time-tester.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "RPG Encounter Builder",
+    "desc": "Build balanced D&D 5e encounters. Calculate XP budget and difficulty by party level. Free encounter difficulty calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/rpg-encounter-builder.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Trivia Quiz Game",
+    "desc": "Test your knowledge with trivia questions across multiple categories. Free online trivia quiz game with score tracking.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/trivia-quiz-game.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Typing Speed Game",
+    "desc": "Practice typing with fun word challenges. Improve your typing speed and accuracy. Free online typing game with instant feedback.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/typing-game.zip"
+  },
+  {
+    "category": "Games & Entertainment",
+    "icon": "/assets/icons/gaming-1.svg",
+    "title": "Video Game Length Lookup",
+    "desc": "Look up how long video games take to beat. Main story, completionist times. Free game length database.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/gaming/video-game-length-lookup.zip"
+  }
+]

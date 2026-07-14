@@ -178,6 +178,14 @@
                 </div>
             </div>
 
+<!-- Category: Lifestyle & Utilities -->
+             <div id="category-lifestyle-main" class="tool-category">
+                 <h2 class="category-title" data-i18n="categories.lifestyleMain.title">Lifestyle &amp; Utilities</h2>
+                 <div class="tools-grid" data-category="Lifestyle & Utilities">
+                    <!-- Tools will be dynamically rendered here from split category JSON -->
+                </div>
+            </div>
+
             <!-- Category: Security & Privacy -->
             <div id="category-security" class="tool-category">
                 <h2 class="category-title" data-i18n="categories.securityPrivacy.title">Security & Privacy</h2>
@@ -260,9 +268,9 @@
 
             <!-- Category: Audio & Music Tools -->
             <div id="category-audio" class="tool-category">
-                <h2 class="category-title" data-i18n="categories.audioMusicTools.title">Audio & Music Tools</h2>
-                <div class="tools-grid" data-category="Audio & Music Tools">
-                    <!-- Tools will be dynamically rendered here from tools-list.json -->
+                <h2 class="category-title" data-i18n="categories.audioMusicTools.title">Music &amp; Audio</h2>
+                <div class="tools-grid" data-category="Music & Audio">
+                    <!-- Tools will be dynamically rendered here from split category JSON -->
                 </div>
             </div>
 
@@ -385,17 +393,39 @@
         });
 
         var _toolsRendered = false;
+        var _downloadHandlersAttached = false;
+
         function fetchTools() {
             // 防止重复渲染：setInterval(i18n 就绪) 与 setTimeout(2秒兜底) 都会调用 fetchTools，
-            // 若不加 guard，工具卡片会 appendChild 翻倍（484→968 张）
+            // 若不加 guard，工具卡片会 appendChild 翻倍
             if (_toolsRendered) return;
             _toolsRendered = true;
+
+            // 方案A：先加载 meta.json → 按分类懒加载 JSON
+            // 失败则回退到传统 tools-list.json（兼容旧部署 / 本地 file:// 打开）
+            fetch('assets/data/meta.json')
+                .then(function (res) {
+                    if (!res.ok) throw new Error('meta.json not available: ' + res.status);
+                    return res.json();
+                })
+                .then(function (meta) {
+                    if (!meta || !meta.categories) throw new Error('invalid meta.json');
+                    startPlanA(meta);
+                })
+                .catch(function (metaErr) {
+                    console.info('[PlanA] meta.json unavailable, fallback to tools-list.json:', metaErr.message);
+                    fetchToolsListFallback();
+                });
+        }
+
+        function fetchToolsListFallback() {
             fetch('tools-list.json')
                 .then(function (response) {
+                    if (!response.ok) throw new Error('HTTP ' + response.status);
                     return response.json();
                 })
                 .then(function (tools) {
-                    renderTools(tools);
+                    renderToolsLegacy(tools);
                 })
                 .catch(function (error) {
                     _toolsRendered = false; // 失败后允许重试
@@ -403,13 +433,126 @@
                 });
         }
 
+        // 方案A：按分类按需加载，前 N 个立即加载，其余 IntersectionObserver 懒加载
+        function startPlanA(meta) {
+            var catToFile = {};
+            meta.categories.forEach(function (c) { catToFile[c.category] = 'assets/data/' + c.file; });
+
+            try {
+                var hero = document.querySelector('.tool-hero h1');
+                if (hero && meta.totalTools) hero.setAttribute('data-tools-total', meta.totalTools);
+                if (window.I18N && typeof window.I18N.setToolsTotal === 'function') {
+                    window.I18N.setToolsTotal(meta.totalTools);
+                }
+            } catch (e) {}
+
+            var allGrids = Array.prototype.slice.call(document.querySelectorAll('.tools-grid[data-category]'));
+            var t = window.I18N ? I18N.t.bind(I18N) : function (key, fb) { return fb || key; };
+
+            var loaded = {};
+            var loading = {};
+
+            function loadCategory(gridEl, categoryName) {
+                if (loaded[categoryName]) return;
+                if (loading[categoryName]) return;
+
+                if (!catToFile[categoryName]) {
+                    loaded[categoryName] = true;
+                    renderCategoryGrid(gridEl, [], t);
+                    attachDownloadHandlers();
+                    return;
+                }
+
+                loading[categoryName] = fetch(catToFile[categoryName])
+                    .then(function (r) {
+                        if (!r.ok) throw new Error('HTTP ' + r.status);
+                        return r.json();
+                    })
+                    .then(function (list) {
+                        loaded[categoryName] = true;
+                        renderCategoryGrid(gridEl, list || [], t);
+                        attachDownloadHandlers();
+                    })
+                    .catch(function (e) {
+                        console.warn('[PlanA] Failed to load category ' + categoryName, e);
+                        loaded[categoryName] = true;
+                        gridEl.innerHTML = '<div class="tool-card coming-soon"><div class="tool-icon">&#9888;&#65039;</div><h3>Load Error</h3><p class="tool-desc">Tools for this category failed to load. Please try again later.</p></div>';
+                    })
+                    .finally(function () {
+                        delete loading[categoryName];
+                    });
+            }
+
+            // 立即加载前 6 个分类（首屏可见），其余用 IntersectionObserver 懒加载
+            var eagerLimit = 6;
+            allGrids.slice(0, eagerLimit).forEach(function (g) {
+                loadCategory(g, g.getAttribute('data-category'));
+            });
+
+            if ('IntersectionObserver' in window) {
+                var io = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (en) {
+                        if (en.isIntersecting) {
+                            var grid = en.target;
+                            loadCategory(grid, grid.getAttribute('data-category'));
+                            io.unobserve(grid);
+                        }
+                    });
+                }, { rootMargin: '400px 0px' });
+                allGrids.slice(eagerLimit).forEach(function (g) { io.observe(g); });
+            } else {
+                allGrids.slice(eagerLimit).forEach(function (g) {
+                    loadCategory(g, g.getAttribute('data-category'));
+                });
+            }
+        }
+
+        function renderCategoryGrid(toolsGrid, categoryTools, t) {
+            if (!toolsGrid) return;
+            toolsGrid.innerHTML = '';
+            if (!categoryTools || categoryTools.length === 0) {
+                toolsGrid.innerHTML =
+                    '<div class="tool-card coming-soon">' +
+                    '<div class="tool-icon">&#128736;</div>' +
+                    '<h3>' + t('tool.comingSoon', 'Coming Soon') + '</h3>' +
+                    '<p class="tool-desc">' + t('tool.comingSoonDesc', 'Tools in this category are currently under development.') + '</p>' +
+                    '<div class="tool-actions">' +
+                    '<span class="btn btn-secondary" style="opacity: 0.6; cursor: default;">' + t('tool.stayTuned', 'Stay Tuned') + '</span>' +
+                    '</div>' +
+                    '</div>';
+                return;
+            }
+            var frag = document.createDocumentFragment();
+            categoryTools.forEach(function (tool) {
+                frag.appendChild(createToolCard(tool, t));
+            });
+            toolsGrid.appendChild(frag);
+        }
+
+        function attachDownloadHandlers() {
+            // 只绑定新增的按钮（通过 data-download-bound 标记），避免重复绑定
+            var buttons = document.querySelectorAll('.btn-download:not([data-download-bound="1"])');
+            buttons.forEach(function (btn) {
+                btn.setAttribute('data-download-bound', '1');
+                btn.addEventListener('click', function (e) {
+                    var zipPath = this.getAttribute('data-download');
+                    if (zipPath) {
+                        var card = this.closest('.tool-card');
+                        var toolTitle = card && card.querySelector('h3') ? card.querySelector('h3').textContent : 'Unknown';
+                        if (window.YQZ_STATS) {
+                            YQZ_STATS.download(toolTitle, zipPath);
+                        }
+                        window.open(zipPath, '_blank');
+                    }
+                });
+            });
+        }
+
         /**
-         * Render tools from JSON data into category containers
-         * @param {Array} tools - Array of tool configuration objects
+         * 旧模式：tools-list.json 全量加载（回退路径，保留向后兼容）
          */
-        function renderTools(tools) {
-            // Define category mapping: ID -> category name
-var categoryMap = {
+        function renderToolsLegacy(tools) {
+            var categoryMap = {
                 'category-content': 'Content & Writing',
                 'category-design': 'Design & Media',
                 'category-dev': 'Developer Tools',
@@ -420,6 +563,7 @@ var categoryMap = {
                 'category-seo': 'Webmaster & SEO Tools',
                 'category-social': 'Social Media',
                 'category-lifestyle': 'Time & Date',
+                'category-lifestyle-main': 'Lifestyle & Utilities',
                 'category-security': 'Security & Privacy',
                 'category-math': 'Math & Science',
                 'category-ai': 'AI & ML Utilities',
@@ -430,7 +574,7 @@ var categoryMap = {
                 'category-beauty': 'Beauty & Fashion',
                 'category-forms': 'Forms & Generators',
                 'category-weather': 'Weather & Climate',
-                'category-audio': 'Audio & Music Tools',
+                'category-audio': 'Music & Audio',
                 'category-video': 'Video Tools',
                 'category-photography': 'Photography & Image',
                 'category-gaming': 'Games & Entertainment',
@@ -443,56 +587,20 @@ var categoryMap = {
                 'category-pdf': 'PDF Tools'
             };
 
-            // Get translation function
-            var t = window.I18N ? I18N.t.bind(I18N) : function(key, fb) { return fb || key; };
+            var t = window.I18N ? I18N.t.bind(I18N) : function (key, fb) { return fb || key; };
 
-            // For each category container, find matching tools and render them
             for (var containerId in categoryMap) {
                 var container = document.getElementById(containerId);
                 if (!container) continue;
-
                 var categoryName = categoryMap[containerId];
                 var toolsGrid = container.querySelector('.tools-grid');
                 if (!toolsGrid) continue;
-
-                // Find tools belonging to this category
                 var categoryTools = tools.filter(function (tool) {
                     return tool.category === categoryName;
                 });
-
-                // Render each tool card
-                categoryTools.forEach(function (tool) {
-                    var card = createToolCard(tool, t);
-                    toolsGrid.appendChild(card);
-                });
-
-                // Hide category if no tools found
-                if (categoryTools.length === 0) {
-                    toolsGrid.innerHTML = '<div class="tool-card coming-soon">' +
-                        '<div class="tool-icon">&#128736;</div>' +
-                        '<h3>' + t('tool.comingSoon', 'Coming Soon') + '</h3>' +
-                        '<p class="tool-desc">' + t('tool.comingSoonDesc', 'Tools in this category are currently under development.') + '</p>' +
-                        '<div class="tool-actions">' +
-                        '<span class="btn btn-secondary" style="opacity: 0.6; cursor: default;">' + t('tool.stayTuned', 'Stay Tuned') + '</span>' +
-                        '</div>' +
-                        '</div>';
-                }
+                renderCategoryGrid(toolsGrid, categoryTools, t);
             }
-
-            // Override download button click handler
-            document.querySelectorAll('.btn-download').forEach(btn => {
-                btn.addEventListener('click', function (e) {
-                    var zipPath = this.getAttribute('data-download');
-                    if (zipPath) {
-                        var card = this.closest('.tool-card');
-                        var toolTitle = card ? card.querySelector('h3')?.textContent || 'Unknown' : 'Unknown';
-                        if (window.YQZ_STATS) {
-                            YQZ_STATS.download(toolTitle, zipPath);
-                        }
-                        window.open(zipPath, '_blank');
-                    }
-                });
-            });
+            attachDownloadHandlers();
         }
 
         /**

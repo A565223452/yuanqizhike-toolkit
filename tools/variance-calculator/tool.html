@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Variance Calculator | YuanQiZhiLe Toolkit</title>
+<title>Variance Calculator | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Calculate variance (sample and population) with mean, standard deviation, and steps. Free variance calculator.">
 <meta name="keywords" content="variance calculator, sample variance, population variance, statistics, data spread">
 <meta property="og:title" content="Variance Calculator - Free Online Tool">
@@ -112,7 +112,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>Variance Calculator</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Calculate variance (sample and population) with mean, standard deviation, and steps. Free variance calculator.</div>
@@ -131,19 +131,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -156,7 +156,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 </ol>
 <p style="margin-top:8px;font-size:12px;color:#666">Variance measures how far data points spread from the mean. Lower = data clusters near mean. Higher = more spread out. Standard deviation is √variance.</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -167,7 +167,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -193,7 +193,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -266,14 +266,14 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
             var sq = dev * dev;
             html += '<tr style="border-bottom:1px solid #eee"><td style="padding:4px;text-align:center">' + (i+1) + '</td><td style="text-align:center">' + x + '</td><td style="text-align:center">' + dev.toFixed(4) + '</td><td style="text-align:center">' + sq.toFixed(4) + '</td></tr>';
         });
-        html += '<tr style="background:#dbeafe;font-weight:bold"><td style="padding:4px" colspan="2">Sum</td><td style="text-align:center">—</td><td style="text-align:center">' + sumSq.toFixed(4) + '</td></tr>';
+        html += '<tr style="background:#dbeafe;font-weight:bold"><td style="padding:4px" colspan="2">Sum</td><td style="text-align:center"></td><td style="text-align:center">' + sumSq.toFixed(4) + '</td></tr>';
         html += '</table>';
         html += '</div>';
         html += '<div style="background:#fff;padding:10px;border-radius:6px">';
         html += '<div style="font-size:13px;font-weight:bold;color:#3b82f6;margin-bottom:6px">Formulas & Steps</div>';
         html += '<div style="font-size:12px;padding:4px">1. Mean: μ = Σx / n = ' + sum + ' / ' + n + ' = ' + mean.toFixed(4) + '</div>';
-        html += '<div style="font-size:12px;padding:4px">2. Deviations: xᵢ - μ for each value</div>';
-        html += '<div style="font-size:12px;padding:4px">3. Squared deviations: (xᵢ - μ)² for each</div>';
+        html += '<div style="font-size:12px;padding:4px">2. Deviations: x?- μ for each value</div>';
+        html += '<div style="font-size:12px;padding:4px">3. Squared deviations: (x?- μ)² for each</div>';
         html += '<div style="font-size:12px;padding:4px">4. Sum of squares: Σ(x-μ)² = ' + sumSq.toFixed(4) + '</div>';
         html += '<div style="font-size:12px;padding:4px">5. Sample variance: s² = Σ(x-μ)² / (n-1) = ' + sumSq.toFixed(4) + ' / ' + (n-1) + ' = ' + sampleVar.toFixed(4) + '</div>';
         html += '<div style="font-size:12px;padding:4px">6. Population variance: σ² = Σ(x-μ)² / N = ' + sumSq.toFixed(4) + ' / ' + n + ' = ' + popVar.toFixed(4) + '</div>';

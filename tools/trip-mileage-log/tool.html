@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trip Mileage Log Calculator | YuanQiZhiLe Toolkit</title>
+<title>Trip Mileage Log Calculator | YuanqiZhiKe Toolkit</title>
 <meta name="description" content="Track mileage for tax deductions. IRS mileage log with business, personal, and medical trips. Free mileage tracker.">
 <meta name="keywords" content="mileage log, mileage tracker, irs mileage, tax deduction, business mileage, mileage log template, mileage reimbursement">
 <meta property="og:title" content="Trip Mileage Log Calculator - Free Online Tool">
@@ -112,7 +112,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <h1>Trip Mileage Log Calculator</h1>
         <div class="top-actions">
             <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark">🌙</button>
-            <button class="bookmark-btn" id="bookmarkBtn">⭐ Bookmark</button>
+            <button class="bookmark-btn" id="bookmarkBtn">&#9733; Bookmark</button>
         </div>
     </div>
     <div class="subtitle">Track mileage for tax deductions. IRS mileage log with business, personal, and medical trips. Free mileage tracker.</div>
@@ -136,19 +136,19 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         <div class="box">
             <button class="close" id="contactClose" aria-label="Close">×</button>
             <h3>Get in touch</h3>
-            <div class="desc">We build custom private tools for your business — batch processing, internal tools, integrations and more.</div>
+            <div class="desc">We build custom private tools for your business &#8212; batch processing, internal tools, integrations and more.</div>
             <div class="email-row">
                 <span class="ico">📧</span>
                 <span class="email" id="contactEmail">contact@yuanqizhike.com</span>
                 <button class="copy-btn" id="copyEmail">Copy</button>
             </div>
             <a class="mailto-btn" href="mailto:contact@yuanqizhike.com?subject=Bespoke%20Tool%20Development%20Inquiry">✉️ Send us an email</a>
-            <div class="form-hint">— or describe your need below —</div>
+            <div class="form-hint">&#8212; or describe your need below &#8212;</div>
             <form id="contactForm">
                 <input type="text" id="formName" placeholder="Your name" required>
                 <input type="email" id="formEmail" placeholder="Your email (so we can reply)" required>
                 <textarea id="formDesc" placeholder="Brief description of what you need" required></textarea>
-                <button type="submit">Submit →</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -162,7 +162,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
 </ol>
 <p style="margin-top:8px;font-size:12px;color:#666">2024 IRS standard mileage rates: Business 67¢/mi, Medical/Moving 21¢/mi, Charity 14¢/mi. IRS requires a contemporaneous log with date, miles, destination, and business purpose. Personal miles are not deductible.</p>
     </div>
-    <footer>YuanQiZhiLe Toolkit — Free Online Tools</footer>
+    <footer>YuanqiZhiKe Toolkit &#8212; Free Online Tools</footer>
 </div>
 <script>
 
@@ -173,7 +173,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(!btn)return;
         function apply(t){
             document.body.classList.toggle('dark',t==='dark');
-            btn.textContent=(t==='dark')?'☀️':'🌙';
+            btn.textContent=(t==='dark')?'\u2600\uFE0F':'\uD83C\uDF19';
         }
         var saved=localStorage.getItem('theme');
         if(saved){apply(saved);}
@@ -199,7 +199,7 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         if(copyBtn){
             copyBtn.addEventListener('click',function(){
                 navigator.clipboard.writeText('contact@yuanqizhike.com').then(function(){
-                    var old=copyBtn.textContent;copyBtn.textContent='✓';
+                    var old=copyBtn.textContent;copyBtn.textContent='Copied';
                     setTimeout(function(){copyBtn.textContent=old;},1500);
                 });
             });
@@ -250,8 +250,8 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         html += '<tr style="border-bottom:1px solid #ddd;background:#f3f4f6"><th style="text-align:left;padding:4px">Date</th><th style="text-align:left;padding:4px">Type</th><th style="text-align:right;padding:4px">Miles</th><th style="text-align:right;padding:4px">$</th><th style="padding:4px"></th></tr>';
         trips.forEach(function(t, i){
             var typeColor = { business: '#3b82f6', medical: '#10b981', charity: '#f59e0b', moving: '#7c3aed', personal: '#999' }[t.type];
-            html += '<tr style="border-bottom:1px solid #eee"><td style="padding:4px">' + t.date + '</td><td style="padding:4px"><span style="color:' + typeColor + '">' + t.type + '</span></td><td style="text-align:right;padding:4px">' + t.miles + '</td><td style="text-align:right;padding:4px">$' + t.deduction.toFixed(2) + '</td><td style="padding:4px"><button class="removeTrip" data-i="' + i + '" style="background:#dc2626;color:#fff;border:none;border-radius:3px;padding:2px 6px;cursor:pointer;font-size:10px">✕</button></td></tr>';
-            if(t.purpose) html += '<tr style="border-bottom:1px solid #eee;font-size:10px;color:#999"><td colspan="5" style="padding:2px 4px">→ ' + t.purpose + '</td></tr>';
+            html += '<tr style="border-bottom:1px solid #eee"><td style="padding:4px">' + t.date + '</td><td style="padding:4px"><span style="color:' + typeColor + '">' + t.type + '</span></td><td style="text-align:right;padding:4px">' + t.miles + '</td><td style="text-align:right;padding:4px">$' + t.deduction.toFixed(2) + '</td><td style="padding:4px"><button class="removeTrip" data-i="' + i + '" style="background:#dc2626;color:#fff;border:none;border-radius:3px;padding:2px 6px;cursor:pointer;font-size:10px"></button></td></tr>';
+            if(t.purpose) html += '<tr style="border-bottom:1px solid #eee;font-size:10px;color:#999"><td colspan="5" style="padding:2px 4px">?' + t.purpose + '</td></tr>';
         });
         html += '</table>';
         html += '<button id="clearTrips" style="padding:4px 8px;background:#dc2626;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:11px;margin-top:6px">Clear All</button>';
@@ -327,16 +327,16 @@ body.dark .contact-modal input,body.dark .contact-modal textarea{background:#0f3
         html += '<div style="background:#fff;padding:10px;border-radius:6px;margin-bottom:10px">';
         html += '<div style="font-size:13px;font-weight:bold;color:#1e40af;margin-bottom:6px">2024 IRS Standard Mileage Rates</div>';
         html += '<div style="font-size:12px">';
-        html += '<div>• Business: <b>67 cents/mile</b></div>';
-        html += '<div>• Medical/Moving: <b>21 cents/mile</b></div>';
-        html += '<div>• Charity: <b>14 cents/mile</b></div>';
+        html += '<div>?Business: <b>67 cents/mile</b></div>';
+        html += '<div>?Medical/Moving: <b>21 cents/mile</b></div>';
+        html += '<div>?Charity: <b>14 cents/mile</b></div>';
         html += '</div>';
         html += '</div>';
         // Requirements
         html += '<div style="background:#fef3c7;padding:10px;border-radius:6px">';
         html += '<div style="font-size:13px;font-weight:bold;color:#92400e;margin-bottom:4px">IRS Log Requirements</div>';
         html += '<div style="font-size:12px;color:#78350f">For deduction, IRS requires:</div>';
-        html += '<div style="font-size:11px;color:#78350f;margin-top:4px">• Date of trip<br>• Starting and ending odometer<br>• Total miles<br>• Business purpose<br>• Destination</div>';
+        html += '<div style="font-size:11px;color:#78350f;margin-top:4px">?Date of trip<br>?Starting and ending odometer<br>?Total miles<br>?Business purpose<br>?Destination</div>';
         html += '</div>';
         html += '<div style="font-size:11px;color:#999;margin-top:8px">Save or print this log for tax records. IRS requires contemporaneous documentation (recorded near time of trip).</div>';
         html += '</div>';
