@@ -270,22 +270,6 @@
   {
     "category": "Developer Tools",
     "icon": "/assets/icons/dev-1.svg",
-    "title": "Unix Timestamp Converter",
-    "desc": "Convert Unix timestamps to human-readable dates and vice versa. Supports seconds, milliseconds, microseconds, and nanoseconds. All processing happens locally in your browser for privacy. Ideal for developers, log analysis, and API debugging.",
-    "features": [
-      "Timestamp to date conversion",
-      "Date to timestamp conversion",
-      "Multiple precision levels",
-      "Timezone support",
-      "Relative time display",
-      "Copy results easily"
-    ],
-    "detailUrl": "/tools/unix-timestamp-converter/index.html",
-    "zipUrl": "/assets/zip-packages/dev/unix-timestamp-converter.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "/assets/icons/dev-1.svg",
     "title": "Uuid Generator",
     "desc": "A free offline tool for uuid generator calculations. Works in your browser.",
     "features": [
@@ -341,22 +325,6 @@
     ],
     "detailUrl": "/tools/reverse-ip-lookup/index.html",
     "zipUrl": "/assets/zip-packages/seo/reverse-ip-lookup.zip"
-  },
-  {
-    "category": "Developer Tools",
-    "icon": "assets/icons/dev-31.svg",
-    "title": "XML Sitemap Generator",
-    "desc": "Generate XML sitemaps locally for SEO optimization. Supports crawling, priority settings, and media inclusion without uploading data.",
-    "features": [
-      "Local XML Generation",
-      "Crawl Website URLs",
-      "Set Priority & Frequency",
-      "Support Images & Videos",
-      "Respect Robots.txt",
-      "No Data Upload"
-    ],
-    "detailUrl": "/tools/xml-sitemap-generator/index.html",
-    "zipUrl": "/assets/zip-packages/seo/xml-sitemap-generator.zip"
   },
   {
     "category": "Developer Tools",

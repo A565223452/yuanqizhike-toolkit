@@ -1,31 +1,25 @@
 {
   "version": 2,
-  "generatedAt": "2026-07-14T07:10:23.494Z",
-  "totalTools": 676,
+  "generatedAt": "2026-07-14T17:00:06.104Z",
+  "totalTools": 666,
   "categories": [
     {
       "category": "Lifestyle & Utilities",
-      "count": 118,
+      "count": 114,
       "icon": "/assets/icons/lifestyle-1.svg",
       "file": "lifestyle-and-utilities.json"
     },
     {
       "category": "Developer Tools",
-      "count": 57,
+      "count": 55,
       "icon": "/assets/icons/dev-1.svg",
       "file": "developer-tools.json"
     },
     {
       "category": "Design & Media",
-      "count": 56,
+      "count": 53,
       "icon": "/assets/icons/design-1.svg",
       "file": "design-and-media.json"
-    },
-    {
-      "category": "Health & Fitness",
-      "count": 34,
-      "icon": "/assets/icons/health-2.svg",
-      "file": "health-and-fitness.json"
     },
     {
       "category": "Math & Science",
@@ -38,6 +32,12 @@
       "count": 30,
       "icon": "/assets/icons/forms-1.svg",
       "file": "forms-and-generators.json"
+    },
+    {
+      "category": "Health & Fitness",
+      "count": 27,
+      "icon": "/assets/icons/health-2.svg",
+      "file": "health-and-fitness.json"
     },
     {
       "category": "Business & Productivity",
@@ -54,7 +54,7 @@
     {
       "category": "Finance & Crypto",
       "count": 25,
-      "icon": "assets/icons/business-1.svg",
+      "icon": "/assets/icons/business-1.svg",
       "file": "finance-and-crypto.json"
     },
     {
@@ -84,13 +84,13 @@
     {
       "category": "Webmaster & SEO Tools",
       "count": 23,
-      "icon": "assets/icons/business-34.svg",
+      "icon": "/assets/icons/business-34.svg",
       "file": "webmaster-and-seo-tools.json"
     },
     {
       "category": "Content & Writing",
       "count": 22,
-      "icon": "assets/icons/content-4.svg",
+      "icon": "/assets/icons/content-4.svg",
       "file": "content-and-writing.json"
     },
     {
@@ -100,8 +100,14 @@
       "file": "games-and-entertainment.json"
     },
     {
+      "category": "AI & ML Utilities",
+      "count": 20,
+      "icon": "/assets/icons/health-9.svg",
+      "file": "ai-and-ml-utilities.json"
+    },
+    {
       "category": "Music & Audio",
-      "count": 21,
+      "count": 20,
       "icon": "/assets/icons/audio-1.svg",
       "file": "music-and-audio.json"
     },
@@ -118,12 +124,6 @@
       "file": "beauty-and-fashion.json"
     },
     {
-      "category": "AI & ML Utilities",
-      "count": 13,
-      "icon": "/assets/icons/health-9.svg",
-      "file": "ai-and-ml-utilities.json"
-    },
-    {
       "category": "Real Estate Tools",
       "count": 11,
       "icon": "/assets/icons/real-estate-1.svg",
@@ -138,7 +138,7 @@
     {
       "category": "Color & Design Utilities",
       "count": 8,
-      "icon": "assets/icons/design-3.svg",
+      "icon": "/assets/icons/design-3.svg",
       "file": "color-and-design-utilities.json"
     },
     {

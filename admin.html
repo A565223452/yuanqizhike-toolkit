@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -242,6 +242,7 @@
                 <button class="tab-btn active" data-tab="guestbook">Guestbook</button>
                 <button class="tab-btn" data-tab="messages">Custom Inquiries</button>
                 <button class="tab-btn" data-tab="stats">Analytics</button>
+                <button class="tab-btn" data-tab="ops">Operations</button>
             </div>
 
             <!-- Guestbook 面板 -->
@@ -342,6 +343,47 @@
                     <div class="load-more-wrap">
                         <button id="langLoadMore" class="action-btn" style="display:none;">Load More</button>
                     </div>
+                </div>
+            </div>
+
+            <!-- 运维看板面板 -->
+            <div id="opsPanel" style="display:none;">
+                <!-- 概览卡片 -->
+                <div class="stats-grid" id="opsOverview">
+                    <div class="stat-card blue"><div class="label">Rate Limit Rows</div><div class="value" id="opsRlRows">-</div></div>
+                    <div class="stat-card pending"><div class="label">Top RL IP (count)</div><div class="value" id="opsRlTop">-</div></div>
+                    <div class="stat-card unread"><div class="label">404s Today</div><div class="value" id="ops404Today">-</div></div>
+                    <div class="stat-card purple"><div class="label">404s All-Time</div><div class="value" id="ops404Total">-</div></div>
+                </div>
+
+                <!-- 动作按钮 -->
+                <div class="filter-bar">
+                    <strong style="font-size:13px;color:#374151;">Quick Actions:</strong>
+                    <button id="opsRefresh" class="action-btn">🔄 Refresh</button>
+                    <button id="opsClearRl" class="action-btn">Clear All Rate Limit</button>
+                    <button id="opsClean404Old" class="action-btn">Clean 404 (older 7d)</button>
+                    <button id="opsClear404All" class="action-btn delete">Clear All 404</button>
+                    <button id="opsCleanAll" class="action-btn blockip">Deep Clean (RL+old 404+90d PV/DL)</button>
+                    <span style="flex:1;"></span>
+                    <span id="opsLastRefreshed" style="font-size:12px;color:#6b7280;"></span>
+                </div>
+
+                <!-- Rate Limit 状态表 -->
+                <div class="entry-row">
+                    <h3 style="font-size:15px;color:#111827;margin:0 0 12px;">Rate Limit - Hourly Buckets (Top 20)</h3>
+                    <div id="opsRateLimitList" class="empty-state">Loading...</div>
+                </div>
+
+                <!-- Top 404 路径聚合 -->
+                <div class="entry-row" style="margin-top:16px;">
+                    <h3 style="font-size:15px;color:#111827;margin:0 0 12px;">Top 404 Paths (30 days)</h3>
+                    <div id="ops404TopList" class="empty-state">Loading...</div>
+                </div>
+
+                <!-- 最近 100 条 404 日志 -->
+                <div class="entry-row" style="margin-top:16px;">
+                    <h3 style="font-size:15px;color:#111827;margin:0 0 12px;">Recent 404 Logs (max 100)</h3>
+                    <div id="ops404RecentList" class="empty-state">Loading...</div>
                 </div>
             </div>
         </div>
@@ -659,11 +701,16 @@
                     document.getElementById('guestbookPanel').style.display = (currentTab === 'guestbook') ? 'block' : 'none';
                     document.getElementById('messagesPanel').style.display = (currentTab === 'messages') ? 'block' : 'none';
                     document.getElementById('statsPanel').style.display = (currentTab === 'stats') ? 'block' : 'none';
+                    document.getElementById('opsPanel').style.display = (currentTab === 'ops') ? 'block' : 'none';
                     
                     // 切换到统计标签时加载数据
                     if (currentTab === 'stats') {
                         loadStatsOverview();
                         loadDownloadStats(true);
+                    }
+                    // 切换到运维标签时加载
+                    if (currentTab === 'ops') {
+                        loadOpsOverview(true);
                     }
                 }
                 
@@ -859,6 +906,133 @@
             }
         }
         document.getElementById('langLoadMore').addEventListener('click', () => loadLanguageStats(false));
+
+        // ============ 运维看板 ============
+        async function loadOpsOverview() {
+            try {
+                const res = await api('/api/admin/ops?limit=100');
+                const data = await res.json();
+                if (!data.ok) throw new Error(data.error);
+
+                const rl = data.rateLimit || {};
+                const nf = data.notFound || {};
+
+                document.getElementById('opsRlRows').textContent = rl.total || 0;
+                const topRl = (rl.top || [])[0];
+                document.getElementById('opsRlTop').textContent = topRl ? `${escapeHtml(topRl.ip)} (${topRl.count})` : '—';
+                document.getElementById('ops404Today').textContent = nf.today ?? 0;
+                document.getElementById('ops404Total').textContent = nf.total ?? 0;
+                document.getElementById('opsLastRefreshed').textContent = 'Last refresh: ' + new Date().toLocaleTimeString();
+
+                // Rate Limit 表格
+                const rlList = document.getElementById('opsRateLimitList');
+                if (!rl.top || rl.top.length === 0) {
+                    rlList.className = 'empty-state';
+                    rlList.innerHTML = 'No rate limit activity yet. Submit a form on customize.html or guestbook.html to trigger records.';
+                } else {
+                    rlList.className = '';
+                    const nsLabel = { contact: 'Contact Form', gb: 'Guestbook' };
+                    rlList.innerHTML = `
+                        <table style="width:100%;border-collapse:collapse;font-size:13px;">
+                            <thead><tr style="background:#f9fafb;text-align:left;">
+                                <th style="padding:8px 10px;border-bottom:1px solid #e5e7eb;">#</th>
+                                <th style="padding:8px 10px;border-bottom:1px solid #e5e7eb;">Namespace</th>
+                                <th style="padding:8px 10px;border-bottom:1px solid #e5e7eb;">IP</th>
+                                <th style="padding:8px 10px;border-bottom:1px solid #e5e7eb;">Hour Bucket</th>
+                                <th style="padding:8px 10px;border-bottom:1px solid #e5e7eb;">Count</th>
+                            </tr></thead>
+                            <tbody>
+                                ${rl.top.map((r, i) => `
+                                    <tr>
+                                        <td style="padding:8px 10px;border-bottom:1px solid #f3f4f6;">${i + 1}</td>
+                                        <td style="padding:8px 10px;border-bottom:1px solid #f3f4f6;"><code style="background:#f3f4f6;padding:1px 6px;border-radius:4px;">${escapeHtml(r.namespace)}</code> ${nsLabel[r.namespace] || ''}</td>
+                                        <td style="padding:8px 10px;border-bottom:1px solid #f3f4f6;font-family:monospace;">${escapeHtml(r.ip)}</td>
+                                        <td style="padding:8px 10px;border-bottom:1px solid #f3f4f6;">${escapeHtml(r.bucket_time)}</td>
+                                        <td style="padding:8px 10px;border-bottom:1px solid #f3f4f6;font-weight:600;color:${r.count > 4 ? '#dc2626' : '#111827'};">${r.count}</td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>`;
+                }
+
+                // Top 404 聚合
+                const top404 = document.getElementById('ops404TopList');
+                if (!nf.topPaths || nf.topPaths.length === 0) {
+                    top404.className = 'empty-state';
+                    top404.innerHTML = 'No 404 records yet. Visit a nonexistent path to test.';
+                } else {
+                    top404.className = '';
+                    top404.innerHTML = nf.topPaths.map(p => `
+                        <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #f3f4f6;gap:12px;">
+                            <code style="background:#f3f4f6;padding:4px 8px;border-radius:4px;font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:75%;" title="${escapeHtml(p.path)}">${escapeHtml(p.path)}</code>
+                            <span style="background:#fee2e2;color:#991b1b;padding:2px 10px;border-radius:12px;font-size:13px;font-weight:600;flex-shrink:0;">${p.cnt} hits</span>
+                        </div>
+                    `).join('');
+                }
+
+                // 最近 100 条 404
+                const recEl = document.getElementById('ops404RecentList');
+                if (!nf.recent || nf.recent.length === 0) {
+                    recEl.className = 'empty-state';
+                    recEl.innerHTML = 'No recent 404 logs.';
+                } else {
+                    recEl.className = '';
+                    recEl.innerHTML = `
+                        <table style="width:100%;border-collapse:collapse;font-size:12px;">
+                            <thead><tr style="background:#f9fafb;text-align:left;">
+                                <th style="padding:6px 8px;border-bottom:1px solid #e5e7eb;">Time</th>
+                                <th style="padding:6px 8px;border-bottom:1px solid #e5e7eb;">Method</th>
+                                <th style="padding:6px 8px;border-bottom:1px solid #e5e7eb;">Path</th>
+                                <th style="padding:6px 8px;border-bottom:1px solid #e5e7eb;">IP</th>
+                                <th style="padding:6px 8px;border-bottom:1px solid #e5e7eb;">Referer</th>
+                            </tr></thead>
+                            <tbody>
+                                ${nf.recent.map(r => `
+                                    <tr>
+                                        <td style="padding:6px 8px;border-bottom:1px solid #f3f4f6;white-space:nowrap;">${escapeHtml(formatTime(r.created_at))}</td>
+                                        <td style="padding:6px 8px;border-bottom:1px solid #f3f4f6;"><code>${escapeHtml(r.method || 'GET')}</code></td>
+                                        <td style="padding:6px 8px;border-bottom:1px solid #f3f4f6;max-width:350px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${escapeHtml(r.path)}">${escapeHtml(r.path)}</td>
+                                        <td style="padding:6px 8px;border-bottom:1px solid #f3f4f6;font-family:monospace;color:#9ca3af;">${escapeHtml(r.ip || '-')}</td>
+                                        <td style="padding:6px 8px;border-bottom:1px solid #f3f4f6;max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#6b7280;" title="${escapeHtml(r.referer || '')}">${escapeHtml(r.referer ? new URL(r.referer).pathname : '-')}</td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>`;
+                }
+            } catch (err) {
+                console.error('Ops overview error:', err);
+                const errs = `<div class="entry-row" style="border:1px solid #fecaca;color:#991b1b;background:#fef2f2;"><b>Ops load failed:</b> ${escapeHtml(err.message)}<br><small>Verify ADMIN_TOKEN + D1 binding are configured in Cloudflare Pages Secrets.</small></div>`;
+                document.getElementById('opsRateLimitList').innerHTML = errs;
+                document.getElementById('ops404TopList').innerHTML = '';
+                document.getElementById('ops404RecentList').innerHTML = '';
+            }
+        }
+
+        async function opsAction(action, confirmMsg) {
+            if (confirmMsg && !confirm(confirmMsg)) return;
+            try {
+                const res = await api('/api/admin/ops', {
+                    method: 'POST',
+                    body: JSON.stringify({ action })
+                });
+                const data = await res.json();
+                if (!data.ok) throw new Error(data.error);
+                alert('Action OK: ' + action + '\n' + JSON.stringify(data.result, null, 2));
+                loadOpsOverview();
+            } catch (err) {
+                alert('Action failed: ' + err.message);
+            }
+        }
+
+        document.getElementById('opsRefresh').addEventListener('click', () => loadOpsOverview());
+        document.getElementById('opsClearRl').addEventListener('click', () =>
+            opsAction('clear_rate_limit', 'Clear ALL rate_limit rows? (All IP buckets reset to 0)'));
+        document.getElementById('opsClean404Old').addEventListener('click', () =>
+            opsAction('clear_404_old', 'Delete 404 logs OLDER than 7 days? (Recent kept)'));
+        document.getElementById('opsClear404All').addEventListener('click', () =>
+            opsAction('clear_404_all', '⚠️ Delete ALL 404 logs? This is irreversible.'));
+        document.getElementById('opsCleanAll').addEventListener('click', () =>
+            opsAction('cleanup_all', '⚠️ Deep clean: reset rate_limit + 404(7d+) + 90d-old PV/DL data?'));
 
         // ============ 初始化 ============
         if (adminToken) {

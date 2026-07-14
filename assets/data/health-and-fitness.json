@@ -115,69 +115,6 @@
   {
     "category": "Health & Fitness",
     "icon": "/assets/icons/health-1.svg",
-    "title": "Chatgpt System Message Builder",
-    "desc": "A free offline tool for chatgpt system message builder calculations. Works in your browser.",
-    "features": [],
-    "detailUrl": "/tools/chatgpt-system-message-builder/index.html",
-    "zipUrl": "/assets/zip-packages/health/chatgpt-system-message-builder.zip"
-  },
-  {
-    "category": "Health & Fitness",
-    "icon": "/assets/icons/health-1.svg",
-    "title": "Conversation Token Trimmer",
-    "desc": "A free offline tool for conversation token trimmer calculations. Works in your browser.",
-    "features": [],
-    "detailUrl": "/tools/conversation-token-trimmer/index.html",
-    "zipUrl": "/assets/zip-packages/health/conversation-token-trimmer.zip"
-  },
-  {
-    "category": "Health & Fitness",
-    "icon": "/assets/icons/health-1.svg",
-    "title": "Embedding Cost Estimator",
-    "desc": "A free offline tool for embedding cost estimator calculations. Works in your browser.",
-    "features": [],
-    "detailUrl": "/tools/embedding-cost-estimator/index.html",
-    "zipUrl": "/assets/zip-packages/health/embedding-cost-estimator.zip"
-  },
-  {
-    "category": "Health & Fitness",
-    "icon": "/assets/icons/health-1.svg",
-    "title": "Fine Tune Data Formatter",
-    "desc": "A free offline tool for fine tune data formatter calculations. Works in your browser.",
-    "features": [],
-    "detailUrl": "/tools/fine-tune-data-formatter/index.html",
-    "zipUrl": "/assets/zip-packages/health/fine-tune-data-formatter.zip"
-  },
-  {
-    "category": "Health & Fitness",
-    "icon": "/assets/icons/health-1.svg",
-    "title": "Llm Cost Estimator",
-    "desc": "A free offline tool for llm cost estimator calculations. Works in your browser.",
-    "features": [],
-    "detailUrl": "/tools/llm-cost-estimator/index.html",
-    "zipUrl": "/assets/zip-packages/health/llm-cost-estimator.zip"
-  },
-  {
-    "category": "Health & Fitness",
-    "icon": "/assets/icons/health-1.svg",
-    "title": "Rag Chunker",
-    "desc": "A free offline tool for rag chunker calculations. Works in your browser.",
-    "features": [],
-    "detailUrl": "/tools/rag-chunker/index.html",
-    "zipUrl": "/assets/zip-packages/health/rag-chunker.zip"
-  },
-  {
-    "category": "Health & Fitness",
-    "icon": "/assets/icons/health-1.svg",
-    "title": "Text Token Counter",
-    "desc": "A free offline tool for text token counter calculations. Works in your browser.",
-    "features": [],
-    "detailUrl": "/tools/text-token-counter/index.html",
-    "zipUrl": "/assets/zip-packages/health/text-token-counter.zip"
-  },
-  {
-    "category": "Health & Fitness",
-    "icon": "/assets/icons/health-1.svg",
     "title": "BAC Calculator",
     "desc": "Calculate Blood Alcohol Concentration (BAC). Estimate intoxication level based on drinks, weight, gender, time. Free BAC calculator.",
     "features": [],

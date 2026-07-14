@@ -191,15 +191,6 @@
   {
     "category": "Lifestyle & Utilities",
     "icon": "/assets/icons/lifestyle-1.svg",
-    "title": "Coupon Stack Calculator",
-    "desc": "Calculate final price with stacked coupons. Free coupon calculator.",
-    "features": [],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/coupon-stack-calculator.zip"
-  },
-  {
-    "category": "Lifestyle & Utilities",
-    "icon": "/assets/icons/lifestyle-1.svg",
     "title": "Court Cost Calculator",
     "desc": "Estimate court costs for civil cases. Filing fees, service, motion fees. Free court cost calculator.",
     "features": [],
@@ -331,15 +322,6 @@
     "features": [],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/lifestyle/election-vote-calculator.zip"
-  },
-  {
-    "category": "Lifestyle & Utilities",
-    "icon": "/assets/icons/lifestyle-1.svg",
-    "title": "Fabric Yardage Calculator",
-    "desc": "Calculate fabric needed for sewing projects. Estimate yards based on project type and fabric width. Free fabric yardage calculator.",
-    "features": [],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/fabric-yardage-calculator.zip"
   },
   {
     "category": "Lifestyle & Utilities",
@@ -677,15 +659,6 @@
   {
     "category": "Lifestyle & Utilities",
     "icon": "/assets/icons/lifestyle-1.svg",
-    "title": "Pet Medication Dose Calculator",
-    "desc": "Calculate pet medication doses by weight. Veterinary drug dosing for dogs and cats. Free pet medication dose calculator.",
-    "features": [],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/pet-medication-doser.zip"
-  },
-  {
-    "category": "Lifestyle & Utilities",
-    "icon": "/assets/icons/lifestyle-1.svg",
     "title": "Pet Name Generator",
     "desc": "Generate pet names by category. Dog, cat, fish, bird, exotic pet names. Free pet name ideas for any animal.",
     "features": [],
@@ -979,15 +952,6 @@
     "features": [],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/lifestyle/tile-pattern-calc.zip"
-  },
-  {
-    "category": "Lifestyle & Utilities",
-    "icon": "/assets/icons/lifestyle-1.svg",
-    "title": "Time Zone Converter",
-    "desc": "Free online timezone converter tool - fast, secure, no installation. YuanqiZhiKe Toolkit.",
-    "features": [],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/lifestyle/timezone-converter.zip"
   },
   {
     "category": "Lifestyle & Utilities",

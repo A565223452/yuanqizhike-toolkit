@@ -146,15 +146,6 @@
   {
     "category": "Music & Audio",
     "icon": "/assets/icons/audio-1.svg",
-    "title": "Music Note Frequency Calculator",
-    "desc": "Calculate frequencies of musical notes. Find note frequencies for any octave based on A4=440Hz. Free online music note frequency calculator.",
-    "features": [],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/audio/music-note-frequency.zip"
-  },
-  {
-    "category": "Music & Audio",
-    "icon": "/assets/icons/audio-1.svg",
     "title": "Music Transpose Calculator",
     "desc": "Transpose music between keys. Convert chords, notes, scales. Free music transposition tool.",
     "features": [],

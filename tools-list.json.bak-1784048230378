@@ -516,6 +516,22 @@
   {
     "category": "Developer Tools",
     "icon": "/assets/icons/dev-1.svg",
+    "title": "Unix Timestamp Converter",
+    "desc": "Convert Unix timestamps to human-readable dates and vice versa. Supports seconds, milliseconds, microseconds, and nanoseconds. All processing happens locally in your browser for privacy. Ideal for developers, log analysis, and API debugging.",
+    "features": [
+      "Timestamp to date conversion",
+      "Date to timestamp conversion",
+      "Multiple precision levels",
+      "Timezone support",
+      "Relative time display",
+      "Copy results easily"
+    ],
+    "detailUrl": "/tools/unix-timestamp-converter/index.html",
+    "zipUrl": "/assets/zip-packages/dev/unix-timestamp-converter.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "/assets/icons/dev-1.svg",
     "title": "Uuid Generator",
     "desc": "A free offline tool for uuid generator calculations. Works in your browser.",
     "features": [
@@ -701,6 +717,22 @@
     ],
     "detailUrl": "/tools/reverse-ip-lookup/index.html",
     "zipUrl": "/assets/zip-packages/seo/reverse-ip-lookup.zip"
+  },
+  {
+    "category": "Developer Tools",
+    "icon": "assets/icons/dev-31.svg",
+    "title": "XML Sitemap Generator",
+    "desc": "Generate XML sitemaps locally for SEO optimization. Supports crawling, priority settings, and media inclusion without uploading data.",
+    "features": [
+      "Local XML Generation",
+      "Crawl Website URLs",
+      "Set Priority & Frequency",
+      "Support Images & Videos",
+      "Respect Robots.txt",
+      "No Data Upload"
+    ],
+    "detailUrl": "/tools/xml-sitemap-generator/index.html",
+    "zipUrl": "/assets/zip-packages/seo/xml-sitemap-generator.zip"
   },
   {
     "category": "Business & Productivity",
@@ -5161,6 +5193,15 @@
   {
     "category": "Music & Audio",
     "icon": "/assets/icons/audio-1.svg",
+    "title": "Music Note Frequency Calculator",
+    "desc": "Calculate frequencies of musical notes. Find note frequencies for any octave based on A4=440Hz. Free online music note frequency calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/audio/music-note-frequency.zip"
+  },
+  {
+    "category": "Music & Audio",
+    "icon": "/assets/icons/audio-1.svg",
     "title": "Music Transpose Calculator",
     "desc": "Transpose music between keys. Convert chords, notes, scales. Free music transposition tool.",
     "features": [],
@@ -5224,6 +5265,15 @@
   {
     "category": "Design & Media",
     "icon": "/assets/icons/design-1.svg",
+    "title": "Aspect Ratio Calculator",
+    "desc": "Calculate aspect ratio. Resize images, crop dimensions. Free aspect ratio calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/aspect-ratio-calculator.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
     "title": "Image Aspect Ratio Calculator",
     "desc": "Calculate image dimensions for any aspect ratio. Resize images while maintaining proportions. Common ratios for social media, prints, and screens.",
     "features": [],
@@ -5265,6 +5315,15 @@
     "features": [],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/design/exposure-triangle-calc.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Exposure Triangle Calculator",
+    "desc": "Calculate equivalent exposures. Shutter speed, aperture, ISO. Free exposure triangle calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/exposure-triangle-calculator.zip"
   },
   {
     "category": "Design & Media",
@@ -5337,6 +5396,15 @@
     "features": [],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/design/hyperfocal-distance-calc.zip"
+  },
+  {
+    "category": "Design & Media",
+    "icon": "/assets/icons/design-1.svg",
+    "title": "Hyperfocal Distance Calculator",
+    "desc": "Calculate hyperfocal distance for landscape photography. Find focus point for max depth of field. Free hyperfocal calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/design/hyperfocal-distance-calculator.zip"
   },
   {
     "category": "Design & Media",
@@ -6061,6 +6129,15 @@
   {
     "category": "Lifestyle & Utilities",
     "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Coupon Stack Calculator",
+    "desc": "Calculate final price with stacked coupons. Free coupon calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/coupon-stack-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
     "title": "Court Cost Calculator",
     "desc": "Estimate court costs for civil cases. Filing fees, service, motion fees. Free court cost calculator.",
     "features": [],
@@ -6192,6 +6269,15 @@
     "features": [],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/lifestyle/election-vote-calculator.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Fabric Yardage Calculator",
+    "desc": "Calculate fabric needed for sewing projects. Estimate yards based on project type and fabric width. Free fabric yardage calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/fabric-yardage-calculator.zip"
   },
   {
     "category": "Lifestyle & Utilities",
@@ -6529,6 +6615,15 @@
   {
     "category": "Lifestyle & Utilities",
     "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Pet Medication Dose Calculator",
+    "desc": "Calculate pet medication doses by weight. Veterinary drug dosing for dogs and cats. Free pet medication dose calculator.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/pet-medication-doser.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
     "title": "Pet Name Generator",
     "desc": "Generate pet names by category. Dog, cat, fish, bird, exotic pet names. Free pet name ideas for any animal.",
     "features": [],
@@ -6822,6 +6917,15 @@
     "features": [],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/lifestyle/tile-pattern-calc.zip"
+  },
+  {
+    "category": "Lifestyle & Utilities",
+    "icon": "/assets/icons/lifestyle-1.svg",
+    "title": "Time Zone Converter",
+    "desc": "Free online timezone converter tool - fast, secure, no installation. YuanqiZhiKe Toolkit.",
+    "features": [],
+    "detailUrl": "",
+    "zipUrl": "/assets/zip-packages/lifestyle/timezone-converter.zip"
   },
   {
     "category": "Lifestyle & Utilities",

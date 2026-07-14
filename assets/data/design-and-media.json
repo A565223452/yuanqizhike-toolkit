@@ -474,15 +474,6 @@
   {
     "category": "Design & Media",
     "icon": "/assets/icons/design-1.svg",
-    "title": "Aspect Ratio Calculator",
-    "desc": "Calculate aspect ratio. Resize images, crop dimensions. Free aspect ratio calculator.",
-    "features": [],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/design/aspect-ratio-calculator.zip"
-  },
-  {
-    "category": "Design & Media",
-    "icon": "/assets/icons/design-1.svg",
     "title": "Image Aspect Ratio Calculator",
     "desc": "Calculate image dimensions for any aspect ratio. Resize images while maintaining proportions. Common ratios for social media, prints, and screens.",
     "features": [],
@@ -524,15 +515,6 @@
     "features": [],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/design/exposure-triangle-calc.zip"
-  },
-  {
-    "category": "Design & Media",
-    "icon": "/assets/icons/design-1.svg",
-    "title": "Exposure Triangle Calculator",
-    "desc": "Calculate equivalent exposures. Shutter speed, aperture, ISO. Free exposure triangle calculator.",
-    "features": [],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/design/exposure-triangle-calculator.zip"
   },
   {
     "category": "Design & Media",
@@ -605,15 +587,6 @@
     "features": [],
     "detailUrl": "",
     "zipUrl": "/assets/zip-packages/design/hyperfocal-distance-calc.zip"
-  },
-  {
-    "category": "Design & Media",
-    "icon": "/assets/icons/design-1.svg",
-    "title": "Hyperfocal Distance Calculator",
-    "desc": "Calculate hyperfocal distance for landscape photography. Find focus point for max depth of field. Free hyperfocal calculator.",
-    "features": [],
-    "detailUrl": "",
-    "zipUrl": "/assets/zip-packages/design/hyperfocal-distance-calculator.zip"
   },
   {
     "category": "Design & Media",

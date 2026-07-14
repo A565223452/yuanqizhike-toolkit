@@ -88,3 +88,19 @@ CREATE TABLE IF NOT EXISTS page_views (
 
 CREATE INDEX IF NOT EXISTS idx_page_views_path_created ON page_views(page_path, created_at DESC);
 CREATE INDEX IF NOT EXISTS idx_page_views_created ON page_views(created_at DESC);
+
+-- ============ 404 访问日志（自动记录所有 ASSETS 返回 404 的请求）============
+-- 用途：admin /api/admin/ops 运维看板查看最近 100 个 404 路径，批量修复错位链接/死链
+CREATE TABLE IF NOT EXISTS not_found_log (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  path TEXT NOT NULL,                         -- 被请求的路径 + query string（最长 500）
+  method TEXT DEFAULT 'GET',                  -- GET / POST / OPTIONS 等
+  ip TEXT,                                    -- 匿名化后 IP（前三段）
+  user_agent TEXT,
+  referer TEXT,
+  created_at INTEGER NOT NULL DEFAULT (unixepoch())
+);
+
+-- 常用查询索引：按时间倒序取最近 100 条 + 按路径聚合 Top 死链
+CREATE INDEX IF NOT EXISTS idx_not_found_created ON not_found_log(created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_not_found_path ON not_found_log(path, created_at DESC);

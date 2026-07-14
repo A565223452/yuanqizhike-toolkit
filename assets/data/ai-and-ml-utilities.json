@@ -55,6 +55,24 @@
   },
   {
     "category": "AI & ML Utilities",
+    "icon": "/assets/icons/health-9.svg",
+    "title": "Chatgpt System Message Builder",
+    "desc": "A free offline tool for chatgpt system message builder calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/chatgpt-system-message-builder/index.html",
+    "zipUrl": "/assets/zip-packages/health/chatgpt-system-message-builder.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/health-9.svg",
+    "title": "Conversation Token Trimmer",
+    "desc": "A free offline tool for conversation token trimmer calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/conversation-token-trimmer/index.html",
+    "zipUrl": "/assets/zip-packages/health/conversation-token-trimmer.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
     "icon": "/assets/icons/health-1.svg",
     "title": "Dalle Prompt Builder",
     "desc": "A free offline tool for dalle prompt builder calculations. Works in your browser.",
@@ -64,12 +82,39 @@
   },
   {
     "category": "AI & ML Utilities",
+    "icon": "/assets/icons/health-9.svg",
+    "title": "Embedding Cost Estimator",
+    "desc": "A free offline tool for embedding cost estimator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/embedding-cost-estimator/index.html",
+    "zipUrl": "/assets/zip-packages/health/embedding-cost-estimator.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/health-9.svg",
+    "title": "Fine Tune Data Formatter",
+    "desc": "A free offline tool for fine tune data formatter calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/fine-tune-data-formatter/index.html",
+    "zipUrl": "/assets/zip-packages/health/fine-tune-data-formatter.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
     "icon": "/assets/icons/health-1.svg",
     "title": "Image Prompt Builder",
     "desc": "A free offline tool for image prompt builder calculations. Works in your browser.",
     "features": [],
     "detailUrl": "/tools/image-prompt-builder/index.html",
     "zipUrl": "/assets/zip-packages/ai-ml/image-prompt-builder.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/health-9.svg",
+    "title": "Llm Cost Estimator",
+    "desc": "A free offline tool for llm cost estimator calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/llm-cost-estimator/index.html",
+    "zipUrl": "/assets/zip-packages/health/llm-cost-estimator.zip"
   },
   {
     "category": "AI & ML Utilities",
@@ -109,11 +154,29 @@
   },
   {
     "category": "AI & ML Utilities",
+    "icon": "/assets/icons/health-9.svg",
+    "title": "Rag Chunker",
+    "desc": "A free offline tool for rag chunker calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/rag-chunker/index.html",
+    "zipUrl": "/assets/zip-packages/health/rag-chunker.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
     "icon": "/assets/icons/health-1.svg",
     "title": "Stable Diffusion Prompt Builder",
     "desc": "A free offline tool for stable diffusion prompt builder calculations. Works in your browser.",
     "features": [],
     "detailUrl": "/tools/stable-diffusion-prompt-builder/index.html",
     "zipUrl": "/assets/zip-packages/ai-ml/stable-diffusion-prompt-builder.zip"
+  },
+  {
+    "category": "AI & ML Utilities",
+    "icon": "/assets/icons/health-9.svg",
+    "title": "Text Token Counter",
+    "desc": "A free offline tool for text token counter calculations. Works in your browser.",
+    "features": [],
+    "detailUrl": "/tools/text-token-counter/index.html",
+    "zipUrl": "/assets/zip-packages/health/text-token-counter.zip"
   }
 ]

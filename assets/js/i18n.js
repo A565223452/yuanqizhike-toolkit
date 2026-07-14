@@ -266,28 +266,49 @@ const I18N = {
     });
   },
 
-  // Update meta tags for SEO
+  // Decide whether current page should have title/meta overridden from hero.*
+  // Rule: only override when BOTH true:
+  //   (a) it's the homepage (index or /), OR
+  //   (b) <title> has data-i18n attribute explicitly asking for i18n replacement
+  // All category pages / tool detail pages keep their own <title> and meta description
+  // (they are pre-rendered in generate-category-pages.cjs for SEO uniqueness).
+  _shouldOverrideSeoMeta() {
+    const path = window.location.pathname;
+    const tail = path.split('/').pop();
+    const isHome = path === '/' || /^index(\.html?)?$/i.test(tail) || tail === '';
+    const titleAsksI18n = !!(document.querySelector('title[data-i18n]'));
+    return isHome || titleAsksI18n;
+  },
+
+  // Update meta tags for SEO (conservative override)
   updateMetaTags() {
     const t = this.t.bind(this);
-    
-    // Update title
-    const titleKey = 'hero.title';
-    document.title = `${t(titleKey)} - YuanqiZhiKe Toolkit`;
+    const overrideSeo = this._shouldOverrideSeoMeta();
 
-    // Update description
-    const descEl = document.querySelector('meta[name="description"]');
-    if (descEl) {
-      descEl.content = t('hero.description');
+    if (overrideSeo) {
+      // Update title (homepage only or explicitly requested via title[data-i18n])
+      const titleKey = 'hero.title';
+      document.title = `${t(titleKey)} - YuanqiZhiKe Toolkit`;
+
+      // Update description
+      const descEl = document.querySelector('meta[name="description"]');
+      if (descEl) {
+        descEl.content = t('hero.description');
+      }
+
+      // Update OG title / description to match the homepage-hero copy
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) ogTitle.content = document.title;
+
+      const ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) ogDesc.content = t('hero.description');
+    } else {
+      // Category / tool detail pages: keep pre-rendered <title>, meta description,
+      // og:title, og:description exactly as generated (they have category-specific wording).
+      // Do NOT overwrite them with the global hero copy.
     }
 
-    // Update OG tags
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.content = document.title;
-    
-    const ogDesc = document.querySelector('meta[property="og:description"]');
-    if (ogDesc) ogDesc.content = t('hero.description');
-
-    // Update hreflang links
+    // Always update hreflang links (hreflang is page-independent per-language alternates)
     this.updateHreflangs();
   },
 
